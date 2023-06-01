@@ -1,2 +1,11 @@
-package PACKAGE_NAME;public class SimplySkillsClient {
+package net.sweenus.simplyskills.client;
+
+import net.fabricmc.api.ClientModInitializer;
+
+public class SimplySkillsClient implements ClientModInitializer {
+
+    @Override
+    public void onInitializeClient() {
+
+    }
 }
