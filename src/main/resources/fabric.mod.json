@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "simplyskills",
+  "version": "${version}",
+  "name": "Simply Skills",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Sweeney/SimplySkills"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/simplyskills/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.sweenus.simplyskills.client.SimplySkillsClient"
+    ],
+    "main": [
+      "net.sweenus.simplyskills.SimplySkills"
+    ]
+  },
+  "mixins": [
+    "simplyskills.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
