@@ -7,13 +7,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.stat.Stats;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -23,8 +21,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Objects;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin {
@@ -47,8 +43,11 @@ public class PlayerEntityMixin {
     public void simplyskills$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.hardy)) {
-                passiveWarriorArmour(player);
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.warriorHeavyArmorMastery) ||
+            SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.warriorMediumArmorMastery)) {
+                passiveWarriorArmorMastery(player);
             }
         }
     }
@@ -91,27 +90,27 @@ public class PlayerEntityMixin {
             }
 
             //Passive Berserker Sword Mastery
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BerserkerSwordMastery)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.berserkerSwordMastery)) {
                 passiveBerserkerSwordMastery(player);
             }
             //Passive Berserker Axe Mastery
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BerserkerAxeMastery)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.berserkerAxeMastery)) {
                 passiveBerserkerAxeMastery(player);
             }
             //Passive Berserker Ignore Pain
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BerserkerIgnorePain)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.berserkerIgnorePain)) {
                 passiveBerserkerIgnorePain(player);
             }
             //Passive Berserker Recklessness
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BerserkerRecklessness)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.berserkerRecklessness)) {
                 passiveBerserkerRecklessness(player);
             }
             //Passive Berserker Challenge
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BerserkerChallenge)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.berserkerChallenge)) {
                 passiveBerserkerChallenge(player);
             }
             //Passive Bulwark Shield Mastery
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.BulwarkShieldMastery)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.bulwarkShieldMastery)) {
                 passiveBulwarkShieldMastery(player);
             }
 
@@ -229,11 +228,13 @@ public class PlayerEntityMixin {
         }
     }
 
-    private static void passiveWarriorArmour(PlayerEntity player) {
+    private static void passiveWarriorArmorMastery(PlayerEntity player) {
         if (player.getRandom().nextInt(100) < 25) {
-            if (player.getArmor() > 9) {
+            if (player.getArmor() > 9 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.warriorHeavyArmorMastery)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100));
-            } else {
+            } else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.warriorMediumArmorMastery)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100));
             }
         }
@@ -246,10 +247,10 @@ public class PlayerEntityMixin {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BerserkerSwordMasterySkilled))
+                            "combat").get().contains(SkillReferencePosition.berserkerSwordMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BerserkerSwordMasteryProficient))
+                            "combat").get().contains(SkillReferencePosition.berserkerSwordMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 25, mastery));
@@ -266,10 +267,10 @@ public class PlayerEntityMixin {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BerserkerAxeMasterySkilled))
+                            "combat").get().contains(SkillReferencePosition.berserkerAxeMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BerserkerAxeMasteryProficient))
+                            "combat").get().contains(SkillReferencePosition.berserkerAxeMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 25, mastery));
@@ -284,10 +285,10 @@ public class PlayerEntityMixin {
             if (player.getHealth() <= (0.4 * player.getMaxHealth())) {
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "combat").get().contains(SkillReferencePosition.BerserkerIgnorePainSkilled))
+                        "combat").get().contains(SkillReferencePosition.berserkerIgnorePainSkilled))
                     resistanceStacks = 2;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "combat").get().contains(SkillReferencePosition.BerserkerIgnorePainProficient))
+                        "combat").get().contains(SkillReferencePosition.berserkerIgnorePainProficient))
                     resistanceStacks = 1;
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, resistanceStacks));
@@ -333,10 +334,10 @@ public class PlayerEntityMixin {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BulwarkShieldMasterySkilled))
+                            "combat").get().contains(SkillReferencePosition.bulwarkShieldMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.BulwarkShieldMasteryProficient))
+                            "combat").get().contains(SkillReferencePosition.bulwarkShieldMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, mastery));

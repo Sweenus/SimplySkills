@@ -15,27 +15,29 @@ public class SkillReferencePosition {
     public static String backstab = "f3r29wqldkc35st1";
 
     //Warrior
+    public static String warriorHeavyArmorMastery = "f3r29wqldkc35st1";
+    public static String warriorMediumArmorMastery = "f3r29wqldkc35st1";
 
     // - Berserker
-    public static String BerserkerSwordMastery = "f3r29wqldkc35st1";
-    public static String BerserkerSwordMasterySkilled = "f3r29wqldkc35st1";
-    public static String BerserkerSwordMasteryProficient = "f3r29wqldkc35st1";
+    public static String berserkerSwordMastery = "f3r29wqldkc35st1";
+    public static String berserkerSwordMasterySkilled = "f3r29wqldkc35st1";
+    public static String berserkerSwordMasteryProficient = "f3r29wqldkc35st1";
 
-    public static String BerserkerAxeMastery = "f3r29wqldkc35st1";
-    public static String BerserkerAxeMasterySkilled = "f3r29wqldkc35st1";
-    public static String BerserkerAxeMasteryProficient = "f3r29wqldkc35st1";
+    public static String berserkerAxeMastery = "f3r29wqldkc35st1";
+    public static String berserkerAxeMasterySkilled = "f3r29wqldkc35st1";
+    public static String berserkerAxeMasteryProficient = "f3r29wqldkc35st1";
 
-    public static String BerserkerIgnorePain = "f3r29wqldkc35st1";
-    public static String BerserkerIgnorePainSkilled = "f3r29wqldkc35st1";
-    public static String BerserkerIgnorePainProficient = "f3r29wqldkc35st1";
+    public static String berserkerIgnorePain = "f3r29wqldkc35st1";
+    public static String berserkerIgnorePainSkilled = "f3r29wqldkc35st1";
+    public static String berserkerIgnorePainProficient = "f3r29wqldkc35st1";
 
-    public static String BerserkerRecklessness = "f3r29wqldkc35st1";
-    public static String BerserkerChallenge = "f3r29wqldkc35st1";
+    public static String berserkerRecklessness = "f3r29wqldkc35st1";
+    public static String berserkerChallenge = "f3r29wqldkc35st1";
 
     // - Bulwark
-    public static String BulwarkShieldMastery = "f3r29wqldkc35st1";
-    public static String BulwarkShieldMasterySkilled = "f3r29wqldkc35st1";
-    public static String BulwarkShieldMasteryProficient = "f3r29wqldkc35st1";
+    public static String bulwarkShieldMastery = "f3r29wqldkc35st1";
+    public static String bulwarkShieldMasterySkilled = "f3r29wqldkc35st1";
+    public static String bulwarkShieldMasteryProficient = "f3r29wqldkc35st1";
 
 
 }
