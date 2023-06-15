@@ -16,6 +16,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stat;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.spell_power.api.MagicSchool;
+import net.spell_power.api.SpellPower;
+import net.spell_power.api.attributes.SpellAttributeEntry;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -83,6 +87,9 @@ public class PlayerEntityMixin {
     public void simplyskills$tickFallStartPos(CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
+
+            //Print attributes to log for debug purposes (don't forget to disable this before shipping, or it's gonna be real awkward.)
+            debugPrintAttributes(player);
 
             //Passive Rogue Stealth
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.rogueStealth)
@@ -472,6 +479,21 @@ public class PlayerEntityMixin {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, 1));
             }
+        }
+    }
+
+
+
+
+
+
+
+    //DEBUG
+    private static void debugPrintAttributes(PlayerEntity player) {
+        if (player.age % 20 == 0 && player.isSneaking()) {
+            String attributeHealing = SpellPower.getSpellPower(MagicSchool.HEALING, player).toString();
+
+            System.out.println("Healing: " + attributeHealing);
         }
     }
 

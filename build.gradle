@@ -14,6 +14,13 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content {
+            includeGroup 'maven.modrinth'
+        }
+    }
 
 }
 
@@ -27,6 +34,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "curse.maven:puffish-skills-835091:4534765"
+    modImplementation "maven.modrinth:spell-power:${project.spellpower_version}-fabric"
 
     }
 
