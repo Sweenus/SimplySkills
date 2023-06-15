@@ -1,0 +1,12 @@
+{
+	"unlocked_by_default": true,
+	"exclusive_root": true,
+	"title": "Combat",
+	"icon": {
+		"type": "item",
+		"data": {
+			"item": "diamond_sword"
+		}
+	},
+	"background": "simplyskills:textures/backgrounds/skillbackground_6.png"
+}
