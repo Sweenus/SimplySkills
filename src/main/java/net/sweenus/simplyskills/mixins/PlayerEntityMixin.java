@@ -1,6 +1,7 @@
 package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -12,6 +13,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.stat.Stat;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -43,11 +45,36 @@ public class PlayerEntityMixin {
     public void simplyskills$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
+
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "combat").get().contains(SkillReferencePosition.warriorHeavyArmorMastery) ||
             SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "combat").get().contains(SkillReferencePosition.warriorMediumArmorMastery)) {
                 passiveWarriorArmorMastery(player);
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+            "combat").get().contains(SkillReferencePosition.rogueSmokeBomb)) {
+                passiveRogueSmokeBomb(player);
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.rogueEvasionMastery)) {
+                passiveRogueEvasionMastery(player);
+            }
+
+
+        }
+    }
+
+
+    @Inject(at = @At("HEAD"), method = "takeShieldHit")
+    public void simplyskills$takeShieldHit(LivingEntity attacker, CallbackInfo ci) {
+        PlayerEntity player = (PlayerEntity)(Object)this;
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.bulwarkRebuke)) {
+                passiveBulwarkRebuke(player, attacker);
             }
         }
     }
@@ -57,21 +84,21 @@ public class PlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
 
-            //Stealth Sneak
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.stealth)
+            //Passive Rogue Stealth
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.rogueStealth)
                     && player.isSneaking() && player.age % 10 == 0) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 15));
             }
 
-            //Speed Sneak
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.sneak)
+            //Passive Wayfarer Sneak
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.wayfarerSneak)
                     && player.isSneaking() && player.age % 10 == 0) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, 2));
             }
 
             //Passive Area Strip
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.nullification)) {
-                passiveAreaStrip(player);
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.initiateNullification)) {
+                passiveInitiateNullification(player);
             }
 
             //Passive Area Cleanse
@@ -85,8 +112,8 @@ public class PlayerEntityMixin {
             }
 
             //Passive Area Reveal
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.reveal)) {
-                passiveAreaReveal(player);
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.rangerReveal)) {
+                passiveRangerReveal(player);
             }
 
             //Passive Berserker Sword Mastery
@@ -113,6 +140,15 @@ public class PlayerEntityMixin {
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.bulwarkShieldMastery)) {
                 passiveBulwarkShieldMastery(player);
             }
+            //Passive Wayfarer Slender && Initiate Frail
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.wayfarerSlender)
+            || SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.initiateFrail)) {
+                passiveWayfarerSlender(player);
+            }
+            //Initiate Frail (weapon element)
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.initiateFrail)) {
+                passiveInitiateFrail(player);
+            }
 
 
         }
@@ -126,12 +162,16 @@ public class PlayerEntityMixin {
             if (target.isAttackable()) {
                 if (!target.handleAttack(player)) {
 
-                    //Passive Backstab
-                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.backstab)) {
-                        passiveBackstab(target, player);
-
-
+                    //Passive Rogue Backstab
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.rogueBackstab)) {
+                        passiveRogueBackstab(target, player);
                     }
+
+                    //Passive Rogue Opportunistic Mastery
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.rogueOpportunisticMastery)) {
+                        passiveRogueOpportunisticMastery(target, player);
+                    }
+
                 }
             }
         }
@@ -142,7 +182,7 @@ public class PlayerEntityMixin {
 
     //Bulky abilities go below
 
-    private static void passiveAreaStrip(PlayerEntity player) {
+    private static void passiveInitiateNullification(PlayerEntity player) {
         if (player.age % 80 == 0) {
             int radius = 12;
 
@@ -197,7 +237,7 @@ public class PlayerEntityMixin {
         }
     }
 
-    private static void passiveAreaReveal(PlayerEntity player) {
+    private static void passiveRangerReveal(PlayerEntity player) {
         if (player.age % 80 == 0) {
             int radius = 12;
 
@@ -219,7 +259,7 @@ public class PlayerEntityMixin {
         }
     }
 
-    private static void passiveBackstab(Entity target, PlayerEntity player) {
+    private static void passiveRogueBackstab(Entity target, PlayerEntity player) {
         if (target instanceof LivingEntity livingTarget) {
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
                     livingTarget.getBodyYaw() > (player.getBodyYaw() - 32)) {
@@ -343,6 +383,94 @@ public class PlayerEntityMixin {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, mastery));
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
                 }
+            }
+        }
+    }
+
+    private static void passiveBulwarkRebuke(PlayerEntity player, LivingEntity attacker) {
+        if (player.getRandom().nextInt(100) < 25) {
+            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 80));
+        }
+    }
+
+    private static void passiveWayfarerSlender(PlayerEntity player) {
+        if (player.age % 20 == 0) {
+            if (player.getArmor() > 14 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.wayfarerSlender)){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
+            }
+            if (player.getArmor() > 9 && (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.initiateFrail))){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
+            }
+        }
+    }
+
+    private static void passiveRogueSmokeBomb(PlayerEntity player) {
+        if (player.getRandom().nextInt(100) < 25) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 100));
+            Box box = HelperMethods.createBox((LivingEntity) player, 6);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                if (entities != null) {
+                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+
+                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 60));
+
+                    }
+                }
+            }
+        }
+    }
+
+    private static void passiveRogueEvasionMastery(PlayerEntity player) {
+
+        int mastery = 15;
+
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "combat").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
+            mastery = 35;
+        else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "combat").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
+            mastery = 25;
+
+        if (player.getRandom().nextInt(100) < mastery) {
+            if (player.getEquippedStack(EquipmentSlot.HEAD) == null
+            && player.getEquippedStack(EquipmentSlot.CHEST) == null
+            && player.getEquippedStack(EquipmentSlot.LEGS) == null
+            && player.getEquippedStack(EquipmentSlot.FEET) == null) {
+
+                player.timeUntilRegen = 20;
+
+            }
+        }
+    }
+
+    private static void passiveRogueOpportunisticMastery(Entity target, PlayerEntity player) {
+
+        int mastery = 40;
+
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "combat").get().contains(SkillReferencePosition.rogueOpportunisticMasterySkilled))
+            mastery = 120;
+        else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "combat").get().contains(SkillReferencePosition.rogueOpportunisticMasteryProficient))
+            mastery = 80;
+
+        if (target instanceof LivingEntity livingTarget)
+            livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery));
+        if (player.hasStatusEffect(StatusEffects.INVISIBILITY))
+            player.removeStatusEffect(StatusEffects.INVISIBILITY);
+
+    }
+
+    private static void passiveInitiateFrail(PlayerEntity player) {
+        if (player.age % 20 == 0) {
+            if (HelperMethods.getAttackDamage(player.getMainHandStack()) > 6
+                    || HelperMethods.getAttackDamage(player.getOffHandStack()) > 6
+                    && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "combat").get().contains(SkillReferencePosition.wayfarerSlender)){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, 1));
             }
         }
     }

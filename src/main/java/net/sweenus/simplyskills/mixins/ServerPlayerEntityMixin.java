@@ -27,7 +27,7 @@ public class ServerPlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "tickFallStartPos")
     public void simplyskills$tickFallStartPos(CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
-        if (SkillsAPI.getUnlockedSkills(player, "combat").get().contains(SkillReferencePosition.lightweight)
+        if (SkillsAPI.getUnlockedSkills(player, "combat").get().contains(SkillReferencePosition.initiateSlowfall)
         && player.fallDistance > 3.0F && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
         }

@@ -3,41 +3,61 @@ package net.sweenus.simplyskills.util;
 public class SkillReferencePosition {
 
     public static String hardy = "ikel6uas72gjxef3";
-    public static String lightweight = "lk7bfbofv7jwr7fn";
 
     public static String fervour = "946p8e1tc68qtw4v";
-    public static String stealth = "j53cjalasd2jwwec";
-    public static String sneak = "g5oh6swnthnrxp75";
-    public static String nullification = "vpy3dx3nvq6cx8la";
     public static String cleric = "umu4z2zvq9q3kpc9";
     public static String cleansing = "yj6vt0k4l9cocyfu";
-    public static String reveal = "saj37f4wj18t3okd";
-    public static String backstab = "f3r29wqldkc35st1";
 
     //Warrior
-    public static String warriorHeavyArmorMastery = "f3r29wqldkc35st1";
-    public static String warriorMediumArmorMastery = "f3r29wqldkc35st1";
+    public static String warriorHeavyArmorMastery = "d7fjs0zf68im4sse";
+    public static String warriorMediumArmorMastery = "ekjtnmtfycsbaulc";
 
     // - Berserker
-    public static String berserkerSwordMastery = "f3r29wqldkc35st1";
-    public static String berserkerSwordMasterySkilled = "f3r29wqldkc35st1";
-    public static String berserkerSwordMasteryProficient = "f3r29wqldkc35st1";
+    public static String berserkerSwordMastery = "fnqz59uw0clgrofx";
+    public static String berserkerSwordMasterySkilled = "fplu6o7v0bfra1li";
+    public static String berserkerSwordMasteryProficient = "lokype9w35nwm86u";
 
-    public static String berserkerAxeMastery = "f3r29wqldkc35st1";
-    public static String berserkerAxeMasterySkilled = "f3r29wqldkc35st1";
-    public static String berserkerAxeMasteryProficient = "f3r29wqldkc35st1";
+    public static String berserkerAxeMastery = "ytribxtt9jvajwth";
+    public static String berserkerAxeMasterySkilled = "vu6fyrak1yvu5dmk";
+    public static String berserkerAxeMasteryProficient = "21q56tw1onilry6l";
 
-    public static String berserkerIgnorePain = "f3r29wqldkc35st1";
-    public static String berserkerIgnorePainSkilled = "f3r29wqldkc35st1";
-    public static String berserkerIgnorePainProficient = "f3r29wqldkc35st1";
+    public static String berserkerIgnorePain = "uejbc9lsoupy78bm";
+    public static String berserkerIgnorePainSkilled = "9hvpbtrf38104b7r";
+    public static String berserkerIgnorePainProficient = "10xx0sw492c0emtl";
 
-    public static String berserkerRecklessness = "f3r29wqldkc35st1";
-    public static String berserkerChallenge = "f3r29wqldkc35st1";
+    public static String berserkerRecklessness = "t8qih6uoh6goo9gh";
+    public static String berserkerChallenge = "doo8xht6t1wjmqi4";
 
     // - Bulwark
-    public static String bulwarkShieldMastery = "f3r29wqldkc35st1";
-    public static String bulwarkShieldMasterySkilled = "f3r29wqldkc35st1";
-    public static String bulwarkShieldMasteryProficient = "f3r29wqldkc35st1";
+    public static String bulwarkShieldMastery = "fgqayqu470o72dn6";
+    public static String bulwarkShieldMasterySkilled = "rmwq6sei0o9s8irw";
+    public static String bulwarkShieldMasteryProficient = "ny3pyl5271tjqskk";
+    public static String bulwarkRebuke = "i7nmkyl2d08imde1";
+
+
+    //Wayfarer
+    public static String wayfarerSlender = "xax4v6phgr5622xx";
+    public static String wayfarerSneak = "fdz2tu9lo37862zy";
+
+    // - Rogue
+    public static String rogueStealth = "1w1pub9fnwfflf4p";
+    public static String rogueBackstab = "fwrgiqiovwwi7uoy";
+    public static String rogueSmokeBomb = "x7tvpw6ayle04juj";
+    public static String rogueOpportunisticMastery = "zpa6fh0vx2vmscmu";
+    public static String rogueOpportunisticMasteryProficient = "fxxw10u0kmbuj0aj";
+    public static String rogueOpportunisticMasterySkilled = "h2nqyqigmy08l644";
+    public static String rogueEvasionMastery = "961wbsugl9zb50ye";
+    public static String rogueEvasionMasteryProficient = "l9ry4933urnbvdrv";
+    public static String rogueEvasionMasterySkilled = "wdzodezmmuf5zr27";
+
+    // - Ranger
+    public static String rangerReveal = "xz46gotmgffy66b0";
+
+
+    //Initiate
+    public static String initiateFrail = "pib3ya8eosedav6x";
+    public static String initiateSlowfall = "a2l4oqu1ppcuw5zq";
+    public static String initiateNullification = "pxz6yxbxm8y76p1d";
 
 
 }

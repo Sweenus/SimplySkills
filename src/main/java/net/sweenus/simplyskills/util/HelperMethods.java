@@ -1,9 +1,14 @@
 package net.sweenus.simplyskills.util;
 
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.Box;
 
 public class HelperMethods {
 
@@ -29,6 +34,23 @@ public class HelperMethods {
         }
         return !(livingEntity instanceof ArmorStandEntity)
                 && !(livingEntity instanceof VillagerEntity);
+    }
+
+    //Get Item attack damage
+    public static double getAttackDamage(ItemStack stack){
+        return stack.getItem().getAttributeModifiers(EquipmentSlot.MAINHAND)
+                .get(EntityAttributes.GENERIC_ATTACK_DAMAGE)
+                .stream()
+                .mapToDouble(EntityAttributeModifier::getValue)
+                .sum();
+    }
+
+    //Create Box
+    public static Box createBox(LivingEntity livingEntity, int radius) {
+        Box box = new Box(livingEntity.getX() + radius, livingEntity.getY() + (float) radius / 3, livingEntity.getZ() + radius,
+                livingEntity.getX() - radius, livingEntity.getY() - (float) radius / 3, livingEntity.getZ() - radius);
+
+        return box;
     }
 
 
