@@ -25,7 +25,7 @@
 				],
 				"anti_farming": {
 					"enabled": true,
-					"limit_per_chunk": 15,
+					"limit_per_chunk": 35,
 					"reset_after_seconds": 300
 				}
 			}
