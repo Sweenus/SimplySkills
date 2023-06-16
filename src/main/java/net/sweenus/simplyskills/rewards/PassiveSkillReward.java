@@ -9,7 +9,6 @@ import net.puffish.skillsmod.json.JsonElementWrapper;
 import net.puffish.skillsmod.json.JsonObjectWrapper;
 import net.puffish.skillsmod.rewards.Reward;
 import net.puffish.skillsmod.rewards.RewardContext;
-import net.puffish.skillsmod.rewards.builtin.AttributeReward;
 import net.puffish.skillsmod.utils.Result;
 import net.puffish.skillsmod.utils.error.Error;
 import net.puffish.skillsmod.utils.error.ManyErrors;

@@ -14,13 +14,13 @@
 				"data": {
 					"attribute": "generic.movement_speed",
 					"value": 0.03,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"pathInitiate": {
-		"title": "Path of the Initiate: +10 Healing",
+		"title": "Path of the Initiate: +1 To all schools of magic",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -33,8 +33,390 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:healing",
-					"value": 10,
+					"value": 1,
 					"operation": "addition"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:fire",
+					"value": 1,
+					"operation": "addition"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:arcane",
+					"value": 1,
+					"operation": "addition"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:frost",
+					"value": 1,
+					"operation": "addition"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:lightning",
+					"value": 1,
+					"operation": "addition"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:soul",
+					"value": 1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"spell_fire_damage_additive+2%": {
+		"title": "+2%[+] Fire Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_fire_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:fire",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_fire_damage_multi+5%": {
+		"title": "+5%[x] Fire Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_fire_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:fire",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_arcane_damage_additive+2%": {
+		"title": "+2%[+] Arcane Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_arcane_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:arcane",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_arcane_damage_multi+5%": {
+		"title": "+5%[x] Arcane Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_arcane_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:arcane",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_frost_damage_additive+2%": {
+		"title": "+2%[+] Frost Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_frost_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:frost",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_frost_damage_multi+5%": {
+		"title": "+5%[x] Frost Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_frost_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:frost",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_healing_power_additive+2%": {
+		"title": "+2%[+] Healing Power",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_healing_power_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:healing",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_healing_power_multi+5%": {
+		"title": "+5%[x] Healing Power",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_healing_power_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:healing",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_lightning_damage_additive+2%": {
+		"title": "+2%[+] Lightning Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_lightning_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:lightning",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_lightning_damage_multi+5%": {
+		"title": "+5%[x] Lightning Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_lightning_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:lightning",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_soul_damage_additive+2%": {
+		"title": "+2%[+] Soul Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_soul_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:soul",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_soul_damage_multi+5%": {
+		"title": "+5%[x] Soul Spell Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_soul_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:soul",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_crit_damage_additive+2%": {
+		"title": "+2%[+] Spell Critical Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_crit_damage_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_damage",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_crit_damage_multi+5%": {
+		"title": "+5%[x] Spell Critical Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_crit_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_damage",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_crit_chance_additive+2%": {
+		"title": "+2%[+] Spell Critical Chance",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_crit_chance_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_chance",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_crit_chance_multi+5%": {
+		"title": "+5%[x] Spell Critical Chance",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_crit_chance_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_chance",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"spell_haste_additive+2%": {
+		"title": "+2%[+] Spell Haste",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_haste_add.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:haste",
+					"value": 0.02,
+					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"spell_haste_multi+5%": {
+		"title": "+5%[x] Spell Haste",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_haste_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:haste",
+					"value": 0.05,
+					"operation": "multiply_total"
 				}
 			}
 		]
@@ -54,7 +436,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
 					"value": 0.03,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -92,7 +474,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.resistance",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -111,7 +493,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -130,7 +512,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.ranged_damage",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -149,7 +531,7 @@
 				"data": {
 					"attribute": "generic.attack_speed",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -168,7 +550,7 @@
 				"data": {
 					"attribute": "generic.movement_speed",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -206,7 +588,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.stamina",
 					"value": 0.05,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -225,7 +607,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.healing",
 					"value": 0.01,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -244,7 +626,7 @@
 				"data": {
 					"attribute": "puffish_skills:player.jump",
 					"value": 0.03,
-					"operation": "multiply_total"
+					"operation": "multiply_base"
 				}
 			}
 		]
