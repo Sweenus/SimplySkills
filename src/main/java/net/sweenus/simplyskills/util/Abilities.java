@@ -329,9 +329,19 @@ public class Abilities {
     //DEBUG
     public static void debugPrintAttributes(PlayerEntity player) {
         if (player.age % 20 == 0 && player.isSneaking()) {
-            String attributeHealing = SpellPower.getSpellPower(MagicSchool.HEALING, player).toString();
+            String attributeArcane       = SpellPower.getSpellPower(MagicSchool.ARCANE, player).toString();
+            String attributeFire         = SpellPower.getSpellPower(MagicSchool.FIRE, player).toString();
+            String attributeFrost         = SpellPower.getSpellPower(MagicSchool.FROST, player).toString();
+            String attributeHealing      = SpellPower.getSpellPower(MagicSchool.HEALING, player).toString();
+            String attributeLightning    = SpellPower.getSpellPower(MagicSchool.LIGHTNING, player).toString();
+            String attributeSoul         = SpellPower.getSpellPower(MagicSchool.SOUL, player).toString();
 
-            System.out.println("Healing: " + attributeHealing);
+            System.out.println("Arcane: "    + attributeArcane);
+            System.out.println("Fire: "      + attributeFire);
+            System.out.println("Frost: "     + attributeFrost);
+            System.out.println("Healing: "   + attributeHealing);
+            System.out.println("Lightning: " + attributeLightning);
+            System.out.println("Soul: "      + attributeSoul);
         }
     }
 

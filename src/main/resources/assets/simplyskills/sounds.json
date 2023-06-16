@@ -1,0 +1,12 @@
+{
+  "fx_skill_backstab": {
+    "sounds": [
+      "simplyskills:fx_skill_backstab"
+    ]
+  },
+  "fx_ui_unlock": {
+    "sounds": [
+      "simplyskills:fx_ui_unlock"
+    ]
+  }
+}
