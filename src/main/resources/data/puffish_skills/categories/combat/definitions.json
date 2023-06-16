@@ -20,7 +20,7 @@
 		]
 	},
 	"pathInitiate": {
-		"title": "Path of the Initiate: +1000 Healing",
+		"title": "Path of the Initiate: +10 Healing",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -33,7 +33,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:healing",
-					"value": 1000,
+					"value": 10,
 					"operation": "addition"
 				}
 			}

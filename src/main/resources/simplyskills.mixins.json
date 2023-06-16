@@ -4,8 +4,8 @@
   "package": "net.sweenus.simplyskills.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ServerPlayerEntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ServerPlayerEntityMixin"
   ],
   "client": [
   ],
