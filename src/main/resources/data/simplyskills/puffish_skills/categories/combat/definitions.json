@@ -461,7 +461,7 @@
 		]
 	},
 	"resistance+1%": {
-		"title": "+1% Resistance",
+		"title": "+1%[+] Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -479,8 +479,27 @@
 			}
 		]
 	},
+	"resistance_multi+5%": {
+		"title": "+5%[x] Resistance",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/resistance_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.resistance",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
 	"melee_damage+1%": {
-		"title": "+1% Melee Damage",
+		"title": "+1%[+] Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -498,8 +517,27 @@
 			}
 		]
 	},
+	"melee_damage_multi+5%": {
+		"title": "+5%[x] Melee Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/attackdamage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.melee_damage",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
 	"ranged_damage+1%": {
-		"title": "+1% Ranged Damage",
+		"title": "+1%[+] Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -517,8 +555,27 @@
 			}
 		]
 	},
+	"ranged_damage_multi+5%": {
+		"title": "+5%[x] Ranged Damage",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rangeddamage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.ranged_damage",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
 	"attack_speed+1%": {
-		"title": "+1% Attack Speed",
+		"title": "+1%[+] Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -536,8 +593,27 @@
 			}
 		]
 	},
+	"attack_speed_multi+5%": {
+		"title": "+5%[x] Attack Speed",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/attackspeed_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "generic.attack_speed",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
 	"movement_speed+1%": {
-		"title": "+1% Movement Speed",
+		"title": "+1%[+] Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -551,6 +627,25 @@
 					"attribute": "generic.movement_speed",
 					"value": 0.01,
 					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"movement_speed_multi+3%": {
+		"title": "+3%[x] Movement Speed",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/movementspeed_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "generic.movement_speed",
+					"value": 0.03,
+					"operation": "multiply_total"
 				}
 			}
 		]
@@ -575,7 +670,7 @@
 		]
 	},
 	"stamina+5%": {
-		"title": "+5% Stamina",
+		"title": "+5%[+] Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -593,8 +688,27 @@
 			}
 		]
 	},
+	"stamina_multi+7%": {
+		"title": "+7%[x] Stamina",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/stamina_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.stamina",
+					"value": 0.07,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
 	"healing+1%": {
-		"title": "+1% Healing",
+		"title": "+1% Healing [DEPRECATED]",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -613,7 +727,7 @@
 		]
 	},
 	"jump+3%": {
-		"title": "+3% Jump",
+		"title": "+3%[+] Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -627,6 +741,25 @@
 					"attribute": "puffish_skills:player.jump",
 					"value": 0.03,
 					"operation": "multiply_base"
+				}
+			}
+		]
+	},
+	"jump_multi+5%": {
+		"title": "+5%[x] Jump",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/jump_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.jump",
+					"value": 0.05,
+					"operation": "multiply_total"
 				}
 			}
 		]
@@ -1347,6 +1480,60 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "initiateFrail"
+				}
+			}
+		]
+	},
+	"crusaderPath": {
+		"title": "Path of the Crusader",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderPath"
+				}
+			}
+		]
+	},
+	"frostguardPath": {
+		"title": "Path of the Frostguard",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/frostguard_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "frostguardPath"
+				}
+			}
+		]
+	},
+	"spellbladePath": {
+		"title": "Path of the Spellblade",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spellblade_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "spellbladePath"
 				}
 			}
 		]
