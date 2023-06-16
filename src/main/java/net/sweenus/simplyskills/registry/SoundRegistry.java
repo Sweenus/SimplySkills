@@ -13,6 +13,8 @@ public class SoundRegistry {
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
     public static SoundEvent FX_UI_UNLOCK = register("fx_ui_unlock");
+    public static SoundEvent FX_UI_UNLOCK2 = register("fx_ui_unlock2");
+    public static SoundEvent FX_UI_UNLOCK3 = register("fx_ui_unlock3");
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);

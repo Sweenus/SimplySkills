@@ -8,5 +8,15 @@
     "sounds": [
       "simplyskills:fx_ui_unlock"
     ]
+  },
+  "fx_ui_unlock2": {
+    "sounds": [
+      "simplyskills:fx_ui_unlock2"
+    ]
+  },
+  "fx_ui_unlock3": {
+    "sounds": [
+      "simplyskills:fx_ui_unlock3"
+    ]
   }
 }
