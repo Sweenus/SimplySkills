@@ -134,6 +134,17 @@ public abstract class ServerPlayerEntityMixin {
 
 
 
+
+            //Debug
+            if (player.isSneaking()) {
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
+            }
+
+
+
         }
     }
 

@@ -52,19 +52,19 @@ public class SignatureAbilities {
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                    .contains(SkillReferencePosition.wizardSpecialisationLightningBeam)) {
+                    .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
                 //Lightning Beam
-                SignatureAbilities.castSpellEngineAOE(player,
-                        "simplyskills:ice_comet",
-                        12);
+                SignatureAbilities.castSpellEngineTargeted(player,
+                        "simplyskills:static_discharge",
+                        18);
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
                 //Arcane Bolt
                 SignatureAbilities.castSpellEngineTargeted(player,
-                        "simplyskills:arcane_missile",
-                        28);
+                        "simplyskills:arcane_bolt",
+                        32);
             }
 
         }

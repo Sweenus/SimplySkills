@@ -78,7 +78,7 @@ public class SkillReferencePosition {
 
     public static String wizardSpecialisationMeteorShower = "fw2qh5fw4h3ypjs4";
     public static String wizardSpecialisationIceComet = "4mqcsrpcwk4yuci5";
-    public static String wizardSpecialisationLightningBeam = "7dsbtkhvcv332zla";
+    public static String wizardSpecialisationStaticDischarge = "7dsbtkhvcv332zla";
     public static String wizardSpecialisationArcaneBolt = "58k9ygjzu46btnkw";
 
 

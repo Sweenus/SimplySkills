@@ -26,8 +26,8 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 1.0,
-        "homing_angle": 1.5,
+        "velocity": 0.6,
+        "homing_angle": 1.8,
         "client_data": {
           "travel_particles": [
             {
@@ -40,9 +40,9 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:anvil",
+          "model_id": "minecraft:amethyst_block",
           "render": "DEEP",
-          "scale": 0.5
+          "scale": 0.6
         }
       }
     },
@@ -57,7 +57,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.6,
-          "spell_power_coefficient": 0.6
+          "spell_power_coefficient": 2.2
         }
       },
       "particles": [
@@ -76,6 +76,5 @@
     }
   ],
   "cost": {
-    "item_id": "minecraft:iron_ingot"
   }
 }
