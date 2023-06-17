@@ -130,8 +130,6 @@
     }
   ],
   "cost": {
-    "item_id": "minecraft:iron_ingot",
-    "exhaust" : 0.3,
-    "cooldown_duration": 10
+    "exhaust" : 0.3
   }
 }

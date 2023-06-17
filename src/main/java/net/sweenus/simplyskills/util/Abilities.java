@@ -31,6 +31,7 @@ import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.network.KeybindPacket;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,10 +131,10 @@ public class Abilities {
     public static void passiveWarriorArmorMastery(PlayerEntity player) {
         if (player.getRandom().nextInt(100) < 25) {
             if (player.getArmor() > 9 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "combat").get().contains(SkillReferencePosition.warriorHeavyArmorMastery)) {
+                    "simplyskills").get().contains(SkillReferencePosition.warriorHeavyArmorMastery)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100));
             } else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "combat").get().contains(SkillReferencePosition.warriorMediumArmorMastery)){
+                    "simplyskills").get().contains(SkillReferencePosition.warriorMediumArmorMastery)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100));
             }
         }
@@ -146,10 +147,10 @@ public class Abilities {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.berserkerSwordMasterySkilled))
+                            "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.berserkerSwordMasteryProficient))
+                            "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 25, mastery));
@@ -166,10 +167,10 @@ public class Abilities {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.berserkerAxeMasterySkilled))
+                            "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.berserkerAxeMasteryProficient))
+                            "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 25, mastery));
@@ -184,10 +185,10 @@ public class Abilities {
             if (player.getHealth() <= (0.4 * player.getMaxHealth())) {
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "combat").get().contains(SkillReferencePosition.berserkerIgnorePainSkilled))
+                        "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainSkilled))
                     resistanceStacks = 2;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "combat").get().contains(SkillReferencePosition.berserkerIgnorePainProficient))
+                        "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainProficient))
                     resistanceStacks = 1;
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, resistanceStacks));
@@ -233,10 +234,10 @@ public class Abilities {
                     int mastery = 0;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.bulwarkShieldMasterySkilled))
+                            "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasterySkilled))
                         mastery = 2;
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "combat").get().contains(SkillReferencePosition.bulwarkShieldMasteryProficient))
+                            "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasteryProficient))
                         mastery = 1;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, mastery));
@@ -255,11 +256,11 @@ public class Abilities {
     public static void passiveWayfarerSlender(PlayerEntity player) {
         if (player.age % 20 == 0) {
             if (player.getArmor() > 14 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "combat").get().contains(SkillReferencePosition.wayfarerSlender)){
+                    "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
             }
             if (player.getArmor() > 9 && (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "combat").get().contains(SkillReferencePosition.initiateFrail))){
+                    "simplyskills").get().contains(SkillReferencePosition.initiateFrail))){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
             }
         }
@@ -286,10 +287,10 @@ public class Abilities {
         int mastery = 15;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "combat").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
+                "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
             mastery = 35;
         else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "combat").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
+                "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
             mastery = 25;
 
         if (player.getRandom().nextInt(100) < mastery) {
@@ -299,7 +300,7 @@ public class Abilities {
                     && player.getEquippedStack(EquipmentSlot.FEET).isEmpty()) {
 
                 player.timeUntilRegen = 15;
-                player.world.playSoundFromEntity(null, player, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME,
+                player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
 
 
@@ -312,10 +313,10 @@ public class Abilities {
         int mastery = 40;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "combat").get().contains(SkillReferencePosition.rogueOpportunisticMasterySkilled))
+                "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasterySkilled))
             mastery = 120;
         else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "combat").get().contains(SkillReferencePosition.rogueOpportunisticMasteryProficient))
+                "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasteryProficient))
             mastery = 80;
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
@@ -330,7 +331,7 @@ public class Abilities {
             if (HelperMethods.getAttackDamage(player.getMainHandStack()) > 6
                     || HelperMethods.getAttackDamage(player.getOffHandStack()) > 6
                     && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "combat").get().contains(SkillReferencePosition.wayfarerSlender)){
+                    "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, 1));
             }
@@ -342,7 +343,40 @@ public class Abilities {
 
 
 
-    //DEBUG
+
+    // -- Unlock Manager --
+
+    public static void skillTreeUnlockManager(PlayerEntity player, String skillID) {
+
+        if (!skillID.contains(SkillReferencePosition.wizardPath) &&
+                !skillID.contains(SkillReferencePosition.berserkerPath) &&
+                !skillID.contains(SkillReferencePosition.crusaderPath) &&
+                !skillID.contains(SkillReferencePosition.frostguardPath) &&
+                !skillID.contains(SkillReferencePosition.roguePath) &&
+                !skillID.contains(SkillReferencePosition.rangerPath) &&
+                !skillID.contains(SkillReferencePosition.spellBladePath)) {
+            return;
+        }
+
+        if (skillID.contains(SkillReferencePosition.wizardPath)
+        && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_wizard")){
+            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
+            playUnlockSound(player);
+        }
+
+
+    }
+    static void playUnlockSound(PlayerEntity player) {
+        player.world.playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
+                SoundCategory.PLAYERS, 1, 1);
+    }
+
+
+
+
+
+
+    // -- DEBUG --
     public static void debugPrintAttributes(PlayerEntity player) {
         //
         // For checking Spell Power attribute values
@@ -364,6 +398,9 @@ public class Abilities {
         }
     }
 
+
+
+    // -- SPELL CASTING --
 
     public static void testSpellEngine(PlayerEntity player, Entity target) {
         //
@@ -423,6 +460,42 @@ public class Abilities {
         }
 
     }
+
+    public static void testSpellEngineMultiAOE(PlayerEntity player, String spellIdentifier, int radius) {
+        //
+        // For testing Spell Engine spell casting
+        //
+        ItemStack itemStack     = player.getMainHandStack();
+        Hand hand               = player.getActiveHand();
+        SpellCast.Action action = SpellCast.Action.RELEASE;
+        Identifier spellID      = new Identifier(spellIdentifier);
+        List<Entity> list       = new ArrayList<Entity>();
+
+
+        Box box = HelperMethods.createBox(player, radius);
+        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            if (entities != null) {
+                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+
+                    list.add(le);
+                    SpellHelper.performSpell(
+                            player.world,
+                            player,
+                            spellID,
+                            list,
+                            itemStack,
+                            action,
+                            hand,
+                            20);
+                    list.remove(le);
+
+                }
+            }
+        }
+
+    }
+
+
 
     @Environment(EnvType.CLIENT)
     public static void testKeybindPacket() {

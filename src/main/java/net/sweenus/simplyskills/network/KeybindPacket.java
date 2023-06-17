@@ -12,7 +12,7 @@ public class KeybindPacket {
         ServerPlayNetworking.registerGlobalReceiver(ABILITY1_PACKET, (server, player, handler, buffer, sender) -> {
             server.execute(()->{
 
-                Abilities.testSpellEngineAOE(player, "simplyskills:ice_comet");
+                Abilities.testSpellEngineMultiAOE(player, "simplyskills:fire_meteor", 12);
 
             });
         });

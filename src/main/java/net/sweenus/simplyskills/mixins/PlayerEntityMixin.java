@@ -24,7 +24,7 @@ public class PlayerEntityMixin {
         if (player instanceof ServerPlayerEntity serverPlayer) {
 
             // fervour
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "combat").get().contains(SkillReferencePosition.fervour)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.fervour)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100));
             }
 
@@ -37,7 +37,7 @@ public class PlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
             if (SkillsAPI.getUnlockedSkills(serverPlayer,
-                    "combat").get().contains(SkillReferencePosition.bulwarkRebuke)) {
+                    "simplyskills").get().contains(SkillReferencePosition.bulwarkRebuke)) {
                 Abilities.passiveBulwarkRebuke(player, attacker);
             }
         }

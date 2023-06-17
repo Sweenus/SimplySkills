@@ -60,4 +60,26 @@ public class SkillReferencePosition {
     public static String initiateNullification = "pxz6yxbxm8y76p1d";
 
 
+
+
+
+    // -- Paths --
+    public static String wizardPath = "1o5afqn64aujlawh";
+    public static String spellBladePath = "2c4puy75mi6d0dvi";
+    public static String berserkerPath = "1o5afqn64aujlawh";
+    public static String roguePath = "hax16u1omfxj4st8";
+    public static String crusaderPath = "xof2o9p8rfy822q8";
+    public static String frostguardPath = "eaizfeuzfk9zymh1";
+    public static String rangerPath = "cpdh1j3016bpip45";
+
+
+
+    // -- Specialisations --
+
+    public static String wizardSpecialisationMeteorShower = "fw2qh5fw4h3ypjs4";
+    public static String wizardSpecialisationIceComet = "4mqcsrpcwk4yuci5";
+    public static String wizardSpecialisationLightningBeam = "7dsbtkhvcv332zla";
+    public static String wizardSpecialisationArcaneBolt = "58k9ygjzu46btnkw";
+
+
 }
