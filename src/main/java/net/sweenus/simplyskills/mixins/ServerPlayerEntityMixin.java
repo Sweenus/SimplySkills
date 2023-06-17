@@ -153,6 +153,9 @@ public abstract class ServerPlayerEntityMixin {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
                     }
 
+                    //Test Spells
+                    Abilities.testSpellEngine(player, target);
+
                 }
             }
         }

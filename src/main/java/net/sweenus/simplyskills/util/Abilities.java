@@ -7,16 +7,26 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.spell_engine.SpellEngineMod;
+import net.spell_engine.api.spell.Spell;
+import net.spell_engine.internals.SpellCast;
+import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Abilities {
 
@@ -325,9 +335,11 @@ public class Abilities {
 
 
 
-
     //DEBUG
     public static void debugPrintAttributes(PlayerEntity player) {
+        //
+        // For checking Spell Power attribute values
+        //
         if (player.age % 20 == 0 && player.isSneaking()) {
             String attributeArcane       = SpellPower.getSpellPower(MagicSchool.ARCANE, player).toString();
             String attributeFire         = SpellPower.getSpellPower(MagicSchool.FIRE, player).toString();
@@ -344,6 +356,31 @@ public class Abilities {
             System.out.println("Soul: "      + attributeSoul);
         }
     }
+
+
+    public static void testSpellEngine(PlayerEntity player, Entity target) {
+        //
+        // For testing Spell Engine spell casting
+        //
+        ItemStack itemStack     = player.getMainHandStack();
+        Hand hand               = player.getActiveHand();
+        SpellCast.Action action = SpellCast.Action.RELEASE;
+        Identifier spellID      = new Identifier("simplyskills:arcane_missile");
+        List<Entity> list       = new ArrayList<Entity>();
+        list.add(target);
+
+        SpellHelper.performSpell(
+                player.world,
+                player,
+                spellID,
+                list,
+                itemStack,
+                action,
+                hand,
+                20);
+
+    }
+
 
 
 }

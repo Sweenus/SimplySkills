@@ -21,6 +21,9 @@ repositories {
             includeGroup 'maven.modrinth'
         }
     }
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+    maven { url 'https://jitpack.io' }
 
 }
 
@@ -35,6 +38,14 @@ dependencies {
 
     modImplementation "curse.maven:puffish-skills-835091:4534765"
     modImplementation "maven.modrinth:spell-power:${project.spellpower_version}-fabric"
+    modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}-fabric")
+
+    implementation("com.github.LlamaLad7:MixinExtras:0.1.1")
+    annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.1")
+
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 
     }
 
