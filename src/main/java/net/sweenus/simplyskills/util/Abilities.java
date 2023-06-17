@@ -373,9 +373,6 @@ public class Abilities {
 
 
 
-
-
-
     // -- DEBUG --
     public static void debugPrintAttributes(PlayerEntity player) {
         //
@@ -396,114 +393,6 @@ public class Abilities {
             System.out.println("Lightning: " + attributeLightning);
             System.out.println("Soul: "      + attributeSoul);
         }
-    }
-
-
-
-    // -- SPELL CASTING --
-
-    public static void testSpellEngine(PlayerEntity player, Entity target) {
-        //
-        // For testing Spell Engine spell casting
-        //
-        ItemStack itemStack     = player.getMainHandStack();
-        Hand hand               = player.getActiveHand();
-        SpellCast.Action action = SpellCast.Action.RELEASE;
-        Identifier spellID      = new Identifier("simplyskills:fire_meteor");
-        List<Entity> list       = new ArrayList<Entity>();
-        list.add(target);
-
-        SpellHelper.performSpell(
-                player.world,
-                player,
-                spellID,
-                list,
-                itemStack,
-                action,
-                hand,
-                20);
-
-    }
-
-    public static void testSpellEngineAOE(PlayerEntity player, String spellIdentifier) {
-        //
-        // For testing Spell Engine spell casting
-        //
-        ItemStack itemStack     = player.getMainHandStack();
-        Hand hand               = player.getActiveHand();
-        SpellCast.Action action = SpellCast.Action.RELEASE;
-        Identifier spellID      = new Identifier(spellIdentifier);
-        List<Entity> list       = new ArrayList<Entity>();
-
-
-        Box box = HelperMethods.createBox(player, 6);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-            if (entities != null) {
-                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-
-                    list.add(le);
-
-                }
-            }
-        }
-
-        if (!list.isEmpty()) {
-            SpellHelper.performSpell(
-                    player.world,
-                    player,
-                    spellID,
-                    list,
-                    itemStack,
-                    action,
-                    hand,
-                    20);
-        }
-
-    }
-
-    public static void testSpellEngineMultiAOE(PlayerEntity player, String spellIdentifier, int radius) {
-        //
-        // For testing Spell Engine spell casting
-        //
-        ItemStack itemStack     = player.getMainHandStack();
-        Hand hand               = player.getActiveHand();
-        SpellCast.Action action = SpellCast.Action.RELEASE;
-        Identifier spellID      = new Identifier(spellIdentifier);
-        List<Entity> list       = new ArrayList<Entity>();
-
-
-        Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-            if (entities != null) {
-                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-
-                    list.add(le);
-                    SpellHelper.performSpell(
-                            player.world,
-                            player,
-                            spellID,
-                            list,
-                            itemStack,
-                            action,
-                            hand,
-                            20);
-                    list.remove(le);
-
-                }
-            }
-        }
-
-    }
-
-
-
-    @Environment(EnvType.CLIENT)
-    public static void testKeybindPacket() {
-
-        PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
-        CustomPayloadC2SPacket packet = new CustomPayloadC2SPacket(KeybindPacket.ABILITY1_PACKET, buf);
-        MinecraftClient.getInstance().getNetworkHandler().sendPacket(packet);
-
     }
 
     public static void getSpellCooldown(LivingEntity livingEntity, String spellID) {

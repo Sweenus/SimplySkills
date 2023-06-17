@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -154,8 +155,6 @@ public abstract class ServerPlayerEntityMixin {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
                     }
 
-                    //Test Spells
-                    Abilities.testSpellEngine(player, target);
 
                 }
             }

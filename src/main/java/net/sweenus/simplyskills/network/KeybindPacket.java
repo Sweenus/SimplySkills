@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.network;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.util.SignatureAbilities;
 
 public class KeybindPacket {
 
@@ -12,7 +13,7 @@ public class KeybindPacket {
         ServerPlayNetworking.registerGlobalReceiver(ABILITY1_PACKET, (server, player, handler, buffer, sender) -> {
             server.execute(()->{
 
-                Abilities.testSpellEngineMultiAOE(player, "simplyskills:fire_meteor", 12);
+                SignatureAbilities.signatureAbilityManager(player);
 
             });
         });
