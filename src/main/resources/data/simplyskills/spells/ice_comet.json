@@ -1,0 +1,155 @@
+{
+  "school": "FROST",
+  "range": 32.0,
+  "learn": {
+    "tier": 3
+  },
+  "cast": {
+    "duration": 1,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_fire_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:frost_shard",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "METEOR",
+      "meteor": {
+        "launch_height": 15,
+        "impact_range": 12,
+        "impact_particles": [
+          {
+            "particle_id": "spell_engine:frost_hit",
+            "shape": "CIRCLE",
+            "origin": "CENTER",
+            "count": 90.0,
+            "min_speed": 1.5,
+            "max_speed": 6.0
+          },
+          {
+            "particle_id": "spell_engine:snowflake",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 100.0,
+            "min_speed": 0.2,
+            "max_speed": 0.4
+          },
+          {
+            "particle_id": "smoke",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 90.0,
+            "min_speed": 0.1,
+            "max_speed": 0.3
+          }
+        ],
+        "impact_sound": {
+          "id": "simplyskills:fx_skill_backstab",
+          "volume": 1.5
+        }
+      },
+      "area": {
+        "distance_dropoff": "SQUARED"
+      },
+      "projectile": {
+        "velocity": 0.8,
+        "client_data": {
+          "travel_particles": [
+            {
+              "particle_id": "spell_engine:snowflake",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 3.0,
+              "min_speed": 0.0,
+              "max_speed": 0.1
+            },
+            {
+              "particle_id": "smoke",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 5.0,
+              "min_speed": 0.1,
+              "max_speed": 0.3
+            },
+            {
+              "particle_id": "campfire_cosy_smoke",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 6.0,
+              "min_speed": 0.0,
+              "max_speed": 0.05
+            }
+          ],
+          "model_id": "minecraft:ice",
+          "render": "DEEP",
+          "scale": 2
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_area_release",
+    "sound": {
+      "id": "simplyskills:fx_skill_backstab"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "spell_power_coefficient": 1.8,
+          "knockback": 4
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:frost_hit",
+          "shape": "CIRCLE",
+          "origin": "CENTER",
+          "count": 3.0,
+          "min_speed": 0.5,
+          "max_speed": 3.0
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:fx_skill_backstab"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:slowness",
+          "duration": 6,
+          "apply_mode": "ADD",
+          "apply_limit": {
+            "health_base": 50,
+            "spell_power_multiplier": 2
+          },
+          "show_particles": false
+        }
+      },
+      "sound": {
+        "id": "simplyskills:fx_skill_backstab"
+      }
+    }
+  ],
+  "cost": {
+    "item_id": "minecraft:iron_ingot",
+    "exhaust" : 0.3,
+    "cooldown_duration": 10
+  }
+}

@@ -1,5 +1,9 @@
 package net.sweenus.simplyskills.util;
 
+import io.netty.buffer.Unpooled;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -10,6 +14,8 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -24,6 +30,7 @@ import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
+import net.sweenus.simplyskills.network.KeybindPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -365,7 +372,7 @@ public class Abilities {
         ItemStack itemStack     = player.getMainHandStack();
         Hand hand               = player.getActiveHand();
         SpellCast.Action action = SpellCast.Action.RELEASE;
-        Identifier spellID      = new Identifier("simplyskills:arcane_missile");
+        Identifier spellID      = new Identifier("simplyskills:fire_meteor");
         List<Entity> list       = new ArrayList<Entity>();
         list.add(target);
 
@@ -378,6 +385,57 @@ public class Abilities {
                 action,
                 hand,
                 20);
+
+    }
+
+    public static void testSpellEngineAOE(PlayerEntity player, String spellIdentifier) {
+        //
+        // For testing Spell Engine spell casting
+        //
+        ItemStack itemStack     = player.getMainHandStack();
+        Hand hand               = player.getActiveHand();
+        SpellCast.Action action = SpellCast.Action.RELEASE;
+        Identifier spellID      = new Identifier(spellIdentifier);
+        List<Entity> list       = new ArrayList<Entity>();
+
+
+        Box box = HelperMethods.createBox(player, 6);
+        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            if (entities != null) {
+                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+
+                    list.add(le);
+
+                }
+            }
+        }
+
+        if (!list.isEmpty()) {
+            SpellHelper.performSpell(
+                    player.world,
+                    player,
+                    spellID,
+                    list,
+                    itemStack,
+                    action,
+                    hand,
+                    20);
+        }
+
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void testKeybindPacket() {
+
+        PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+        CustomPayloadC2SPacket packet = new CustomPayloadC2SPacket(KeybindPacket.ABILITY1_PACKET, buf);
+        MinecraftClient.getInstance().getNetworkHandler().sendPacket(packet);
+
+    }
+
+    public static void getSpellCooldown(LivingEntity livingEntity, String spellID) {
+        //Identifier spell = new Identifier(spellID);
+        //SpellHelper.getCooldownDuration(livingEntity);
 
     }
 

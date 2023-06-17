@@ -26,6 +26,7 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "spell_power": ">=0.9.12+1.19"
+    "spell_power": ">=0.9.12+1.19",
+    "spell_engine": ">=0.9.24+1.19"
   }
 }
