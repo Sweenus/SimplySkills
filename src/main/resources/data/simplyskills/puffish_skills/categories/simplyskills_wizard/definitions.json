@@ -1556,6 +1556,60 @@
 			}
 		]
 	},
+	"shamanPath": {
+		"title": "Path of the Shaman",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/shaman_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "shamanPath"
+				}
+			}
+		]
+	},
+	"clericPath": {
+		"title": "Path of the Cleric",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericPath"
+				}
+			}
+		]
+	},
+	"necromancerPath": {
+		"title": "Path of the Necromancer",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/necromancer_path.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "necromancerPath"
+				}
+			}
+		]
+	},
 	"wizardSignatureMeteorShower": {
 		"title": "Signature Ability: [Meteor Shower] Calls down meteors on nearby enemies.",
 		"frame": "goal",
@@ -1624,6 +1678,456 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "wizardSignatureArcaneBolt"
+				}
+			}
+		]
+	},
+	"spellbladeSignatureArcaneEmpowerment": {
+		"title": "Signature Ability: [Arcane Empowerment] Gain 10 stacks of Arcane Power and 3 stacks of Haste.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spellblade_signature_arcane_empowerment.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "spellbladeSignatureArcaneEmpowerment"
+				}
+			}
+		]
+	},
+	"spellbladeSignatureFireEmpowerment": {
+		"title": "Signature Ability: [Fire Empowerment] Gain 10 stacks of Fire Power and 3 stacks of Haste.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spellblade_signature_fire_empowerment.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "spellbladeSignatureFireEmpowerment"
+				}
+			}
+		]
+	},
+	"spellbladeSignatureFrostEmpowerment": {
+		"title": "Signature Ability: [Frost Empowerment] Gain 10 stacks of Frost Power and 3 stacks of Haste.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spellblade_signature_frost_empowerment.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "spellbladeSignatureFrostEmpowerment"
+				}
+			}
+		]
+	},
+	"spellbladeSignatureLightningEmpowerment": {
+		"title": "Signature Ability: [Lightning Empowerment] Gain 10 stacks of Lightning Power and 3 stacks of Haste.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spellblade_signature_lightning_empowerment.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "spellbladeSignatureLightningEmpowerment"
+				}
+			}
+		]
+	},
+	"shamanSignatureAstralTotem": {
+		"title": "Signature Ability: [Astral Totem] Summon a Totem that periodically casts elemental comets on nearby enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/shaman_signature_astral_totem.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "shamanSignatureAstralTotem"
+				}
+			}
+		]
+	},
+	"shamanSignatureNovaTotem": {
+		"title": "Signature Ability: [Nova Totem] Summon a Totem that periodically casts elemental novas.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/shaman_signature_nova_totem.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "shamanSignatureNovaTotem"
+				}
+			}
+		]
+	},
+	"shamanSignatureBoltTotem": {
+		"title": "Signature Ability: [Bolt Totem] Summon a Totem that periodically fires elemental bolts at nearby enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/shaman_signature_bolt_totem.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "shamanSignatureBoltTotem"
+				}
+			}
+		]
+	},
+	"rogueSignatureEvasion": {
+		"title": "Signature Ability: [Evasion] The effects of your Evasion Mastery passive are doubled for 8s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_evasion.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureEvasion"
+				}
+			}
+		]
+	},
+	"rogueSignaturePreparation": {
+		"title": "Signature Ability: [Preparation] Gain Invisibility and Speed 3 for 8s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_preparation.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignaturePreparation"
+				}
+			}
+		]
+	},
+	"rogueSignatureSiphoningStrikes": {
+		"title": "Signature Ability: [Siphoning Strikes] Gain 10 stacks of Siphoning Strikes.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_siphoning_strikes.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureSiphoningStrikes"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRain": {
+		"title": "Signature Ability: [Arrow Rain] Summon a rain of arrows in front of you.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRain"
+				}
+			}
+		]
+	},
+	"rangerSignatureDisengage": {
+		"title": "Signature Ability: [Disengage] Slow nearby enemies and leap backwards.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_disengage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureDisengage"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrows": {
+		"title": "Signature Ability: [Elemental Arrows] Gain 5 stacks of Elemental Arrows.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrows"
+				}
+			}
+		]
+	},
+	"necromancerSignatureEnrage": {
+		"title": "Signature Ability: [Enrage] Send nearby minions into a frenzy, granting them speed, strength and resistance.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/necromancer_signature_enrage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "necromancerSignatureEnrage"
+				}
+			}
+		]
+	},
+	"necromancerSignatureSacrifice": {
+		"title": "Signature Ability: [Sacrifice] Sacrifice nearby minions, gaining a stack of strength, haste, and resistance for each minion sacrificed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/necromancer_signature_sacrifice.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "necromancerSignatureSacrifice"
+				}
+			}
+		]
+	},
+	"necromancerSignatureSpectralGrasp": {
+		"title": "Signature Ability: [Spectral Grasp] Damage your target and pull them towards you, inflicting them with slowness & mining fatigue.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/necromancer_signature_spectral_grasp.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "necromancerSignatureSpectralGrasp"
+				}
+			}
+		]
+	},
+	"frostguardSignatureConjuringStrikes": {
+		"title": "Signature Ability: [Conjuring Strikes] Gain 6 stacks of Conjuring Strikes.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/frostguard_signature_conjuring_strikes.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "frostguardSignatureConjuringStrikes"
+				}
+			}
+		]
+	},
+	"frostguardSignatureFrostNova": {
+		"title": "Signature Ability: [Frost Nova] Release a Frost Nova, damaging and slowing nearby enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/frostguard_signature_frost_nova.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "frostguardSignatureFrostNova"
+				}
+			}
+		]
+	},
+	"frostguardSignatureIceBlock": {
+		"title": "Signature Ability: [Ice Block] Gain Ice Block for 6s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/frostguard_signature_ice_block.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "frostguardSignatureIceBlock"
+				}
+			}
+		]
+	},
+	"crusaderSignatureConsecration": {
+		"title": "Signature Ability: [Consecration] Gain Consecration for 15s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecration"
+				}
+			}
+		]
+	},
+	"crusaderSignatureStubborn": {
+		"title": "Signature Ability: [Stubborn] Heal yourself to full and gain resistance for 5s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_stubborn.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureStubborn"
+				}
+			}
+		]
+	},
+	"crusaderSignatureWarbanner": {
+		"title": "Signature Ability: [Warbanner] Summon a Warbanner that periodically damages nearby enemies with fire spells and heals nearby allies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_warbanner.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureWarbanner"
+				}
+			}
+		]
+	},
+	"clericSignatureRestoration": {
+		"title": "Signature Ability: [Restoration] Release a healing nova, healing you and nearby allies whilst granting absorption.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_restoration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureRestoration"
+				}
+			}
+		]
+	},
+	"clericSignatureDivineIntervention": {
+		"title": "Signature Ability: [Divine Intervention] Gain Divine Intervention for 10s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureDivineIntervention"
+				}
+			}
+		]
+	},
+	"clericSignatureDivineAscent": {
+		"title": "Signature Ability: [Divine Ascent] Rise towards the heavens, gaining resistance, regeneration, and levitation for 8s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_divine_ascent.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureDivineAscent"
 				}
 			}
 		]
