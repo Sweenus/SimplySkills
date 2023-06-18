@@ -71,6 +71,9 @@ public class SkillReferencePosition {
     public static String crusaderPath = "xof2o9p8rfy822q8";
     public static String frostguardPath = "eaizfeuzfk9zymh1";
     public static String rangerPath = "cpdh1j3016bpip45";
+    public static String clericPath = "cpdh1j3016bpip45";
+    public static String necromancerPath = "cpdh1j3016bpip45";
+    public static String shamanPath = "cpdh1j3016bpip45";
 
 
 
@@ -80,6 +83,43 @@ public class SkillReferencePosition {
     public static String wizardSpecialisationIceComet = "4mqcsrpcwk4yuci5";
     public static String wizardSpecialisationStaticDischarge = "7dsbtkhvcv332zla";
     public static String wizardSpecialisationArcaneBolt = "58k9ygjzu46btnkw";
+
+    public static String spellbladeSpecialisationArcaneEmpowerment = "fw2qh5fw4h3ypjs4";
+    public static String spellbladeSpecialisationFireEmpowerment = "4mqcsrpcwk4yuci5";
+    public static String spellbladeSpecialisationFrostEmpowerment = "7dsbtkhvcv332zla";
+    public static String spellbladeSpecialisationLightningEmpowerment = "58k9ygjzu46btnkw";
+
+    public static String necromancerSpecialisationSpectralGrasp = "fw2qh5fw4h3ypjs4";
+    public static String necromancerSpecialisationSacrifice = "4mqcsrpcwk4yuci5";
+    public static String necromancerSpecialisationEnrage = "7dsbtkhvcv332zla";
+
+    public static String shamanSpecialisationBoltTotem = "fw2qh5fw4h3ypjs4";
+    public static String shamanSpecialisationAstralTotem = "4mqcsrpcwk4yuci5";
+    public static String shamanSpecialisationNovaTotem = "7dsbtkhvcv332zla";
+
+    public static String clericSpecialisationDivineIntervention = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationDivineAscent = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationRestoration = "7dsbtkhvcv332zla";
+
+    public static String crusaderSpecialisationStubborn = "7dsbtkhvcv332zla";
+    public static String crusaderSpecialisationWarbanner = "7dsbtkhvcv332zla";
+    public static String crusaderSpecialisationConsecration = "7dsbtkhvcv332zla";
+
+    public static String frostguardSpecialisationConjuringStrikes = "7dsbtkhvcv332zla";
+    public static String frostguardSpecialisationIceBlock = "7dsbtkhvcv332zla";
+    public static String frostguardSpecialisationFrostNova = "7dsbtkhvcv332zla";
+
+    public static String rangerSpecialisationDisengage = "7dsbtkhvcv332zla";
+    public static String rangerSpecialisationArrowRain = "7dsbtkhvcv332zla";
+    public static String rangerSpecialisationElementalArrows = "7dsbtkhvcv332zla";
+
+    public static String rogueSpecialisationEvasion = "7dsbtkhvcv332zla";
+    public static String rogueSpecialisationPreparation = "7dsbtkhvcv332zla";
+    public static String rogueSpecialisationSiphoningStrikes = "7dsbtkhvcv332zla";
+
+    public static String berserkerSpecialisationRampage = "7dsbtkhvcv332zla";
+    public static String berserkerSpecialisationBloodthirsty = "7dsbtkhvcv332zla";
+    public static String berserkerSpecialisationBerserking = "7dsbtkhvcv332zla";
 
 
 }

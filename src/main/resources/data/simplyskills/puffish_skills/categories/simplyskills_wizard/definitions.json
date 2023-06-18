@@ -2131,5 +2131,59 @@
 				}
 			}
 		]
+	},
+	"berserkerSignatureRampage": {
+		"title": "Signature Ability: [Rampage] Gain Rampage for 15s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_rampage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureRampage"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBloodthirsty": {
+		"title": "Signature Ability: [Bloodthirsty] Gain Bloodthirsty for 20s.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_bloodthirsty.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBloodthirsty"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBerserking": {
+		"title": "Signature Ability: [Berserking] Sacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_berserking.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBerserking"
+				}
+			}
+		]
 	}
 }
