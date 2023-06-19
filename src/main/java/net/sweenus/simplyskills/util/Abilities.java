@@ -31,6 +31,7 @@ import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.network.KeybindPacket;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
 import java.util.ArrayList;
@@ -285,6 +286,10 @@ public class Abilities {
     public static void passiveRogueEvasionMastery(PlayerEntity player) {
 
         int mastery = 15;
+        int evasionMultiplier = 1;
+
+        if (player.hasStatusEffect(EffectRegistry.EVASION))
+            evasionMultiplier = 2;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
@@ -293,7 +298,7 @@ public class Abilities {
                 "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
             mastery = 25;
 
-        if (player.getRandom().nextInt(100) < mastery) {
+        if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getEquippedStack(EquipmentSlot.HEAD).isEmpty()
                     && player.getEquippedStack(EquipmentSlot.CHEST).isEmpty()
                     && player.getEquippedStack(EquipmentSlot.LEGS).isEmpty()
@@ -361,6 +366,10 @@ public class Abilities {
         if (skillID.contains(SkillReferencePosition.wizardPath)
         && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_wizard")){
             SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
+            playUnlockSound(player);
+        } else if (skillID.contains(SkillReferencePosition.berserkerPath)
+                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_berserker")){
+            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
             playUnlockSound(player);
         }
 

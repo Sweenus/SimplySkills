@@ -7,7 +7,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.util.AbilityEffects;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,6 +28,11 @@ public class PlayerEntityMixin {
             // fervour
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.fervour)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100));
+            }
+
+            // Effect Bloodthirsty
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_berserker").get().contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
+                AbilityEffects.effectBerserkerBloodthirsty(player, other);
             }
 
 

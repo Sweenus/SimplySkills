@@ -117,9 +117,9 @@ public class SkillReferencePosition {
     public static String rogueSpecialisationPreparation = "7dsbtkhvcv332zla";
     public static String rogueSpecialisationSiphoningStrikes = "7dsbtkhvcv332zla";
 
-    public static String berserkerSpecialisationRampage = "7dsbtkhvcv332zla";
-    public static String berserkerSpecialisationBloodthirsty = "7dsbtkhvcv332zla";
-    public static String berserkerSpecialisationBerserking = "7dsbtkhvcv332zla";
+    public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
+    public static String berserkerSpecialisationBloodthirsty = "a3ns9xl58ixdg2lo";
+    public static String berserkerSpecialisationBerserking = "is053f9imz801s57";
 
 
 }

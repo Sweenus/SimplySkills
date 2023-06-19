@@ -6,6 +6,8 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -19,6 +21,7 @@ import net.puffish.skillsmod.SkillsAPI;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.network.KeybindPacket;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,7 @@ public class SignatureAbilities {
 
         String wizardSkillTree = "simplyskills_wizard";
         String berserkerSkillTree = "simplyskills_berserker";
+        String rogueSkillTree = "simplyskills_rogue";
 
 
 
@@ -71,7 +75,28 @@ public class SignatureAbilities {
 
         // - Berserker -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
-            //Do berserker abilities
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
+                    .contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
+                //Rampage
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, 300));
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
+                    .contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
+                //Bloodthirsty
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, 400));
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
+                    .contains(SkillReferencePosition.berserkerSpecialisationBerserking)) {
+                //Berserking
+                float sacrificeAmount = (float) (player.getHealth() * 0.30);
+                player.damage(DamageSource.GENERIC, sacrificeAmount);
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)(sacrificeAmount * 20)));
+            }
+
+
         }
 
     }

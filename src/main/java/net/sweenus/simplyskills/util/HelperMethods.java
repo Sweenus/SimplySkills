@@ -6,6 +6,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ArmorStandEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
@@ -74,6 +76,29 @@ public class HelperMethods {
         return null;
     }
 
+    public static void incrementStatusEffect(
+            LivingEntity livingEntity,
+            StatusEffect statusEffect,
+            int duration,
+            int amplifier,
+            int amplifierMax) {
+
+        if (livingEntity.hasStatusEffect(statusEffect)) {
+            int currentAmplifier = livingEntity.getStatusEffect(statusEffect).getAmplifier();
+
+            if (currentAmplifier >= amplifierMax) {
+                livingEntity.addStatusEffect(new StatusEffectInstance(
+                        statusEffect, duration, currentAmplifier));
+                return;
+            }
+
+            livingEntity.addStatusEffect(new StatusEffectInstance(
+                    statusEffect, duration, currentAmplifier + amplifier));
+        }
+        livingEntity.addStatusEffect(new StatusEffectInstance(
+                statusEffect, duration));
+
+    }
 
 
 }

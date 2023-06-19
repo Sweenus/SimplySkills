@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.util.AbilityEffects;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -43,6 +44,12 @@ public abstract class ServerPlayerEntityMixin {
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.hardy)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, (int) amount * 20));
+            }
+
+
+            //Effects Rampage
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_berserker").get().contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
+                AbilityEffects.effectBerserkerRampage(player);
             }
 
 
@@ -139,8 +146,10 @@ public abstract class ServerPlayerEntityMixin {
             if (player.isSneaking()) {
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
             }
 
 
@@ -165,6 +174,20 @@ public abstract class ServerPlayerEntityMixin {
                     if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMastery)) {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
                     }
+
+
+
+
+                    //Effect Berserking
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_berserker").get().contains(SkillReferencePosition.berserkerSpecialisationBerserking)) {
+                        AbilityEffects.effectBerserkerBerserking(target, player);
+                    }
+
+                    //Effect Siphoning Strikes
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.roguePath)) {
+                        AbilityEffects.effectRogueSiphoningStrikes(target, player);
+                    }
+
 
 
                 }

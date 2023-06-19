@@ -1,0 +1,12 @@
+{
+	"unlocked_by_default": false,
+	"exclusive_root": true,
+	"title": "Berserker Specialisation",
+	"icon": {
+		"type": "texture",
+		"data": {
+			"texture": "simplyskills:textures/icons/berserker_path.png"
+		}
+	},
+	"background": "simplyskills:textures/backgrounds/skillbackground_6.png"
+}
