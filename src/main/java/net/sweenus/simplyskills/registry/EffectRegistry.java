@@ -15,6 +15,7 @@ public class EffectRegistry {
     public static StatusEffect RAMPAGE= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect EVASION= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SIPHONINGSTRIKES= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ELEMENTALARROWS= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -26,6 +27,7 @@ public class EffectRegistry {
         RAMPAGE = registerStatusEffect("rampage", RAMPAGE);
         EVASION = registerStatusEffect("evasion", EVASION);
         SIPHONINGSTRIKES = registerStatusEffect("siphoning_strikes", SIPHONINGSTRIKES);
+        ELEMENTALARROWS = registerStatusEffect("elemental_arrows", ELEMENTALARROWS);
     }
 
 

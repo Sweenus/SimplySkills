@@ -1,9 +1,5 @@
 package net.sweenus.simplyskills.util;
 
-import io.netty.buffer.Unpooled;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -11,31 +7,18 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.SpellEngineMod;
-import net.spell_engine.api.spell.Spell;
-import net.spell_engine.internals.SpellCast;
-import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
-import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Abilities {
 
@@ -283,7 +266,7 @@ public class Abilities {
         }
     }
 
-    public static void passiveRogueEvasionMastery(PlayerEntity player) {
+    public static boolean passiveRogueEvasionMastery(PlayerEntity player) {
 
         int mastery = 15;
         int evasionMultiplier = 1;
@@ -304,13 +287,15 @@ public class Abilities {
                     && player.getEquippedStack(EquipmentSlot.LEGS).isEmpty()
                     && player.getEquippedStack(EquipmentSlot.FEET).isEmpty()) {
 
-                player.timeUntilRegen = 15;
+                //player.timeUntilRegen = 15;
                 player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
+                return true;
 
 
             }
         }
+        return false;
     }
 
     public static void passiveRogueOpportunisticMastery(Entity target, PlayerEntity player) {
@@ -374,6 +359,10 @@ public class Abilities {
         } else if (skillID.contains(SkillReferencePosition.roguePath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_rogue")){
             SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
+            playUnlockSound(player);
+        } else if (skillID.contains(SkillReferencePosition.rangerPath)
+                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_ranger")){
+            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
             playUnlockSound(player);
         }
 

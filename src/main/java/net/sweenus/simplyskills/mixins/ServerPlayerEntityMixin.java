@@ -9,7 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.AbilityEffects;
-import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin {
 
-    @Inject(at = @At("HEAD"), method = "damage")
+    @Inject(at = @At("HEAD"), method = "damage", cancellable = true)
     public void simplyskills$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
@@ -39,7 +38,8 @@ public abstract class ServerPlayerEntityMixin {
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer,
                     "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMastery)) {
-                Abilities.passiveRogueEvasionMastery(player);
+                if (Abilities.passiveRogueEvasionMastery(player))
+                    cir.cancel();
             }
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.hardy)) {
@@ -142,14 +142,18 @@ public abstract class ServerPlayerEntityMixin {
 
 
 
-            //Debug
+            //Debug - reset skills & gain exp
             if (player.isSneaking()) {
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_rogue");
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_ranger");
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_rogue", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_ranger", 60000);
             }
 
 
@@ -184,7 +188,7 @@ public abstract class ServerPlayerEntityMixin {
                     }
 
                     //Effect Siphoning Strikes
-                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.roguePath)) {
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes)) {
                         AbilityEffects.effectRogueSiphoningStrikes(target, player);
                     }
 

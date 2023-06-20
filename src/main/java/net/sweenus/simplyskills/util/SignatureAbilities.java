@@ -34,6 +34,7 @@ public class SignatureAbilities {
         String wizardSkillTree = "simplyskills_wizard";
         String berserkerSkillTree = "simplyskills_berserker";
         String rogueSkillTree = "simplyskills_rogue";
+        String rangerSkillTree = "simplyskills_ranger";
 
 
 
@@ -118,6 +119,17 @@ public class SignatureAbilities {
                 //Siphoning Strikes
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, 600, 9));
             }
+        }
+
+        // - Ranger -
+        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
+                    .contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
+                //Elemental Arrows
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, 600, 4));
+            }
+
         }
 
     }

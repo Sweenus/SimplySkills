@@ -100,5 +100,24 @@ public class HelperMethods {
 
     }
 
+    public static void decrementStatusEffect(
+            LivingEntity livingEntity,
+            StatusEffect statusEffect) {
+
+        if (livingEntity.hasStatusEffect(statusEffect)) {
+            int currentAmplifier = livingEntity.getStatusEffect(statusEffect).getAmplifier();
+            int currentDuration = livingEntity.getStatusEffect(statusEffect).getDuration();
+
+            if (currentAmplifier < 1 ) {
+                livingEntity.removeStatusEffect(statusEffect);
+                return;
+            }
+
+            livingEntity.removeStatusEffect(statusEffect);
+            livingEntity.addStatusEffect(new StatusEffectInstance(
+                    statusEffect, currentDuration, currentAmplifier - 1));
+        }
+    }
+
 
 }

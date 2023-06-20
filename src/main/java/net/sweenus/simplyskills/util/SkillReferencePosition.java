@@ -109,9 +109,9 @@ public class SkillReferencePosition {
     public static String frostguardSpecialisationIceBlock = "7dsbtkhvcv332zla";
     public static String frostguardSpecialisationFrostNova = "7dsbtkhvcv332zla";
 
-    public static String rangerSpecialisationDisengage = "7dsbtkhvcv332zla";
-    public static String rangerSpecialisationArrowRain = "7dsbtkhvcv332zla";
-    public static String rangerSpecialisationElementalArrows = "7dsbtkhvcv332zla";
+    public static String rangerSpecialisationDisengage = "is053f9imz801s57";
+    public static String rangerSpecialisationArrowRain = "a3ns9xl58ixdg2lo";
+    public static String rangerSpecialisationElementalArrows = "kp8uei8ppni71b5x";
 
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
     public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";

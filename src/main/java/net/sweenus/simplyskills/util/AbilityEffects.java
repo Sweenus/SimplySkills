@@ -2,18 +2,17 @@ package net.sweenus.simplyskills.util;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 public class AbilityEffects {
 
@@ -64,16 +63,7 @@ public class AbilityEffects {
                 float healAmount = (float) (attackValue * 0.15);
                 player.heal(healAmount);
 
-                int currentAmplifier = Objects.requireNonNull(
-                        player.getStatusEffect(EffectRegistry.SIPHONINGSTRIKES)).getAmplifier();
-                int currentDuration = Objects.requireNonNull(
-                        player.getStatusEffect(EffectRegistry.SIPHONINGSTRIKES)).getDuration();
-                if ( currentAmplifier > 0) {
-                    player.addStatusEffect(new StatusEffectInstance(
-                            EffectRegistry.SIPHONINGSTRIKES, currentDuration, currentAmplifier - 1));
-                } else {
-                    player.removeStatusEffect(EffectRegistry.SIPHONINGSTRIKES);
-                }
+                HelperMethods.decrementStatusEffect(player, EffectRegistry.SIPHONINGSTRIKES);
 
                 for (StatusEffectInstance statusEffect : livingTarget.getStatusEffects()) {
                     if (statusEffect != null && statusEffect.getEffectType().isBeneficial()) {
@@ -83,6 +73,27 @@ public class AbilityEffects {
                 }
             }
         }
+    }
+
+    public static boolean effectRangerElementalArrows(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.ELEMENTALARROWS)) {
+
+            List<String> list = new ArrayList<>();
+            list.add("simplyskills:frost_arrow");
+            list.add("simplyskills:fire_arrow");
+            list.add("simplyskills:lightning_arrow");
+            Random rand = new Random();
+            String randomSpell = list.get(rand.nextInt(list.size()));
+
+            HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
+
+            SignatureAbilities.castSpellEngineTargeted(player,
+                    randomSpell,
+                    96);
+            return true;
+        }
+        return false;
     }
 
 
