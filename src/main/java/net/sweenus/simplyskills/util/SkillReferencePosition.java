@@ -79,10 +79,10 @@ public class SkillReferencePosition {
 
     // -- Specialisations --
 
-    public static String wizardSpecialisationMeteorShower = "fw2qh5fw4h3ypjs4";
-    public static String wizardSpecialisationIceComet = "4mqcsrpcwk4yuci5";
-    public static String wizardSpecialisationStaticDischarge = "7dsbtkhvcv332zla";
-    public static String wizardSpecialisationArcaneBolt = "58k9ygjzu46btnkw";
+    public static String wizardSpecialisationMeteorShower = "is053f9imz801s57";
+    public static String wizardSpecialisationIceComet = "kp8uei8ppni71b5x";
+    public static String wizardSpecialisationStaticDischarge = "a3ns9xl58ixdg2lo";
+    public static String wizardSpecialisationArcaneBolt = "7peocg44cggilh9z";
 
     public static String spellbladeSpecialisationArcaneEmpowerment = "fw2qh5fw4h3ypjs4";
     public static String spellbladeSpecialisationFireEmpowerment = "4mqcsrpcwk4yuci5";
@@ -113,9 +113,9 @@ public class SkillReferencePosition {
     public static String rangerSpecialisationArrowRain = "7dsbtkhvcv332zla";
     public static String rangerSpecialisationElementalArrows = "7dsbtkhvcv332zla";
 
-    public static String rogueSpecialisationEvasion = "7dsbtkhvcv332zla";
-    public static String rogueSpecialisationPreparation = "7dsbtkhvcv332zla";
-    public static String rogueSpecialisationSiphoningStrikes = "7dsbtkhvcv332zla";
+    public static String rogueSpecialisationEvasion = "is053f9imz801s57";
+    public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";
+    public static String rogueSpecialisationSiphoningStrikes = "a3ns9xl58ixdg2lo";
 
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
     public static String berserkerSpecialisationBloodthirsty = "a3ns9xl58ixdg2lo";

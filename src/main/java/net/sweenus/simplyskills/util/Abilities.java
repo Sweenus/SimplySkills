@@ -371,6 +371,10 @@ public class Abilities {
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_berserker")){
             SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
             playUnlockSound(player);
+        } else if (skillID.contains(SkillReferencePosition.roguePath)
+                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_rogue")){
+            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
+            playUnlockSound(player);
         }
 
 

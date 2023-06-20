@@ -1,0 +1,12 @@
+{
+	"unlocked_by_default": false,
+	"exclusive_root": true,
+	"title": "Rogue Specialisation",
+	"icon": {
+		"type": "texture",
+		"data": {
+			"texture": "simplyskills:textures/icons/rogue_path.png"
+		}
+	},
+	"background": "simplyskills:textures/backgrounds/skillbackground_6.png"
+}

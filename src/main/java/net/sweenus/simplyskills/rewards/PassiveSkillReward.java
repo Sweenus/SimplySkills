@@ -21,7 +21,7 @@ public class PassiveSkillReward implements Reward {
 
 
     public static void registerSkillTypes() {
-        SkillsAPI.registerReward(ID, PassiveSkillReward::create);
+        SkillsAPI.registerRewardWithData(ID, PassiveSkillReward::create);
     }
 
     private static Result<PassiveSkillReward, Error> create(Result<JsonElementWrapper, Error> maybeDataElement) {

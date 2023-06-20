@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -70,7 +71,6 @@ public class SignatureAbilities {
                         "simplyskills:arcane_bolt",
                         32);
             }
-
         }
 
         // - Berserker -
@@ -95,8 +95,29 @@ public class SignatureAbilities {
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)(sacrificeAmount * 20)));
             }
+        }
 
+        // - Rogue -
+        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
 
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
+                    .contains(SkillReferencePosition.rogueSpecialisationEvasion)) {
+                //Evasion
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, 160));
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
+                    .contains(SkillReferencePosition.rogueSpecialisationPreparation)) {
+                //Preparation
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 160));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 2));
+            }
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
+                    .contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes)) {
+                //Siphoning Strikes
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, 600, 9));
+            }
         }
 
     }
