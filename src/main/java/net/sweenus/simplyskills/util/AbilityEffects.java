@@ -1,12 +1,19 @@
 package net.sweenus.simplyskills.util;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
+import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.entity.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.ArrayList;
@@ -91,6 +98,83 @@ public class AbilityEffects {
             SignatureAbilities.castSpellEngineTargeted(player,
                     randomSpell,
                     96);
+            return true;
+        }
+        return false;
+    }
+
+
+    public static boolean effectRangerArrowRain(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.ARROWRAIN)) {
+
+            int arrowRainRadius = 3;
+            int arrowRainChance = 25;
+            int arrowRainVolleys = 2;
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne))
+                arrowRainRadius = 4;
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusTwo))
+                arrowRainRadius = 5;
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusThree))
+                arrowRainRadius = 6;
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyOne))
+                arrowRainVolleys = 3;
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyTwo))
+                arrowRainVolleys = 4;
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyThree))
+                arrowRainVolleys = 5;
+
+
+            Vec3d blockpos = HelperMethods.getPositionLookingAt(player, 64);
+            if (blockpos != null) {
+                //System.out.println(blockpos);
+                double xpos = blockpos.getX() - arrowRainRadius;
+                double ypos = blockpos.getY();
+                double zpos = blockpos.getZ() - arrowRainRadius;
+
+
+                for (int x = arrowRainRadius * 2; x > 0; x--) {
+                    for (int z = arrowRainRadius * 2; z > 0; z--) {
+                        for (int i = arrowRainVolleys; i > 0; i--) {
+                            BlockPos spawnPosition = new BlockPos(xpos + x, ypos + 25 + (player.getRandom().nextInt(15) * arrowRainVolleys + 1), zpos + z);
+
+                            if (player.getRandom().nextInt(100) < arrowRainChance
+                                    && player.world.getBlockState(spawnPosition).isAir()) {
+                                SimplySkillsArrowEntity arrowEntity = new SimplySkillsArrowEntity(EntityType.ARROW, player.world);
+                                arrowEntity.updatePosition(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ());
+                                arrowEntity.setOwner(player);
+                                arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                                arrowEntity.setVelocity(0, -0.5, 0);
+                                player.world.spawnEntity(arrowEntity);
+
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainElemental)) {
+                                    arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
+                                    if (player.getRandom().nextInt(100) < 5) {
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fire_arrow_rain", 512, arrowEntity);
+                                        arrowEntity.setInvisible(true);
+                                    } else if (player.getRandom().nextInt(100) < 15) {
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:frost_arrow_rain", 512, arrowEntity);
+                                        arrowEntity.setInvisible(true);
+                                    } else if (player.getRandom().nextInt(100) < 25) {
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:lightning_arrow_rain", 512, arrowEntity);
+                                        arrowEntity.setInvisible(true);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                HelperMethods.decrementStatusEffect(player, EffectRegistry.ARROWRAIN);
+            }
             return true;
         }
         return false;

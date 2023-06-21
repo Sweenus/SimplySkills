@@ -1863,7 +1863,7 @@
 		]
 	},
 	"rangerSignatureArrowRain": {
-		"title": "Signature Ability: [Arrow Rain] Summon a rain of arrows in front of you.",
+		"title": "Signature Ability: [Arrow Rain] Gain one stack of Arrow Rain. \n \n(Your next fully-charged bow attack will summon a rain of arrows at the targeted area)",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

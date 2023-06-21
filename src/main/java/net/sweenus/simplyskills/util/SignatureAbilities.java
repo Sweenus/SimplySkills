@@ -138,7 +138,7 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
                 //Arrow Rain
-                Abilities.signatureRangerArrowRain(player);
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, 600, 0));
             }
 
         }

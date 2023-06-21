@@ -24,8 +24,6 @@ public abstract class BowItemMixin {
             if (player instanceof ServerPlayerEntity serverPlayer) {
 
                 // Effect - Elemental Arrows
-                int i;
-                float f;
                 if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
                     if (player.getItemUseTime() > 20) {
 
@@ -34,6 +32,15 @@ public abstract class BowItemMixin {
                     }
                 }
 
+
+                // Effect - Arrow Rain
+                else if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
+                    if (player.getItemUseTime() > 20) {
+
+                        if (AbilityEffects.effectRangerArrowRain(player))
+                            ci.cancel();
+                    }
+                }
             }
         }
     }
