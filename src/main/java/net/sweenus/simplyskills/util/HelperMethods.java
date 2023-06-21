@@ -12,7 +12,9 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
@@ -52,9 +54,9 @@ public class HelperMethods {
     }
 
     //Create Box
-    public static Box createBox(LivingEntity livingEntity, int radius) {
-        Box box = new Box(livingEntity.getX() + radius, livingEntity.getY() + (float) radius / 3, livingEntity.getZ() + radius,
-                livingEntity.getX() - radius, livingEntity.getY() - (float) radius / 3, livingEntity.getZ() - radius);
+    public static Box createBox(Entity entity, int radius) {
+        Box box = new Box(entity.getX() + radius, entity.getY() + (float) radius / 3, entity.getZ() + radius,
+                entity.getX() - radius, entity.getY() - (float) radius / 3, entity.getZ() - radius);
 
         return box;
     }
@@ -74,6 +76,16 @@ public class HelperMethods {
             return hitResult.getEntity();
         }
         return null;
+    }
+
+    public static Vec3d getPositionLookingAt(PlayerEntity player, int range) {
+        HitResult result = player.raycast(range, 0, false);
+        //System.out.println(result.getType());
+        if (!(result.getType() == HitResult.Type.BLOCK)) return null;
+
+        BlockHitResult blockResult = (BlockHitResult) result;
+        //System.out.println(blockResult.getBlockPos());
+        return blockResult.getPos();
     }
 
     public static void incrementStatusEffect(

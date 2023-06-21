@@ -18,8 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BowItem.class)
 public abstract class BowItemMixin {
 
-    @Shadow public abstract int getMaxUseTime(ItemStack stack);
-
     @Inject(at = @At("HEAD"), method = "onStoppedUsing", cancellable = true)
     public void simplyskills$onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
         if (user instanceof PlayerEntity player) {

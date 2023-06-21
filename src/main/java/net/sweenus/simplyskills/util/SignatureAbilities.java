@@ -130,6 +130,17 @@ public class SignatureAbilities {
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, 600, 4));
             }
 
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
+                    .contains(SkillReferencePosition.rangerSpecialisationDisengage)) {
+                //Disengage
+                Abilities.signatureRangerDisengage(player);
+            }
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
+                    .contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
+                //Arrow Rain
+                Abilities.signatureRangerArrowRain(player);
+            }
+
         }
 
     }

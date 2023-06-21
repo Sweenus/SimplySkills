@@ -1,11 +1,16 @@
 package net.sweenus.simplyskills.util;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
@@ -13,12 +18,17 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
+import net.sweenus.simplyskills.entity.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
+
+import java.util.Random;
 
 public class Abilities {
 
@@ -326,6 +336,62 @@ public class Abilities {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, 1));
             }
         }
+    }
+
+    public static void signatureRangerDisengage(PlayerEntity player) {
+        Box box = HelperMethods.createBox((LivingEntity) player, 6);
+        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            if (entities != null) {
+                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+
+                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 250, 3));
+
+                }
+            }
+        }
+        player.setVelocity(player.getRotationVector().negate().multiply(+3));
+        player.setVelocity(player.getVelocity().x, 1, player.getVelocity().z); // Prevent player flying to the heavens
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 80, 0));
+        player.velocityModified = true;
+
+    }
+
+    public static void signatureRangerArrowRain(PlayerEntity player) {
+
+        int arrowRainRadius = 6;
+        int arrowRainChance = 25;
+        int arrowRainVolleys = 6;
+
+        Vec3d blockpos = HelperMethods.getPositionLookingAt(player, 64);
+        if (blockpos != null) {
+            //System.out.println(blockpos);
+            double xpos = blockpos.getX() - arrowRainRadius;
+            double ypos = blockpos.getY();
+            double zpos = blockpos.getZ() - arrowRainRadius;
+
+
+            for (int x = arrowRainRadius*2; x > 0; x--) {
+                for (int z = arrowRainRadius*2; z > 0; z--) {
+                    for (int i = arrowRainVolleys; i > 0; i--) {
+                        BlockPos spawnPosition = new BlockPos(xpos + x, ypos + 25 + (player.getRandom().nextInt(15)*arrowRainVolleys+1), zpos + z);
+
+                        if (player.getRandom().nextInt(100) < arrowRainChance
+                                && player.world.getBlockState(spawnPosition).isAir()) {
+                            SimplySkillsArrowEntity arrowEntity = new SimplySkillsArrowEntity(EntityType.ARROW, player.world);
+                            arrowEntity.updatePosition(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ());
+                            arrowEntity.setOwner(player);
+                            arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                            arrowEntity.setVelocity(0, -0.5, 0);
+                            player.world.spawnEntity(arrowEntity);
+
+                            arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
+
+                        }
+                    }
+
+                }
+            }
+        } else {System.out.println("failed to get entity");}
     }
 
 
