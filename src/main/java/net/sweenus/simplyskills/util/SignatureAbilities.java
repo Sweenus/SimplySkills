@@ -175,6 +175,30 @@ public class SignatureAbilities {
 
     }
 
+    public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range, Entity target) {
+
+        // -- Cast spell at specified target --
+        if (target != null) {
+            ItemStack itemStack     = player.getMainHandStack();
+            Hand hand               = player.getActiveHand();
+            SpellCast.Action action = SpellCast.Action.RELEASE;
+            Identifier spellID      = new Identifier(spellIdentifier);
+            List<Entity> list       = new ArrayList<Entity>();
+            list.add(target);
+
+            SpellHelper.performSpell(
+                    player.world,
+                    player,
+                    spellID,
+                    list,
+                    itemStack,
+                    action,
+                    hand,
+                    20);
+        }
+
+    }
+
     public static void castSpellEngineAOE(PlayerEntity player, String spellIdentifier, int radius) {
 
         // -- Cast spell at nearby targets --

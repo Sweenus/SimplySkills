@@ -25,7 +25,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/healing.png"
+				"texture": "simplyskills:textures/icons/initiate_path.png"
 			}
 		},
 		"rewards": [
@@ -1876,6 +1876,150 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rangerSignatureArrowRain"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainElemental": {
+		"title": "Your [Arrow Rain] is now elementally enhanced and deals additional elemental damage.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainElemental"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainEplosive": {
+		"title": "Your [Arrow Rain] now leaves behind proximity explosive arrows.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainEplosive"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainVolley+": {
+		"title": "Your [Arrow Rain] now fires one additional volley.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainVolley+"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainVolley++": {
+		"title": "Your [Arrow Rain] now fires two additional volleys.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainVolley++"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainVolley+++": {
+		"title": "Your [Arrow Rain] now fires three additional volleys.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainVolley+++"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainRadius+": {
+		"title": "Your [Arrow Rain] now has +1 radius.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainRadius+"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainRadius++": {
+		"title": "Your [Arrow Rain] now has +2 radius.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainRadius++"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainRadius+++": {
+		"title": "Your [Arrow Rain] now has +3 radius.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainRadius+++"
 				}
 			}
 		]

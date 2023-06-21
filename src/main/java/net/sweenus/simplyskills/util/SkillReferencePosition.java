@@ -111,6 +111,14 @@ public class SkillReferencePosition {
 
     public static String rangerSpecialisationDisengage = "is053f9imz801s57";
     public static String rangerSpecialisationArrowRain = "a3ns9xl58ixdg2lo";
+    public static String rangerSpecialisationArrowRainElemental = "yftatjo9vwzf5vpw";
+    public static String rangerSpecialisationArrowRainExplosive = "l6feffzr1kt6i2ds";
+    public static String rangerSpecialisationArrowRainVolleyOne = "b9sdl3i5pk4c8yor";
+    public static String rangerSpecialisationArrowRainVolleyTwo = "kj4gdess10vmmu1h";
+    public static String rangerSpecialisationArrowRainVolleyThree = "67krnm60doqj0ukv";
+    public static String rangerSpecialisationArrowRainRadiusOne = "7gtk26uaf6fzugyx";
+    public static String rangerSpecialisationArrowRainRadiusTwo = "12p6g36kjjd9cihs";
+    public static String rangerSpecialisationArrowRainRadiusThree = "b6ys22j75bek89z8";
     public static String rangerSpecialisationElementalArrows = "kp8uei8ppni71b5x";
 
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
