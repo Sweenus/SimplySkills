@@ -90,13 +90,38 @@ public class AbilityEffects {
 
 
             Vec3d blockpos = null;
+            int radius = 4;
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne))
+                radius = 6;
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusTwo))
+                radius = 8;
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusThree))
+                radius = 10;
 
             List<String> list = new ArrayList<>();
             list.add("simplyskills:frost_arrow_rain");
             list.add("simplyskills:fire_arrow_rain");
             list.add("simplyskills:lightning_arrow_rain");
-            Random rand = new Random();
-            String randomSpell = list.get(rand.nextInt(list.size()));
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsFireAttuned)) {
+                list.remove("simplyskills:frost_arrow_rain");
+                list.remove("simplyskills:lightning_arrow_rain");
+            }
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsFrostAttuned)) {
+                list.remove("simplyskills:fire_arrow_rain");
+                list.remove("simplyskills:lightning_arrow_rain");
+            }
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsLightningAttuned)) {
+                list.remove("simplyskills:fire_arrow_rain");
+                list.remove("simplyskills:frost_arrow_rain");
+            }
+
 
             HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
             
@@ -111,10 +136,12 @@ public class AbilityEffects {
                 double ypos = blockpos.getY();
                 double zpos = blockpos.getZ();
                 BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                Box box = HelperMethods.createBoxAtBlock(searchArea, 12);
+                Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
                 for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
+                        Random rand = new Random();
+                        String randomSpell = list.get(rand.nextInt(list.size()));
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     randomSpell,

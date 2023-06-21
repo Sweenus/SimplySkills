@@ -21,6 +21,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.RandomSeed;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
@@ -356,6 +357,12 @@ public class Abilities {
 
     }
 
+    public static void passiveRangerElementalArrowsRenewal(PlayerEntity player) {
+        int random = new Random().nextInt(100);
+        int renewalChance = 35;
+        if (random < renewalChance)
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, 600, 1, 20);
+    }
 
 
 

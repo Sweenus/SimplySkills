@@ -120,6 +120,16 @@ public class SkillReferencePosition {
     public static String rangerSpecialisationArrowRainRadiusTwo = "12p6g36kjjd9cihs";
     public static String rangerSpecialisationArrowRainRadiusThree = "b6ys22j75bek89z8";
     public static String rangerSpecialisationElementalArrows = "kp8uei8ppni71b5x";
+    public static String rangerSpecialisationElementalArrowsFireAttuned = "6bycgdo9shmo7et7";
+    public static String rangerSpecialisationElementalArrowsFrostAttuned = "ivyp2p1jp6ip5w0q";
+    public static String rangerSpecialisationElementalArrowsLightningAttuned = "7747tky4ka5hid0r";
+    public static String rangerSpecialisationElementalArrowsRadiusOne = "jyjchp0ewoqq2n9w";
+    public static String rangerSpecialisationElementalArrowsRadiusTwo = "c27k3khjocrzi77a";
+    public static String rangerSpecialisationElementalArrowsRadiusThree = "7fcjbknbz80nqnmc";
+    public static String rangerSpecialisationElementalArrowsStacksOne = "nho6njv0e6ngyea0";
+    public static String rangerSpecialisationElementalArrowsStacksTwo = "jyzyi0dx8elgb4fl";
+    public static String rangerSpecialisationElementalArrowsStacksThree = "14riqlyv2efrldoq";
+    public static String rangerSpecialisationElementalArrowsRenewal = "aizxxvc9fwqnpq60";
 
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
     public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";

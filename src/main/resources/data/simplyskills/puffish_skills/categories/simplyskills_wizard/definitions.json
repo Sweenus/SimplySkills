@@ -2060,6 +2060,186 @@
 			}
 		]
 	},
+	"rangerSignatureElementalArrowsFrostAttuned": {
+		"title": "Your [Elemental Arrows] will always be frost attuned.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsFrostAttuned"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsFireAttuned": {
+		"title": "Your [Elemental Arrows] will always be fire attuned.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsFireAttuned"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsLightningAttuned": {
+		"title": "Your [Elemental Arrows] will always be lightning attuned.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsLightningAttuned"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsRadius+": {
+		"title": "The radius of your [Elemental Arrows] is increased by 2.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsRadius+"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsRadius++": {
+		"title": "The radius of your [Elemental Arrows] is increased by 4.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsRadius++"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsRadius+++": {
+		"title": "The radius of your [Elemental Arrows] is increased by 6.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsRadius+++"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsStacks+": {
+		"title": "You gain one additional stack of [Elemental Arrows].",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsStacks+"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsStacks++": {
+		"title": "You gain two additional stacks of [Elemental Arrows].",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsStacks++"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsStacks+++": {
+		"title": "You gain three additional stacks of [Elemental Arrows].",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsStacks+++"
+				}
+			}
+		]
+	},
+	"rangerSignatureElementalArrowsRenewal": {
+		"title": "You have a 35% chance on kill to gain a stack of [Elemental Arrows].",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_elemental_arrows.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureElementalArrowsRenewal"
+				}
+			}
+		]
+	},
 	"necromancerSignatureEnrage": {
 		"title": "Signature Ability: [Enrage] Send nearby minions into a frenzy, granting them speed, strength and resistance.",
 		"frame": "goal",

@@ -127,7 +127,19 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
                 //Elemental Arrows
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, 600, 4));
+                int amplifier =4;
+
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne))
+                    amplifier = 5;
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo))
+                    amplifier = 6;
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree))
+                    amplifier = 7;
+
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, 600, amplifier));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()

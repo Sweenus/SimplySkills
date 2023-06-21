@@ -25,13 +25,20 @@ public class PlayerEntityMixin {
         if (player instanceof ServerPlayerEntity serverPlayer) {
 
             // fervour
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.fervour)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get()
+                    .contains(SkillReferencePosition.fervour)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100));
             }
 
             // Effect Bloodthirsty
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_berserker").get().contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_berserker").get()
+                    .contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
                 AbilityEffects.effectBerserkerBloodthirsty(player, other);
+            }
+            // Effect Elemental Arrows Renewal
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get()
+                    .contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRenewal)) {
+                Abilities.passiveRangerElementalArrowsRenewal(player);
             }
 
 
