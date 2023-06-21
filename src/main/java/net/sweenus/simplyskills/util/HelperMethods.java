@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
@@ -57,6 +58,12 @@ public class HelperMethods {
     public static Box createBox(Entity entity, int radius) {
         Box box = new Box(entity.getX() + radius, entity.getY() + (float) radius / 3, entity.getZ() + radius,
                 entity.getX() - radius, entity.getY() - (float) radius / 3, entity.getZ() - radius);
+
+        return box;
+    }
+    public static Box createBoxAtBlock(BlockPos blockpos, int radius) {
+        Box box = new Box(blockpos.getX() + radius, blockpos.getY() + radius, blockpos.getZ() + radius,
+                blockpos.getX() - radius, blockpos.getY() - radius, blockpos.getZ() - radius);
 
         return box;
     }

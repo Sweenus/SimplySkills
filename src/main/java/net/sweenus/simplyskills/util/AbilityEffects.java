@@ -9,8 +9,10 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.entity.SimplySkillsArrowEntity;
@@ -86,18 +88,43 @@ public class AbilityEffects {
 
         if (player.hasStatusEffect(EffectRegistry.ELEMENTALARROWS)) {
 
+
+            Vec3d blockpos = null;
+
             List<String> list = new ArrayList<>();
-            list.add("simplyskills:frost_arrow");
-            list.add("simplyskills:fire_arrow");
-            list.add("simplyskills:lightning_arrow");
+            list.add("simplyskills:frost_arrow_rain");
+            list.add("simplyskills:fire_arrow_rain");
+            list.add("simplyskills:lightning_arrow_rain");
             Random rand = new Random();
             String randomSpell = list.get(rand.nextInt(list.size()));
 
             HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
+            
+            if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
 
-            SignatureAbilities.castSpellEngineTargeted(player,
-                    randomSpell,
-                    96);
+            if (blockpos == null)
+                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+            if (blockpos != null) {
+                double xpos = blockpos.getX();
+                double ypos = blockpos.getY();
+                double zpos = blockpos.getZ();
+                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                Box box = HelperMethods.createBoxAtBlock(searchArea, 12);
+                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                    if (entities != null) {
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                    randomSpell,
+                                    512, le);
+                        }
+                    }
+                }
+            }
+
+
             return true;
         }
         return false;
