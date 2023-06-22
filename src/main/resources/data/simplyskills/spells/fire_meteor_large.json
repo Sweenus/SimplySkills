@@ -1,5 +1,5 @@
 {
-  "school": "FROST",
+  "school": "FIRE",
   "range": 32.0,
   "learn": {
     "tier": 3
@@ -13,7 +13,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:frost_shard",
+        "particle_id": "spell_engine:flame",
         "shape": "PIPE",
         "origin": "FEET",
         "count": 1.0,
@@ -26,11 +26,11 @@
     "target": {
       "type": "METEOR",
       "meteor": {
-        "launch_height": 15,
-        "impact_range": 12,
+        "launch_height": 10,
+        "impact_range": 6,
         "impact_particles": [
           {
-            "particle_id": "spell_engine:frost_hit",
+            "particle_id": "lava",
             "shape": "CIRCLE",
             "origin": "CENTER",
             "count": 90.0,
@@ -38,7 +38,7 @@
             "max_speed": 6.0
           },
           {
-            "particle_id": "spell_engine:snowflake",
+            "particle_id": "flame",
             "shape": "SPHERE",
             "origin": "CENTER",
             "count": 100.0,
@@ -67,7 +67,7 @@
         "client_data": {
           "travel_particles": [
             {
-              "particle_id": "spell_engine:snowflake",
+              "particle_id": "spell_engine:flame",
               "shape": "CIRCLE",
               "rotation": "LOOK",
               "origin": "CENTER",
@@ -94,7 +94,7 @@
               "max_speed": 0.05
             }
           ],
-          "model_id": "minecraft:ice",
+          "model_id": "minecraft:magma_block",
           "render": "DEEP",
           "scale": 2
         }
@@ -110,38 +110,20 @@
       "action": {
         "type": "DAMAGE",
         "damage": {
-          "spell_power_coefficient": 1.8,
-          "knockback": 2.5
+          "spell_power_coefficient": 3.0,
+          "knockback": 4
         }
       },
       "particles": [
         {
-          "particle_id": "spell_engine:frost_hit",
+          "particle_id": "smoke",
           "shape": "CIRCLE",
           "origin": "CENTER",
-          "count": 3.0,
-          "min_speed": 0.5,
-          "max_speed": 3.0
+          "count": 30.0,
+          "min_speed": 0.01,
+          "max_speed": 0.2
         }
       ],
-      "sound": {
-        "id": "simplyskills:fx_skill_backstab"
-      }
-    },
-    {
-      "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "effect_id": "minecraft:slowness",
-          "duration": 6,
-          "apply_mode": "ADD",
-          "apply_limit": {
-            "health_base": 50,
-            "spell_power_multiplier": 2
-          },
-          "show_particles": false
-        }
-      },
       "sound": {
         "id": "simplyskills:fx_skill_backstab"
       }

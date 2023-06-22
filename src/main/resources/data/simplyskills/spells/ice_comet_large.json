@@ -96,7 +96,7 @@
           ],
           "model_id": "minecraft:ice",
           "render": "DEEP",
-          "scale": 2
+          "scale": 2.2
         }
       }
     },
@@ -110,8 +110,8 @@
       "action": {
         "type": "DAMAGE",
         "damage": {
-          "spell_power_coefficient": 1.8,
-          "knockback": 2.5
+          "spell_power_coefficient": 2.2,
+          "knockback": 3
         }
       },
       "particles": [

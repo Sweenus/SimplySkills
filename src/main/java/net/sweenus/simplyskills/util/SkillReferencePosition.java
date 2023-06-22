@@ -83,6 +83,25 @@ public class SkillReferencePosition {
     public static String wizardSpecialisationIceComet = "kp8uei8ppni71b5x";
     public static String wizardSpecialisationStaticDischarge = "a3ns9xl58ixdg2lo";
     public static String wizardSpecialisationArcaneBolt = "7peocg44cggilh9z";
+    public static String wizardSpecialisationMeteorShowerGreater = "c4ufo4n0g61fn18d";
+    public static String wizardSpecialisationMeteorShowerWrath = "u0ypy4wxhyxcdy0q";
+    public static String wizardSpecialisationMeteorShowerRenewingWrath = "1jk1kpkeiu183egl";
+    public static String wizardSpecialisationMeteorShowerRenewingWrathTwo = "80vfz0ye7lxpzx0j";
+    public static String wizardSpecialisationMeteorShowerRenewingWrathThree = "ryqv4fap1td01iwy";
+    public static String wizardSpecialisationIceCometLeap = "wk0uiyaoo1plysk4";
+    public static String wizardSpecialisationIceCometVolley = "ahp5rugvghtpvv0j";
+    public static String wizardSpecialisationIceCometDamageOne = "l6i62nziygs3ishg";
+    public static String wizardSpecialisationIceCometDamageTwo = "7ngfgbcdg33dpadz";
+    public static String wizardSpecialisationIceCometDamageThree = "m5h4006g0loxutrg";
+    public static String wizardSpecialisationStaticDischargeLeap = "2o8v7vhfgf8lyzu8";
+    public static String wizardSpecialisationStaticDischargeLeapTwo = "09yy7mk9csney6w2";
+    public static String wizardSpecialisationStaticDischargeLeapThree = "cefchlgpfk2j5fg4";
+    public static String wizardSpecialisationStaticDischargeSpeed = "o078mm4i08rill6x";
+    public static String wizardSpecialisationStaticDischargeSpeedTwo = "s18lslxmj1eu3rmt";
+    public static String wizardSpecialisationStaticDischargeSpeedThree = "cwae603z395ehxm6";
+    public static String wizardSpecialisationArcaneBoltLesser = "y54opte3llirc0z2";
+    public static String wizardSpecialisationArcaneBoltGreater = "kddxqi4rdizetygz";
+    public static String wizardSpecialisationArcaneBoltVolley = "v2w2y0ggvyb6q8x1";
 
     public static String spellbladeSpecialisationArcaneEmpowerment = "fw2qh5fw4h3ypjs4";
     public static String spellbladeSpecialisationFireEmpowerment = "4mqcsrpcwk4yuci5";

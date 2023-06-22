@@ -17,7 +17,9 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
@@ -26,6 +28,7 @@ import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class SignatureAbilities {
 
@@ -35,6 +38,7 @@ public class SignatureAbilities {
         String berserkerSkillTree = "simplyskills_berserker";
         String rogueSkillTree = "simplyskills_rogue";
         String rangerSkillTree = "simplyskills_ranger";
+        Vec3d blockpos = null;
 
 
 
@@ -44,33 +48,144 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationMeteorShower)) {
                 //Meteor Shower
-                SignatureAbilities.castSpellEngineMultiAOE(player,
-                        "simplyskills:fire_meteor",
-                        12);
+                if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+                if (blockpos == null)
+                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+                if (blockpos != null) {
+                    double xpos = blockpos.getX();
+                    double ypos = blockpos.getY();
+                    double zpos = blockpos.getZ();
+                    BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                    Box box = HelperMethods.createBoxAtBlock(searchArea, 8);
+                    for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                        if (entities != null) {
+                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        "simplyskills:fire_meteor",
+                                        8, le);
+                            }
+                        }
+                    }
+                }
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationIceComet)) {
                 //Ice Comet
-                SignatureAbilities.castSpellEngineAOE(player,
-                        "simplyskills:ice_comet",
-                        12);
+
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationIceCometLeap)) {
+                    player.setVelocity(player.getRotationVector().negate().multiply(+3));
+                    player.setVelocity(player.getVelocity().x, 1.3, player.getVelocity().z);
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 180, 0));
+                    player.velocityModified = true;
+                }
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley))
+                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, 400, 2));
+
+
+                if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+                if (blockpos == null)
+                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+                if (blockpos != null) {
+                    double xpos = blockpos.getX();
+                    double ypos = blockpos.getY();
+                    double zpos = blockpos.getZ();
+                    BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                    Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                    for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                        if (entities != null) {
+                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageOne))
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        "simplyskills:ice_comet_large",
+                                        3, le);
+                                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageTwo))
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:ice_comet_large_two",
+                                            3, le);
+                                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageThree))
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:ice_comet_large_three",
+                                            3, le);
+                                else
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:ice_comet",
+                                            3, le);
+                            }
+                        }
+                    }
+                }
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
-                //Lightning Beam
-                SignatureAbilities.castSpellEngineTargeted(player,
-                        "simplyskills:static_discharge",
-                        18);
+                //Static Discharge
+                if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+                if (blockpos == null)
+                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+                if (blockpos != null) {
+                    double xpos = blockpos.getX();
+                    double ypos = blockpos.getY();
+                    double zpos = blockpos.getZ();
+                    BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                    Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                    for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                        if (entities != null) {
+                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        "simplyskills:static_discharge",
+                                        3, le);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
                 //Arcane Bolt
-                SignatureAbilities.castSpellEngineTargeted(player,
-                        "simplyskills:arcane_bolt",
-                        32);
+                if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+                if (blockpos == null)
+                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+                if (blockpos != null) {
+                    double xpos = blockpos.getX();
+                    double ypos = blockpos.getY();
+                    double zpos = blockpos.getZ();
+                    BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                    Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                    for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                        if (entities != null) {
+                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        "simplyskills:arcane_bolt",
+                                        3, le);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
         }
 

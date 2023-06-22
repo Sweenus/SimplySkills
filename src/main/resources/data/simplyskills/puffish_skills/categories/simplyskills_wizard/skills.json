@@ -1,6 +1,6 @@
 {
 	"a3ns9xl58ixdg2lo": {
-		"definition": "wizardSignatureLightningBeam",
+		"definition": "wizardSignatureStaticDischarge",
 		"x": 0,
 		"y": -32,
 		"root": true
@@ -1077,6 +1077,120 @@
 		"definition": "spell_frost_damage_multi+5%",
 		"x": -96,
 		"y": -192,
+		"root": false
+	},
+	"c4ufo4n0g61fn18d": {
+		"definition": "wizardSignatureMeteorShowerGreater",
+		"x": 288,
+		"y": 64,
+		"root": false
+	},
+	"u0ypy4wxhyxcdy0q": {
+		"definition": "wizardSignatureMeteorShowerWrath",
+		"x": 288,
+		"y": 256,
+		"root": false
+	},
+	"1jk1kpkeiu183egl": {
+		"definition": "wizardSignatureMeteorShowerRenewingWrath",
+		"x": 288,
+		"y": 288,
+		"root": false
+	},
+	"80vfz0ye7lxpzx0j": {
+		"definition": "wizardSignatureMeteorShowerRenewingWrath++",
+		"x": 320,
+		"y": 288,
+		"root": false
+	},
+	"ryqv4fap1td01iwy": {
+		"definition": "wizardSignatureMeteorShowerRenewingWrath+++",
+		"x": 320,
+		"y": 256,
+		"root": false
+	},
+	"wk0uiyaoo1plysk4": {
+		"definition": "wizardSignatureIceCometLeap",
+		"x": -288,
+		"y": -64,
+		"root": false
+	},
+	"ahp5rugvghtpvv0j": {
+		"definition": "wizardSignatureIceCometVolley",
+		"x": -96,
+		"y": -256,
+		"root": false
+	},
+	"l6i62nziygs3ishg": {
+		"definition": "wizardSignatureIceCometDamage+",
+		"x": -256,
+		"y": -256,
+		"root": false
+	},
+	"7ngfgbcdg33dpadz": {
+		"definition": "wizardSignatureIceCometDamage++",
+		"x": -288,
+		"y": -256,
+		"root": false
+	},
+	"m5h4006g0loxutrg": {
+		"definition": "wizardSignatureIceCometDamage+++",
+		"x": -288,
+		"y": -224,
+		"root": false
+	},
+	"2o8v7vhfgf8lyzu8": {
+		"definition": "wizardSignatureStaticDischargeLeap",
+		"x": 256,
+		"y": -288,
+		"root": false
+	},
+	"09yy7mk9csney6w2": {
+		"definition": "wizardSignatureStaticDischargeLeap++",
+		"x": 288,
+		"y": -288,
+		"root": false
+	},
+	"cefchlgpfk2j5fg4": {
+		"definition": "wizardSignatureStaticDischargeLeap+++",
+		"x": 288,
+		"y": -320,
+		"root": false
+	},
+	"o078mm4i08rill6x": {
+		"definition": "wizardSignatureStaticDischargeSpeed",
+		"x": 64,
+		"y": -288,
+		"root": false
+	},
+	"s18lslxmj1eu3rmt": {
+		"definition": "wizardSignatureStaticDischargeSpeed++",
+		"x": 32,
+		"y": -320,
+		"root": false
+	},
+	"cwae603z395ehxm6": {
+		"definition": "wizardSignatureStaticDischargeSpeed+++",
+		"x": 64,
+		"y": -352,
+		"root": false
+	},
+	"y54opte3llirc0z2": {
+		"definition": "wizardSignatureArcaneBoltLesser",
+		"x": -256,
+		"y": 96,
+		"root": false
+	},
+	"kddxqi4rdizetygz": {
+		"definition": "wizardSignatureArcaneBoltGreater",
+		"x": -64,
+		"y": 288,
+		"root": false
+	},
+	"v2w2y0ggvyb6q8x1": {
+		"definition": "wizardSignatureArcaneBoltVolley",
+		"x": -256,
+		"y": 288,
 		"root": false
 	}
 }

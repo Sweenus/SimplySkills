@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
+import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.entity.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
@@ -232,6 +233,43 @@ public class AbilityEffects {
             return true;
         }
         return false;
+    }
+
+    public static void effectWizardFrostVolley(PlayerEntity player) {
+
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley) &&
+        player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % 20 == 0) {
+            Vec3d blockpos = null;
+
+            //Arcane Bolt
+            if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+            if (blockpos == null)
+                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+            if (blockpos != null) {
+                double xpos = blockpos.getX();
+                double ypos = blockpos.getY();
+                double zpos = blockpos.getZ();
+                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                    if (entities != null) {
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                    "simplyskills:frost_arrow",
+                                    3, le);
+                            HelperMethods.decrementStatusEffect(player, EffectRegistry.FROSTVOLLEY);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
 

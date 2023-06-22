@@ -1628,6 +1628,96 @@
 			}
 		]
 	},
+	"wizardSignatureMeteorShowerGreater": {
+		"title": "[Meteor Shower] Now summons a single larger meteor that deals significantly more damage in a larger area.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_meteor_shower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureMeteorShowerGreater"
+				}
+			}
+		]
+	},
+	"wizardSignatureMeteorShowerWrath": {
+		"title": "Casting [Meteor Shower] now grants you 10 stacks of Meteoric Wrath. \n \n(Meteoric Wrath) periodically summons meteors above nearby enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_meteor_shower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureMeteorShowerWrath"
+				}
+			}
+		]
+	},
+	"wizardSignatureMeteorShowerRenewingWrath": {
+		"title": "When Meteoric Wrath triggers it has a 5% chance to not consume a stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_meteor_shower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureMeteorShowerRenewingWrath"
+				}
+			}
+		]
+	},
+	"wizardSignatureMeteorShowerRenewingWrath++": {
+		"title": "When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_meteor_shower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureMeteorShowerRenewingWrath++"
+				}
+			}
+		]
+	},
+	"wizardSignatureMeteorShowerRenewingWrath+++": {
+		"title": "When Meteoric Wrath triggers it has a 15% chance to not consume a stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_meteor_shower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureMeteorShowerRenewingWrath+++"
+				}
+			}
+		]
+	},
 	"wizardSignatureIceComet": {
 		"title": "Signature Ability: [Ice Comet] Calls down an Ice Comet that deals damage to and slows enemies in a large radius.",
 		"frame": "goal",
@@ -1646,8 +1736,98 @@
 			}
 		]
 	},
-	"wizardSignatureLightningBeam": {
-		"title": "Signature Ability: [Lightning Beam] Fires a high damage beam of lightning energy at your target.",
+	"wizardSignatureIceCometLeap": {
+		"title": "Casting [Ice Comet] now causes you to leap backwards and gain momentary slow falling.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_ice_comet.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureIceCometLeap"
+				}
+			}
+		]
+	},
+	"wizardSignatureIceCometVolley": {
+		"title": "Casting [Ice Comet] now grants you 4 stacks of frost volley. \n \n(Frost Volley) causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_ice_comet.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureIceCometVolley"
+				}
+			}
+		]
+	},
+	"wizardSignatureIceCometDamage+": {
+		"title": "[Ice Comet] Is now larger and deals more damage & knockback.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_ice_comet.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureIceCometDamage+"
+				}
+			}
+		]
+	},
+	"wizardSignatureIceCometDamage++": {
+		"title": "[Ice Comet] Is now larger and deals much more damage & knockback.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_ice_comet.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureIceCometDamage++"
+				}
+			}
+		]
+	},
+	"wizardSignatureIceCometDamage+++": {
+		"title": "[Ice Comet] Is now larger and deals significantly more damage & knockback.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_ice_comet.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureIceCometDamage+++"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischarge": {
+		"title": "Signature Ability: [Static Discharge] Releases a high damage electrical discharge at your target, inflicting them with weakness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1659,7 +1839,115 @@
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "wizardSignatureLightningBeam"
+					"passive_skill": "wizardSignatureStaticDischarge"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeLeap": {
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 4 times.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLeap"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeLeap++": {
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 8 times.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLeap++"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeLeap+++": {
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 12 times.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLeap+++"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeSpeed": {
+		"title": "Each time [Static Discharge] leaps or is cast, you have a 5% chance to gain speed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeSpeed"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeSpeed++": {
+		"title": "Each time [Static Discharge] leaps or is cast, you have a 10% chance to gain speed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeSpeed++"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeSpeed+++": {
+		"title": "Each time [Static Discharge] leaps or is cast, you have a 15% chance to gain speed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeSpeed+++"
 				}
 			}
 		]
@@ -1678,6 +1966,60 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "wizardSignatureArcaneBolt"
+				}
+			}
+		]
+	},
+	"wizardSignatureArcaneBoltLesser": {
+		"title": "Your [Arcane Bolt] now fires multiple Lesser Arcane Bolts in a larger area. These bolts move faster and have less damage.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_arcane_bolt.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureArcaneBoltLesser"
+				}
+			}
+		]
+	},
+	"wizardSignatureArcaneBoltVolley": {
+		"title": "Casting [Arcane Bolt] now grants you 6 stacks of Arcane Volley. \n \n(Arcane Volley) causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_arcane_bolt.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureArcaneBoltVolley"
+				}
+			}
+		]
+	},
+	"wizardSignatureArcaneBoltGreater": {
+		"title": "You now cast a [Greater Arcane Bolt] that deals increased damage. \n \nThis does not affect Lesser Arcane Bolts.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_arcane_bolt.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureArcaneBoltGreater"
 				}
 			}
 		]

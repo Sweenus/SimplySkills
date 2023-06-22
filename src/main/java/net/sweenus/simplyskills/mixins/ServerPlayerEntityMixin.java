@@ -138,6 +138,11 @@ public abstract class ServerPlayerEntityMixin {
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.initiateFrail)) {
                 Abilities.passiveInitiateFrail(player);
             }
+            //Initiate Frail (weapon element)
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_wizard").get().
+                    contains(SkillReferencePosition.wizardSpecialisationIceCometVolley)) {
+                AbilityEffects.effectWizardFrostVolley(player);
+            }
 
 
 

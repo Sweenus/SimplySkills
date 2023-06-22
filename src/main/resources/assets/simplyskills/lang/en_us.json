@@ -5,5 +5,9 @@
   "effect.simplyskills.evasion": "Evasion",
   "effect.simplyskills.rampage": "Rampage",
   "effect.simplyskills.siphoning_strikes": "Siphoning Strikes",
-  "effect.simplyskills.arrow_rain": "Arrow Rain"
+  "effect.simplyskills.arrow_rain": "Arrow Rain",
+  "effect.simplyskills.arcane_volley": "Arcane Volley",
+  "effect.simplyskills.frost_volley": "Frost Volley",
+  "effect.simplyskills.meteoric_wrath": "Meteoric Wrath",
+  "effect.simplyskills.static_charge": "Static Charge"
 }

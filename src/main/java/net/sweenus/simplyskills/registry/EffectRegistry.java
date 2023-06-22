@@ -5,18 +5,21 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.effect.BerserkingEffect;
-import net.sweenus.simplyskills.effect.BloodthirstyEffect;
+import net.sweenus.simplyskills.effect.*;
 
 public class EffectRegistry {
 
     public static StatusEffect BERSERKING = new BerserkingEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect BLOODTHIRSTY= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect RAMPAGE= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect EVASION= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect SIPHONINGSTRIKES= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect ELEMENTALARROWS= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect ARROWRAIN= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect RAMPAGE= new RampageEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect EVASION= new EvasionEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect SIPHONINGSTRIKES= new SiphoningStrikesEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ELEMENTALARROWS= new ElementalArrowsEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ARROWRAIN= new ArrowRainEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect FROSTVOLLEY= new FrostVolleyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ARCANEVOLLEY= new ArcaneVolleyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect METEORICWRATH= new MeteoricWrathEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect STATICCHARGE= new StaticChargeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -30,6 +33,10 @@ public class EffectRegistry {
         SIPHONINGSTRIKES = registerStatusEffect("siphoning_strikes", SIPHONINGSTRIKES);
         ELEMENTALARROWS = registerStatusEffect("elemental_arrows", ELEMENTALARROWS);
         ARROWRAIN = registerStatusEffect("arrow_rain", ARROWRAIN);
+        FROSTVOLLEY = registerStatusEffect("frost_volley", FROSTVOLLEY);
+        ARCANEVOLLEY = registerStatusEffect("arcane_volley", ARCANEVOLLEY);
+        METEORICWRATH = registerStatusEffect("meteoric_wrath", METEORICWRATH);
+        STATICCHARGE = registerStatusEffect("static_charge", STATICCHARGE);
     }
 
 

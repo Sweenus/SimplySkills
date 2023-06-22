@@ -26,7 +26,7 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 0.4,
+        "velocity": 0.8,
         "homing_angle": 4,
         "client_data": {
           "travel_particles": [
@@ -57,7 +57,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.6,
-          "spell_power_coefficient": 4.2
+          "spell_power_coefficient": 1.8
         }
       },
       "particles": [

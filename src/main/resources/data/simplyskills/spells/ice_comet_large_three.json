@@ -96,7 +96,7 @@
           ],
           "model_id": "minecraft:ice",
           "render": "DEEP",
-          "scale": 2
+          "scale": 2.7
         }
       }
     },
@@ -110,8 +110,8 @@
       "action": {
         "type": "DAMAGE",
         "damage": {
-          "spell_power_coefficient": 1.8,
-          "knockback": 2.5
+          "spell_power_coefficient": 3.5,
+          "knockback": 4.5
         }
       },
       "particles": [
@@ -119,7 +119,7 @@
           "particle_id": "spell_engine:frost_hit",
           "shape": "CIRCLE",
           "origin": "CENTER",
-          "count": 3.0,
+          "count": 23.0,
           "min_speed": 0.5,
           "max_speed": 3.0
         }

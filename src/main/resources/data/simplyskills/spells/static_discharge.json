@@ -13,7 +13,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:arcane_spell",
+        "particle_id": "spell_engine:holy_spark",
         "shape": "PIPE",
         "origin": "FEET",
         "count": 1.0,
@@ -43,7 +43,7 @@
       },
       "particles": [
         {
-          "particle_id": "spell_engine:arcane_hit",
+          "particle_id": "spell_engine:holy_spark",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 30,
