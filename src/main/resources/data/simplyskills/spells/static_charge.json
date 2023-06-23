@@ -1,0 +1,79 @@
+{
+  "school": "LIGHTNING",
+  "range": 16,
+  "learn": {
+    "tier": 2
+  },
+  "cast": {
+    "duration": 1.5,
+    "sound": {
+      "id": "simplyskills:fx_skill_backstab",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR",
+      "cursor": { }
+    },
+    "sound": {
+      "id": "simplyskills:fx_skill_backstab"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.0,
+          "spell_power_coefficient": 0.9
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:holy_spark",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 30,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        },
+        {
+          "particle_id": "firework",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 20,
+          "min_speed": 0.05,
+          "max_speed": 0.2
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:fx_skill_backstab"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "ADD",
+          "duration": 6,
+          "amplifier": 1,
+          "effect_id": "minecraft:weakness"
+        },
+        "apply_to_caster": false
+      }
+    }
+  ],
+  "cost": {
+  }
+}

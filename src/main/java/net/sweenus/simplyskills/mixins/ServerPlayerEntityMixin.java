@@ -138,10 +138,20 @@ public abstract class ServerPlayerEntityMixin {
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.initiateFrail)) {
                 Abilities.passiveInitiateFrail(player);
             }
-            //Initiate Frail (weapon element)
+            //Wizard Frost Volley Effect
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_wizard").get().
                     contains(SkillReferencePosition.wizardSpecialisationIceCometVolley)) {
                 AbilityEffects.effectWizardFrostVolley(player);
+            }
+            //Wizard Arcane Volley Effect
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_wizard").get().
+                    contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley)) {
+                AbilityEffects.effectWizardArcaneVolley(player);
+            }
+            //Wizard Meteoric Wrath Effect
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_wizard").get().
+                    contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath)) {
+                AbilityEffects.effectWizardMeteoricWrath(player);
             }
 
 

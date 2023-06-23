@@ -1665,7 +1665,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath": {
-		"title": "When Meteoric Wrath triggers it has a 5% chance to not consume a stack.",
+		"title": "When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1683,7 +1683,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath++": {
-		"title": "When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
+		"title": "When Meteoric Wrath triggers it has a 30% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1701,7 +1701,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath+++": {
-		"title": "When Meteoric Wrath triggers it has a 15% chance to not consume a stack.",
+		"title": "When Meteoric Wrath triggers it has a 50% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1755,7 +1755,7 @@
 		]
 	},
 	"wizardSignatureIceCometVolley": {
-		"title": "Casting [Ice Comet] now grants you 4 stacks of frost volley. \n \n(Frost Volley) causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
+		"title": "Casting [Ice Comet] now grants you 6 stacks of frost volley. \n \n(Frost Volley) causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1845,7 +1845,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap": {
-		"title": "Your [Static Discharge] can now leap between nearby enemies up to 4 times.",
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 8 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1863,7 +1863,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap++": {
-		"title": "Your [Static Discharge] can now leap between nearby enemies up to 8 times.",
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 16 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1881,7 +1881,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap+++": {
-		"title": "Your [Static Discharge] can now leap between nearby enemies up to 12 times.",
+		"title": "Your [Static Discharge] can now leap between nearby enemies up to 24 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1989,7 +1989,7 @@
 		]
 	},
 	"wizardSignatureArcaneBoltVolley": {
-		"title": "Casting [Arcane Bolt] now grants you 6 stacks of Arcane Volley. \n \n(Arcane Volley) causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
+		"title": "Casting [Arcane Bolt] now grants you 10 stacks of Arcane Volley. \n \n(Arcane Volley) causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

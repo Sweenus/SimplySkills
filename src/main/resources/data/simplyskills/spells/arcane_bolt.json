@@ -42,7 +42,7 @@
           ],
           "model_id": "minecraft:amethyst_block",
           "render": "DEEP",
-          "scale": 0.5
+          "scale": 0.3
         }
       }
     },

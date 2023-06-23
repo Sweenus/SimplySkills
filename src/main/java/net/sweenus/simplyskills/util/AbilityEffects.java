@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.entity.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
@@ -267,6 +266,67 @@ public class AbilityEffects {
                         }
                     }
                 }
+            }
+        }
+    }
+    public static void effectWizardArcaneVolley(PlayerEntity player) {
+
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley) &&
+                player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % 10 == 0) {
+            Vec3d blockpos = null;
+
+            //Arcane Bolt
+            if (HelperMethods.getTargetedEntity(player, 120) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+
+            if (blockpos == null)
+                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+
+            if (blockpos != null) {
+                double xpos = blockpos.getX();
+                double ypos = blockpos.getY();
+                double zpos = blockpos.getZ();
+                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                    if (entities != null) {
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                    "simplyskills:arcane_bolt_lesser",
+                                    3, le);
+                            HelperMethods.decrementStatusEffect(player, EffectRegistry.ARCANEVOLLEY);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void effectWizardMeteoricWrath(PlayerEntity player) {
+
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath) &&
+                player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % 15 == 0) {
+            int chance = 35;
+            int radius = 12;
+            String spellIdentifier = "simplyskills:fire_meteor_small";
+
+
+            if (SignatureAbilities.castSpellEngineAOE(player, spellIdentifier, radius, chance, true)) {
+                int renewalChance = 0;
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrath))
+                    renewalChance = 10;
+                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathTwo))
+                    renewalChance = 30;
+                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathThree))
+                    renewalChance = 50;
+                if (player.getRandom().nextInt(100) > renewalChance)
+                    HelperMethods.decrementStatusEffect(player, EffectRegistry.METEORICWRATH);
             }
         }
 

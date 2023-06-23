@@ -26,8 +26,8 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 0.8,
-        "homing_angle": 4,
+        "velocity": 0.3,
+        "homing_angle": 2.2,
         "client_data": {
           "travel_particles": [
             {
@@ -42,7 +42,7 @@
           ],
           "model_id": "minecraft:amethyst_block",
           "render": "DEEP",
-          "scale": 0.2
+          "scale": 0.5
         }
       }
     },
@@ -56,8 +56,8 @@
       "action": {
         "type": "DAMAGE",
         "damage": {
-          "knockback": 0.6,
-          "spell_power_coefficient": 1.8
+          "knockback": 0.8,
+          "spell_power_coefficient": 6.2
         }
       },
       "particles": [

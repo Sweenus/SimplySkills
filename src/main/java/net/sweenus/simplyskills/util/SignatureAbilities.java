@@ -28,7 +28,6 @@ import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class SignatureAbilities {
 
@@ -48,6 +47,11 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationMeteorShower)) {
                 //Meteor Shower
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH, 800, 9));
+
+
                 if (HelperMethods.getTargetedEntity(player, 120) !=null)
                     blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
 
@@ -64,7 +68,13 @@ public class SignatureAbilities {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerGreater))
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:fire_meteor_large",
+                                            8, le);
+                                else
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         "simplyskills:fire_meteor",
                                         8, le);
                             }
@@ -86,7 +96,7 @@ public class SignatureAbilities {
                 }
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley))
-                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, 400, 2));
+                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, 400, 5));
 
 
                 if (HelperMethods.getTargetedEntity(player, 120) !=null)
@@ -133,6 +143,22 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
                 //Static Discharge
+                int amplifier = 8;
+                int speedChance = 5;
+
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapTwo))
+                    amplifier = 16;
+                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapThree))
+                    amplifier = 24;
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo))
+                    speedChance = 10;
+                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree))
+                    speedChance = 15;
+
                 if (HelperMethods.getTargetedEntity(player, 120) !=null)
                     blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
 
@@ -152,6 +178,14 @@ public class SignatureAbilities {
                                 SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         "simplyskills:static_discharge",
                                         3, le);
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeap)) {
+                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE, 900, amplifier));
+                                }
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed) &&
+                                player.getRandom().nextInt(100) < speedChance)
+                                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, 120, 1, 4);
                                 break;
                             }
                         }
@@ -162,6 +196,15 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
                 //Arcane Bolt
+                int radius = 3;
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
+                    radius = 12;
+                }
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY, 400, 9));
+
                 if (HelperMethods.getTargetedEntity(player, 120) !=null)
                     blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
 
@@ -173,15 +216,28 @@ public class SignatureAbilities {
                     double ypos = blockpos.getY();
                     double zpos = blockpos.getZ();
                     BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                    Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
+                    Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
                     for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                        "simplyskills:arcane_bolt",
-                                        3, le);
-                                break;
+                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:arcane_bolt_lesser",
+                                            radius, le);
+                                } else {
+                                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
+                                            .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltGreater))
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                            "simplyskills:arcane_bolt_greater",
+                                            radius, le);
+                                    else
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                "simplyskills:arcane_bolt",
+                                                radius, le);
+                                    break;
+                                }
                             }
                         }
                     }
@@ -326,7 +382,7 @@ public class SignatureAbilities {
 
     }
 
-    public static void castSpellEngineAOE(PlayerEntity player, String spellIdentifier, int radius) {
+    public static boolean castSpellEngineAOE(PlayerEntity player, String spellIdentifier, int radius, int chance, boolean singleTarget) {
 
         // -- Cast spell at nearby targets --
 
@@ -342,7 +398,10 @@ public class SignatureAbilities {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                    list.add(le);
+                    if (player.getRandom().nextInt(100) < chance)
+                        list.add(le);
+                    if (singleTarget)
+                        break;
 
                 }
             }
@@ -358,8 +417,9 @@ public class SignatureAbilities {
                     action,
                     hand,
                     20);
+            return true;
         }
-
+        return false;
     }
 
     public static void castSpellEngineMultiAOE(PlayerEntity player, String spellIdentifier, int radius) {
