@@ -339,6 +339,9 @@ public class SignatureAbilities {
                     .contains(SkillReferencePosition.spellbladeSpecialisationElementalImpact)) {
                 //Elemental Impact
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT, 20, 0));
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance))
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 35, 2));
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationBoltStrike)) {

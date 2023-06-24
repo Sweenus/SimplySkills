@@ -1,6 +1,6 @@
 {
   "range": 6.0,
-  "school": "FROST",
+  "school": "LIGHTNING",
   "learn": {
     "tier": 2
   },
@@ -13,7 +13,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "spell_engine:holy_spark",
         "shape": "PILLAR",
         "origin": "CENTER",
         "count": 0.5,
@@ -34,7 +34,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "spell_engine:holy_spark",
         "shape": "CIRCLE",
         "origin": "CENTER",
         "count": 130.0,
@@ -42,10 +42,10 @@
         "max_speed": 0.6
       },
       {
-        "particle_id": "spell_engine:frost_shard",
+        "particle_id": "spell_engine:holy_spark",
         "shape": "CIRCLE",
         "origin": "CENTER",
-        "count": 130.0,
+        "count": 30.0,
         "min_speed": 0.5,
         "max_speed": 0.9
       }
@@ -61,7 +61,7 @@
       },
       "particles": [
         {
-          "particle_id": "spell_engine:frost_hit",
+          "particle_id": "spell_engine:holy_spark",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 30.0,
@@ -77,8 +77,8 @@
       "action": {
         "type": "STATUS_EFFECT",
         "status_effect": {
-          "effect_id": "minecraft:slowness",
-          "duration": 6,
+          "effect_id": "minecraft:weakness",
+          "duration": 2,
           "apply_mode": "ADD",
           "apply_limit": {
             "health_base": 50,

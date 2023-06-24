@@ -7,8 +7,10 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.AbilityEffects;
+import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -195,6 +197,17 @@ public abstract class ServerPlayerEntityMixin {
                     //Passive Rogue Opportunistic Mastery
                     if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMastery)) {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
+                    }
+
+
+                    //Signature Passive Elemental Surge Renewal
+                    if (SkillsAPI.getUnlockedSkills( serverPlayer,
+                            "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalSurgeRenewal)) {
+                        if (player.hasStatusEffect(EffectRegistry.ELEMENTALSURGE)) {
+                            int surgeDuration = player.getStatusEffect(EffectRegistry.ELEMENTALSURGE).getDuration();
+                            player.removeStatusEffect(EffectRegistry.ELEMENTALSURGE);
+                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, surgeDuration+3));
+                        }
                     }
 
 

@@ -1,6 +1,6 @@
 {
   "range": 6.0,
-  "school": "FROST",
+  "school": "FIRE",
   "learn": {
     "tier": 2
   },
@@ -13,7 +13,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "spell_engine:flame",
         "shape": "PILLAR",
         "origin": "CENTER",
         "count": 0.5,
@@ -34,7 +34,7 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "spell_engine:flame",
         "shape": "CIRCLE",
         "origin": "CENTER",
         "count": 130.0,
@@ -42,10 +42,10 @@
         "max_speed": 0.6
       },
       {
-        "particle_id": "spell_engine:frost_shard",
+        "particle_id": "campfire_cosy_smoke",
         "shape": "CIRCLE",
         "origin": "CENTER",
-        "count": 130.0,
+        "count": 30.0,
         "min_speed": 0.5,
         "max_speed": 0.9
       }
@@ -61,7 +61,7 @@
       },
       "particles": [
         {
-          "particle_id": "spell_engine:frost_hit",
+          "particle_id": "spell_engine:flame",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 30.0,
@@ -69,24 +69,6 @@
           "max_speed": 0.7
         }
       ],
-      "sound": {
-        "id": "simplyskills:fx_skill_backstab"
-      }
-    },
-    {
-      "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "effect_id": "minecraft:slowness",
-          "duration": 6,
-          "apply_mode": "ADD",
-          "apply_limit": {
-            "health_base": 50,
-            "spell_power_multiplier": 2
-          },
-          "show_particles": false
-        }
-      },
       "sound": {
         "id": "simplyskills:fx_skill_backstab"
       }

@@ -1,6 +1,6 @@
 {
-  "range": 6.0,
-  "school": "FROST",
+  "range": 3.0,
+  "school": "FIRE",
   "learn": {
     "tier": 2
   },
@@ -8,12 +8,12 @@
     "duration": 0.5,
     "animation": "spell_engine:one_handed_area_charge",
     "sound": {
-      "id": "spell_engine:generic_frost_casting",
+      "id": "spell_engine:generic_fire_casting",
       "randomness": 0
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "spell_engine:flame",
         "shape": "PILLAR",
         "origin": "CENTER",
         "count": 0.5,
@@ -34,18 +34,18 @@
     },
     "particles": [
       {
-        "particle_id": "spell_engine:snowflake",
+        "particle_id": "campfire_cosy_smoke",
         "shape": "CIRCLE",
         "origin": "CENTER",
-        "count": 130.0,
+        "count": 10.0,
         "min_speed": 0.2,
         "max_speed": 0.6
       },
       {
-        "particle_id": "spell_engine:frost_shard",
+        "particle_id": "spell_engine:flame",
         "shape": "CIRCLE",
         "origin": "CENTER",
-        "count": 130.0,
+        "count": 20.0,
         "min_speed": 0.5,
         "max_speed": 0.9
       }
@@ -56,12 +56,12 @@
       "action": {
         "type": "DAMAGE",
         "damage": {
-          "spell_power_coefficient": 0.6
+          "spell_power_coefficient": 1.2
         }
       },
       "particles": [
         {
-          "particle_id": "spell_engine:frost_hit",
+          "particle_id": "spell_engine:flame",
           "shape": "SPHERE",
           "origin": "CENTER",
           "count": 30.0,
@@ -69,24 +69,6 @@
           "max_speed": 0.7
         }
       ],
-      "sound": {
-        "id": "simplyskills:fx_skill_backstab"
-      }
-    },
-    {
-      "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "effect_id": "minecraft:slowness",
-          "duration": 6,
-          "apply_mode": "ADD",
-          "apply_limit": {
-            "health_base": 50,
-            "spell_power_multiplier": 2
-          },
-          "show_particles": false
-        }
-      },
       "sound": {
         "id": "simplyskills:fx_skill_backstab"
       }
