@@ -135,7 +135,8 @@ public abstract class ServerPlayerEntityMixin {
                 Abilities.passiveWayfarerSlender(player);
             }
             //Initiate Frail (weapon element)
-            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.initiateFrail)) {
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.initiateFrail)
+            && !SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeWeaponExpert)) {
                 Abilities.passiveInitiateFrail(player);
             }
             //Wizard Frost Volley Effect
@@ -164,11 +165,13 @@ public abstract class ServerPlayerEntityMixin {
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_rogue");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_ranger");
+                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_spellblade");
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_rogue", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_ranger", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_spellblade", 60000);
             }
 
 

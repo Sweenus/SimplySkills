@@ -369,7 +369,7 @@ public class Abilities {
                 !skillID.contains(SkillReferencePosition.frostguardPath) &&
                 !skillID.contains(SkillReferencePosition.roguePath) &&
                 !skillID.contains(SkillReferencePosition.rangerPath) &&
-                !skillID.contains(SkillReferencePosition.spellBladePath)) {
+                !skillID.contains(SkillReferencePosition.spellbladePath)) {
             return;
         }
 
@@ -388,6 +388,10 @@ public class Abilities {
         } else if (skillID.contains(SkillReferencePosition.rangerPath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_ranger")){
             SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
+            playUnlockSound(player);
+        } else if (skillID.contains(SkillReferencePosition.spellbladePath)
+                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_spellblade")){
+            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_spellblade");
             playUnlockSound(player);
         }
 

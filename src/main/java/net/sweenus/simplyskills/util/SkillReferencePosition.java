@@ -65,7 +65,7 @@ public class SkillReferencePosition {
 
     // -- Paths --
     public static String wizardPath = "38jnvjl6fov2u9my";
-    public static String spellBladePath = "r593tqjmrg93ffmz";
+    public static String spellbladePath = "r593tqjmrg93ffmz";
     public static String berserkerPath = "pn32g5revwh8qmeq";
     public static String roguePath = "u9drcyvhqz6j14bf";
     public static String crusaderPath = "js1pm8rucmg11b05";
@@ -103,10 +103,20 @@ public class SkillReferencePosition {
     public static String wizardSpecialisationArcaneBoltGreater = "kddxqi4rdizetygz";
     public static String wizardSpecialisationArcaneBoltVolley = "v2w2y0ggvyb6q8x1";
 
-    public static String spellbladeSpecialisationArcaneEmpowerment = "fw2qh5fw4h3ypjs4";
-    public static String spellbladeSpecialisationFireEmpowerment = "4mqcsrpcwk4yuci5";
-    public static String spellbladeSpecialisationFrostEmpowerment = "7dsbtkhvcv332zla";
-    public static String spellbladeSpecialisationLightningEmpowerment = "58k9ygjzu46btnkw";
+    public static String spellbladeSpecialisationElementalSurge = "a3ns9xl58ixdg2lo";
+    public static String spellbladeSpecialisationElementalSurgeNoFrost = "nra3vu36kko3iza6";
+    public static String spellbladeSpecialisationElementalSurgeNoFire = "yz661tbyosmyjaa9";
+    public static String spellbladeSpecialisationElementalSurgeNoLightning = "3abpfmug0031gzyg";
+    public static String spellbladeSpecialisationElementalSurgeRenewal = "t4yk1ygmlwzrhc9m";
+    public static String spellbladeSpecialisationBoltStrike = "is053f9imz801s57";
+    public static String spellbladeSpecialisationBoltStrikeFrost = "7ulbfzfs4es5omck";
+    public static String spellbladeSpecialisationBoltStrikeRenewal = "ue2j6uln9psnruaq";
+    public static String spellbladeSpecialisationElementalImpact = "kp8uei8ppni71b5x";
+    public static String spellbladeSpecialisationElementalImpactMagnet = "ml4d2oh936rz57jk";
+    public static String spellbladeSpecialisationElementalImpactResistance = "lstknjelt6ia7hww";
+
+    public static String spellbladeWeaponExpert = "endsaris2tu3h8h2";
+    public static String spellbladeSpellweaving = "ldgsqpyo0z0hniqx";
 
     public static String necromancerSpecialisationSpectralGrasp = "fw2qh5fw4h3ypjs4";
     public static String necromancerSpecialisationSacrifice = "4mqcsrpcwk4yuci5";

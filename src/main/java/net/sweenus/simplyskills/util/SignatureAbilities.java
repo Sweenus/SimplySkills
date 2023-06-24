@@ -37,6 +37,7 @@ public class SignatureAbilities {
         String berserkerSkillTree = "simplyskills_berserker";
         String rogueSkillTree = "simplyskills_rogue";
         String rangerSkillTree = "simplyskills_ranger";
+        String spellbladeSkillTree = "simplyskills_spellblade";
         Vec3d blockpos = null;
 
 
@@ -325,6 +326,27 @@ public class SignatureAbilities {
             }
 
         }
+
+        // - Spellblade -
+        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
+                    .contains(SkillReferencePosition.spellbladeSpecialisationElementalSurge)) {
+                //Elemental Surge
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, 300, 0));
+            }
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
+                    .contains(SkillReferencePosition.spellbladeSpecialisationElementalImpact)) {
+                //Elemental Impact
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT, 20, 0));
+            }
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
+                    .contains(SkillReferencePosition.spellbladeSpecialisationBoltStrike)) {
+                //Bolt Strike
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BOLTSTRIKE, 600, 19));
+            }
+        }
+
 
     }
 

@@ -20,6 +20,9 @@ public class EffectRegistry {
     public static StatusEffect ARCANEVOLLEY= new ArcaneVolleyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect METEORICWRATH= new MeteoricWrathEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect STATICCHARGE= new StaticChargeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ELEMENTALIMPACT= new ElementalImpactEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ELEMENTALSURGE= new ElementalSurgeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect BOLTSTRIKE= new BoltStrikeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -37,6 +40,9 @@ public class EffectRegistry {
         ARCANEVOLLEY = registerStatusEffect("arcane_volley", ARCANEVOLLEY);
         METEORICWRATH = registerStatusEffect("meteoric_wrath", METEORICWRATH);
         STATICCHARGE = registerStatusEffect("static_charge", STATICCHARGE);
+        ELEMENTALSURGE = registerStatusEffect("elemental_surge", ELEMENTALSURGE);
+        ELEMENTALIMPACT = registerStatusEffect("elemental_impact", ELEMENTALIMPACT);
+        BOLTSTRIKE = registerStatusEffect("bolt_strike", BOLTSTRIKE);
     }
 
 
