@@ -22,7 +22,7 @@ public class EffectRegistry {
     public static StatusEffect STATICCHARGE= new StaticChargeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect ELEMENTALIMPACT= new ElementalImpactEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect ELEMENTALSURGE= new ElementalSurgeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-    public static StatusEffect BOLTSTRIKE= new BoltStrikeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect SPELLWEAVER= new SpellweaverEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -42,7 +42,7 @@ public class EffectRegistry {
         STATICCHARGE = registerStatusEffect("static_charge", STATICCHARGE);
         ELEMENTALSURGE = registerStatusEffect("elemental_surge", ELEMENTALSURGE);
         ELEMENTALIMPACT = registerStatusEffect("elemental_impact", ELEMENTALIMPACT);
-        BOLTSTRIKE = registerStatusEffect("bolt_strike", BOLTSTRIKE);
+        SPELLWEAVER = registerStatusEffect("spellweaver", SPELLWEAVER);
     }
 
 

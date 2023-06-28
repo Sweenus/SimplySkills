@@ -345,8 +345,8 @@ public class SignatureAbilities {
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationBoltStrike)) {
-                //Bolt Strike
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BOLTSTRIKE, 600, 19));
+                //Spell Weaver
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER, 600, 19));
             }
         }
 
@@ -445,40 +445,6 @@ public class SignatureAbilities {
             return true;
         }
         return false;
-    }
-
-    public static void castSpellEngineMultiAOE(PlayerEntity player, String spellIdentifier, int radius) {
-
-        // -- Cast spell at nearby targets --
-
-        ItemStack itemStack     = player.getMainHandStack();
-        Hand hand               = player.getActiveHand();
-        SpellCast.Action action = SpellCast.Action.RELEASE;
-        Identifier spellID      = new Identifier(spellIdentifier);
-        List<Entity> list       = new ArrayList<Entity>();
-
-
-        Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-            if (entities != null) {
-                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-
-                    list.add(le);
-                    SpellHelper.performSpell(
-                            player.world,
-                            player,
-                            spellID,
-                            list,
-                            itemStack,
-                            action,
-                            hand,
-                            20);
-                    list.remove(le);
-
-                }
-            }
-        }
-
     }
 
 
