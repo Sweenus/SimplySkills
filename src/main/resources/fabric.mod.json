@@ -17,6 +17,9 @@
     ],
     "main": [
       "net.sweenus.simplyskills.SimplySkills"
+    ],
+    "preLaunch": [
+      "net.sweenus.simplyskills.util.SimplySkillsPreInit"
     ]
   },
   "mixins": [
