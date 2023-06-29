@@ -109,8 +109,8 @@ public class SkillReferencePosition {
     public static String spellbladeSpecialisationElementalSurgeNoLightning = "3abpfmug0031gzyg";
     public static String spellbladeSpecialisationElementalSurgeRenewal = "t4yk1ygmlwzrhc9m";
     public static String spellbladeSpecialisationSpellweaver = "is053f9imz801s57";
-    public static String spellbladeSpecialisationSpellweaverTwo = "7ulbfzfs4es5omck";
-    public static String spellbladeSpecialisationSpellweaverThree = "ue2j6uln9psnruaq";
+    public static String spellbladeSpecialisationSpellweaverHaste = "7ulbfzfs4es5omck";
+    public static String spellbladeSpecialisationSpellweaverRegeneration = "ue2j6uln9psnruaq";
     public static String spellbladeSpecialisationElementalImpact = "kp8uei8ppni71b5x";
     public static String spellbladeSpecialisationElementalImpactMagnet = "ml4d2oh936rz57jk";
     public static String spellbladeSpecialisationElementalImpactResistance = "lstknjelt6ia7hww";

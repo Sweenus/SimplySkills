@@ -30,7 +30,7 @@ public class AbilityEffects {
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
             int berserkingSubEffectDuration = 200;
-            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, 3);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, 5);
             HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration, 1, 3);
             HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration, 1, 3);
         }
@@ -58,7 +58,7 @@ public class AbilityEffects {
 
             Random rand = new Random();
             StatusEffect randomStatus = list.get(rand.nextInt(list.size()));
-            HelperMethods.incrementStatusEffect(player, randomStatus, rampageSubEffectDuration, 1, 2);
+            HelperMethods.incrementStatusEffect(player, randomStatus, rampageSubEffectDuration, 1, 3);
         }
     }
 
@@ -330,6 +330,40 @@ public class AbilityEffects {
             }
         }
 
+    }
+
+    public static void effectSpellbladeSpellweaving(Entity target, PlayerEntity player) {
+        int chance = 15;
+
+        if (player.hasStatusEffect(EffectRegistry.SPELLWEAVER) &&
+                (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
+                        .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)))
+            chance = 30;
+
+        List<String> list = new ArrayList<>();
+        list.add("simplyskills:frost_arrow");
+        list.add("simplyskills:fire_arrow");
+        list.add("simplyskills:lightning_arrow");
+        list.add("simplyskills:arcane_bolt");
+        list.add("simplyskills:arcane_bolt_lesser");
+        list.add("simplyskills:ice_comet");
+        list.add("simplyskills:fire_meteor");
+        list.add("simplyskills:static_discharge");
+        int spellChoice = player.getRandom().nextInt(list.size());
+
+        if ((target instanceof LivingEntity livingTarget) && player.getRandom().nextInt(100) < chance) {
+            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                    list.get(spellChoice),
+                    3, livingTarget);
+
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
+                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste))
+                HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, 100, 1, 5);
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
+                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverRegeneration) &&
+                    player.getRandom().nextInt(100) < 50)
+                HelperMethods.incrementStatusEffect(player, StatusEffects.REGENERATION, 140, 1, 2);
+        }
     }
 
 

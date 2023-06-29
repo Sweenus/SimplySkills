@@ -223,6 +223,11 @@ public abstract class ServerPlayerEntityMixin {
                         AbilityEffects.effectRogueSiphoningStrikes(target, player);
                     }
 
+                    //Effect Siphoning Strikes
+                    if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpellweaving)) {
+                        AbilityEffects.effectSpellbladeSpellweaving(target, player);
+                    }
+
 
 
                 }

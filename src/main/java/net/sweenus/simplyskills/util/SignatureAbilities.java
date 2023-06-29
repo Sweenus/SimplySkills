@@ -344,7 +344,7 @@ public class SignatureAbilities {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 35, 2));
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationBoltStrike)) {
+                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)) {
                 //Spell Weaver
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER, 600, 19));
             }

@@ -6,7 +6,7 @@
 		"root": true
 	},
 	"is053f9imz801s57": {
-		"definition": "spellbladeSignatureBoltStrike",
+		"definition": "spellbladeSignatureSpellweaver",
 		"x": 32,
 		"y": 0,
 		"root": true
@@ -696,13 +696,13 @@
 		"root": false
 	},
 	"7ulbfzfs4es5omck": {
-		"definition": "spellbladeSignatureBoltStrikeFrost",
+		"definition": "spellbladeSignatureSpellweaverHaste",
 		"x": 416,
 		"y": 0,
 		"root": false
 	},
 	"ue2j6uln9psnruaq": {
-		"definition": "spellbladeSignatureBoltStrikeRenewal",
+		"definition": "spellbladeSignatureSpellweaverRegeneration",
 		"x": 288,
 		"y": 192,
 		"root": false
