@@ -1,39 +1,68 @@
 package net.sweenus.simplyskills.util;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.util.Identifier;
+import net.minecraft.resource.ResourceType;
 import net.sweenus.simplyskills.SimplySkills;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.Optional;
 
+@SuppressWarnings({"resource", "ConstantConditions", "ResultOfMethodCallIgnored"})
 public class FileCopier {
-    public static void copyFileToConfigDirectory(String fileName) {
-        String configDirectory = FabricLoader.getInstance().getConfigDir().toString(); // Config directory path
-        System.out.println("config directory path is: "+configDirectory);
-        //System.out.println("Possible path is: "+FileCopier.class.getClassLoader().getResourceAsStream("/src/main/java/net/sweenus/simplyskills/").toString());
+    private static final String DATA_PREFIX = ResourceType.SERVER_DATA.getDirectory() + '/';
 
-        try {
-            // Get the input stream of the file within the .jar WHERE THE HECK IS THE FILE
-            InputStream inputStream = FileCopier.class.getResourceAsStream("/src/main/java/net/sweenus/simplyskills/" + fileName);
-            System.out.println("trying to copy: "+inputStream);
+    public static void copyFileToConfigDirectory() throws IOException {
+        if (!FabricLoader.getInstance().isModLoaded(SimplySkills.MOD_ID))
+            return;
 
-            // Create the target file in the config directory
-            File targetFile = new File(configDirectory, fileName);
+        //noinspection OptionalGetWithoutIsPresent
+        Optional<Path> simplySkills$categoriesPath = FabricLoader.getInstance().getModContainer(SimplySkills.MOD_ID).get().findPath(
+                DATA_PREFIX + SimplySkills.MOD_ID + '/' + "puffish_skills"
+        );
 
-            // Copy the file from the input stream to the target file
-            Files.copy(inputStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            if (simplySkills$categoriesPath.isEmpty())
+                return;
 
-            System.out.println("File copied successfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
+        String configDirectory = FabricLoader.getInstance().getConfigDir().toString() + "/" + "puffish_skills/"; // Config directory path
+
+        Files.find(simplySkills$categoriesPath.get(), Integer.MAX_VALUE, ((path, basicFileAttributes) -> !basicFileAttributes.isRegularFile()), new FileVisitOption[0])
+                .forEach(path -> {
+                    File targetFile = new File(configDirectory, simplySkills$categoriesPath.get().relativize(path).toString());
+                    if (targetFile.exists() && FabricLoader.getInstance().isDevelopmentEnvironment())
+                        targetFile.delete();
+                    if (!targetFile.exists() || FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                        try {
+                            targetFile.mkdirs();
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                });
+
+        Files.find(simplySkills$categoriesPath.get(), Integer.MAX_VALUE, ((path, basicFileAttributes) -> basicFileAttributes.isRegularFile()), new FileVisitOption[0])
+                    .forEach(path -> {
+                        try (InputStream inputStream = Files.newInputStream(path)){
+                            if (inputStream != null) {
+                                File targetFile = new File(configDirectory, simplySkills$categoriesPath.get().relativize(path).toString());
+                                //System.out.println(targetFile);
+                                if (targetFile.exists() && FabricLoader.getInstance().isDevelopmentEnvironment())
+                                    targetFile.delete();
+                                if (!targetFile.exists()) {
+                                    if (targetFile.createNewFile())
+                                        Files.copy(inputStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                                }
+                            } else {
+                                System.out.println(inputStream + " is not a valid input");
+                            }
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
         }
-    }
 }

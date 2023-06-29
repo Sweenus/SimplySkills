@@ -9,7 +9,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.stat.Stat;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.HelperMethods;
