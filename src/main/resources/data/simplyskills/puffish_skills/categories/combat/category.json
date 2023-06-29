@@ -5,7 +5,7 @@
 	"icon": {
 		"type": "item",
 		"data": {
-			"item": "netherite_sword"
+			"item": "diamond_sword"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_6.png"
