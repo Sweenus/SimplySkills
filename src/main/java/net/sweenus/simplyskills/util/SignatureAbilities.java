@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.util;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -284,6 +285,9 @@ public class SignatureAbilities {
                 //Preparation
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 160));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 2));
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                        "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike))
+                    Abilities.passiveRoguePreparationShadowstrike(player);
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()

@@ -1,4 +1,4 @@
-package net.sweenus.simplyskills.effect;
+package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;

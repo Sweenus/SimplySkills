@@ -1,6 +1,7 @@
 package net.sweenus.simplyskills;
 
 import net.fabricmc.api.ModInitializer;
+import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -16,6 +17,5 @@ public class SimplySkills implements ModInitializer {
         SoundRegistry.init();
         EffectRegistry.registerEffects();
         KeybindPacket.init();
-
     }
 }

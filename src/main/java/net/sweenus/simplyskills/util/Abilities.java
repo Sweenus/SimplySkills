@@ -1,8 +1,10 @@
 package net.sweenus.simplyskills.util;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +15,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
@@ -353,6 +356,49 @@ public class Abilities {
         int renewalChance = 35;
         if (random < renewalChance)
             HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, 600, 1, 20);
+    }
+
+    public static void passiveRoguePreparationShadowstrike(PlayerEntity player) {
+        if (player instanceof ServerPlayerEntity sPlayerEntity) {
+            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                            "simplyskills_rogue").get()
+                    .contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike)) {
+                int dashRange = 6;
+                int dashRadius = 2;
+                int dashDamageModifier = 3;
+                int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
+                DamageSource dashSource = DamageSource.player(player);
+
+                BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);
+                BlockState blockstate = player.world.getBlockState(blockPos);
+                BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
+                for (int i = dashRange; i > 0; i--) {
+                    if (blockstate.isAir() && blockstateUp.isAir())
+                        break;
+                    blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
+                }
+                player.teleport(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+
+                Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, dashRadius);
+                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                    if (entities != null) {
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            le.damage(dashSource, dashDamage * dashDamageModifier);
+
+                            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                                    "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeBolt))
+                                SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:soul_bolt_lesser", 64, le);
+                            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                                    "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire))
+                                HelperMethods.buffSteal(player, le, true, true);
+
+                        }
+                    }
+                }
+            }
+
+        }
     }
 
 

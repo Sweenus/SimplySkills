@@ -26,8 +26,8 @@ public class FileCopier {
                 DATA_PREFIX + SimplySkills.MOD_ID + '/' + "puffish_skills"
         );
 
-            if (simplySkills$categoriesPath.isEmpty())
-                return;
+        if (simplySkills$categoriesPath.isEmpty())
+            return;
 
         String configDirectory = FabricLoader.getInstance().getConfigDir().toString() + "/" + "puffish_skills/"; // Config directory path
 

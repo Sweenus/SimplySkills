@@ -2348,6 +2348,60 @@
 			}
 		]
 	},
+	"rogueSignaturePreparationShadowstrike": {
+		"title": "§6[Preparation]§7 now causes you to dash forward at lightning speed, dealing mainhand damage to enemies in your path.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_preparation.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignaturePreparationShadowstrike"
+				}
+			}
+		]
+	},
+	"rogueSignaturePreparationShadowstrikeVampire": {
+		"title": "You steal buffs from enemies caught within the path of your dash.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_preparation.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignaturePreparationShadowstrikeVampire"
+				}
+			}
+		]
+	},
+	"rogueSignaturePreparationShadowstrikeBolt": {
+		"title": "When dashing forward you cast Lesser Soul Bolts at enemies in your path.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_preparation.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignaturePreparationShadowstrikeBolt"
+				}
+			}
+		]
+	},
 	"rogueSignatureSiphoningStrikes": {
 		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n(Siphoning Strikes) causes you to siphon health health and strip buffs from your enemies on hit.",
 		"frame": "goal",

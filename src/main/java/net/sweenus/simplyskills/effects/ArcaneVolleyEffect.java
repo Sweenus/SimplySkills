@@ -1,11 +1,11 @@
-package net.sweenus.simplyskills.effect;
+package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class ElementalArrowsEffect extends StatusEffect {
-    public ElementalArrowsEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class ArcaneVolleyEffect extends StatusEffect {
+    public ArcaneVolleyEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 

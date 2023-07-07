@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.effect.*;
+import net.sweenus.simplyskills.effects.*;
 
 public class EffectRegistry {
 

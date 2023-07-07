@@ -1,11 +1,11 @@
-package net.sweenus.simplyskills.effect;
+package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class RampageEffect extends StatusEffect {
-    public RampageEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class SiphoningStrikesEffect extends StatusEffect {
+    public SiphoningStrikesEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 

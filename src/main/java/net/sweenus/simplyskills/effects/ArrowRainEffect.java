@@ -1,11 +1,11 @@
-package net.sweenus.simplyskills.effect;
+package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class SpellweaverEffect extends StatusEffect {
-    public SpellweaverEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class ArrowRainEffect extends StatusEffect {
+    public ArrowRainEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 
@@ -13,6 +13,7 @@ public class SpellweaverEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.world.isClient()) {
+
 
         }
         super.applyUpdateEffect(livingEntity, amplifier);

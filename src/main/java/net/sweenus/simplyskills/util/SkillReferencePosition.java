@@ -1,5 +1,7 @@
 package net.sweenus.simplyskills.util;
 
+import net.puffish.skillsmod.SkillsAPI;
+
 public class SkillReferencePosition {
 
     public static String hardy = "ikel6uas72gjxef3";
@@ -162,6 +164,9 @@ public class SkillReferencePosition {
 
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
     public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";
+    public static String rogueSpecialisationPreparationShadowstrike = "kp8uei8ppni71b5x";
+    public static String rogueSpecialisationPreparationShadowstrikeBolt = "kp8uei8ppni71b5x";
+    public static String rogueSpecialisationPreparationShadowstrikeVampire = "kp8uei8ppni71b5x";
     public static String rogueSpecialisationSiphoningStrikes = "a3ns9xl58ixdg2lo";
 
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";

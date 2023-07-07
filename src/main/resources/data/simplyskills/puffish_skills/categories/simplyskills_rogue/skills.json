@@ -214,5 +214,23 @@
 		"x": 128,
 		"y": -96,
 		"root": false
+	},
+	"j18t77qu8eryc741": {
+		"definition": "rogueSignaturePreparationShadowstrikeVampire",
+		"x": -224,
+		"y": -32,
+		"root": false
+	},
+	"z00pa0lut7phuhmg": {
+		"definition": "rogueSignaturePreparationShadowstrikeBolt",
+		"x": -224,
+		"y": 32,
+		"root": false
+	},
+	"m2fqj7bmtsh33fvs": {
+		"definition": "rogueSignaturePreparationShadowstrike",
+		"x": -192,
+		"y": 0,
+		"root": false
 	}
 }

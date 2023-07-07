@@ -1,4 +1,4 @@
-package net.sweenus.simplyskills.entity;
+package net.sweenus.simplyskills.entities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

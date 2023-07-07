@@ -18,6 +18,14 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
+import net.spell_engine.api.spell.SpellPool;
+import net.spell_power.api.MagicSchool;
+import net.spell_power.api.SpellDamageSource;
+import net.spell_power.api.attributes.SpellAttributeEntry;
+import net.spell_power.api.attributes.SpellAttributes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelperMethods {
 
@@ -67,6 +75,13 @@ public class HelperMethods {
 
         return box;
     }
+    public static Box createBoxBetween(BlockPos blockpos, BlockPos blockpos2, int radius) {
+        Box box = new Box(blockpos.getX() + radius, blockpos.getY() + radius, blockpos.getZ() + radius,
+                blockpos2.getX() - radius, blockpos2.getY() - radius, blockpos2.getZ() - radius);
+
+        return box;
+    }
+
 
     /*
      * getTargetedEntity taken heavily from ZsoltMolnarrr's CombatSpells
@@ -136,6 +151,30 @@ public class HelperMethods {
             livingEntity.addStatusEffect(new StatusEffectInstance(
                     statusEffect, currentDuration, currentAmplifier - 1));
         }
+    }
+
+    public static boolean buffSteal(
+            LivingEntity user,
+            LivingEntity target,
+            boolean strip,
+            boolean singular
+    ) {
+        List<StatusEffectInstance> list = target.getStatusEffects().stream().toList();
+        if (list.isEmpty())
+            return false;
+
+        for (StatusEffectInstance statusEffectInstance : list) {
+            StatusEffect statusEffect = statusEffectInstance.getEffectType();
+            int duration = statusEffectInstance.getDuration();
+            HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
+            if (singular)
+                return true;
+            if (strip)
+                HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
+        }
+
+
+        return true;
     }
 
 
