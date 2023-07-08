@@ -254,6 +254,9 @@ public class SignatureAbilities {
                     .contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
                 //Rampage
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, 300));
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
+                        .contains(SkillReferencePosition.berserkerSpecialisationRampageCharge))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, 20));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()

@@ -153,6 +153,13 @@ public class HelperMethods {
         }
     }
 
+    public static boolean isWalking(Entity entity) {
+        if ((entity instanceof PlayerEntity player)) {
+            return !player.isDead() && (player.isSwimming() || player.getVelocity().horizontalLength() > 0.1);
+        }
+        else return false;
+    }
+
     public static boolean buffSteal(
             LivingEntity user,
             LivingEntity target,

@@ -40,13 +40,13 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:iron_sword",
+          "model_id": "minecraft:bedrock",
           "render": "DEEP",
-          "scale": 0.5
+          "scale": 0.1
         }
       }
     },
-    "animation": "spell_engine:one_handed_projectile_release",
+    "animation": "simplyskills:fan_of_blades",
     "sound": {
       "id": "simplyskills:fx_skill_backstab"
     }
