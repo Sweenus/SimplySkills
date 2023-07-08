@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.AbilityEffects;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -39,6 +40,11 @@ public class PlayerEntityMixin {
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get()
                     .contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRenewal)) {
                 Abilities.passiveRangerElementalArrowsRenewal(player);
+            }
+            // Effect Fan of Blades Renewal
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_rogue").get()
+                    .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesRenewal)) {
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 1));
             }
 
 

@@ -232,5 +232,29 @@
 		"x": -192,
 		"y": 0,
 		"root": false
+	},
+	"4jwi6zro7iaw9ql7": {
+		"definition": "rogueSignatureEvasionFanOfBlades",
+		"x": 192,
+		"y": 0,
+		"root": false
+	},
+	"rec4jjyl154yctln": {
+		"definition": "rogueSignatureEvasionFanOfBladesDisenchantment",
+		"x": 224,
+		"y": -32,
+		"root": false
+	},
+	"1b9ydjr1at5hhjy7": {
+		"definition": "rogueSignatureEvasionFanOfBladesAssault",
+		"x": 224,
+		"y": 0,
+		"root": false
+	},
+	"l3bhn14oz1ex8opa": {
+		"definition": "rogueSignatureEvasionFanOfBladesRenewal",
+		"x": 224,
+		"y": 32,
+		"root": false
 	}
 }

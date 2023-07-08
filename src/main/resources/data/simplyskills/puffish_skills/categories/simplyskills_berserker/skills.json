@@ -202,5 +202,41 @@
 		"x": 0,
 		"y": 160,
 		"root": false
+	},
+	"xkwzbexxmoz9tf60": {
+		"definition": "berserkerSignatureRampageCharge",
+		"x": -192,
+		"y": 0,
+		"root": false
+	},
+	"xsak3gay0v3z4inb": {
+		"definition": "berserkerSignatureRampageChargeBanner",
+		"x": -224,
+		"y": -32,
+		"root": false
+	},
+	"ipbguvfzpm9nvg8j": {
+		"definition": "berserkerSignatureRampageChargeImmob",
+		"x": -224,
+		"y": 32,
+		"root": false
+	},
+	"sistiph4u2wuydzp": {
+		"definition": "berserkerSignatureBerserkingLeap",
+		"x": 192,
+		"y": 0,
+		"root": false
+	},
+	"cdbv71rvffagxjvo": {
+		"definition": "berserkerSignatureBerserkingLeapImmob",
+		"x": 224,
+		"y": -32,
+		"root": false
+	},
+	"9d9t6hnhyc248jy0": {
+		"definition": "berserkerSignatureBerserkingLeapPull",
+		"x": 224,
+		"y": 32,
+		"root": false
 	}
 }

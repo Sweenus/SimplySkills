@@ -23,6 +23,8 @@ public class EffectRegistry {
     public static StatusEffect ELEMENTALIMPACT= new ElementalImpactEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect ELEMENTALSURGE= new ElementalSurgeEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SPELLWEAVER= new SpellweaverEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect FANOFBLADES= new FanOfBladesEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect DISENCHANTMENT= new DisenchantmentEffect(StatusEffectCategory.HARMFUL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -43,6 +45,8 @@ public class EffectRegistry {
         ELEMENTALSURGE = registerStatusEffect("elemental_surge", ELEMENTALSURGE);
         ELEMENTALIMPACT = registerStatusEffect("elemental_impact", ELEMENTALIMPACT);
         SPELLWEAVER = registerStatusEffect("spellweaver", SPELLWEAVER);
+        FANOFBLADES = registerStatusEffect("fanofblades", FANOFBLADES);
+        DISENCHANTMENT = registerStatusEffect("disenchantment", DISENCHANTMENT);
     }
 
 

@@ -155,6 +155,11 @@ public abstract class ServerPlayerEntityMixin {
                     contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath)) {
                 AbilityEffects.effectWizardMeteoricWrath(player);
             }
+            //Rogue Fan of Blades Effect
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_rogue").get().
+                    contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades)) {
+                AbilityEffects.effectRogueFanOfBlades(player);
+            }
 
 
 

@@ -1196,6 +1196,24 @@
 			}
 		]
 	},
+	"berserkerExploit": {
+		"title": "§a[Exploit]§7 \nHitting immobilized enemies inflicts them with weakness.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_challenge.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerExploit"
+				}
+			}
+		]
+	},
 	"bulwarkPath": {
 		"title": "Path of the §bBulwark§7",
 		"frame": "goal",
@@ -1485,7 +1503,7 @@
 		]
 	},
 	"crusaderPath": {
-		"title": "Path of the §bCrusader§7",
+		"title": "Path of the §bCrusader§7\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1503,7 +1521,7 @@
 		]
 	},
 	"frostguardPath": {
-		"title": "Path of the §bFrostguard§7",
+		"title": "Path of the §bFrostguard§7\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1791,7 +1809,7 @@
 		]
 	},
 	"shamanPath": {
-		"title": "Path of the §bShaman§7",
+		"title": "Path of the §bShaman§7\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1809,7 +1827,7 @@
 		]
 	},
 	"clericPath": {
-		"title": "Path of the §bCleric§7",
+		"title": "Path of the §bCleric§7\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1827,7 +1845,7 @@
 		]
 	},
 	"necromancerPath": {
-		"title": "Path of the §bNecromancer§7",
+		"title": "Path of the §bNecromancer§7\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2326,6 +2344,78 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rogueSignatureEvasion"
+				}
+			}
+		]
+	},
+	"rogueSignatureEvasionFanOfBlades": {
+		"title": "§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n(Fan of Blades) causes you to throw daggers at enemies in front of you.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_evasion.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureEvasionFanOfBlades"
+				}
+			}
+		]
+	},
+	"rogueSignatureEvasionFanOfBladesDisenchantment": {
+		"title": "Your Fan of Blades now also inflict enemies with Disenchantment.\n\n(Disenchantment) periodically strips buffs from the victim.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_evasion.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureEvasionFanOfBladesDisenchantment"
+				}
+			}
+		]
+	},
+	"rogueSignatureEvasionFanOfBladesAssault": {
+		"title": "You now gain 20 stacks of Fan of Blades with increased throw frequency but decreased damage.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_evasion.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureEvasionFanOfBladesAssault"
+				}
+			}
+		]
+	},
+	"rogueSignatureEvasionFanOfBladesRenewal": {
+		"title": "Gain two stacks of Fan of Blades on kill.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_evasion.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureEvasionFanOfBladesRenewal"
 				}
 			}
 		]
@@ -3032,6 +3122,60 @@
 			}
 		]
 	},
+	"berserkerSignatureRampageCharge": {
+		"title": "§6[Rampage]§7 now immediately grants you regeneration and resistance and causes you to barrel forward, dealing damage and knocking back enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_rampage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureRampageCharge"
+				}
+			}
+		]
+	},
+	"berserkerSignatureRampageChargeBanner": {
+		"title": "Drop a Battlestandard at the end of your charge that periodically grants strength and haste to nearby allies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_rampage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureRampageChargeBanner"
+				}
+			}
+		]
+	},
+	"berserkerSignatureRampageChargeImmob": {
+		"title": "Enemies hit by your charge are also inflicted with Immobilize. \n\n(Immobilize) greatly slows the victim and inflicts them with increasing damage when they attempt to move.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_rampage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureRampageChargeImmob"
+				}
+			}
+		]
+	},
 	"berserkerSignatureBloodthirsty": {
 		"title": "Signature Ability: \n§6[Bloodthirsty]§7 \nGain Bloodthirsty for 20s.\n\n(Bloodthirsty) grants you 25% of your max health each time you defeat an enemy.",
 		"frame": "goal",
@@ -3064,6 +3208,60 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "berserkerSignatureBerserking"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBerserkingLeap": {
+		"title": "§6[Berserking]§7 now causes you to perform a forward leap slam, damaging and knocking back enemies at the landing location.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_berserking.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBerserkingLeap"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBerserkingLeapImmob": {
+		"title": "Leap Slam now also inflicts enemies with Immobilize.\n\n(Immobilize) greatly slows the victim and inflicts them with increasing damage when they attempt to move.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_berserking.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBerserkingLeapImmob"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBerserkingLeapPull": {
+		"title": "Leap Slam now pulls nearby enemies instead of knocking them back.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_berserking.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBerserkingLeapPull"
 				}
 			}
 		]

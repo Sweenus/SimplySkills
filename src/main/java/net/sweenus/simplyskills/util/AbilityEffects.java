@@ -92,6 +92,50 @@ public class AbilityEffects {
         }
     }
 
+    public static void effectRogueFanOfBlades(PlayerEntity player) {
+        int fobFrequency = 20;
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
+            fobFrequency = 5;
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_rogue").get()
+                .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades) &&
+                player.hasStatusEffect(EffectRegistry.FANOFBLADES) && player.age % fobFrequency == 0) {
+            int fobRange = 8;
+            int fobRadius = 6;
+            int disenchantDuration = 160;
+
+            BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), fobRange);
+            BlockState blockstate = player.world.getBlockState(blockPos);
+            BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
+            for (int i = fobRange; i > 0; i--) {
+                if (blockstate.isAir() && blockstateUp.isAir())
+                    break;
+                blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
+            }
+
+            Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, fobRadius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                if (entities != null) {
+                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+
+                        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", 32, le);
+                        else
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", 32, le);
+
+                        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment))
+                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DISENCHANTMENT, disenchantDuration));
+
+                    }
+                }
+            }
+            HelperMethods.decrementStatusEffect(player, EffectRegistry.FANOFBLADES);
+        }
+    }
+
 
 
     public static boolean effectRangerElementalArrows(PlayerEntity player) {

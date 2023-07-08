@@ -278,6 +278,9 @@ public class SignatureAbilities {
                     .contains(SkillReferencePosition.rogueSpecialisationEvasion)) {
                 //Evasion
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, 160));
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
+                        .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 9));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()

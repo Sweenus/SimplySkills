@@ -165,12 +165,15 @@ public class HelperMethods {
 
         for (StatusEffectInstance statusEffectInstance : list) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
-            int duration = statusEffectInstance.getDuration();
-            HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
-            if (singular)
-                return true;
-            if (strip)
-                HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
+            if (statusEffect.isBeneficial()) {
+                int duration = statusEffectInstance.getDuration();
+                if (user != null)
+                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
+                if (strip)
+                    HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
+                if (singular)
+                    return true;
+            }
         }
 
 

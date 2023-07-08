@@ -1,0 +1,80 @@
+{
+  "school": "PHYSICAL_MELEE",
+  "range": 42,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_arcane_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "mycelium",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "velocity": 1.8,
+        "homing_angle": 20,
+        "client_data": {
+          "travel_particles": [
+            {
+              "particle_id": "mycelium",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 2.0,
+              "min_speed": 0.05,
+              "max_speed": 0.1
+            }
+          ],
+          "model_id": "minecraft:iron_sword",
+          "render": "DEEP",
+          "scale": 0.5
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_projectile_release",
+    "sound": {
+      "id": "simplyskills:fx_skill_backstab"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0,
+          "spell_power_coefficient": 1.0
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "mycelium",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 10,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:fx_skill_backstab"
+      }
+    }
+  ],
+  "cost": {
+  }
+}

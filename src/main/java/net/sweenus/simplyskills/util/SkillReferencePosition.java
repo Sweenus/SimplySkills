@@ -29,6 +29,7 @@ public class SkillReferencePosition {
 
     public static String berserkerRecklessness = "8w0rzlwo4ruu83g1";
     public static String berserkerChallenge = "s9vgmd9yzd0n9aef";
+    public static String berserkerExploit = "s9vgmd9yzd0n9aef";
 
     // - Bulwark
     public static String bulwarkShieldMastery = "c531znyr4eyj4oaa";
@@ -163,15 +164,25 @@ public class SkillReferencePosition {
     public static String rangerSpecialisationElementalArrowsRenewal = "aizxxvc9fwqnpq60";
 
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
+    public static String rogueSpecialisationEvasionFanOfBlades = "4jwi6zro7iaw9ql7";
+    public static String rogueSpecialisationEvasionFanOfBladesDisenchantment = "rec4jjyl154yctln";
+    public static String rogueSpecialisationEvasionFanOfBladesAssault = "1b9ydjr1at5hhjy7";
+    public static String rogueSpecialisationEvasionFanOfBladesRenewal = "l3bhn14oz1ex8opa";
     public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";
     public static String rogueSpecialisationPreparationShadowstrike = "kp8uei8ppni71b5x";
-    public static String rogueSpecialisationPreparationShadowstrikeBolt = "kp8uei8ppni71b5x";
-    public static String rogueSpecialisationPreparationShadowstrikeVampire = "kp8uei8ppni71b5x";
+    public static String rogueSpecialisationPreparationShadowstrikeBolt = "z00pa0lut7phuhmg";
+    public static String rogueSpecialisationPreparationShadowstrikeVampire = "j18t77qu8eryc741";
     public static String rogueSpecialisationSiphoningStrikes = "a3ns9xl58ixdg2lo";
 
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
+    public static String berserkerSpecialisationRampageCharge = "xkwzbexxmoz9tf60";
+    public static String berserkerSpecialisationRampageChargeBanner = "xsak3gay0v3z4inb";
+    public static String berserkerSpecialisationRampageChargeImmob = "ipbguvfzpm9nvg8j";
     public static String berserkerSpecialisationBloodthirsty = "a3ns9xl58ixdg2lo";
     public static String berserkerSpecialisationBerserking = "is053f9imz801s57";
+    public static String berserkerSpecialisationBerserkingLeap = "sistiph4u2wuydzp";
+    public static String berserkerSpecialisationBerserkingLeapImmob = "cdbv71rvffagxjvo";
+    public static String berserkerSpecialisationBerserkingLeapPull = "9d9t6hnhyc248jy0";
 
 
 }
