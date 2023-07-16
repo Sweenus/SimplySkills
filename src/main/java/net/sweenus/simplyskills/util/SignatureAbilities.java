@@ -271,6 +271,9 @@ public class SignatureAbilities {
                 float sacrificeAmount = (float) (player.getHealth() * 0.30);
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)(sacrificeAmount * 20)));
+                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
+                        .contains(SkillReferencePosition.berserkerSpecialisationBerserkingLeap))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, 62));
             }
         }
 

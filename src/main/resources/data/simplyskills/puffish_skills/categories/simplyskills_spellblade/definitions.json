@@ -3141,7 +3141,7 @@
 		]
 	},
 	"berserkerSignatureRampageChargeBanner": {
-		"title": "Drop a Battlestandard at the end of your charge that periodically grants strength and haste to nearby allies.",
+		"title": "Drop a Battlestandard at the end of your charge that periodically grants strength and haste to nearby allies.\n§eNOT YET IMPLEMENTED§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
