@@ -48,7 +48,9 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:fx_skill_backstab"
+      "id": "simplyskills:soundeffect_10",
+      "volume": 0.2,
+      "pitch": 1.4
     }
   },
   "impact": [

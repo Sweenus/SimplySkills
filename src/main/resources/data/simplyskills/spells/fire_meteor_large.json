@@ -102,7 +102,8 @@
     },
     "animation": "spell_engine:one_handed_area_release",
     "sound": {
-      "id": "simplyskills:fx_skill_backstab"
+      "id": "simplyskills:soundeffect_15",
+      "volume": 0.5
     }
   },
   "impact": [
@@ -125,7 +126,8 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:fx_skill_backstab"
+        "id": "simplyskills:soundeffect_14",
+        "volume": 0.5
       }
     }
   ],
