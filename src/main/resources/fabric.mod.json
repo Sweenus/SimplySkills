@@ -30,6 +30,8 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "spell_power": ">=0.9.12+1.19",
-    "spell_engine": ">=0.9.24+1.19"
+    "spell_engine": ">=0.9.24+1.19",
+    "cloth-config": ">=8.2.88",
+    "puffish_skills": ">=0.4.0-1.19.2"
   }
 }
