@@ -366,21 +366,12 @@ public class Abilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills_rogue").get()
                     .contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike)) {
-                int dashRange = 6;
-                int dashRadius = 2;
+                int dashRange = 12;
+                int dashRadius = 3;
                 int dashDamageModifier = 3;
                 int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
                 DamageSource dashSource = DamageSource.player(player);
-
                 BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);
-                BlockState blockstate = player.world.getBlockState(blockPos);
-                BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
-                for (int i = dashRange; i > 0; i--) {
-                    if (blockstate.isAir() && blockstateUp.isAir())
-                        break;
-                    blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
-                }
-                player.teleport(blockPos.getX(), blockPos.getY(), blockPos.getZ());
 
                 Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, dashRadius);
                 for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -399,8 +390,20 @@ public class Abilities {
                         }
                     }
                 }
-            }
 
+                BlockState blockstate = player.world.getBlockState(blockPos);
+                BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
+                for (int i = dashRange; i > 0; i--) {
+                    if (blockstate.isAir() && blockstateUp.isAir())
+                        break;
+                    blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
+                }
+                player.teleport(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+
+                player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                        SoundCategory.PLAYERS, 0.6f, 1.3f);
+
+            }
         }
     }
 

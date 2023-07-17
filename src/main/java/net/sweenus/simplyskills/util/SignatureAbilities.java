@@ -16,6 +16,7 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -26,6 +27,7 @@ import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -255,8 +257,11 @@ public class SignatureAbilities {
                 //Rampage
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, 300));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                        .contains(SkillReferencePosition.berserkerSpecialisationRampageCharge))
+                        .contains(SkillReferencePosition.berserkerSpecialisationRampageCharge)) {
                     player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, 20));
+                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                            SoundCategory.PLAYERS, 0.5f, 1.1f);
+                }
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
@@ -272,8 +277,11 @@ public class SignatureAbilities {
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)(sacrificeAmount * 20)));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                        .contains(SkillReferencePosition.berserkerSpecialisationBerserkingLeap))
+                        .contains(SkillReferencePosition.berserkerSpecialisationBerserkingLeap)) {
                     player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, 62));
+                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                            SoundCategory.PLAYERS, 0.5f, 1.1f);
+                }
             }
         }
 

@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -32,6 +33,8 @@ public class LeapSlamEffect extends StatusEffect {
             if (livingEntity instanceof PlayerEntity player) {
                 int ability_timer = Objects.requireNonNull(player.getStatusEffect(EffectRegistry.LEAPSLAM)).getDuration();
                 int radius = 3;
+                double damage_multiplier = 2.8;
+                double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
 
                 if (ability_timer >= 60) {
                     player.setVelocity(livingEntity.getRotationVector().multiply(+1.5));
@@ -44,9 +47,6 @@ public class LeapSlamEffect extends StatusEffect {
                     player.velocityModified = true;
 
                     if (player.isOnGround()) {
-
-                        player.world.playSoundFromEntity(null, player, SoundRegistry.FX_UI_UNLOCK3,
-                                SoundCategory.PLAYERS, 1, 0.8f);
 
                         Box box = HelperMethods.createBox(player, radius*2);
                         for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -61,6 +61,9 @@ public class LeapSlamEffect extends StatusEffect {
                                     else
                                         le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
 
+                                    le.damage(DamageSource.player(player), (float) damage);
+                                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
+                                            SoundCategory.PLAYERS, 0.3f, 1.1f);
                                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                                             "simplyskills_berserker").get().contains(
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob))
