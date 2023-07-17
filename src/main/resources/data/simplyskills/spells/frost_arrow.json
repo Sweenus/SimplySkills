@@ -73,7 +73,8 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:fx_skill_backstab"
+        "id": "simplyskills:soundeffect_32",
+        "volume": 0.2
       }
     }
   ],

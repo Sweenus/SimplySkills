@@ -48,7 +48,8 @@
     },
     "animation": "simplyskills:fan_of_blades",
     "sound": {
-      "id": "simplyskills:fx_skill_backstab"
+      "id": "simplyskills:soundeffect_32",
+      "volume": 0.2
     }
   },
   "impact": [
@@ -71,7 +72,8 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:fx_skill_backstab"
+        "id": "simplyskills:soundeffect_32",
+        "volume": 0.2
       }
     }
   ],

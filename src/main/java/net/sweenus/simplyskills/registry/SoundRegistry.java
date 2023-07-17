@@ -43,6 +43,13 @@ public class SoundRegistry {
         soundEvent = SOUNDEFFECT38;
         soundEvent = SOUNDEFFECT39;
         soundEvent = SOUNDEFFECT40;
+        soundEvent = SOUNDEFFECT41;
+        soundEvent = SOUNDEFFECT42;
+        soundEvent = SOUNDEFFECT43;
+        soundEvent = SOUNDEFFECT44;
+        soundEvent = SOUNDEFFECT45;
+        soundEvent = SOUNDEFFECT46;
+        soundEvent = SOUNDEFFECT47;
     }
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
@@ -84,6 +91,13 @@ public class SoundRegistry {
     public static SoundEvent SOUNDEFFECT38 = register("soundeffect_38");
     public static SoundEvent SOUNDEFFECT39 = register("soundeffect_39");
     public static SoundEvent SOUNDEFFECT40 = register("soundeffect_40");
+    public static SoundEvent SOUNDEFFECT41 = register("soundeffect_41");
+    public static SoundEvent SOUNDEFFECT42 = register("soundeffect_42");
+    public static SoundEvent SOUNDEFFECT43 = register("soundeffect_43");
+    public static SoundEvent SOUNDEFFECT44 = register("soundeffect_44");
+    public static SoundEvent SOUNDEFFECT45 = register("soundeffect_45");
+    public static SoundEvent SOUNDEFFECT46 = register("soundeffect_46");
+    public static SoundEvent SOUNDEFFECT47 = register("soundeffect_47");
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);

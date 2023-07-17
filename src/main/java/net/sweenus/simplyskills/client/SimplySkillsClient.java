@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.SignatureAbilities;
@@ -27,16 +28,16 @@ public class SimplySkillsClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (bindingAbility1.wasPressed()) {
                 if (System.currentTimeMillis() > (lastUseTime + abilityCooldown)) {
-                    //client.player.sendMessage(Text.literal("Ability #1 has been used!"), false);
-                    //client.player.sendMessage(Text.literal("Used at system time: " + System.currentTimeMillis()), false);
+
                     SignatureAbilities.sendKeybindPacket();
                     client.player.world.playSoundFromEntity(null, client.player, SoundRegistry.FX_UI_UNLOCK3,
                             SoundCategory.PLAYERS, 1, 1);
 
                     lastUseTime = System.currentTimeMillis();
-                    //client.player.sendMessage(Text.literal("Next use available at: " +(lastUseTime + abilityCooldown)), false);
+                    client.player.world.playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
+
                 } else {
-                    client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime + abilityCooldown) - System.currentTimeMillis()) / 1000) + "s"), false);
+                    client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime + abilityCooldown) - System.currentTimeMillis()) / 1000) + "s"), true);
                 }
             }
 

@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.mixins;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -165,7 +166,7 @@ public abstract class ServerPlayerEntityMixin {
 
 
             //Debug - reset skills & gain exp
-            if (player.isSneaking()) {
+            if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");

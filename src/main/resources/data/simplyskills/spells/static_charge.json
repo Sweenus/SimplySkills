@@ -7,7 +7,8 @@
   "cast": {
     "duration": 1.5,
     "sound": {
-      "id": "simplyskills:fx_skill_backstab",
+      "id": "simplyskills:soundeffect_32",
+      "volume": 0.2,
       "randomness": 0
     },
     "particles": [
@@ -25,9 +26,6 @@
     "target": {
       "type": "CURSOR",
       "cursor": { }
-    },
-    "sound": {
-      "id": "simplyskills:fx_skill_backstab"
     }
   },
   "impact": [
@@ -58,7 +56,8 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:fx_skill_backstab"
+        "id": "simplyskills:soundeffect_35",
+        "volume": 0.3
       }
     },
     {

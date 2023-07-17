@@ -23,6 +23,9 @@ import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 public class Abilities {
@@ -409,6 +412,7 @@ public class Abilities {
 
     public static void skillTreeUnlockManager(PlayerEntity player, String skillID) {
 
+        //Check if current skill selection is a specialisation path
         if (!skillID.contains(SkillReferencePosition.wizardPath) &&
                 !skillID.contains(SkillReferencePosition.berserkerPath) &&
                 !skillID.contains(SkillReferencePosition.crusaderPath) &&
@@ -419,6 +423,17 @@ public class Abilities {
             return;
         }
 
+        //Prevent unlocking multiple specialisations (This could be configurable in future)
+        Collection<String> collection = SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player);
+        if (collection.contains("simplyskills_wizard") ||
+                collection.contains("simplyskills_spellblade") ||
+                collection.contains("simplyskills_ranger") ||
+                collection.contains("simplyskills_rogue") ||
+                collection.contains("simplyskills_berserker")) {
+            return;
+        }
+
+        //Process unlock
         if (skillID.contains(SkillReferencePosition.wizardPath)
         && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_wizard")){
             SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");

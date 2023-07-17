@@ -26,13 +26,15 @@ public class SkillsModMixin {
         if (!SkillsAPI.getUnlockedSkills(player, categoryId).get().contains(skillId)
         && SkillsAPI.getPointsLeft(player, categoryId).get() > 0) {
 
-            //int choose_sound = (int) (Math.random() * 3);
-            float choose_pitch = (float) Math.random() * 2;
-            SoundEvent sound = SoundRegistry.FX_UI_UNLOCK;
+            double choose_pitch = Math.random() * 1.2;
+            SoundEvent sound = SoundRegistry.SOUNDEFFECT45;
+            SoundEvent sound2 = SoundRegistry.SOUNDEFFECT47;
 
+            player.world.playSoundFromEntity(null, player, sound2,
+                    SoundCategory.PLAYERS, 1, 1.5f);
             player.world.playSoundFromEntity(null, player, sound,
-                    SoundCategory.PLAYERS, 1, choose_pitch);
+                    SoundCategory.PLAYERS, 1, (float) choose_pitch);
 
-        }
+            }
         }
     }
