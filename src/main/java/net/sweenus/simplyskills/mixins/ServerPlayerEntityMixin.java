@@ -40,8 +40,7 @@ public abstract class ServerPlayerEntityMixin {
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer,
                     "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMastery)) {
-                if (Abilities.passiveRogueEvasionMastery(player))
-                    cir.cancel();
+                Abilities.passiveRogueEvasionMastery(player);
             }
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.hardy)) {

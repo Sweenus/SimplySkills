@@ -261,7 +261,7 @@ public class Abilities {
     public static void passiveRogueSmokeBomb(PlayerEntity player) {
         if (player.getRandom().nextInt(100) < 25) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 100));
-            Box box = HelperMethods.createBox((LivingEntity) player, 6);
+            Box box = HelperMethods.createBox(player, 6);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -295,7 +295,7 @@ public class Abilities {
                     && player.getEquippedStack(EquipmentSlot.LEGS).isEmpty()
                     && player.getEquippedStack(EquipmentSlot.FEET).isEmpty()) {
 
-                //player.timeUntilRegen = 15;
+                player.timeUntilRegen = 15;
                 player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
                 return true;

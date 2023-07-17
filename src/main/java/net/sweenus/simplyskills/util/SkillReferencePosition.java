@@ -15,50 +15,50 @@ public class SkillReferencePosition {
     public static String warriorMediumArmorMastery = "yb5s7h7a26iyb6ue";
 
     // - Berserker
-    public static String berserkerSwordMastery = "udcdfkszjir1cych";
-    public static String berserkerSwordMasterySkilled = "0moodld7mbkjhwg5";
-    public static String berserkerSwordMasteryProficient = "5nuc83mgpx67jm1t";
+    public static String berserkerSwordMastery = "txzx7u6ssecd6kyd";
+    public static String berserkerSwordMasterySkilled = "p9yrgiwj31ppu8xw";
+    public static String berserkerSwordMasteryProficient = "o8xtd9ysf34nft0a";
 
-    public static String berserkerAxeMastery = "260vszxywgl3fmt2";
-    public static String berserkerAxeMasterySkilled = "ys5ag74brsoxasdn";
-    public static String berserkerAxeMasteryProficient = "imcmynihq1ingo1n";
+    public static String berserkerAxeMastery = "jpwane4otgc5w0ib";
+    public static String berserkerAxeMasterySkilled = "kv1w4nto45tnv2rt";
+    public static String berserkerAxeMasteryProficient = "378c34a07o78i2g2";
 
-    public static String berserkerIgnorePain = "rww08p2sjlxrwvxi";
-    public static String berserkerIgnorePainSkilled = "14xy9noomn5cdpdx";
-    public static String berserkerIgnorePainProficient = "p4jopm0qhbg3fs0q";
+    public static String berserkerIgnorePain = "h5wp8l0g16gg1ys1";
+    public static String berserkerIgnorePainSkilled = "97wzozi5mxuzuzsv";
+    public static String berserkerIgnorePainProficient = "fqaqa2epx815hm4k";
 
-    public static String berserkerRecklessness = "8w0rzlwo4ruu83g1";
+    public static String berserkerRecklessness = "eluc038mscynyi8l";
     public static String berserkerChallenge = "s9vgmd9yzd0n9aef";
     public static String berserkerExploit = "s9vgmd9yzd0n9aef";
 
     // - Bulwark
-    public static String bulwarkShieldMastery = "c531znyr4eyj4oaa";
-    public static String bulwarkShieldMasterySkilled = "3y4b5m0rm6ke7brj";
-    public static String bulwarkShieldMasteryProficient = "r4b9cd82vl24picq";
+    public static String bulwarkShieldMastery = "y0slj7yf7czympf2";
+    public static String bulwarkShieldMasterySkilled = "j6e54oid9sek37y7";
+    public static String bulwarkShieldMasteryProficient = "an3f2t1zaf813fxe";
     public static String bulwarkRebuke = "u6v8ohh8nl92q71r";
 
 
     //Wayfarer
-    public static String wayfarerSlender = "2y3zsl481cdhtjqe";
+    public static String wayfarerSlender = "niwsndfx4z0fws02";
     public static String wayfarerSneak = "mxfcq0i6qhcl01w4";
 
     // - Rogue
-    public static String rogueStealth = "cqn23z5wxesmr6u4";
-    public static String rogueBackstab = "y4ym0k8ibfa5tpg2";
-    public static String rogueSmokeBomb = "civ2309ab68q2pnb";
-    public static String rogueOpportunisticMastery = "xul81rr6lrcfm4l1";
-    public static String rogueOpportunisticMasteryProficient = "pfubuyaj9im0mcbd";
-    public static String rogueOpportunisticMasterySkilled = "mrb6nbsjyg6rupv6";
-    public static String rogueEvasionMastery = "m0c82q6l7r2mdz61";
-    public static String rogueEvasionMasteryProficient = "528iz1ul6or6chs9";
-    public static String rogueEvasionMasterySkilled = "xyagwtoh90v2busv";
+    public static String rogueStealth = "s2p5ip72mt1o2oaj";
+    public static String rogueBackstab = "i6k024rdikn2fxqi";
+    public static String rogueSmokeBomb = "sa985rkw9oz4ocks";
+    public static String rogueOpportunisticMastery = "rnes5wz7ej44ci2a";
+    public static String rogueOpportunisticMasteryProficient = "t0w9jjtiz2olfmp6";
+    public static String rogueOpportunisticMasterySkilled = "arllpup6nt8lkh5l";
+    public static String rogueEvasionMastery = "d1zvex2gbmd8n04g";
+    public static String rogueEvasionMasteryProficient = "aixjezgr276peuiy";
+    public static String rogueEvasionMasterySkilled = "i4ahnejxsoxq771r";
 
     // - Ranger
-    public static String rangerReveal = "l5u266sz5v7b38iv";
+    public static String rangerReveal = "ffqolcglk86iilf9";
 
 
     //Initiate
-    public static String initiateFrail = "jhg2bqokebke61v4";
+    public static String initiateFrail = "hikmww97flznt4e2";
     public static String initiateSlowfall = "cya5r7sa7fvpyq52";
     public static String initiateNullification = "la7znvggcgu5n4c7";
 
@@ -69,11 +69,11 @@ public class SkillReferencePosition {
     // -- Paths --
     public static String wizardPath = "38jnvjl6fov2u9my";
     public static String spellbladePath = "r593tqjmrg93ffmz";
-    public static String berserkerPath = "pn32g5revwh8qmeq";
-    public static String roguePath = "u9drcyvhqz6j14bf";
-    public static String crusaderPath = "js1pm8rucmg11b05";
+    public static String berserkerPath = "a96zrmfir3clfype";
+    public static String roguePath = "axqnj1ey7ime9ds3";
+    public static String crusaderPath = "36h4f7pmpma8ggo0";
     public static String frostguardPath = "mpy4mucglti3h3s2";
-    public static String rangerPath = "se96ov3j34prqeix";
+    public static String rangerPath = "vtrkrrhmthwdpx5j";
     public static String clericPath = "laujphdiv59vjb8l";
     public static String necromancerPath = "8k3loavtl1eym5rb";
     public static String shamanPath = "rexmoh5dv8pom5iu";
