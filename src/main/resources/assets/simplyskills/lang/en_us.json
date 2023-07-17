@@ -1,4 +1,8 @@
 {
+  "key.category.simplyskills": "Simply Skills",
+  "key.simplyskills.ability1": "Signature Ability",
+
+
   "effect.simplyskills.berserking": "Berserking",
   "effect.simplyskills.bloodthirsty": "Bloodthirsty",
   "effect.simplyskills.elemental_arrows": "Elemental Arrows",
@@ -9,5 +13,14 @@
   "effect.simplyskills.arcane_volley": "Arcane Volley",
   "effect.simplyskills.frost_volley": "Frost Volley",
   "effect.simplyskills.meteoric_wrath": "Meteoric Wrath",
-  "effect.simplyskills.static_charge": "Static Charge"
+  "effect.simplyskills.static_charge": "Static Charge",
+  "effect.simplyskills.disenchantment": "Disenchantment",
+  "effect.simplyskills.leapslam": "Leap Slam",
+  "effect.simplyskills.elemental_impact": "Elemental Impact",
+  "effect.simplyskills.fanofblades": "Fan of Blades",
+  "effect.simplyskills.bullrush": "Bullrush",
+  "effect.simplyskills.immobilize": "Immobilize",
+  "effect.simplyskills.elemental_surge": "Elemental Surge",
+  "effect.simplyskills.spellweaver": "Spellweaver"
+
 }
