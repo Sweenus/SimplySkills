@@ -14,7 +14,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class SimplySkillsClient implements ClientModInitializer {
 
-    public int abilityCooldown = 10000;
+    public int abilityCooldown = 40000;
     public long lastUseTime;
 
     @Override
