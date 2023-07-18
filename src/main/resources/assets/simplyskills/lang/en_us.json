@@ -21,6 +21,15 @@
   "effect.simplyskills.bullrush": "Bullrush",
   "effect.simplyskills.immobilize": "Immobilize",
   "effect.simplyskills.elemental_surge": "Elemental Surge",
-  "effect.simplyskills.spellweaver": "Spellweaver"
+  "effect.simplyskills.spellweaver": "Spellweaver",
 
+  "item.simplyskills.malevolent_manuscript": "Malevolent Manuscript",
+
+  "item.simplyskills.malevolent_manuscript.tooltip1": "Refunds all points invested ",
+  "item.simplyskills.malevolent_manuscript.tooltip2": "in your base skill tree, ",
+  "item.simplyskills.malevolent_manuscript.tooltip3": "allowing you to re-specialise.",
+  "item.simplyskills.malevolent_manuscript.tooltip4": "This also devours all knowledge ",
+  "item.simplyskills.malevolent_manuscript.tooltip5": "of your specialisations, ",
+  "item.simplyskills.malevolent_manuscript.tooltip6": "consuming all experience invested.",
+  "item.simplyskills.malevolent_manuscript.tooltip7": "This cannot be undone."
 }
