@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "X": {
+      "item": "minecraft:ender_eye"
+    },
+    "Y": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "#Y#"
+  ],
+  "result": {
+    "item": "simplyskills:malevolent_manuscript"
+  }
+}
