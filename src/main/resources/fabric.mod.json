@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "simplyskills",
-  "version": "${version}",
+  "version": "BETA ${version}",
   "name": "Simply Skills",
-  "description": "",
+  "description": "A comprehensive skill tree mod with a focus on combat specialisations. \n\nTHIS IS A BETA - THERE WILL BE BUGS",
   "authors": [],
   "contact": {
-    "repo": "https://github.com/Sweeney/SimplySkills"
+    "repo": "https://github.com/Sweenus/SimplySkills"
   },
-  "license": "All-Rights-Reserved",
+  "license": "Timefall Development License",
   "icon": "assets/simplyskills/icon.png",
   "environment": "*",
   "entrypoints": {
