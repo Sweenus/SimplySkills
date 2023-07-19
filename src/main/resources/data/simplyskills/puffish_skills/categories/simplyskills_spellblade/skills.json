@@ -138,7 +138,7 @@
 		"root": false
 	},
 	"thzh6bjmnz81pv7y": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -160,
 		"y": 0,
 		"root": false
@@ -150,19 +150,19 @@
 		"root": false
 	},
 	"eh8ga91br57itf5x": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 0,
 		"y": -160,
 		"root": false
 	},
 	"4tl7lknur17awyyw": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -32,
 		"y": 128,
 		"root": false
 	},
 	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 32,
 		"y": 128,
 		"root": false
@@ -174,31 +174,31 @@
 		"root": false
 	},
 	"udktsx2tk7s1fubm": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 0,
 		"y": 160,
 		"root": false
 	},
 	"sshvzwg4h33g23uk": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 0,
 		"y": 96,
 		"root": false
 	},
 	"kst2sn4oz9etxp7s": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -96,
 		"y": -160,
 		"root": false
 	},
 	"og0f28ciyhej401p": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -160,
 		"y": -64,
 		"root": false
 	},
 	"i6j92v84sfyz0n0s": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 160,
 		"y": -64,
 		"root": false
@@ -216,7 +216,7 @@
 		"root": false
 	},
 	"90du7fo91lhkwn0g": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -256,
 		"y": 0,
 		"root": false
@@ -258,13 +258,13 @@
 		"root": false
 	},
 	"iozb6v1m80ke6r4d": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 0,
 		"y": -256,
 		"root": false
 	},
 	"ipff1s5as5wq086w": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 256,
 		"y": 0,
 		"root": false
@@ -474,7 +474,7 @@
 		"root": false
 	},
 	"1lt46k9av2u12j3y": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -416,
 		"y": 32,
 		"root": false
@@ -600,7 +600,7 @@
 		"root": false
 	},
 	"6gj50hffxaecmph1": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 288,
 		"y": -160,
 		"root": false
@@ -648,7 +648,7 @@
 		"root": false
 	},
 	"h0qb3xzc8sgb26xx": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 288,
 		"y": 160,
 		"root": false

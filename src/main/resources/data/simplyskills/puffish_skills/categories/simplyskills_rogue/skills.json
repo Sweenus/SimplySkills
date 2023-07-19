@@ -108,109 +108,109 @@
 		"root": false
 	},
 	"5ydaz37vtrxsxmzd": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": 32,
 		"y": -64,
 		"root": false
 	},
 	"9xnb5hf7hmjz0y5q": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": 32,
 		"y": -96,
 		"root": false
 	},
 	"7sh3662ne05az22w": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": 32,
 		"y": -128,
 		"root": false
 	},
 	"7pfa8jlp9wbpth56": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 96,
 		"y": 96,
 		"root": false
 	},
 	"f1jumlskdfsfhhm0": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -96,
 		"y": 96,
 		"root": false
 	},
 	"thzh6bjmnz81pv7y": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -160,
 		"y": 0,
 		"root": false
 	},
 	"hm0sv1mw897nwyoa": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 160,
 		"y": 0,
 		"root": false
 	},
 	"eh8ga91br57itf5x": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 0,
 		"y": -160,
 		"root": false
 	},
 	"4tl7lknur17awyyw": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -32,
 		"y": 128,
 		"root": false
 	},
 	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 32,
 		"y": 128,
 		"root": false
 	},
 	"88icmjo4rld0ho1c": {
-		"definition": "jump_multi+5%",
+		"definition": "jump_multi+2%",
 		"x": 96,
 		"y": -160,
 		"root": false
 	},
 	"udktsx2tk7s1fubm": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 0,
 		"y": 160,
 		"root": false
 	},
 	"sshvzwg4h33g23uk": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 0,
 		"y": 96,
 		"root": false
 	},
 	"kst2sn4oz9etxp7s": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -96,
 		"y": -160,
 		"root": false
 	},
 	"og0f28ciyhej401p": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -160,
 		"y": -64,
 		"root": false
 	},
 	"i6j92v84sfyz0n0s": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 160,
 		"y": -64,
 		"root": false
 	},
 	"b06su6ljj85im9ly": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -128,
 		"y": -96,
 		"root": false
 	},
 	"m1rajq89mn99ucwl": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 128,
 		"y": -96,
 		"root": false

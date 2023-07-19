@@ -126,7 +126,7 @@
 		"root": false
 	},
 	"7pfa8jlp9wbpth56": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 96,
 		"y": 96,
 		"root": false
@@ -150,19 +150,19 @@
 		"root": false
 	},
 	"4tl7lknur17awyyw": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -32,
 		"y": 128,
 		"root": false
 	},
 	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 32,
 		"y": 128,
 		"root": false
 	},
 	"rksb6gd2etml65qv": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -96,
 		"y": -160,
 		"root": false
@@ -174,13 +174,13 @@
 		"root": false
 	},
 	"ftetccexo20abf0m": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 96,
 		"y": -160,
 		"root": false
 	},
 	"uj5kjh3rsk0mlv3f": {
-		"definition": "resistance_multi+5%",
+		"definition": "resistance_multi+2%",
 		"x": 160,
 		"y": -96,
 		"root": false

@@ -479,8 +479,8 @@
 			}
 		]
 	},
-	"resistance_multi+5%": {
-		"title": "+5%[x] Resistance",
+	"resistance_multi+2%": {
+		"title": "+2%[x] Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -492,7 +492,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.resistance",
-					"value": 0.05,
+					"value": 0.02,
 					"operation": "multiply_total"
 				}
 			}
@@ -517,8 +517,8 @@
 			}
 		]
 	},
-	"melee_damage_multi+5%": {
-		"title": "+5%[x] Melee Damage",
+	"melee_damage_multi+2%": {
+		"title": "+2%[x] Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -530,7 +530,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.05,
+					"value": 0.02,
 					"operation": "multiply_total"
 				}
 			}
@@ -555,8 +555,8 @@
 			}
 		]
 	},
-	"ranged_damage_multi+5%": {
-		"title": "+5%[x] Ranged Damage",
+	"ranged_damage_multi+2%": {
+		"title": "+2%[x] Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -568,7 +568,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.ranged_damage",
-					"value": 0.05,
+					"value": 0.02,
 					"operation": "multiply_total"
 				}
 			}
@@ -593,8 +593,8 @@
 			}
 		]
 	},
-	"attack_speed_multi+5%": {
-		"title": "+5%[x] Attack Speed",
+	"attack_speed_multi+2%": {
+		"title": "+2%[x] Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -606,7 +606,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.attack_speed",
-					"value": 0.05,
+					"value": 0.02,
 					"operation": "multiply_total"
 				}
 			}
@@ -631,8 +631,8 @@
 			}
 		]
 	},
-	"movement_speed_multi+3%": {
-		"title": "+3%[x] Movement Speed",
+	"movement_speed_multi+1.5%": {
+		"title": "+1.5%[x] Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -644,7 +644,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.movement_speed",
-					"value": 0.03,
+					"value": 0.015,
 					"operation": "multiply_total"
 				}
 			}
@@ -726,8 +726,8 @@
 			}
 		]
 	},
-	"jump+3%": {
-		"title": "+3%[+] Jump",
+	"jump+1%": {
+		"title": "+1%[+] Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -739,14 +739,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.jump",
-					"value": 0.03,
+					"value": 0.01,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
-	"jump_multi+5%": {
-		"title": "+5%[x] Jump",
+	"jump_multi+2%": {
+		"title": "+2%[x] Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -758,7 +758,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.jump",
-					"value": 0.05,
+					"value": 0.02,
 					"operation": "multiply_total"
 				}
 			}

@@ -888,7 +888,7 @@
 		"root": false
 	},
 	"1ef0vquj0xwqgg9u": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 64,
 		"y": -224,
 		"root": false
@@ -1068,7 +1068,7 @@
 		"root": false
 	},
 	"5nz2de51k06732yk": {
-		"definition": "resistance_multi+5%",
+		"definition": "resistance_multi+2%",
 		"x": -224,
 		"y": -64,
 		"root": false

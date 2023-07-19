@@ -18,13 +18,13 @@
 		"root": true
 	},
 	"8j5tyrthf8knv16p": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -896,
 		"y": 288,
 		"root": false
 	},
 	"bjj2ya2fknvh4ys8": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -896,
 		"y": -288,
 		"root": false
@@ -270,25 +270,25 @@
 		"root": false
 	},
 	"5l4m3adb76inddfi": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -416,
 		"y": 128,
 		"root": false
 	},
 	"4kna81ugkgf8frbg": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -416,
 		"y": 160,
 		"root": false
 	},
 	"5xu55r21nwkf4osp": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -416,
 		"y": 192,
 		"root": false
 	},
 	"yq11h7li3jr9uw3f": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -416,
 		"y": 224,
 		"root": false
@@ -360,7 +360,7 @@
 		"root": false
 	},
 	"ood5wl1kipr2bbqv": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -800,
 		"y": -224,
 		"root": false
@@ -420,7 +420,7 @@
 		"root": false
 	},
 	"5zq8ggw2e8z4wn57": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -800,
 		"y": 224,
 		"root": false
@@ -462,19 +462,19 @@
 		"root": false
 	},
 	"9gxkrhtfsmcn5le0": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": 224,
 		"root": false
 	},
 	"ru7qm6j3cmji1zqp": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -800,
 		"y": 96,
 		"root": false
 	},
 	"2p2uvjolm2t37rks": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -736,
 		"y": 160,
 		"root": false
@@ -492,13 +492,13 @@
 		"root": false
 	},
 	"sf471rinltw4oe2j": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -768,
 		"y": 0,
 		"root": false
 	},
 	"n7zsqo2og5v3cscn": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -448,
 		"y": 0,
 		"root": false
@@ -582,25 +582,25 @@
 		"root": false
 	},
 	"jnf7bpzj4i7j4mto": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -608,
 		"y": 32,
 		"root": false
 	},
 	"rh02zmrj1hlzpjv3": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -608,
 		"y": -32,
 		"root": false
 	},
 	"kphiwjls0sczidd4": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -672,
 		"y": -96,
 		"root": false
 	},
 	"7fh2jhov4lvwtv83": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -544,
 		"y": 96,
 		"root": false
@@ -726,7 +726,7 @@
 		"root": false
 	},
 	"al184u2k1pminq2x": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -992,
 		"y": -192,
 		"root": false
@@ -804,7 +804,7 @@
 		"root": false
 	},
 	"52837xlilkjqowy5": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -992,
 		"y": 192,
 		"root": false
@@ -1284,7 +1284,7 @@
 		"root": false
 	},
 	"i6acdv4fm8rhwqzo": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 256,
 		"y": -800,
 		"root": false
@@ -1362,13 +1362,13 @@
 		"root": false
 	},
 	"m5cjl18pvdbrvfpg": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -96,
 		"y": -800,
 		"root": false
 	},
 	"i0rimp9zkdquevs3": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -256,
 		"y": -800,
 		"root": false
@@ -1422,7 +1422,7 @@
 		"root": false
 	},
 	"5m543uuy02fkwd39": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -384,
 		"y": -576,
 		"root": false
@@ -1536,7 +1536,7 @@
 		"root": false
 	},
 	"aczghughxn2pvp27": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 608,
 		"y": 288,
 		"root": false
@@ -1596,7 +1596,7 @@
 		"root": false
 	},
 	"3fbi0msu2dwd8njg": {
-		"definition": "resistance_multi+5%",
+		"definition": "resistance_multi+2%",
 		"x": 896,
 		"y": 0,
 		"root": false
@@ -1638,7 +1638,7 @@
 		"root": false
 	},
 	"utsoghxdsjklzft3": {
-		"definition": "resistance_multi+5%",
+		"definition": "resistance_multi+2%",
 		"x": 608,
 		"y": -288,
 		"root": false
@@ -1740,7 +1740,7 @@
 		"root": false
 	},
 	"kl052kfxt78s6c3h": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 416,
 		"y": 96,
 		"root": false
@@ -1794,13 +1794,13 @@
 		"root": false
 	},
 	"ku665yrv27jaqb22": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 704,
 		"y": 192,
 		"root": false
 	},
 	"4we84brd1sfq0axo": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 800,
 		"y": 96,
 		"root": false
@@ -1968,25 +1968,25 @@
 		"root": false
 	},
 	"3hh27m399aju17b1": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -416,
 		"y": -672,
 		"root": false
 	},
 	"gymo8q1smfldj276": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -448,
 		"y": -640,
 		"root": false
 	},
 	"sddyuvgnims74nkt": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -480,
 		"y": -672,
 		"root": false
 	},
 	"ss9en01l2z36h0dz": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -448,
 		"y": -704,
 		"root": false
@@ -2106,13 +2106,13 @@
 		"root": false
 	},
 	"scr2gtke95nw5dkc": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -128,
 		"y": 0,
 		"root": false
 	},
 	"rnodb0moogt2r5fa": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -160,
 		"y": 0,
 		"root": false
@@ -2154,7 +2154,7 @@
 		"root": false
 	},
 	"lpkshw6ase5kv2ce": {
-		"definition": "jump_multi+5%",
+		"definition": "jump_multi+2%",
 		"x": -192,
 		"y": 0,
 		"root": false
@@ -2742,7 +2742,7 @@
 		"root": false
 	},
 	"dkkrknemcwwnd1zh": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 544,
 		"y": 64,
 		"root": false
@@ -2796,7 +2796,7 @@
 		"root": false
 	},
 	"htbvgl6fvvg4vm5h": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 544,
 		"y": -64,
 		"root": false
@@ -2856,7 +2856,7 @@
 		"root": false
 	},
 	"ox9vv82ecpwjbnd4": {
-		"definition": "resistance_multi+5%",
+		"definition": "resistance_multi+2%",
 		"x": 416,
 		"y": -192,
 		"root": false
@@ -3312,13 +3312,13 @@
 		"root": false
 	},
 	"pl02oeu0xszetdgq": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 864,
 		"y": 608,
 		"root": false
 	},
 	"cytj97ex321bblxy": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 896,
 		"y": 576,
 		"root": false
@@ -3390,7 +3390,7 @@
 		"root": false
 	},
 	"mw65xa2dmp2qywe1": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 960,
 		"y": 800,
 		"root": false
@@ -3420,7 +3420,7 @@
 		"root": false
 	},
 	"t72kh2y6vogdbe99": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": 960,
 		"y": 576,
 		"root": false
@@ -3492,7 +3492,7 @@
 		"root": false
 	},
 	"fdepjg7c4q58udtj": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": 864,
 		"y": -192,
 		"root": false
@@ -4074,7 +4074,7 @@
 		"root": false
 	},
 	"hrc3vtcq7d7fj09q": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -896,
 		"y": -384,
 		"root": false
@@ -4092,13 +4092,13 @@
 		"root": false
 	},
 	"g6bxi5hmp8apfauk": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -928,
 		"y": -416,
 		"root": false
 	},
 	"yji256kjkapgbko9": {
-		"definition": "jump_multi+5%",
+		"definition": "jump_multi+2%",
 		"x": -864,
 		"y": -384,
 		"root": false
@@ -4134,7 +4134,7 @@
 		"root": false
 	},
 	"xol97naeju19pgk8": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -992,
 		"y": -416,
 		"root": false
@@ -4194,19 +4194,19 @@
 		"root": false
 	},
 	"otak6gmfayitsfqi": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -928,
 		"y": -480,
 		"root": false
 	},
 	"mcejmdnldfjep2uk": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -864,
 		"y": -544,
 		"root": false
 	},
 	"kzrgdjpyrpfkxk3i": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -768,
 		"y": -640,
 		"root": false
@@ -4284,13 +4284,13 @@
 		"root": false
 	},
 	"jwpc5qs2c5zv0agu": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": -480,
 		"root": false
 	},
 	"fguhow2x82rru6q2": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": -416,
 		"root": false
@@ -4332,25 +4332,25 @@
 		"root": false
 	},
 	"vfvg4acpk8gz05lf": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -704,
 		"y": -512,
 		"root": false
 	},
 	"otfgh2tikd0stul9": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": -512,
 		"root": false
 	},
 	"l6twsuros8jcasuo": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": -384,
 		"root": false
 	},
 	"useat46tv98yhafr": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -640,
 		"y": -384,
 		"root": false
@@ -4386,7 +4386,7 @@
 		"root": false
 	},
 	"j9w0i1ez6kgw8u26": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": -448,
 		"root": false
@@ -4524,19 +4524,19 @@
 		"root": false
 	},
 	"wkqgzbfk594yq0g0": {
-		"definition": "attack_speed_multi+5%",
+		"definition": "attack_speed_multi+2%",
 		"x": -736,
 		"y": -672,
 		"root": false
 	},
 	"t3eeosd4a0b7uzkv": {
-		"definition": "melee_damage_multi+5%",
+		"definition": "melee_damage_multi+2%",
 		"x": -800,
 		"y": -416,
 		"root": false
 	},
 	"0zjyoez0cy1xm7ae": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -992,
 		"y": -608,
 		"root": false
@@ -4590,133 +4590,133 @@
 		"root": false
 	},
 	"9bw93glzycp6wwsh": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -1024,
 		"y": 832,
 		"root": false
 	},
 	"o6pos0i5nm7utifp": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -544,
 		"y": 352,
 		"root": false
 	},
 	"olr9houxtm9f1chu": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -640,
 		"y": 352,
 		"root": false
 	},
 	"c70fn01naantqcoe": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -1024,
 		"y": 736,
 		"root": false
 	},
 	"hc7cg8rvq4xjax6w": {
-		"definition": "jump_multi+5%",
+		"definition": "jump_multi+2%",
 		"x": -928,
 		"y": 704,
 		"root": false
 	},
 	"qizwank5jhy1oz2i": {
-		"definition": "jump_multi+5%",
+		"definition": "jump_multi+2%",
 		"x": -672,
 		"y": 448,
 		"root": false
 	},
 	"duogwt95339yaf32": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -928,
 		"y": 736,
 		"root": false
 	},
 	"siya08dnskrodnwj": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -960,
 		"y": 736,
 		"root": false
 	},
 	"z8h0sk25x6ecrx6c": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -960,
 		"y": 704,
 		"root": false
 	},
 	"vunbp170v4d5ycwj": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -960,
 		"y": 672,
 		"root": false
 	},
 	"d473evw7uyi2rqb5": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -928,
 		"y": 672,
 		"root": false
 	},
 	"n2orbmt8eldj2m9z": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -896,
 		"y": 672,
 		"root": false
 	},
 	"u4b3wkzelmyzqtvh": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -896,
 		"y": 704,
 		"root": false
 	},
 	"0xxnnrhkv81oczao": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -896,
 		"y": 736,
 		"root": false
 	},
 	"tx6xlfj0buuf5b3u": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": 480,
 		"root": false
 	},
 	"bbs3zlmcp4x4i1k1": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -640,
 		"y": 480,
 		"root": false
 	},
 	"srl7aiue6m8m2xp2": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -640,
 		"y": 448,
 		"root": false
 	},
 	"f2l29onr6wqb1qgg": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -640,
 		"y": 416,
 		"root": false
 	},
 	"pnu7hnzrckfgw7pm": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -672,
 		"y": 416,
 		"root": false
 	},
 	"6n3ca4lrobbl44hz": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -704,
 		"y": 416,
 		"root": false
 	},
 	"92yrtgzq7asg01bx": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -704,
 		"y": 448,
 		"root": false
 	},
 	"gpi8ow1q4k0esqer": {
-		"definition": "jump+3%",
+		"definition": "jump+1%",
 		"x": -704,
 		"y": 480,
 		"root": false
@@ -4860,13 +4860,13 @@
 		"root": false
 	},
 	"2o1flu89knhw6snf": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -928,
 		"y": 608,
 		"root": false
 	},
 	"qoveao8r897df2ec": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -768,
 		"y": 448,
 		"root": false
@@ -5220,7 +5220,7 @@
 		"root": false
 	},
 	"y39s5y9gc5ctg2rt": {
-		"definition": "ranged_damage_multi+5%",
+		"definition": "ranged_damage_multi+2%",
 		"x": -1056,
 		"y": 320,
 		"root": false
@@ -5322,7 +5322,7 @@
 		"root": false
 	},
 	"9162oh7esfl7fgrt": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": -704,
 		"y": 672,
 		"root": false
@@ -5352,7 +5352,7 @@
 		"root": false
 	},
 	"9ipx9zob9vyevfll": {
-		"definition": "movement_speed_multi+3%",
+		"definition": "movement_speed_multi+1.5%",
 		"x": 800,
 		"y": 544,
 		"root": false
