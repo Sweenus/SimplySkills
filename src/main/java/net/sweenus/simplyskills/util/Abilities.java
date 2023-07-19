@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ShieldItem;
@@ -93,8 +94,7 @@ public class Abilities {
         if (player.age % 80 == 0) {
             int radius = 12;
 
-            Box box = new Box(player.getX() + radius, player.getY() + (float) radius / 3, player.getZ() + radius,
-                    player.getX() - radius, player.getY() - (float) radius / 3, player.getZ() - radius);
+            Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
@@ -103,6 +103,87 @@ public class Abilities {
                             if (statusEffect != null && statusEffect.getEffectType().equals(StatusEffects.INVISIBILITY)) {
                                 le.removeStatusEffect(statusEffect.getEffectType());
                                 break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void passiveRangerTamer(PlayerEntity player) {
+        if (player.age % 80 == 0) {
+            int radius = 12;
+
+            Box box = HelperMethods.createBox(player, radius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                if (entities != null) {
+                    if ((entities instanceof TameableEntity te)) {
+                            if (te.isOwner(player)) {
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 85, 1));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 85, 2));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void passiveRangerBonded(PlayerEntity player) {
+        if (player.age % 10 == 0) {
+            int radius = 12;
+
+            Box box = HelperMethods.createBox(player, radius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                if (entities != null) {
+                    if ((entities instanceof TameableEntity te)) {
+                        if (te.isOwner(player)) {
+                            float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
+                            float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
+                            if (teHealthPercent > playerHealthPercent && teHealthPercent > 30) {
+                                te.setHealth(te.getHealth() - 1);
+                                player.heal(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void passiveRangerTrained(PlayerEntity player) {
+        if (player.age % 80 == 0) {
+            int radius = 12;
+
+            Box box = HelperMethods.createBox(player, radius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                if (entities != null) {
+                    if ((entities instanceof TameableEntity te)) {
+                        if (te.isOwner(player)) {
+                            float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
+                            if (teHealthPercent > 70) {
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 85, 1));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 85, 1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void passiveRangerIncognito(PlayerEntity player) {
+        if (player.age % 20 == 0) {
+            int radius = 12;
+
+            Box box = HelperMethods.createBox(player, radius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                if (entities != null) {
+                    if ((entities instanceof TameableEntity te)) {
+                        if (te.isOwner(player)) {
+                            if (player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 25));
                             }
                         }
                     }
@@ -352,6 +433,44 @@ public class Abilities {
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 80, 0));
         player.velocityModified = true;
 
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationDisengageRecuperate))
+            signatureRangerDisengageRecuperate(player);
+        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationDisengageExploitation))
+            signatureRangerDisengageExploitation(player);
+
+    }
+    public static void signatureRangerDisengageRecuperate(PlayerEntity player) {
+        int radius = 18;
+
+        Box box = HelperMethods.createBox(player, radius);
+        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+            if (entities != null) {
+                if ((entities instanceof TameableEntity te)) {
+                    if (te.isOwner(player)) {
+                        te.heal(te.getMaxHealth());
+                    }
+                }
+            }
+        }
+    }
+    public static void signatureRangerDisengageExploitation(PlayerEntity player) {
+        int radius = 18;
+        int effectDuration = 120;
+
+        Box box = HelperMethods.createBox(player, radius);
+        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+            if (entities != null) {
+                if ((entities instanceof TameableEntity te)) {
+                    if (te.isOwner(player)) {
+                        te.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, effectDuration));
+                    }
+                }
+            }
+        }
     }
 
     public static void passiveRangerElementalArrowsRenewal(PlayerEntity player) {

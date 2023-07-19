@@ -4602,25 +4602,25 @@
 		"root": false
 	},
 	"olr9houxtm9f1chu": {
-		"definition": "movement_speed_multi+1.5%",
+		"definition": "rangerIncognito",
 		"x": -640,
 		"y": 352,
 		"root": false
 	},
 	"c70fn01naantqcoe": {
-		"definition": "movement_speed_multi+1.5%",
+		"definition": "rangerTamer",
 		"x": -1024,
 		"y": 736,
 		"root": false
 	},
 	"hc7cg8rvq4xjax6w": {
-		"definition": "jump_multi+2%",
+		"definition": "rangerBonded",
 		"x": -928,
 		"y": 704,
 		"root": false
 	},
 	"qizwank5jhy1oz2i": {
-		"definition": "jump_multi+2%",
+		"definition": "rangerTrained",
 		"x": -672,
 		"y": 448,
 		"root": false

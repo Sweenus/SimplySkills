@@ -28,14 +28,14 @@ public class SkillReferencePosition {
     public static String berserkerIgnorePainProficient = "fqaqa2epx815hm4k";
 
     public static String berserkerRecklessness = "eluc038mscynyi8l";
-    public static String berserkerChallenge = "s9vgmd9yzd0n9aef";
+    public static String berserkerChallenge = "uc5fndlzvp9p2xwg";
     public static String berserkerExploit = "s9vgmd9yzd0n9aef";
 
     // - Bulwark
     public static String bulwarkShieldMastery = "y0slj7yf7czympf2";
     public static String bulwarkShieldMasterySkilled = "j6e54oid9sek37y7";
     public static String bulwarkShieldMasteryProficient = "an3f2t1zaf813fxe";
-    public static String bulwarkRebuke = "u6v8ohh8nl92q71r";
+    public static String bulwarkRebuke = "fwtgnul9htmmur9z";
 
 
     //Wayfarer
@@ -55,6 +55,10 @@ public class SkillReferencePosition {
 
     // - Ranger
     public static String rangerReveal = "ffqolcglk86iilf9";
+    public static String rangerTamer = "c70fn01naantqcoe";
+    public static String rangerTrained = "qizwank5jhy1oz2i";
+    public static String rangerBonded = "hc7cg8rvq4xjax6w";
+    public static String rangerIncognito = "olr9houxtm9f1chu";
 
 
     //Initiate
@@ -142,6 +146,8 @@ public class SkillReferencePosition {
     public static String frostguardSpecialisationFrostNova = "7dsbtkhvcv332zla";
 
     public static String rangerSpecialisationDisengage = "is053f9imz801s57";
+    public static String rangerSpecialisationDisengageRecuperate = "dr852odvrafemtmw";
+    public static String rangerSpecialisationDisengageExploitation = "t5c5gzcskng8b8cz";
     public static String rangerSpecialisationArrowRain = "a3ns9xl58ixdg2lo";
     public static String rangerSpecialisationArrowRainElemental = "yftatjo9vwzf5vpw";
     public static String rangerSpecialisationArrowRainExplosive = "l6feffzr1kt6i2ds";

@@ -926,6 +926,78 @@
 			}
 		]
 	},
+	"rangerTamer": {
+		"title": "§a[Tamer]§7 \nWhen your pets are near to you, they gain Regeneration & Resistance.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_tamer.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerTamer"
+				}
+			}
+		]
+	},
+	"rangerBonded": {
+		"title": "§a[Bonded]§7 \nWhen your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_bonded.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerBonded"
+				}
+			}
+		]
+	},
+	"rangerTrained": {
+		"title": "§a[Trained]§7 \nWhen your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_trained.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerTrained"
+				}
+			}
+		]
+	},
+	"rangerIncognito": {
+		"title": "§a[Incognito]§7 \nWhen your pets are near to you and you gain Invisibility, they also gain Invisibility.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_incognito.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerIncognito"
+				}
+			}
+		]
+	},
 	"rogueBackstab": {
 		"title": "§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.",
 		"frame": "goal",
@@ -2686,6 +2758,42 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rangerSignatureDisengage"
+				}
+			}
+		]
+	},
+	"rangerSignatureDisengageRecuperate": {
+		"title": "§6[Disengage]§7 now heals all nearby pets to full health.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_disengage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureDisengageRecuperate"
+				}
+			}
+		]
+	},
+	"rangerSignatureDisengageExploitation": {
+		"title": "§6[Disengage]§7 now grants all nearby pets Immobilizing Aura for a short duration. \n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_disengage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureDisengageExploitation"
 				}
 			}
 		]

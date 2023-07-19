@@ -101,9 +101,25 @@ public abstract class ServerPlayerEntityMixin {
                 Abilities.passiveSelfCleanse(player);
             }
 
-            //Passive Area Reveal
+            //Passive Ranger Reveal
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rangerReveal)) {
                 Abilities.passiveRangerReveal(player);
+            }
+            //Passive Ranger Tamer
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rangerTamer)) {
+                Abilities.passiveRangerBonded(player);
+            }
+            //Passive Ranger Bonded
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rangerBonded)) {
+                Abilities.passiveRangerTamer(player);
+            }
+            //Passive Ranger Trained
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rangerTrained)) {
+                Abilities.passiveRangerTrained(player);
+            }
+            //Passive Ranger Incognito
+            if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rangerIncognito)) {
+                Abilities.passiveRangerIncognito(player);
             }
 
             //Passive Berserker Sword Mastery

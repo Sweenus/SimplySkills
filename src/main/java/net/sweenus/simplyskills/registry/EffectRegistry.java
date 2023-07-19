@@ -28,6 +28,7 @@ public class EffectRegistry {
     public static StatusEffect BULLRUSH= new BullrushEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect IMMOBILIZE= new ImmobilizeEffect(StatusEffectCategory.HARMFUL, 3124687);
     public static StatusEffect LEAPSLAM= new LeapSlamEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect IMMOBILIZINGAURA= new ImmobilizingAuraEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -54,6 +55,7 @@ public class EffectRegistry {
         BULLRUSH = registerStatusEffect("bullrush", BULLRUSH);
         IMMOBILIZE = registerStatusEffect("immobilize", IMMOBILIZE);
         LEAPSLAM = registerStatusEffect("leapslam", LEAPSLAM);
+        IMMOBILIZINGAURA = registerStatusEffect("immobilizing_aura", IMMOBILIZINGAURA);
 
     }
 
