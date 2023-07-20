@@ -207,9 +207,11 @@ public class Abilities {
 
     public static void passiveRogueBackstab(Entity target, PlayerEntity player) {
         if (target instanceof LivingEntity livingTarget) {
+            int weaknessDuration = SimplySkillsClient.rogueConfig.passiveRogueBackstabWeaknessDuration;
+            int weaknessAmplifier = SimplySkillsClient.rogueConfig.passiveRogueBackstabWeaknessAmplifier;
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
                     livingTarget.getBodyYaw() > (player.getBodyYaw() - 32)) {
-                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 60));
+                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier));
             }
         }
     }
@@ -353,14 +355,19 @@ public class Abilities {
     }
 
     public static void passiveRogueSmokeBomb(PlayerEntity player) {
-        if (player.getRandom().nextInt(100) < 25) {
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 100));
-            Box box = HelperMethods.createBox(player, 6);
+        int radius = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombRadius;
+        int chance = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombChance;
+        int invisibilityDuration = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombInvisibilityDuration;
+        int blindnessDuration = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombBlindnessDuration;
+        int blindnessAmplifier = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombBlindnessAmplifier;
+        if (player.getRandom().nextInt(100) < chance) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, invisibilityDuration));
+            Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 60));
+                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, blindnessDuration, blindnessAmplifier));
 
                     }
                 }
@@ -370,18 +377,23 @@ public class Abilities {
 
     public static boolean passiveRogueEvasionMastery(PlayerEntity player) {
 
-        int mastery = 15;
+        int baseEvasionChance = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryChance;
+        int evasionChanceIncreasePerTier = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryChanceIncreasePerTier;
+        int masteryEvasionMultiplier = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasterySignatureMultiplier;
+        int iframeDuration = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryIframeDuration;
+
+        int mastery = baseEvasionChance;
         int evasionMultiplier = 1;
 
         if (player.hasStatusEffect(EffectRegistry.EVASION))
-            evasionMultiplier = 2;
+            evasionMultiplier = masteryEvasionMultiplier;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
-            mastery = 35;
+            mastery = mastery + (evasionChanceIncreasePerTier * 2);
         else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
-            mastery = 25;
+            mastery = mastery + evasionChanceIncreasePerTier;
 
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getEquippedStack(EquipmentSlot.HEAD).isEmpty()
@@ -389,7 +401,7 @@ public class Abilities {
                     && player.getEquippedStack(EquipmentSlot.LEGS).isEmpty()
                     && player.getEquippedStack(EquipmentSlot.FEET).isEmpty()) {
 
-                player.timeUntilRegen = 15;
+                player.timeUntilRegen = iframeDuration;
                 player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
                 return true;
@@ -401,18 +413,21 @@ public class Abilities {
     }
 
     public static void passiveRogueOpportunisticMastery(Entity target, PlayerEntity player) {
+        int basePoisonDuration = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonDuration;
+        int basePoisonAmplifier = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonAmplifier;
+        int poisonDurationIncreasePerTier = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier;
 
-        int mastery = 40;
+        int mastery = basePoisonDuration;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasterySkilled))
-            mastery = 120;
+            mastery = mastery + (poisonDurationIncreasePerTier * 2);
         else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasteryProficient))
-            mastery = 80;
+            mastery = mastery + poisonDurationIncreasePerTier;
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
-            livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery));
+            livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery, basePoisonAmplifier));
             player.removeStatusEffect(StatusEffects.INVISIBILITY);
         }
 
@@ -508,9 +523,9 @@ public class Abilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills_rogue").get()
                     .contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike)) {
-                int dashRange = 12;
-                int dashRadius = 3;
-                int dashDamageModifier = 3;
+                int dashRange = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeRange;
+                int dashRadius = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
+                int dashDamageModifier = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
                 int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
                 DamageSource dashSource = DamageSource.player(player);
                 BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);

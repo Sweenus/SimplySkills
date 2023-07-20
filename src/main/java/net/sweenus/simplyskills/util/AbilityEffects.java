@@ -78,10 +78,11 @@ public class AbilityEffects {
 
         if (player.hasStatusEffect(EffectRegistry.SIPHONINGSTRIKES)) {
             if (target instanceof LivingEntity livingTarget) {
+                double leechMultiplier = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesLeechMultiplier;
 
                 double attackValue = Objects.requireNonNull(
                         player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE)).getValue();
-                float healAmount = (float) (attackValue * 0.15);
+                float healAmount = (float) (attackValue * leechMultiplier);
                 player.heal(healAmount);
 
                 HelperMethods.decrementStatusEffect(player, EffectRegistry.SIPHONINGSTRIKES);
@@ -97,16 +98,16 @@ public class AbilityEffects {
     }
 
     public static void effectRogueFanOfBlades(PlayerEntity player) {
-        int fobFrequency = 20;
+        int fobFrequency = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesBaseFrequency;
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
-            fobFrequency = 5;
+            fobFrequency = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesEnhancedFrequency;
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_rogue").get()
                 .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades) &&
                 player.hasStatusEffect(EffectRegistry.FANOFBLADES) && player.age % fobFrequency == 0) {
-            int fobRange = 8;
-            int fobRadius = 6;
-            int disenchantDuration = 160;
+            int fobRange = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesRange;
+            int fobRadius = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesRadius;
+            int disenchantDuration = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesDisenchantDuration;
 
             BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), fobRange);
             BlockState blockstate = player.world.getBlockState(blockPos);
@@ -125,9 +126,9 @@ public class AbilityEffects {
 
                         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                                 "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
-                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", 32, le);
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", fobRange * 2, le);
                         else
-                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", 32, le);
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", fobRange * 2, le);
 
                         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                                 "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment))

@@ -94,5 +94,32 @@
   "text.autoconfig.simplyskills.option.ranger.effectRangerArrowRainArrowDensity" : "[Signature] Arrow Rain density",
   "text.autoconfig.simplyskills.option.ranger.effectRangerArrowRainVolleys" : "[Signature] Arrow Rain volleys",
   "text.autoconfig.simplyskills.option.ranger.effectRangerArrowRainVolleyIncreasePerTier" : "[Signature] Arrow Rain volley increase per tier",
-  "text.autoconfig.simplyskills.option.ranger.effectRangerArrowRainRange" : "[Signature] Arrow Rain range"
+  "text.autoconfig.simplyskills.option.ranger.effectRangerArrowRainRange" : "[Signature] Arrow Rain range",
+
+  "text.autoconfig.simplyskills.option.rogue.enableRogueSpecialisation" : "Enable Rogue Specialisation",
+  "text.autoconfig.simplyskills.option.rogue.enableRogueSpecialisation.@Tooltip" : "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueBackstabWeaknessDuration" : "[Passive] Backstab Weakness duration",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueBackstabWeaknessAmplifier" : "[Passive] Backstab Weakness amplifier",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueSmokeBombRadius" : "[Passive] Smoke Bomb radius",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueSmokeBombChance" : "[Passive] Smoke Bomb chance",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueSmokeBombInvisibilityDuration" : "[Passive] Smoke Bomb Invisibility duration",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueSmokeBombBlindnessDuration" : "[Passive] Smoke Bomb Blindness duration",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueSmokeBombBlindnessAmplifier" : "[Passive] Smoke Bomb Blindness amplifier",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryChance" : "[Passive] Evasion Mastery chance",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryChanceIncreasePerTier" : "[Passive] Evasion Mastery chance increase per tier",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasterySignatureMultiplier" : "[Passive] Evasion Mastery Signature chance multiplier",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryIframeDuration" : "[Passive] Evasion Mastery iframe duration",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonDuration" : "[Passive] Opportunistic Mastery Poison duration",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonAmplifier" : "[Passive] Opportunistic Mastery Poison amplifier",
+  "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier" : "[Passive] Opportunistic Mastery duration increase per tier",
+
+  "text.autoconfig.simplyskills.option.rogue.signatureRoguePreparationShadowstrikeRange" : "[Signature] Preparation Shadowstrike range",
+  "text.autoconfig.simplyskills.option.rogue.signatureRoguePreparationShadowstrikeRadius" : "[Signature] Preparation Shadowstrike radius",
+  "text.autoconfig.simplyskills.option.rogue.signatureRoguePreparationShadowstrikeDamageModifier" : "[Signature] Preparation Shadowstrike damage modifier",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueSiphoningStrikesLeechMultiplier" : "[Signature] Siphoning Strikes health leech multiplier",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesBaseFrequency" : "[Signature] Fan of Blades frequency",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesEnhancedFrequency" : "[Signature] Fan of Blades enhanced frequency",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesRange" : "[Signature] Fan of Blades range",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesRadius" : "[Signature] Fan of Blades radius",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesDisenchantDuration" : "[Signature] Fan of Blades Disenchant duration"
 }
