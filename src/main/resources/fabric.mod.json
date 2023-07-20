@@ -22,6 +22,9 @@
     ],
     "preLaunch": [
       "net.sweenus.simplyskills.util.SimplySkillsPreInit"
+    ],
+    "modmenu": [
+      "net.sweenus.simplyskills.client.ModMenuIntegration"
     ]
   },
   "mixins": [

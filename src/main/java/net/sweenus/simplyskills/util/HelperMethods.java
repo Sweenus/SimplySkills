@@ -8,6 +8,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
@@ -44,6 +45,12 @@ public class HelperMethods {
             if (playerEntity == player)
                 return false;
             return playerEntity.shouldDamagePlayer(player);
+        }
+        if (livingEntity instanceof TameableEntity tameableEntity) {
+            if (tameableEntity.getOwner() != null) {
+                return tameableEntity.getOwner() != player;
+            }
+            return true;
         }
         return true;
     }

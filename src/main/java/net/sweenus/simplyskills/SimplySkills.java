@@ -1,6 +1,11 @@
 package net.sweenus.simplyskills;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.sweenus.simplyskills.config.ServerConfig;
+import net.sweenus.simplyskills.config.ServerConfigWrapper;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
@@ -16,6 +21,7 @@ public class SimplySkills implements ModInitializer {
     public static final String MOD_ID = "simplyskills";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static List<String> specialisations = new ArrayList<>();
+    public static ServerConfig config;
 
     private static void setSpecialisations() {
         specialisations.add("simplyskills_rogue");
@@ -31,6 +37,9 @@ public class SimplySkills implements ModInitializer {
 
     @Override
     public void onInitialize() {
+
+        AutoConfig.register(ServerConfigWrapper.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        config = AutoConfig.getConfigHolder(ServerConfigWrapper.class).getConfig().server;
 
         PassiveSkillReward.registerSkillTypes();
         SoundRegistry.init();

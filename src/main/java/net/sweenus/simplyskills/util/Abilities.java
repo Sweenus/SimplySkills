@@ -21,6 +21,7 @@ import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
@@ -91,8 +92,9 @@ public class Abilities {
     }
 
     public static void passiveRangerReveal(PlayerEntity player) {
-        if (player.age % 80 == 0) {
-            int radius = 12;
+        int frequency = SimplySkillsClient.rangerConfig.passiveRangerRevealFrequency;
+        if (player.age % frequency == 0) {
+            int radius = SimplySkillsClient.rangerConfig.passiveRangerRevealRadius;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -111,8 +113,11 @@ public class Abilities {
         }
     }
     public static void passiveRangerTamer(PlayerEntity player) {
-        if (player.age % 80 == 0) {
-            int radius = 12;
+        int frequency = SimplySkillsClient.rangerConfig.passiveRangerTamerFrequency;
+        if (player.age % frequency == 0) {
+            int radius = SimplySkillsClient.rangerConfig.passiveRangerTamerRadius;
+            int resistanceAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTamerResistanceAmplifier;
+            int regenerationAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTamerRegenerationAmplifier;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -120,8 +125,8 @@ public class Abilities {
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
                             if (te.isOwner(player)) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 85, 1));
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 85, 2));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, frequency + 5, regenerationAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, frequency + 5, resistanceAmplifier));
                         }
                     }
                 }
@@ -129,8 +134,11 @@ public class Abilities {
         }
     }
     public static void passiveRangerBonded(PlayerEntity player) {
-        if (player.age % 10 == 0) {
-            int radius = 12;
+        int frequency = SimplySkillsClient.rangerConfig.passiveRangerBondedFrequency;
+        if (player.age % frequency == 0) {
+            int radius = SimplySkillsClient.rangerConfig.passiveRangerBondedRadius;
+            int petMinimumHealthPercent = SimplySkillsClient.rangerConfig.passiveRangerBondedPetMinimumHealthPercent;
+            int healthTransferAmount = SimplySkillsClient.rangerConfig.passiveRangerBondedHealthTransferAmount;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -140,9 +148,9 @@ public class Abilities {
                         if (te.isOwner(player)) {
                             float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
                             float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
-                            if (teHealthPercent > playerHealthPercent && teHealthPercent > 30) {
-                                te.setHealth(te.getHealth() - 1);
-                                player.heal(1);
+                            if (teHealthPercent > playerHealthPercent && teHealthPercent > petMinimumHealthPercent) {
+                                te.setHealth(te.getHealth() - healthTransferAmount);
+                                player.heal(healthTransferAmount);
                             }
                         }
                     }
@@ -151,8 +159,12 @@ public class Abilities {
         }
     }
     public static void passiveRangerTrained(PlayerEntity player) {
-        if (player.age % 80 == 0) {
-            int radius = 12;
+        int frequency = SimplySkillsClient.rangerConfig.passiveRangerTrainedFrequency;
+        if (player.age % frequency == 0) {
+            int radius = SimplySkillsClient.rangerConfig.passiveRangerTrainedRadius;
+            int strengthAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTrainedStrengthAmplifier;
+            int speedAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTrainedSpeedAmplifier;
+            int minimumHealthPercent = SimplySkillsClient.rangerConfig.passiveRangerTrainedMinimumHealthPercent;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -161,9 +173,9 @@ public class Abilities {
                     if ((entities instanceof TameableEntity te)) {
                         if (te.isOwner(player)) {
                             float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
-                            if (teHealthPercent > 70) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 85, 1));
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 85, 1));
+                            if (teHealthPercent > minimumHealthPercent) {
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, frequency + 5, strengthAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, frequency + 5, speedAmplifier));
                             }
                         }
                     }
@@ -173,8 +185,9 @@ public class Abilities {
     }
 
     public static void passiveRangerIncognito(PlayerEntity player) {
-        if (player.age % 20 == 0) {
-            int radius = 12;
+        int frequency = SimplySkillsClient.rangerConfig.passiveRangerIncognitoFrequency;
+        if (player.age % frequency == 0) {
+            int radius = SimplySkillsClient.rangerConfig.passiveRangerIncognitoRadius;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -183,7 +196,7 @@ public class Abilities {
                     if ((entities instanceof TameableEntity te)) {
                         if (te.isOwner(player)) {
                             if (player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 25));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, frequency + 5));
                             }
                         }
                     }
@@ -418,19 +431,26 @@ public class Abilities {
     }
 
     public static void signatureRangerDisengage(PlayerEntity player) {
-        Box box = HelperMethods.createBox((LivingEntity) player, 6);
+        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageRadius;
+        int velocity = SimplySkillsClient.rangerConfig.signatureRangerDisengageVelocity;
+        int height = SimplySkillsClient.rangerConfig.signatureRangerDisengageHeight;
+        int slownessDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlownessDuration;
+        int slownessAmplifier = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlownessAmplifier;
+        int slowFallDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlowFallDuration;
+        int slowFallAmplifier = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlowFallAmplifier;
+        Box box = HelperMethods.createBox((LivingEntity) player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 250, 3));
+                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier));
 
                 }
             }
         }
-        player.setVelocity(player.getRotationVector().negate().multiply(+3));
-        player.setVelocity(player.getVelocity().x, 1, player.getVelocity().z); // Prevent player flying to the heavens
-        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 80, 0));
+        player.setVelocity(player.getRotationVector().negate().multiply(+velocity));
+        player.setVelocity(player.getVelocity().x, height, player.getVelocity().z); // Prevent player flying to the heavens
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, slowFallDuration, slowFallAmplifier));
         player.velocityModified = true;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
@@ -442,7 +462,7 @@ public class Abilities {
 
     }
     public static void signatureRangerDisengageRecuperate(PlayerEntity player) {
-        int radius = 18;
+        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageRecuperateRadius;
 
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -457,8 +477,8 @@ public class Abilities {
         }
     }
     public static void signatureRangerDisengageExploitation(PlayerEntity player) {
-        int radius = 18;
-        int effectDuration = 120;
+        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageExploitationRadius;
+        int effectDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageExploitationDuration;
 
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -475,9 +495,12 @@ public class Abilities {
 
     public static void passiveRangerElementalArrowsRenewal(PlayerEntity player) {
         int random = new Random().nextInt(100);
-        int renewalChance = 35;
+        int renewalChance = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalChance;
+        int renewalDuration = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalDuration;
+        int renewalMaxStacks = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalMaximumStacks;
+        int renewalStacks = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalStacks;
         if (random < renewalChance)
-            HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, 600, 1, 20);
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, renewalDuration, renewalStacks, renewalMaxStacks);
     }
 
     public static void passiveRoguePreparationShadowstrike(PlayerEntity player) {

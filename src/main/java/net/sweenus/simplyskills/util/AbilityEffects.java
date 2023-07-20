@@ -1,5 +1,7 @@
 package net.sweenus.simplyskills.util;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.clothconfig2.ClothConfigDemo;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -23,6 +25,8 @@ import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.attributes.SpellAttributes;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.config.RangerConfig;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
@@ -144,16 +148,18 @@ public class AbilityEffects {
 
 
             Vec3d blockpos = null;
-            int radius = 4;
+            int radius = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsRadius;
+            int increase = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
+            int targetingRange = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsTargetingRange;
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne))
-                radius = 6;
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                radius = radius + increase;
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusTwo))
-                radius = 8;
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+                radius = radius + (increase * 2);
+            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusThree))
-                radius = 10;
+                radius = radius + (increase * 3);
 
             List<String> list = new ArrayList<>();
             list.add("simplyskills:frost_arrow_rain");
@@ -179,11 +185,11 @@ public class AbilityEffects {
 
             HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
             
-            if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+            if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, targetingRange).getPos();
 
             if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
 
             if (blockpos != null) {
                 double xpos = blockpos.getX();
@@ -216,34 +222,36 @@ public class AbilityEffects {
 
         if (player.hasStatusEffect(EffectRegistry.ARROWRAIN)) {
 
-            int arrowRainRadius = 3;
-            int arrowRainChance = 25;
-            int arrowRainVolleys = 2;
+            int arrowRainRadius = SimplySkillsClient.rangerConfig.effectRangerArrowRainRadius;
+            int arrowRainRadiusIncrease = SimplySkillsClient.rangerConfig.effectRangerArrowRainRadiusIncreasePerTier;
+            int arrowRainChance = SimplySkillsClient.rangerConfig.effectRangerArrowRainArrowDensity;
+            int arrowRainVolleys = SimplySkillsClient.rangerConfig.effectRangerArrowRainVolleys;
+            int arrowRainVolleyIncrease = SimplySkillsClient.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
+            int arrowRainRange = SimplySkillsClient.rangerConfig.effectRangerArrowRainRange;
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne))
-                arrowRainRadius = 4;
+                arrowRainRadius = arrowRainRadius + arrowRainRadiusIncrease;
             else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusTwo))
-                arrowRainRadius = 5;
+                arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 2);
             else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusThree))
-                arrowRainRadius = 6;
+                arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 3);
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyOne))
-                arrowRainVolleys = 3;
+                arrowRainVolleys = arrowRainVolleys + arrowRainVolleyIncrease;
             else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyTwo))
-                arrowRainVolleys = 4;
+                arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 2);
             else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyThree))
-                arrowRainVolleys = 5;
+                arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 3);
 
 
-            Vec3d blockpos = HelperMethods.getPositionLookingAt(player, 64);
+            Vec3d blockpos = HelperMethods.getPositionLookingAt(player, arrowRainRange);
             if (blockpos != null) {
-                //System.out.println(blockpos);
                 double xpos = blockpos.getX() - arrowRainRadius;
                 double ypos = blockpos.getY();
                 double zpos = blockpos.getZ() - arrowRainRadius;
