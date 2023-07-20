@@ -55,6 +55,17 @@ public class Abilities {
             }
         }
     }
+    public static void passiveWarriorSpellbreaker(PlayerEntity player) {
+        int spellbreakingDuration = SimplySkills.warriorConfig.passiveWarriorSpellbreakerDuration;
+        int spellbreakingChance = SimplySkills.warriorConfig.passiveWarriorSpellbreakerChance;
+        if (player.getRandom().nextInt(100) < spellbreakingChance) {
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLBREAKING, spellbreakingDuration));
+        }
+    }
+
+    public static void passiveWarriorGoliath(PlayerEntity player) {
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EARTHSHAKER, 200));
+    }
 
     public static void passiveAreaCleanse(PlayerEntity player) {
         if (player.age % 80 == 0) {
@@ -110,6 +121,7 @@ public class Abilities {
             }
         }
     }
+
     public static void passiveRangerTamer(PlayerEntity player) {
         int frequency = SimplySkills.rangerConfig.passiveRangerTamerFrequency;
         if (player.age % frequency == 0) {

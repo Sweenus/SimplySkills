@@ -22,5 +22,13 @@ public class WarriorConfig implements ConfigData {
     public int passiveWarriorRebukeChance = 25;
     public int passiveWarriorRebukeWeaknessDuration = 80;
     public int passiveWarriorRebukeWeaknessAmplifier = 0;
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int passiveWarriorSpellbreakerChance = 25;
+    public int passiveWarriorSpellbreakerDuration = 100;
+    public int passiveWarriorSpellbreakerRadius = 2;
+    public int passiveWarriorSpellbreakerFrequency = 5;
+
+    public float passiveWarriorGoliathFallDistance = 3.0f;
+    public float passiveWarriorHeavyWeightDamageIncreasePerTick = 0.1f;
 
 }

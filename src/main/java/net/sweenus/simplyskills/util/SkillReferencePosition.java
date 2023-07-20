@@ -11,6 +11,9 @@ public class SkillReferencePosition {
     //Warrior
     public static String warriorHeavyArmorMastery = "33yrf4sanqamynbh";
     public static String warriorMediumArmorMastery = "yb5s7h7a26iyb6ue";
+    public static String warriorSpellbreaker = "ox9vv82ecpwjbnd4";
+    public static String warriorGoliath = "ku665yrv27jaqb22";
+    public static String warriorHeavyWeight = "4we84brd1sfq0axo";
 
     // - Berserker
     public static String berserkerSwordMastery = "txzx7u6ssecd6kyd";

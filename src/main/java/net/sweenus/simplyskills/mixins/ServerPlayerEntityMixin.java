@@ -35,6 +35,11 @@ public abstract class ServerPlayerEntityMixin {
             }
 
             if (SkillsAPI.getUnlockedSkills(serverPlayer,
+                    "simplyskills").get().contains(SkillReferencePosition.warriorSpellbreaker)) {
+                Abilities.passiveWarriorSpellbreaker(player);
+            }
+
+            if (SkillsAPI.getUnlockedSkills(serverPlayer,
             "simplyskills").get().contains(SkillReferencePosition.rogueSmokeBomb)) {
                 Abilities.passiveRogueSmokeBomb(player);
             }
@@ -62,10 +67,19 @@ public abstract class ServerPlayerEntityMixin {
     public void simplyskills$tickFallStartPos(CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
         float slowfallActivateDistance = SimplySkills.initiateConfig.passiveInitiateSlowFallDistanceToActivate;
+        float goliathActivateDistance = SimplySkills.warriorConfig.passiveWarriorGoliathFallDistance;
+
         if (SkillsAPI.getUnlockedSkills(player, "simplyskills").get().contains(SkillReferencePosition.initiateSlowfall)
                 && player.fallDistance > slowfallActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
         }
+
+        if (SkillsAPI.getUnlockedSkills(player,
+                "simplyskills").get().contains(SkillReferencePosition.warriorGoliath)
+                && player.fallDistance > goliathActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
+            Abilities.passiveWarriorGoliath(player);
+        }
+
     }
 
     @Inject(at = @At("HEAD"), method = "tick")

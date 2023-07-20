@@ -1052,6 +1052,60 @@
 			}
 		]
 	},
+	"warriorSpellbreaker": {
+		"title": "§a[Spellbreaker]§7 \nWhen taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n(Spellbreaking) causes hostile spell projectiles to explode when in close proximity to you.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_spellbreaker.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorSpellbreaker"
+				}
+			}
+		]
+	},
+	"warriorGoliath": {
+		"title": "§a[Goliath]§7 \nWhen falling long distances, gain Earthshaker.\n\n(Earthshaker) causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_earthshaker.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorGoliath"
+				}
+			}
+		]
+	},
+	"warriorHeavyWeight": {
+		"title": "§a[Heavy Weight]§7 \nYour Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_heavy_weight.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorHeavyWeight"
+				}
+			}
+		]
+	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7",
 		"frame": "goal",

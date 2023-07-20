@@ -1566,7 +1566,7 @@
 		"root": false
 	},
 	"3t8w6eegpvyyjpf0": {
-		"definition": "stamina+5%",
+		"definition": "jump+1%",
 		"x": 736,
 		"y": 0,
 		"root": false
@@ -1602,7 +1602,7 @@
 		"root": false
 	},
 	"8zm9wm6uc3elmngz": {
-		"definition": "melee_damage+1%",
+		"definition": "jump+1%",
 		"x": 608,
 		"y": 224,
 		"root": false
@@ -1794,13 +1794,13 @@
 		"root": false
 	},
 	"ku665yrv27jaqb22": {
-		"definition": "attack_speed_multi+2%",
+		"definition": "warriorGoliath",
 		"x": 704,
 		"y": 192,
 		"root": false
 	},
 	"4we84brd1sfq0axo": {
-		"definition": "movement_speed_multi+1.5%",
+		"definition": "warriorHeavyWeight",
 		"x": 800,
 		"y": 96,
 		"root": false
@@ -1866,49 +1866,49 @@
 		"root": false
 	},
 	"p4fx16nfwrhcbz8j": {
-		"definition": "movement_speed+1%",
+		"definition": "jump+1%",
 		"x": 800,
 		"y": 128,
 		"root": false
 	},
 	"h7lalvhgybxtkshi": {
-		"definition": "movement_speed+1%",
+		"definition": "jump+1%",
 		"x": 768,
 		"y": 96,
 		"root": false
 	},
 	"zrq5ir9kckjsfeuh": {
-		"definition": "movement_speed+1%",
+		"definition": "jump+1%",
 		"x": 800,
 		"y": 64,
 		"root": false
 	},
 	"wduf2lsy4xdjvh0y": {
-		"definition": "movement_speed+1%",
+		"definition": "jump+1%",
 		"x": 832,
 		"y": 96,
 		"root": false
 	},
 	"x7h8e5j9y0n94tdh": {
-		"definition": "attack_speed+1%",
+		"definition": "jump+1%",
 		"x": 704,
 		"y": 224,
 		"root": false
 	},
 	"92ijsu2wpiozqdoo": {
-		"definition": "attack_speed+1%",
+		"definition": "jump+1%",
 		"x": 672,
 		"y": 192,
 		"root": false
 	},
 	"ntzc0bubehrcifjv": {
-		"definition": "attack_speed+1%",
+		"definition": "jump+1%",
 		"x": 704,
 		"y": 160,
 		"root": false
 	},
 	"drxj2rlojiwd18qo": {
-		"definition": "attack_speed+1%",
+		"definition": "jump+1%",
 		"x": 736,
 		"y": 192,
 		"root": false
@@ -2856,7 +2856,7 @@
 		"root": false
 	},
 	"ox9vv82ecpwjbnd4": {
-		"definition": "resistance_multi+2%",
+		"definition": "warriorSpellbreaker",
 		"x": 416,
 		"y": -192,
 		"root": false

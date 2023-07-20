@@ -23,6 +23,8 @@
   "effect.simplyskills.elemental_surge": "Elemental Surge",
   "effect.simplyskills.spellweaver": "Spellweaver",
   "effect.simplyskills.immobilizing_aura": "Immobilizing Aura",
+  "effect.simplyskills.spellbreaking": "Spellbreaking",
+  "effect.simplyskills.earthshaker": "Earthshaker",
 
   "item.simplyskills.malevolent_manuscript": "Malevolent Manuscript",
 
@@ -62,6 +64,12 @@
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorRebukeChance" : "§a[Passive]§7 Rebuke chance",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorRebukeWeaknessDuration" : "§a[Passive]§7 Rebuke duration",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorRebukeWeaknessAmplifier" : "§a[Passive]§7 Rebuke amplifier",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorSpellbreakerChance" : "§a[Passive]§7 Spellbreaker chance",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorSpellbreakerDuration" : "§a[Passive]§7 Spellbreaker duration",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorSpellbreakerRadius" : "§a[Passive]§7 Spellbreaker radius",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorSpellbreakerFrequency" : "§a[Passive]§7 Spellbreaker frequency",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorGoliathFallDistance" : "§a[Passive]§7 Goliath fall distance",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorHeavyWeightDamageIncreasePerTick" : "§a[Passive]§7 Heavy Weight damage increase per tick",
 
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" : "§a[Passive]§7 Slender armor threshold",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderSlownessAmplifier" : "§a[Passive]§7 Slender Slowness amplifier",
