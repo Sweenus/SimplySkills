@@ -1,8 +1,5 @@
 package net.sweenus.simplyskills.client;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -10,7 +7,6 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
-import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import org.lwjgl.glfw.GLFW;
@@ -19,29 +15,9 @@ public class SimplySkillsClient implements ClientModInitializer {
 
     public int abilityCooldown = 40000;
     public long lastUseTime;
-    public static GeneralConfig generalConfig;
-    public static WayfarerConfig wayfarerConfig;
-    public static WarriorConfig warriorConfig;
-    public static InitiateConfig initiateConfig;
-    public static BerserkerConfig berserkerConfig;
-    public static WizardConfig wizardConfig;
-    public static SpellbladeConfig spellbladeConfig;
-    public static RogueConfig rogueConfig;
-    public static RangerConfig rangerConfig;
 
     @Override
     public void onInitializeClient() {
-
-        AutoConfig.register(ClientConfigWrapper.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
-        generalConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().client;
-        wayfarerConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().wayfarer;
-        warriorConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().warrior;
-        initiateConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().initiate;
-        berserkerConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().berserker;
-        wizardConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().wizard;
-        spellbladeConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().spellblade;
-        rogueConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().rogue;
-        rangerConfig = AutoConfig.getConfigHolder(ClientConfigWrapper.class).getConfig().ranger;
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

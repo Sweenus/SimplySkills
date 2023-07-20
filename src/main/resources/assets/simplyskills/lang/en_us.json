@@ -46,11 +46,8 @@
   "text.autoconfig.simplyskills.category.rogue" : "Rogue",
   "text.autoconfig.simplyskills.category.ranger" : "Ranger",
 
-  "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" : "Enable PlayerEx Compatibility",
+  "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" : "Enable PlayerEx Compatibility !NOT YET IMPLEMENTED!",
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" : "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
-
-  "text.autoconfig.simplyskills.option.ranger.namehere" : "[Passive] Name",
-  "text.autoconfig.simplyskills.option.ranger.name" : "[Signature] Name",
 
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold" : "[Passive] Armor Mastery threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryChance" : "[Passive] Armor Mastery chance",

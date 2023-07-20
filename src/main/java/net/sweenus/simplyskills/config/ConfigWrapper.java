@@ -7,7 +7,7 @@ import net.sweenus.simplyskills.SimplySkills;
 
 @Config(name = SimplySkills.MOD_ID)
 @Config.Gui.Background("cloth-config2:transparent")
-public class ClientConfigWrapper extends PartitioningSerializer.GlobalData {
+public class ConfigWrapper extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.TransitiveObject
     public GeneralConfig client = new GeneralConfig();

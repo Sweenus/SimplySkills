@@ -11,7 +11,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -31,7 +31,7 @@ public class ElementalImpactEffect extends StatusEffect {
         if (!livingEntity.world.isClient()) {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
-                int velocity = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactVelocity;
+                int velocity = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactVelocity;
 
                 player.setVelocity(livingEntity.getRotationVector().multiply(+velocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);
@@ -47,10 +47,10 @@ public class ElementalImpactEffect extends StatusEffect {
                 Random rand = new Random();
                 String randomSpell = list.get(rand.nextInt(list.size()));
                 String randomSpell2 = list2.get(rand.nextInt(list2.size()));
-                int radius = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactRadius;
-                int chance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactChance;
-                int slownessDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactSlownessDuration;
-                int slownessAmplifier = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactSlownessAmplifier;
+                int radius = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactRadius;
+                int chance = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactChance;
+                int slownessDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactSlownessDuration;
+                int slownessAmplifier = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactSlownessAmplifier;
 
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell, radius, chance, true);
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell2, radius, (int)(chance * 0.35), true);

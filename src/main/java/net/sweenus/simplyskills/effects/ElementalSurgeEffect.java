@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -23,7 +23,7 @@ public class ElementalSurgeEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.world.isClient()) {
-            int frequency = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalSurgeFrequency;
+            int frequency = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeFrequency;
 
             if (livingEntity.age % frequency == 0 && (livingEntity instanceof PlayerEntity player)) {
                 List<String> list = new ArrayList<>();
@@ -45,8 +45,8 @@ public class ElementalSurgeEffect extends StatusEffect {
 
                 Random rand = new Random();
                 String randomSpell = list.get(rand.nextInt(list.size()));
-                int radius = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalSurgeRadius;
-                int chance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalSurgeChance;
+                int radius = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeRadius;
+                int chance = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeChance;
 
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell, radius, chance, false);
             }

@@ -4,8 +4,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.sweenus.simplyskills.config.ServerConfig;
-import net.sweenus.simplyskills.config.ServerConfigWrapper;
+import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
@@ -21,7 +20,15 @@ public class SimplySkills implements ModInitializer {
     public static final String MOD_ID = "simplyskills";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static List<String> specialisations = new ArrayList<>();
-    public static ServerConfig config;
+    public static GeneralConfig generalConfig;
+    public static WayfarerConfig wayfarerConfig;
+    public static WarriorConfig warriorConfig;
+    public static InitiateConfig initiateConfig;
+    public static BerserkerConfig berserkerConfig;
+    public static WizardConfig wizardConfig;
+    public static SpellbladeConfig spellbladeConfig;
+    public static RogueConfig rogueConfig;
+    public static RangerConfig rangerConfig;
 
     private static void setSpecialisations() {
         specialisations.add("simplyskills_rogue");
@@ -38,8 +45,16 @@ public class SimplySkills implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        AutoConfig.register(ServerConfigWrapper.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
-        config = AutoConfig.getConfigHolder(ServerConfigWrapper.class).getConfig().server;
+        AutoConfig.register(ConfigWrapper.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        generalConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().client;
+        wayfarerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().wayfarer;
+        warriorConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().warrior;
+        initiateConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().initiate;
+        berserkerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().berserker;
+        wizardConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().wizard;
+        spellbladeConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().spellblade;
+        rogueConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().rogue;
+        rangerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().ranger;
 
         PassiveSkillReward.registerSkillTypes();
         SoundRegistry.init();

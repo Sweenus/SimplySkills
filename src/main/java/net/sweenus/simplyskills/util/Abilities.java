@@ -21,7 +21,7 @@ import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
@@ -37,8 +37,8 @@ public class Abilities {
 
 
     public static void passiveInitiateNullification(PlayerEntity player) {
-        int nullificationFrequency = SimplySkillsClient.initiateConfig.passiveInitiateNullificationFrequency;
-        int radius = SimplySkillsClient.initiateConfig.passiveInitiateNullificationRadius;
+        int nullificationFrequency = SimplySkills.initiateConfig.passiveInitiateNullificationFrequency;
+        int radius = SimplySkills.initiateConfig.passiveInitiateNullificationRadius;
         if (player.age % nullificationFrequency == 0) {
 
             Box box = HelperMethods.createBox(player, radius);
@@ -92,9 +92,9 @@ public class Abilities {
     }
 
     public static void passiveRangerReveal(PlayerEntity player) {
-        int frequency = SimplySkillsClient.rangerConfig.passiveRangerRevealFrequency;
+        int frequency = SimplySkills.rangerConfig.passiveRangerRevealFrequency;
         if (player.age % frequency == 0) {
-            int radius = SimplySkillsClient.rangerConfig.passiveRangerRevealRadius;
+            int radius = SimplySkills.rangerConfig.passiveRangerRevealRadius;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -113,11 +113,11 @@ public class Abilities {
         }
     }
     public static void passiveRangerTamer(PlayerEntity player) {
-        int frequency = SimplySkillsClient.rangerConfig.passiveRangerTamerFrequency;
+        int frequency = SimplySkills.rangerConfig.passiveRangerTamerFrequency;
         if (player.age % frequency == 0) {
-            int radius = SimplySkillsClient.rangerConfig.passiveRangerTamerRadius;
-            int resistanceAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTamerResistanceAmplifier;
-            int regenerationAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTamerRegenerationAmplifier;
+            int radius = SimplySkills.rangerConfig.passiveRangerTamerRadius;
+            int resistanceAmplifier = SimplySkills.rangerConfig.passiveRangerTamerResistanceAmplifier;
+            int regenerationAmplifier = SimplySkills.rangerConfig.passiveRangerTamerRegenerationAmplifier;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -134,11 +134,11 @@ public class Abilities {
         }
     }
     public static void passiveRangerBonded(PlayerEntity player) {
-        int frequency = SimplySkillsClient.rangerConfig.passiveRangerBondedFrequency;
+        int frequency = SimplySkills.rangerConfig.passiveRangerBondedFrequency;
         if (player.age % frequency == 0) {
-            int radius = SimplySkillsClient.rangerConfig.passiveRangerBondedRadius;
-            int petMinimumHealthPercent = SimplySkillsClient.rangerConfig.passiveRangerBondedPetMinimumHealthPercent;
-            int healthTransferAmount = SimplySkillsClient.rangerConfig.passiveRangerBondedHealthTransferAmount;
+            int radius = SimplySkills.rangerConfig.passiveRangerBondedRadius;
+            int petMinimumHealthPercent = SimplySkills.rangerConfig.passiveRangerBondedPetMinimumHealthPercent;
+            int healthTransferAmount = SimplySkills.rangerConfig.passiveRangerBondedHealthTransferAmount;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -159,12 +159,12 @@ public class Abilities {
         }
     }
     public static void passiveRangerTrained(PlayerEntity player) {
-        int frequency = SimplySkillsClient.rangerConfig.passiveRangerTrainedFrequency;
+        int frequency = SimplySkills.rangerConfig.passiveRangerTrainedFrequency;
         if (player.age % frequency == 0) {
-            int radius = SimplySkillsClient.rangerConfig.passiveRangerTrainedRadius;
-            int strengthAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTrainedStrengthAmplifier;
-            int speedAmplifier = SimplySkillsClient.rangerConfig.passiveRangerTrainedSpeedAmplifier;
-            int minimumHealthPercent = SimplySkillsClient.rangerConfig.passiveRangerTrainedMinimumHealthPercent;
+            int radius = SimplySkills.rangerConfig.passiveRangerTrainedRadius;
+            int strengthAmplifier = SimplySkills.rangerConfig.passiveRangerTrainedStrengthAmplifier;
+            int speedAmplifier = SimplySkills.rangerConfig.passiveRangerTrainedSpeedAmplifier;
+            int minimumHealthPercent = SimplySkills.rangerConfig.passiveRangerTrainedMinimumHealthPercent;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -185,9 +185,9 @@ public class Abilities {
     }
 
     public static void passiveRangerIncognito(PlayerEntity player) {
-        int frequency = SimplySkillsClient.rangerConfig.passiveRangerIncognitoFrequency;
+        int frequency = SimplySkills.rangerConfig.passiveRangerIncognitoFrequency;
         if (player.age % frequency == 0) {
-            int radius = SimplySkillsClient.rangerConfig.passiveRangerIncognitoRadius;
+            int radius = SimplySkills.rangerConfig.passiveRangerIncognitoRadius;
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -207,8 +207,8 @@ public class Abilities {
 
     public static void passiveRogueBackstab(Entity target, PlayerEntity player) {
         if (target instanceof LivingEntity livingTarget) {
-            int weaknessDuration = SimplySkillsClient.rogueConfig.passiveRogueBackstabWeaknessDuration;
-            int weaknessAmplifier = SimplySkillsClient.rogueConfig.passiveRogueBackstabWeaknessAmplifier;
+            int weaknessDuration = SimplySkills.rogueConfig.passiveRogueBackstabWeaknessDuration;
+            int weaknessAmplifier = SimplySkills.rogueConfig.passiveRogueBackstabWeaknessAmplifier;
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
                     livingTarget.getBodyYaw() > (player.getBodyYaw() - 32)) {
                 livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier));
@@ -217,12 +217,12 @@ public class Abilities {
     }
 
     public static void passiveWarriorArmorMastery(PlayerEntity player) {
-        int armorMasteryThreshold = SimplySkillsClient.warriorConfig.passiveWarriorArmorMasteryArmorThreshold - 1;
-        int armorMasteryChance = SimplySkillsClient.warriorConfig.passiveWarriorArmorMasteryChance;
-        int heavyArmorMasteryDuration = SimplySkillsClient.warriorConfig.passiveWarriorHeavyArmorMasteryDuration;
-        int heavyArmorMasteryAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorHeavyArmorMasteryAmplifier;
-        int mediumArmorMasteryDuration = SimplySkillsClient.warriorConfig.passiveWarriorMediumArmorMasteryDuration;
-        int mediumArmorMasteryAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorMediumArmorMasteryAmplifier;
+        int armorMasteryThreshold = SimplySkills.warriorConfig.passiveWarriorArmorMasteryArmorThreshold - 1;
+        int armorMasteryChance = SimplySkills.warriorConfig.passiveWarriorArmorMasteryChance;
+        int heavyArmorMasteryDuration = SimplySkills.warriorConfig.passiveWarriorHeavyArmorMasteryDuration;
+        int heavyArmorMasteryAmplifier = SimplySkills.warriorConfig.passiveWarriorHeavyArmorMasteryAmplifier;
+        int mediumArmorMasteryDuration = SimplySkills.warriorConfig.passiveWarriorMediumArmorMasteryDuration;
+        int mediumArmorMasteryAmplifier = SimplySkills.warriorConfig.passiveWarriorMediumArmorMasteryAmplifier;
 
         if (player.getRandom().nextInt(100) < armorMasteryChance) {
             if (player.getArmor() > armorMasteryThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
@@ -236,9 +236,9 @@ public class Abilities {
     }
 
     public static void passiveBerserkerSwordMastery(PlayerEntity player) {
-        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasteryFrequency;
-        int baseSpeedAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasteryBaseSpeedAmplifier;
-        int speedAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasterySpeedAmplifierPerTier;
+        int frequency = SimplySkills.berserkerConfig.passiveBerserkerSwordMasteryFrequency;
+        int baseSpeedAmplifier = SimplySkills.berserkerConfig.passiveBerserkerSwordMasteryBaseSpeedAmplifier;
+        int speedAmplifierPerTier = SimplySkills.berserkerConfig.passiveBerserkerSwordMasterySpeedAmplifierPerTier;
         if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
                 if (player.getMainHandStack().getItem() instanceof SwordItem) {
@@ -258,9 +258,9 @@ public class Abilities {
     }
 
     public static void passiveBerserkerAxeMastery(PlayerEntity player) {
-        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryFrequency;
-        int baseStrengthAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryBaseStrengthAmplifier;
-        int strengthAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryStrengthAmplifierPerTier;
+        int frequency = SimplySkills.berserkerConfig.passiveBerserkerAxeMasteryFrequency;
+        int baseStrengthAmplifier = SimplySkills.berserkerConfig.passiveBerserkerAxeMasteryBaseStrengthAmplifier;
+        int strengthAmplifierPerTier = SimplySkills.berserkerConfig.passiveBerserkerAxeMasteryStrengthAmplifierPerTier;
         if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
                 if (player.getMainHandStack().getItem() instanceof AxeItem) {
@@ -281,10 +281,10 @@ public class Abilities {
     }
 
     public static void passiveBerserkerIgnorePain(PlayerEntity player) {
-        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainFrequency;
-        double healthThreshold = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainHealthThreshold;
-        int baseResistanceAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainBaseResistanceAmplifier;
-        int resistanceAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainResistanceAmplifierPerTier;
+        int frequency = SimplySkills.berserkerConfig.passiveBerserkerIgnorePainFrequency;
+        double healthThreshold = SimplySkills.berserkerConfig.passiveBerserkerIgnorePainHealthThreshold;
+        int baseResistanceAmplifier = SimplySkills.berserkerConfig.passiveBerserkerIgnorePainBaseResistanceAmplifier;
+        int resistanceAmplifierPerTier = SimplySkills.berserkerConfig.passiveBerserkerIgnorePainResistanceAmplifierPerTier;
         if (player.age % frequency == 0) {
             int resistanceStacks = baseResistanceAmplifier;
             if (player.getHealth() <= (healthThreshold * player.getMaxHealth())) {
@@ -302,9 +302,9 @@ public class Abilities {
     }
 
     public static void passiveBerserkerRecklessness(PlayerEntity player) {
-        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessFrequency;
-        double healthThreshold = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessHealthThreshold;
-        int weaknessAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessWeaknessAmplifier;
+        int frequency = SimplySkills.berserkerConfig.passiveBerserkerRecklessnessFrequency;
+        double healthThreshold = SimplySkills.berserkerConfig.passiveBerserkerRecklessnessHealthThreshold;
+        int weaknessAmplifier = SimplySkills.berserkerConfig.passiveBerserkerRecklessnessWeaknessAmplifier;
         if (player.age % frequency == 0) {
             if (player.getHealth() >= (healthThreshold * player.getMaxHealth())) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, frequency + 5, weaknessAmplifier));
@@ -313,8 +313,8 @@ public class Abilities {
     }
 
     public static void passiveBerserkerChallenge(PlayerEntity player) {
-        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerChallengeFrequency;
-        int radius = SimplySkillsClient.berserkerConfig.passiveBerserkerChallengeRadius;
+        int frequency = SimplySkills.berserkerConfig.passiveBerserkerChallengeFrequency;
+        int radius = SimplySkills.berserkerConfig.passiveBerserkerChallengeRadius;
         if (player.age % frequency == 0) {
 
             Box box = HelperMethods.createBox(player, radius);
@@ -335,10 +335,10 @@ public class Abilities {
     }
 
     public static void passiveBulwarkShieldMastery(PlayerEntity player) {
-        int shieldMasteryFrequency = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryFrequency;
-        int shieldMasteryWeaknessAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryWeaknessAmplifier;
-        int shieldMasteryResistanceAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifier;
-        int shieldMasteryResistanceAmplifierPerTier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifierPerTier;
+        int shieldMasteryFrequency = SimplySkills.warriorConfig.passiveWarriorShieldMasteryFrequency;
+        int shieldMasteryWeaknessAmplifier = SimplySkills.warriorConfig.passiveWarriorShieldMasteryWeaknessAmplifier;
+        int shieldMasteryResistanceAmplifier = SimplySkills.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifier;
+        int shieldMasteryResistanceAmplifierPerTier = SimplySkills.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifierPerTier;
 
 
         if (player.age % shieldMasteryFrequency == 0) {
@@ -364,9 +364,9 @@ public class Abilities {
     }
 
     public static void passiveBulwarkRebuke(PlayerEntity player, LivingEntity attacker) {
-        int rebukeChance = SimplySkillsClient.warriorConfig.passiveWarriorRebukeChance;
-        int rebukeWeaknessDuration = SimplySkillsClient.warriorConfig.passiveWarriorRebukeWeaknessDuration;
-        int rebukeWeaknessAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorRebukeWeaknessAmplifier;
+        int rebukeChance = SimplySkills.warriorConfig.passiveWarriorRebukeChance;
+        int rebukeWeaknessDuration = SimplySkills.warriorConfig.passiveWarriorRebukeWeaknessDuration;
+        int rebukeWeaknessAmplifier = SimplySkills.warriorConfig.passiveWarriorRebukeWeaknessAmplifier;
         if (player.getRandom().nextInt(100) < rebukeChance) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
                     rebukeWeaknessDuration, rebukeWeaknessAmplifier));
@@ -375,10 +375,10 @@ public class Abilities {
 
     public static void passiveWayfarerSlender(PlayerEntity player) {
 
-        int slenderArmorThreshold = SimplySkillsClient.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
-        int slenderSlownessAmplifier = SimplySkillsClient.wayfarerConfig.passiveWayfarerSlenderSlownessAmplifier;
-        int frailArmorThreshold = SimplySkillsClient.initiateConfig.passiveInitiateFrailArmorThreshold - 1;
-        int frailSlownessAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailSlownessAmplifier;
+        int slenderArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
+        int slenderSlownessAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSlenderSlownessAmplifier;
+        int frailArmorThreshold = SimplySkills.initiateConfig.passiveInitiateFrailArmorThreshold - 1;
+        int frailSlownessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailSlownessAmplifier;
 
         if (player.age % 20 == 0) {
             if (player.getArmor() > slenderArmorThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
@@ -393,11 +393,11 @@ public class Abilities {
     }
 
     public static void passiveRogueSmokeBomb(PlayerEntity player) {
-        int radius = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombRadius;
-        int chance = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombChance;
-        int invisibilityDuration = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombInvisibilityDuration;
-        int blindnessDuration = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombBlindnessDuration;
-        int blindnessAmplifier = SimplySkillsClient.rogueConfig.passiveRogueSmokeBombBlindnessAmplifier;
+        int radius = SimplySkills.rogueConfig.passiveRogueSmokeBombRadius;
+        int chance = SimplySkills.rogueConfig.passiveRogueSmokeBombChance;
+        int invisibilityDuration = SimplySkills.rogueConfig.passiveRogueSmokeBombInvisibilityDuration;
+        int blindnessDuration = SimplySkills.rogueConfig.passiveRogueSmokeBombBlindnessDuration;
+        int blindnessAmplifier = SimplySkills.rogueConfig.passiveRogueSmokeBombBlindnessAmplifier;
         if (player.getRandom().nextInt(100) < chance) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, invisibilityDuration));
             Box box = HelperMethods.createBox(player, radius);
@@ -415,10 +415,10 @@ public class Abilities {
 
     public static boolean passiveRogueEvasionMastery(PlayerEntity player) {
 
-        int baseEvasionChance = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryChance;
-        int evasionChanceIncreasePerTier = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryChanceIncreasePerTier;
-        int masteryEvasionMultiplier = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasterySignatureMultiplier;
-        int iframeDuration = SimplySkillsClient.rogueConfig.passiveRogueEvasionMasteryIframeDuration;
+        int baseEvasionChance = SimplySkills.rogueConfig.passiveRogueEvasionMasteryChance;
+        int evasionChanceIncreasePerTier = SimplySkills.rogueConfig.passiveRogueEvasionMasteryChanceIncreasePerTier;
+        int masteryEvasionMultiplier = SimplySkills.rogueConfig.passiveRogueEvasionMasterySignatureMultiplier;
+        int iframeDuration = SimplySkills.rogueConfig.passiveRogueEvasionMasteryIframeDuration;
 
         int mastery = baseEvasionChance;
         int evasionMultiplier = 1;
@@ -451,9 +451,9 @@ public class Abilities {
     }
 
     public static void passiveRogueOpportunisticMastery(Entity target, PlayerEntity player) {
-        int basePoisonDuration = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonDuration;
-        int basePoisonAmplifier = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonAmplifier;
-        int poisonDurationIncreasePerTier = SimplySkillsClient.rogueConfig.passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier;
+        int basePoisonDuration = SimplySkills.rogueConfig.passiveRogueOpportunisticMasteryPoisonDuration;
+        int basePoisonAmplifier = SimplySkills.rogueConfig.passiveRogueOpportunisticMasteryPoisonAmplifier;
+        int poisonDurationIncreasePerTier = SimplySkills.rogueConfig.passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier;
 
         int mastery = basePoisonDuration;
 
@@ -472,9 +472,9 @@ public class Abilities {
     }
 
     public static void passiveInitiateFrail(PlayerEntity player) {
-        int attackThreshold = SimplySkillsClient.initiateConfig.passiveInitiateFrailAttackThreshold;
-        int weaknessAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailWeaknessAmplifier;
-        int miningFatigueAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailMiningFatigueAmplifier;
+        int attackThreshold = SimplySkills.initiateConfig.passiveInitiateFrailAttackThreshold;
+        int weaknessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailWeaknessAmplifier;
+        int miningFatigueAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailMiningFatigueAmplifier;
         if (player.age % 20 == 0) {
             if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
                     || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
@@ -487,13 +487,13 @@ public class Abilities {
     }
 
     public static void signatureRangerDisengage(PlayerEntity player) {
-        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageRadius;
-        int velocity = SimplySkillsClient.rangerConfig.signatureRangerDisengageVelocity;
-        int height = SimplySkillsClient.rangerConfig.signatureRangerDisengageHeight;
-        int slownessDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlownessDuration;
-        int slownessAmplifier = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlownessAmplifier;
-        int slowFallDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlowFallDuration;
-        int slowFallAmplifier = SimplySkillsClient.rangerConfig.signatureRangerDisengageSlowFallAmplifier;
+        int radius = SimplySkills.rangerConfig.signatureRangerDisengageRadius;
+        int velocity = SimplySkills.rangerConfig.signatureRangerDisengageVelocity;
+        int height = SimplySkills.rangerConfig.signatureRangerDisengageHeight;
+        int slownessDuration = SimplySkills.rangerConfig.signatureRangerDisengageSlownessDuration;
+        int slownessAmplifier = SimplySkills.rangerConfig.signatureRangerDisengageSlownessAmplifier;
+        int slowFallDuration = SimplySkills.rangerConfig.signatureRangerDisengageSlowFallDuration;
+        int slowFallAmplifier = SimplySkills.rangerConfig.signatureRangerDisengageSlowFallAmplifier;
         Box box = HelperMethods.createBox((LivingEntity) player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
@@ -518,7 +518,7 @@ public class Abilities {
 
     }
     public static void signatureRangerDisengageRecuperate(PlayerEntity player) {
-        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageRecuperateRadius;
+        int radius = SimplySkills.rangerConfig.signatureRangerDisengageRecuperateRadius;
 
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -533,8 +533,8 @@ public class Abilities {
         }
     }
     public static void signatureRangerDisengageExploitation(PlayerEntity player) {
-        int radius = SimplySkillsClient.rangerConfig.signatureRangerDisengageExploitationRadius;
-        int effectDuration = SimplySkillsClient.rangerConfig.signatureRangerDisengageExploitationDuration;
+        int radius = SimplySkills.rangerConfig.signatureRangerDisengageExploitationRadius;
+        int effectDuration = SimplySkills.rangerConfig.signatureRangerDisengageExploitationDuration;
 
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -551,10 +551,10 @@ public class Abilities {
 
     public static void passiveRangerElementalArrowsRenewal(PlayerEntity player) {
         int random = new Random().nextInt(100);
-        int renewalChance = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalChance;
-        int renewalDuration = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalDuration;
-        int renewalMaxStacks = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalMaximumStacks;
-        int renewalStacks = SimplySkillsClient.rangerConfig.passiveRangerElementalArrowsRenewalStacks;
+        int renewalChance = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalChance;
+        int renewalDuration = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalDuration;
+        int renewalMaxStacks = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalMaximumStacks;
+        int renewalStacks = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalStacks;
         if (random < renewalChance)
             HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, renewalDuration, renewalStacks, renewalMaxStacks);
     }
@@ -564,9 +564,9 @@ public class Abilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills_rogue").get()
                     .contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike)) {
-                int dashRange = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeRange;
-                int dashRadius = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
-                int dashDamageModifier = SimplySkillsClient.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
+                int dashRange = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRange;
+                int dashRadius = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
+                int dashDamageModifier = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
                 int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
                 DamageSource dashSource = DamageSource.player(player);
                 BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);
@@ -637,24 +637,34 @@ public class Abilities {
         //Process unlock
         if (skillID.contains(SkillReferencePosition.wizardPath)
         && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_wizard")){
-            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
-            playUnlockSound(player);
+            if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
+                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
+                playUnlockSound(player);
+            }
         } else if (skillID.contains(SkillReferencePosition.berserkerPath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_berserker")){
-            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
-            playUnlockSound(player);
+            if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
+                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
+                playUnlockSound(player);
+            }
         } else if (skillID.contains(SkillReferencePosition.roguePath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_rogue")){
-            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
-            playUnlockSound(player);
+            if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
+                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
+                playUnlockSound(player);
+            }
         } else if (skillID.contains(SkillReferencePosition.rangerPath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_ranger")){
-            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
-            playUnlockSound(player);
+            if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
+                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
+                playUnlockSound(player);
+            }
         } else if (skillID.contains(SkillReferencePosition.spellbladePath)
                 && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_spellblade")){
-            SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_spellblade");
-            playUnlockSound(player);
+            if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
+                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_spellblade");
+                playUnlockSound(player);
+            }
         }
 
 

@@ -14,7 +14,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -37,11 +36,11 @@ public class BullrushEffect extends StatusEffect {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
 
-                int bullrushVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushVelocity;
-                int bullrushRadius = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushRadius;
-                double bullrushDamageModifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushDamageModifier;
-                int bullrushHitFrequency = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushHitFrequency;
-                int bullrushImmobilizeDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushImmobilizeDuration;
+                int bullrushVelocity = SimplySkills.berserkerConfig.signatureBerserkerBullrushVelocity;
+                int bullrushRadius = SimplySkills.berserkerConfig.signatureBerserkerBullrushRadius;
+                double bullrushDamageModifier = SimplySkills.berserkerConfig.signatureBerserkerBullrushDamageModifier;
+                int bullrushHitFrequency = SimplySkills.berserkerConfig.signatureBerserkerBullrushHitFrequency;
+                int bullrushImmobilizeDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushImmobilizeDuration;
 
                 player.setVelocity(livingEntity.getRotationVector().multiply(+bullrushVelocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);

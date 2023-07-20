@@ -25,7 +25,7 @@ import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -52,9 +52,9 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationMeteorShower)) {
 
-                int meteoricWrathDuration = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathDuration;
-                int meteoricWrathStacks = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathStacks - 1;
-                int meteorShowerRange = SimplySkillsClient.wizardConfig.signatureWizardMeteorShowerRange;
+                int meteoricWrathDuration = SimplySkills.wizardConfig.signatureWizardMeteoricWrathDuration;
+                int meteoricWrathStacks = SimplySkills.wizardConfig.signatureWizardMeteoricWrathStacks - 1;
+                int meteorShowerRange = SimplySkills.wizardConfig.signatureWizardMeteorShowerRange;
 
                 //Meteor Shower
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
@@ -96,12 +96,12 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationIceComet)) {
 
-                int leapVelocity = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapVelocity;
-                double leapHeight = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapHeight;
-                int leapSlowfallDuration = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapSlowfallDuration;
-                int volleyDuration = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyDuration;
-                int volleyStacks = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyStacks;
-                int iceCometRange = SimplySkillsClient.wizardConfig.signatureWizardIceCometRange;
+                int leapVelocity = SimplySkills.wizardConfig.signatureWizardIceCometLeapVelocity;
+                double leapHeight = SimplySkills.wizardConfig.signatureWizardIceCometLeapHeight;
+                int leapSlowfallDuration = SimplySkills.wizardConfig.signatureWizardIceCometLeapSlowfallDuration;
+                int volleyDuration = SimplySkills.wizardConfig.signatureWizardIceCometVolleyDuration;
+                int volleyStacks = SimplySkills.wizardConfig.signatureWizardIceCometVolleyStacks;
+                int iceCometRange = SimplySkills.wizardConfig.signatureWizardIceCometRange;
 
                 //Ice Comet
 
@@ -161,15 +161,15 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
                 //Static Discharge
-                int amplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseLeaps;
-                int speedChance = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
-                int speedChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
-                int leapsPerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeLeapsPerTier;
-                int staticDischargeRange = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeRange;
-                int staticChargeDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeDuration;
-                int dischargeSpeedDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
-                int staticDischargeSpeedStacks = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
-                int staticDischargeSpeedMaxAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
+                int amplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseLeaps;
+                int speedChance = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
+                int speedChancePerTier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
+                int leapsPerTier = SimplySkills.wizardConfig.signatureWizardStaticDischargeLeapsPerTier;
+                int staticDischargeRange = SimplySkills.wizardConfig.signatureWizardStaticDischargeRange;
+                int staticChargeDuration = SimplySkills.wizardConfig.signatureWizardStaticChargeDuration;
+                int dischargeSpeedDuration = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
+                int staticDischargeSpeedStacks = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
+                int staticDischargeSpeedMaxAmplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapTwo))
@@ -221,13 +221,13 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
                 //Arcane Bolt
-                int volleyDuration = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyDuration;
-                int volleyStacks = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyStacks - 1;
-                int arcaneBoltRange = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltRange;
+                int volleyDuration = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyDuration;
+                int volleyStacks = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyStacks - 1;
+                int arcaneBoltRange = SimplySkills.wizardConfig.signatureWizardArcaneBoltRange;
                 int radius = 3;
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
-                    radius = SimplySkillsClient.wizardConfig.signatureWizardLesserArcaneBoltRadius;
+                    radius = SimplySkills.wizardConfig.signatureWizardLesserArcaneBoltRadius;
                 }
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley))
@@ -278,8 +278,8 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
-                int rampageDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageDuration;
-                int bullrushDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushDuration;
+                int rampageDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
+                int bullrushDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
                 //Rampage
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
@@ -292,7 +292,7 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
-                int bloodthirstyDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBloodthirstyDuration;
+                int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
                 //Bloodthirsty
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
             }
@@ -300,9 +300,9 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationBerserking)) {
                 //Berserking
-                double sacrificeAmountModifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
-                int secondsPerSacrifice = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
-                int leapSlamDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDuration;
+                double sacrificeAmountModifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
+                int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
+                int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
                 float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
@@ -321,9 +321,9 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationEvasion)) {
 
-                int evasionDuration = SimplySkillsClient.rogueConfig.signatureRogueEvasionDuration;
-                int fanOfBladesDuration = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesDuration;
-                int fanOfBladesStacks = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesStacks - 1;
+                int evasionDuration = SimplySkills.rogueConfig.signatureRogueEvasionDuration;
+                int fanOfBladesDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDuration;
+                int fanOfBladesStacks = SimplySkills.rogueConfig.signatureRogueFanOfBladesStacks - 1;
 
                 //Evasion
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
@@ -335,8 +335,8 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationPreparation)) {
 
-                int preparationDuration = SimplySkillsClient.rogueConfig.signatureRoguePreparationDuration;
-                int speedAmplifier = SimplySkillsClient.rogueConfig.signatureRoguePreparationSpeedAmplifier;
+                int preparationDuration = SimplySkills.rogueConfig.signatureRoguePreparationDuration;
+                int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
 
                 //Preparation
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, preparationDuration));
@@ -349,8 +349,8 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes)) {
 
-                int siphoningStrikesduration = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesDuration;
-                int siphoningStrikesStacks = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesStacks - 1;
+                int siphoningStrikesduration = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesDuration;
+                int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks - 1;
 
                 //Siphoning Strikes
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, siphoningStrikesduration, siphoningStrikesStacks));
@@ -363,9 +363,9 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
 
-                int elementalArrowsDuration = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsDuration;
-                int elementalArrowsStacks = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsStacks;
-                int elementalArrowsStacksIncreasePerTier = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
+                int elementalArrowsDuration = SimplySkills.rangerConfig.effectRangerElementalArrowsDuration;
+                int elementalArrowsStacks = SimplySkills.rangerConfig.effectRangerElementalArrowsStacks;
+                int elementalArrowsStacksIncreasePerTier = SimplySkills.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
 
                 //Elemental Arrows
                 int amplifier =elementalArrowsStacks;
@@ -391,7 +391,7 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
 
-                int arrowRainDuration = SimplySkillsClient.rangerConfig.effectRangerArrowRainDuration;
+                int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
 
                 //Arrow Rain
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
@@ -402,11 +402,11 @@ public class SignatureAbilities {
         // - Spellblade -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
 
-            int elementalSurgeDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
-            int elementalImpactDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactDuration;
-            int elementalImpactResistanceAmplifier = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactResistanceAmplifier;
-            int spellweaverDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverDuration;
-            int spellweaverStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
+            int elementalSurgeDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
+            int elementalImpactDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactDuration;
+            int elementalImpactResistanceAmplifier = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactResistanceAmplifier;
+            int spellweaverDuration = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverDuration;
+            int spellweaverStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationElementalSurge)) {

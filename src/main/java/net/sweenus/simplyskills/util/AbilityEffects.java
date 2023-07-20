@@ -25,7 +25,7 @@ import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.attributes.SpellAttributes;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.config.RangerConfig;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -41,8 +41,8 @@ public class AbilityEffects {
     public static void effectBerserkerBerserking(Entity target, PlayerEntity player) {
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
-            int berserkingSubEffectDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSubEffectDuration;
-            int berserkingSubEffectMaxAmplifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSubEffectMaxAmplifier;
+            int berserkingSubEffectDuration = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectDuration;
+            int berserkingSubEffectMaxAmplifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectMaxAmplifier;
             HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
             HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
             HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
@@ -52,7 +52,7 @@ public class AbilityEffects {
     public static void effectBerserkerBloodthirsty(PlayerEntity player, LivingEntity livingTarget) {
 
         if (player.hasStatusEffect(EffectRegistry.BLOODTHIRSTY)) {
-            float bloodthirstyHealPercent = SimplySkillsClient.berserkerConfig.signatureBerserkerBloodthirstyHealPercent;
+            float bloodthirstyHealPercent = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyHealPercent;
             float healAmount = player.getMaxHealth() * bloodthirstyHealPercent;
             player.heal(healAmount);
         }
@@ -61,8 +61,8 @@ public class AbilityEffects {
     public static void effectBerserkerRampage(PlayerEntity player) {
 
         if (player.hasStatusEffect(EffectRegistry.RAMPAGE)) {
-            int rampageSubEffectDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageSubEffectDuration;
-            int rampageSubEffectMaxAmplifier = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageSubEffectMaxAmplifier;
+            int rampageSubEffectDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageSubEffectDuration;
+            int rampageSubEffectMaxAmplifier = SimplySkills.berserkerConfig.signatureBerserkerRampageSubEffectMaxAmplifier;
 
             List<StatusEffect> list = new ArrayList<>();
             list.add(StatusEffects.STRENGTH);
@@ -81,7 +81,7 @@ public class AbilityEffects {
 
         if (player.hasStatusEffect(EffectRegistry.SIPHONINGSTRIKES)) {
             if (target instanceof LivingEntity livingTarget) {
-                double leechMultiplier = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesLeechMultiplier;
+                double leechMultiplier = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesLeechMultiplier;
 
                 double attackValue = Objects.requireNonNull(
                         player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE)).getValue();
@@ -101,16 +101,16 @@ public class AbilityEffects {
     }
 
     public static void effectRogueFanOfBlades(PlayerEntity player) {
-        int fobFrequency = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesBaseFrequency;
+        int fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesBaseFrequency;
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                 "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
-            fobFrequency = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesEnhancedFrequency;
+            fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesEnhancedFrequency;
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_rogue").get()
                 .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades) &&
                 player.hasStatusEffect(EffectRegistry.FANOFBLADES) && player.age % fobFrequency == 0) {
-            int fobRange = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesRange;
-            int fobRadius = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesRadius;
-            int disenchantDuration = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesDisenchantDuration;
+            int fobRange = SimplySkills.rogueConfig.signatureRogueFanOfBladesRange;
+            int fobRadius = SimplySkills.rogueConfig.signatureRogueFanOfBladesRadius;
+            int disenchantDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDisenchantDuration;
 
             BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), fobRange);
             BlockState blockstate = player.world.getBlockState(blockPos);
@@ -152,9 +152,9 @@ public class AbilityEffects {
 
 
             Vec3d blockpos = null;
-            int radius = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsRadius;
-            int increase = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
-            int targetingRange = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsTargetingRange;
+            int radius = SimplySkills.rangerConfig.effectRangerElementalArrowsRadius;
+            int increase = SimplySkills.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
+            int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne))
                 radius = radius + increase;
@@ -226,12 +226,12 @@ public class AbilityEffects {
 
         if (player.hasStatusEffect(EffectRegistry.ARROWRAIN)) {
 
-            int arrowRainRadius = SimplySkillsClient.rangerConfig.effectRangerArrowRainRadius;
-            int arrowRainRadiusIncrease = SimplySkillsClient.rangerConfig.effectRangerArrowRainRadiusIncreasePerTier;
-            int arrowRainChance = SimplySkillsClient.rangerConfig.effectRangerArrowRainArrowDensity;
-            int arrowRainVolleys = SimplySkillsClient.rangerConfig.effectRangerArrowRainVolleys;
-            int arrowRainVolleyIncrease = SimplySkillsClient.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
-            int arrowRainRange = SimplySkillsClient.rangerConfig.effectRangerArrowRainRange;
+            int arrowRainRadius = SimplySkills.rangerConfig.effectRangerArrowRainRadius;
+            int arrowRainRadiusIncrease = SimplySkills.rangerConfig.effectRangerArrowRainRadiusIncreasePerTier;
+            int arrowRainChance = SimplySkills.rangerConfig.effectRangerArrowRainArrowDensity;
+            int arrowRainVolleys = SimplySkills.rangerConfig.effectRangerArrowRainVolleys;
+            int arrowRainVolleyIncrease = SimplySkills.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
+            int arrowRainRange = SimplySkills.rangerConfig.effectRangerArrowRainRange;
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne))
@@ -304,13 +304,13 @@ public class AbilityEffects {
     }
 
     public static void effectWizardFrostVolley(PlayerEntity player) {
-        int frequency = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyFrequency;
+        int frequency = SimplySkills.wizardConfig.signatureWizardIceCometVolleyFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley) &&
         player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % frequency == 0) {
             Vec3d blockpos = null;
-            int volleyRange = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyRange;
+            int volleyRange = SimplySkills.wizardConfig.signatureWizardIceCometVolleyRange;
 
             //Frost Bolt
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
@@ -341,13 +341,13 @@ public class AbilityEffects {
         }
     }
     public static void effectWizardArcaneVolley(PlayerEntity player) {
-        int volleyFrequency = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyFrequency;
+        int volleyFrequency = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley) &&
                 player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % volleyFrequency == 0) {
             Vec3d blockpos = null;
-            int volleyRange = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyRange;
+            int volleyRange = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyRange;
 
             //Arcane Bolt
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
@@ -378,15 +378,15 @@ public class AbilityEffects {
         }
     }
     public static void effectWizardMeteoricWrath(PlayerEntity player) {
-        int frequency = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathFrequency;
+        int frequency = SimplySkills.wizardConfig.signatureWizardMeteoricWrathFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath) &&
                 player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % frequency == 0) {
-            int chance = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathChance;
-            int radius = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRadius;
-            int baseRenewalChance = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRenewalBaseChance;
-            int renewalChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRenewalChanceIncreasePerTier;
+            int chance = SimplySkills.wizardConfig.signatureWizardMeteoricWrathChance;
+            int radius = SimplySkills.wizardConfig.signatureWizardMeteoricWrathRadius;
+            int baseRenewalChance = SimplySkills.wizardConfig.signatureWizardMeteoricWrathRenewalBaseChance;
+            int renewalChancePerTier = SimplySkills.wizardConfig.signatureWizardMeteoricWrathRenewalChanceIncreasePerTier;
             String spellIdentifier = "simplyskills:fire_meteor_small";
 
 
@@ -409,19 +409,19 @@ public class AbilityEffects {
     }
 
     public static void effectSpellbladeSpellweaving(Entity target, PlayerEntity player) {
-        int chance = SimplySkillsClient.spellbladeConfig.passiveSpellbladeSpellweavingChance;
-        int spellweaverHasteDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteDuration;
-        int spellweaverHasteStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteStacks;
-        int spellweaverHasteMaxStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteMaxStacks;
-        int spellweaverRegenerationDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationDuration;
-        int spellweaverRegenerationStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationStacks;
-        int spellweaverRegenerationMaxStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationMaxStacks;
-        int spellweaverRegenerationChance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationChance;
+        int chance = SimplySkills.spellbladeConfig.passiveSpellbladeSpellweavingChance;
+        int spellweaverHasteDuration = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverHasteDuration;
+        int spellweaverHasteStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverHasteStacks;
+        int spellweaverHasteMaxStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverHasteMaxStacks;
+        int spellweaverRegenerationDuration = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationDuration;
+        int spellweaverRegenerationStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationStacks;
+        int spellweaverRegenerationMaxStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationMaxStacks;
+        int spellweaverRegenerationChance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationChance;
 
         if (player.hasStatusEffect(EffectRegistry.SPELLWEAVER) &&
                 (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
                         .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)))
-            chance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverChance;
+            chance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverChance;
 
         List<String> list = new ArrayList<>();
         list.add("simplyskills:frost_arrow");

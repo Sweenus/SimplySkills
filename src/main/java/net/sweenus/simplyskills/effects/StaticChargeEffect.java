@@ -12,7 +12,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
@@ -29,15 +29,15 @@ public class StaticChargeEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.world.isClient()) {
 
-            int dischargeSpeedDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
-            int staticDischargeSpeedStacks = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
-            int staticDischargeSpeedMaxAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
-            int speedBaseChance = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
-            int speedChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
-            int leapFrequency = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeLeapFrequency;
-            int leapChance = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeLeapChance;
-            int weaknessDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeWeaknessDuration;
-            int weaknessAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeWeaknessAmplifier;
+            int dischargeSpeedDuration = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
+            int staticDischargeSpeedStacks = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
+            int staticDischargeSpeedMaxAmplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
+            int speedBaseChance = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
+            int speedChancePerTier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
+            int leapFrequency = SimplySkills.wizardConfig.signatureWizardStaticChargeLeapFrequency;
+            int leapChance = SimplySkills.wizardConfig.signatureWizardStaticChargeLeapChance;
+            int weaknessDuration = SimplySkills.wizardConfig.signatureWizardStaticChargeWeaknessDuration;
+            int weaknessAmplifier = SimplySkills.wizardConfig.signatureWizardStaticChargeWeaknessAmplifier;
 
             if (livingEntity.age % leapFrequency == 0) {
                 int speedChance = speedBaseChance;

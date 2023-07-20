@@ -13,7 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -33,12 +33,12 @@ public class LeapSlamEffect extends StatusEffect {
 
             if (livingEntity instanceof PlayerEntity player) {
                 int ability_timer = Objects.requireNonNull(player.getStatusEffect(EffectRegistry.LEAPSLAM)).getDuration();
-                int radius = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamRadius;
-                int immobilizeDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamImmobilizeDuration;
-                double leapVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamVelocity;
-                double height = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamHeight;
-                double descentVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
-                double damage_multiplier = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
+                int radius = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamRadius;
+                int immobilizeDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamImmobilizeDuration;
+                double leapVelocity = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamVelocity;
+                double height = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamHeight;
+                double descentVelocity = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
+                double damage_multiplier = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
 
                 if (ability_timer >= 60) {

@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
@@ -61,7 +62,7 @@ public abstract class ServerPlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "tickFallStartPos")
     public void simplyskills$tickFallStartPos(CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
-        float slowfallActivateDistance = SimplySkillsClient.initiateConfig.passiveInitiateSlowFallDistanceToActivate;
+        float slowfallActivateDistance = SimplySkills.initiateConfig.passiveInitiateSlowFallDistanceToActivate;
         if (SkillsAPI.getUnlockedSkills(player, "simplyskills").get().contains(SkillReferencePosition.initiateSlowfall)
                 && player.fallDistance > slowfallActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
@@ -73,9 +74,6 @@ public abstract class ServerPlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
 
-            //Print attributes to log for debug purposes (don't forget to disable this before shipping, or it's gonna be real awkward.)
-            Abilities.debugPrintAttributes(player);
-
             //Passive Rogue Stealth
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.rogueStealth)
                     && player.isSneaking() && player.age % 10 == 0) {
@@ -85,7 +83,7 @@ public abstract class ServerPlayerEntityMixin {
             //Passive Wayfarer Sneak
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.wayfarerSneak)
                     && player.isSneaking() && player.age % 10 == 0) {
-                int sneakSpeedAmplifier = SimplySkillsClient.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
+                int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
             }
 
@@ -185,6 +183,7 @@ public abstract class ServerPlayerEntityMixin {
 
             //Debug - reset skills & gain exp
             if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                Abilities.debugPrintAttributes(player);
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
                 SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");

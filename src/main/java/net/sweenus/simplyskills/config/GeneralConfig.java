@@ -9,7 +9,5 @@ public class GeneralConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public boolean enablePlayerExCompatibility = false;
-    @ConfigEntry.Gui.Tooltip
-    public boolean enableSomething = false;
 
 }
