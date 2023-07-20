@@ -51,17 +51,22 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationMeteorShower)) {
+
+                int meteoricWrathDuration = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathDuration;
+                int meteoricWrathStacks = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathStacks - 1;
+                int meteorShowerRange = SimplySkillsClient.wizardConfig.signatureWizardMeteorShowerRange;
+
                 //Meteor Shower
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH, 800, 9));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH, meteoricWrathDuration, meteoricWrathStacks));
 
 
-                if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+                if (HelperMethods.getTargetedEntity(player, meteorShowerRange) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, meteorShowerRange).getPos();
 
                 if (blockpos == null)
-                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                    blockpos = HelperMethods.getPositionLookingAt(player, meteorShowerRange);
 
                 if (blockpos != null) {
                     double xpos = blockpos.getX();
@@ -90,25 +95,33 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationIceComet)) {
+
+                int leapVelocity = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapVelocity;
+                double leapHeight = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapHeight;
+                int leapSlowfallDuration = SimplySkillsClient.wizardConfig.signatureWizardIceCometLeapSlowfallDuration;
+                int volleyDuration = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyDuration;
+                int volleyStacks = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyStacks;
+                int iceCometRange = SimplySkillsClient.wizardConfig.signatureWizardIceCometRange;
+
                 //Ice Comet
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationIceCometLeap)) {
-                    player.setVelocity(player.getRotationVector().negate().multiply(+3));
-                    player.setVelocity(player.getVelocity().x, 1.3, player.getVelocity().z);
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 180, 0));
+                    player.setVelocity(player.getRotationVector().negate().multiply(+leapVelocity));
+                    player.setVelocity(player.getVelocity().x, leapHeight, player.getVelocity().z);
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, leapSlowfallDuration));
                     player.velocityModified = true;
                 }
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley))
-                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, 400, 5));
+                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, volleyDuration, volleyStacks));
 
 
-                if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+                if (HelperMethods.getTargetedEntity(player, iceCometRange) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, iceCometRange).getPos();
 
                 if (blockpos == null)
-                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                    blockpos = HelperMethods.getPositionLookingAt(player, iceCometRange);
 
                 if (blockpos != null) {
                     double xpos = blockpos.getX();
@@ -148,27 +161,34 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
                 //Static Discharge
-                int amplifier = 8;
-                int speedChance = 5;
+                int amplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseLeaps;
+                int speedChance = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
+                int speedChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
+                int leapsPerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeLeapsPerTier;
+                int staticDischargeRange = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeRange;
+                int staticChargeDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeDuration;
+                int dischargeSpeedDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
+                int staticDischargeSpeedStacks = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
+                int staticDischargeSpeedMaxAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapTwo))
-                    amplifier = 16;
+                    amplifier = amplifier + leapsPerTier;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapThree))
-                    amplifier = 24;
+                    amplifier = amplifier + (leapsPerTier * 2);
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo))
-                    speedChance = 10;
+                    speedChance = speedChance + speedChancePerTier;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree))
-                    speedChance = 15;
+                    speedChance = speedChance + (speedChancePerTier * 2);
 
-                if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+                if (HelperMethods.getTargetedEntity(player, staticDischargeRange) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, staticDischargeRange).getPos();
 
                 if (blockpos == null)
-                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                    blockpos = HelperMethods.getPositionLookingAt(player, staticDischargeRange);
 
                 if (blockpos != null) {
                     double xpos = blockpos.getX();
@@ -185,12 +205,12 @@ public class SignatureAbilities {
                                         3, le);
                                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeap)) {
-                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE, 900, amplifier));
+                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE, staticChargeDuration, amplifier));
                                 }
                                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed) &&
                                 player.getRandom().nextInt(100) < speedChance)
-                                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, 120, 1, 4);
+                                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, dischargeSpeedDuration, staticDischargeSpeedStacks, staticDischargeSpeedMaxAmplifier);
                                 break;
                             }
                         }
@@ -201,20 +221,23 @@ public class SignatureAbilities {
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                     .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
                 //Arcane Bolt
+                int volleyDuration = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyDuration;
+                int volleyStacks = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyStacks - 1;
+                int arcaneBoltRange = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltRange;
                 int radius = 3;
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
-                    radius = 12;
+                    radius = SimplySkillsClient.wizardConfig.signatureWizardLesserArcaneBoltRadius;
                 }
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
                         .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY, 400, 9));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY, volleyDuration, volleyStacks));
 
-                if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                    blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+                if (HelperMethods.getTargetedEntity(player, arcaneBoltRange) !=null)
+                    blockpos = HelperMethods.getTargetedEntity(player, arcaneBoltRange).getPos();
 
                 if (blockpos == null)
-                    blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                    blockpos = HelperMethods.getPositionLookingAt(player, arcaneBoltRange);
 
                 if (blockpos != null) {
                     double xpos = blockpos.getX();

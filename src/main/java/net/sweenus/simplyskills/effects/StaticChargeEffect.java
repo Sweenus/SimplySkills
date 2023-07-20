@@ -12,6 +12,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
@@ -27,25 +28,36 @@ public class StaticChargeEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.world.isClient()) {
-            if (livingEntity.age % 20 == 0) {
-                int speedChance = 5;
+
+            int dischargeSpeedDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
+            int staticDischargeSpeedStacks = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
+            int staticDischargeSpeedMaxAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
+            int speedBaseChance = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
+            int speedChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
+            int leapFrequency = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeLeapFrequency;
+            int leapChance = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeLeapChance;
+            int weaknessDuration = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeWeaknessDuration;
+            int weaknessAmplifier = SimplySkillsClient.wizardConfig.signatureWizardStaticChargeWeaknessAmplifier;
+
+            if (livingEntity.age % leapFrequency == 0) {
+                int speedChance = speedBaseChance;
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo))
-                    speedChance = 10;
+                    speedChance = speedChance + speedChancePerTier;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
                         .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree))
-                    speedChance = 15;
+                    speedChance = speedChance + (speedChancePerTier * 2);
 
                 Box box = HelperMethods.createBox(livingEntity, 3);
                 for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null && ownerEntity != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, ownerEntity)
-                        && le.getRandom().nextInt(100) < 30) {
+                        && le.getRandom().nextInt(100) < leapChance) {
                             SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
                                     "simplyskills:static_charge",
                                     3, le);
-                            le.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 80));
+                            le.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier));
                             StatusEffect sc = EffectRegistry.STATICCHARGE;
                             HelperMethods.decrementStatusEffect(livingEntity, sc);
                             if (livingEntity.hasStatusEffect(sc)) {
@@ -58,7 +70,10 @@ public class StaticChargeEffect extends StatusEffect {
                             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
                                     .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed) &&
                                     ownerEntity.getRandom().nextInt(100) < speedChance)
-                                HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED, 800, 1, 4);
+                                HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED,
+                                        dischargeSpeedDuration,
+                                        staticDischargeSpeedStacks,
+                                        staticDischargeSpeedMaxAmplifier);
 
 
                             break;

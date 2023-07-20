@@ -8,8 +8,47 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class WizardConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
-    public boolean enablePlayerExCompatibility = false;
-    @ConfigEntry.Gui.Tooltip
-    public boolean enableSomething = false;
+    public boolean enableWizardSpecialisation = true;
+
+
+    public int signatureWizardMeteoricWrathDuration = 800;
+    public int signatureWizardMeteoricWrathStacks = 10;
+    public int signatureWizardMeteoricWrathFrequency = 15;
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int signatureWizardMeteoricWrathChance = 35;
+    public int signatureWizardMeteoricWrathRadius = 12;
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int signatureWizardMeteoricWrathRenewalBaseChance = 10;
+    public int signatureWizardMeteoricWrathRenewalChanceIncreasePerTier = 15;
+    public int signatureWizardMeteorShowerRange = 120;
+    public int signatureWizardIceCometLeapVelocity = 3;
+    public double signatureWizardIceCometLeapHeight = 1.3;
+    public int signatureWizardIceCometLeapSlowfallDuration = 180;
+    public int signatureWizardIceCometVolleyDuration = 400;
+    public int signatureWizardIceCometVolleyStacks = 5;
+    public int signatureWizardIceCometVolleyFrequency = 20;
+    public int signatureWizardIceCometVolleyRange = 120;
+    public int signatureWizardIceCometRange = 120;
+    public int signatureWizardStaticDischargeBaseLeaps = 8;
+    public int signatureWizardStaticDischargeLeapsPerTier = 8;
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int signatureWizardStaticDischargeBaseSpeedChance = 5;
+    public int signatureWizardStaticDischargeSpeedChancePerTier = 5;
+    public int signatureWizardStaticDischargeSpeedDuration = 400;
+    public int signatureWizardStaticDischargeSpeedStacks = 1;
+    public int signatureWizardStaticDischargeSpeedMaxAmplifier = 4;
+    public int signatureWizardStaticChargeDuration = 900;
+    public int signatureWizardStaticChargeLeapFrequency = 20;
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int signatureWizardStaticChargeLeapChance = 30;
+    public int signatureWizardStaticChargeWeaknessDuration = 80;
+    public int signatureWizardStaticChargeWeaknessAmplifier = 0;
+    public int signatureWizardStaticDischargeRange = 120;
+    public int signatureWizardArcaneBoltRange = 120;
+    public int signatureWizardLesserArcaneBoltRadius = 12;
+    public int signatureWizardArcaneBoltVolleyDuration = 400;
+    public int signatureWizardArcaneBoltVolleyStacks = 10;
+    public int signatureWizardArcaneBoltVolleyFrequency = 10;
+    public int signatureWizardArcaneBoltVolleyRange = 120;
 
 }

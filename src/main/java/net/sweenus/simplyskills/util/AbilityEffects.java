@@ -301,18 +301,20 @@ public class AbilityEffects {
     }
 
     public static void effectWizardFrostVolley(PlayerEntity player) {
+        int frequency = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley) &&
-        player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % 20 == 0) {
+        player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % frequency == 0) {
             Vec3d blockpos = null;
+            int volleyRange = SimplySkillsClient.wizardConfig.signatureWizardIceCometVolleyRange;
 
-            //Arcane Bolt
-            if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+            //Frost Bolt
+            if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, volleyRange).getPos();
 
             if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
 
             if (blockpos != null) {
                 double xpos = blockpos.getX();
@@ -336,18 +338,20 @@ public class AbilityEffects {
         }
     }
     public static void effectWizardArcaneVolley(PlayerEntity player) {
+        int volleyFrequency = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley) &&
-                player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % 10 == 0) {
+                player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % volleyFrequency == 0) {
             Vec3d blockpos = null;
+            int volleyRange = SimplySkillsClient.wizardConfig.signatureWizardArcaneBoltVolleyRange;
 
             //Arcane Bolt
-            if (HelperMethods.getTargetedEntity(player, 120) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, 120).getPos();
+            if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, volleyRange).getPos();
 
             if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, 120);
+                blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
 
             if (blockpos != null) {
                 double xpos = blockpos.getX();
@@ -371,12 +375,15 @@ public class AbilityEffects {
         }
     }
     public static void effectWizardMeteoricWrath(PlayerEntity player) {
+        int frequency = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathFrequency;
 
         if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                 .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath) &&
-                player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % 15 == 0) {
-            int chance = 35;
-            int radius = 12;
+                player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % frequency == 0) {
+            int chance = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathChance;
+            int radius = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRadius;
+            int baseRenewalChance = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRenewalBaseChance;
+            int renewalChancePerTier = SimplySkillsClient.wizardConfig.signatureWizardMeteoricWrathRenewalChanceIncreasePerTier;
             String spellIdentifier = "simplyskills:fire_meteor_small";
 
 
@@ -384,13 +391,13 @@ public class AbilityEffects {
                 int renewalChance = 0;
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                         .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrath))
-                    renewalChance = 10;
+                    renewalChance = baseRenewalChance;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                         .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathTwo))
-                    renewalChance = 30;
+                    renewalChance = baseRenewalChance + renewalChancePerTier;
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
                         .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathThree))
-                    renewalChance = 50;
+                    renewalChance = baseRenewalChance + (renewalChancePerTier * 2);
                 if (player.getRandom().nextInt(100) > renewalChance)
                     HelperMethods.decrementStatusEffect(player, EffectRegistry.METEORICWRATH);
             }
