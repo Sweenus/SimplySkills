@@ -21,15 +21,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.api.spell.SpellPool;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellDamageSource;
-import net.spell_power.api.attributes.SpellAttributeEntry;
-import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class HelperMethods {

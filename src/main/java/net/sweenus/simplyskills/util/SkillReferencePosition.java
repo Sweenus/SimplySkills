@@ -1,7 +1,5 @@
 package net.sweenus.simplyskills.util;
 
-import net.puffish.skillsmod.SkillsAPI;
-
 public class SkillReferencePosition {
 
     public static String hardy = "ikel6uas72gjxef3";

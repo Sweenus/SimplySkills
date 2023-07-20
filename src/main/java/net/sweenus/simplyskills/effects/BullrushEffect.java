@@ -6,7 +6,6 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -17,12 +16,7 @@ import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class BullrushEffect extends StatusEffect {
     public BullrushEffect(StatusEffectCategory statusEffectCategory, int color) {

@@ -1,32 +1,22 @@
 package net.sweenus.simplyskills.util;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.clothconfig2.ClothConfigDemo;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_power.api.SpellDamageSource;
-import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.config.RangerConfig;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
