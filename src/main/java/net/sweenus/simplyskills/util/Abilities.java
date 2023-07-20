@@ -236,84 +236,97 @@ public class Abilities {
     }
 
     public static void passiveBerserkerSwordMastery(PlayerEntity player) {
-        if (player.age % 20 == 0) {
+        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasteryFrequency;
+        int baseSpeedAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasteryBaseSpeedAmplifier;
+        int speedAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerSwordMasterySpeedAmplifierPerTier;
+        if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
                 if (player.getMainHandStack().getItem() instanceof SwordItem) {
-                    int mastery = 0;
+                    int mastery = baseSpeedAmplifier;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasterySkilled))
-                        mastery = 2;
+                        mastery = mastery + (speedAmplifierPerTier * 2);
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasteryProficient))
-                        mastery = 1;
+                        mastery = mastery + speedAmplifierPerTier;
 
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 25, mastery));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, frequency + 5, mastery));
                 }
             }
         }
     }
 
     public static void passiveBerserkerAxeMastery(PlayerEntity player) {
-        if (player.age % 20 == 0) {
+        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryFrequency;
+        int baseStrengthAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryBaseStrengthAmplifier;
+        int strengthAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerAxeMasteryStrengthAmplifierPerTier;
+        if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
                 if (player.getMainHandStack().getItem() instanceof AxeItem) {
 
-                    int mastery = 0;
+                    int mastery = baseStrengthAmplifier;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasterySkilled))
-                        mastery = 2;
+                        mastery = mastery + (strengthAmplifierPerTier * 2);
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasteryProficient))
-                        mastery = 1;
+                        mastery = mastery + strengthAmplifierPerTier;
 
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 25, mastery));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, frequency + 5, mastery));
                 }
             }
         }
     }
 
     public static void passiveBerserkerIgnorePain(PlayerEntity player) {
-        if (player.age % 20 == 0) {
-            int resistanceStacks = 0;
-            if (player.getHealth() <= (0.4 * player.getMaxHealth())) {
+        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainFrequency;
+        double healthThreshold = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainHealthThreshold;
+        int baseResistanceAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainBaseResistanceAmplifier;
+        int resistanceAmplifierPerTier = SimplySkillsClient.berserkerConfig.passiveBerserkerIgnorePainResistanceAmplifierPerTier;
+        if (player.age % frequency == 0) {
+            int resistanceStacks = baseResistanceAmplifier;
+            if (player.getHealth() <= (healthThreshold * player.getMaxHealth())) {
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainSkilled))
-                    resistanceStacks = 2;
+                    resistanceStacks = resistanceStacks + (resistanceAmplifierPerTier * 2);
                 else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainProficient))
-                    resistanceStacks = 1;
+                    resistanceStacks = resistanceStacks + resistanceAmplifierPerTier;
 
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, resistanceStacks));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, frequency + 5, resistanceStacks));
             }
         }
     }
 
     public static void passiveBerserkerRecklessness(PlayerEntity player) {
-        if (player.age % 20 == 0) {
-            if (player.getHealth() >= (0.7 * player.getMaxHealth())) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
+        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessFrequency;
+        double healthThreshold = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessHealthThreshold;
+        int weaknessAmplifier = SimplySkillsClient.berserkerConfig.passiveBerserkerRecklessnessWeaknessAmplifier;
+        if (player.age % frequency == 0) {
+            if (player.getHealth() >= (healthThreshold * player.getMaxHealth())) {
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, frequency + 5, weaknessAmplifier));
             }
         }
     }
 
     public static void passiveBerserkerChallenge(PlayerEntity player) {
-        if (player.age % 20 == 0) {
-            int radius = 2;
+        int frequency = SimplySkillsClient.berserkerConfig.passiveBerserkerChallengeFrequency;
+        int radius = SimplySkillsClient.berserkerConfig.passiveBerserkerChallengeRadius;
+        if (player.age % frequency == 0) {
 
-            Box box = new Box(player.getX() + radius, player.getY() + radius, player.getZ() + radius,
-                    player.getX() - radius, player.getY() - radius, player.getZ() - radius);
+            Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                         if (player.hasStatusEffect(StatusEffects.HASTE)) {
                             int amplify = (player.getStatusEffect(StatusEffects.HASTE).getAmplifier() + 1);
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, amplify));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, amplify));
                         } else {
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5));
                         }
                     }
                 }

@@ -41,17 +41,18 @@ public class AbilityEffects {
     public static void effectBerserkerBerserking(Entity target, PlayerEntity player) {
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
-            int berserkingSubEffectDuration = 200;
-            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, 5);
-            HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration, 1, 3);
-            HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration, 1, 3);
+            int berserkingSubEffectDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSubEffectDuration;
+            int berserkingSubEffectMaxAmplifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSubEffectMaxAmplifier;
+            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
         }
     }
 
     public static void effectBerserkerBloodthirsty(PlayerEntity player, LivingEntity livingTarget) {
 
         if (player.hasStatusEffect(EffectRegistry.BLOODTHIRSTY)) {
-            float bloodthirstyHealPercent = 0.25f;
+            float bloodthirstyHealPercent = SimplySkillsClient.berserkerConfig.signatureBerserkerBloodthirstyHealPercent;
             float healAmount = player.getMaxHealth() * bloodthirstyHealPercent;
             player.heal(healAmount);
         }
@@ -60,7 +61,8 @@ public class AbilityEffects {
     public static void effectBerserkerRampage(PlayerEntity player) {
 
         if (player.hasStatusEffect(EffectRegistry.RAMPAGE)) {
-            int rampageSubEffectDuration = 200;
+            int rampageSubEffectDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageSubEffectDuration;
+            int rampageSubEffectMaxAmplifier = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageSubEffectMaxAmplifier;
 
             List<StatusEffect> list = new ArrayList<>();
             list.add(StatusEffects.STRENGTH);
@@ -70,7 +72,8 @@ public class AbilityEffects {
 
             Random rand = new Random();
             StatusEffect randomStatus = list.get(rand.nextInt(list.size()));
-            HelperMethods.incrementStatusEffect(player, randomStatus, rampageSubEffectDuration, 1, 3);
+            HelperMethods.incrementStatusEffect(player, randomStatus, rampageSubEffectDuration, 1,
+                    rampageSubEffectMaxAmplifier);
         }
     }
 

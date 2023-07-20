@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -32,18 +33,22 @@ public class LeapSlamEffect extends StatusEffect {
 
             if (livingEntity instanceof PlayerEntity player) {
                 int ability_timer = Objects.requireNonNull(player.getStatusEffect(EffectRegistry.LEAPSLAM)).getDuration();
-                int radius = 3;
-                double damage_multiplier = 2.8;
+                int radius = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamRadius;
+                int immobilizeDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamImmobilizeDuration;
+                double leapVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamVelocity;
+                double height = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamHeight;
+                double descentVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
+                double damage_multiplier = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
 
                 if (ability_timer >= 60) {
-                    player.setVelocity(livingEntity.getRotationVector().multiply(+1.5));
-                player.setVelocity(livingEntity.getVelocity().x, 0.9, livingEntity.getVelocity().z);
+                    player.setVelocity(livingEntity.getRotationVector().multiply(+leapVelocity));
+                player.setVelocity(livingEntity.getVelocity().x, height, livingEntity.getVelocity().z);
                 player.velocityModified = true;
                 }
                 else if (ability_timer <= 50) {
                     //player.setVelocity(livingEntity.getRotationVector().multiply(+1.01));
-                    player.setVelocity(livingEntity.getVelocity().x, -1, livingEntity.getVelocity().z);
+                    player.setVelocity(livingEntity.getVelocity().x, -descentVelocity, livingEntity.getVelocity().z);
                     player.velocityModified = true;
 
                     if (player.isOnGround()) {
@@ -67,7 +72,7 @@ public class LeapSlamEffect extends StatusEffect {
                                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                                             "simplyskills_berserker").get().contains(
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob))
-                                        le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, 80));
+                                        le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, immobilizeDuration));
                                 }
                             }
                         }

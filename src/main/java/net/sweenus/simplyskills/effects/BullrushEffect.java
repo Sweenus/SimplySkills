@@ -13,6 +13,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -35,11 +37,17 @@ public class BullrushEffect extends StatusEffect {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
 
-                player.setVelocity(livingEntity.getRotationVector().multiply(+2));
+                int bullrushVelocity = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushVelocity;
+                int bullrushRadius = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushRadius;
+                double bullrushDamageModifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushDamageModifier;
+                int bullrushHitFrequency = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushHitFrequency;
+                int bullrushImmobilizeDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushImmobilizeDuration;
+
+                player.setVelocity(livingEntity.getRotationVector().multiply(+bullrushVelocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);
                 player.velocityModified = true;
-                int radius = 3;
-                double damage_multiplier = 1.8;
+                int radius = bullrushRadius;
+                double damage_multiplier = bullrushDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
 
                 Box box = HelperMethods.createBox(player, radius*2);
@@ -48,7 +56,7 @@ public class BullrushEffect extends StatusEffect {
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                             le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
-                            if (player.age % 5 == 0) {
+                            if (player.age % bullrushHitFrequency == 0) {
                                 le.damage(DamageSource.player(player), (float) damage);
                                 player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
                                         SoundCategory.PLAYERS, 0.6f, 1.0f);
@@ -56,7 +64,7 @@ public class BullrushEffect extends StatusEffect {
                             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                                     "simplyskills_berserker").get().contains(
                                             SkillReferencePosition.berserkerSpecialisationRampageChargeImmob))
-                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, 80));
+                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
                         }
                     }
                 }

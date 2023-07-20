@@ -278,11 +278,13 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
+                int rampageDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerRampageDuration;
+                int bullrushDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBullrushDuration;
                 //Rampage
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, 300));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                         .contains(SkillReferencePosition.berserkerSpecialisationRampageCharge)) {
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, 20));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration));
                     player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                             SoundCategory.PLAYERS, 0.5f, 1.1f);
                 }
@@ -290,19 +292,23 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
+                int bloodthirstyDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerBloodthirstyDuration;
                 //Bloodthirsty
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, 400));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                     .contains(SkillReferencePosition.berserkerSpecialisationBerserking)) {
                 //Berserking
-                float sacrificeAmount = (float) (player.getHealth() * 0.30);
+                double sacrificeAmountModifier = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
+                int secondsPerSacrifice = SimplySkillsClient.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
+                int leapSlamDuration = SimplySkillsClient.berserkerConfig.signatureBerserkerLeapSlamDuration;
+                float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)(sacrificeAmount * 20)));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
                         .contains(SkillReferencePosition.berserkerSpecialisationBerserkingLeap)) {
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, 62));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration));
                     player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                             SoundCategory.PLAYERS, 0.5f, 1.1f);
                 }
