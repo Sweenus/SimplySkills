@@ -11,6 +11,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -30,8 +31,9 @@ public class ElementalImpactEffect extends StatusEffect {
         if (!livingEntity.world.isClient()) {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
+                int velocity = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactVelocity;
 
-                player.setVelocity(livingEntity.getRotationVector().multiply(+2));
+                player.setVelocity(livingEntity.getRotationVector().multiply(+velocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);
                 player.velocityModified = true;
                 List<String> list = new ArrayList<>();
@@ -45,11 +47,13 @@ public class ElementalImpactEffect extends StatusEffect {
                 Random rand = new Random();
                 String randomSpell = list.get(rand.nextInt(list.size()));
                 String randomSpell2 = list2.get(rand.nextInt(list2.size()));
-                int radius = 3;
-                int chance = 100;
+                int radius = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactRadius;
+                int chance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactChance;
+                int slownessDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactSlownessDuration;
+                int slownessAmplifier = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactSlownessAmplifier;
 
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell, radius, chance, true);
-                SignatureAbilities.castSpellEngineAOE(player, randomSpell2, radius, 35, true);
+                SignatureAbilities.castSpellEngineAOE(player, randomSpell2, radius, (int)(chance * 0.35), true);
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalImpactMagnet)){
@@ -59,7 +63,7 @@ public class ElementalImpactEffect extends StatusEffect {
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player) && !le.hasStatusEffect(StatusEffects.SLOWNESS)) {
                                 le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
-                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 2));
+                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier));
                             }
                         }
                     }

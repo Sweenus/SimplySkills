@@ -25,6 +25,7 @@ import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -290,18 +291,27 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationEvasion)) {
+
+                int evasionDuration = SimplySkillsClient.rogueConfig.signatureRogueEvasionDuration;
+                int fanOfBladesDuration = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesDuration;
+                int fanOfBladesStacks = SimplySkillsClient.rogueConfig.signatureRogueFanOfBladesStacks - 1;
+
                 //Evasion
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, 160));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                         .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 9));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, fanOfBladesDuration, fanOfBladesStacks));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationPreparation)) {
+
+                int preparationDuration = SimplySkillsClient.rogueConfig.signatureRoguePreparationDuration;
+                int speedAmplifier = SimplySkillsClient.rogueConfig.signatureRoguePreparationSpeedAmplifier;
+
                 //Preparation
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 160));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 160, 2));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, preparationDuration));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, preparationDuration, speedAmplifier));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike))
                     Abilities.passiveRoguePreparationShadowstrike(player);
@@ -309,8 +319,12 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
                     .contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes)) {
+
+                int siphoningStrikesduration = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesDuration;
+                int siphoningStrikesStacks = SimplySkillsClient.rogueConfig.signatureRogueSiphoningStrikesStacks - 1;
+
                 //Siphoning Strikes
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, 600, 9));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, siphoningStrikesduration, siphoningStrikesStacks));
             }
         }
 
@@ -319,20 +333,25 @@ public class SignatureAbilities {
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
+
+                int elementalArrowsDuration = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsDuration;
+                int elementalArrowsStacks = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsStacks;
+                int elementalArrowsStacksIncreasePerTier = SimplySkillsClient.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
+
                 //Elemental Arrows
-                int amplifier =4;
+                int amplifier =elementalArrowsStacks;
 
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne))
-                    amplifier = 5;
+                    amplifier = amplifier + elementalArrowsStacksIncreasePerTier;
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo))
-                    amplifier = 6;
+                    amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 2);
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree))
-                    amplifier = 7;
+                    amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 3);
 
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, 600, amplifier));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, elementalArrowsDuration, amplifier));
             }
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
@@ -342,8 +361,11 @@ public class SignatureAbilities {
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
                     .contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
+
+                int arrowRainDuration = SimplySkillsClient.rangerConfig.effectRangerArrowRainDuration;
+
                 //Arrow Rain
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, 600, 0));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
             }
 
         }
@@ -351,23 +373,29 @@ public class SignatureAbilities {
         // - Spellblade -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
 
+            int elementalSurgeDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
+            int elementalImpactDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactDuration;
+            int elementalImpactResistanceAmplifier = SimplySkillsClient.spellbladeConfig.signatureSpellbladeElementalImpactResistanceAmplifier;
+            int spellweaverDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverDuration;
+            int spellweaverStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
+
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationElementalSurge)) {
                 //Elemental Surge
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, 300, 0));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, elementalSurgeDuration, 0));
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationElementalImpact)) {
                 //Elemental Impact
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT, 20, 0));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT, elementalImpactDuration, 0));
                 if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                         "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance))
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 35, 2));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, elementalImpactDuration + 15, elementalImpactResistanceAmplifier));
             }
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)) {
                 //Spell Weaver
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER, 600, 19));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER, spellweaverDuration, spellweaverStacks - 1));
             }
         }
 

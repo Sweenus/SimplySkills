@@ -27,10 +27,17 @@ public class RogueConfig implements ConfigData {
     public int passiveRogueOpportunisticMasteryPoisonAmplifier = 0;
     public int passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier = 40;
 
+    public int signatureRoguePreparationDuration = 160;
+    public int signatureRoguePreparationSpeedAmplifier = 2;
     public int signatureRoguePreparationShadowstrikeRange = 12;
     public int signatureRoguePreparationShadowstrikeRadius = 3;
     public int signatureRoguePreparationShadowstrikeDamageModifier = 3;
     public double signatureRogueSiphoningStrikesLeechMultiplier = 0.15;
+    public int signatureRogueSiphoningStrikesDuration = 600;
+    public int signatureRogueSiphoningStrikesStacks = 10;
+    public int signatureRogueEvasionDuration = 160;
+    public int signatureRogueFanOfBladesDuration = 500;
+    public int signatureRogueFanOfBladesStacks = 10;
     public int signatureRogueFanOfBladesBaseFrequency = 20;
     public int signatureRogueFanOfBladesEnhancedFrequency = 5;
     public int signatureRogueFanOfBladesRange = 8;

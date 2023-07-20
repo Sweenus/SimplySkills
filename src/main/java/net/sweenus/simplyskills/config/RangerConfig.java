@@ -43,9 +43,13 @@ public class RangerConfig implements ConfigData {
     public int signatureRangerDisengageRecuperateRadius = 18;
     public int signatureRangerDisengageExploitationRadius = 18;
     public int signatureRangerDisengageExploitationDuration = 120;
+    public int effectRangerElementalArrowsDuration = 600;
+    public int effectRangerElementalArrowsStacks = 4;
+    public int effectRangerElementalArrowsStacksIncreasePerTier = 1;
     public int effectRangerElementalArrowsRadius = 4;
     public int effectRangerElementalArrowsRadiusIncreasePerTier = 2;
     public int effectRangerElementalArrowsTargetingRange = 120;
+    public int effectRangerArrowRainDuration = 600;
     public int effectRangerArrowRainRadius = 3;
     public int effectRangerArrowRainRadiusIncreasePerTier = 1;
     public int effectRangerArrowRainArrowDensity = 25;

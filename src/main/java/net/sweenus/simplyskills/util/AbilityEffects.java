@@ -276,13 +276,16 @@ public class AbilityEffects {
                                         "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainElemental)) {
                                     arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
                                     if (player.getRandom().nextInt(100) < 5) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fire_arrow_rain", 512, arrowEntity);
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                "simplyskills:fire_arrow_rain", 512, arrowEntity);
                                         arrowEntity.setInvisible(true);
                                     } else if (player.getRandom().nextInt(100) < 15) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:frost_arrow_rain", 512, arrowEntity);
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                "simplyskills:frost_arrow_rain", 512, arrowEntity);
                                         arrowEntity.setInvisible(true);
                                     } else if (player.getRandom().nextInt(100) < 25) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:lightning_arrow_rain", 512, arrowEntity);
+                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                "simplyskills:lightning_arrow_rain", 512, arrowEntity);
                                         arrowEntity.setInvisible(true);
                                     }
                                 }
@@ -396,12 +399,19 @@ public class AbilityEffects {
     }
 
     public static void effectSpellbladeSpellweaving(Entity target, PlayerEntity player) {
-        int chance = 15;
+        int chance = SimplySkillsClient.spellbladeConfig.passiveSpellbladeSpellweavingChance;
+        int spellweaverHasteDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteDuration;
+        int spellweaverHasteStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteStacks;
+        int spellweaverHasteMaxStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverHasteMaxStacks;
+        int spellweaverRegenerationDuration = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationDuration;
+        int spellweaverRegenerationStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationStacks;
+        int spellweaverRegenerationMaxStacks = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationMaxStacks;
+        int spellweaverRegenerationChance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationChance;
 
         if (player.hasStatusEffect(EffectRegistry.SPELLWEAVER) &&
                 (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
                         .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)))
-            chance = 30;
+            chance = SimplySkillsClient.spellbladeConfig.signatureSpellbladeSpellweaverChance;
 
         List<String> list = new ArrayList<>();
         list.add("simplyskills:frost_arrow");
@@ -417,15 +427,17 @@ public class AbilityEffects {
         if ((target instanceof LivingEntity livingTarget) && player.getRandom().nextInt(100) < chance) {
             SignatureAbilities.castSpellEngineIndirectTarget(player,
                     list.get(spellChoice),
-                    3, livingTarget);
+                    8, livingTarget);
 
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste))
-                HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, 100, 1, 5);
+                HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, spellweaverHasteDuration,
+                        spellweaverHasteStacks, spellweaverHasteMaxStacks);
             if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
                     .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverRegeneration) &&
-                    player.getRandom().nextInt(100) < 50)
-                HelperMethods.incrementStatusEffect(player, StatusEffects.REGENERATION, 140, 1, 2);
+                    player.getRandom().nextInt(100) < spellweaverRegenerationChance)
+                HelperMethods.incrementStatusEffect(player, StatusEffects.REGENERATION, spellweaverRegenerationDuration,
+                        spellweaverRegenerationStacks, spellweaverRegenerationMaxStacks);
         }
     }
 
