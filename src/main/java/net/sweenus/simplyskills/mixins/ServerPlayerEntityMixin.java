@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.puffish.skillsmod.SkillsAPI;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.AbilityEffects;
@@ -60,8 +61,9 @@ public abstract class ServerPlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "tickFallStartPos")
     public void simplyskills$tickFallStartPos(CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
+        float slowfallActivateDistance = SimplySkillsClient.initiateConfig.passiveInitiateSlowFallDistanceToActivate;
         if (SkillsAPI.getUnlockedSkills(player, "simplyskills").get().contains(SkillReferencePosition.initiateSlowfall)
-                && player.fallDistance > 3.0F && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
+                && player.fallDistance > slowfallActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
         }
     }
@@ -83,7 +85,8 @@ public abstract class ServerPlayerEntityMixin {
             //Passive Wayfarer Sneak
             if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills").get().contains(SkillReferencePosition.wayfarerSneak)
                     && player.isSneaking() && player.age % 10 == 0) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, 2));
+                int sneakSpeedAmplifier = SimplySkillsClient.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
             }
 
             //Passive Area Strip

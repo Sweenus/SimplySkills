@@ -7,9 +7,8 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = "wayfarer")
 public class WayfarerConfig implements ConfigData {
 
-    @ConfigEntry.Gui.Tooltip
-    public boolean enablePlayerExCompatibility = false;
-    @ConfigEntry.Gui.Tooltip
-    public boolean enableSomething = false;
+    public int passiveWayfarerSlenderArmorThreshold = 15;
+    public int passiveWayfarerSlenderSlownessAmplifier = 0;
+    public int passiveWayfarerSneakSpeedAmplifier = 2;
 
 }

@@ -7,9 +7,13 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = "initiate")
 public class InitiateConfig implements ConfigData {
 
-    @ConfigEntry.Gui.Tooltip
-    public boolean enablePlayerExCompatibility = false;
-    @ConfigEntry.Gui.Tooltip
-    public boolean enableSomething = false;
+    public int passiveInitiateFrailArmorThreshold = 10;
+    public int passiveInitiateFrailSlownessAmplifier = 0;
+    public int passiveInitiateFrailAttackThreshold = 6;
+    public int passiveInitiateFrailWeaknessAmplifier = 0;
+    public int passiveInitiateFrailMiningFatigueAmplifier = 1;
+    public int passiveInitiateNullificationFrequency = 80;
+    public int passiveInitiateNullificationRadius = 12;
+    public float passiveInitiateSlowFallDistanceToActivate = 3.0F;
 
 }

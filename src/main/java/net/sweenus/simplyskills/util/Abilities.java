@@ -37,18 +37,18 @@ public class Abilities {
 
 
     public static void passiveInitiateNullification(PlayerEntity player) {
-        if (player.age % 80 == 0) {
-            int radius = 12;
+        int nullificationFrequency = SimplySkillsClient.initiateConfig.passiveInitiateNullificationFrequency;
+        int radius = SimplySkillsClient.initiateConfig.passiveInitiateNullificationRadius;
+        if (player.age % nullificationFrequency == 0) {
 
-            Box box = new Box(player.getX() + radius, player.getY() + (float) radius / 3, player.getZ() + radius,
-                    player.getX() - radius, player.getY() - (float) radius / 3, player.getZ() - radius);
+            Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
                             if (statusEffect != null && statusEffect.getEffectType().isBeneficial()) {
-                                le.removeStatusEffect(statusEffect.getEffectType());
+                                HelperMethods.decrementStatusEffect(le, statusEffect.getEffectType());
                                 break;
                             }
                         }
@@ -217,13 +217,20 @@ public class Abilities {
     }
 
     public static void passiveWarriorArmorMastery(PlayerEntity player) {
-        if (player.getRandom().nextInt(100) < 25) {
-            if (player.getArmor() > 9 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+        int armorMasteryThreshold = SimplySkillsClient.warriorConfig.passiveWarriorArmorMasteryArmorThreshold - 1;
+        int armorMasteryChance = SimplySkillsClient.warriorConfig.passiveWarriorArmorMasteryChance;
+        int heavyArmorMasteryDuration = SimplySkillsClient.warriorConfig.passiveWarriorHeavyArmorMasteryDuration;
+        int heavyArmorMasteryAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorHeavyArmorMasteryAmplifier;
+        int mediumArmorMasteryDuration = SimplySkillsClient.warriorConfig.passiveWarriorMediumArmorMasteryDuration;
+        int mediumArmorMasteryAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorMediumArmorMasteryAmplifier;
+
+        if (player.getRandom().nextInt(100) < armorMasteryChance) {
+            if (player.getArmor() > armorMasteryThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills").get().contains(SkillReferencePosition.warriorHeavyArmorMastery)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, heavyArmorMasteryDuration, heavyArmorMasteryAmplifier));
             } else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills").get().contains(SkillReferencePosition.warriorMediumArmorMastery)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, mediumArmorMasteryDuration, mediumArmorMasteryAmplifier));
             }
         }
     }
@@ -315,41 +322,59 @@ public class Abilities {
     }
 
     public static void passiveBulwarkShieldMastery(PlayerEntity player) {
-        if (player.age % 20 == 0) {
+        int shieldMasteryFrequency = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryFrequency;
+        int shieldMasteryWeaknessAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryWeaknessAmplifier;
+        int shieldMasteryResistanceAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifier;
+        int shieldMasteryResistanceAmplifierPerTier = SimplySkillsClient.warriorConfig.passiveWarriorShieldMasteryResistanceAmplifierPerTier;
+
+
+        if (player.age % shieldMasteryFrequency == 0) {
             if (player.getOffHandStack() != null) {
                 if (player.getOffHandStack().getItem() instanceof ShieldItem) {
 
-                    int mastery = 0;
+                    int mastery = shieldMasteryResistanceAmplifier;
 
                     if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasterySkilled))
-                        mastery = 2;
+                        mastery = mastery + (shieldMasteryResistanceAmplifierPerTier * 2);
                     else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                             "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasteryProficient))
-                        mastery = 1;
+                        mastery = mastery + shieldMasteryResistanceAmplifierPerTier;
 
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 25, mastery));
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
+                            shieldMasteryFrequency + 5, mastery));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                            shieldMasteryFrequency + 5, shieldMasteryWeaknessAmplifier));
                 }
             }
         }
     }
 
     public static void passiveBulwarkRebuke(PlayerEntity player, LivingEntity attacker) {
-        if (player.getRandom().nextInt(100) < 25) {
-            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 80));
+        int rebukeChance = SimplySkillsClient.warriorConfig.passiveWarriorRebukeChance;
+        int rebukeWeaknessDuration = SimplySkillsClient.warriorConfig.passiveWarriorRebukeWeaknessDuration;
+        int rebukeWeaknessAmplifier = SimplySkillsClient.warriorConfig.passiveWarriorRebukeWeaknessAmplifier;
+        if (player.getRandom().nextInt(100) < rebukeChance) {
+            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                    rebukeWeaknessDuration, rebukeWeaknessAmplifier));
         }
     }
 
     public static void passiveWayfarerSlender(PlayerEntity player) {
+
+        int slenderArmorThreshold = SimplySkillsClient.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
+        int slenderSlownessAmplifier = SimplySkillsClient.wayfarerConfig.passiveWayfarerSlenderSlownessAmplifier;
+        int frailArmorThreshold = SimplySkillsClient.initiateConfig.passiveInitiateFrailArmorThreshold - 1;
+        int frailSlownessAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailSlownessAmplifier;
+
         if (player.age % 20 == 0) {
-            if (player.getArmor() > 14 && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+            if (player.getArmor() > slenderArmorThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25, slenderSlownessAmplifier));
             }
-            if (player.getArmor() > 9 && (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
+            if (player.getArmor() > frailArmorThreshold && (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills").get().contains(SkillReferencePosition.initiateFrail))){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25, frailSlownessAmplifier));
             }
         }
     }
@@ -434,13 +459,16 @@ public class Abilities {
     }
 
     public static void passiveInitiateFrail(PlayerEntity player) {
+        int attackThreshold = SimplySkillsClient.initiateConfig.passiveInitiateFrailAttackThreshold;
+        int weaknessAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailWeaknessAmplifier;
+        int miningFatigueAmplifier = SimplySkillsClient.initiateConfig.passiveInitiateFrailMiningFatigueAmplifier;
         if (player.age % 20 == 0) {
-            if (HelperMethods.getAttackDamage(player.getMainHandStack()) > 6
-                    || HelperMethods.getAttackDamage(player.getOffHandStack()) > 6
+            if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
+                    || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
                     && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
                     "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, 1));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25, weaknessAmplifier));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, miningFatigueAmplifier));
             }
         }
     }
