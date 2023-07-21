@@ -64,11 +64,11 @@ public class Abilities {
     }
 
     public static void passiveWarriorDeathDefy(PlayerEntity player) {
-        int deathDefyFrequency = 20;
-        int deathDefyAmplifierPerTenPercentHealth = 1;
+        int deathDefyFrequency = SimplySkills.warriorConfig.passiveWarriorDeathDefyFrequency;
+        int deathDefyAmplifierPerTenPercentHealth = SimplySkills.warriorConfig.passiveWarriorDeathDefyAmplifierPerTenPercentHealth;
         int regen = 0;
 
-        int healthThreshold = 30;
+        int healthThreshold = SimplySkills.warriorConfig.passiveWarriorDeathDefyHealthThreshold;
         if (player.age % deathDefyFrequency == 0) {
             float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
             if (playerHealthPercent < healthThreshold) {
@@ -358,6 +358,8 @@ public class Abilities {
     public static void passiveBerserkerChallenge(PlayerEntity player) {
         int frequency = SimplySkills.berserkerConfig.passiveBerserkerChallengeFrequency;
         int radius = SimplySkills.berserkerConfig.passiveBerserkerChallengeRadius;
+        int count = 0;
+        int countMax = SimplySkills.berserkerConfig.passiveBerserkerChallengeMaxAmplifier;
         if (player.age % frequency == 0) {
 
             Box box = HelperMethods.createBox(player, radius);
@@ -365,17 +367,14 @@ public class Abilities {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                        if (player.hasStatusEffect(StatusEffects.HASTE)) {
-                            int amplify = (player.getStatusEffect(StatusEffects.HASTE).getAmplifier() + 1);
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE,
-                                    frequency + 5, amplify));
-                        } else {
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE,
-                                    frequency + 5));
-                        }
+                        count++;
                     }
                 }
             }
+            if (count > countMax)
+                count = countMax;
+            if (count > 1)
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, count -1));
         }
     }
 

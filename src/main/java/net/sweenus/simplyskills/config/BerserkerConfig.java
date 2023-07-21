@@ -25,6 +25,7 @@ public class BerserkerConfig implements ConfigData {
     public int passiveBerserkerRecklessnessWeaknessAmplifier = 0;
     public int passiveBerserkerChallengeFrequency = 20;
     public int passiveBerserkerChallengeRadius = 2;
+    public int passiveBerserkerChallengeMaxAmplifier = 5;
 
     public int signatureBerserkerRampageDuration = 300;
     public int signatureBerserkerRampageSubEffectDuration = 200;

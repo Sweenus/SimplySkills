@@ -59,7 +59,7 @@
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorMediumArmorMasteryAmplifier" : "§a[Passive]§7 Medium Armor Mastery amplifier",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorShieldMasteryFrequency" : "§a[Passive]§7 Shield Mastery frequency",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorShieldMasteryWeaknessAmplifier" : "§a[Passive]§7 Shield Mastery Weakness amplifier",
-  "text.autoconfig.simplyskills.option.warrior.passiveWarriorShieldMasteryResistanceAmplifier" : "§a[Passive]§7 Shield Mastery Resistance Amplifier",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorShieldMasteryResistanceAmplifier" : "§a[Passive]§7 Shield Mastery Resistance amplifier",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorShieldMasteryResistanceAmplifierPerTier" : "§a[Passive]§7 Shield Mastery Resistance amplifier per tier",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorRebukeChance" : "§a[Passive]§7 Rebuke chance",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorRebukeWeaknessDuration" : "§a[Passive]§7 Rebuke duration",
@@ -70,6 +70,9 @@
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorSpellbreakerFrequency" : "§a[Passive]§7 Spellbreaker frequency",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorGoliathFallDistance" : "§a[Passive]§7 Goliath fall distance",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorHeavyWeightDamageIncreasePerTick" : "§a[Passive]§7 Heavy Weight damage increase per tick",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyFrequency" : "§a[Passive]§7 Death Defy frequency",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyHealthThreshold" : "§a[Passive]§7 Death Defy frequency health threshold",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyAmplifierPerTenPercentHealth" : "§a[Passive]§7 Death Defy amplifier per 10% health",
 
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" : "§a[Passive]§7 Slender armor threshold",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderSlownessAmplifier" : "§a[Passive]§7 Slender Slowness amplifier",
@@ -249,6 +252,7 @@
   "text.autoconfig.simplyskills.option.berserker.passiveBerserkerRecklessnessWeaknessAmplifier" : "§a[Passive]§7 Recklessness Weakness amplifier",
   "text.autoconfig.simplyskills.option.berserker.passiveBerserkerChallengeFrequency" : "§a[Passive]§7 Challenge frequency",
   "text.autoconfig.simplyskills.option.berserker.passiveBerserkerChallengeRadius" : "§a[Passive]§7 Challenge radius",
+  "text.autoconfig.simplyskills.option.berserker.passiveBerserkerChallengeMaxAmplifier" : "§a[Passive]§7 Challenge maximum amplifier",
 
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerRampageDuration" : "§6[Signature]§7 Rampage duration",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerRampageSubEffectDuration" : "§6[Signature]§7 Rampage sub effect duration",

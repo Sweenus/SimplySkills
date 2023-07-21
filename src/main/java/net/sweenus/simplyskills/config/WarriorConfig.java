@@ -7,9 +7,9 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = "warrior")
 public class WarriorConfig implements ConfigData {
 
-    public int passiveWarriorArmorMasteryArmorThreshold = 10;
+    public int passiveWarriorArmorMasteryArmorThreshold = 15;
     @ConfigEntry.BoundedDiscrete(max = 100)
-    public int passiveWarriorArmorMasteryChance = 25;
+    public int passiveWarriorArmorMasteryChance = 10;
     public int passiveWarriorHeavyArmorMasteryDuration = 100;
     public int passiveWarriorHeavyArmorMasteryAmplifier = 0;
     public int passiveWarriorMediumArmorMasteryDuration = 100;
@@ -30,5 +30,9 @@ public class WarriorConfig implements ConfigData {
 
     public float passiveWarriorGoliathFallDistance = 3.0f;
     public float passiveWarriorHeavyWeightDamageIncreasePerTick = 0.1f;
+
+    public int passiveWarriorDeathDefyFrequency = 20;
+    public int passiveWarriorDeathDefyHealthThreshold = 30;
+    public int passiveWarriorDeathDefyAmplifierPerTenPercentHealth = 1;
 
 }

@@ -1106,6 +1106,24 @@
 			}
 		]
 	},
+	"warriorDeathDefy": {
+		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration relative to your remaining health percent.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_death_defy.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorDeathDefy"
+				}
+			}
+		]
+	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7",
 		"frame": "goal",
