@@ -11,11 +11,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -92,11 +90,11 @@ public class AbilityEffects {
 
     public static void effectRogueFanOfBlades(PlayerEntity player) {
         int fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesBaseFrequency;
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
+        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
             fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesEnhancedFrequency;
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_rogue").get()
-                .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades) &&
+        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player) &&
                 player.hasStatusEffect(EffectRegistry.FANOFBLADES) && player.age % fobFrequency == 0) {
             int fobRange = SimplySkills.rogueConfig.signatureRogueFanOfBladesRange;
             int fobRadius = SimplySkills.rogueConfig.signatureRogueFanOfBladesRadius;
@@ -117,14 +115,14 @@ public class AbilityEffects {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault))
+                        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                                SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
                             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", fobRange * 2, le);
                         else
                             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", fobRange * 2, le);
 
-                        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment))
+                        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                                SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment, player))
                             le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DISENCHANTMENT, disenchantDuration));
 
                     }
@@ -145,14 +143,14 @@ public class AbilityEffects {
             int radius = SimplySkills.rangerConfig.effectRangerElementalArrowsRadius;
             int increase = SimplySkills.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
             int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne))
+            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne, player))
                 radius = radius + increase;
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusTwo))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusTwo, player))
                 radius = radius + (increase * 2);
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusThree))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusThree, player))
                 radius = radius + (increase * 3);
 
             List<String> list = new ArrayList<>();
@@ -160,18 +158,18 @@ public class AbilityEffects {
             list.add("simplyskills:fire_arrow_rain");
             list.add("simplyskills:lightning_arrow_rain");
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsFireAttuned)) {
+            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsFireAttuned, player)) {
                 list.remove("simplyskills:frost_arrow_rain");
                 list.remove("simplyskills:lightning_arrow_rain");
             }
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsFrostAttuned)) {
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsFrostAttuned, player)) {
                 list.remove("simplyskills:fire_arrow_rain");
                 list.remove("simplyskills:lightning_arrow_rain");
             }
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsLightningAttuned)) {
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationElementalArrowsLightningAttuned, player)) {
                 list.remove("simplyskills:fire_arrow_rain");
                 list.remove("simplyskills:frost_arrow_rain");
             }
@@ -223,24 +221,24 @@ public class AbilityEffects {
             int arrowRainVolleyIncrease = SimplySkills.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
             int arrowRainRange = SimplySkills.rangerConfig.effectRangerArrowRainRange;
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne))
+            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne, player))
                 arrowRainRadius = arrowRainRadius + arrowRainRadiusIncrease;
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusTwo))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainRadiusTwo, player))
                 arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 2);
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainRadiusThree))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainRadiusThree, player))
                 arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 3);
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyOne))
+            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainVolleyOne, player))
                 arrowRainVolleys = arrowRainVolleys + arrowRainVolleyIncrease;
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyTwo))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainVolleyTwo, player))
                 arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 2);
-            else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainVolleyThree))
+            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainVolleyThree, player))
                 arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 3);
 
 
@@ -254,19 +252,24 @@ public class AbilityEffects {
                 for (int x = arrowRainRadius * 2; x > 0; x--) {
                     for (int z = arrowRainRadius * 2; z > 0; z--) {
                         for (int i = arrowRainVolleys; i > 0; i--) {
-                            BlockPos spawnPosition = new BlockPos(xpos + x, ypos + 25 + (player.getRandom().nextInt(15) * arrowRainVolleys + 1), zpos + z);
+                            BlockPos spawnPosition = new BlockPos(xpos + x,
+                                    ypos + 25 + (player.getRandom().nextInt(15) * arrowRainVolleys + 1),
+                                    zpos + z);
 
                             if (player.getRandom().nextInt(100) < arrowRainChance
                                     && player.world.getBlockState(spawnPosition).isAir()) {
-                                SimplySkillsArrowEntity arrowEntity = new SimplySkillsArrowEntity(EntityType.ARROW, player.world);
-                                arrowEntity.updatePosition(spawnPosition.getX(), spawnPosition.getY(), spawnPosition.getZ());
+                                SimplySkillsArrowEntity arrowEntity = new SimplySkillsArrowEntity(EntityType.ARROW,
+                                        player.world);
+                                arrowEntity.updatePosition(spawnPosition.getX(),
+                                        spawnPosition.getY(),
+                                        spawnPosition.getZ());
                                 arrowEntity.setOwner(player);
                                 arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
                                 arrowEntity.setVelocity(0, -0.5, 0);
                                 player.world.spawnEntity(arrowEntity);
 
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainElemental)) {
+                                if (HelperMethods.isUnlocked("simplyskills_ranger",
+                                        SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
                                     arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
                                     if (player.getRandom().nextInt(100) < 5) {
                                         SignatureAbilities.castSpellEngineIndirectTarget(player,
@@ -296,8 +299,8 @@ public class AbilityEffects {
     public static void effectWizardFrostVolley(PlayerEntity player) {
         int frequency = SimplySkills.wizardConfig.signatureWizardIceCometVolleyFrequency;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley) &&
+        if (HelperMethods.isUnlocked("simplyskills_wizard",
+                SkillReferencePosition.wizardSpecialisationIceCometVolley, player) &&
         player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % frequency == 0) {
             Vec3d blockpos = null;
             int volleyRange = SimplySkills.wizardConfig.signatureWizardIceCometVolleyRange;
@@ -333,8 +336,8 @@ public class AbilityEffects {
     public static void effectWizardArcaneVolley(PlayerEntity player) {
         int volleyFrequency = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyFrequency;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley) &&
+        if (HelperMethods.isUnlocked("simplyskills_wizard",
+                SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player) &&
                 player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % volleyFrequency == 0) {
             Vec3d blockpos = null;
             int volleyRange = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyRange;
@@ -370,8 +373,8 @@ public class AbilityEffects {
     public static void effectWizardMeteoricWrath(PlayerEntity player) {
         int frequency = SimplySkills.wizardConfig.signatureWizardMeteoricWrathFrequency;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath) &&
+        if (HelperMethods.isUnlocked("simplyskills_wizard",
+                SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player) &&
                 player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % frequency == 0) {
             int chance = SimplySkills.wizardConfig.signatureWizardMeteoricWrathChance;
             int radius = SimplySkills.wizardConfig.signatureWizardMeteoricWrathRadius;
@@ -382,14 +385,14 @@ public class AbilityEffects {
 
             if (SignatureAbilities.castSpellEngineAOE(player, spellIdentifier, radius, chance, true)) {
                 int renewalChance = 0;
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrath))
+                if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrath, player))
                     renewalChance = baseRenewalChance;
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathTwo))
+                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathTwo, player))
                     renewalChance = baseRenewalChance + renewalChancePerTier;
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathThree))
+                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathThree, player))
                     renewalChance = baseRenewalChance + (renewalChancePerTier * 2);
                 if (player.getRandom().nextInt(100) > renewalChance)
                     HelperMethods.decrementStatusEffect(player, EffectRegistry.METEORICWRATH);
@@ -409,8 +412,8 @@ public class AbilityEffects {
         int spellweaverRegenerationChance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationChance;
 
         if (player.hasStatusEffect(EffectRegistry.SPELLWEAVER) &&
-                (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
-                        .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)))
+                (HelperMethods.isUnlocked("simplyskills_spellblade",
+                        SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)))
             chance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverChance;
 
         List<String> list = new ArrayList<>();
@@ -429,12 +432,12 @@ public class AbilityEffects {
                     list.get(spellChoice),
                     8, livingTarget);
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste))
+            if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                    SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste, player))
                 HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, spellweaverHasteDuration,
                         spellweaverHasteStacks, spellweaverHasteMaxStacks);
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_spellblade").get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaverRegeneration) &&
+            if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                    SkillReferencePosition.spellbladeSpecialisationSpellweaverRegeneration, player) &&
                     player.getRandom().nextInt(100) < spellweaverRegenerationChance)
                 HelperMethods.incrementStatusEffect(player, StatusEffects.REGENERATION, spellweaverRegenerationDuration,
                         spellweaverRegenerationStacks, spellweaverRegenerationMaxStacks);

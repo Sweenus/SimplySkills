@@ -4,9 +4,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -31,14 +30,14 @@ public class ElementalSurgeEffect extends StatusEffect {
                 list.add("simplyskills:fire_nova");
                 list.add("simplyskills:lightning_nova");
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFrost))
+                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                        SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFrost, player))
                     list.remove("simplyskills:frost_nova");
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFire))
+                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                        SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFire, player))
                     list.remove("simplyskills:fire_nova");
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoLightning))
+                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                        SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoLightning, player))
                     list.remove("simplyskills:lightning_nova");
                 if (list.isEmpty())
                     list.add("simplyskills:arcane_nova");

@@ -6,8 +6,8 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.util.AbilityEffects;
+import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +23,8 @@ public abstract class BowItemMixin {
             if (player instanceof ServerPlayerEntity serverPlayer) {
 
                 // Effect - Elemental Arrows
-                if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
+                if (HelperMethods.isUnlocked("simplyskills_ranger",
+                        SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
                     if (player.getItemUseTime() > 20) {
 
                         if (AbilityEffects.effectRangerElementalArrows(player))
@@ -33,7 +34,8 @@ public abstract class BowItemMixin {
 
 
                 // Effect - Arrow Rain
-                else if (SkillsAPI.getUnlockedSkills(serverPlayer, "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
+                else if (HelperMethods.isUnlocked("simplyskills_ranger",
+                        SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
                     if (player.getItemUseTime() > 20) {
 
                         if (AbilityEffects.effectRangerArrowRain(player))

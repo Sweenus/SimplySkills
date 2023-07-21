@@ -63,6 +63,26 @@ public class Abilities {
         }
     }
 
+    public static void passiveWarriorDeathDefy(PlayerEntity player) {
+        int deathDefyFrequency = 20;
+        int deathDefyAmplifierPerTenPercentHealth = 1;
+        int regen = 0;
+
+        int healthThreshold = 30;
+        if (player.age % deathDefyFrequency == 0) {
+            float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
+            if (playerHealthPercent < healthThreshold) {
+                if (playerHealthPercent < (healthThreshold - 10))
+                    regen = regen + deathDefyAmplifierPerTenPercentHealth;
+                if (playerHealthPercent < (healthThreshold - 20))
+                    regen = regen + (deathDefyAmplifierPerTenPercentHealth * 2);
+
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
+                        deathDefyFrequency + 5, regen));
+            }
+        }
+    }
+
     public static void passiveWarriorGoliath(PlayerEntity player) {
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EARTHSHAKER, 200));
     }
@@ -135,8 +155,10 @@ public class Abilities {
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
                             if (te.isOwner(player)) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, frequency + 5, regenerationAmplifier));
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, frequency + 5, resistanceAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
+                                        frequency + 5, regenerationAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
+                                        frequency + 5, resistanceAmplifier));
                         }
                     }
                 }
@@ -184,8 +206,10 @@ public class Abilities {
                         if (te.isOwner(player)) {
                             float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
                             if (teHealthPercent > minimumHealthPercent) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, frequency + 5, strengthAmplifier));
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, frequency + 5, speedAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                                        frequency + 5, strengthAmplifier));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                                        frequency + 5, speedAmplifier));
                             }
                         }
                     }
@@ -206,7 +230,8 @@ public class Abilities {
                     if ((entities instanceof TameableEntity te)) {
                         if (te.isOwner(player)) {
                             if (player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, frequency + 5));
+                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,
+                                        frequency + 5));
                             }
                         }
                     }
@@ -221,7 +246,8 @@ public class Abilities {
             int weaknessAmplifier = SimplySkills.rogueConfig.passiveRogueBackstabWeaknessAmplifier;
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
                     livingTarget.getBodyYaw() > (player.getBodyYaw() - 32)) {
-                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier));
+                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                        weaknessDuration, weaknessAmplifier));
             }
         }
     }
@@ -235,12 +261,15 @@ public class Abilities {
         int mediumArmorMasteryAmplifier = SimplySkills.warriorConfig.passiveWarriorMediumArmorMasteryAmplifier;
 
         if (player.getRandom().nextInt(100) < armorMasteryChance) {
-            if (player.getArmor() > armorMasteryThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills").get().contains(SkillReferencePosition.warriorHeavyArmorMastery)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, heavyArmorMasteryDuration, heavyArmorMasteryAmplifier));
-            } else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills").get().contains(SkillReferencePosition.warriorMediumArmorMastery)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, mediumArmorMasteryDuration, mediumArmorMasteryAmplifier));
+            if (player.getArmor() > armorMasteryThreshold
+                    && HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.warriorHeavyArmorMastery, player)) {
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                        heavyArmorMasteryDuration, heavyArmorMasteryAmplifier));
+            } else if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.warriorMediumArmorMastery, player)){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION,
+                        mediumArmorMasteryDuration, mediumArmorMasteryAmplifier));
             }
         }
     }
@@ -254,14 +283,15 @@ public class Abilities {
                 if (player.getMainHandStack().getItem() instanceof SwordItem) {
                     int mastery = baseSpeedAmplifier;
 
-                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasterySkilled))
+                    if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.berserkerSwordMasterySkilled, player))
                         mastery = mastery + (speedAmplifierPerTier * 2);
-                    else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.berserkerSwordMasteryProficient))
+                    else if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.berserkerSwordMasteryProficient, player))
                         mastery = mastery + speedAmplifierPerTier;
 
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, frequency + 5, mastery));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                            frequency + 5, mastery));
                 }
             }
         }
@@ -277,14 +307,15 @@ public class Abilities {
 
                     int mastery = baseStrengthAmplifier;
 
-                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasterySkilled))
+                    if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.berserkerAxeMasterySkilled, player))
                         mastery = mastery + (strengthAmplifierPerTier * 2);
-                    else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.berserkerAxeMasteryProficient))
+                    else if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.berserkerAxeMasteryProficient, player))
                         mastery = mastery + strengthAmplifierPerTier;
 
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, frequency + 5, mastery));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                            frequency + 5, mastery));
                 }
             }
         }
@@ -299,14 +330,15 @@ public class Abilities {
             int resistanceStacks = baseResistanceAmplifier;
             if (player.getHealth() <= (healthThreshold * player.getMaxHealth())) {
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainSkilled))
+                if (HelperMethods.isUnlocked("simplyskills",
+                        SkillReferencePosition.berserkerIgnorePainSkilled, player))
                     resistanceStacks = resistanceStacks + (resistanceAmplifierPerTier * 2);
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills").get().contains(SkillReferencePosition.berserkerIgnorePainProficient))
+                else if (HelperMethods.isUnlocked("simplyskills",
+                        SkillReferencePosition.berserkerIgnorePainProficient, player))
                     resistanceStacks = resistanceStacks + resistanceAmplifierPerTier;
 
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, frequency + 5, resistanceStacks));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
+                        frequency + 5, resistanceStacks));
             }
         }
     }
@@ -317,7 +349,8 @@ public class Abilities {
         int weaknessAmplifier = SimplySkills.berserkerConfig.passiveBerserkerRecklessnessWeaknessAmplifier;
         if (player.age % frequency == 0) {
             if (player.getHealth() >= (healthThreshold * player.getMaxHealth())) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, frequency + 5, weaknessAmplifier));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                        frequency + 5, weaknessAmplifier));
             }
         }
     }
@@ -334,9 +367,11 @@ public class Abilities {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                         if (player.hasStatusEffect(StatusEffects.HASTE)) {
                             int amplify = (player.getStatusEffect(StatusEffects.HASTE).getAmplifier() + 1);
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, amplify));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE,
+                                    frequency + 5, amplify));
                         } else {
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE,
+                                    frequency + 5));
                         }
                     }
                 }
@@ -357,11 +392,11 @@ public class Abilities {
 
                     int mastery = shieldMasteryResistanceAmplifier;
 
-                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasterySkilled))
+                    if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.bulwarkShieldMasterySkilled, player))
                         mastery = mastery + (shieldMasteryResistanceAmplifierPerTier * 2);
-                    else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills").get().contains(SkillReferencePosition.bulwarkShieldMasteryProficient))
+                    else if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.bulwarkShieldMasteryProficient, player))
                         mastery = mastery + shieldMasteryResistanceAmplifierPerTier;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
@@ -391,13 +426,15 @@ public class Abilities {
         int frailSlownessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailSlownessAmplifier;
 
         if (player.age % 20 == 0) {
-            if (player.getArmor() > slenderArmorThreshold && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25, slenderSlownessAmplifier));
+            if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.wayfarerSlender, player)){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
+                        25, slenderSlownessAmplifier));
             }
-            if (player.getArmor() > frailArmorThreshold && (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills").get().contains(SkillReferencePosition.initiateFrail))){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 25, frailSlownessAmplifier));
+            if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.initiateFrail, player))){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
+                        25, frailSlownessAmplifier));
             }
         }
     }
@@ -415,7 +452,8 @@ public class Abilities {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, blindnessDuration, blindnessAmplifier));
+                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,
+                                blindnessDuration, blindnessAmplifier));
 
                     }
                 }
@@ -436,11 +474,11 @@ public class Abilities {
         if (player.hasStatusEffect(EffectRegistry.EVASION))
             evasionMultiplier = masteryEvasionMultiplier;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasterySkilled))
+        if (HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.rogueEvasionMasterySkilled, player))
             mastery = mastery + (evasionChanceIncreasePerTier * 2);
-        else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills").get().contains(SkillReferencePosition.rogueEvasionMasteryProficient))
+        else if (HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.rogueEvasionMasteryProficient, player))
             mastery = mastery + evasionChanceIncreasePerTier;
 
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
@@ -467,11 +505,11 @@ public class Abilities {
 
         int mastery = basePoisonDuration;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasterySkilled))
+        if (HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.rogueOpportunisticMasterySkilled, player))
             mastery = mastery + (poisonDurationIncreasePerTier * 2);
-        else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills").get().contains(SkillReferencePosition.rogueOpportunisticMasteryProficient))
+        else if (HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.rogueOpportunisticMasteryProficient, player))
             mastery = mastery + poisonDurationIncreasePerTier;
 
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
@@ -488,10 +526,12 @@ public class Abilities {
         if (player.age % 20 == 0) {
             if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
                     || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
-                    && SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                    "simplyskills").get().contains(SkillReferencePosition.wayfarerSlender)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 25, weaknessAmplifier));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 25, miningFatigueAmplifier));
+                    && HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.wayfarerSlender, player)){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                        25, weaknessAmplifier));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
+                        25, miningFatigueAmplifier));
             }
         }
     }
@@ -509,21 +549,23 @@ public class Abilities {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier));
+                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
+                            slownessDuration, slownessAmplifier));
 
                 }
             }
         }
         player.setVelocity(player.getRotationVector().negate().multiply(+velocity));
         player.setVelocity(player.getVelocity().x, height, player.getVelocity().z); // Prevent player flying to the heavens
-        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, slowFallDuration, slowFallAmplifier));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,
+                slowFallDuration, slowFallAmplifier));
         player.velocityModified = true;
 
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationDisengageRecuperate))
+        if (HelperMethods.isUnlocked("simplyskills_ranger",
+                SkillReferencePosition.rangerSpecialisationDisengageRecuperate, player))
             signatureRangerDisengageRecuperate(player);
-        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationDisengageExploitation))
+        if (HelperMethods.isUnlocked("simplyskills_ranger",
+                SkillReferencePosition.rangerSpecialisationDisengageExploitation, player))
             signatureRangerDisengageExploitation(player);
 
     }
@@ -566,14 +608,14 @@ public class Abilities {
         int renewalMaxStacks = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalMaximumStacks;
         int renewalStacks = SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalStacks;
         if (random < renewalChance)
-            HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS, renewalDuration, renewalStacks, renewalMaxStacks);
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS,
+                    renewalDuration, renewalStacks, renewalMaxStacks);
     }
 
     public static void passiveRoguePreparationShadowstrike(PlayerEntity player) {
         if (player instanceof ServerPlayerEntity sPlayerEntity) {
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                            "simplyskills_rogue").get()
-                    .contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike)) {
+            if (HelperMethods.isUnlocked("simplyskills_rogue",
+                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player)) {
                 int dashRange = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRange;
                 int dashRadius = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
                 int dashDamageModifier = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
@@ -588,11 +630,12 @@ public class Abilities {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                             le.damage(dashSource, dashDamage * dashDamageModifier);
 
-                            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                    "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeBolt))
-                                SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:soul_bolt_lesser", 64, le);
-                            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                    "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire))
+                            if (HelperMethods.isUnlocked("simplyskills_rogue",
+                                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeBolt, player))
+                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        "simplyskills:soul_bolt_lesser", 64, le);
+                            if (HelperMethods.isUnlocked("simplyskills_rogue",
+                                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player))
                                 HelperMethods.buffSteal(player, le, true, true);
 
                         }
@@ -646,31 +689,31 @@ public class Abilities {
 
         //Process unlock
         if (skillID.contains(SkillReferencePosition.wizardPath)
-        && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_wizard")){
+        && !HelperMethods.isUnlocked("simplyskills_wizard", null, player)){
             if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
                 SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
                 playUnlockSound(player);
             }
         } else if (skillID.contains(SkillReferencePosition.berserkerPath)
-                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_berserker")){
+                && !HelperMethods.isUnlocked("simplyskills_berserker", null, player)){
             if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
                 SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
                 playUnlockSound(player);
             }
         } else if (skillID.contains(SkillReferencePosition.roguePath)
-                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_rogue")){
+                && !HelperMethods.isUnlocked("simplyskills_rogue", null, player)){
             if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
                 SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
                 playUnlockSound(player);
             }
         } else if (skillID.contains(SkillReferencePosition.rangerPath)
-                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_ranger")){
+                && !HelperMethods.isUnlocked("simplyskills_ranger", null, player)){
             if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
                 SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
                 playUnlockSound(player);
             }
         } else if (skillID.contains(SkillReferencePosition.spellbladePath)
-                && !SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains("simplyskills_spellblade")){
+                && !HelperMethods.isUnlocked("simplyskills_spellblade", null, player)){
             if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
                 SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_spellblade");
                 playUnlockSound(player);

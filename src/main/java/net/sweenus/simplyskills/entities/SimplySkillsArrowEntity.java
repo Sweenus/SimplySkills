@@ -11,7 +11,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import net.puffish.skillsmod.SkillsAPI;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellDamageSource;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -31,8 +30,9 @@ public class SimplySkillsArrowEntity extends ArrowEntity {
 
             this.age();
 
-            if ((this.getOwner() instanceof ServerPlayerEntity serverPlayer) && SkillsAPI.getUnlockedSkills(serverPlayer,
-                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainExplosive)) {
+            if ((this.getOwner() instanceof ServerPlayerEntity serverPlayer)
+                    && HelperMethods.isUnlocked("simplyskills_ranger",
+                    SkillReferencePosition.rangerSpecialisationArrowRainExplosive, serverPlayer)) {
                 Box box = HelperMethods.createBox(this, 1);
                 for (Entity entities : this.world.getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                     if (entities != null && (this.getOwner() instanceof PlayerEntity player)) {
@@ -42,8 +42,8 @@ public class SimplySkillsArrowEntity extends ArrowEntity {
                                     1.0f, false, Explosion.DestructionType.NONE);
                             this.applyDamageEffects(player, le);
 
-                            if (SkillsAPI.getUnlockedSkills(serverPlayer,
-                                    "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationArrowRainElemental)) {
+                            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                                    SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
                                 if (this.random.nextInt(100) < 25)
                                     le.damage(SpellDamageSource.player(MagicSchool.FIRE, player), 5);
                                 else if (this.random.nextInt(100) < 45)

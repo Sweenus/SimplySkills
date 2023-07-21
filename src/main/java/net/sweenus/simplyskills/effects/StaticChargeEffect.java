@@ -9,9 +9,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -41,11 +39,11 @@ public class StaticChargeEffect extends StatusEffect {
 
             if (livingEntity.age % leapFrequency == 0) {
                 int speedChance = speedBaseChance;
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo))
+                if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo, ownerEntity))
                     speedChance = speedChance + speedChancePerTier;
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree))
+                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree, ownerEntity))
                     speedChance = speedChance + (speedChancePerTier * 2);
 
                 Box box = HelperMethods.createBox(livingEntity, 3);
@@ -67,9 +65,9 @@ public class StaticChargeEffect extends StatusEffect {
                                 livingEntity.removeStatusEffect(sc);
                             }
 
-                            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) ownerEntity, "simplyskills_wizard").get()
-                                    .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed) &&
-                                    ownerEntity.getRandom().nextInt(100) < speedChance)
+                            if (HelperMethods.isUnlocked("simplyskills_wizard",
+                                    SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed, ownerEntity)
+                                    && ownerEntity.getRandom().nextInt(100) < speedChance)
                                 HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED,
                                         dischargeSpeedDuration,
                                         staticDischargeSpeedStacks,
@@ -93,8 +91,8 @@ public class StaticChargeEffect extends StatusEffect {
 
                 if (entities != null) {
                     if (entities instanceof PlayerEntity pe) {
-                        if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) pe, "simplyskills_wizard").get()
-                                .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeap)) {
+                        if (HelperMethods.isUnlocked("simplyskills_wizard",
+                                SkillReferencePosition.wizardSpecialisationStaticDischargeLeap, pe)) {
                             ownerEntity = pe;
                             break;
                         }

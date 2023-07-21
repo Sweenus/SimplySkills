@@ -48,17 +48,18 @@ public class SignatureAbilities {
         // - Wizard -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(wizardSkillTree)) {
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                    .contains(SkillReferencePosition.wizardSpecialisationMeteorShower)) {
+            if (HelperMethods.isUnlocked(wizardSkillTree,
+                    SkillReferencePosition.wizardSpecialisationMeteorShower, player)) {
 
                 int meteoricWrathDuration = SimplySkills.wizardConfig.signatureWizardMeteoricWrathDuration;
                 int meteoricWrathStacks = SimplySkills.wizardConfig.signatureWizardMeteoricWrathStacks - 1;
                 int meteorShowerRange = SimplySkills.wizardConfig.signatureWizardMeteorShowerRange;
 
                 //Meteor Shower
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerWrath))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH, meteoricWrathDuration, meteoricWrathStacks));
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH,
+                            meteoricWrathDuration, meteoricWrathStacks));
 
 
                 if (HelperMethods.getTargetedEntity(player, meteorShowerRange) !=null)
@@ -77,8 +78,8 @@ public class SignatureAbilities {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, "simplyskills_wizard").get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationMeteorShowerGreater))
+                                if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationMeteorShowerGreater, player))
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
                                             "simplyskills:fire_meteor_large",
                                             8, le);
@@ -92,8 +93,8 @@ public class SignatureAbilities {
                 }
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                    .contains(SkillReferencePosition.wizardSpecialisationIceComet)) {
+            if (HelperMethods.isUnlocked(wizardSkillTree,
+                    SkillReferencePosition.wizardSpecialisationIceComet, player)) {
 
                 int leapVelocity = SimplySkills.wizardConfig.signatureWizardIceCometLeapVelocity;
                 double leapHeight = SimplySkills.wizardConfig.signatureWizardIceCometLeapHeight;
@@ -104,16 +105,17 @@ public class SignatureAbilities {
 
                 //Ice Comet
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationIceCometLeap)) {
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationIceCometLeap, player)) {
                     player.setVelocity(player.getRotationVector().negate().multiply(+leapVelocity));
                     player.setVelocity(player.getVelocity().x, leapHeight, player.getVelocity().z);
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, leapSlowfallDuration));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,leapSlowfallDuration));
                     player.velocityModified = true;
                 }
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationIceCometVolley))
-                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY, volleyDuration, volleyStacks));
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationIceCometVolley, player))
+                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY,
+                                volleyDuration, volleyStacks));
 
 
                 if (HelperMethods.getTargetedEntity(player, iceCometRange) !=null)
@@ -132,18 +134,18 @@ public class SignatureAbilities {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageOne))
+                                if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationIceCometDamageOne, player))
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         "simplyskills:ice_comet_large",
                                         3, le);
-                                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageTwo))
+                                else if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationIceCometDamageTwo, player))
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
                                             "simplyskills:ice_comet_large_two",
                                             3, le);
-                                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationIceCometDamageThree))
+                                else if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationIceCometDamageThree, player))
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
                                             "simplyskills:ice_comet_large_three",
                                             3, le);
@@ -157,8 +159,8 @@ public class SignatureAbilities {
                 }
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                    .contains(SkillReferencePosition.wizardSpecialisationStaticDischarge)) {
+            if (HelperMethods.isUnlocked(wizardSkillTree,
+                    SkillReferencePosition.wizardSpecialisationStaticDischarge, player)) {
                 //Static Discharge
                 int amplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseLeaps;
                 int speedChance = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
@@ -170,17 +172,17 @@ public class SignatureAbilities {
                 int staticDischargeSpeedStacks = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
                 int staticDischargeSpeedMaxAmplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapTwo))
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeLeapTwo, player))
                     amplifier = amplifier + leapsPerTier;
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeapThree))
+                else if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeLeapThree, player))
                     amplifier = amplifier + (leapsPerTier * 2);
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo))
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo, player))
                     speedChance = speedChance + speedChancePerTier;
-                else if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree))
+                else if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree, player))
                     speedChance = speedChance + (speedChancePerTier * 2);
 
                 if (HelperMethods.getTargetedEntity(player, staticDischargeRange) !=null)
@@ -202,14 +204,18 @@ public class SignatureAbilities {
                                 SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         "simplyskills:static_discharge",
                                         3, le);
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeLeap)) {
-                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE, staticChargeDuration, amplifier));
+                                if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationStaticDischargeLeap, player)) {
+                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE,
+                                            staticChargeDuration, amplifier));
                                 }
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed) &&
-                                player.getRandom().nextInt(100) < speedChance)
-                                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, dischargeSpeedDuration, staticDischargeSpeedStacks, staticDischargeSpeedMaxAmplifier);
+                                if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed, player)
+                                        && player.getRandom().nextInt(100) < speedChance)
+                                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED,
+                                            dischargeSpeedDuration,
+                                            staticDischargeSpeedStacks,
+                                            staticDischargeSpeedMaxAmplifier);
                                 break;
                             }
                         }
@@ -217,20 +223,21 @@ public class SignatureAbilities {
                 }
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                    .contains(SkillReferencePosition.wizardSpecialisationArcaneBolt)) {
+            if (HelperMethods.isUnlocked(wizardSkillTree,
+                    SkillReferencePosition.wizardSpecialisationArcaneBolt, player)) {
                 //Arcane Bolt
                 int volleyDuration = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyDuration;
                 int volleyStacks = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyStacks - 1;
                 int arcaneBoltRange = SimplySkills.wizardConfig.signatureWizardArcaneBoltRange;
                 int radius = 3;
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationArcaneBoltLesser, player)) {
                     radius = SimplySkills.wizardConfig.signatureWizardLesserArcaneBoltRadius;
                 }
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltVolley))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY, volleyDuration, volleyStacks));
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY,
+                            volleyDuration, volleyStacks));
 
                 if (HelperMethods.getTargetedEntity(player, arcaneBoltRange) !=null)
                     blockpos = HelperMethods.getTargetedEntity(player, arcaneBoltRange).getPos();
@@ -248,14 +255,14 @@ public class SignatureAbilities {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                        .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltLesser)) {
+                                if (HelperMethods.isUnlocked(wizardSkillTree,
+                                        SkillReferencePosition.wizardSpecialisationArcaneBoltLesser, player)) {
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
                                             "simplyskills:arcane_bolt_lesser",
                                             radius, le);
                                 } else {
-                                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, wizardSkillTree).get()
-                                            .contains(SkillReferencePosition.wizardSpecialisationArcaneBoltGreater))
+                                    if (HelperMethods.isUnlocked(wizardSkillTree,
+                                            SkillReferencePosition.wizardSpecialisationArcaneBoltGreater, player))
                                         SignatureAbilities.castSpellEngineIndirectTarget(player,
                                             "simplyskills:arcane_bolt_greater",
                                             radius, le);
@@ -275,38 +282,39 @@ public class SignatureAbilities {
         // - Berserker -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                    .contains(SkillReferencePosition.berserkerSpecialisationRampage)) {
+            if (HelperMethods.isUnlocked(berserkerSkillTree,
+                    SkillReferencePosition.berserkerSpecialisationRampage, player)) {
                 int rampageDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
                 int bullrushDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
                 //Rampage
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration));
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                        .contains(SkillReferencePosition.berserkerSpecialisationRampageCharge)) {
+                if (HelperMethods.isUnlocked(berserkerSkillTree,
+                        SkillReferencePosition.berserkerSpecialisationRampageCharge, player)) {
                     player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration));
                     player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                             SoundCategory.PLAYERS, 0.5f, 1.1f);
                 }
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                    .contains(SkillReferencePosition.berserkerSpecialisationBloodthirsty)) {
+            if (HelperMethods.isUnlocked(berserkerSkillTree,
+                    SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
                 int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
                 //Bloodthirsty
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                    .contains(SkillReferencePosition.berserkerSpecialisationBerserking)) {
+            if (HelperMethods.isUnlocked(berserkerSkillTree,
+                    SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
                 //Berserking
                 double sacrificeAmountModifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
                 int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
                 int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
                 float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
                 player.damage(DamageSource.GENERIC, sacrificeAmount);
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING, (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, berserkerSkillTree).get()
-                        .contains(SkillReferencePosition.berserkerSpecialisationBerserkingLeap)) {
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
+                        (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
+                if (HelperMethods.isUnlocked(berserkerSkillTree,
+                        SkillReferencePosition.berserkerSpecialisationBerserkingLeap, player)) {
                     player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration));
                     player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                             SoundCategory.PLAYERS, 0.5f, 1.1f);
@@ -317,8 +325,8 @@ public class SignatureAbilities {
         // - Rogue -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
-                    .contains(SkillReferencePosition.rogueSpecialisationEvasion)) {
+            if (HelperMethods.isUnlocked(rogueSkillTree,
+                    SkillReferencePosition.rogueSpecialisationEvasion, player)) {
 
                 int evasionDuration = SimplySkills.rogueConfig.signatureRogueEvasionDuration;
                 int fanOfBladesDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDuration;
@@ -326,41 +334,44 @@ public class SignatureAbilities {
 
                 //Evasion
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
-                        .contains(SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, fanOfBladesDuration, fanOfBladesStacks));
+                if (HelperMethods.isUnlocked(rogueSkillTree,
+                        SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES,
+                            fanOfBladesDuration, fanOfBladesStacks));
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
-                    .contains(SkillReferencePosition.rogueSpecialisationPreparation)) {
+            if (HelperMethods.isUnlocked(rogueSkillTree,
+                    SkillReferencePosition.rogueSpecialisationPreparation, player)) {
 
                 int preparationDuration = SimplySkills.rogueConfig.signatureRoguePreparationDuration;
                 int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
 
                 //Preparation
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, preparationDuration));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, preparationDuration, speedAmplifier));
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_rogue").get().contains(SkillReferencePosition.rogueSpecialisationPreparationShadowstrike))
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                        preparationDuration, speedAmplifier));
+                if (HelperMethods.isUnlocked(rogueSkillTree,
+                        SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
                     Abilities.passiveRoguePreparationShadowstrike(player);
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rogueSkillTree).get()
-                    .contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes)) {
+            if (HelperMethods.isUnlocked(rogueSkillTree,
+                    SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
 
                 int siphoningStrikesduration = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesDuration;
                 int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks - 1;
 
                 //Siphoning Strikes
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES, siphoningStrikesduration, siphoningStrikesStacks));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
+                        siphoningStrikesduration, siphoningStrikesStacks));
             }
         }
 
         // - Ranger -
         else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
-                    .contains(SkillReferencePosition.rangerSpecialisationElementalArrows)) {
+            if (HelperMethods.isUnlocked(rangerSkillTree,
+                    SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
 
                 int elementalArrowsDuration = SimplySkills.rangerConfig.effectRangerElementalArrowsDuration;
                 int elementalArrowsStacks = SimplySkills.rangerConfig.effectRangerElementalArrowsStacks;
@@ -369,26 +380,27 @@ public class SignatureAbilities {
                 //Elemental Arrows
                 int amplifier =elementalArrowsStacks;
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne))
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne, player))
                     amplifier = amplifier + elementalArrowsStacksIncreasePerTier;
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo))
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo, player))
                     amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 2);
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_ranger").get().contains(SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree))
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree, player))
                     amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 3);
 
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS, elementalArrowsDuration, amplifier));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS,
+                        elementalArrowsDuration, amplifier));
             }
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
-                    .contains(SkillReferencePosition.rangerSpecialisationDisengage)) {
+            if (HelperMethods.isUnlocked(rangerSkillTree,
+                    SkillReferencePosition.rangerSpecialisationDisengage, player)) {
                 //Disengage
                 Abilities.signatureRangerDisengage(player);
             }
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, rangerSkillTree).get()
-                    .contains(SkillReferencePosition.rangerSpecialisationArrowRain)) {
+            if (HelperMethods.isUnlocked(rangerSkillTree,
+                    SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
 
                 int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
 
@@ -407,23 +419,27 @@ public class SignatureAbilities {
             int spellweaverDuration = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverDuration;
             int spellweaverStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
 
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationElementalSurge)) {
+            if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                    SkillReferencePosition.spellbladeSpecialisationElementalSurge, player)) {
                 //Elemental Surge
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, elementalSurgeDuration, 0));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE,
+                        elementalSurgeDuration, 0));
             }
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationElementalImpact)) {
+            if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                    SkillReferencePosition.spellbladeSpecialisationElementalImpact, player)) {
                 //Elemental Impact
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT, elementalImpactDuration, 0));
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance))
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, elementalImpactDuration + 15, elementalImpactResistanceAmplifier));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT,
+                        elementalImpactDuration, 0));
+                if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                        SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance, player))
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
+                            elementalImpactDuration + 15, elementalImpactResistanceAmplifier));
             }
-            if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player, spellbladeSkillTree).get()
-                    .contains(SkillReferencePosition.spellbladeSpecialisationSpellweaver)) {
+            if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                    SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)) {
                 //Spell Weaver
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER, spellweaverDuration, spellweaverStacks - 1));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER,
+                        spellweaverDuration, spellweaverStacks - 1));
             }
         }
 

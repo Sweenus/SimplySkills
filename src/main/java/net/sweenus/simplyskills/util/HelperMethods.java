@@ -48,6 +48,19 @@ public class HelperMethods {
         return true;
     }
 
+    //Checks if skill is unlocked with presence checks.
+    //If provided null for the skill argument, it will instead return if the category is unlocked.
+    public static boolean isUnlocked (String tree, String skill, LivingEntity livingEntity) {
+        if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
+            if (SkillsAPI.getUnlockedSkills( serverPlayer, tree ).isPresent()) {
+                if (skill != null)
+                    return SkillsAPI.getUnlockedSkills(serverPlayer, tree).get().contains(skill);
+                else return SkillsAPI.getUnlockedCategories(serverPlayer).contains(tree);
+            } else {return false;}
+        }
+        return false;
+    }
+
     //Check if the target matches blacklisted entities (expand this to be configurable if there is demand)
     public static boolean checkEntityBlacklist (LivingEntity livingEntity, PlayerEntity player) {
         if (livingEntity == null || player == null) {

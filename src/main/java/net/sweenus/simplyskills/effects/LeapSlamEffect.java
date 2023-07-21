@@ -8,10 +8,8 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -58,9 +56,8 @@ public class LeapSlamEffect extends StatusEffect {
                             if (entities != null) {
                                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                            "simplyskills_berserker").get().contains(
-                                            SkillReferencePosition.berserkerSpecialisationBerserkingLeapPull))
+                                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                            SkillReferencePosition.berserkerSpecialisationBerserkingLeapPull, player))
                                         le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                                     else
                                         le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
@@ -68,9 +65,8 @@ public class LeapSlamEffect extends StatusEffect {
                                     le.damage(DamageSource.player(player), (float) damage);
                                     player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
                                             SoundCategory.PLAYERS, 0.3f, 1.1f);
-                                    if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                                            "simplyskills_berserker").get().contains(
-                                            SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob))
+                                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                            SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob, player))
                                         le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, immobilizeDuration));
                                 }
                             }

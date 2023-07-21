@@ -8,9 +8,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SignatureAbilities;
@@ -55,8 +53,8 @@ public class ElementalImpactEffect extends StatusEffect {
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell, radius, chance, true);
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell2, radius, (int)(chance * 0.35), true);
 
-                if (SkillsAPI.getUnlockedSkills((ServerPlayerEntity) player,
-                        "simplyskills_spellblade").get().contains(SkillReferencePosition.spellbladeSpecialisationElementalImpactMagnet)){
+                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                        SkillReferencePosition.spellbladeSpecialisationElementalImpactMagnet, player)){
                     Box box = HelperMethods.createBox(player, radius*2);
                     for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
