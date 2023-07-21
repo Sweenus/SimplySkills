@@ -25,6 +25,14 @@
   "effect.simplyskills.immobilizing_aura": "Immobilizing Aura",
   "effect.simplyskills.spellbreaking": "Spellbreaking",
   "effect.simplyskills.earthshaker": "Earthshaker",
+  "effect.simplyskills.arcane_attunement": "Arcane Attunement",
+  "effect.simplyskills.soul_attunement": "Soul Attunement",
+  "effect.simplyskills.holy_attunement": "Holy Attunement",
+  "effect.simplyskills.fire_attunement": "Fire Attunement",
+  "effect.simplyskills.frost_attunement": "Frost Attunement",
+  "effect.simplyskills.lightning_attunement": "Lightning Attunement",
+  "effect.simplyskills.precision": "Precision",
+  "effect.simplyskills.death_mark": "Death Mark",
 
   "item.simplyskills.malevolent_manuscript": "Malevolent Manuscript",
 
@@ -86,6 +94,17 @@
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateNullificationFrequency" : "§a[Passive]§7 Nullification frequency",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateNullificationRadius" : "§a[Passive]§7 Nullification radius",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateSlowFallDistanceToActivate" : "§a[Passive]§7 Slowfall distance to activate",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerChance" : "§a[Passive]§7 Empower chance",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerDuration" : "§a[Passive]§7 Empower duration",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerStacks" : "§a[Passive]§7 Empower stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerMaxStacks" : "§a[Passive]§7 Empower maximum stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedDuration" : "§a[Passive]§7 Attuned duration",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedStacks" : "§a[Passive]§7 Attuned stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedMaxStacks" : "§a[Passive]§7 Attuned maximum stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedFrequency" : "§a[Passive]§7 Attuned frequency",
+
+
+
 
   "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation" : "Enable Ranger Specialisation",
   "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation.@Tooltip" : "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",

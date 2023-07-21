@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
@@ -25,7 +26,9 @@ import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 public class Abilities {
@@ -54,6 +57,47 @@ public class Abilities {
                 }
             }
         }
+    }
+    public static void passiveInitiateEmpower(PlayerEntity player) {
+        int chance = SimplySkills.initiateConfig.passiveInitiateEmpowerChance;
+        int duration = SimplySkills.initiateConfig.passiveInitiateEmpowerDuration;
+        int amplifier = SimplySkills.initiateConfig.passiveInitiateEmpowerStacks;
+        int amplifierMax = SimplySkills.initiateConfig.passiveInitiateEmpowerMaxStacks;
+        List<StatusEffect> list = new ArrayList<>();
+        list.add(EffectRegistry.ARCANEATTUNEMENT);
+        list.add(EffectRegistry.SOULATTUNEMENT);
+        list.add(EffectRegistry.HOLYATTUNEMENT);
+        list.add(EffectRegistry.FIREATTUNEMENT);
+        list.add(EffectRegistry.FROSTATTUNEMENT);
+        list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
+
+        int random = player.getRandom().nextInt(100);
+        if (random < chance) {
+            random = player.getRandom().nextInt(list.size());
+            StatusEffect chosenEffect = list.get(random);
+            HelperMethods.incrementStatusEffect(player, chosenEffect, duration, amplifier, amplifierMax);
+        }
+
+        if (player.hasStatusEffect(EffectRegistry.ARCANEATTUNEMENT)
+                && player.hasStatusEffect(EffectRegistry.SOULATTUNEMENT)
+                && player.hasStatusEffect(EffectRegistry.HOLYATTUNEMENT)
+                && player.hasStatusEffect(EffectRegistry.FIREATTUNEMENT)
+                && player.hasStatusEffect(EffectRegistry.FROSTATTUNEMENT)
+                && player.hasStatusEffect(EffectRegistry.LIGHTNINGATTUNEMENT)
+                && HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.initiateAttuned, player)) {
+            Abilities.passiveInitiateAttuned(player);
+        }
+
+    }
+
+    public static void passiveInitiateAttuned(PlayerEntity player) {
+        int duration = SimplySkills.initiateConfig.passiveInitiateAttunedDuration;
+        int stacks = SimplySkills.initiateConfig.passiveInitiateAttunedStacks;
+        int maxStacks = SimplySkills.initiateConfig.passiveInitiateAttunedMaxStacks;
+        int frequency = SimplySkills.initiateConfig.passiveInitiateAttunedFrequency;
+        if (player.age % frequency == 0)
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.PRECISION, duration, stacks, maxStacks);
     }
     public static void passiveWarriorSpellbreaker(PlayerEntity player) {
         int spellbreakingDuration = SimplySkills.warriorConfig.passiveWarriorSpellbreakerDuration;

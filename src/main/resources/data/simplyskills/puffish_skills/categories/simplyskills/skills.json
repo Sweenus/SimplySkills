@@ -1260,13 +1260,13 @@
 		"root": false
 	},
 	"1tmijb6kdx07bdxn": {
-		"definition": "spell_crit_chance_multi+5%",
+		"definition": "initiateEmpower",
 		"x": -320,
 		"y": -480,
 		"root": false
 	},
 	"go0fb3uqkjh2lo2p": {
-		"definition": "spell_haste_multi+5%",
+		"definition": "initiateAttuned",
 		"x": -160,
 		"y": -672,
 		"root": false
@@ -2460,7 +2460,7 @@
 		"root": false
 	},
 	"dk08upwksp794d9b": {
-		"definition": "spell_crit_damage_multi+5%",
+		"definition": "initiateGambit",
 		"x": 0,
 		"y": -320,
 		"root": false

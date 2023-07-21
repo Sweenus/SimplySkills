@@ -872,6 +872,110 @@
 			}
 		]
 	},
+	"initiateGambit": {
+		"title": "§a[Gambit]§7 \nYour spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/spell_crit_damage_multi.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_damage",
+					"value": 0.75,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:soul",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:healing",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:fire",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:frost",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:lightning",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:arcane",
+					"value": -0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"initiateEmpower": {
+		"title": "§a[Empower]§7 \nChance on spell cast to gain a stack of a random Attunement.\n\n(Attunement) Increases spell damage for a specific school of magic by 5% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_empower.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateEmpower"
+				}
+			}
+		]
+	},
+	"initiateAttuned": {
+		"title": "§a[Attuned]§7 \nWhen you have at least one stack of every attunement, you begin gaining stacks of Precision.\n\n(Precision) Increases spell critical damage and critical chance by 5% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_attuned.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateAttuned"
+				}
+			}
+		]
+	},
 	"cleric": {
 		"title": "§a[Cleric]§7 \nPeriodically cleanse debuffs from nearby allies.",
 		"frame": "goal",
