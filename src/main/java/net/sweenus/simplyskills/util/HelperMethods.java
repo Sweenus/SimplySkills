@@ -22,6 +22,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.List;
 
@@ -149,6 +150,14 @@ public class HelperMethods {
         livingEntity.addStatusEffect(new StatusEffectInstance(
                 statusEffect, duration));
 
+    }
+
+    public static boolean stringContainsAny (String string, String[] stringList) {
+        for (String s : stringList) {
+            if (string.contains(s))
+                return true;
+        }
+        return false;
     }
 
     public static void decrementStatusEffect(

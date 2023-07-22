@@ -1,0 +1,99 @@
+{
+  "school": "PHYSICAL_MELEE",
+  "range": 120,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_arcane_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "mycelium",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 20.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "velocity": 1.8,
+        "homing_angle": 0.1,
+        "client_data": {
+          "travel_particles": [
+            {
+              "particle_id": "campfire_cosy_smoke",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 4.0,
+              "min_speed": 0.04,
+              "max_speed": 0.06
+            }
+          ],
+          "model_id": "minecraft:bedrock",
+          "render": "DEEP",
+          "scale": 0.02
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_area_release",
+    "sound": {
+      "id": "simplyskills:soundeffect_40",
+      "volume": 0.7
+    }
+  },
+
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0,
+          "spell_power_coefficient": 30.2
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "mycelium",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 30,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:soundeffect_14",
+      "volume": 0.2
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "simplyskills:death_mark",
+          "duration": 10,
+          "apply_mode": "ADD",
+          "show_particles": true
+        }
+      },
+      "sound": {
+        "id": "simplyskills:soundeffect_31",
+        "volume": 0.3,
+        "pitch": 1.0
+      }
+    }
+  ],
+  "cost": {
+  }
+}

@@ -89,6 +89,7 @@ public class EffectRegistry {
                     "5e2ff54c-9698-4ba0-8320-9ba6e9f2b394",
                     -0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect MARKSMAN= new MarksmanEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -126,6 +127,7 @@ public class EffectRegistry {
         LIGHTNINGATTUNEMENT = registerStatusEffect("lightning_attunement", LIGHTNINGATTUNEMENT);
         PRECISION = registerStatusEffect("precision", PRECISION);
         DEATHMARK = registerStatusEffect("death_mark", DEATHMARK);
+        MARKSMAN = registerStatusEffect("marksman", MARKSMAN);
 
     }
 

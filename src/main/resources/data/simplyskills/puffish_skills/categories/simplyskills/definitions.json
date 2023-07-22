@@ -941,7 +941,7 @@
 		]
 	},
 	"initiateEmpower": {
-		"title": "§a[Empower]§7 \nChance on spell cast to gain a stack of a random Attunement.\n\n(Attunement) Increases spell damage for a specific school of magic by 5% per stack.",
+		"title": "§a[Empower]§7 \nChance on spell cast to gain a stack of Attunement.\n\n(Attunement) Increases spell damage for a specific school of magic by 5% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -959,7 +959,7 @@
 		]
 	},
 	"initiateAttuned": {
-		"title": "§a[Attuned]§7 \nWhen you have at least one stack of every attunement, you begin gaining stacks of Precision.\n\n(Precision) Increases spell critical damage and critical chance by 5% per stack.",
+		"title": "§a[Attuned]§7 \nWhen you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n(Precision) Increases spell critical damage and critical chance by 5% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2970,6 +2970,24 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rangerSignatureDisengageExploitation"
+				}
+			}
+		]
+	},
+	"rangerSignatureDisengageMarksman": {
+		"title": "§6[Disengage]§7 now grants you a stack of Marksman. \n\n(Marksman) Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n(Death Mark) Reduces the victims resistance and healing by 25% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_disengage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureDisengageMarksman"
 				}
 			}
 		]

@@ -19,8 +19,9 @@ public class InitiateConfig implements ConfigData {
     public int passiveInitiateEmpowerStacks = 1;
     public int passiveInitiateEmpowerMaxStacks = 15;
     public int passiveInitiateAttunedDuration = 150;
+    public int passiveInitiateAttunedStackThreshold = 5;
     public int passiveInitiateAttunedStacks = 1;
     public int passiveInitiateAttunedMaxStacks = 15;
-    public int passiveInitiateAttunedFrequency = 5;
+    public int passiveInitiateAttunedFrequency = 20;
 
 }

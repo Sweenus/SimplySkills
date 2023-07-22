@@ -150,6 +150,7 @@ public class SkillReferencePosition {
     public static String frostguardSpecialisationFrostNova = "7dsbtkhvcv332zla";
 
     public static String rangerSpecialisationDisengage = "is053f9imz801s57";
+    public static String rangerSpecialisationDisengageMarksman = "fau41sxkpniul48c";
     public static String rangerSpecialisationDisengageRecuperate = "dr852odvrafemtmw";
     public static String rangerSpecialisationDisengageExploitation = "t5c5gzcskng8b8cz";
     public static String rangerSpecialisationArrowRain = "a3ns9xl58ixdg2lo";

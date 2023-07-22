@@ -17,9 +17,12 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.spell_engine.api.spell.SpellPool;
+import net.spell_engine.internals.SpellRegistry;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.SimplySkills;
@@ -58,46 +61,55 @@ public class Abilities {
             }
         }
     }
-    public static void passiveInitiateEmpower(PlayerEntity player) {
+    public static void passiveInitiateEmpower(PlayerEntity player, Identifier spellID) {
         int chance = SimplySkills.initiateConfig.passiveInitiateEmpowerChance;
         int duration = SimplySkills.initiateConfig.passiveInitiateEmpowerDuration;
         int amplifier = SimplySkills.initiateConfig.passiveInitiateEmpowerStacks;
         int amplifierMax = SimplySkills.initiateConfig.passiveInitiateEmpowerMaxStacks;
         List<StatusEffect> list = new ArrayList<>();
-        list.add(EffectRegistry.ARCANEATTUNEMENT);
-        list.add(EffectRegistry.SOULATTUNEMENT);
-        list.add(EffectRegistry.HOLYATTUNEMENT);
-        list.add(EffectRegistry.FIREATTUNEMENT);
-        list.add(EffectRegistry.FROSTATTUNEMENT);
-        list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getArcaneSpells()))
+            list.add(EffectRegistry.ARCANEATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getSoulSpells()))
+            list.add(EffectRegistry.SOULATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getHealingSpells()))
+            list.add(EffectRegistry.HOLYATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFireSpells()))
+            list.add(EffectRegistry.FIREATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFrostSpells()))
+                list.add(EffectRegistry.FROSTATTUNEMENT);
+        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getLightningSpells()))
+            list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
 
-        int random = player.getRandom().nextInt(100);
-        if (random < chance) {
-            random = player.getRandom().nextInt(list.size());
-            StatusEffect chosenEffect = list.get(random);
-            HelperMethods.incrementStatusEffect(player, chosenEffect, duration, amplifier, amplifierMax);
+        if (!list.isEmpty()) {
+
+            int random = player.getRandom().nextInt(100);
+            if (random < chance) {
+                random = player.getRandom().nextInt(list.size());
+                StatusEffect chosenEffect = list.get(random);
+                HelperMethods.incrementStatusEffect(player, chosenEffect, duration, amplifier, amplifierMax);
+            }
+
+            if (player.hasStatusEffect(list.get(0))
+                    && HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.initiateAttuned, player)) {
+                int stackThreshold = SimplySkills.initiateConfig.passiveInitiateAttunedStackThreshold -1;
+                StatusEffectInstance statusInstance = player.getStatusEffect(list.get(0));
+                if (statusInstance != null && statusInstance.getAmplifier() > stackThreshold) {
+                    Abilities.passiveInitiateAttuned(player, statusInstance);
+                }
+            }
         }
-
-        if (player.hasStatusEffect(EffectRegistry.ARCANEATTUNEMENT)
-                && player.hasStatusEffect(EffectRegistry.SOULATTUNEMENT)
-                && player.hasStatusEffect(EffectRegistry.HOLYATTUNEMENT)
-                && player.hasStatusEffect(EffectRegistry.FIREATTUNEMENT)
-                && player.hasStatusEffect(EffectRegistry.FROSTATTUNEMENT)
-                && player.hasStatusEffect(EffectRegistry.LIGHTNINGATTUNEMENT)
-                && HelperMethods.isUnlocked("simplyskills",
-                SkillReferencePosition.initiateAttuned, player)) {
-            Abilities.passiveInitiateAttuned(player);
-        }
-
     }
 
-    public static void passiveInitiateAttuned(PlayerEntity player) {
+    public static void passiveInitiateAttuned(PlayerEntity player, StatusEffectInstance statusInstance) {
         int duration = SimplySkills.initiateConfig.passiveInitiateAttunedDuration;
         int stacks = SimplySkills.initiateConfig.passiveInitiateAttunedStacks;
         int maxStacks = SimplySkills.initiateConfig.passiveInitiateAttunedMaxStacks;
         int frequency = SimplySkills.initiateConfig.passiveInitiateAttunedFrequency;
-        if (player.age % frequency == 0)
+        if (player.age % frequency == 0) {
             HelperMethods.incrementStatusEffect(player, EffectRegistry.PRECISION, duration, stacks, maxStacks);
+            HelperMethods.decrementStatusEffect(player, statusInstance.getEffectType());
+        }
     }
     public static void passiveWarriorSpellbreaker(PlayerEntity player) {
         int spellbreakingDuration = SimplySkills.warriorConfig.passiveWarriorSpellbreakerDuration;
@@ -610,6 +622,12 @@ public class Abilities {
         if (HelperMethods.isUnlocked("simplyskills_ranger",
                 SkillReferencePosition.rangerSpecialisationDisengageExploitation, player))
             signatureRangerDisengageExploitation(player);
+        if (HelperMethods.isUnlocked("simplyskills_ranger",
+                SkillReferencePosition.rangerSpecialisationDisengageMarksman, player)) {
+            int marksmanDuration = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanDuration;
+            int marksmanStacks = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanStacks;
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMAN, marksmanDuration, marksmanStacks, 99);
+        }
 
     }
     public static void signatureRangerDisengageRecuperate(PlayerEntity player) {

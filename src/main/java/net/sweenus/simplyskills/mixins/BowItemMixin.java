@@ -6,6 +6,7 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.AbilityEffects;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -23,8 +24,7 @@ public abstract class BowItemMixin {
             if (player instanceof ServerPlayerEntity serverPlayer) {
 
                 // Effect - Elemental Arrows
-                if (HelperMethods.isUnlocked("simplyskills_ranger",
-                        SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
+                if (player.hasStatusEffect(EffectRegistry.ELEMENTALARROWS)) {
                     if (player.getItemUseTime() > 20) {
 
                         if (AbilityEffects.effectRangerElementalArrows(player))
@@ -34,14 +34,23 @@ public abstract class BowItemMixin {
 
 
                 // Effect - Arrow Rain
-                else if (HelperMethods.isUnlocked("simplyskills_ranger",
-                        SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
+                else if (player.hasStatusEffect(EffectRegistry.ARROWRAIN)) {
                     if (player.getItemUseTime() > 20) {
 
                         if (AbilityEffects.effectRangerArrowRain(player))
                             ci.cancel();
                     }
                 }
+
+                // Effect - Marksman Snipe
+                else if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
+                    if (player.getItemUseTime() > 20) {
+
+                        if (AbilityEffects.effectRangerMarksman(player))
+                            ci.cancel();
+                    }
+                }
+
             }
         }
     }

@@ -574,5 +574,11 @@
 		"x": 224,
 		"y": -64,
 		"root": false
+	},
+	"fau41sxkpniul48c": {
+		"definition": "rangerSignatureDisengageMarksman",
+		"x": 320,
+		"y": 0,
+		"root": false
 	}
 }

@@ -209,6 +209,46 @@ public class AbilityEffects {
         return false;
     }
 
+    public static boolean effectRangerMarksman(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
+
+
+            Vec3d blockpos = null;
+            int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
+
+            if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
+                blockpos = HelperMethods.getTargetedEntity(player, targetingRange).getPos();
+
+            if (blockpos == null)
+                blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
+
+            if (blockpos != null) {
+                double xpos = blockpos.getX();
+                double ypos = blockpos.getY();
+                double zpos = blockpos.getZ();
+                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
+                Box box = HelperMethods.createBoxAtBlock(searchArea, 1);
+                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                    if (entities != null) {
+                        String spell = "simplyskills:physical_bow_snipe";
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                    spell,
+                                    512, le);
+                            HelperMethods.decrementStatusEffect(player, EffectRegistry.MARKSMAN);
+                        }
+                    }
+                }
+            }
+
+
+            return true;
+        }
+        return false;
+    }
+
 
     public static boolean effectRangerArrowRain(PlayerEntity player) {
 

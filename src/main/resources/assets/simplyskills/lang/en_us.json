@@ -33,6 +33,7 @@
   "effect.simplyskills.lightning_attunement": "Lightning Attunement",
   "effect.simplyskills.precision": "Precision",
   "effect.simplyskills.death_mark": "Death Mark",
+  "effect.simplyskills.marksman": "Marksman",
 
   "item.simplyskills.malevolent_manuscript": "Malevolent Manuscript",
 
@@ -99,6 +100,7 @@
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerStacks" : "§a[Passive]§7 Empower stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateEmpowerMaxStacks" : "§a[Passive]§7 Empower maximum stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedDuration" : "§a[Passive]§7 Attuned duration",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedStackThreshold" : "§a[Passive]§7 Attuned stack threshold",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedStacks" : "§a[Passive]§7 Attuned stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedMaxStacks" : "§a[Passive]§7 Attuned maximum stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedFrequency" : "§a[Passive]§7 Attuned frequency",
@@ -140,6 +142,8 @@
   "text.autoconfig.simplyskills.option.ranger.signatureRangerDisengageRecuperateRadius" : "§6[Signature]§7 Disengage Recuperate radius",
   "text.autoconfig.simplyskills.option.ranger.signatureRangerDisengageExploitationRadius" : "§6[Signature]§7 Disengage Exploitation radius",
   "text.autoconfig.simplyskills.option.ranger.signatureRangerDisengageExploitationDuration" : "§6[Signature]§7 Disengage Exploitation duration",
+  "text.autoconfig.simplyskills.option.ranger.signatureRangerDisengageMarksmanDuration" : "§6[Signature]§7 Disengage Marksman duration",
+  "text.autoconfig.simplyskills.option.ranger.signatureRangerDisengageMarksmanStacks" : "§6[Signature]§7 Disengage Marksman stacks",
   "text.autoconfig.simplyskills.option.ranger.effectRangerElementalArrowsRadius" : "§6[Signature]§7 Elemental Arrows Radius",
   "text.autoconfig.simplyskills.option.ranger.effectRangerElementalArrowsDuration" : "§6[Signature]§7 Elemental Arrows duration",
   "text.autoconfig.simplyskills.option.ranger.effectRangerElementalArrowsStacks" : "§6[Signature]§7 Elemental Arrows stacks",
