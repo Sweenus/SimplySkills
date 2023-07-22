@@ -104,6 +104,12 @@
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedStacks" : "§a[Passive]§7 Attuned stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedMaxStacks" : "§a[Passive]§7 Attuned maximum stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateAttunedFrequency" : "§a[Passive]§7 Attuned frequency",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodDuration" : "§a[Passive]§7 Lightning Rod duration",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodStacks" : "§a[Passive]§7 Lightning Rod stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodMaxStacks" : "§a[Passive]§7 Lightning Rod maximum stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodFrequency" : "§a[Passive]§7 Lightning Rod frequency",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyStacks" : "§a[Passive]§7 Hasty Immobilize stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyDuration" : "§a[Passive]§7 Hasty Immobilize duration",
 
 
 

@@ -1002,7 +1002,7 @@
 		"root": false
 	},
 	"5mx0f4qucfcpj2ho": {
-		"definition": "spell_crit_chance_multi+5%",
+		"definition": "initiateLightningRod",
 		"x": -96,
 		"y": -544,
 		"root": false
@@ -1272,7 +1272,7 @@
 		"root": false
 	},
 	"mzbt654gttd0tkvs": {
-		"definition": "spell_healing_power_multi+5%",
+		"definition": "initiateEldritchEnfeeblement",
 		"x": 160,
 		"y": -672,
 		"root": false
@@ -1368,7 +1368,7 @@
 		"root": false
 	},
 	"i0rimp9zkdquevs3": {
-		"definition": "movement_speed_multi+1.5%",
+		"definition": "initiateHasty",
 		"x": -256,
 		"y": -800,
 		"root": false
@@ -1452,7 +1452,7 @@
 		"root": false
 	},
 	"nd5nz8mfmqlza859": {
-		"definition": "spell_crit_damage_multi+5%",
+		"definition": "initiatePerilousPrecision",
 		"x": 384,
 		"y": -576,
 		"root": false

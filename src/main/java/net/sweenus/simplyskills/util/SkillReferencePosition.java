@@ -69,6 +69,10 @@ public class SkillReferencePosition {
     public static String initiateNullification = "la7znvggcgu5n4c7";
     public static String initiateEmpower = "1tmijb6kdx07bdxn";
     public static String initiateAttuned = "go0fb3uqkjh2lo2p";
+    public static String initiateLightningRod = "5mx0f4qucfcpj2ho";
+    public static String initiateHasty = "i0rimp9zkdquevs3";
+    public static String initiateEldritchEnfeeblement = "mzbt654gttd0tkvs";
+    public static String initiatePerilousPrecision = "nd5nz8mfmqlza859";
 
 
 

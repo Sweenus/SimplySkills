@@ -76,7 +76,7 @@ public class Abilities {
         if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFireSpells()))
             list.add(EffectRegistry.FIREATTUNEMENT);
         if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFrostSpells()))
-                list.add(EffectRegistry.FROSTATTUNEMENT);
+            list.add(EffectRegistry.FROSTATTUNEMENT);
         if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getLightningSpells()))
             list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
 
@@ -111,6 +111,21 @@ public class Abilities {
             HelperMethods.decrementStatusEffect(player, statusInstance.getEffectType());
         }
     }
+    public static void passiveInitiateLightningRod(PlayerEntity player) {
+        int duration = SimplySkills.initiateConfig.passiveInitiateLightningRodDuration;
+        int stacks = SimplySkills.initiateConfig.passiveInitiateLightningRodStacks;
+        int maxStacks = SimplySkills.initiateConfig.passiveInitiateLightningRodMaxStacks;
+        int frequency = SimplySkills.initiateConfig.passiveInitiateLightningRodFrequency;
+        if (player.age % frequency == 0 && player.world.isThundering()) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.LIGHTNINGATTUNEMENT, duration, stacks, maxStacks);
+        }
+    }
+    public static void passiveInitiateHasty(PlayerEntity player) {
+        int duration = SimplySkills.initiateConfig.passiveInitiateHastyDuration;
+        int stacks = SimplySkills.initiateConfig.passiveInitiateHastyStacks;
+        HelperMethods.incrementStatusEffect(player, EffectRegistry.IMMOBILIZE, duration, stacks, 1);
+    }
+
     public static void passiveWarriorSpellbreaker(PlayerEntity player) {
         int spellbreakingDuration = SimplySkills.warriorConfig.passiveWarriorSpellbreakerDuration;
         int spellbreakingChance = SimplySkills.warriorConfig.passiveWarriorSpellbreakerChance;
@@ -147,8 +162,7 @@ public class Abilities {
         if (player.age % 80 == 0) {
             int radius = 12;
 
-            Box box = new Box(player.getX() + radius, player.getY() + (float) radius / 3, player.getZ() + radius,
-                    player.getX() - radius, player.getY() - (float) radius / 3, player.getZ() - radius);
+            Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {

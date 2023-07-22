@@ -23,5 +23,11 @@ public class InitiateConfig implements ConfigData {
     public int passiveInitiateAttunedStacks = 1;
     public int passiveInitiateAttunedMaxStacks = 15;
     public int passiveInitiateAttunedFrequency = 20;
+    public int passiveInitiateLightningRodDuration = 600;
+    public int passiveInitiateLightningRodStacks = 1;
+    public int passiveInitiateLightningRodMaxStacks = 5;
+    public int passiveInitiateLightningRodFrequency = 500;
+    public int passiveInitiateHastyStacks = 1;
+    public int passiveInitiateHastyDuration = 20;
 
 }

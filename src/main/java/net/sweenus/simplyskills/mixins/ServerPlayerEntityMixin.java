@@ -55,6 +55,12 @@ public abstract class ServerPlayerEntityMixin {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, (int) amount * 20));
             }
 
+            //Passive Initiate Hasty
+            if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.initiateHasty, player)) {
+                Abilities.passiveInitiateHasty(player);
+            }
+
 
             //Effects Rampage
             if (HelperMethods.isUnlocked("simplyskills_berserker",
@@ -116,6 +122,11 @@ public abstract class ServerPlayerEntityMixin {
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.initiateNullification, player)) {
                 Abilities.passiveInitiateNullification(player);
+            }
+            //Passive Initiate Lightning Rod
+            if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.initiateLightningRod, player)) {
+                Abilities.passiveInitiateLightningRod(player);
             }
 
             //Passive Area Cleanse

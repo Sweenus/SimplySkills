@@ -878,7 +878,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/spell_crit_damage_multi.png"
+				"texture": "simplyskills:textures/icons/initiate_gambit.png"
 			}
 		},
 		"rewards": [
@@ -972,6 +972,140 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "initiateAttuned"
+				}
+			}
+		]
+	},
+	"initiateLightningRod": {
+		"title": "§a[Lightning Rod]§7 \nDuring storms, you periodically gain stacks of Lightning Attunement.\n\n(Lightning Attunement) Increases spell damage for lightning magic by 5% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_lightning_rod.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateLightningRod"
+				}
+			}
+		]
+	},
+	"initiateEldritchEnfeeblement": {
+		"title": "§a[Eldritch Enfeeblement]§7 \nYour spell damage is increased by 20%, but your movespeed is decreased by 30%.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_eldritch_enfeeblement.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "generic.movement_speed",
+					"value": -0.30,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:soul",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:healing",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:fire",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:frost",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:lightning",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:arcane",
+					"value": 0.20,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"initiateHasty": {
+		"title": "§a[Hasty]§7 \nYour movespeed is increased by 20%, but you are inflicted with immobilize when taking damage. \n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_hasty.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "generic.movement_speed",
+					"value": 0.15,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"initiatePerilousPrecision": {
+		"title": "§a[Perilous Precision]§7 \nYour spell critical chance is increased by 10%, but your max health is reduced by 20%.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_perilous_precision.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "generic.max_health",
+					"value": -0.20,
+					"operation": "multiply_total"
+				}
+			},
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "spell_power:critical_chance",
+					"value": 0.10,
+					"operation": "multiply_total"
 				}
 			}
 		]
@@ -3461,7 +3595,7 @@
 		]
 	},
 	"berserkerSignatureRampageChargeImmob": {
-		"title": "Enemies hit by your charge are also inflicted with Immobilize. \n\n(Immobilize) greatly slows the victim and inflicts them with increasing damage when they attempt to move.",
+		"title": "Enemies hit by your charge are also inflicted with Immobilize. \n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3533,7 +3667,7 @@
 		]
 	},
 	"berserkerSignatureBerserkingLeapImmob": {
-		"title": "Leap Slam now also inflicts enemies with Immobilize.\n\n(Immobilize) greatly slows the victim and inflicts them with increasing damage when they attempt to move.",
+		"title": "Leap Slam now also inflicts enemies with Immobilize.\n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
