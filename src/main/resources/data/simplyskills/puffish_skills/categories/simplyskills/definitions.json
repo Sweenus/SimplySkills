@@ -818,20 +818,20 @@
 			}
 		]
 	},
-	"rogueStealth": {
-		"title": "§a[Stealth]§7 \nGain invisibility when crouching.",
+	"wayfarerStealth": {
+		"title": "§a[Stealth]§7 \nGain Stealth when crouching. \n\n(Stealth) causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/rogue_stealth.png"
+				"texture": "simplyskills:textures/icons/wayfarer_stealth.png"
 			}
 		},
 		"rewards": [
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "rogueStealth"
+					"passive_skill": "wayfarerStealth"
 				}
 			}
 		]
@@ -1147,7 +1147,7 @@
 		]
 	},
 	"rangerReveal": {
-		"title": "§a[Reveal]§7 \nPeriodically reveal nearby invisible enemies.",
+		"title": "§a[Reveal]§7 \nPeriodically reveal nearby Stealthy enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1219,7 +1219,7 @@
 		]
 	},
 	"rangerIncognito": {
-		"title": "§a[Incognito]§7 \nWhen your pets are near to you and you gain Invisibility, they also gain Invisibility.",
+		"title": "§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they also gain Stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1723,7 +1723,7 @@
 		]
 	},
 	"rogueSmokeBomb": {
-		"title": "§a[Smoke Bomb]§7 \n25% Chance to blind nearby enemies and gain stealth when hit.",
+		"title": "§a[Smoke Bomb]§7 \n25% Chance to blind nearby enemies and gain Stealth when hit.\n\n(Stealth) causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1741,7 +1741,7 @@
 		]
 	},
 	"rogueOpportunisticMastery": {
-		"title": "§a[Opportunistic Mastery]§7 \nAttacking while invisible causes you to poison your target for a short duration. This also removes your invisibility.",
+		"title": "§a[Opportunistic Mastery]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1759,7 +1759,7 @@
 		]
 	},
 	"rogueOpportunisticMasteryProficient": {
-		"title": "§a[Opportunistic Mastery +]§7 \nAttacking while invisible causes you to poison your target for a moderate duration. This also removes your invisibility.",
+		"title": "§a[Opportunistic Mastery +]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a moderate duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1777,7 +1777,7 @@
 		]
 	},
 	"rogueOpportunisticMasterySkilled": {
-		"title": "§a[Opportunistic Mastery ++]§7 \nAttacking while invisible causes you to poison your target for a long duration. This also removes your invisibility.",
+		"title": "§a[Opportunistic Mastery ++]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a long duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1844,6 +1844,96 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rogueEvasionMasterySkilled"
+				}
+			}
+		]
+	},
+	"rogueExploitation": {
+		"title": "§a[Exploitation]§7 \nWhile under the effects of stealth, your back attacks inflict Death Mark.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_exploitation.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueExploitation"
+				}
+			}
+		]
+	},
+	"rogueRecovery": {
+		"title": "§a[Recovery]§7 \nWhen you gain Stealth, you also gain Regeneration.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_recovery.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueRecovery"
+				}
+			}
+		]
+	},
+	"rogueShadowVeil": {
+		"title": "§a[Shadow Veil]§7 \nWhile under the effects of Stealth, you periodically gain increasing Resistance.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_shadow_veil.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueShadowVeil"
+				}
+			}
+		]
+	},
+	"rogueDeflection": {
+		"title": "§a[Deflection]§7 \nWhen dual wielding weapons (axes do not count), you have a chance to deflect incoming ranged attacks back at the attacker and inflict them with Blindness.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_deflection.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueDeflection"
+				}
+			}
+		]
+	},
+	"rogueFleetfooted": {
+		"title": "§a[Fleetfooted]§7 \nWhen you are forcefully removed from Stealth, you gain momentary Speed.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_fleetfooted.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueFleetfooted"
 				}
 			}
 		]
@@ -2803,7 +2893,7 @@
 		]
 	},
 	"rogueSignaturePreparation": {
-		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Invisibility and Speed 3 for 8s.",
+		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Stealth and Speed 3 for 8s.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

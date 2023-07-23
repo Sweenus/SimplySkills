@@ -45,8 +45,14 @@ public class SkillReferencePosition {
     public static String wayfarerSneak = "mxfcq0i6qhcl01w4";
 
     // - Rogue
-    public static String rogueStealth = "s2p5ip72mt1o2oaj";
+    public static String wayfarerStealth = "ctpfiy20l0qyya7c";
     public static String rogueBackstab = "i6k024rdikn2fxqi";
+    public static String rogueExploitation = "t3eeosd4a0b7uzkv";
+    public static String rogueRecovery = "s2p5ip72mt1o2oaj";
+    public static String rogueShadowVeil = "wkqgzbfk594yq0g0";
+    public static String rogueDeflection = "xol97naeju19pgk8";
+    public static String rogueFleetfooted = "0zjyoez0cy1xm7ae";
+
     public static String rogueSmokeBomb = "sa985rkw9oz4ocks";
     public static String rogueOpportunisticMastery = "rnes5wz7ej44ci2a";
     public static String rogueOpportunisticMasteryProficient = "t0w9jjtiz2olfmp6";

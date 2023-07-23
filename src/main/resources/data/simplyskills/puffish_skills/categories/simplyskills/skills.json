@@ -4068,7 +4068,7 @@
 		"root": false
 	},
 	"s2p5ip72mt1o2oaj": {
-		"definition": "rogueStealth",
+		"definition": "rogueRecovery",
 		"x": -896,
 		"y": -416,
 		"root": false
@@ -4134,7 +4134,7 @@
 		"root": false
 	},
 	"xol97naeju19pgk8": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "rogueDeflection",
 		"x": -992,
 		"y": -416,
 		"root": false
@@ -4524,19 +4524,19 @@
 		"root": false
 	},
 	"wkqgzbfk594yq0g0": {
-		"definition": "attack_speed_multi+2%",
+		"definition": "rogueShadowVeil",
 		"x": -736,
 		"y": -672,
 		"root": false
 	},
 	"t3eeosd4a0b7uzkv": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "rogueExploitation",
 		"x": -800,
 		"y": -416,
 		"root": false
 	},
 	"0zjyoez0cy1xm7ae": {
-		"definition": "movement_speed_multi+1.5%",
+		"definition": "rogueFleetfooted",
 		"x": -992,
 		"y": -608,
 		"root": false
@@ -5355,6 +5355,36 @@
 		"definition": "movement_speed_multi+1.5%",
 		"x": 800,
 		"y": 544,
+		"root": false
+	},
+	"ctpfiy20l0qyya7c": {
+		"definition": "wayfarerStealth",
+		"x": -960,
+		"y": 0,
+		"root": false
+	},
+	"7aqodmxwvoabmytx": {
+		"definition": "jump+1%",
+		"x": -960,
+		"y": 32,
+		"root": false
+	},
+	"vm1refj4fp7zbcah": {
+		"definition": "jump+1%",
+		"x": -992,
+		"y": 0,
+		"root": false
+	},
+	"byxs669k9t2zjzxv": {
+		"definition": "jump+1%",
+		"x": -960,
+		"y": -32,
+		"root": false
+	},
+	"etnldjrp7kn9xwj6": {
+		"definition": "jump+1%",
+		"x": -928,
+		"y": 0,
 		"root": false
 	}
 }

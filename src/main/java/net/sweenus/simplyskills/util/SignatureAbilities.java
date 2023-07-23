@@ -347,9 +347,12 @@ public class SignatureAbilities {
                 int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
 
                 //Preparation
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, preparationDuration));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, preparationDuration));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
                         preparationDuration, speedAmplifier));
+                player.world.playSoundFromEntity(
+                        null, player, SoundRegistry.SOUNDEFFECT39,
+                        SoundCategory.PLAYERS, 0.6f, 1.6f);
                 if (HelperMethods.isUnlocked(rogueSkillTree,
                         SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
                     Abilities.passiveRoguePreparationShadowstrike(player);

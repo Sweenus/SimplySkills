@@ -62,10 +62,15 @@ public abstract class ServerPlayerEntityMixin {
             }
 
 
-            //Effects Rampage
+            //Effect Rampage
             if (HelperMethods.isUnlocked("simplyskills_berserker",
                     SkillReferencePosition.berserkerSpecialisationRampage, serverPlayer)) {
                 AbilityEffects.effectBerserkerRampage(player);
+            }
+
+            //Effect Stealth
+            if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                Abilities.passiveWayfarerBreakStealth(null, player, true, false);
             }
 
 
@@ -99,9 +104,9 @@ public abstract class ServerPlayerEntityMixin {
 
             //Passive Rogue Stealth
             if (HelperMethods.isUnlocked("simplyskills",
-                    SkillReferencePosition.rogueStealth, player)
+                    SkillReferencePosition.wayfarerStealth, player)
                     && player.isSneaking() && player.age % 10 == 0) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 15));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 15));
             }
 
             //Passive Warrior Death Defy
@@ -204,6 +209,11 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.initiateFrail, player)) {
                 Abilities.passiveWayfarerSlender(player);
             }
+            //Passive Rogue Deflection
+            if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.rogueDeflection, player)) {
+                Abilities.passiveRogueDeflection(player);
+            }
             //Initiate Frail (weapon element)
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.initiateFrail, player)
@@ -238,12 +248,6 @@ public abstract class ServerPlayerEntityMixin {
             //Debug - reset skills & gain exp
             if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
                 Abilities.debugPrintAttributes(player);
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills");
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_wizard");
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_berserker");
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_rogue");
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_ranger");
-                SkillsAPI.resetSkills((ServerPlayerEntity)player, "simplyskills_spellblade");
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
@@ -307,6 +311,11 @@ public abstract class ServerPlayerEntityMixin {
                     if (HelperMethods.isUnlocked("simplyskills_spellblade",
                             SkillReferencePosition.spellbladeSpellweaving, player)) {
                         AbilityEffects.effectSpellbladeSpellweaving(target, player);
+                    }
+
+                    //Effect Stealth
+                    if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                        Abilities.passiveWayfarerBreakStealth(target, player, false, true);
                     }
 
 

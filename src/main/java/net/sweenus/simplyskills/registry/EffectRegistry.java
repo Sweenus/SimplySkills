@@ -1,21 +1,16 @@
 package net.sweenus.simplyskills.registry;
 
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.puffish.skillsmod.rewards.builtin.AttributeReward;
 import net.puffish.skillsmod.server.PlayerAttributes;
 import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.EntityAttributes_SpellPower;
 import net.spell_power.api.attributes.SpellAttributes;
-import net.spell_power.internals.SpellStatusEffect;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.*;
-
-import java.util.Collection;
-import java.util.jar.Attributes;
 
 public class EffectRegistry {
 
@@ -90,6 +85,11 @@ public class EffectRegistry {
                     -0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect MARKSMAN= new MarksmanEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect STEALTH= new StealthEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    "0e7a848f-46db-4e12-9d4a-40a5f24683c3",
+                    -0.40,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -128,6 +128,7 @@ public class EffectRegistry {
         PRECISION = registerStatusEffect("precision", PRECISION);
         DEATHMARK = registerStatusEffect("death_mark", DEATHMARK);
         MARKSMAN = registerStatusEffect("marksman", MARKSMAN);
+        STEALTH = registerStatusEffect("stealth", STEALTH);
 
     }
 

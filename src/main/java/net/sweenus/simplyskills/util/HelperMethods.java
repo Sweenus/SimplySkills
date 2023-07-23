@@ -22,7 +22,6 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.registry.EffectRegistry;
 
 import java.util.List;
 
@@ -47,6 +46,12 @@ public class HelperMethods {
             return true;
         }
         return true;
+    }
+
+    // Check for back attack
+    public static boolean isBehindTarget(LivingEntity attacker, LivingEntity target) {
+        return target.getBodyYaw() < (attacker.getBodyYaw() + 32)
+                && target.getBodyYaw() > (attacker.getBodyYaw() - 32);
     }
 
     //Checks if skill is unlocked with presence checks.

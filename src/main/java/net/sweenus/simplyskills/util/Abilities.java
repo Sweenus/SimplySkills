@@ -10,6 +10,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
@@ -21,8 +23,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.api.spell.SpellPool;
-import net.spell_engine.internals.SpellRegistry;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.SimplySkills;
@@ -201,7 +201,7 @@ public class Abilities {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
-                            if (statusEffect != null && statusEffect.getEffectType().equals(StatusEffects.INVISIBILITY)) {
+                            if (statusEffect != null && statusEffect.getEffectType().equals(EffectRegistry.STEALTH)) {
                                 le.removeStatusEffect(statusEffect.getEffectType());
                                 break;
                             }
@@ -299,8 +299,8 @@ public class Abilities {
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
                         if (te.isOwner(player)) {
-                            if (player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,
+                            if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                                te.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH,
                                         frequency + 5));
                             }
                         }
@@ -319,6 +319,54 @@ public class Abilities {
                 livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
                         weaknessDuration, weaknessAmplifier));
             }
+        }
+    }
+
+    public static void passiveWayfarerBreakStealth(
+            Entity target,
+            PlayerEntity player,
+            Boolean brokenByDamage,
+            Boolean backstabBonus) {
+
+        if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+
+            if (brokenByDamage) {
+
+                int speedDuration = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedDuration;
+                int speedStacks = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedStacks;
+                int speedMaxStacks = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedMaxStacks;
+
+                if (HelperMethods.isUnlocked("simplyskills",
+                        SkillReferencePosition.rogueFleetfooted, player))
+                    HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, speedDuration, speedStacks, speedMaxStacks);
+
+            }
+
+            if (target != null && !brokenByDamage) {
+
+                if (target instanceof LivingEntity livingTarget) {
+                    int deathmarkDuration = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkDuration;
+                    int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
+
+                    if (backstabBonus && HelperMethods.isBehindTarget(player, livingTarget)) {
+                        if (HelperMethods.isUnlocked("simplyskills",
+                                SkillReferencePosition.rogueExploitation, player))
+                            HelperMethods.incrementStatusEffect(
+                                    livingTarget,
+                                    EffectRegistry.DEATHMARK,
+                                    deathmarkDuration,
+                                    deathmarkStacks,
+                                    3);
+                        if (HelperMethods.isUnlocked("simplyskills",
+                                SkillReferencePosition.rogueOpportunisticMastery, player))
+                            Abilities.passiveRogueOpportunisticMastery(livingTarget, player);
+                    }
+                }
+            }
+            player.removeStatusEffect(EffectRegistry.STEALTH);
+            player.world.playSoundFromEntity(
+                    null, player, SoundRegistry.SOUNDEFFECT36,
+                    SoundCategory.PLAYERS, 0.7f, 1.4f);
         }
     }
 
@@ -515,7 +563,6 @@ public class Abilities {
         int blindnessDuration = SimplySkills.rogueConfig.passiveRogueSmokeBombBlindnessDuration;
         int blindnessAmplifier = SimplySkills.rogueConfig.passiveRogueSmokeBombBlindnessAmplifier;
         if (player.getRandom().nextInt(100) < chance) {
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, invisibilityDuration));
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
@@ -524,6 +571,49 @@ public class Abilities {
                         le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,
                                 blindnessDuration, blindnessAmplifier));
 
+                    }
+                }
+            }
+            player.timeUntilRegen = 15;
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, invisibilityDuration));
+            player.world.playSoundFromEntity(
+                    null, player, SoundRegistry.SOUNDEFFECT39,
+                    SoundCategory.PLAYERS, 0.6f, 1.6f);
+        }
+    }
+
+    public static void passiveRogueDeflection(PlayerEntity player) {
+        int radius = SimplySkills.rogueConfig.passiveRogueDeflectionRadius;
+        int chance = SimplySkills.rogueConfig.passiveRogueDeflectionChance;
+        int frequency = SimplySkills.rogueConfig.passiveRogueDeflectionFrequency;
+        int blindnessDuration = SimplySkills.rogueConfig.passiveRogueDeflectionBlindnessDuration;
+        int blindnessAmplifier = SimplySkills.rogueConfig.passiveRogueDeflectionBlindnessAmplifier;
+        if (player.age % frequency == 0
+                && player.getMainHandStack().getItem() instanceof SwordItem
+                && player.getMainHandStack().getItem() instanceof SwordItem) {
+            Box box = HelperMethods.createBox(player, radius);
+            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_ENTITY)) {
+                if (entities != null) {
+                    if (entities instanceof PersistentProjectileEntity pe) {
+                        if (pe.getOwner() instanceof LivingEntity projectileOwner) {
+                            if (HelperMethods.checkFriendlyFire(projectileOwner, player)
+                                    && player.getRandom().nextInt(100) < chance
+                                    && !pe.isOnGround()
+                                    && pe.getVelocity().getY() != 0) {
+                                pe.setVelocity(
+                                        (player.getX() - pe.getX() / 4),
+                                        (player.getY() - pe.getY() / 4),
+                                        (player.getZ() - pe.getZ() / 4));
+                                pe.velocityModified = true;
+                                pe.velocityDirty = true;
+                                projectileOwner.addStatusEffect(new StatusEffectInstance(
+                                        StatusEffects.BLINDNESS, blindnessDuration, blindnessAmplifier));
+                                player.world.playSoundFromEntity(
+                                        null, player, SoundRegistry.SOUNDEFFECT37,
+                                        SoundCategory.PLAYERS, 0.6f, 1.6f);
+
+                            }
+                        }
                     }
                 }
             }
@@ -581,9 +671,8 @@ public class Abilities {
                 SkillReferencePosition.rogueOpportunisticMasteryProficient, player))
             mastery = mastery + poisonDurationIncreasePerTier;
 
-        if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(StatusEffects.INVISIBILITY)) {
+        if (target instanceof LivingEntity livingTarget) {
             livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery, basePoisonAmplifier));
-            player.removeStatusEffect(StatusEffects.INVISIBILITY);
         }
 
     }
