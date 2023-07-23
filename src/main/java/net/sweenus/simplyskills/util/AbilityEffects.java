@@ -10,6 +10,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -211,7 +212,9 @@ public class AbilityEffects {
 
     public static boolean effectRangerMarksman(PlayerEntity player) {
 
-        if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
+        if (player.hasStatusEffect(EffectRegistry.MARKSMAN)
+                && HelperMethods.getAttackDamage(player.getMainHandStack()) < 3
+                && HelperMethods.getAttackDamage(player.getOffHandStack()) < 3) {
 
 
             Vec3d blockpos = null;
