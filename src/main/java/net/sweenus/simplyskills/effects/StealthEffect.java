@@ -22,7 +22,6 @@ public class StealthEffect extends StatusEffect {
 
         if (!livingEntity.world.isClient()) {
             livingEntity.setInvisible(true);
-
             if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
 
                 int regenerationFrequency = SimplySkills.rogueConfig.passiveRogueRecoveryRegenerationFrequency;
@@ -30,6 +29,13 @@ public class StealthEffect extends StatusEffect {
                 int resistanceFrequency = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceFrequency;
                 int resistanceStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceStacks;
                 int resistanceMaxStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceMaxStacks;
+
+                if (serverPlayer.hasStatusEffect(StatusEffects.INVISIBILITY)) {
+                    if (serverPlayer.getStatusEffect(StatusEffects.INVISIBILITY).getDuration() < 20)
+                        serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
+                } else {
+                    serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
+                }
 
                 if (HelperMethods.isUnlocked("simplyskills",
                         SkillReferencePosition.rogueRecovery, serverPlayer)

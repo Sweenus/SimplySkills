@@ -1237,7 +1237,7 @@
 		]
 	},
 	"rogueBackstab": {
-		"title": "§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.",
+		"title": "§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1723,7 +1723,7 @@
 		]
 	},
 	"rogueSmokeBomb": {
-		"title": "§a[Smoke Bomb]§7 \n25% Chance to blind nearby enemies and gain Stealth when hit.\n\n(Stealth) causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+		"title": "§a[Smoke Bomb]§7 \n25% Chance to blind nearby enemies and gain Immobilizing Aura when hit.\n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1795,7 +1795,7 @@
 		]
 	},
 	"rogueEvasionMastery": {
-		"title": "§a[Evasion Mastery]§7 \nWhen not wearing armor, you have a 15% Chance to completely avoid incoming damage.",
+		"title": "§a[Evasion Mastery]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 15% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1813,7 +1813,7 @@
 		]
 	},
 	"rogueEvasionMasteryProficient": {
-		"title": "§a[Evasion Mastery +]§7 \nWhen not wearing armor, you have a 25% Chance to completely avoid incoming damage.",
+		"title": "§a[Evasion Mastery +]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 20% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1831,7 +1831,7 @@
 		]
 	},
 	"rogueEvasionMasterySkilled": {
-		"title": "§a[Evasion Mastery ++]§7 \nWhen not wearing armor, you have a 35% Chance to completely avoid incoming damage.",
+		"title": "§a[Evasion Mastery ++]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 25% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1903,7 +1903,7 @@
 		]
 	},
 	"rogueDeflection": {
-		"title": "§a[Deflection]§7 \nWhen dual wielding weapons (axes do not count), you have a chance to deflect incoming ranged attacks back at the attacker and inflict them with Blindness.",
+		"title": "§a[Deflection]§7 \nWhen dual wielding weapons (axes do not count), the base evasion chance of your Evasion Mastery passive is increased by 10%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

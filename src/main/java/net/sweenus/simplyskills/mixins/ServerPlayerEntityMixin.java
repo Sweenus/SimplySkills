@@ -209,17 +209,17 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.initiateFrail, player)) {
                 Abilities.passiveWayfarerSlender(player);
             }
-            //Passive Rogue Deflection
-            if (HelperMethods.isUnlocked("simplyskills",
-                    SkillReferencePosition.rogueDeflection, player)) {
-                Abilities.passiveRogueDeflection(player);
-            }
             //Initiate Frail (weapon element)
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.initiateFrail, player)
             && !HelperMethods.isUnlocked("simplyskills_spellblade",
                     SkillReferencePosition.spellbladeWeaponExpert, player)) {
                 Abilities.passiveInitiateFrail(player);
+            }
+            //Passive Backstab Stealth
+            if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.rogueBackstab, player)) {
+                Abilities.passiveRogueBackstabStealth(player);
             }
             //Wizard Frost Volley Effect
             if (HelperMethods.isUnlocked("simplyskills_wizard",
