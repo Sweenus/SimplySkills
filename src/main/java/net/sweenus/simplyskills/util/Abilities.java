@@ -19,6 +19,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -149,6 +150,8 @@ public class Abilities {
                     regen = regen + (deathDefyAmplifierPerTenPercentHealth * 2);
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
+                        deathDefyFrequency + 5, regen));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
                         deathDefyFrequency + 5, regen));
             }
         }
@@ -405,9 +408,11 @@ public class Abilities {
                     int mastery = baseSpeedAmplifier;
 
                     if (HelperMethods.isUnlocked("simplyskills",
-                            SkillReferencePosition.berserkerSwordMasterySkilled, player))
-                        mastery = mastery + (speedAmplifierPerTier * 2);
-                    else if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.berserkerSwordMasterySkilled, player)
+                            && player.getOffHandStack().isEmpty())
+                        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT,
+                                frequency + 5, 0));
+                    if (HelperMethods.isUnlocked("simplyskills",
                             SkillReferencePosition.berserkerSwordMasteryProficient, player))
                         mastery = mastery + speedAmplifierPerTier;
 
@@ -821,64 +826,60 @@ public class Abilities {
 
     // -- Unlock Manager --
 
-    public static void skillTreeUnlockManager(PlayerEntity player, String skillID) {
+    public static boolean skillTreeUnlockManager(PlayerEntity player, String categoryID) {
 
-        //Check if current skill selection is a specialisation path
-        if (!skillID.contains(SkillReferencePosition.wizardPath) &&
-                !skillID.contains(SkillReferencePosition.berserkerPath) &&
-                !skillID.contains(SkillReferencePosition.crusaderPath) &&
-                !skillID.contains(SkillReferencePosition.frostguardPath) &&
-                !skillID.contains(SkillReferencePosition.roguePath) &&
-                !skillID.contains(SkillReferencePosition.rangerPath) &&
-                !skillID.contains(SkillReferencePosition.spellbladePath)) {
-            return;
-        }
+        if (HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
 
-        //Prevent unlocking multiple specialisations (This could be configurable in future)
-        Collection<String> collection = SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player);
-        if (collection.contains("simplyskills_wizard") ||
-                collection.contains("simplyskills_spellblade") ||
-                collection.contains("simplyskills_ranger") ||
-                collection.contains("simplyskills_rogue") ||
-                collection.contains("simplyskills_berserker")) {
-            return;
-        }
+            //Prevent unlocking multiple specialisations (kinda cursed ngl)
+            List<String> specialisationList = SimplySkills.getSpecialisationsAsArray();
+            for (String s : specialisationList) {
+                if (categoryID.contains(s)) {
+                    if (HelperMethods.stringContainsAny(
+                            SkillsAPI.getUnlockedCategories((ServerPlayerEntity)player).toString(),
+                            SimplySkills.getSpecialisations())) {
+                        //System.out.println(player + " attempted to unlock a second specialisation. Denied.");
+                        return true;
+                    }
+                }
+            }
 
-        //Process unlock
-        if (skillID.contains(SkillReferencePosition.wizardPath)
-        && !HelperMethods.isUnlocked("simplyskills_wizard", null, player)){
-            if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
-                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_wizard");
-                playUnlockSound(player);
-            }
-        } else if (skillID.contains(SkillReferencePosition.berserkerPath)
-                && !HelperMethods.isUnlocked("simplyskills_berserker", null, player)){
-            if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
-                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_berserker");
-                playUnlockSound(player);
-            }
-        } else if (skillID.contains(SkillReferencePosition.roguePath)
-                && !HelperMethods.isUnlocked("simplyskills_rogue", null, player)){
-            if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
-                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_rogue");
-                playUnlockSound(player);
-            }
-        } else if (skillID.contains(SkillReferencePosition.rangerPath)
-                && !HelperMethods.isUnlocked("simplyskills_ranger", null, player)){
-            if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
-                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_ranger");
-                playUnlockSound(player);
-            }
-        } else if (skillID.contains(SkillReferencePosition.spellbladePath)
-                && !HelperMethods.isUnlocked("simplyskills_spellblade", null, player)){
-            if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
-                SkillsAPI.unlockCategory((ServerPlayerEntity) player, "simplyskills_spellblade");
-                playUnlockSound(player);
+
+            //Process unlock
+            if (categoryID.contains("simplyskills_wizard")
+                    && !HelperMethods.isUnlocked("simplyskills_wizard", null, player)) {
+                if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
+            } else if (categoryID.contains("simplyskills_berserker")
+                    && !HelperMethods.isUnlocked("simplyskills_berserker", null, player)) {
+                if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
+            } else if (categoryID.contains("simplyskills_rogue")
+                    && !HelperMethods.isUnlocked("simplyskills_rogue", null, player)) {
+                if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
+            } else if (categoryID.contains("simplyskills_ranger")
+                    && !HelperMethods.isUnlocked("simplyskills_ranger", null, player)) {
+                if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
+            } else if (categoryID.contains("simplyskills_spellblade")
+                    && !HelperMethods.isUnlocked("simplyskills_spellblade", null, player)) {
+                if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
             }
         }
-
-
+        return false;
     }
+
     static void playUnlockSound(PlayerEntity player) {
         player.world.playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
                 SoundCategory.PLAYERS, 1, 1);

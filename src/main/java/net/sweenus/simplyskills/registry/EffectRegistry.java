@@ -90,6 +90,11 @@ public class EffectRegistry {
                     "0e7a848f-46db-4e12-9d4a-40a5f24683c3",
                     -0.40,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect MIGHT= new MightEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    "4a4233a0-3299-4755-8213-9f10cfb7e795",
+                    0.25,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -129,7 +134,7 @@ public class EffectRegistry {
         DEATHMARK = registerStatusEffect("death_mark", DEATHMARK);
         MARKSMAN = registerStatusEffect("marksman", MARKSMAN);
         STEALTH = registerStatusEffect("stealth", STEALTH);
-
+        MIGHT = registerStatusEffect("might", MIGHT);
     }
 
 

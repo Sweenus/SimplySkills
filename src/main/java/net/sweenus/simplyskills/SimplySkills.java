@@ -37,8 +37,14 @@ public class SimplySkills implements ModInitializer {
         specialisations.add("simplyskills_wizard");
         specialisations.add("simplyskills_spellblade");
     }
+    public static String[] getSpecialisations() {return new String[] {
+            "simplyskills_rogue",
+            "simplyskills_ranger",
+            "simplyskills_berserker",
+            "simplyskills_wizard",
+            "simplyskills_spellblade"};}
 
-    public static List<String> getSpecialisations() {
+    public static List<String> getSpecialisationsAsArray() {
         return specialisations;
     }
     public static String[] getFrostSpells() {return new String[] {"frost", "ice"};}

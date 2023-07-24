@@ -214,7 +214,7 @@ public class HelperMethods {
 
     public static boolean respecialise( ServerPlayerEntity user ) {
 
-        List<String> specialisations = SimplySkills.getSpecialisations();
+        List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
         for (String specialisation : specialisations) {
             SkillsAPI.eraseCategory(user, specialisation);
         }

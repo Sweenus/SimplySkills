@@ -7,6 +7,7 @@ import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.util.HelperMethods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,7 +20,7 @@ public class SkillsModMixin {
     public void simplyskills$tryUnlockSkill(ServerPlayerEntity player, String categoryId, String skillId, boolean force, CallbackInfo ci) {
 
         //Check if we are unlocking a new category
-        Abilities.skillTreeUnlockManager(player, skillId);
+        //Abilities.skillTreeUnlockManager(player, skillId);
 
 
         //Sound Event on skill unlock
@@ -37,4 +38,11 @@ public class SkillsModMixin {
 
             }
         }
+
+    @Inject(at = @At("HEAD"), method = "unlockCategory", cancellable = true)
+    public void simplyskills$unlockCategory(ServerPlayerEntity player, String categoryId, CallbackInfo ci) {
+        if (Abilities.skillTreeUnlockManager(player, categoryId))
+            ci.cancel();
+    }
+
     }
