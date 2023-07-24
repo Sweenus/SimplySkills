@@ -19,10 +19,6 @@ public class SkillsModMixin {
     @Inject(at = @At("HEAD"), method = "tryUnlockSkill")
     public void simplyskills$tryUnlockSkill(ServerPlayerEntity player, String categoryId, String skillId, boolean force, CallbackInfo ci) {
 
-        //Check if we are unlocking a new category
-        //Abilities.skillTreeUnlockManager(player, skillId);
-
-
         //Sound Event on skill unlock
         if (!SkillsAPI.getUnlockedSkills(player, categoryId).get().contains(skillId)
         && SkillsAPI.getPointsLeft(player, categoryId).get() > 0) {

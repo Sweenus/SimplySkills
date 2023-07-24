@@ -61,6 +61,8 @@
 
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" : "Enable PlayerEx Compatibility !NOT YET IMPLEMENTED!",
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" : "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
+  "text.autoconfig.simplyskills.option.client.treeResetOnDeath" : "Reset skill trees on death",
+  "text.autoconfig.simplyskills.option.client.treeResetOnDeath.@Tooltip" : "Resets all Simply Skills skill trees upon death. \nThis erases all points and experience invested.",
 
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold" : "§a[Passive]§7 Armor Mastery threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryChance" : "§a[Passive]§7 Armor Mastery chance",

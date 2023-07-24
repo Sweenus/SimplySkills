@@ -1373,15 +1373,15 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "berserkerPath"
+					"command": "puffish_skills category unlock @s simplyskills_berserker"
 				}
 			}
 		]
 	},
 	"berserkerSwordMastery": {
-		"title": "§a[Sword Mastery]§7 \nGain pulsing speed when wielding a sword in your mainhand.",
+		"title": "§a[Sword Mastery]§7 \nGain pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1399,7 +1399,7 @@
 		]
 	},
 	"berserkerSwordMasteryProficient": {
-		"title": "§a[Sword Mastery +]§7 \nGain increased pulsing speed when wielding a sword in your mainhand.",
+		"title": "§a[Sword Mastery +]§7 \nGain increased pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1417,7 +1417,7 @@
 		]
 	},
 	"berserkerSwordMasterySkilled": {
-		"title": "§a[Sword Mastery ++]§7 \nGain increased pulsing speed when wielding a sword in your mainhand.",
+		"title": "§a[Sword Mastery ++]§7 \nWhen not dual wielding, gain pulsing Might.\n\n(Might) grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1715,9 +1715,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "roguePath"
+					"command": "puffish_skills category unlock @s simplyskills_rogue"
 				}
 			}
 		]
@@ -1949,9 +1949,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "rangerPath"
+					"command": "puffish_skills category unlock @s simplyskills_ranger"
 				}
 			}
 		]
@@ -1985,9 +1985,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "crusaderPath"
+					"command": "puffish_skills category unlock @s simplyskills_crusader"
 				}
 			}
 		]
@@ -2003,9 +2003,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "frostguardPath"
+					"command": "puffish_skills category unlock @s simplyskills_frostguard"
 				}
 			}
 		]
@@ -2021,9 +2021,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "spellbladePath"
+					"command": "puffish_skills category unlock @s simplyskills_spellblade"
 				}
 			}
 		]
@@ -2273,9 +2273,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "wizardPath"
+					"command": "puffish_skills category unlock @s simplyskills_wizard"
 				}
 			}
 		]
@@ -2291,9 +2291,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "shamanPath"
+					"command": "puffish_skills category unlock @s simplyskills_shaman"
 				}
 			}
 		]
@@ -2309,9 +2309,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "clericPath"
+					"command": "puffish_skills category unlock @s simplyskills_cleric"
 				}
 			}
 		]
@@ -2327,9 +2327,9 @@
 		},
 		"rewards": [
 			{
-				"type": "puffish_skills:passive_skill",
+				"type": "puffish_skills:command",
 				"data": {
-					"passive_skill": "necromancerPath"
+					"command": "puffish_skills category unlock @s simplyskills_necromancer"
 				}
 			}
 		]

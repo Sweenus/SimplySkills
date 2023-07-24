@@ -261,6 +261,12 @@ public abstract class ServerPlayerEntityMixin {
         }
     }
 
+    @Inject(at = @At("HEAD"), method = "onDeath")
+    public void simplyskills$onDeath(DamageSource damageSource, CallbackInfo ci) {
+        ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
+        HelperMethods.treeResetOnDeath(player);
+    }
+
 
     @Inject(at = @At("HEAD"), method = "attack")
     public void simplyskills$attack(Entity target,CallbackInfo ci) {

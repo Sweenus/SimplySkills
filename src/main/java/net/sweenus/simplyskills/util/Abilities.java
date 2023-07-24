@@ -822,8 +822,6 @@ public class Abilities {
 
 
 
-
-
     // -- Unlock Manager --
 
     public static boolean skillTreeUnlockManager(PlayerEntity player, String categoryID) {

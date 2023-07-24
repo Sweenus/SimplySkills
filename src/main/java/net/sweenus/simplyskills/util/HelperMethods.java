@@ -222,5 +222,17 @@ public class HelperMethods {
         return true;
     }
 
+    public static void treeResetOnDeath(ServerPlayerEntity user ) {
+        if (SimplySkills.generalConfig.treeResetOnDeath) {
+
+            List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
+            for (String specialisation : specialisations) {
+                SkillsAPI.eraseCategory(user, specialisation);
+                SkillsAPI.eraseCategory(user, "simplyskills");
+            }
+        }
+    }
+
+
 
 }
