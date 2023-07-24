@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class SpellbladeConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.PrefixText
     public boolean enableSpellbladeSpecialisation = true;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int passiveSpellbladeSpellweavingChance = 15;

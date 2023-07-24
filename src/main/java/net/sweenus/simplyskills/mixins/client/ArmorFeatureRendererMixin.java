@@ -1,4 +1,4 @@
-package net.sweenus.simplyskills.mixins;
+package net.sweenus.simplyskills.mixins.client;
 
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;

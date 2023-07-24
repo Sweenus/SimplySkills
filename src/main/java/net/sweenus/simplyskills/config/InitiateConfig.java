@@ -2,10 +2,12 @@ package net.sweenus.simplyskills.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Config(name = "initiate")
 public class InitiateConfig implements ConfigData {
 
+    @ConfigEntry.Gui.PrefixText
     public int passiveInitiateFrailArmorThreshold = 10;
     public int passiveInitiateFrailSlownessAmplifier = 0;
     public int passiveInitiateFrailAttackThreshold = 6;
@@ -13,6 +15,7 @@ public class InitiateConfig implements ConfigData {
     public int passiveInitiateFrailMiningFatigueAmplifier = 1;
     public int passiveInitiateNullificationFrequency = 80;
     public int passiveInitiateNullificationRadius = 12;
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public float passiveInitiateSlowFallDistanceToActivate = 3.0F;
     public int passiveInitiateEmpowerChance = 15;
     public int passiveInitiateEmpowerDuration = 300;

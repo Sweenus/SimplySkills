@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class RogueConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.PrefixText
     public boolean enableRogueSpecialisation = true;
     public int passiveRogueBackstabWeaknessDuration = 60;
     public int passiveRogueBackstabWeaknessAmplifier = 0;

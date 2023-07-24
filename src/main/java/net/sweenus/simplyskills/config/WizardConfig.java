@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class WizardConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.PrefixText
     public boolean enableWizardSpecialisation = true;
 
 

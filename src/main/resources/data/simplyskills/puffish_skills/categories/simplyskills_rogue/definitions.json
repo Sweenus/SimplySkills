@@ -1345,7 +1345,7 @@
 		]
 	},
 	"warriorDeathDefy": {
-		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration relative to your remaining health percent.",
+		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Mining Fatigue relative to your remaining health percent.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

@@ -7,6 +7,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config(name = "warrior")
 public class WarriorConfig implements ConfigData {
 
+    @ConfigEntry.Gui.PrefixText
     public int passiveWarriorArmorMasteryArmorThreshold = 15;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int passiveWarriorArmorMasteryChance = 10;

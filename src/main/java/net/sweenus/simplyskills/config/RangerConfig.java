@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class RangerConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.PrefixText
     public boolean enableRangerSpecialisation = true;
     public int passiveRangerRevealRadius = 12;
     public int passiveRangerRevealFrequency = 80;
