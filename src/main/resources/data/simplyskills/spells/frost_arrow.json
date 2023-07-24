@@ -79,6 +79,6 @@
     }
   ],
   "cost": {
-    "item" : "minecraft:arrow"
+    "durability": 0
   }
 }

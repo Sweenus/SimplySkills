@@ -9,7 +9,8 @@
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "SpellHelperMixin"
   ],
   "client": [
   ],

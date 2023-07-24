@@ -476,8 +476,6 @@ public class SignatureAbilities {
                     hand,
                     20);
 
-            if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
-                Abilities.passiveInitiateEmpower(player, spellID);
 
         }
 
@@ -503,9 +501,6 @@ public class SignatureAbilities {
                     action,
                     hand,
                     20);
-
-            if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
-                Abilities.passiveInitiateEmpower(player, spellID);
 
         }
 
@@ -546,9 +541,6 @@ public class SignatureAbilities {
                     action,
                     hand,
                     20);
-
-            if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
-                Abilities.passiveInitiateEmpower(player, spellID);
 
             return true;
         }

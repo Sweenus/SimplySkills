@@ -132,6 +132,7 @@
     }
   ],
   "cost": {
-    "exhaust" : 0.3
+    "exhaust" : 0.3,
+    "durability": 0
   }
 }
