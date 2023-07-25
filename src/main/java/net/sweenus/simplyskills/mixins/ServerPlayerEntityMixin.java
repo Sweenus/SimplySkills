@@ -209,13 +209,6 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.initiateFrail, player)) {
                 Abilities.passiveWayfarerSlender(player);
             }
-            //Initiate Frail (weapon element)
-            if (HelperMethods.isUnlocked("simplyskills",
-                    SkillReferencePosition.initiateFrail, player)
-            && !HelperMethods.isUnlocked("simplyskills_spellblade",
-                    SkillReferencePosition.spellbladeWeaponExpert, player)) {
-                Abilities.passiveInitiateFrail(player);
-            }
             //Passive Backstab Stealth
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.rogueBackstab, player)) {
@@ -287,6 +280,13 @@ public abstract class ServerPlayerEntityMixin {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
                     }
 
+                    //Initiate Frail (weapon element)
+                    if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.initiateFrail, player)
+                            && !HelperMethods.isUnlocked("simplyskills_spellblade",
+                            SkillReferencePosition.spellbladeWeaponExpert, player)) {
+                        Abilities.passiveInitiateFrail(player);
+                    }
 
                     //Signature Passive Elemental Surge Renewal
                     if (HelperMethods.isUnlocked("simplyskills_spellblade",

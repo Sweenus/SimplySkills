@@ -12,7 +12,7 @@ public class InitiateConfig implements ConfigData {
     public int passiveInitiateFrailSlownessAmplifier = 0;
     public int passiveInitiateFrailAttackThreshold = 6;
     public int passiveInitiateFrailWeaknessAmplifier = 0;
-    public int passiveInitiateFrailMiningFatigueAmplifier = 1;
+    public int passiveInitiateFrailMiningFatigueAmplifier = 3;
     public int passiveInitiateNullificationFrequency = 80;
     public int passiveInitiateNullificationRadius = 12;
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)

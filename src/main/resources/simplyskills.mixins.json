@@ -5,14 +5,17 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BowItemMixin",
+    "LivingEntityMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
-    "LivingEntityMixin",
     "SpellHelperMixin"
   ],
   "client": [
-    "client.ArmorFeatureRendererMixin"
+    "client.ArmorFeatureRendererMixin",
+    "client.LivingEntityRendererMixin",
+    "client.OtherClientPlayerEntityMixin",
+    "client.PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

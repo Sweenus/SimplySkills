@@ -7,7 +7,6 @@ import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.Abilities;
-import net.sweenus.simplyskills.util.HelperMethods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

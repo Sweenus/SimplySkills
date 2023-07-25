@@ -12,4 +12,7 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean treeResetOnDeath = false;
 
+    @ConfigEntry.Gui.Tooltip
+    public boolean removeUnlockRestrictions = false;
+
 }

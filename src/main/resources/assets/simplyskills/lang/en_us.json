@@ -63,8 +63,10 @@
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" :                         "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
   "text.autoconfig.simplyskills.option.client.treeResetOnDeath" :                                             "Reset skill trees on death",
   "text.autoconfig.simplyskills.option.client.treeResetOnDeath.@Tooltip" :                                    "Resets all Simply Skills skill trees upon death. \nThis erases all points and experience invested.",
+  "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions" :                                     "Remove unlock restrictions",
+  "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions.@Tooltip" :                            "Allows Specialisations to be unlocked without \npathing to them in the skill tree.\nAlso allows unlocking more than one specialisation.\n\nNot recommended, except for very particular use-cases.",
 
-  "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold.@PrefixText" :         "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7,",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold.@PrefixText" :        "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7,",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold" :                    "§a[Passive]§7 Armor Mastery threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryChance" :                            "§a[Passive]§7 Armor Mastery chance",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorHeavyArmorMasteryDuration" :                     "§a[Passive]§7 Heavy Armor Mastery duration",
@@ -88,12 +90,12 @@
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyHealthThreshold" :                      "§a[Passive]§7 Death Defy frequency health threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyAmplifierPerTenPercentHealth" :         "§a[Passive]§7 Death Defy amplifier per 10% health",
 
-  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold.@PrefixText" :            "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold.@PrefixText" :           "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" :                       "§a[Passive]§7 Slender armor threshold",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderSlownessAmplifier" :                    "§a[Passive]§7 Slender Slowness amplifier",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSneakSpeedAmplifier" :                         "§a[Passive]§7 Sneak Speed amplifier",
 
-  "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold.@PrefixText" :              "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold.@PrefixText" :             "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold" :                         "§a[Passive]§7 Frail armor threshold",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailSlownessAmplifier" :                      "§a[Passive]§7 Frail Slowness amplifier",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailAttackThreshold" :                        "§a[Passive]§7 Frail attack threshold",
@@ -123,7 +125,7 @@
 
   "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation" :                                   "Enable Ranger Specialisation",
   "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation.@Tooltip" :                          "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",
-  "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation.@PrefixText" :                    "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+  "text.autoconfig.simplyskills.option.ranger.enableRangerSpecialisation.@PrefixText" :                       "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
 
   "text.autoconfig.simplyskills.option.ranger.passiveRangerRevealRadius" :                                    "§a[Passive]§7 Reveal radius",
   "text.autoconfig.simplyskills.option.ranger.passiveRangerRevealFrequency" :                                 "§a[Passive]§7 Reveal frequency",

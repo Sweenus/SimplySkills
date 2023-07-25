@@ -1,6 +1,5 @@
 package net.sweenus.simplyskills.effects;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -19,6 +18,8 @@ public class StealthEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
+        livingEntity.setInvisible(true);
+
 
         if (!livingEntity.world.isClient()) {
             livingEntity.setInvisible(true);
@@ -30,12 +31,15 @@ public class StealthEffect extends StatusEffect {
                 int resistanceStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceStacks;
                 int resistanceMaxStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceMaxStacks;
 
+                /*
                 if (serverPlayer.hasStatusEffect(StatusEffects.INVISIBILITY)) {
                     if (serverPlayer.getStatusEffect(StatusEffects.INVISIBILITY).getDuration() < 20)
                         serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
                 } else {
                     serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
                 }
+
+                 */
 
                 if (HelperMethods.isUnlocked("simplyskills",
                         SkillReferencePosition.rogueRecovery, serverPlayer)

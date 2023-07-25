@@ -2,7 +2,6 @@ package net.sweenus.simplyskills.util;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
@@ -10,8 +9,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
@@ -19,7 +16,6 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -31,7 +27,6 @@ import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -679,16 +674,15 @@ public class Abilities {
         int attackThreshold = SimplySkills.initiateConfig.passiveInitiateFrailAttackThreshold;
         int weaknessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailWeaknessAmplifier;
         int miningFatigueAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailMiningFatigueAmplifier;
-        if (player.age % 20 == 0) {
-            if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
-                    || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
-                    && HelperMethods.isUnlocked("simplyskills",
-                    SkillReferencePosition.wayfarerSlender, player)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                        25, weaknessAmplifier));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
-                        25, miningFatigueAmplifier));
-            }
+
+        if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
+                || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
+                && HelperMethods.isUnlocked("simplyskills",
+                SkillReferencePosition.wayfarerSlender, player)){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
+                    25, weaknessAmplifier));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
+                    25, miningFatigueAmplifier));
         }
     }
 
@@ -827,6 +821,9 @@ public class Abilities {
     public static boolean skillTreeUnlockManager(PlayerEntity player, String categoryID) {
 
         if (HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
+
+            if (SimplySkills.generalConfig.removeUnlockRestrictions)
+                return false;
 
             //Prevent unlocking multiple specialisations (kinda cursed ngl)
             List<String> specialisationList = SimplySkills.getSpecialisationsAsArray();
