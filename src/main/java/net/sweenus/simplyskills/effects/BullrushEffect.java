@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
@@ -54,18 +55,23 @@ public class BullrushEffect extends StatusEffect {
                                 le.damage(DamageSource.player(player), (float) damage);
                                 player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
                                         SoundCategory.PLAYERS, 0.6f, 1.0f);
-                            }
-                            if (HelperMethods.isUnlocked("simplyskills_berserker",
-                                    SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
-                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
+                                if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                        SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
+                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
 
-                            if (HelperMethods.isUnlocked("simplyskills_berserker",
-                                    SkillReferencePosition.berserkerSignatureRampageChargeRelentless, player)
-                                    &&player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
-                                int stacks = player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier();
-                                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                                        bullrushStrengthDuration, stacks / bullrushExhaustionPerStrength));
-                                player.removeStatusEffect(EffectRegistry.EXHAUSTION);
+                                if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                        SkillReferencePosition.berserkerSignatureRampageChargeRelentless, player)
+                                        &&player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
+                                    int stacks = player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier();
+                                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                                            bullrushStrengthDuration, stacks / bullrushExhaustionPerStrength));
+                                    player.removeStatusEffect(EffectRegistry.EXHAUSTION);
+                                }
+                                HelperMethods.spawnParticlesPlane(
+                                        player.world,
+                                        ParticleTypes.CAMPFIRE_COSY_SMOKE,
+                                        player.getBlockPos(),
+                                        radius-2, 0, 1, 0 );
                             }
                         }
                     }
