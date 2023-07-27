@@ -280,7 +280,7 @@ public class SignatureAbilities {
         }
 
         // - Berserker -
-        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
+        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
 
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationRampage, player)) {
@@ -323,7 +323,7 @@ public class SignatureAbilities {
         }
 
         // - Rogue -
-        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
+        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
 
             if (HelperMethods.isUnlocked(rogueSkillTree,
                     SkillReferencePosition.rogueSpecialisationEvasion, player)) {
@@ -371,7 +371,7 @@ public class SignatureAbilities {
         }
 
         // - Ranger -
-        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
+        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
 
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
@@ -414,7 +414,7 @@ public class SignatureAbilities {
         }
 
         // - Spellblade -
-        else if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
+        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
 
             int elementalSurgeDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
             int elementalImpactDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactDuration;

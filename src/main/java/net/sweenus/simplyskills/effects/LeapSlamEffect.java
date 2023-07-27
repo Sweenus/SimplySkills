@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
@@ -71,6 +72,11 @@ public class LeapSlamEffect extends StatusEffect {
                                 }
                             }
                         }
+                        HelperMethods.spawnParticlesPlane(
+                                player.world,
+                                ParticleTypes.CAMPFIRE_COSY_SMOKE,
+                                player.getBlockPos(),
+                                radius, 0, 1, 0 );
                         player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                     }
                 }

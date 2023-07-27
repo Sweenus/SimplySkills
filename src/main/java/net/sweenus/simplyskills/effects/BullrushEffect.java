@@ -6,6 +6,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
@@ -33,6 +34,8 @@ public class BullrushEffect extends StatusEffect {
                 double bullrushDamageModifier = SimplySkills.berserkerConfig.signatureBerserkerBullrushDamageModifier;
                 int bullrushHitFrequency = SimplySkills.berserkerConfig.signatureBerserkerBullrushHitFrequency;
                 int bullrushImmobilizeDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushImmobilizeDuration;
+                int bullrushStrengthDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushRelentlessDuration;
+                int bullrushExhaustionPerStrength = SimplySkills.berserkerConfig.signatureBerserkerBullrushRelentlessExhaustPerStrength;
 
                 player.setVelocity(livingEntity.getRotationVector().multiply(+bullrushVelocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);
@@ -55,6 +58,15 @@ public class BullrushEffect extends StatusEffect {
                             if (HelperMethods.isUnlocked("simplyskills_berserker",
                                     SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
                                 le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
+
+                            if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                    SkillReferencePosition.berserkerSignatureRampageChargeRelentless, player)
+                                    &&player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
+                                int stacks = player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier();
+                                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                                        bullrushStrengthDuration, stacks / bullrushExhaustionPerStrength));
+                                player.removeStatusEffect(EffectRegistry.EXHAUSTION);
+                            }
                         }
                     }
                 }

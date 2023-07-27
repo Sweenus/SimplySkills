@@ -36,6 +36,8 @@
   "effect.simplyskills.marksman":                       "Marksman",
   "effect.simplyskills.stealth":                        "Stealth",
   "effect.simplyskills.might":                          "Might",
+  "effect.simplyskills.exhaustion":                     "Exhaustion",
+  "effect.simplyskills.reveal":                         "Reveal",
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
 
@@ -89,6 +91,8 @@
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyFrequency" :                            "§a[Passive]§7 Death Defy frequency",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyHealthThreshold" :                      "§a[Passive]§7 Death Defy frequency health threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorDeathDefyAmplifierPerTenPercentHealth" :         "§a[Passive]§7 Death Defy amplifier per 10% health",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorFrenzyExhaustionDuration" :                      "§a[Passive]§7 Frenzy Exhaustion duration",
+  "text.autoconfig.simplyskills.option.warrior.passiveWarriorFrenzyExhaustionStacks" :                        "§a[Passive]§7 Frenzy Exhaustion stacks",
 
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold.@PrefixText" :           "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" :                       "§a[Passive]§7 Slender armor threshold",
@@ -323,6 +327,8 @@
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBullrushDamageModifier" :                  "§6[Signature]§7 Bullrush damage modifier",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBullrushHitFrequency" :                    "§6[Signature]§7 Bullrush hit frequency",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBullrushImmobilizeDuration" :              "§6[Signature]§7 Bullrush Immobilize duration",
+  "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBullrushRelentlessExhaustPerStrength" :    "§6[Signature]§7 Bullrush Exhaust per Strength",
+  "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBullrushRelentlessDuration" :              "§6[Signature]§7 Bullrush Strength duration",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBloodthirstyDuration" :                    "§6[Signature]§7 Bloodthirsty duration",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBloodthirstyHealPercent" :                 "§6[Signature]§7 Bloodthirsty heal percent",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerBerserkingSacrificeAmount" :               "§6[Signature]§7 Berserking sacrifice amount",

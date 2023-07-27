@@ -1255,7 +1255,7 @@
 		]
 	},
 	"warriorHeavyArmorMastery": {
-		"title": "§a[Heavy Armor Mastery]§7 \nWhile your armor value is above 15, you have a chance to gain strength when hit.",
+		"title": "§a[Heavy Armor Mastery]§7 \nWhile your armor value is above 15, you have a chance to gain Strength when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1273,7 +1273,7 @@
 		]
 	},
 	"warriorMediumArmorMastery": {
-		"title": "§a[Medium Armor Mastery]§7 \nWhile your armor value is below 15, you have a chance to gain absorption when hit.",
+		"title": "§a[Medium Armor Mastery]§7 \nWhile your armor value is below 15, you have a chance to gain Absorption when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1345,7 +1345,7 @@
 		]
 	},
 	"warriorDeathDefy": {
-		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Mining Fatigue relative to your remaining health percent.",
+		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1358,6 +1358,26 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "warriorDeathDefy"
+				}
+			}
+		]
+	},
+	"warriorFrenzy": {
+		"title": "§a[Frenzy]§7 \nGain 40% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_frenzy.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.melee_damage",
+					"value": 0.40,
+					"operation": "multiply_total"
 				}
 			}
 		]
@@ -3666,8 +3686,8 @@
 			}
 		]
 	},
-	"berserkerSignatureRampageChargeBanner": {
-		"title": "Drop a Battlestandard at the end of your charge that periodically grants strength and haste to nearby allies.\n§eNOT YET IMPLEMENTED§7",
+	"berserkerSignatureRampageChargeRelentless": {
+		"title": "When your charge deals damage, you convert your stacks of Exhaustion into Strength.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3679,7 +3699,7 @@
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "berserkerSignatureRampageChargeBanner"
+					"passive_skill": "berserkerSignatureRampageChargeRelentless"
 				}
 			}
 		]

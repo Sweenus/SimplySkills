@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -31,15 +32,16 @@ public class StealthEffect extends StatusEffect {
                 int resistanceStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceStacks;
                 int resistanceMaxStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceMaxStacks;
 
-                /*
-                if (serverPlayer.hasStatusEffect(StatusEffects.INVISIBILITY)) {
-                    if (serverPlayer.getStatusEffect(StatusEffects.INVISIBILITY).getDuration() < 20)
-                        serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
-                } else {
-                    serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 40));
+
+                if (serverPlayer.hasStatusEffect(EffectRegistry.REVEALED)) {
+                    livingEntity.removeStatusEffect(EffectRegistry.STEALTH);
+                }
+                if (serverPlayer.hasStatusEffect(EffectRegistry.STEALTH)
+                        && serverPlayer.getStatusEffect(EffectRegistry.STEALTH).getDuration() < 10) {
+                    livingEntity.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED,
+                            180, 2));
                 }
 
-                 */
 
                 if (HelperMethods.isUnlocked("simplyskills",
                         SkillReferencePosition.rogueRecovery, serverPlayer)

@@ -1,6 +1,7 @@
 package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
@@ -8,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -35,6 +37,8 @@ public class SpellHelperMixin {
 
         if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
             Abilities.passiveInitiateEmpower(player, spellId);
+        if (player.hasStatusEffect(EffectRegistry.STEALTH))
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
 
         }
     }

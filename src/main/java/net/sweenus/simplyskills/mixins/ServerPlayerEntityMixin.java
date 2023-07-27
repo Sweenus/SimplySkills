@@ -280,6 +280,12 @@ public abstract class ServerPlayerEntityMixin {
                         Abilities.passiveRogueOpportunisticMastery(target, player);
                     }
 
+                    //Effect Warrior Frenzy
+                    if (HelperMethods.isUnlocked("simplyskills",
+                            SkillReferencePosition.warriorFrenzy, player)) {
+                        Abilities.passiveWarriorFrenzy(player);
+                    }
+
                     //Initiate Frail (weapon element)
                     if (HelperMethods.isUnlocked("simplyskills",
                             SkillReferencePosition.initiateFrail, player)

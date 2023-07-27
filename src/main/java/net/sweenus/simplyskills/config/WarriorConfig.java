@@ -35,5 +35,7 @@ public class WarriorConfig implements ConfigData {
     public int passiveWarriorDeathDefyFrequency = 20;
     public int passiveWarriorDeathDefyHealthThreshold = 30;
     public int passiveWarriorDeathDefyAmplifierPerTenPercentHealth = 1;
+    public int passiveWarriorFrenzyExhaustionDuration = 400;
+    public int passiveWarriorFrenzyExhaustionStacks = 1;
 
 }

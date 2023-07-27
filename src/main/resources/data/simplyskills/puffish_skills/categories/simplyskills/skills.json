@@ -5386,5 +5386,35 @@
 		"x": -928,
 		"y": 0,
 		"root": false
+	},
+	"2m5yvu8kffh7wrhu": {
+		"definition": "melee_damage+1%",
+		"x": 800,
+		"y": 224,
+		"root": false
+	},
+	"js6qqlxpzjp19ptc": {
+		"definition": "melee_damage+1%",
+		"x": 768,
+		"y": 192,
+		"root": false
+	},
+	"ryeh2xewqcqxs2fz": {
+		"definition": "melee_damage+1%",
+		"x": 800,
+		"y": 160,
+		"root": false
+	},
+	"ly41tqtyl7v5twbz": {
+		"definition": "melee_damage+1%",
+		"x": 832,
+		"y": 192,
+		"root": false
+	},
+	"8wcgg3b3wjlt0or6": {
+		"definition": "warriorFrenzy",
+		"x": 800,
+		"y": 192,
+		"root": false
 	}
 }

@@ -13,13 +13,17 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 
@@ -209,6 +213,44 @@ public class HelperMethods {
 
 
         return true;
+    }
+
+    //Spawns particles across both client & server
+    public static void spawnParticle(World world, ParticleEffect particle, double  xpos, double ypos, double zpos,
+                                     double xvelocity, double yvelocity, double zvelocity) {
+
+        if (world.isClient) {
+            world.addParticle(particle, xpos, ypos, zpos, xvelocity, yvelocity, zvelocity);
+        } else {
+            if (world instanceof ServerWorld serverWorld) {
+                serverWorld.spawnParticles(particle, xpos, ypos, zpos, 1, xvelocity, yvelocity, zvelocity, 0);
+            }
+        }
+    }
+
+    //Spawn particles at plane
+    public static void spawnParticlesPlane(
+            World world,
+            ParticleEffect particle,
+            BlockPos blockpos,
+            int radius,
+            double xvelocity,
+            double yvelocity,
+            double zvelocity) {
+
+        Box box = HelperMethods.createBoxAtBlock(blockpos, radius);
+        double xpos = blockpos.getX() - (radius + 1);
+        double ypos = blockpos.getY();
+        double zpos = blockpos.getZ() - (radius + 1);
+        for (int i = radius * 2; i > 0; i--) {
+            for (int j = radius * 2; j > 0; j--) {
+                float choose = (float) (Math.random() * 1);
+                HelperMethods.spawnParticle(world, particle, xpos + i + choose,
+                        ypos,
+                        zpos + j + choose,
+                        xvelocity, yvelocity, zvelocity);
+            }
+        }
     }
 
 

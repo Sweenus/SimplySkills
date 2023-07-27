@@ -146,8 +146,10 @@ public class Abilities {
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
                         deathDefyFrequency + 5, regen));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
-                        deathDefyFrequency + 5, regen));
+                if (player.hasStatusEffect(StatusEffects.REGENERATION)
+                        && player.getStatusEffect(StatusEffects.REGENERATION).getAmplifier() > 0)
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION,
+                        deathDefyFrequency + 60, regen +10, 99);
             }
         }
     }
@@ -201,6 +203,7 @@ public class Abilities {
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
                             if (statusEffect != null && statusEffect.getEffectType().equals(EffectRegistry.STEALTH)) {
                                 le.removeStatusEffect(statusEffect.getEffectType());
+                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 1));
                                 break;
                             }
                         }
@@ -368,6 +371,7 @@ public class Abilities {
                     SoundCategory.PLAYERS, 0.7f, 1.4f);
             if (player.hasStatusEffect(StatusEffects.INVISIBILITY))
                 player.removeStatusEffect(StatusEffects.INVISIBILITY);
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
         }
     }
 
@@ -391,6 +395,13 @@ public class Abilities {
                         mediumArmorMasteryDuration, mediumArmorMasteryAmplifier));
             }
         }
+    }
+
+    public static void passiveWarriorFrenzy(PlayerEntity player) {
+        int frenzyDuration = SimplySkills.warriorConfig.passiveWarriorFrenzyExhaustionDuration;
+        int frenzyStacks = SimplySkills.warriorConfig.passiveWarriorFrenzyExhaustionStacks;
+
+        HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION, frenzyDuration, frenzyStacks, 99);
     }
 
     public static void passiveBerserkerSwordMastery(PlayerEntity player) {

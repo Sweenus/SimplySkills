@@ -95,6 +95,16 @@ public class EffectRegistry {
                     "4a4233a0-3299-4755-8213-9f10cfb7e795",
                     0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect EXHAUSTION= new ExhaustionEffect(StatusEffectCategory.HARMFUL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    "1ce35aec-6a41-44ff-a537-f03b76f01664",
+                    -0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED,
+                    "9410035d-5838-4f51-a48e-c896e7a7570f",
+                            -0.01,
+                                      EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect REVEALED= new RevealedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -135,6 +145,8 @@ public class EffectRegistry {
         MARKSMAN = registerStatusEffect("marksman", MARKSMAN);
         STEALTH = registerStatusEffect("stealth", STEALTH);
         MIGHT = registerStatusEffect("might", MIGHT);
+        EXHAUSTION = registerStatusEffect("exhaustion", EXHAUSTION);
+        REVEALED = registerStatusEffect("revealed", REVEALED);
     }
 
 

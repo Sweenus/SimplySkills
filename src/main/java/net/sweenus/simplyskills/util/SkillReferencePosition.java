@@ -15,6 +15,7 @@ public class SkillReferencePosition {
     public static String warriorGoliath = "ku665yrv27jaqb22";
     public static String warriorHeavyWeight = "4we84brd1sfq0axo";
     public static String warriorDeathDefy = "aj9mm9g45j47ovky";
+    public static String warriorFrenzy = "8wcgg3b3wjlt0or6";
 
     // - Berserker
     public static String berserkerSwordMastery = "txzx7u6ssecd6kyd";
@@ -197,7 +198,7 @@ public class SkillReferencePosition {
 
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
     public static String berserkerSpecialisationRampageCharge = "xkwzbexxmoz9tf60";
-    public static String berserkerSpecialisationRampageChargeBanner = "xsak3gay0v3z4inb";
+    public static String berserkerSignatureRampageChargeRelentless = "xsak3gay0v3z4inb";
     public static String berserkerSpecialisationRampageChargeImmob = "ipbguvfzpm9nvg8j";
     public static String berserkerSpecialisationBloodthirsty = "a3ns9xl58ixdg2lo";
     public static String berserkerSpecialisationBerserking = "is053f9imz801s57";
