@@ -108,6 +108,11 @@ public class AbilityEffects {
                         break;
                     }
                 }
+
+                if (HelperMethods.isUnlocked("simplyskills_rogue",
+                        SkillReferencePosition.rogueSpecialisationSiphoningStrikesVanish, player))
+                    AbilityEffects.effectRogueSiphoningStrikesVanish(player);
+
             }
         }
     }
@@ -153,6 +158,14 @@ public class AbilityEffects {
                 }
             }
             HelperMethods.decrementStatusEffect(player, EffectRegistry.FANOFBLADES);
+        }
+    }
+
+    public static void effectRogueSiphoningStrikesVanish(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.SIPHONINGSTRIKES)) {
+            if (player.hasStatusEffect(EffectRegistry.REVEALED))
+                player.removeStatusEffect(EffectRegistry.REVEALED);
         }
     }
 

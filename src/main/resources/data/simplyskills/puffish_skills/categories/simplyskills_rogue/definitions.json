@@ -3002,6 +3002,60 @@
 			}
 		]
 	},
+	"rogueSignatureSiphoningStrikesMighty": {
+		"title": "When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n(Might) grants 25% increased attack damage per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_siphoning_strikes.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureSiphoningStrikesMighty"
+				}
+			}
+		]
+	},
+	"rogueSignatureSiphoningStrikesAura": {
+		"title": "When you gain §6[Siphoning Strikes]§7 you also gain Immobilizing Aura.\n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_siphoning_strikes.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureSiphoningStrikesAura"
+				}
+			}
+		]
+	},
+	"rogueSignatureSiphoningStrikesVanish": {
+		"title": "Your §6[Siphoning Strikes]§7 also cleanse you of all stacks of Revealed on hit.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/rogue_signature_siphoning_strikes.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rogueSignatureSiphoningStrikesVanish"
+				}
+			}
+		]
+	},
 	"rangerSignatureArrowRain": {
 		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n(Arrow Rain) causes your next fully-charged bow attack will summon a rain of arrows at the targeted area",
 		"frame": "goal",

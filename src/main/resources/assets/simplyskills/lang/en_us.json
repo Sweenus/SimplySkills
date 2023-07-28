@@ -220,6 +220,7 @@
   "text.autoconfig.simplyskills.option.rogue.signatureRogueSiphoningStrikesDuration" :                        "§6[Signature]§7 Siphoning Strikes duration",
   "text.autoconfig.simplyskills.option.rogue.signatureRogueSiphoningStrikesStacks" :                          "§6[Signature]§7 Siphoning Strikes stacks",
   "text.autoconfig.simplyskills.option.rogue.signatureRogueSiphoningStrikesLeechMultiplier" :                 "§6[Signature]§7 Siphoning Strikes health leech multiplier",
+  "text.autoconfig.simplyskills.option.rogue.signatureRogueSiphoningStrikesMightyStacks" :                    "§6[Signature]§7 Siphoning Strikes Might stacks",
   "text.autoconfig.simplyskills.option.rogue.signatureRogueEvasionDuration" :                                 "§6[Signature]§7 Evasion duration",
   "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesDuration" :                             "§6[Signature]§7 Fan of Blades duration",
   "text.autoconfig.simplyskills.option.rogue.signatureRogueFanOfBladesStacks" :                               "§6[Signature]§7 Fan of Blades stacks",

@@ -329,7 +329,13 @@ public abstract class ServerPlayerEntityMixin {
                         AbilityEffects.effectRogueSiphoningStrikes(target, player);
                     }
 
-                    //Effect Siphoning Strikes
+                    //Effect Rogue Vanish
+                    if (HelperMethods.isUnlocked("simplyskills_rogue",
+                            SkillReferencePosition.rogueSpecialisationSiphoningStrikesVanish, player)) {
+                        AbilityEffects.effectRogueSiphoningStrikesVanish(player);
+                    }
+
+                    //Effect Spell Weaving
                     if (HelperMethods.isUnlocked("simplyskills_spellblade",
                             SkillReferencePosition.spellbladeSpellweaving, player)) {
                         AbilityEffects.effectSpellbladeSpellweaving(target, player);

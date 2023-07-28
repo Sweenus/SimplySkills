@@ -256,5 +256,23 @@
 		"x": 224,
 		"y": 32,
 		"root": false
+	},
+	"eeq90ywusncgm78g": {
+		"definition": "rogueSignatureSiphoningStrikesVanish",
+		"x": 0,
+		"y": -192,
+		"root": false
+	},
+	"uhhbbhcdy12yhoz3": {
+		"definition": "rogueSignatureSiphoningStrikesAura",
+		"x": 160,
+		"y": -128,
+		"root": false
+	},
+	"4di5j622zoipfmd3": {
+		"definition": "rogueSignatureSiphoningStrikesMighty",
+		"x": -160,
+		"y": -128,
+		"root": false
 	}
 }

@@ -52,6 +52,7 @@ public class RogueConfig implements ConfigData {
     public double signatureRogueSiphoningStrikesLeechMultiplier = 0.15;
     public int signatureRogueSiphoningStrikesDuration = 600;
     public int signatureRogueSiphoningStrikesStacks = 10;
+    public int signatureRogueSiphoningStrikesMightyStacks = 2;
     public int signatureRogueEvasionDuration = 160;
     public int signatureRogueFanOfBladesDuration = 500;
     public int signatureRogueFanOfBladesStacks = 10;

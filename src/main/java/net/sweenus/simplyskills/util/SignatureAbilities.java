@@ -367,11 +367,22 @@ public class SignatureAbilities {
                     SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
 
                 int siphoningStrikesduration = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesDuration;
-                int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks - 1;
+                int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks;
+                int siphoningStrikesMightyStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesMightyStacks;
 
                 //Siphoning Strikes
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
                         siphoningStrikesduration, siphoningStrikesStacks));
+
+                if (HelperMethods.isUnlocked("simplyskills_rogue",
+                        SkillReferencePosition.rogueSpecialisationSiphoningStrikesMighty, player))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, siphoningStrikesduration,
+                            siphoningStrikesMightyStacks, 5);
+                if (HelperMethods.isUnlocked("simplyskills_rogue",
+                        SkillReferencePosition.rogueSpecialisationSiphoningStrikesAura, player))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.IMMOBILIZINGAURA, siphoningStrikesduration,
+                            1, 2);
+
             }
         }
 

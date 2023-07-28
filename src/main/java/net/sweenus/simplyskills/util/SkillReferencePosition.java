@@ -195,6 +195,9 @@ public class SkillReferencePosition {
     public static String rogueSpecialisationPreparationShadowstrikeBolt = "z00pa0lut7phuhmg";
     public static String rogueSpecialisationPreparationShadowstrikeVampire = "j18t77qu8eryc741";
     public static String rogueSpecialisationSiphoningStrikes = "a3ns9xl58ixdg2lo";
+    public static String rogueSpecialisationSiphoningStrikesVanish = "eeq90ywusncgm78g";
+    public static String rogueSpecialisationSiphoningStrikesMighty = "4di5j622zoipfmd3";
+    public static String rogueSpecialisationSiphoningStrikesAura = "uhhbbhcdy12yhoz3";
 
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
     public static String berserkerSpecialisationRampageCharge = "xkwzbexxmoz9tf60";
