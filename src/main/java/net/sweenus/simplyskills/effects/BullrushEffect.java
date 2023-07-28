@@ -69,7 +69,7 @@ public class BullrushEffect extends StatusEffect {
                                 }
                                 HelperMethods.spawnParticlesPlane(
                                         player.world,
-                                        ParticleTypes.CAMPFIRE_COSY_SMOKE,
+                                        ParticleTypes.CLOUD,
                                         player.getBlockPos(),
                                         radius-2, 0, 1, 0 );
                             }

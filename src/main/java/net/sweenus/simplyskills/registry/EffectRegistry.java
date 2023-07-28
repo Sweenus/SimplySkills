@@ -103,7 +103,11 @@ public class EffectRegistry {
                 .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED,
                     "9410035d-5838-4f51-a48e-c896e7a7570f",
                             -0.01,
-                                      EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                        EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    "1d715996-97d0-41d7-ab3c-96c5302c9d98",
+                    -0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect REVEALED= new RevealedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
