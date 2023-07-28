@@ -1363,7 +1363,7 @@
 		]
 	},
 	"warriorFrenzy": {
-		"title": "§a[Frenzy]§7 \nGain 40% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"title": "§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1376,7 +1376,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.40,
+					"value": 0.75,
 					"operation": "multiply_total"
 				}
 			}
@@ -3736,6 +3736,60 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "berserkerSignatureBloodthirsty"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBloodthirstyMighty": {
+		"title": "§6[Bloodthirsty]§7 Now grants you Might on use.\n\n(Might) grants 25% increased attack damage per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_bloodthirsty.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBloodthirstyMighty"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBloodthirstyTireless": {
+		"title": "While §6[Bloodthirsty]§7 is active, you have a chance to remove stacks of Exhaustion on hit.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_bloodthirsty.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBloodthirstyTireless"
+				}
+			}
+		]
+	},
+	"berserkerSignatureBloodthirstyTremor": {
+		"title": "While §6[Bloodthirsty]§7 is active, you have a chance to gain Earthshaker on hit.\n\n(Earthshaker) causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/berserker_signature_bloodthirsty.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "berserkerSignatureBloodthirstyTremor"
 				}
 			}
 		]

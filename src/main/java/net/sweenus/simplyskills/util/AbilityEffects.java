@@ -31,18 +31,42 @@ public class AbilityEffects {
         if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
             int berserkingSubEffectDuration = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectDuration;
             int berserkingSubEffectMaxAmplifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectMaxAmplifier;
-            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
-            HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
-            HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration, 1, berserkingSubEffectMaxAmplifier);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration,
+                    1, berserkingSubEffectMaxAmplifier);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.STRENGTH, berserkingSubEffectDuration,
+                    1, berserkingSubEffectMaxAmplifier);
+            HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED, berserkingSubEffectDuration,
+                    1, berserkingSubEffectMaxAmplifier);
         }
     }
 
-    public static void effectBerserkerBloodthirsty(PlayerEntity player, LivingEntity livingTarget) {
+    public static void effectBerserkerBloodthirsty(PlayerEntity player) {
 
         if (player.hasStatusEffect(EffectRegistry.BLOODTHIRSTY)) {
             float bloodthirstyHealPercent = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyHealPercent;
             float healAmount = player.getMaxHealth() * bloodthirstyHealPercent;
             player.heal(healAmount);
+        }
+    }
+
+    public static void effectBerserkerBloodthirstyTireless(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.BLOODTHIRSTY)) {
+            int bloodthirstyTirelessChance = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyTirelessChance;
+            if (player.getRandom().nextInt(100) < bloodthirstyTirelessChance) {
+                HelperMethods.decrementStatusEffect(player, EffectRegistry.EXHAUSTION);
+            }
+        }
+    }
+
+    public static void effectBerserkerBloodthirstyTremor(PlayerEntity player) {
+
+        if (player.hasStatusEffect(EffectRegistry.BLOODTHIRSTY)) {
+            int bloodthirstyTremoreChance = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyTremorChance;
+            if (player.getRandom().nextInt(100) < bloodthirstyTremoreChance) {
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.EARTHSHAKER, 30,
+                        1, 1);
+            }
         }
     }
 

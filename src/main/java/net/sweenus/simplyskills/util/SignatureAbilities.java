@@ -299,8 +299,13 @@ public class SignatureAbilities {
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
                 int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
+                int bloodthirstyMightyStacks = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyMightyStacks;
                 //Bloodthirsty
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
+                if (HelperMethods.isUnlocked("simplyskills_berserker",
+                        SkillReferencePosition.berserkerSpecialisationBloodthirstyMighty, player))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, bloodthirstyDuration,
+                            bloodthirstyMightyStacks, 5);
             }
 
             if (HelperMethods.isUnlocked(berserkerSkillTree,

@@ -201,6 +201,9 @@ public class SkillReferencePosition {
     public static String berserkerSignatureRampageChargeRelentless = "xsak3gay0v3z4inb";
     public static String berserkerSpecialisationRampageChargeImmob = "ipbguvfzpm9nvg8j";
     public static String berserkerSpecialisationBloodthirsty = "a3ns9xl58ixdg2lo";
+    public static String berserkerSpecialisationBloodthirstyTireless = "ps3dowdkawsjwezw";
+    public static String berserkerSpecialisationBloodthirstyMighty = "1gd45mne4etmyrl1";
+    public static String berserkerSpecialisationBloodthirstyTremor = "ai60rd7n2gyc6sui";
     public static String berserkerSpecialisationBerserking = "is053f9imz801s57";
     public static String berserkerSpecialisationBerserkingLeap = "sistiph4u2wuydzp";
     public static String berserkerSpecialisationBerserkingLeapImmob = "cdbv71rvffagxjvo";

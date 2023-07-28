@@ -34,7 +34,7 @@ public class PlayerEntityMixin {
             // Effect Bloodthirsty
             if (HelperMethods.isUnlocked("simplyskills_berserker",
                     SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
-                AbilityEffects.effectBerserkerBloodthirsty(player, other);
+                AbilityEffects.effectBerserkerBloodthirsty(player);
             }
             // Effect Elemental Arrows Renewal
             if (HelperMethods.isUnlocked("simplyskills_ranger",

@@ -106,7 +106,7 @@ public abstract class ServerPlayerEntityMixin {
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.wayfarerStealth, player)
                     && player.isSneaking() && player.age % 10 == 0) {
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 15));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 30));
             }
 
             //Passive Warrior Death Defy
@@ -305,7 +305,17 @@ public abstract class ServerPlayerEntityMixin {
                     }
 
 
+                    //Effect Bloodthirsty Tremor
+                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                            SkillReferencePosition.berserkerSpecialisationBloodthirstyTremor, player)) {
+                        AbilityEffects.effectBerserkerBloodthirstyTremor(player);
+                    }
 
+                    //Effect Bloodthirsty Tireless
+                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                            SkillReferencePosition.berserkerSpecialisationBloodthirstyTireless, player)) {
+                        AbilityEffects.effectBerserkerBloodthirstyTireless(player);
+                    }
 
                     //Effect Berserking
                     if (HelperMethods.isUnlocked("simplyskills_berserker",

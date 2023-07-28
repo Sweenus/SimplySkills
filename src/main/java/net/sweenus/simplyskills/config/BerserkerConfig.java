@@ -42,6 +42,11 @@ public class BerserkerConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
     public float signatureBerserkerBloodthirstyHealPercent = 0.25f;
     @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
+    public int signatureBerserkerBloodthirstyTirelessChance = 85;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
+    public int signatureBerserkerBloodthirstyTremorChance = 15;
+    public int signatureBerserkerBloodthirstyMightyStacks = 1;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
     public float signatureBerserkerBerserkingSacrificeAmount = 0.30f;
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public int signatureBerserkerBerserkingSecondsPerSacrifice = 1;

@@ -238,5 +238,23 @@
 		"x": 224,
 		"y": 32,
 		"root": false
+	},
+	"1gd45mne4etmyrl1": {
+		"definition": "berserkerSignatureBloodthirstyMighty",
+		"x": 0,
+		"y": -192,
+		"root": false
+	},
+	"ps3dowdkawsjwezw": {
+		"definition": "berserkerSignatureBloodthirstyTireless",
+		"x": -192,
+		"y": -128,
+		"root": false
+	},
+	"ai60rd7n2gyc6sui": {
+		"definition": "berserkerSignatureBloodthirstyTremor",
+		"x": 192,
+		"y": -128,
+		"root": false
 	}
 }
