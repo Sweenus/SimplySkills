@@ -854,6 +854,60 @@
 			}
 		]
 	},
+	"wayfarerReflexive": {
+		"title": "§a[Reflexive]§7 \nWhen your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wayfarer_reflexive.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wayfarerReflexive"
+				}
+			}
+		]
+	},
+	"wayfarerUnseen": {
+		"title": "§a[Unseen]§7 \nWhile loading a Crossbow, gain momentary Stealth.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wayfarer_unseen.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wayfarerUnseen"
+				}
+			}
+		]
+	},
+	"wayfarerGuarding": {
+		"title": "§a[Guarding]§7 \nWhile you have a Crossbow in your offhand, you periodically gain Barrier.\n\n(Barrier) The next damage you take is completely negated.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wayfarer_guarding.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wayfarerGuarding"
+				}
+			}
+		]
+	},
 	"initiateNullification": {
 		"title": "§a[Nullification]§7 \nPeriodically strip buffs from nearby hostiles.",
 		"frame": "goal",

@@ -109,6 +109,7 @@ public class EffectRegistry {
                     -0.01,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect REVEALED= new RevealedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect BARRIER= new BarrierEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -151,6 +152,7 @@ public class EffectRegistry {
         MIGHT = registerStatusEffect("might", MIGHT);
         EXHAUSTION = registerStatusEffect("exhaustion", EXHAUSTION);
         REVEALED = registerStatusEffect("revealed", REVEALED);
+        BARRIER = registerStatusEffect("barrier", BARRIER);
     }
 
 

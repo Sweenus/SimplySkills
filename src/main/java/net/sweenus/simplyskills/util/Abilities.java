@@ -10,6 +10,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
@@ -336,11 +337,18 @@ public class Abilities {
                 int speedDuration = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedDuration;
                 int speedStacks = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedStacks;
                 int speedMaxStacks = SimplySkills.rogueConfig.passiveRogueFleetfootedSpeedMaxStacks;
+                int evasionDuration = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveEvasionDuration;
+                int evasionChance = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveChance;
 
                 if (HelperMethods.isUnlocked("simplyskills",
                         SkillReferencePosition.rogueFleetfooted, player))
                     HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED,
                             speedDuration, speedStacks, speedMaxStacks);
+                if (HelperMethods.isUnlocked("simplyskills",
+                        SkillReferencePosition.wayfarerReflexive, player)
+                        && player.getRandom().nextInt(100) < evasionChance)
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.EVASION,
+                            evasionDuration, 1, 1);
 
             }
 
@@ -549,6 +557,17 @@ public class Abilities {
         }
     }
 
+    public static void passiveWayfarerGuarding(PlayerEntity player) {
+        int barrierFrequency = SimplySkills.wayfarerConfig.passiveWayfarerGuardingBarrierFrequency;
+        int barrierDuration = SimplySkills.wayfarerConfig.passiveWayfarerGuardingBarrierDuration;
+        int barrierStacks = SimplySkills.wayfarerConfig.passiveWayfarerGuardingBarrierStacks;
+        int barrierMaxStacks = SimplySkills.wayfarerConfig.passiveWayfarerGuardingBarrierMaxStacks;
+        if (player.getOffHandStack().getItem() instanceof CrossbowItem
+                && player.age % barrierFrequency == 0) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.BARRIER, barrierDuration, barrierStacks, barrierMaxStacks);
+        }
+    }
+
     public static void passiveWayfarerSlender(PlayerEntity player) {
 
         int slenderArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
@@ -628,15 +647,15 @@ public class Abilities {
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getArmor() < evasionArmorThreshold) {
 
-                player.timeUntilRegen = iframeDuration;
+                //player.timeUntilRegen = iframeDuration;
                 player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
-                return true;
+                return false;
 
 
             }
         }
-        return false;
+        return true;
     }
 
     public static void passiveRogueOpportunisticMastery(Entity target, PlayerEntity player) {
@@ -914,13 +933,6 @@ public class Abilities {
             System.out.println("Soul: "      + attributeSoul);
         }
     }
-
-    public static void getSpellCooldown(LivingEntity livingEntity, String spellID) {
-        //Identifier spell = new Identifier(spellID);
-        //SpellHelper.getCooldownDuration(livingEntity);
-
-    }
-
 
 
 }

@@ -44,6 +44,9 @@ public class SkillReferencePosition {
     //Wayfarer
     public static String wayfarerSlender = "niwsndfx4z0fws02";
     public static String wayfarerSneak = "mxfcq0i6qhcl01w4";
+    public static String wayfarerReflexive = "kphiwjls0sczidd4";
+    public static String wayfarerUnseen = "xbda1dlbg6had55q";
+    public static String wayfarerGuarding = "7fh2jhov4lvwtv83";
 
     // - Rogue
     public static String wayfarerStealth = "ctpfiy20l0qyya7c";

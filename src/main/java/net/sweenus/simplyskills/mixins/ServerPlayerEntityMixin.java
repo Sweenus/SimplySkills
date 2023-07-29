@@ -23,10 +23,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin {
 
-    @Inject(at = @At("HEAD"), method = "damage")
+    @Inject(at = @At("HEAD"), method = "damage", cancellable = true)
     public void simplyskills$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
+
+            //Effect Barrier
+            if (player.hasStatusEffect(EffectRegistry.BARRIER)) {
+                HelperMethods.decrementStatusEffect(player, EffectRegistry.BARRIER);
+                cir.setReturnValue(false);
+            }
 
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.warriorHeavyArmorMastery, serverPlayer)
@@ -47,7 +53,8 @@ public abstract class ServerPlayerEntityMixin {
 
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.rogueEvasionMastery, serverPlayer)) {
-                Abilities.passiveRogueEvasionMastery(player);
+                if (!Abilities.passiveRogueEvasionMastery(player))
+                    cir.setReturnValue(false);
             }
 
             if (HelperMethods.isUnlocked("simplyskills",
@@ -122,7 +129,11 @@ public abstract class ServerPlayerEntityMixin {
                 int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
             }
-
+            //Passive Wayfarer Guarding
+            if (HelperMethods.isUnlocked("simplyskills",
+                    SkillReferencePosition.wayfarerGuarding, player)) {
+                Abilities.passiveWayfarerGuarding(player);
+            }
             //Passive Area Strip
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.initiateNullification, player)) {

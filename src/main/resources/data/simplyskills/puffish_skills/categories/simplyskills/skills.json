@@ -594,13 +594,13 @@
 		"root": false
 	},
 	"kphiwjls0sczidd4": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "wayfarerReflexive",
 		"x": -672,
 		"y": -96,
 		"root": false
 	},
 	"7fh2jhov4lvwtv83": {
-		"definition": "ranged_damage_multi+2%",
+		"definition": "wayfarerGuarding",
 		"x": -544,
 		"y": 96,
 		"root": false
@@ -5415,6 +5415,36 @@
 		"definition": "warriorFrenzy",
 		"x": 800,
 		"y": 192,
+		"root": false
+	},
+	"xbda1dlbg6had55q": {
+		"definition": "wayfarerUnseen",
+		"x": -832,
+		"y": 0,
+		"root": false
+	},
+	"rynmmbuubaqh3tjw": {
+		"definition": "jump+1%",
+		"x": -800,
+		"y": 0,
+		"root": false
+	},
+	"1nq5eahrr2w0s7k4": {
+		"definition": "jump+1%",
+		"x": -832,
+		"y": 32,
+		"root": false
+	},
+	"timlqlzv1lf3fvyv": {
+		"definition": "jump+1%",
+		"x": -832,
+		"y": -32,
+		"root": false
+	},
+	"x10ssm3e0pio5xel": {
+		"definition": "jump+1%",
+		"x": -864,
+		"y": 0,
 		"root": false
 	}
 }

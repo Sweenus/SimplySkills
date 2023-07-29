@@ -37,7 +37,8 @@
   "effect.simplyskills.stealth":                        "Stealth",
   "effect.simplyskills.might":                          "Might",
   "effect.simplyskills.exhaustion":                     "Exhaustion",
-  "effect.simplyskills.reveal":                         "Reveal",
+  "effect.simplyskills.revealed":                       "Revealed",
+  "effect.simplyskills.barrier":                        "Barrier",
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
 
@@ -98,6 +99,12 @@
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" :                       "§a[Passive]§7 Slender armor threshold",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderSlownessAmplifier" :                    "§a[Passive]§7 Slender Slowness amplifier",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSneakSpeedAmplifier" :                         "§a[Passive]§7 Sneak Speed amplifier",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerReflexiveEvasionDuration" :                    "§a[Passive]§7 Reflexive Evasion duration",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerReflexiveChance" :                             "§a[Passive]§7 Reflexive chance",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerGuardingBarrierFrequency" :                    "§a[Passive]§7 Guarding Barrier frequency",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerGuardingBarrierDuration" :                     "§a[Passive]§7 Guarding Barrier duration",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerGuardingBarrierStacks" :                       "§a[Passive]§7 Guarding Barrier stacks",
+  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerGuardingBarrierMaxStacks" :                    "§a[Passive]§7 Guarding Barrier maximum stacks",
 
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold.@PrefixText" :             "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold" :                         "§a[Passive]§7 Frail armor threshold",
