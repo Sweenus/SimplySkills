@@ -621,7 +621,6 @@ public class Abilities {
         int evasionChanceIncreasePerTier = SimplySkills.rogueConfig.passiveRogueEvasionMasteryChanceIncreasePerTier;
         int masteryEvasionMultiplier = SimplySkills.rogueConfig.passiveRogueEvasionMasterySignatureMultiplier;
         int evasionArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
-        int iframeDuration = SimplySkills.rogueConfig.passiveRogueEvasionMasteryIframeDuration;
         int mastery = 0;
 
         if (HelperMethods.isUnlocked("simplyskills",
@@ -647,7 +646,6 @@ public class Abilities {
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getArmor() < evasionArmorThreshold) {
 
-                //player.timeUntilRegen = iframeDuration;
                 player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
                 return false;

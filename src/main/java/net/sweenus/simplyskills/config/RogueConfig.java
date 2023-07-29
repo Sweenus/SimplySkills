@@ -18,16 +18,15 @@ public class RogueConfig implements ConfigData {
 
     public int passiveRogueSmokeBombRadius = 6;
     @ConfigEntry.BoundedDiscrete(max = 100)
-    public int passiveRogueSmokeBombChance = 25;
+    public int passiveRogueSmokeBombChance = 10;
     public int passiveRogueSmokeBombAuraDuration = 40;
-    public int passiveRogueSmokeBombBlindnessDuration = 60;
+    public int passiveRogueSmokeBombBlindnessDuration = 40;
     public int passiveRogueSmokeBombBlindnessAmplifier = 0;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int passiveRogueEvasionMasteryChance = 15;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int passiveRogueEvasionMasteryChanceIncreasePerTier = 5;
     public int passiveRogueEvasionMasterySignatureMultiplier = 2;
-    public int passiveRogueEvasionMasteryIframeDuration = 15;
     public int passiveRogueOpportunisticMasteryPoisonDuration = 40;
     public int passiveRogueOpportunisticMasteryPoisonAmplifier = 0;
     public int passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier = 40;

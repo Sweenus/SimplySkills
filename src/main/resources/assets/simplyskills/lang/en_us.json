@@ -202,7 +202,6 @@
   "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryChance" :                              "§a[Passive]§7 Evasion Mastery chance",
   "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryChanceIncreasePerTier" :               "§a[Passive]§7 Evasion Mastery chance increase per tier",
   "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasterySignatureMultiplier" :                 "§a[Passive]§7 Evasion Mastery Signature chance multiplier",
-  "text.autoconfig.simplyskills.option.rogue.passiveRogueEvasionMasteryIframeDuration" :                      "§a[Passive]§7 Evasion Mastery iframe duration",
   "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonDuration" :                "§a[Passive]§7 Opportunistic Mastery Poison duration",
   "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonAmplifier" :               "§a[Passive]§7 Opportunistic Mastery Poison amplifier",
   "text.autoconfig.simplyskills.option.rogue.passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier" : "§a[Passive]§7 Opportunistic Mastery duration increase per tier",

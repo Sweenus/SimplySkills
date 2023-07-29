@@ -7,9 +7,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.AbilityEffects;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -32,6 +34,8 @@ public abstract class ServerPlayerEntityMixin {
             if (player.hasStatusEffect(EffectRegistry.BARRIER)) {
                 HelperMethods.decrementStatusEffect(player, EffectRegistry.BARRIER);
                 cir.setReturnValue(false);
+                player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
+                        SoundCategory.PLAYERS, 1, 1);
             }
 
             if (HelperMethods.isUnlocked("simplyskills",
