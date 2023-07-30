@@ -46,12 +46,14 @@ public class RangerConfig implements ConfigData {
     public int signatureRangerDisengageExploitationDuration = 120;
     public int signatureRangerDisengageMarksmanDuration = 200;
     public int signatureRangerDisengageMarksmanStacks = 1;
+    public int signatureRangerDisengageCooldown = 15;
     public int effectRangerElementalArrowsDuration = 600;
     public int effectRangerElementalArrowsStacks = 4;
     public int effectRangerElementalArrowsStacksIncreasePerTier = 1;
     public int effectRangerElementalArrowsRadius = 4;
     public int effectRangerElementalArrowsRadiusIncreasePerTier = 2;
     public int effectRangerElementalArrowsTargetingRange = 120;
+    public int effectRangerElementalArrowsCooldown = 45;
     public int effectRangerArrowRainDuration = 600;
     public int effectRangerArrowRainRadius = 3;
     public int effectRangerArrowRainRadiusIncreasePerTier = 1;
@@ -59,5 +61,6 @@ public class RangerConfig implements ConfigData {
     public int effectRangerArrowRainVolleys = 2;
     public int effectRangerArrowRainVolleyIncreasePerTier = 1;
     public int effectRangerArrowRainRange = 64;
+    public int effectRangerArrowRainCooldown = 35;
 
 }

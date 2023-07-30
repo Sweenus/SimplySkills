@@ -2139,7 +2139,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurge": {
-		"title": "Signature Ability: \n§6[Elemental Surge]§7 \nGrants you Elemental Surge for 15s. \n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.",
+		"title": "Signature Ability: \n§6[Elemental Surge]§7 \nGrants you Elemental Surge for 15s. \n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2229,7 +2229,7 @@
 		]
 	},
 	"spellbladeSignatureElementalImpact": {
-		"title": "Signature Ability: \n§6[Elemental Impact]§7 \nCauses you to dash forward with extreme power, releasing elemental explosions as you move.",
+		"title": "Signature Ability: \n§6[Elemental Impact]§7 \nCauses you to dash forward with extreme power, releasing elemental explosions as you move.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2283,7 +2283,7 @@
 		]
 	},
 	"spellbladeSignatureSpellweaver": {
-		"title": "Signature Ability: \n§6[Spellweaver]§7 \nDoubles the chance of your Spellweaving passive for 25s.",
+		"title": "Signature Ability: \n§6[Spellweaver]§7 \nDoubles the chance of your Spellweaving passive for 25s.\n\n§a40s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2427,7 +2427,7 @@
 		]
 	},
 	"wizardSignatureMeteorShower": {
-		"title": "Signature Ability: \n§6[Meteor Shower]§7 \nCalls down meteors on nearby enemies.",
+		"title": "Signature Ability: \n§6[Meteor Shower]§7 \nCalls down meteors on nearby enemies.\n\n§a40s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2535,7 +2535,7 @@
 		]
 	},
 	"wizardSignatureIceComet": {
-		"title": "Signature Ability: \n§6[Ice Comet]§7 \nCalls down an Ice Comet that deals damage to and slows enemies in a large radius.",
+		"title": "Signature Ability: \n§6[Ice Comet]§7 \nCalls down an Ice Comet that deals damage to and slows enemies in a large radius.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2643,7 +2643,7 @@
 		]
 	},
 	"wizardSignatureStaticDischarge": {
-		"title": "Signature Ability: \n§6[Static Discharge]§7 \nReleases a high damage electrical discharge at your target, inflicting them with weakness.",
+		"title": "Signature Ability: \n§6[Static Discharge]§7 \nReleases a high damage electrical discharge at your target, inflicting them with weakness.\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2769,7 +2769,7 @@
 		]
 	},
 	"wizardSignatureArcaneBolt": {
-		"title": "Signature Ability: \n§6[Arcane Bolt]§7 \nFires a concentrated bolt of arcane energy at your target.",
+		"title": "Signature Ability: \n§6[Arcane Bolt]§7 \nFires a concentrated bolt of arcane energy at your target.\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2841,7 +2841,7 @@
 		]
 	},
 	"shamanSignatureAstralTotem": {
-		"title": "Signature Ability: §6[Astral Totem]§7 Summon a Totem that periodically casts elemental comets on nearby enemies.",
+		"title": "Signature Ability: §6[Astral Totem]§7 Summon a Totem that periodically casts elemental comets on nearby enemies.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2859,7 +2859,7 @@
 		]
 	},
 	"shamanSignatureNovaTotem": {
-		"title": "Signature Ability: §6[Nova Totem]§7 Summon a Totem that periodically casts elemental novas.",
+		"title": "Signature Ability: §6[Nova Totem]§7 Summon a Totem that periodically casts elemental novas.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2877,7 +2877,7 @@
 		]
 	},
 	"shamanSignatureBoltTotem": {
-		"title": "Signature Ability: §6[Bolt Totem]§7 Summon a Totem that periodically fires elemental bolts at nearby enemies.",
+		"title": "Signature Ability: §6[Bolt Totem]§7 Summon a Totem that periodically fires elemental bolts at nearby enemies.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2895,7 +2895,7 @@
 		]
 	},
 	"rogueSignatureEvasion": {
-		"title": "Signature Ability: \n§6[Evasion]§7 \nThe effects of your Evasion Mastery passive are doubled for 8s.",
+		"title": "Signature Ability: \n§6[Evasion]§7 \nThe effects of your Evasion Mastery passive are doubled for 8s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2985,7 +2985,7 @@
 		]
 	},
 	"rogueSignaturePreparation": {
-		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Stealth and Speed 3 for 8s.",
+		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Stealth and Speed 3 for 8s.\n\n§a15s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3057,7 +3057,7 @@
 		]
 	},
 	"rogueSignatureSiphoningStrikes": {
-		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.",
+		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3129,7 +3129,7 @@
 		]
 	},
 	"rangerSignatureArrowRain": {
-		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area",
+		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area.\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3291,7 +3291,7 @@
 		]
 	},
 	"rangerSignatureDisengage": {
-		"title": "Signature Ability: \n§6[Disengage]§7 \nSlow nearby enemies and leap backwards.",
+		"title": "Signature Ability: \n§6[Disengage]§7 \nSlow nearby enemies and leap backwards.\n\n§a15s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3363,7 +3363,7 @@
 		]
 	},
 	"rangerSignatureElementalArrows": {
-		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.",
+		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.\n\n§a45s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3561,7 +3561,7 @@
 		]
 	},
 	"necromancerSignatureEnrage": {
-		"title": "Signature Ability: \n§6[Enrage]§7 \nSend nearby minions into a frenzy, granting them speed, strength and resistance.",
+		"title": "Signature Ability: \n§6[Enrage]§7 \nSend nearby minions into a frenzy, granting them speed, strength and resistance.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3579,7 +3579,7 @@
 		]
 	},
 	"necromancerSignatureSacrifice": {
-		"title": "Signature Ability: \n§6[Sacrifice]§7 \nSacrifice nearby minions, gaining a stack of strength, haste, and resistance for each minion sacrificed.",
+		"title": "Signature Ability: \n§6[Sacrifice]§7 \nSacrifice nearby minions, gaining a stack of strength, haste, and resistance for each minion sacrificed.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3597,7 +3597,7 @@
 		]
 	},
 	"necromancerSignatureSpectralGrasp": {
-		"title": "Signature Ability: \n§6[Spectral Grasp]§7 \nDamage your target and pull them towards you, inflicting them with slowness & mining fatigue.",
+		"title": "Signature Ability: \n§6[Spectral Grasp]§7 \nDamage your target and pull them towards you, inflicting them with slowness & mining fatigue.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3615,7 +3615,7 @@
 		]
 	},
 	"frostguardSignatureConjuringStrikes": {
-		"title": "Signature Ability: \n§6[Conjuring Strikes]§7 \nGain 6 stacks of Conjuring Strikes.",
+		"title": "Signature Ability: \n§6[Conjuring Strikes]§7 \nGain 6 stacks of Conjuring Strikes.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3633,7 +3633,7 @@
 		]
 	},
 	"frostguardSignatureFrostNova": {
-		"title": "Signature Ability: \n§6[Frost Nova]§7 \nRelease a Frost Nova, damaging and slowing nearby enemies.",
+		"title": "Signature Ability: \n§6[Frost Nova]§7 \nRelease a Frost Nova, damaging and slowing nearby enemies.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3651,7 +3651,7 @@
 		]
 	},
 	"frostguardSignatureIceBlock": {
-		"title": "Signature Ability: \n§6[Ice Block]§7 \nGain Ice Block for 6s.",
+		"title": "Signature Ability: \n§6[Ice Block]§7 \nGain Ice Block for 6s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3669,7 +3669,7 @@
 		]
 	},
 	"crusaderSignatureConsecration": {
-		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.",
+		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3687,7 +3687,7 @@
 		]
 	},
 	"crusaderSignatureStubborn": {
-		"title": "Signature Ability: \n§6[Stubborn]§7 \nHeal yourself to full and gain resistance for 5s.",
+		"title": "Signature Ability: \n§6[Stubborn]§7 \nHeal yourself to full and gain resistance for 5s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3705,7 +3705,7 @@
 		]
 	},
 	"crusaderSignatureWarbanner": {
-		"title": "Signature Ability: \n§6[Warbanner]§7 \nSummon a Warbanner that periodically damages nearby enemies with fire spells and heals nearby allies.",
+		"title": "Signature Ability: \n§6[Warbanner]§7 \nSummon a Warbanner that periodically damages nearby enemies with fire spells and heals nearby allies.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3723,7 +3723,7 @@
 		]
 	},
 	"clericSignatureRestoration": {
-		"title": "Signature Ability: \n§6[Restoration]§7 \nRelease a healing nova, healing you and nearby allies whilst granting absorption.",
+		"title": "Signature Ability: \n§6[Restoration]§7 \nRelease a healing nova, healing you and nearby allies whilst granting absorption.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3741,7 +3741,7 @@
 		]
 	},
 	"clericSignatureDivineIntervention": {
-		"title": "Signature Ability: \n§6[Divine Intervention]§7 \nGain Divine Intervention for 10s.",
+		"title": "Signature Ability: \n§6[Divine Intervention]§7 \nGain Divine Intervention for 10s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3759,7 +3759,7 @@
 		]
 	},
 	"clericSignatureDivineAscent": {
-		"title": "Signature Ability: \n§6[Divine Ascent]§7 \nRise towards the heavens, gaining resistance, regeneration, and levitation for 8s.",
+		"title": "Signature Ability: \n§6[Divine Ascent]§7 \nRise towards the heavens, gaining resistance, regeneration, and levitation for 8s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3777,7 +3777,7 @@
 		]
 	},
 	"berserkerSignatureRampage": {
-		"title": "Signature Ability: \n§6[Rampage]§7 \nGain Rampage for 15s.\n\n§f(Rampage)§7 grants you random buffs each time you take damage.",
+		"title": "Signature Ability: \n§6[Rampage]§7 \nGain Rampage for 15s.\n\n§f(Rampage)§7 grants you random buffs each time you take damage.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3849,7 +3849,7 @@
 		]
 	},
 	"berserkerSignatureBloodthirsty": {
-		"title": "Signature Ability: \n§6[Bloodthirsty]§7 \nGain Bloodthirsty for 20s.\n\n§f(Bloodthirsty)§7 grants you 25% of your max health each time you defeat an enemy.",
+		"title": "Signature Ability: \n§6[Bloodthirsty]§7 \nGain Bloodthirsty for 20s.\n\n§f(Bloodthirsty)§7 grants you 25% of your max health each time you defeat an enemy.\n\n§a25s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3921,7 +3921,7 @@
 		]
 	},
 	"berserkerSignatureBerserking": {
-		"title": "Signature Ability: \n§6[Berserking]§7 \nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n§f(Berserking)§7 grants you stacking offensive buffs each time you hit an enemy",
+		"title": "Signature Ability: \n§6[Berserking]§7 \nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n§f(Berserking)§7 grants you stacking offensive buffs each time you hit an enemy.\n\n§a25s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

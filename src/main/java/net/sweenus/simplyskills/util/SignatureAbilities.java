@@ -609,46 +609,56 @@ public class SignatureAbilities {
     }
 
     public static void signatureAbilityCooldownManager(String ability, boolean useSuccess, PlayerEntity player) {
+        float spellHasteCDReduce = SimplySkills.generalConfig.spellHasteCooldownReductionModifier;
+        int minimumCD = SimplySkills.generalConfig.minimumAchievableCooldown * 1000;
+        int useDelay = (int) SimplySkills.generalConfig.minimumTimeBetweenAbilityUse * 1000;
         int cooldown = 500;
-        double sendCooldown = 0;
+        double sendCooldown;
         String type = "";
 
         if (ability.equals(SkillReferencePosition.wizardSpecialisationArcaneBolt))
-        {cooldown = 30000; type = "magic";}
+        {cooldown = SimplySkills.wizardConfig.signatureWizardArcaneBoltCooldown * 1000; ; type = "magic";}
         else if (ability.equals(SkillReferencePosition.wizardSpecialisationIceComet))
-        {cooldown = 30000; type = "magic";}
+        {cooldown = SimplySkills.wizardConfig.signatureWizardIceCometCooldown * 1000; type = "magic";}
         else if (ability.equals(SkillReferencePosition.wizardSpecialisationMeteorShower))
-        {cooldown = 30000; type = "magic";}
+        {cooldown = SimplySkills.wizardConfig.signatureWizardMeteorShowerCooldown * 1000; type = "magic";}
         else if (ability.equals(SkillReferencePosition.wizardSpecialisationStaticDischarge))
-        {cooldown = 30000; type = "magic";}
+        {cooldown = SimplySkills.wizardConfig.signatureWizardStaticDischargeCooldown * 1000; type = "magic";}
 
         else if (ability.equals(SkillReferencePosition.berserkerSpecialisationBerserking))
-        {cooldown = 25000; type = "physical";}
+        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerBerserkingCooldown * 1000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.berserkerSpecialisationBloodthirsty))
-        {cooldown = 25000; type = "physical";}
+        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyCooldown * 1000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.berserkerSpecialisationRampage))
+        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerRampageCooldown * 1000; type = "physical";}
 
-        {cooldown = 25000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
-        {cooldown = 25000; type = "physical";}
+        {cooldown = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesCooldown * 1000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.rogueSpecialisationEvasion))
-        {cooldown = 25000; type = "physical";}
+        {cooldown = SimplySkills.rogueConfig.signatureRogueEvasionCooldown * 1000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.rogueSpecialisationPreparation))
+        {cooldown = SimplySkills.rogueConfig.signatureRoguePreparationCooldown * 1000; type = "physical";}
 
-        {cooldown = 25000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.rangerSpecialisationArrowRain))
-        {cooldown = 25000; type = "mixed";}
+        {cooldown = SimplySkills.rangerConfig.effectRangerArrowRainCooldown * 1000; type = "mixed";}
         else if (ability.equals(SkillReferencePosition.rangerSpecialisationDisengage))
-        {cooldown = 25000; type = "physical";}
+        {cooldown = SimplySkills.rangerConfig.signatureRangerDisengageCooldown * 1000; type = "physical";}
         else if (ability.equals(SkillReferencePosition.rangerSpecialisationElementalArrows))
-        {cooldown = 25000; type = "magic";}
+        {cooldown = SimplySkills.rangerConfig.effectRangerElementalArrowsCooldown * 1000; type = "magic";}
+
+        else if (ability.equals(SkillReferencePosition.spellbladeSpecialisationElementalImpact))
+        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactCooldown * 1000; type = "mixed";}
+        else if (ability.equals(SkillReferencePosition.spellbladeSpecialisationElementalSurge))
+        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.spellbladeSpecialisationSpellweaver))
+        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000; type = "magic";}
 
 
         double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
-        sendCooldown = cooldown - ((spellHaste * 0.4) * 100);
+        sendCooldown = cooldown - ((spellHaste * spellHasteCDReduce) * 100);
 
-        if (sendCooldown < 5000 && useSuccess)
-            sendCooldown = 5000;
+        if (sendCooldown < (minimumCD) && useSuccess) sendCooldown = minimumCD;
+        if (!useSuccess) sendCooldown = useDelay;
 
         sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown);
     }

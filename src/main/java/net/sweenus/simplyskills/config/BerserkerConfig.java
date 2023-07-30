@@ -27,9 +27,10 @@ public class BerserkerConfig implements ConfigData {
     public int passiveBerserkerChallengeFrequency = 20;
     public int passiveBerserkerChallengeRadius = 2;
     public int passiveBerserkerChallengeMaxAmplifier = 5;
-    public int signatureBerserkerRampageDuration = 300;
-    public int signatureBerserkerRampageSubEffectDuration = 200;
+    public int signatureBerserkerRampageDuration = 250;
+    public int signatureBerserkerRampageSubEffectDuration = 150;
     public int signatureBerserkerRampageSubEffectMaxAmplifier = 3;
+    public int signatureBerserkerRampageCooldown = 30;
     public int signatureBerserkerBullrushDuration = 20;
     public int signatureBerserkerBullrushVelocity = 2;
     public int signatureBerserkerBullrushRadius = 3;
@@ -46,12 +47,14 @@ public class BerserkerConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
     public int signatureBerserkerBloodthirstyTremorChance = 15;
     public int signatureBerserkerBloodthirstyMightyStacks = 1;
+    public int signatureBerserkerBloodthirstyCooldown = 25;
     @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
     public float signatureBerserkerBerserkingSacrificeAmount = 0.30f;
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public int signatureBerserkerBerserkingSecondsPerSacrifice = 1;
     public int signatureBerserkerBerserkingSubEffectDuration = 200;
     public int signatureBerserkerBerserkingSubEffectMaxAmplifier = 3;
+    public int signatureBerserkerBerserkingCooldown = 25;
     public int signatureBerserkerLeapSlamDuration = 62;
     public int signatureBerserkerLeapSlamRadius = 3;
     public double signatureBerserkerLeapSlamVelocity = 1.5;

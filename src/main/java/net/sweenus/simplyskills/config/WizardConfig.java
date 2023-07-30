@@ -24,6 +24,7 @@ public class WizardConfig implements ConfigData {
     public int signatureWizardMeteoricWrathRenewalBaseChance = 10;
     public int signatureWizardMeteoricWrathRenewalChanceIncreasePerTier = 15;
     public int signatureWizardMeteorShowerRange = 120;
+    public int signatureWizardMeteorShowerCooldown = 40;
     public int signatureWizardIceCometLeapVelocity = 3;
     public double signatureWizardIceCometLeapHeight = 1.3;
     public int signatureWizardIceCometLeapSlowfallDuration = 180;
@@ -32,6 +33,7 @@ public class WizardConfig implements ConfigData {
     public int signatureWizardIceCometVolleyFrequency = 20;
     public int signatureWizardIceCometVolleyRange = 120;
     public int signatureWizardIceCometRange = 120;
+    public int signatureWizardIceCometCooldown = 30;
     public int signatureWizardStaticDischargeBaseLeaps = 8;
     public int signatureWizardStaticDischargeLeapsPerTier = 8;
     @ConfigEntry.BoundedDiscrete(max = 100)
@@ -47,11 +49,13 @@ public class WizardConfig implements ConfigData {
     public int signatureWizardStaticChargeWeaknessDuration = 80;
     public int signatureWizardStaticChargeWeaknessAmplifier = 0;
     public int signatureWizardStaticDischargeRange = 120;
+    public int signatureWizardStaticDischargeCooldown = 35;
     public int signatureWizardArcaneBoltRange = 120;
     public int signatureWizardLesserArcaneBoltRadius = 12;
     public int signatureWizardArcaneBoltVolleyDuration = 400;
     public int signatureWizardArcaneBoltVolleyStacks = 10;
     public int signatureWizardArcaneBoltVolleyFrequency = 10;
     public int signatureWizardArcaneBoltVolleyRange = 120;
+    public int signatureWizardArcaneBoltCooldown = 35;
 
 }

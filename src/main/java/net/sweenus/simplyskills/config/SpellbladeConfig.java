@@ -18,6 +18,7 @@ public class SpellbladeConfig implements ConfigData {
     public int signatureSpellbladeElementalSurgeRadius = 3;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int signatureSpellbladeElementalSurgeChance = 100;
+    public int signatureSpellbladeElementalSurgeCooldown = 30;
     public int signatureSpellbladeElementalImpactDuration = 20;
     public int signatureSpellbladeElementalImpactResistanceAmplifier = 2;
     public int signatureSpellbladeElementalImpactRadius = 3;
@@ -26,6 +27,7 @@ public class SpellbladeConfig implements ConfigData {
     public int signatureSpellbladeElementalImpactSlownessAmplifier = 2;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int signatureSpellbladeElementalImpactChance = 100;
+    public int signatureSpellbladeElementalImpactCooldown = 25;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int signatureSpellbladeSpellweaverChance = 30;
     public int signatureSpellbladeSpellweaverDuration = 600;
@@ -38,5 +40,6 @@ public class SpellbladeConfig implements ConfigData {
     public int signatureSpellbladeSpellweaverRegenerationChance = 50;
     public int signatureSpellbladeSpellweaverRegenerationStacks = 1;
     public int signatureSpellbladeSpellweaverRegenerationMaxStacks = 2;
+    public int signatureSpellbladeSpellweaverCooldown = 40;
 
 }
