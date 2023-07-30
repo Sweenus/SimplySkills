@@ -80,7 +80,7 @@
 		]
 	},
 	"spell_fire_damage_additive+2%": {
-		"title": "+2%[+] Fire Spell Damage",
+		"title": "+2% [+] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -99,7 +99,7 @@
 		]
 	},
 	"spell_fire_damage_multi+5%": {
-		"title": "+5%[x] Fire Spell Damage",
+		"title": "+5% [x] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -118,7 +118,7 @@
 		]
 	},
 	"spell_arcane_damage_additive+2%": {
-		"title": "+2%[+] Arcane Spell Damage",
+		"title": "+2% [+] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -137,7 +137,7 @@
 		]
 	},
 	"spell_arcane_damage_multi+5%": {
-		"title": "+5%[x] Arcane Spell Damage",
+		"title": "+5% [x] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -156,7 +156,7 @@
 		]
 	},
 	"spell_frost_damage_additive+2%": {
-		"title": "+2%[+] Frost Spell Damage",
+		"title": "+2% [+] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -175,7 +175,7 @@
 		]
 	},
 	"spell_frost_damage_multi+5%": {
-		"title": "+5%[x] Frost Spell Damage",
+		"title": "+5% [x] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -194,7 +194,7 @@
 		]
 	},
 	"spell_healing_power_additive+2%": {
-		"title": "+2%[+] Healing Power",
+		"title": "+2% [+] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -213,7 +213,7 @@
 		]
 	},
 	"spell_healing_power_multi+5%": {
-		"title": "+5%[x] Healing Power",
+		"title": "+5% [x] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -232,7 +232,7 @@
 		]
 	},
 	"spell_lightning_damage_additive+2%": {
-		"title": "+2%[+] Lightning Spell Damage",
+		"title": "+2% [+] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -251,7 +251,7 @@
 		]
 	},
 	"spell_lightning_damage_multi+5%": {
-		"title": "+5%[x] Lightning Spell Damage",
+		"title": "+5% [x] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -270,7 +270,7 @@
 		]
 	},
 	"spell_soul_damage_additive+2%": {
-		"title": "+2%[+] Soul Spell Damage",
+		"title": "+2% [+] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -289,7 +289,7 @@
 		]
 	},
 	"spell_soul_damage_multi+5%": {
-		"title": "+5%[x] Soul Spell Damage",
+		"title": "+5% [x] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -308,7 +308,7 @@
 		]
 	},
 	"spell_crit_damage_additive+2%": {
-		"title": "+2%[+] Spell Critical Damage",
+		"title": "+2% [+] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -327,7 +327,7 @@
 		]
 	},
 	"spell_crit_damage_multi+5%": {
-		"title": "+5%[x] Spell Critical Damage",
+		"title": "+5% [x] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -346,7 +346,7 @@
 		]
 	},
 	"spell_crit_chance_additive+2%": {
-		"title": "+2%[+] Spell Critical Chance",
+		"title": "+2% [+] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -365,7 +365,7 @@
 		]
 	},
 	"spell_crit_chance_multi+5%": {
-		"title": "+5%[x] Spell Critical Chance",
+		"title": "+5% [x] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -384,7 +384,7 @@
 		]
 	},
 	"spell_haste_additive+2%": {
-		"title": "+2%[+] Spell Haste",
+		"title": "+2% [+] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -403,7 +403,7 @@
 		]
 	},
 	"spell_haste_multi+5%": {
-		"title": "+5%[x] Spell Haste",
+		"title": "+5% [x] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -442,7 +442,7 @@
 		]
 	},
 	"health+2": {
-		"title": "+1 Heart",
+		"title": "+1 §7Heart",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -461,7 +461,7 @@
 		]
 	},
 	"resistance+1%": {
-		"title": "+1%[+] Resistance",
+		"title": "+1% [+] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -480,7 +480,7 @@
 		]
 	},
 	"resistance_multi+2%": {
-		"title": "+2%[x] Resistance",
+		"title": "+2% [x] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -499,7 +499,7 @@
 		]
 	},
 	"melee_damage+1%": {
-		"title": "+1%[+] Melee Damage",
+		"title": "+1% [+] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -518,7 +518,7 @@
 		]
 	},
 	"melee_damage_multi+2%": {
-		"title": "+2%[x] Melee Damage",
+		"title": "+2% [x] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -537,7 +537,7 @@
 		]
 	},
 	"ranged_damage+1%": {
-		"title": "+1%[+] Ranged Damage",
+		"title": "+1% [+] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -556,7 +556,7 @@
 		]
 	},
 	"ranged_damage_multi+2%": {
-		"title": "+2%[x] Ranged Damage",
+		"title": "+2% [x] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -575,7 +575,7 @@
 		]
 	},
 	"attack_speed+1%": {
-		"title": "+1%[+] Attack Speed",
+		"title": "+1% [+] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -594,7 +594,7 @@
 		]
 	},
 	"attack_speed_multi+2%": {
-		"title": "+2%[x] Attack Speed",
+		"title": "+2% [x] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -613,7 +613,7 @@
 		]
 	},
 	"movement_speed+1%": {
-		"title": "+1%[+] Movement Speed",
+		"title": "+1% [+] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -632,7 +632,7 @@
 		]
 	},
 	"movement_speed_multi+1.5%": {
-		"title": "+1.5%[x] Movement Speed",
+		"title": "+1.5% [x] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -651,7 +651,7 @@
 		]
 	},
 	"luck+0.25": {
-		"title": "+0.25 Luck",
+		"title": "+0.25 §7Luck",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -670,7 +670,7 @@
 		]
 	},
 	"stamina+5%": {
-		"title": "+5%[+] Stamina",
+		"title": "+5% [+] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -689,7 +689,7 @@
 		]
 	},
 	"stamina_multi+7%": {
-		"title": "+7%[x] Stamina",
+		"title": "+7% [x] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -708,7 +708,7 @@
 		]
 	},
 	"healing+1%": {
-		"title": "+1% Healing [DEPRECATED]",
+		"title": "+1% §7Healing [DEPRECATED]",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -727,7 +727,7 @@
 		]
 	},
 	"jump+1%": {
-		"title": "+1%[+] Jump",
+		"title": "+1% [+] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -746,7 +746,7 @@
 		]
 	},
 	"jump_multi+2%": {
-		"title": "+2%[x] Jump",
+		"title": "+2% [x] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -765,7 +765,7 @@
 		]
 	},
 	"hardy": {
-		"title": "§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
+		"title": "§7§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -783,7 +783,7 @@
 		]
 	},
 	"initiateSlowfall": {
-		"title": "§a[Innate Slowfall]§7\nWhen falling long distances you gain Slow Falling.",
+		"title": "§7§a[Innate Slowfall]§7\nWhen falling long distances you gain Slow Falling.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -801,7 +801,7 @@
 		]
 	},
 	"fervour": {
-		"title": "§a[Fervour]§7\nLanding a killing blow grants you haste for a short duration.",
+		"title": "§7§a[Fervour]§7\nLanding a killing blow grants you haste for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -819,7 +819,7 @@
 		]
 	},
 	"wayfarerStealth": {
-		"title": "§a[Stealth]§7 \nGain Stealth when crouching. \n\n(Stealth) causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+		"title": "§7§a[Stealth]§7 \nGain Stealth when crouching. \n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -837,7 +837,7 @@
 		]
 	},
 	"wayfarerSneak": {
-		"title": "§a[Sneak]§7 \nGain speed when crouching.",
+		"title": "§7§a[Sneak]§7 \nGain speed when crouching.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -855,7 +855,7 @@
 		]
 	},
 	"wayfarerReflexive": {
-		"title": "§a[Reflexive]§7 \nWhen your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
+		"title": "§7§a[Reflexive]§7 \nWhen your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -873,7 +873,7 @@
 		]
 	},
 	"wayfarerUnseen": {
-		"title": "§a[Unseen]§7 \nWhile loading a Crossbow, gain momentary Stealth.",
+		"title": "§7§a[Unseen]§7 \nWhile loading a Crossbow, gain momentary Stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -891,7 +891,7 @@
 		]
 	},
 	"wayfarerGuarding": {
-		"title": "§a[Guarding]§7 \nWhile you have a Crossbow in your offhand, you periodically gain Barrier.\n\n(Barrier) The next damage you take is completely negated.",
+		"title": "§7§a[Guarding]§7 \nWhile you have a Crossbow in your offhand, you periodically gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -909,7 +909,7 @@
 		]
 	},
 	"initiateNullification": {
-		"title": "§a[Nullification]§7 \nPeriodically strip buffs from nearby hostiles.",
+		"title": "§7§a[Nullification]§7 \nPeriodically strip buffs from nearby hostiles.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -927,7 +927,7 @@
 		]
 	},
 	"initiateGambit": {
-		"title": "§a[Gambit]§7 \nYour spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
+		"title": "§7§a[Gambit]§7 \nYour spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -995,7 +995,7 @@
 		]
 	},
 	"initiateEmpower": {
-		"title": "§a[Empower]§7 \nChance on spell cast to gain a stack of Attunement.\n\n(Attunement) Increases spell damage for a specific school of magic by 5% per stack.",
+		"title": "§7§a[Empower]§7 \nChance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by 5% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1013,7 +1013,7 @@
 		]
 	},
 	"initiateAttuned": {
-		"title": "§a[Attuned]§7 \nWhen you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n(Precision) Increases spell critical damage and critical chance by 5% per stack.",
+		"title": "§7§a[Attuned]§7 \nWhen you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by 5% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1031,7 +1031,7 @@
 		]
 	},
 	"initiateLightningRod": {
-		"title": "§a[Lightning Rod]§7 \nDuring storms, you periodically gain stacks of Lightning Attunement.\n\n(Lightning Attunement) Increases spell damage for lightning magic by 5% per stack.",
+		"title": "§7§a[Lightning Rod]§7 \nDuring storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by 5% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1049,7 +1049,7 @@
 		]
 	},
 	"initiateEldritchEnfeeblement": {
-		"title": "§a[Eldritch Enfeeblement]§7 \nYour spell damage is increased by 20%, but your movespeed is decreased by 30%.",
+		"title": "§7§a[Eldritch Enfeeblement]§7 \nYour spell damage is increased by 20%, but your movespeed is decreased by 30%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1117,7 +1117,7 @@
 		]
 	},
 	"initiateHasty": {
-		"title": "§a[Hasty]§7 \nYour movespeed is increased by 20%, but you are inflicted with immobilize when taking damage. \n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
+		"title": "§7§a[Hasty]§7 \nYour movespeed is increased by 20%, but you are inflicted with immobilize when taking damage. \n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1137,7 +1137,7 @@
 		]
 	},
 	"initiatePerilousPrecision": {
-		"title": "§a[Perilous Precision]§7 \nYour spell critical chance is increased by 10%, but your max health is reduced by 20%.",
+		"title": "§7§a[Perilous Precision]§7 \nYour spell critical chance is increased by 10%, but your max health is reduced by 20%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1165,7 +1165,7 @@
 		]
 	},
 	"cleric": {
-		"title": "§a[Cleric]§7 \nPeriodically cleanse debuffs from nearby allies.",
+		"title": "§7§a[Cleric]§7 \nPeriodically cleanse debuffs from nearby allies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1183,7 +1183,7 @@
 		]
 	},
 	"cleansing": {
-		"title": "§a[Cleansing]§7 \nPeriodically cleanse debuffs from yourself.",
+		"title": "§7§a[Cleansing]§7 \nPeriodically cleanse debuffs from yourself.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1201,7 +1201,7 @@
 		]
 	},
 	"rangerReveal": {
-		"title": "§a[Reveal]§7 \nPeriodically reveal nearby Stealthy enemies.",
+		"title": "§7§a[Reveal]§7 \nPeriodically reveal nearby Stealthy enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1219,7 +1219,7 @@
 		]
 	},
 	"rangerTamer": {
-		"title": "§a[Tamer]§7 \nWhen your pets are near to you, they gain Regeneration & Resistance.",
+		"title": "§7§a[Tamer]§7 \nWhen your pets are near to you, they gain Regeneration & Resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1237,7 +1237,7 @@
 		]
 	},
 	"rangerBonded": {
-		"title": "§a[Bonded]§7 \nWhen your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
+		"title": "§7§a[Bonded]§7 \nWhen your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1255,7 +1255,7 @@
 		]
 	},
 	"rangerTrained": {
-		"title": "§a[Trained]§7 \nWhen your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
+		"title": "§7§a[Trained]§7 \nWhen your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1273,7 +1273,7 @@
 		]
 	},
 	"rangerIncognito": {
-		"title": "§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they also gain Stealth.",
+		"title": "§7§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they also gain Stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1291,7 +1291,7 @@
 		]
 	},
 	"rogueBackstab": {
-		"title": "§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
+		"title": "§7§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1309,7 +1309,7 @@
 		]
 	},
 	"warriorHeavyArmorMastery": {
-		"title": "§a[Heavy Armor Mastery]§7 \nWhile your armor value is above 15, you have a chance to gain Strength when hit.",
+		"title": "§7§a[Heavy Armor Mastery]§7 \nWhile your armor value is above 15, you have a chance to gain Strength when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1327,7 +1327,7 @@
 		]
 	},
 	"warriorMediumArmorMastery": {
-		"title": "§a[Medium Armor Mastery]§7 \nWhile your armor value is below 15, you have a chance to gain Absorption when hit.",
+		"title": "§7§a[Medium Armor Mastery]§7 \nWhile your armor value is below 15, you have a chance to gain Absorption when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1345,7 +1345,7 @@
 		]
 	},
 	"warriorSpellbreaker": {
-		"title": "§a[Spellbreaker]§7 \nWhen taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n(Spellbreaking) causes hostile spell projectiles to explode when in close proximity to you.",
+		"title": "§7§a[Spellbreaker]§7 \nWhen taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n§f(Spellbreaking)§7 causes hostile spell projectiles to explode when in close proximity to you.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1363,7 +1363,7 @@
 		]
 	},
 	"warriorGoliath": {
-		"title": "§a[Goliath]§7 \nWhen falling long distances, gain Earthshaker.\n\n(Earthshaker) causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+		"title": "§7§a[Goliath]§7 \nWhen falling long distances, gain Earthshaker.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1381,7 +1381,7 @@
 		]
 	},
 	"warriorHeavyWeight": {
-		"title": "§a[Heavy Weight]§7 \nYour Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
+		"title": "§7§a[Heavy Weight]§7 \nYour Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1399,7 +1399,7 @@
 		]
 	},
 	"warriorDeathDefy": {
-		"title": "§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"title": "§7§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n§f(Exhaustion)§7 reduces your Melee Attack and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1417,7 +1417,7 @@
 		]
 	},
 	"warriorFrenzy": {
-		"title": "§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n(Exhaustion) reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"title": "§7§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n§f(Exhaustion)§7 reduces your Melee Attack and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1455,7 +1455,7 @@
 		]
 	},
 	"berserkerSwordMastery": {
-		"title": "§a[Sword Mastery]§7 \nGain pulsing Speed when wielding a sword in your mainhand.",
+		"title": "§7§a[Sword Mastery]§7 \nGain pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1473,7 +1473,7 @@
 		]
 	},
 	"berserkerSwordMasteryProficient": {
-		"title": "§a[Sword Mastery +]§7 \nGain increased pulsing Speed when wielding a sword in your mainhand.",
+		"title": "§7§a[Sword Mastery +]§7 \nGain increased pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1491,7 +1491,7 @@
 		]
 	},
 	"berserkerSwordMasterySkilled": {
-		"title": "§a[Sword Mastery ++]§7 \nWhen not dual wielding, gain pulsing Might.\n\n(Might) grants 25% increased attack damage per stack.",
+		"title": "§7§a[Sword Mastery ++]§7 \nWhen not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1509,7 +1509,7 @@
 		]
 	},
 	"berserkerAxeMastery": {
-		"title": "§a[Axe Mastery]§7 \nGain pulsing strength when wielding an axe in your mainhand.",
+		"title": "§7§a[Axe Mastery]§7 \nGain pulsing strength when wielding an axe in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1527,7 +1527,7 @@
 		]
 	},
 	"berserkerAxeMasteryProficient": {
-		"title": "§a[Axe Mastery +]§7 \nGain increased pulsing strength when wielding an axe in your mainhand.",
+		"title": "§7§a[Axe Mastery +]§7 \nGain increased pulsing strength when wielding an axe in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1545,7 +1545,7 @@
 		]
 	},
 	"berserkerAxeMasterySkilled": {
-		"title": "§a[Axe Mastery ++]§7 \nGain increased pulsing strength when wielding an axe in your mainhand.",
+		"title": "§7§a[Axe Mastery ++]§7 \nGain increased pulsing strength when wielding an axe in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1563,7 +1563,7 @@
 		]
 	},
 	"berserkerIgnorePain": {
-		"title": "§a[Ignore Pain]§7 \nWhen your HP drops below 40% you gain pulsing resistance.",
+		"title": "§7§a[Ignore Pain]§7 \nWhen your HP drops below 40% you gain pulsing resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1581,7 +1581,7 @@
 		]
 	},
 	"berserkerIgnorePainProficient": {
-		"title": "§a[Ignore Pain +]§7 \nWhen your HP drops below 40% you gain increased pulsing resistance.",
+		"title": "§7§a[Ignore Pain +]§7 \nWhen your HP drops below 40% you gain increased pulsing resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1599,7 +1599,7 @@
 		]
 	},
 	"berserkerIgnorePainSkilled": {
-		"title": "§a[Ignore Pain ++]§7 \nWhen your HP drops below 40% you gain increased pulsing resistance.",
+		"title": "§7§a[Ignore Pain ++]§7 \nWhen your HP drops below 40% you gain increased pulsing resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1617,7 +1617,7 @@
 		]
 	},
 	"berserkerRecklessness": {
-		"title": "§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.",
+		"title": "§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1635,7 +1635,7 @@
 		]
 	},
 	"berserkerChallenge": {
-		"title": "§a[Challenge]§7 \nGain a stack of haste for each nearby enemy.",
+		"title": "§7§a[Challenge]§7 \nGain a stack of haste for each nearby enemy.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1653,7 +1653,7 @@
 		]
 	},
 	"berserkerExploit": {
-		"title": "§a[Exploit]§7 \nHitting immobilized enemies inflicts them with weakness.",
+		"title": "§7§a[Exploit]§7 \nHitting immobilized enemies inflicts them with weakness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1689,7 +1689,7 @@
 		]
 	},
 	"bulwarkShieldMastery": {
-		"title": "§a[Shield Mastery]§7 \nGain weakness & resistance when wielding a shield.",
+		"title": "§7§a[Shield Mastery]§7 \nGain weakness & resistance when wielding a shield.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1707,7 +1707,7 @@
 		]
 	},
 	"bulwarkShieldMasteryProficient": {
-		"title": "§a[Shield Mastery +]§7 \nGain weakness & increased resistance when wielding a shield.",
+		"title": "§7§a[Shield Mastery +]§7 \nGain weakness & increased resistance when wielding a shield.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1725,7 +1725,7 @@
 		]
 	},
 	"bulwarkShieldMasterySkilled": {
-		"title": "§a[Shield Mastery ++]§7 \nGain weakness & increased resistance when wielding a shield.",
+		"title": "§7§a[Shield Mastery ++]§7 \nGain weakness & increased resistance when wielding a shield.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1743,7 +1743,7 @@
 		]
 	},
 	"bulwarkRebuke": {
-		"title": "§a[Rebuke]§7 \n25% Chance on block to inflict your attacker with weakness.",
+		"title": "§7§a[Rebuke]§7 \n25% Chance on block to inflict your attacker with weakness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1761,7 +1761,7 @@
 		]
 	},
 	"wayfarerSlender": {
-		"title": "§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness",
+		"title": "§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1797,7 +1797,7 @@
 		]
 	},
 	"rogueSmokeBomb": {
-		"title": "§a[Smoke Bomb]§7 \n25% Chance to blind nearby enemies and gain Immobilizing Aura when hit.\n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
+		"title": "§7§a[Smoke Bomb]§7 \nChance to blind nearby enemies and gain Immobilizing Aura when hit.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1815,7 +1815,7 @@
 		]
 	},
 	"rogueOpportunisticMastery": {
-		"title": "§a[Opportunistic Mastery]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a short duration.",
+		"title": "§7§a[Opportunistic Mastery]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1833,7 +1833,7 @@
 		]
 	},
 	"rogueOpportunisticMasteryProficient": {
-		"title": "§a[Opportunistic Mastery +]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a moderate duration.",
+		"title": "§7§a[Opportunistic Mastery +]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a moderate duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1851,7 +1851,7 @@
 		]
 	},
 	"rogueOpportunisticMasterySkilled": {
-		"title": "§a[Opportunistic Mastery ++]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a long duration.",
+		"title": "§7§a[Opportunistic Mastery ++]§7 \nAttacking while under the effects of Stealth causes you to poison your target for a long duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1869,7 +1869,7 @@
 		]
 	},
 	"rogueEvasionMastery": {
-		"title": "§a[Evasion Mastery]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 15% Chance to completely avoid incoming damage.",
+		"title": "§7§a[Evasion Mastery]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 15% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1887,7 +1887,7 @@
 		]
 	},
 	"rogueEvasionMasteryProficient": {
-		"title": "§a[Evasion Mastery +]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 20% Chance to completely avoid incoming damage.",
+		"title": "§7§a[Evasion Mastery +]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 20% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1905,7 +1905,7 @@
 		]
 	},
 	"rogueEvasionMasterySkilled": {
-		"title": "§a[Evasion Mastery ++]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 25% Chance to completely avoid incoming damage.",
+		"title": "§7§a[Evasion Mastery ++]§7 \nWhen below the armor threshold of the Wayfarer Slender passive, you have a 25% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1923,7 +1923,7 @@
 		]
 	},
 	"rogueExploitation": {
-		"title": "§a[Exploitation]§7 \nWhile under the effects of stealth, your back attacks inflict Death Mark.",
+		"title": "§7§a[Exploitation]§7 \nWhile under the effects of stealth, your back attacks inflict Death Mark.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1941,7 +1941,7 @@
 		]
 	},
 	"rogueRecovery": {
-		"title": "§a[Recovery]§7 \nWhen you gain Stealth, you also gain Regeneration.",
+		"title": "§7§a[Recovery]§7 \nWhen you gain Stealth, you also gain Regeneration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1959,7 +1959,7 @@
 		]
 	},
 	"rogueShadowVeil": {
-		"title": "§a[Shadow Veil]§7 \nWhile under the effects of Stealth, you periodically gain increasing Resistance.",
+		"title": "§7§a[Shadow Veil]§7 \nWhile under the effects of Stealth, you periodically gain increasing Resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1977,7 +1977,7 @@
 		]
 	},
 	"rogueDeflection": {
-		"title": "§a[Deflection]§7 \nWhen dual wielding weapons (axes do not count), the base evasion chance of your Evasion Mastery passive is increased by 10%.",
+		"title": "§7§a[Deflection]§7 \nWhen dual wielding weapons §f(axes do not count)§7, the base evasion chance of your Evasion Mastery passive is increased by 10%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1995,7 +1995,7 @@
 		]
 	},
 	"rogueFleetfooted": {
-		"title": "§a[Fleetfooted]§7 \nWhen you are forcefully removed from Stealth, you gain momentary Speed.",
+		"title": "§7§a[Fleetfooted]§7 \nWhen you are forcefully removed from Stealth, you gain momentary Speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2031,7 +2031,7 @@
 		]
 	},
 	"initiateFrail": {
-		"title": "§a[Frail]§7 \nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.",
+		"title": "§7§a[Frail]§7 \nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2103,7 +2103,7 @@
 		]
 	},
 	"spellbladeWeaponExpert": {
-		"title": "§a[Weapon Expert]§7 \nYou are no longer penalised for using high damage weapons due to the Initiate Frail passive.",
+		"title": "§7§a[Weapon Expert]§7 \nYou are no longer penalised for using high damage weapons due to the Initiate Frail passive.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2121,7 +2121,7 @@
 		]
 	},
 	"spellbladeSpellweaving": {
-		"title": "§a[Spellweaving]§7 \nYou now have a 15% chance to summon a random spell when you hit an enemy.",
+		"title": "§7§a[Spellweaving]§7 \nYou now have a 15% chance to summon a random spell when you hit an enemy.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2139,7 +2139,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurge": {
-		"title": "Signature Ability: \n§6[Elemental Surge]§7 \nGrants you Elemental Surge for 15s. \n\n(Elemental Surge) causes you to periodically release elemental novas.",
+		"title": "Signature Ability: \n§6[Elemental Surge]§7 \nGrants you Elemental Surge for 15s. \n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2157,7 +2157,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurgeNoFrost": {
-		"title": "Removes Frost Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+		"title": "§7Removes Frost Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2175,7 +2175,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurgeNoFire": {
-		"title": "Removes Fire Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+		"title": "§7Removes Fire Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2193,7 +2193,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurgeRenewal": {
-		"title": "Hitting enemies while you have §6[Elemental Surge]§7 has a 15% chance to extend the its duration by 3 seconds.",
+		"title": "§7Hitting enemies while you have §6[Elemental Surge]§7 has a 15% chance to extend the its duration by 3 seconds.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2211,7 +2211,7 @@
 		]
 	},
 	"spellbladeSignatureElementalSurgeNoLightning": {
-		"title": "Removes Lightning Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+		"title": "§7Removes Lightning Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2247,7 +2247,7 @@
 		]
 	},
 	"spellbladeSignatureElementalImpactMagnet": {
-		"title": "Your §6[Elemental Impact]§7 now pulls nearby enemies into the path of impact.",
+		"title": "§7Your §6[Elemental Impact]§7 now pulls nearby enemies into the path of impact.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2265,7 +2265,7 @@
 		]
 	},
 	"spellbladeSignatureElementalImpactResistance": {
-		"title": "Your §6[Elemental Impact]§7 now also grants you brief resistance.",
+		"title": "§7Your §6[Elemental Impact]§7 now also grants you brief resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2301,7 +2301,7 @@
 		]
 	},
 	"spellbladeSignatureSpellweaverHaste": {
-		"title": "Your Spellweaving procs now grant you 5s of Haste stacking up to 5 times.",
+		"title": "§7Your Spellweaving procs now grant you 5s of Haste stacking up to 5 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2319,7 +2319,7 @@
 		]
 	},
 	"spellbladeSignatureSpellweaverRegeneration": {
-		"title": "Your Spellweaving procs now have a 50% chance to grant you regeneration for 5s.",
+		"title": "§7Your Spellweaving procs now have a 50% chance to grant you regeneration for 5s.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2409,7 +2409,7 @@
 		]
 	},
 	"wizardPassiveSpellEcho": {
-		"title": "§a[Spell Echo]§7 \nYour spell hits have a chance to echo, casting an additional random spell at the target.",
+		"title": "§7§a[Spell Echo]§7 \nYour spell hits have a chance to echo, casting an additional random spell at the target.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2445,7 +2445,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerGreater": {
-		"title": "§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.",
+		"title": "§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2463,7 +2463,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerWrath": {
-		"title": "Casting §6[Meteor Shower]§7 now grants you 10 stacks of Meteoric Wrath. \n \n(Meteoric Wrath) periodically summons meteors above nearby enemies.",
+		"title": "§7Casting §6[Meteor Shower]§7 now grants you 10 stacks of Meteoric Wrath. \n \n§f(Meteoric Wrath)§7 periodically summons meteors above nearby enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2481,7 +2481,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath": {
-		"title": "When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
+		"title": "§7When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2499,7 +2499,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath++": {
-		"title": "When Meteoric Wrath triggers it has a 30% chance to not consume a stack.",
+		"title": "§7When Meteoric Wrath triggers it has a 30% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2517,7 +2517,7 @@
 		]
 	},
 	"wizardSignatureMeteorShowerRenewingWrath+++": {
-		"title": "When Meteoric Wrath triggers it has a 50% chance to not consume a stack.",
+		"title": "§7When Meteoric Wrath triggers it has a 50% chance to not consume a stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2553,7 +2553,7 @@
 		]
 	},
 	"wizardSignatureIceCometLeap": {
-		"title": "Casting §6[Ice Comet]§7 now causes you to leap backwards and gain momentary slow falling.",
+		"title": "§7Casting §6[Ice Comet]§7 now causes you to leap backwards and gain momentary slow falling.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2571,7 +2571,7 @@
 		]
 	},
 	"wizardSignatureIceCometVolley": {
-		"title": "Casting §6[Ice Comet]§7 now grants you 6 stacks of frost volley. \n \n(Frost Volley) causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
+		"title": "§7Casting §6[Ice Comet]§7 now grants you 6 stacks of frost volley. \n \n§f(Frost Volley)§7 causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2589,7 +2589,7 @@
 		]
 	},
 	"wizardSignatureIceCometDamage+": {
-		"title": "§6[Ice Comet]§7 Is now larger and deals more damage & knockback.",
+		"title": "§7§6[Ice Comet]§7 Is now larger and deals more damage & knockback.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2607,7 +2607,7 @@
 		]
 	},
 	"wizardSignatureIceCometDamage++": {
-		"title": "§6[Ice Comet]§7 Is now larger and deals much more damage & knockback.",
+		"title": "§7§6[Ice Comet]§7 Is now larger and deals much more damage & knockback.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2625,7 +2625,7 @@
 		]
 	},
 	"wizardSignatureIceCometDamage+++": {
-		"title": "§6[Ice Comet]§7 Is now larger and deals significantly more damage & knockback.",
+		"title": "§7§6[Ice Comet]§7 Is now larger and deals significantly more damage & knockback.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2661,7 +2661,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap": {
-		"title": "Your §6[Discharge]§7 can now leap between nearby enemies up to 8 times.",
+		"title": "§7Your §6[Discharge]§7 can now leap between nearby enemies up to 8 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2679,7 +2679,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap++": {
-		"title": "Your §6[Static Discharge]§7 can now leap between nearby enemies up to 16 times.",
+		"title": "§7Your §6[Static Discharge]§7 can now leap between nearby enemies up to 16 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2697,7 +2697,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap+++": {
-		"title": "Your §6[Static Discharge]§7 can now leap between nearby enemies up to 24 times.",
+		"title": "§7Your §6[Static Discharge]§7 can now leap between nearby enemies up to 24 times.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2715,7 +2715,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeSpeed": {
-		"title": "Each time §6[Static Discharge]§7 leaps or is cast, you have a 5% chance to gain speed.",
+		"title": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 5% chance to gain speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2733,7 +2733,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeSpeed++": {
-		"title": "Each time §6[Static Discharge]§7 leaps or is cast, you have a 10% chance to gain speed.",
+		"title": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 10% chance to gain speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2751,7 +2751,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeSpeed+++": {
-		"title": "Each time §6[Static Discharge]§7 leaps or is cast, you have a 15% chance to gain speed.",
+		"title": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 15% chance to gain speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2787,7 +2787,7 @@
 		]
 	},
 	"wizardSignatureArcaneBoltLesser": {
-		"title": "Your §6[Arcane Bolt]§7 now fires multiple Lesser Arcane Bolts in a larger area. These bolts move faster and have less damage.",
+		"title": "§7Your §6[Arcane Bolt]§7 now fires multiple Lesser Arcane Bolts in a larger area. These bolts move faster and have less damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2805,7 +2805,7 @@
 		]
 	},
 	"wizardSignatureArcaneBoltVolley": {
-		"title": "Casting §6[Arcane Bolt]§7 now grants you 10 stacks of Arcane Volley. \n \n(Arcane Volley) causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
+		"title": "§7Casting §6[Arcane Bolt]§7 now grants you 10 stacks of Arcane Volley. \n \n§f(Arcane Volley)§7 causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2823,7 +2823,7 @@
 		]
 	},
 	"wizardSignatureArcaneBoltGreater": {
-		"title": "You now cast a §6[Greater Arcane Bolt]§7 that deals increased damage. \n \nThis does not affect Lesser Arcane Bolts.",
+		"title": "§7You now cast a §6[Greater Arcane Bolt]§7 that deals increased damage. \n \nThis does not affect Lesser Arcane Bolts.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2913,7 +2913,7 @@
 		]
 	},
 	"rogueSignatureEvasionFanOfBlades": {
-		"title": "§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n(Fan of Blades) causes you to throw daggers at enemies in front of you.",
+		"title": "§7§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n§f(Fan of Blades)§7 causes you to throw daggers at enemies in front of you.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2931,7 +2931,7 @@
 		]
 	},
 	"rogueSignatureEvasionFanOfBladesDisenchantment": {
-		"title": "Your Fan of Blades now also inflict enemies with Disenchantment.\n\n(Disenchantment) periodically strips buffs from the victim.",
+		"title": "§7Your Fan of Blades now also inflict enemies with Disenchantment.\n\n§f(Disenchantment)§7 periodically strips buffs from the victim.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2949,7 +2949,7 @@
 		]
 	},
 	"rogueSignatureEvasionFanOfBladesAssault": {
-		"title": "You now gain 20 stacks of Fan of Blades with increased throw frequency but decreased damage.",
+		"title": "§7You now gain 20 stacks of Fan of Blades with increased throw frequency but decreased damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2967,7 +2967,7 @@
 		]
 	},
 	"rogueSignatureEvasionFanOfBladesRenewal": {
-		"title": "Gain two stacks of Fan of Blades on kill.",
+		"title": "§7Gain two stacks of Fan of Blades on kill.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3003,7 +3003,7 @@
 		]
 	},
 	"rogueSignaturePreparationShadowstrike": {
-		"title": "§6[Preparation]§7 now causes you to dash forward at lightning speed, dealing mainhand damage to enemies in your path.",
+		"title": "§7§6[Preparation]§7 now causes you to dash forward at lightning speed, dealing mainhand damage to enemies in your path.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3021,7 +3021,7 @@
 		]
 	},
 	"rogueSignaturePreparationShadowstrikeVampire": {
-		"title": "You steal buffs from enemies caught within the path of your dash.",
+		"title": "§7You steal buffs from enemies caught within the path of your dash.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3039,7 +3039,7 @@
 		]
 	},
 	"rogueSignaturePreparationShadowstrikeBolt": {
-		"title": "When dashing forward you cast Lesser Soul Bolts at enemies in your path.",
+		"title": "§7When dashing forward you cast Lesser Soul Bolts at enemies in your path.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3057,7 +3057,7 @@
 		]
 	},
 	"rogueSignatureSiphoningStrikes": {
-		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n(Siphoning Strikes) causes you to siphon health health and strip buffs from your enemies on hit.",
+		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3075,7 +3075,7 @@
 		]
 	},
 	"rogueSignatureSiphoningStrikesMighty": {
-		"title": "When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n(Might) grants 25% increased attack damage per stack.",
+		"title": "§7When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3093,7 +3093,7 @@
 		]
 	},
 	"rogueSignatureSiphoningStrikesAura": {
-		"title": "When you gain §6[Siphoning Strikes]§7 you also gain Immobilizing Aura.\n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
+		"title": "§7When you gain §6[Siphoning Strikes]§7 you also gain Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3111,7 +3111,7 @@
 		]
 	},
 	"rogueSignatureSiphoningStrikesVanish": {
-		"title": "Your §6[Siphoning Strikes]§7 also cleanse you of all stacks of Revealed on hit.",
+		"title": "§7Your §6[Siphoning Strikes]§7 also cleanse you of all stacks of Revealed on hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3129,7 +3129,7 @@
 		]
 	},
 	"rangerSignatureArrowRain": {
-		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n(Arrow Rain) causes your next fully-charged bow attack will summon a rain of arrows at the targeted area",
+		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3147,7 +3147,7 @@
 		]
 	},
 	"rangerSignatureArrowRainElemental": {
-		"title": "Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.",
+		"title": "§7Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3165,7 +3165,7 @@
 		]
 	},
 	"rangerSignatureArrowRainEplosive": {
-		"title": "Your §6[Arrow Rain]§7 now leaves behind proximity explosive arrows.",
+		"title": "§7Your §6[Arrow Rain]§7 now leaves behind proximity explosive arrows.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3183,7 +3183,7 @@
 		]
 	},
 	"rangerSignatureArrowRainVolley+": {
-		"title": "Your §6[Arrow Rain]§7 now fires one additional volley.",
+		"title": "§7Your §6[Arrow Rain]§7 now fires one additional volley.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3201,7 +3201,7 @@
 		]
 	},
 	"rangerSignatureArrowRainVolley++": {
-		"title": "Your §6[Arrow Rain]§7 now fires two additional volleys.",
+		"title": "§7Your §6[Arrow Rain]§7 now fires two additional volleys.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3219,7 +3219,7 @@
 		]
 	},
 	"rangerSignatureArrowRainVolley+++": {
-		"title": "Your §6[Arrow Rain]§7 now fires three additional volleys.",
+		"title": "§7Your §6[Arrow Rain]§7 now fires three additional volleys.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3237,7 +3237,7 @@
 		]
 	},
 	"rangerSignatureArrowRainRadius+": {
-		"title": "Your §6[Arrow Rain]§7 now has +1 radius.",
+		"title": "§7Your §6[Arrow Rain]§7 now has +1 radius.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3255,7 +3255,7 @@
 		]
 	},
 	"rangerSignatureArrowRainRadius++": {
-		"title": "Your §6[Arrow Rain]§7 now has +2 radius.",
+		"title": "§7Your §6[Arrow Rain]§7 now has +2 radius.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3273,7 +3273,7 @@
 		]
 	},
 	"rangerSignatureArrowRainRadius+++": {
-		"title": "Your §6[Arrow Rain]§7 now has +3 radius.",
+		"title": "§7Your §6[Arrow Rain]§7 now has +3 radius.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3309,7 +3309,7 @@
 		]
 	},
 	"rangerSignatureDisengageRecuperate": {
-		"title": "§6[Disengage]§7 now heals all nearby pets to full health.",
+		"title": "§7§6[Disengage]§7 now heals all nearby pets to full health.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3327,7 +3327,7 @@
 		]
 	},
 	"rangerSignatureDisengageExploitation": {
-		"title": "§6[Disengage]§7 now grants all nearby pets Immobilizing Aura for a short duration. \n\n(Immobilizing Aura) periodically inflicts nearby enemies with Immobilize.",
+		"title": "§7§6[Disengage]§7 now grants all nearby pets Immobilizing Aura for a short duration. \n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3345,7 +3345,7 @@
 		]
 	},
 	"rangerSignatureDisengageMarksman": {
-		"title": "§6[Disengage]§7 now grants you a stack of Marksman. \n\n(Marksman) Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n(Death Mark) Reduces the victims resistance and healing by 25% per stack.",
+		"title": "§7§6[Disengage]§7 now grants you a stack of Marksman. \n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3381,7 +3381,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsFrostAttuned": {
-		"title": "Your §6[Elemental Arrows]§7 will always be frost attuned.",
+		"title": "§7Your §6[Elemental Arrows]§7 will always be frost attuned.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3399,7 +3399,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsFireAttuned": {
-		"title": "Your §6[Elemental Arrows]§7 will always be fire attuned.",
+		"title": "§7Your §6[Elemental Arrows]§7 will always be fire attuned.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3417,7 +3417,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsLightningAttuned": {
-		"title": "Your §6[Elemental Arrows]§7 will always be lightning attuned.",
+		"title": "§7Your §6[Elemental Arrows]§7 will always be lightning attuned.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3435,7 +3435,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsRadius+": {
-		"title": "The radius of your §6[Elemental Arrows]§7 is increased by 2.",
+		"title": "§7The radius of your §6[Elemental Arrows]§7 is increased by 2.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3453,7 +3453,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsRadius++": {
-		"title": "The radius of your §6[Elemental Arrows]§7 is increased by 4.",
+		"title": "§7The radius of your §6[Elemental Arrows]§7 is increased by 4.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3471,7 +3471,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsRadius+++": {
-		"title": "The radius of your §6[Elemental Arrows]§7 is increased by 6.",
+		"title": "§7The radius of your §6[Elemental Arrows]§7 is increased by 6.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3489,7 +3489,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsStacks+": {
-		"title": "You gain one additional stack of §6[Elemental Arrows]§7.",
+		"title": "§7You gain one additional stack of §6[Elemental Arrows]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3507,7 +3507,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsStacks++": {
-		"title": "You gain two additional stacks of §6[Elemental Arrows]§7.",
+		"title": "§7You gain two additional stacks of §6[Elemental Arrows]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3525,7 +3525,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsStacks+++": {
-		"title": "You gain three additional stacks of §6[Elemental Arrows]§7.",
+		"title": "§7You gain three additional stacks of §6[Elemental Arrows]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3543,7 +3543,7 @@
 		]
 	},
 	"rangerSignatureElementalArrowsRenewal": {
-		"title": "You have a 35% chance on kill to gain a stack of §6[Elemental Arrows]§7.",
+		"title": "§7You have a 35% chance on kill to gain a stack of §6[Elemental Arrows]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3777,7 +3777,7 @@
 		]
 	},
 	"berserkerSignatureRampage": {
-		"title": "Signature Ability: \n§6[Rampage]§7 \nGain Rampage for 15s.\n\n(Rampage) grants you random buffs each time you take damage.",
+		"title": "Signature Ability: \n§6[Rampage]§7 \nGain Rampage for 15s.\n\n§f(Rampage)§7 grants you random buffs each time you take damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3795,7 +3795,7 @@
 		]
 	},
 	"berserkerSignatureRampageCharge": {
-		"title": "§6[Rampage]§7 now immediately grants you regeneration and resistance and causes you to barrel forward, dealing damage and knocking back enemies.",
+		"title": "§7§6[Rampage]§7 now immediately grants you regeneration and resistance and causes you to barrel forward, dealing damage and knocking back enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3813,7 +3813,7 @@
 		]
 	},
 	"berserkerSignatureRampageChargeRelentless": {
-		"title": "When your charge deals damage, you convert your stacks of Exhaustion into Strength.",
+		"title": "§7When your charge deals damage, you convert your stacks of Exhaustion into Strength.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3831,7 +3831,7 @@
 		]
 	},
 	"berserkerSignatureRampageChargeImmob": {
-		"title": "Enemies hit by your charge are also inflicted with Immobilize. \n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
+		"title": "§7Enemies hit by your charge are also inflicted with Immobilize. \n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3849,7 +3849,7 @@
 		]
 	},
 	"berserkerSignatureBloodthirsty": {
-		"title": "Signature Ability: \n§6[Bloodthirsty]§7 \nGain Bloodthirsty for 20s.\n\n(Bloodthirsty) grants you 25% of your max health each time you defeat an enemy.",
+		"title": "Signature Ability: \n§6[Bloodthirsty]§7 \nGain Bloodthirsty for 20s.\n\n§f(Bloodthirsty)§7 grants you 25% of your max health each time you defeat an enemy.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3867,7 +3867,7 @@
 		]
 	},
 	"berserkerSignatureBloodthirstyMighty": {
-		"title": "§6[Bloodthirsty]§7 Now grants you Might on use.\n\n(Might) grants 25% increased attack damage per stack.",
+		"title": "§7§6[Bloodthirsty]§7 Now grants you Might on use.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3885,7 +3885,7 @@
 		]
 	},
 	"berserkerSignatureBloodthirstyTireless": {
-		"title": "While §6[Bloodthirsty]§7 is active, you have a chance to remove stacks of Exhaustion on hit.",
+		"title": "§7While §6[Bloodthirsty]§7 is active, you have a chance to remove stacks of Exhaustion on hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3903,7 +3903,7 @@
 		]
 	},
 	"berserkerSignatureBloodthirstyTremor": {
-		"title": "While §6[Bloodthirsty]§7 is active, you have a chance to gain Earthshaker on hit.\n\n(Earthshaker) causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+		"title": "§7While §6[Bloodthirsty]§7 is active, you have a chance to gain Earthshaker on hit.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3921,7 +3921,7 @@
 		]
 	},
 	"berserkerSignatureBerserking": {
-		"title": "Signature Ability: \n§6[Berserking]§7 \nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n(Berserking) grants you stacking offensive buffs each time you hit an enemy",
+		"title": "Signature Ability: \n§6[Berserking]§7 \nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n§f(Berserking)§7 grants you stacking offensive buffs each time you hit an enemy",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3939,7 +3939,7 @@
 		]
 	},
 	"berserkerSignatureBerserkingLeap": {
-		"title": "§6[Berserking]§7 now causes you to perform a forward leap slam, damaging and knocking back enemies at the landing location.",
+		"title": "§7§6[Berserking]§7 now causes you to perform a forward leap slam, damaging and knocking back enemies at the landing location.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3957,7 +3957,7 @@
 		]
 	},
 	"berserkerSignatureBerserkingLeapImmob": {
-		"title": "Leap Slam now also inflicts enemies with Immobilize.\n\n(Immobilize) greatly slows and damages the victim when they attempt to move.",
+		"title": "§7Leap Slam now also inflicts enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3975,7 +3975,7 @@
 		]
 	},
 	"berserkerSignatureBerserkingLeapPull": {
-		"title": "Leap Slam now pulls nearby enemies instead of knocking them back.",
+		"title": "§7Leap Slam now pulls nearby enemies instead of knocking them back.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
