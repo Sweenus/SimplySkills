@@ -10,7 +10,8 @@
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
     "SpellHelperMixin",
-    "CrossbowItemMixin"
+    "CrossbowItemMixin",
+    "SpellProjectileMixin"
   ],
   "client": [
     "client.ArmorFeatureRendererMixin",

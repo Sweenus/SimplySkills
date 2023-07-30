@@ -11,6 +11,8 @@ public class WizardConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
     public boolean enableWizardSpecialisation = true;
 
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int passiveWizardSpellEchoChance = 10;
 
     public int signatureWizardMeteoricWrathDuration = 800;
     public int signatureWizardMeteoricWrathStacks = 10;

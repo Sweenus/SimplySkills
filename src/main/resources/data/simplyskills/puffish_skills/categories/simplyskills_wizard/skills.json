@@ -1192,5 +1192,11 @@
 		"x": -256,
 		"y": 288,
 		"root": false
+	},
+	"668b6cq3md39qvos": {
+		"definition": "wizardPassiveSpellEcho",
+		"x": 0,
+		"y": 0,
+		"root": false
 	}
 }

@@ -2408,6 +2408,24 @@
 			}
 		]
 	},
+	"wizardPassiveSpellEcho": {
+		"title": "§a[Spell Echo]§7 \nYour spell hits have a chance to echo, casting an additional random spell at the target.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_spell_echo.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardPassiveSpellEcho"
+				}
+			}
+		]
+	},
 	"wizardSignatureMeteorShower": {
 		"title": "Signature Ability: \n§6[Meteor Shower]§7 \nCalls down meteors on nearby enemies.",
 		"frame": "goal",

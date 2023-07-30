@@ -21,6 +21,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
+import net.spell_engine.api.spell.Spell;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.SimplySkills;
@@ -794,6 +795,27 @@ public class Abilities {
         if (random < renewalChance)
             HelperMethods.incrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS,
                     renewalDuration, renewalStacks, renewalMaxStacks);
+    }
+
+    public static void passiveWizardSpellEcho(PlayerEntity player, Entity target) {
+        //Can we get Spell Identifier from raw Spell in future? This would be better
+
+        int chance = SimplySkills.wizardConfig.passiveWizardSpellEchoChance;
+        if (player.getRandom().nextInt(100) < chance) {
+
+            List<String> list = new ArrayList<>();
+            list.add("simplyskills:frost_arrow");
+            list.add("simplyskills:fire_arrow");
+            list.add("simplyskills:lightning_arrow");
+            list.add("simplyskills:arcane_bolt");
+            list.add("simplyskills:arcane_bolt_lesser");
+            list.add("simplyskills:ice_comet");
+            list.add("simplyskills:fire_meteor");
+            list.add("simplyskills:static_discharge");
+            int spellChoice = player.getRandom().nextInt(list.size());
+
+            SignatureAbilities.castSpellEngineIndirectTarget(player, list.get(spellChoice), 120, target);
+        }
     }
 
     public static void passiveRoguePreparationShadowstrike(PlayerEntity player) {

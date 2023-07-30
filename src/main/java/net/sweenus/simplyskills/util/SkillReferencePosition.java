@@ -104,6 +104,7 @@ public class SkillReferencePosition {
 
     // -- Specialisations --
 
+    public static String wizardSpellEcho = "668b6cq3md39qvos";
     public static String wizardSpecialisationMeteorShower = "is053f9imz801s57";
     public static String wizardSpecialisationIceComet = "kp8uei8ppni71b5x";
     public static String wizardSpecialisationStaticDischarge = "a3ns9xl58ixdg2lo";
