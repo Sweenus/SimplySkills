@@ -3,6 +3,8 @@ package net.sweenus.simplyskills.util;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -13,6 +15,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
+import net.minecraft.network.packet.s2c.play.CustomPayloadS2CPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -22,11 +25,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.api.spell.Spell;
+import net.puffish.skillsmod.server.PlayerAttributes;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
-import net.spell_engine.internals.SpellRegistry;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -44,6 +48,8 @@ public class SignatureAbilities {
         String rangerSkillTree = "simplyskills_ranger";
         String spellbladeSkillTree = "simplyskills_spellblade";
         Vec3d blockpos = null;
+        boolean ability_success = false;
+        String ability = "";
 
 
 
@@ -92,6 +98,8 @@ public class SignatureAbilities {
                             }
                         }
                     }
+                    ability_success = true;
+                    ability = SkillReferencePosition.wizardSpecialisationMeteorShower;
                 }
             }
 
@@ -158,6 +166,8 @@ public class SignatureAbilities {
                             }
                         }
                     }
+                    ability_success = true;
+                    ability = SkillReferencePosition.wizardSpecialisationIceComet;
                 }
             }
 
@@ -222,6 +232,8 @@ public class SignatureAbilities {
                             }
                         }
                     }
+                    ability_success = true;
+                    ability = SkillReferencePosition.wizardSpecialisationStaticDischarge;
                 }
             }
 
@@ -257,6 +269,8 @@ public class SignatureAbilities {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                ability_success = true;
+                                ability = SkillReferencePosition.wizardSpecialisationArcaneBolt;
                                 if (HelperMethods.isUnlocked(wizardSkillTree,
                                         SkillReferencePosition.wizardSpecialisationArcaneBoltLesser, player)) {
                                     SignatureAbilities.castSpellEngineIndirectTarget(player,
@@ -289,6 +303,8 @@ public class SignatureAbilities {
                 int rampageDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
                 int bullrushDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
                 //Rampage
+                ability_success = true;
+                ability = SkillReferencePosition.berserkerSpecialisationRampage;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration));
                 if (HelperMethods.isUnlocked(berserkerSkillTree,
                         SkillReferencePosition.berserkerSpecialisationRampageCharge, player)) {
@@ -303,6 +319,8 @@ public class SignatureAbilities {
                 int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
                 int bloodthirstyMightyStacks = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyMightyStacks;
                 //Bloodthirsty
+                ability_success = true;
+                ability = SkillReferencePosition.berserkerSpecialisationBloodthirsty;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
                 if (HelperMethods.isUnlocked("simplyskills_berserker",
                         SkillReferencePosition.berserkerSpecialisationBloodthirstyMighty, player))
@@ -313,6 +331,8 @@ public class SignatureAbilities {
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
                 //Berserking
+                ability_success = true;
+                ability = SkillReferencePosition.berserkerSpecialisationBerserking;
                 double sacrificeAmountModifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
                 int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
                 int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
@@ -340,6 +360,8 @@ public class SignatureAbilities {
                 int fanOfBladesStacks = SimplySkills.rogueConfig.signatureRogueFanOfBladesStacks - 1;
 
                 //Evasion
+                ability_success = true;
+                ability = SkillReferencePosition.rogueSpecialisationEvasion;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
                 if (HelperMethods.isUnlocked(rogueSkillTree,
                         SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
@@ -354,6 +376,8 @@ public class SignatureAbilities {
                 int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
 
                 //Preparation
+                ability_success = true;
+                ability = SkillReferencePosition.rogueSpecialisationPreparation;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, preparationDuration));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
                         preparationDuration, speedAmplifier));
@@ -373,6 +397,8 @@ public class SignatureAbilities {
                 int siphoningStrikesMightyStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesMightyStacks;
 
                 //Siphoning Strikes
+                ability_success = true;
+                ability = SkillReferencePosition.rogueSpecialisationSiphoningStrikes;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
                         siphoningStrikesduration, siphoningStrikesStacks));
 
@@ -399,6 +425,8 @@ public class SignatureAbilities {
                 int elementalArrowsStacksIncreasePerTier = SimplySkills.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
 
                 //Elemental Arrows
+                ability_success = true;
+                ability = SkillReferencePosition.rangerSpecialisationElementalArrows;
                 int amplifier =elementalArrowsStacks;
 
                 if (HelperMethods.isUnlocked(rangerSkillTree,
@@ -418,6 +446,8 @@ public class SignatureAbilities {
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationDisengage, player)) {
                 //Disengage
+                ability_success = true;
+                ability = SkillReferencePosition.rangerSpecialisationDisengage;
                 Abilities.signatureRangerDisengage(player);
             }
             if (HelperMethods.isUnlocked(rangerSkillTree,
@@ -426,9 +456,10 @@ public class SignatureAbilities {
                 int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
 
                 //Arrow Rain
+                ability_success = true;
+                ability = SkillReferencePosition.rangerSpecialisationArrowRain;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
             }
-
         }
 
         // - Spellblade -
@@ -443,12 +474,16 @@ public class SignatureAbilities {
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationElementalSurge, player)) {
                 //Elemental Surge
+                ability_success = true;
+                ability = SkillReferencePosition.spellbladeSpecialisationElementalSurge;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE,
                         elementalSurgeDuration, 0));
             }
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationElementalImpact, player)) {
                 //Elemental Impact
+                ability_success = true;
+                ability = SkillReferencePosition.spellbladeSpecialisationElementalImpact;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT,
                         elementalImpactDuration, 0));
                 if (HelperMethods.isUnlocked(spellbladeSkillTree,
@@ -459,9 +494,17 @@ public class SignatureAbilities {
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)) {
                 //Spell Weaver
+                ability_success = true;
+                ability = SkillReferencePosition.spellbladeSpecialisationSpellweaver;
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER,
                         spellweaverDuration, spellweaverStacks - 1));
             }
+        }
+
+
+        //Return cooldown to client
+        if (!player.world.isClient) {
+            SignatureAbilities.signatureAbilityCooldownManager(ability, ability_success, player);
         }
 
 
@@ -565,6 +608,51 @@ public class SignatureAbilities {
         return false;
     }
 
+    public static void signatureAbilityCooldownManager(String ability, boolean useSuccess, PlayerEntity player) {
+        int cooldown = 500;
+        double sendCooldown = 0;
+        String type = "";
+
+        if (ability.equals(SkillReferencePosition.wizardSpecialisationArcaneBolt))
+        {cooldown = 30000; type = "magic";}
+        else if (ability.equals(SkillReferencePosition.wizardSpecialisationIceComet))
+        {cooldown = 30000; type = "magic";}
+        else if (ability.equals(SkillReferencePosition.wizardSpecialisationMeteorShower))
+        {cooldown = 30000; type = "magic";}
+        else if (ability.equals(SkillReferencePosition.wizardSpecialisationStaticDischarge))
+        {cooldown = 30000; type = "magic";}
+
+        else if (ability.equals(SkillReferencePosition.berserkerSpecialisationBerserking))
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.berserkerSpecialisationBloodthirsty))
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.berserkerSpecialisationRampage))
+
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.rogueSpecialisationEvasion))
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.rogueSpecialisationPreparation))
+
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.rangerSpecialisationArrowRain))
+        {cooldown = 25000; type = "mixed";}
+        else if (ability.equals(SkillReferencePosition.rangerSpecialisationDisengage))
+        {cooldown = 25000; type = "physical";}
+        else if (ability.equals(SkillReferencePosition.rangerSpecialisationElementalArrows))
+        {cooldown = 25000; type = "magic";}
+
+
+        double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
+        sendCooldown = cooldown - ((spellHaste * 0.4) * 100);
+
+        if (sendCooldown < 5000 && useSuccess)
+            sendCooldown = 5000;
+
+        sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown);
+    }
+
 
 
     @Environment(EnvType.CLIENT)
@@ -573,6 +661,18 @@ public class SignatureAbilities {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         CustomPayloadC2SPacket packet = new CustomPayloadC2SPacket(KeybindPacket.ABILITY1_PACKET, buf);
         MinecraftClient.getInstance().getNetworkHandler().sendPacket(packet);
+
+    }
+
+    //@Environment(EnvType.SERVER)
+    public static void sendCooldownPacket(ServerPlayerEntity player, int cooldown) {
+
+        //PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeInt(cooldown);
+        CustomPayloadS2CPacket packet = new CustomPayloadS2CPacket(CooldownPacket.COOLDOWN_PACKET, buf);
+        ServerPlayNetworking.send(player, CooldownPacket.COOLDOWN_PACKET , packet.getData());
+        //player.networkHandler.sendPacket(packet);
 
     }
 
