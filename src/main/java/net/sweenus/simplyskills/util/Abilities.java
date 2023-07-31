@@ -21,7 +21,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_engine.api.spell.Spell;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.SimplySkills;

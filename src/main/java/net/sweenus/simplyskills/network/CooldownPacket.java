@@ -1,12 +1,8 @@
 package net.sweenus.simplyskills.network;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
-import net.sweenus.simplyskills.util.SignatureAbilities;
 
 
 public class CooldownPacket {

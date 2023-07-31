@@ -5,12 +5,12 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BowItemMixin",
+    "CrossbowItemMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
     "SpellHelperMixin",
-    "CrossbowItemMixin",
     "SpellProjectileMixin"
   ],
   "client": [

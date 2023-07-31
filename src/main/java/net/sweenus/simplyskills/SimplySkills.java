@@ -75,7 +75,6 @@ public class SimplySkills implements ModInitializer {
         EffectRegistry.registerEffects();
         ItemRegistry.registerItems();
         KeybindPacket.init();
-        CooldownPacket.init();
         setSpecialisations();
     }
 }

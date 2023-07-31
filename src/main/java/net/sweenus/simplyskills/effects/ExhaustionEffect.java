@@ -1,12 +1,10 @@
 package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.puffish.skillsmod.server.PlayerAttributes;
-import net.spell_power.api.attributes.EntityAttributes_SpellPower;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 
