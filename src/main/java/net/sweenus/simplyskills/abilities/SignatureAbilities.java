@@ -1,4 +1,4 @@
-package net.sweenus.simplyskills.util;
+package net.sweenus.simplyskills.abilities;
 
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
@@ -33,6 +33,8 @@ import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
+import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,54 +54,14 @@ public class SignatureAbilities {
 
 
 
-        // - Wizard -
+        // - WIZARD -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(wizardSkillTree)) {
 
+            // Meteor Shower
             if (HelperMethods.isUnlocked(wizardSkillTree,
                     SkillReferencePosition.wizardSpecialisationMeteorShower, player)) {
-
-                int meteoricWrathDuration = SimplySkills.wizardConfig.signatureWizardMeteoricWrathDuration;
-                int meteoricWrathStacks = SimplySkills.wizardConfig.signatureWizardMeteoricWrathStacks - 1;
-                int meteorShowerRange = SimplySkills.wizardConfig.signatureWizardMeteorShowerRange;
-
-                //Meteor Shower
-                if (HelperMethods.isUnlocked(wizardSkillTree,
-                        SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH,
-                            meteoricWrathDuration, meteoricWrathStacks));
-
-
-                if (HelperMethods.getTargetedEntity(player, meteorShowerRange) !=null)
-                    blockpos = HelperMethods.getTargetedEntity(player, meteorShowerRange).getPos();
-
-                if (blockpos == null)
-                    blockpos = HelperMethods.getPositionLookingAt(player, meteorShowerRange);
-
-                if (blockpos != null) {
-                    double xpos = blockpos.getX();
-                    double ypos = blockpos.getY();
-                    double zpos = blockpos.getZ();
-                    BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                    Box box = HelperMethods.createBoxAtBlock(searchArea, 8);
-                    for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-
-                        if (entities != null) {
-                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                if (HelperMethods.isUnlocked(wizardSkillTree,
-                                        SkillReferencePosition.wizardSpecialisationMeteorShowerGreater, player))
-                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                            "simplyskills:fire_meteor_large",
-                                            8, le);
-                                else
-                                    SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                        "simplyskills:fire_meteor",
-                                        8, le);
-                            }
-                        }
-                    }
-                    ability_success = true;
-                    ability = "MeteorShower";
-                }
+                ability_success = WizardAbilities.signatureWizardMeteorShower(wizardSkillTree, player, blockpos);
+                ability = "MeteorShower";
             }
 
             if (HelperMethods.isUnlocked(wizardSkillTree,
@@ -385,7 +347,7 @@ public class SignatureAbilities {
                         SoundCategory.PLAYERS, 0.6f, 1.6f);
                 if (HelperMethods.isUnlocked(rogueSkillTree,
                         SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
-                    Abilities.passiveRoguePreparationShadowstrike(player);
+                    RogueAbilities.passiveRoguePreparationShadowstrike(player);
             }
 
             if (HelperMethods.isUnlocked(rogueSkillTree,
@@ -447,7 +409,7 @@ public class SignatureAbilities {
                 //Disengage
                 ability_success = true;
                 ability = "Disengage";
-                Abilities.signatureRangerDisengage(player);
+                RangerAbilities.signatureRangerDisengage(player);
             }
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
@@ -651,7 +613,7 @@ public class SignatureAbilities {
 
 
         double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
-        sendCooldown = cooldown - ((spellHaste * spellHasteCDReduce) * 100);
+        sendCooldown = cooldown - (((spellHaste - 100) * spellHasteCDReduce) * 100);
 
         if (sendCooldown < (minimumCD) && useSuccess) sendCooldown = minimumCD;
         if (!useSuccess) sendCooldown = useDelay;

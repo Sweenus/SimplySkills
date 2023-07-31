@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyskills.util.SignatureAbilities;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.ArrayList;

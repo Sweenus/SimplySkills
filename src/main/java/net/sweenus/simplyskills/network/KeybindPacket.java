@@ -2,7 +2,7 @@ package net.sweenus.simplyskills.network;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
-import net.sweenus.simplyskills.util.SignatureAbilities;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 
 public class KeybindPacket {
 

@@ -6,9 +6,10 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.sweenus.simplyskills.abilities.RangerAbilities;
+import net.sweenus.simplyskills.abilities.WarriorAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.util.Abilities;
-import net.sweenus.simplyskills.util.AbilityEffects;
+import net.sweenus.simplyskills.abilities.AbilityEffects;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,7 +24,7 @@ public class PlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "onKilledOther")
     public void simplyskills$onKilledOther(ServerWorld world, LivingEntity other, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
-        if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
 
             // fervour
             if (HelperMethods.isUnlocked("simplyskills",
@@ -39,7 +40,7 @@ public class PlayerEntityMixin {
             // Effect Elemental Arrows Renewal
             if (HelperMethods.isUnlocked("simplyskills_ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRenewal, player)) {
-                Abilities.passiveRangerElementalArrowsRenewal(player);
+                RangerAbilities.passiveRangerElementalArrowsRenewal(player);
             }
             // Effect Fan of Blades Renewal
             if (HelperMethods.isUnlocked("simplyskills_rogue",
@@ -54,10 +55,10 @@ public class PlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "takeShieldHit")
     public void simplyskills$takeShieldHit(LivingEntity attacker, CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
-        if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.bulwarkRebuke, player)) {
-                Abilities.passiveBulwarkRebuke(player, attacker);
+                WarriorAbilities.passiveWarriorRebuke(player, attacker);
             }
         }
     }

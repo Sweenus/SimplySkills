@@ -5,8 +5,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
+import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.registry.SoundRegistry;
-import net.sweenus.simplyskills.util.Abilities;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -36,7 +36,7 @@ public class SkillsModMixin {
 
     @Inject(at = @At("HEAD"), method = "unlockCategory", cancellable = true)
     public void simplyskills$unlockCategory(ServerPlayerEntity player, String categoryId, CallbackInfo ci) {
-        if (Abilities.skillTreeUnlockManager(player, categoryId))
+        if (AbilityLogic.skillTreeUnlockManager(player, categoryId))
             ci.cancel();
     }
 

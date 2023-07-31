@@ -1,4 +1,4 @@
-package net.sweenus.simplyskills.util;
+package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -17,6 +17,8 @@ import net.minecraft.util.math.Vec3d;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.ArrayList;
 import java.util.List;

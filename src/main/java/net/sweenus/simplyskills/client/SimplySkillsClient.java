@@ -9,7 +9,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.registry.SoundRegistry;
-import net.sweenus.simplyskills.util.SignatureAbilities;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import org.lwjgl.glfw.GLFW;
 
 public class SimplySkillsClient implements ClientModInitializer {

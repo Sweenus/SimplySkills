@@ -6,9 +6,9 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.WayfarerAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.util.Abilities;
-import net.sweenus.simplyskills.util.AbilityEffects;
+import net.sweenus.simplyskills.abilities.AbilityEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -53,7 +53,7 @@ public abstract class BowItemMixin {
 
                 //Effect Stealth
                 if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
-                    Abilities.passiveWayfarerBreakStealth(null, player, false, false);
+                    WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
                 }
 
             }

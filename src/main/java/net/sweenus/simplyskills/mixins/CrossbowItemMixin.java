@@ -9,8 +9,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.WayfarerAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.util.Abilities;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -32,7 +32,7 @@ public abstract class CrossbowItemMixin {
 
                 //Break Stealth
                 if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
-                    Abilities.passiveWayfarerBreakStealth(null, player, false, false);
+                    WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
                 }
 
 

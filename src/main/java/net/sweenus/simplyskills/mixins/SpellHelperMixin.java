@@ -9,8 +9,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
+import net.sweenus.simplyskills.abilities.InitiateAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.util.Abilities;
+import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -36,7 +37,7 @@ public class SpellHelperMixin {
             CallbackInfo ci) {
 
         if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
-            Abilities.passiveInitiateEmpower(player, spellId);
+            InitiateAbilities.passiveInitiateEmpower(player, spellId);
         if (player.hasStatusEffect(EffectRegistry.STEALTH))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
 

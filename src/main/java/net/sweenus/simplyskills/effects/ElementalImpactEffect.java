@@ -11,7 +11,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyskills.util.SignatureAbilities;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.ArrayList;
