@@ -19,11 +19,9 @@ public class StealthEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        livingEntity.setInvisible(true);
 
 
         if (!livingEntity.world.isClient()) {
-            livingEntity.setInvisible(true);
             if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
 
                 int regenerationFrequency = SimplySkills.rogueConfig.passiveRogueRecoveryRegenerationFrequency;
@@ -31,6 +29,9 @@ public class StealthEffect extends StatusEffect {
                 int resistanceFrequency = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceFrequency;
                 int resistanceStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceStacks;
                 int resistanceMaxStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceMaxStacks;
+
+                if (serverPlayer.age % 15 == 0)
+                    serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 25));
 
 
                 if (serverPlayer.hasStatusEffect(EffectRegistry.REVEALED)) {

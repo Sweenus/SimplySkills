@@ -8,34 +8,27 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = ArmorFeatureRenderer.class, priority = 500)
-public abstract class ArmorFeatureRendererMixin<T extends LivingEntity, M extends BipedEntityModel<T>> extends FeatureRenderer<T, M> {
+@Mixin(value = ArmorFeatureRenderer.class)
+public class ArmorFeatureRendererMixin {
 
-    public ArmorFeatureRendererMixin(FeatureRendererContext<T, M> context) {
-        super(context);
-    }
 
-    @Inject(method = "render(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;ILnet/minecraft/entity/LivingEntity;FFFFFF)V", at = @At("HEAD"), cancellable = true)
-    private void simplyskills$render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, T livingEntity, float f, float g, float h, float j, float k, float l, CallbackInfo ci) {
-        if (livingEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
-            livingEntity.setInvisible(true);
-            ci.cancel();
-        }
-    }
 
-    @Inject(method = "renderArmor(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/entity/EquipmentSlot;ILnet/minecraft/client/render/entity/model/BipedEntityModel;)V", at = @At("HEAD"), cancellable = true)
-    private void simplyskills$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers, T entity, EquipmentSlot armorSlot, int light, M model, CallbackInfo ci) {
-        if (entity != null) {
-            if (entity.hasStatusEffect(EffectRegistry.STEALTH)) {
-                entity.setInvisible(true);
+    @Inject(method = "renderArmor", at = @At("HEAD"), cancellable = true)
+    public void simplyskills$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers,
+                                         LivingEntity livingEntity, EquipmentSlot equipmentSlot, int i,
+                                         BipedEntityModel<LivingEntity> bipedEntityModel, CallbackInfo ci) {
+        if (livingEntity instanceof PlayerEntity){
+            if (livingEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
                 ci.cancel();
             }
         }
     }
+
 }

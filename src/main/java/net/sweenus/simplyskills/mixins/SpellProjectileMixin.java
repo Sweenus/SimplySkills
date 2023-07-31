@@ -20,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(SpellProjectile.class)
 public abstract class SpellProjectileMixin extends ProjectileEntity {
 
-    @Shadow public abstract Spell getSpell();
-
     public SpellProjectileMixin(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
