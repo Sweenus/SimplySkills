@@ -159,10 +159,8 @@ public class SignatureAbilities {
 
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationDisengage, player)) {
-                //Disengage
-                ability_success = true;
+                ability_success = RangerAbilities.signatureRangerDisengage(rangerSkillTree, player);
                 ability = "Disengage";
-                RangerAbilities.signatureRangerDisengage(player);
             }
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationArrowRain, player)) {

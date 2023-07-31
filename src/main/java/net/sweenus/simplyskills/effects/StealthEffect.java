@@ -30,8 +30,8 @@ public class StealthEffect extends StatusEffect {
                 int resistanceStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceStacks;
                 int resistanceMaxStacks = SimplySkills.rogueConfig.passiveRogueShadowVeilResistanceMaxStacks;
 
-                if (serverPlayer.age % 15 == 0)
-                    serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 25));
+                //if (serverPlayer.age % 15 == 0)
+                //    serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 25));
 
 
                 if (serverPlayer.hasStatusEffect(EffectRegistry.REVEALED)) {

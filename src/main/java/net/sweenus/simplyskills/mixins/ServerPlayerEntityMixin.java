@@ -112,6 +112,12 @@ public abstract class ServerPlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity serverPlayer) {
 
+            if((Object) this instanceof PlayerEntity playerEntity && playerEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
+                playerEntity.setInvisible(playerEntity.hasStatusEffect(EffectRegistry.STEALTH));
+                System.out.println("Does the Player have Stealth? " + playerEntity.hasStatusEffect(EffectRegistry.STEALTH));
+                System.out.println("Is the Player invisible? " + playerEntity.isInvisible());
+            }
+
             //Passive Rogue Stealth
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.wayfarerStealth, player)
@@ -252,9 +258,10 @@ public abstract class ServerPlayerEntityMixin {
 
 
 
+            /*
             //Debug - reset skills & gain exp
             if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
-                AbilityLogic.debugPrintAttributes(player);
+                //AbilityLogic.debugPrintAttributes(player);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
@@ -262,6 +269,8 @@ public abstract class ServerPlayerEntityMixin {
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_ranger", 60000);
                 SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_spellblade", 60000);
             }
+
+             */
 
 
 

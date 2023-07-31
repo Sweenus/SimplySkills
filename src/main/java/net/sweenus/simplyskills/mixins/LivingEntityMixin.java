@@ -1,6 +1,7 @@
 package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityMixin {
 
 
-
     //Prevent detection when stealthed
     @Inject(at = @At("HEAD"), method = "canTarget(Lnet/minecraft/entity/LivingEntity;)Z", cancellable = true)
     public void simplyskills$canTarget(LivingEntity target, CallbackInfoReturnable<Boolean> cir) {
@@ -21,10 +21,10 @@ public class LivingEntityMixin {
             cir.setReturnValue(false);
     }
 
+    /*
     @Inject(at = @At("HEAD"), method = "tick")
     public void simplyskills$tick(CallbackInfo ci) {
-        LivingEntity livingEntity = (LivingEntity) (Object)this;
-        livingEntity.setInvisible(livingEntity.hasStatusEffect(EffectRegistry.STEALTH));
-    }
 
+    }
+     */
 }

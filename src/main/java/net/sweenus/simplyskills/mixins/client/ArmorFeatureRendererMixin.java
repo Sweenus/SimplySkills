@@ -24,10 +24,9 @@ public class ArmorFeatureRendererMixin {
     public void simplyskills$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers,
                                          LivingEntity livingEntity, EquipmentSlot equipmentSlot, int i,
                                          BipedEntityModel<LivingEntity> bipedEntityModel, CallbackInfo ci) {
+        // MAKE WORKIE WITH STEALTH
         if (livingEntity instanceof PlayerEntity){
-            if (livingEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
-                ci.cancel();
-            }
+            ci.cancel();
         }
     }
 

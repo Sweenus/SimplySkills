@@ -86,6 +86,7 @@ public class AbilityLogic {
 
 
     // -- DEBUG --
+    /*
     public static void debugPrintAttributes(PlayerEntity player) {
         //
         // For checking Spell Power attribute values
@@ -106,6 +107,8 @@ public class AbilityLogic {
             System.out.println("Soul: "      + attributeSoul);
         }
     }
+
+     */
 
 
     //Misc Abilities

@@ -153,7 +153,9 @@ public class RangerAbilities {
     //------- SIGNATURE ABILITIES --------
 
 
-    public static void signatureRangerDisengage(PlayerEntity player) {
+    //Disengage
+    public static boolean signatureRangerDisengage(String rangerSkillTree, PlayerEntity player) {
+
         int radius = SimplySkills.rangerConfig.signatureRangerDisengageRadius;
         int velocity = SimplySkills.rangerConfig.signatureRangerDisengageVelocity;
         int height = SimplySkills.rangerConfig.signatureRangerDisengageHeight;
@@ -161,7 +163,8 @@ public class RangerAbilities {
         int slownessAmplifier = SimplySkills.rangerConfig.signatureRangerDisengageSlownessAmplifier;
         int slowFallDuration = SimplySkills.rangerConfig.signatureRangerDisengageSlowFallDuration;
         int slowFallAmplifier = SimplySkills.rangerConfig.signatureRangerDisengageSlowFallAmplifier;
-        Box box = HelperMethods.createBox((LivingEntity) player, radius);
+
+        Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -172,26 +175,31 @@ public class RangerAbilities {
                 }
             }
         }
+
         player.setVelocity(player.getRotationVector().negate().multiply(+velocity));
-        player.setVelocity(player.getVelocity().x, height, player.getVelocity().z); // Prevent player flying to the heavens
+        player.setVelocity(player.getVelocity().x, height, player.getVelocity().z);
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,
                 slowFallDuration, slowFallAmplifier));
         player.velocityModified = true;
 
-        if (HelperMethods.isUnlocked("simplyskills_ranger",
+        if (HelperMethods.isUnlocked(rangerSkillTree,
                 SkillReferencePosition.rangerSpecialisationDisengageRecuperate, player))
             signatureRangerDisengageRecuperate(player);
-        if (HelperMethods.isUnlocked("simplyskills_ranger",
+
+        if (HelperMethods.isUnlocked(rangerSkillTree,
                 SkillReferencePosition.rangerSpecialisationDisengageExploitation, player))
             signatureRangerDisengageExploitation(player);
-        if (HelperMethods.isUnlocked("simplyskills_ranger",
+
+        if (HelperMethods.isUnlocked(rangerSkillTree,
                 SkillReferencePosition.rangerSpecialisationDisengageMarksman, player)) {
             int marksmanDuration = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanDuration;
             int marksmanStacks = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanStacks;
             HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMAN, marksmanDuration, marksmanStacks, 99);
         }
-
+        return true;
     }
+
+    // Disengage Recuperate
     public static void signatureRangerDisengageRecuperate(PlayerEntity player) {
         int radius = SimplySkills.rangerConfig.signatureRangerDisengageRecuperateRadius;
 
@@ -207,6 +215,8 @@ public class RangerAbilities {
             }
         }
     }
+
+    // Disengage Exploitation
     public static void signatureRangerDisengageExploitation(PlayerEntity player) {
         int radius = SimplySkills.rangerConfig.signatureRangerDisengageExploitationRadius;
         int effectDuration = SimplySkills.rangerConfig.signatureRangerDisengageExploitationDuration;
@@ -222,6 +232,12 @@ public class RangerAbilities {
                 }
             }
         }
+    }
+
+    //Disengage
+    public static boolean signatureRangerElementalArrows(String rangerSkillTree, PlayerEntity player) {
+
+        return true;
     }
 
 }

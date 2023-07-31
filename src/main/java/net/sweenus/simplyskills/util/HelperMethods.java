@@ -65,7 +65,7 @@ public class HelperMethods {
                 if (skill != null)
                     return SkillsAPI.getUnlockedSkills(serverPlayer, tree).get().contains(skill);
                 else return SkillsAPI.getUnlockedCategories(serverPlayer).contains(tree);
-            } else {return false;}
+            }
         }
         return false;
     }
