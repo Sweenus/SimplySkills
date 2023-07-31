@@ -82,122 +82,49 @@ public class SignatureAbilities {
             }
         }
 
-        // - Berserker -
+        // - BERSERKER -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
 
+            // Rampage
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationRampage, player)) {
-                int rampageDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
-                int bullrushDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
-                //Rampage
-                ability_success = true;
+                ability_success = BerserkerAbilities.signatureBerserkerRampage(berserkerSkillTree, player);
                 ability = "Rampage";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration));
-                if (HelperMethods.isUnlocked(berserkerSkillTree,
-                        SkillReferencePosition.berserkerSpecialisationRampageCharge, player)) {
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration));
-                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
-                            SoundCategory.PLAYERS, 0.5f, 1.1f);
-                }
             }
-
+            // Bloodthirsty
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
-                int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
-                int bloodthirstyMightyStacks = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyMightyStacks;
-                //Bloodthirsty
-                ability_success = true;
+                ability_success = BerserkerAbilities.signatureBerserkerBloodthirsty(berserkerSkillTree, player);
                 ability = "Bloodthirsty";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration));
-                if (HelperMethods.isUnlocked("simplyskills_berserker",
-                        SkillReferencePosition.berserkerSpecialisationBloodthirstyMighty, player))
-                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, bloodthirstyDuration,
-                            bloodthirstyMightyStacks, 5);
             }
-
+            //Berserking
             if (HelperMethods.isUnlocked(berserkerSkillTree,
                     SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
-                //Berserking
-                ability_success = true;
+                ability_success = BerserkerAbilities.signatureBerserkerBerserking(berserkerSkillTree, player);
                 ability = "Berserking";
-                double sacrificeAmountModifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSacrificeAmount;
-                int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
-                int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
-                float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
-                player.damage(DamageSource.GENERIC, sacrificeAmount);
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
-                        (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
-                if (HelperMethods.isUnlocked(berserkerSkillTree,
-                        SkillReferencePosition.berserkerSpecialisationBerserkingLeap, player)) {
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration));
-                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
-                            SoundCategory.PLAYERS, 0.5f, 1.1f);
-                }
             }
         }
 
-        // - Rogue -
+        // - ROGUE -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
 
+            // Evasion
             if (HelperMethods.isUnlocked(rogueSkillTree,
                     SkillReferencePosition.rogueSpecialisationEvasion, player)) {
-
-                int evasionDuration = SimplySkills.rogueConfig.signatureRogueEvasionDuration;
-                int fanOfBladesDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDuration;
-                int fanOfBladesStacks = SimplySkills.rogueConfig.signatureRogueFanOfBladesStacks - 1;
-
-                //Evasion
-                ability_success = true;
+                ability_success = RogueAbilities.signatureRogueEvasion(rogueSkillTree, player);
                 ability = "Evasion";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
-                if (HelperMethods.isUnlocked(rogueSkillTree,
-                        SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES,
-                            fanOfBladesDuration, fanOfBladesStacks));
             }
-
+            // Preparation
             if (HelperMethods.isUnlocked(rogueSkillTree,
                     SkillReferencePosition.rogueSpecialisationPreparation, player)) {
-
-                int preparationDuration = SimplySkills.rogueConfig.signatureRoguePreparationDuration;
-                int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
-
-                //Preparation
-                ability_success = true;
+                ability_success = RogueAbilities.signatureRoguePreparation(rogueSkillTree, player);
                 ability = "Preparation";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, preparationDuration));
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                        preparationDuration, speedAmplifier));
-                player.world.playSoundFromEntity(
-                        null, player, SoundRegistry.SOUNDEFFECT39,
-                        SoundCategory.PLAYERS, 0.6f, 1.6f);
-                if (HelperMethods.isUnlocked(rogueSkillTree,
-                        SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
-                    RogueAbilities.passiveRoguePreparationShadowstrike(player);
             }
-
+            // Siphoning Strikes
             if (HelperMethods.isUnlocked(rogueSkillTree,
                     SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
-
-                int siphoningStrikesduration = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesDuration;
-                int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks;
-                int siphoningStrikesMightyStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesMightyStacks;
-
-                //Siphoning Strikes
-                ability_success = true;
+                ability_success = RogueAbilities.signatureRogueSiphoningStrikes(rogueSkillTree, player);
                 ability = "SiphoningStrikes";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
-                        siphoningStrikesduration, siphoningStrikesStacks));
-
-                if (HelperMethods.isUnlocked("simplyskills_rogue",
-                        SkillReferencePosition.rogueSpecialisationSiphoningStrikesMighty, player))
-                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, siphoningStrikesduration,
-                            siphoningStrikesMightyStacks, 5);
-                if (HelperMethods.isUnlocked("simplyskills_rogue",
-                        SkillReferencePosition.rogueSpecialisationSiphoningStrikesAura, player))
-                    HelperMethods.incrementStatusEffect(player, EffectRegistry.IMMOBILIZINGAURA, siphoningStrikesduration,
-                            1, 2);
-
             }
         }
 

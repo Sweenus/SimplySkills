@@ -189,5 +189,68 @@ public class RogueAbilities {
     }
 
 
+    //------- SIGNATURE ABILITIES --------
+
+
+    // Evasion
+    public static boolean signatureRogueEvasion(String rogueSkillTree, PlayerEntity player) {
+        int evasionDuration = SimplySkills.rogueConfig.signatureRogueEvasionDuration;
+        int fanOfBladesDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDuration;
+        int fanOfBladesStacks = SimplySkills.rogueConfig.signatureRogueFanOfBladesStacks - 1;
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
+
+        if (HelperMethods.isUnlocked(rogueSkillTree,
+                SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES,
+                    fanOfBladesDuration, fanOfBladesStacks));
+
+        return true;
+    }
+
+    // Preparation
+    public static boolean signatureRoguePreparation(String rogueSkillTree, PlayerEntity player) {
+        int preparationDuration = SimplySkills.rogueConfig.signatureRoguePreparationDuration;
+        int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH,
+                preparationDuration));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                preparationDuration, speedAmplifier));
+
+        player.world.playSoundFromEntity(
+                null, player, SoundRegistry.SOUNDEFFECT39,
+                SoundCategory.PLAYERS, 0.6f, 1.6f);
+
+        if (HelperMethods.isUnlocked(rogueSkillTree,
+                SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
+            RogueAbilities.passiveRoguePreparationShadowstrike(player);
+
+        return true;
+    }
+
+    // Siphoning Strikes
+    public static boolean signatureRogueSiphoningStrikes(String rogueSkillTree, PlayerEntity player) {
+
+        int siphoningStrikesduration = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesDuration;
+        int siphoningStrikesStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesStacks;
+        int siphoningStrikesMightyStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesMightyStacks;
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
+                siphoningStrikesduration, siphoningStrikesStacks));
+
+        if (HelperMethods.isUnlocked(rogueSkillTree,
+                SkillReferencePosition.rogueSpecialisationSiphoningStrikesMighty, player))
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, siphoningStrikesduration,
+                    siphoningStrikesMightyStacks, 5);
+
+        if (HelperMethods.isUnlocked(rogueSkillTree,
+                SkillReferencePosition.rogueSpecialisationSiphoningStrikesAura, player))
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.IMMOBILIZINGAURA, siphoningStrikesduration,
+                    1, 2);
+
+        return true;
+    }
+
 
 }
