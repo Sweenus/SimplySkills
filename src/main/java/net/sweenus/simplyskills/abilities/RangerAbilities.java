@@ -153,7 +153,7 @@ public class RangerAbilities {
     //------- SIGNATURE ABILITIES --------
 
 
-    //Disengage
+    // Disengage
     public static boolean signatureRangerDisengage(String rangerSkillTree, PlayerEntity player) {
 
         int radius = SimplySkills.rangerConfig.signatureRangerDisengageRadius;
@@ -234,9 +234,34 @@ public class RangerAbilities {
         }
     }
 
-    //Disengage
+    // Elemental Arrows
     public static boolean signatureRangerElementalArrows(String rangerSkillTree, PlayerEntity player) {
+        int elementalArrowsDuration = SimplySkills.rangerConfig.effectRangerElementalArrowsDuration;
+        int elementalArrowsStacks = SimplySkills.rangerConfig.effectRangerElementalArrowsStacks;
+        int elementalArrowsStacksIncreasePerTier = SimplySkills.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
 
+        int amplifier =elementalArrowsStacks;
+
+        if (HelperMethods.isUnlocked(rangerSkillTree,
+                SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne, player))
+            amplifier = amplifier + elementalArrowsStacksIncreasePerTier;
+        if (HelperMethods.isUnlocked(rangerSkillTree,
+                SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo, player))
+            amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 2);
+        if (HelperMethods.isUnlocked(rangerSkillTree,
+                SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree, player))
+            amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 3);
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS,
+                elementalArrowsDuration, amplifier));
+
+        return true;
+    }
+
+    // Elemental Arrows
+    public static boolean signatureRangerArrowRain(String rangerSkillTree, PlayerEntity player) {
+        int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
         return true;
     }
 

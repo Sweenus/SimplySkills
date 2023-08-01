@@ -32,7 +32,7 @@ public class RogueConfig implements ConfigData {
     public int passiveRogueOpportunisticMasteryPoisonDurationIncreasePerTier = 40;
     @ConfigEntry.BoundedDiscrete(max = 100)
     public int passiveRogueDeflectionIncreasedChance = 10;
-    public int passiveRogueRecoveryRegenerationFrequency = 20;
+    public int passiveRogueRecoveryRegenerationFrequency = 42;
     public int passiveRogueRecoveryRegenerationAmplifier = 1;
     public int passiveRogueShadowVeilResistanceFrequency = 60;
     public int passiveRogueShadowVeilResistanceStacks = 1;

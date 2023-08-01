@@ -17,7 +17,7 @@ public class CooldownPacket {
             client.execute(()->{
 
                 SimplySkillsClient.abilityCooldown = cooldown;
-                System.out.println("cooldown is: " +cooldown +"ms");
+                //System.out.println("cooldown is: " +cooldown +"ms");
 
 
             });

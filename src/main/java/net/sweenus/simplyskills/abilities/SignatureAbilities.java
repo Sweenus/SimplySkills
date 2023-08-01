@@ -126,85 +126,46 @@ public class SignatureAbilities {
         // - Ranger -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
 
+            // Elemental Arrows
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
-
-                int elementalArrowsDuration = SimplySkills.rangerConfig.effectRangerElementalArrowsDuration;
-                int elementalArrowsStacks = SimplySkills.rangerConfig.effectRangerElementalArrowsStacks;
-                int elementalArrowsStacksIncreasePerTier = SimplySkills.rangerConfig.effectRangerElementalArrowsStacksIncreasePerTier;
-
-                //Elemental Arrows
-                ability_success = true;
+                ability_success = RangerAbilities.signatureRangerElementalArrows(rangerSkillTree, player);
                 ability = "ElementalArrows";
-                int amplifier =elementalArrowsStacks;
-
-                if (HelperMethods.isUnlocked(rangerSkillTree,
-                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksOne, player))
-                    amplifier = amplifier + elementalArrowsStacksIncreasePerTier;
-                if (HelperMethods.isUnlocked(rangerSkillTree,
-                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksTwo, player))
-                    amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 2);
-                if (HelperMethods.isUnlocked(rangerSkillTree,
-                        SkillReferencePosition.rangerSpecialisationElementalArrowsStacksThree, player))
-                    amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 3);
-
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS,
-                        elementalArrowsDuration, amplifier));
             }
-
+            // Disengage
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationDisengage, player)) {
                 ability_success = RangerAbilities.signatureRangerDisengage(rangerSkillTree, player);
                 ability = "Disengage";
             }
+            // Arrow Rain
             if (HelperMethods.isUnlocked(rangerSkillTree,
                     SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
-
-                int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
-
-                //Arrow Rain
-                ability_success = true;
+                ability_success = RangerAbilities.signatureRangerArrowRain(rangerSkillTree, player);
                 ability = "ArrowRain";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
             }
         }
 
         // - Spellblade -
         if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
 
-            int elementalSurgeDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
-            int elementalImpactDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactDuration;
-            int elementalImpactResistanceAmplifier = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactResistanceAmplifier;
-            int spellweaverDuration = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverDuration;
-            int spellweaverStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
-
+            // Elemental Surge
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationElementalSurge, player)) {
-                //Elemental Surge
-                ability_success = true;
+                ability_success = SpellbladeAbilities.signatureSpellbladeElementalSurge(spellbladeSkillTree, player);
                 ability = "ElementalSurge";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE,
-                        elementalSurgeDuration, 0));
             }
+            // Elemental Impact
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationElementalImpact, player)) {
-                //Elemental Impact
-                ability_success = true;
+                ability_success = SpellbladeAbilities.signatureSpellbladeElementalImpact(spellbladeSkillTree, player);
                 ability = "ElementalImpact";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT,
-                        elementalImpactDuration, 0));
-                if (HelperMethods.isUnlocked(spellbladeSkillTree,
-                        SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance, player))
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                            elementalImpactDuration + 15, elementalImpactResistanceAmplifier));
             }
             if (HelperMethods.isUnlocked(spellbladeSkillTree,
                     SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)) {
                 //Spell Weaver
-                ability_success = true;
+                ability_success = SpellbladeAbilities.signatureSpellbladeSpellweaver(spellbladeSkillTree, player);
                 ability = "Spellweaver";
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER,
-                        spellweaverDuration, spellweaverStacks - 1));
             }
         }
 
@@ -216,6 +177,94 @@ public class SignatureAbilities {
         }
 
 
+    }
+
+    // COOLDOWN MANAGEMENT
+
+    public static void signatureAbilityCooldownManager(String ability, boolean useSuccess, PlayerEntity player) {
+        float spellHasteCDReduce = SimplySkills.generalConfig.spellHasteCooldownReductionModifier;
+        int minimumCD = SimplySkills.generalConfig.minimumAchievableCooldown * 1000;
+        int useDelay = (int) SimplySkills.generalConfig.minimumTimeBetweenAbilityUse * 1000;
+        int cooldown = 500;
+        double sendCooldown;
+        String type = "";
+
+        switch (ability) {
+            case "ArcaneBolt" -> {
+                cooldown = SimplySkills.wizardConfig.signatureWizardArcaneBoltCooldown * 1000;
+                type = "magic";
+            }
+            case "IceComet" -> {
+                cooldown = SimplySkills.wizardConfig.signatureWizardIceCometCooldown * 1000;
+                type = "magic";
+            }
+            case "MeteorShower" -> {
+                cooldown = SimplySkills.wizardConfig.signatureWizardMeteorShowerCooldown * 1000;
+                type = "magic";
+            }
+            case "StaticDischarge" -> {
+                cooldown = SimplySkills.wizardConfig.signatureWizardStaticDischargeCooldown * 1000;
+                type = "magic";
+            }
+            case "Berserking" -> {
+                cooldown = SimplySkills.berserkerConfig.signatureBerserkerBerserkingCooldown * 1000;
+                type = "physical";
+            }
+            case "Bloodthirsty" -> {
+                cooldown = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyCooldown * 1000;
+                type = "physical";
+            }
+            case "Rampage" -> {
+                cooldown = SimplySkills.berserkerConfig.signatureBerserkerRampageCooldown * 1000;
+                type = "physical";
+            }
+            case "SiphoningStrikes" -> {
+                cooldown = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesCooldown * 1000;
+                type = "physical";
+            }
+            case "Evasion" -> {
+                cooldown = SimplySkills.rogueConfig.signatureRogueEvasionCooldown * 1000;
+                type = "physical";
+            }
+            case "Preparation" -> {
+                cooldown = SimplySkills.rogueConfig.signatureRoguePreparationCooldown * 1000;
+                type = "physical";
+            }
+            case "ArrowRain" -> {
+                cooldown = SimplySkills.rangerConfig.effectRangerArrowRainCooldown * 1000;
+                type = "mixed";
+            }
+            case "Disengage" -> {
+                cooldown = SimplySkills.rangerConfig.signatureRangerDisengageCooldown * 1000;
+                type = "physical";
+            }
+            case "ElementalArrows" -> {
+                cooldown = SimplySkills.rangerConfig.effectRangerElementalArrowsCooldown * 1000;
+                type = "magic";
+            }
+            case "ElementalImpact" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactCooldown * 1000;
+                type = "mixed";
+            }
+            case "ElementalSurge" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                type = "physical";
+            }
+            case "Spellweaver" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000;
+                type = "magic";
+            }
+        }
+
+
+        double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
+        sendCooldown = cooldown - (((spellHaste - 100) * spellHasteCDReduce) * 100);
+
+        if (sendCooldown < (minimumCD) && useSuccess) sendCooldown = minimumCD;
+        if (!useSuccess) sendCooldown = useDelay;
+
+        //System.out.println("Ability type: " + type);
+        sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown);
     }
 
 
@@ -244,10 +293,7 @@ public class SignatureAbilities {
                     action,
                     hand,
                     20);
-
-
         }
-
     }
 
     public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range, Entity target) {
@@ -270,9 +316,7 @@ public class SignatureAbilities {
                     action,
                     hand,
                     20);
-
         }
-
     }
 
     public static boolean castSpellEngineAOE(PlayerEntity player, String spellIdentifier, int radius, int chance, boolean singleTarget) {
@@ -316,58 +360,6 @@ public class SignatureAbilities {
         return false;
     }
 
-    public static void signatureAbilityCooldownManager(String ability, boolean useSuccess, PlayerEntity player) {
-        float spellHasteCDReduce = SimplySkills.generalConfig.spellHasteCooldownReductionModifier;
-        int minimumCD = SimplySkills.generalConfig.minimumAchievableCooldown * 1000;
-        int useDelay = (int) SimplySkills.generalConfig.minimumTimeBetweenAbilityUse * 1000;
-        int cooldown = 500;
-        double sendCooldown;
-        String type = "";
-
-        if (ability.contains("ArcaneBolt"))
-        {cooldown = SimplySkills.wizardConfig.signatureWizardArcaneBoltCooldown * 1000; ; type = "magic";}
-        else if (ability.contains("IceComet"))
-        {cooldown = SimplySkills.wizardConfig.signatureWizardIceCometCooldown * 1000; type = "magic";}
-        else if (ability.contains("MeteorShower"))
-        {cooldown = SimplySkills.wizardConfig.signatureWizardMeteorShowerCooldown * 1000; type = "magic";}
-        else if (ability.contains("StaticDischarge"))
-        {cooldown = SimplySkills.wizardConfig.signatureWizardStaticDischargeCooldown * 1000; type = "magic";}
-        else if (ability.contains("Berserking"))
-        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerBerserkingCooldown * 1000; type = "physical";}
-        else if (ability.contains("Bloodthirsty"))
-        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyCooldown * 1000; type = "physical";}
-        else if (ability.contains("Rampage"))
-        {cooldown = SimplySkills.berserkerConfig.signatureBerserkerRampageCooldown * 1000; type = "physical";}
-        else if (ability.contains("SiphoningStrikes"))
-        {cooldown = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesCooldown * 1000; type = "physical";}
-        else if (ability.contains("Evasion"))
-        {cooldown = SimplySkills.rogueConfig.signatureRogueEvasionCooldown * 1000; type = "physical";}
-        else if (ability.contains("Preparation"))
-        {cooldown = SimplySkills.rogueConfig.signatureRoguePreparationCooldown * 1000; type = "physical";}
-        else if (ability.contains("ArrowRain"))
-        {cooldown = SimplySkills.rangerConfig.effectRangerArrowRainCooldown * 1000; type = "mixed";}
-        else if (ability.contains("Disengage"))
-        {cooldown = SimplySkills.rangerConfig.signatureRangerDisengageCooldown * 1000; type = "physical";}
-        else if (ability.contains("ElementalArrows"))
-        {cooldown = SimplySkills.rangerConfig.effectRangerElementalArrowsCooldown * 1000; type = "magic";}
-        else if (ability.contains("ElementalImpact"))
-        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactCooldown * 1000; type = "mixed";}
-        else if (ability.contains("ElementalSurge"))
-        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000; type = "physical";}
-        else if (ability.contains("Spellweaver"))
-        {cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000; type = "magic";}
-
-
-        double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
-        sendCooldown = cooldown - (((spellHaste - 100) * spellHasteCDReduce) * 100);
-
-        if (sendCooldown < (minimumCD) && useSuccess) sendCooldown = minimumCD;
-        if (!useSuccess) sendCooldown = useDelay;
-
-        System.out.println("Ability type: " + type);
-        sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown);
-    }
-
 
 
     @Environment(EnvType.CLIENT)
@@ -379,15 +371,12 @@ public class SignatureAbilities {
 
     }
 
-    //@Environment(EnvType.SERVER)
     public static void sendCooldownPacket(ServerPlayerEntity player, int cooldown) {
 
-        //PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(cooldown);
         CustomPayloadS2CPacket packet = new CustomPayloadS2CPacket(CooldownPacket.COOLDOWN_PACKET, buf);
         ServerPlayNetworking.send(player, CooldownPacket.COOLDOWN_PACKET , packet.getData());
-        //player.networkHandler.sendPacket(packet);
 
     }
 
