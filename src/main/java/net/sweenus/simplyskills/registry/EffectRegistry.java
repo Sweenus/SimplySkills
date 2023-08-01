@@ -4,8 +4,9 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import net.puffish.skillsmod.server.PlayerAttributes;
 import net.spell_engine.api.effect.Synchronized;
 import net.spell_power.api.MagicSchool;
@@ -114,7 +115,7 @@ public class EffectRegistry {
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
-        return Registry.register(Registry.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
+        return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
     }
     
     public static void registerEffects() {

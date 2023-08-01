@@ -21,7 +21,7 @@ public class ElementalSurgeEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
             int frequency = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeFrequency;
 
             if (livingEntity.age % frequency == 0 && (livingEntity instanceof PlayerEntity player)) {

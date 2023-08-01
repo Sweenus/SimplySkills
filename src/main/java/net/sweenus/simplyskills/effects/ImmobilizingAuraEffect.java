@@ -20,13 +20,13 @@ public class ImmobilizingAuraEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
             if (livingEntity.age % 20 == 0) {
                 int radius = 2;
 
                 Box box = HelperMethods.createBox(livingEntity, radius);
-                for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le)) {

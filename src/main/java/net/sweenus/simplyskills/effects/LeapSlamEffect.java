@@ -27,7 +27,7 @@ public class LeapSlamEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
             if (livingEntity instanceof PlayerEntity player) {
                 int ability_timer = Objects.requireNonNull(player.getStatusEffect(EffectRegistry.LEAPSLAM)).getDuration();
@@ -52,7 +52,7 @@ public class LeapSlamEffect extends StatusEffect {
                     if (player.isOnGround()) {
 
                         Box box = HelperMethods.createBox(player, radius*2);
-                        for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                        for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                             if (entities != null) {
                                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -63,8 +63,8 @@ public class LeapSlamEffect extends StatusEffect {
                                     else
                                         le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
 
-                                    le.damage(DamageSource.player(player), (float) damage);
-                                    player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
+                                    le.damage(player.getDamageSources().playerAttack(player), (float) damage);
+                                    player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
                                             SoundCategory.PLAYERS, 0.3f, 1.1f);
                                     if (HelperMethods.isUnlocked("simplyskills_berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob, player))
@@ -73,7 +73,7 @@ public class LeapSlamEffect extends StatusEffect {
                             }
                         }
                         HelperMethods.spawnParticlesPlane(
-                                player.world,
+                                player.getWorld(),
                                 ParticleTypes.CAMPFIRE_COSY_SMOKE,
                                 player.getBlockPos(),
                                 radius, 0, 1, 0 );

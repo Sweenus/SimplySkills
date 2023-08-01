@@ -34,9 +34,9 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "spell_power": ">=0.9.12+1.19",
-    "spell_engine": ">=0.9.24+1.19, <=0.9.25+1.19",
-    "cloth-config": ">=8.2.88",
-    "puffish_skills": ">=0.4.0-1.19.2"
+    "spell_power": ">=0.9.13+1.20.1",
+    "spell_engine": ">=0.9.26+1.20.1",
+    "cloth-config": ">=11.1.106",
+    "puffish_skills": "=0.5.0"
   }
 }

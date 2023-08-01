@@ -8,6 +8,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
@@ -77,7 +78,7 @@ public class AbilityLogic {
     }
 
     static void playUnlockSound(PlayerEntity player) {
-        player.world.playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
+        player.getWorld().playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
                 SoundCategory.PLAYERS, 1, 1);
     }
 
@@ -115,7 +116,7 @@ public class AbilityLogic {
             int radius = 12;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {

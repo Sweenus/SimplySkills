@@ -41,7 +41,7 @@ public class RogueAbilities {
         int blindnessAmplifier = SimplySkills.rogueConfig.passiveRogueSmokeBombBlindnessAmplifier;
         if (player.getRandom().nextInt(100) < chance) {
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
@@ -52,7 +52,7 @@ public class RogueAbilities {
                 }
             }
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, auraDuration));
-            player.world.playSoundFromEntity(
+            player.getWorld().playSoundFromEntity(
                     null, player, SoundRegistry.SOUNDEFFECT32,
                     SoundCategory.PLAYERS, 0.4f, 1.2f);
         }
@@ -90,7 +90,7 @@ public class RogueAbilities {
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getArmor() < evasionArmorThreshold) {
 
-                player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
                 return false;
 
@@ -125,14 +125,14 @@ public class RogueAbilities {
         int stealthDuration = SimplySkills.rogueConfig.passiveRogueBackstabStealthDuration;
         if (player.age % 20 == 0) {
             Box box = HelperMethods.createBox(player, 8);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) &&
                             le.hasStatusEffect(StatusEffects.WEAKNESS)
                             && HelperMethods.checkFriendlyFire(le, player)) {
                         if (player.getRandom().nextInt(100) < stealthChance) {
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, stealthDuration));
-                            player.world.playSoundFromEntity(
+                            player.getWorld().playSoundFromEntity(
                                     null, player, SoundRegistry.SOUNDEFFECT39,
                                     SoundCategory.PLAYERS, 0.6f, 1.6f);
                         }
@@ -150,11 +150,11 @@ public class RogueAbilities {
                 int dashRadius = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
                 int dashDamageModifier = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
                 int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
-                DamageSource dashSource = DamageSource.player(player);
+                DamageSource dashSource = player.getWorld().getDamageSources().playerAttack(player);
                 BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);
 
                 Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, dashRadius);
-                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -172,8 +172,8 @@ public class RogueAbilities {
                     }
                 }
 
-                BlockState blockstate = player.world.getBlockState(blockPos);
-                BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
+                BlockState blockstate = player.getWorld().getBlockState(blockPos);
+                BlockState blockstateUp = player.getWorld().getBlockState(blockPos.up(1));
                 for (int i = dashRange; i > 0; i--) {
                     if (blockstate.isAir() && blockstateUp.isAir())
                         break;
@@ -181,7 +181,7 @@ public class RogueAbilities {
                 }
                 player.teleport(blockPos.getX(), blockPos.getY(), blockPos.getZ());
 
-                player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                         SoundCategory.PLAYERS, 0.6f, 1.3f);
 
             }
@@ -218,7 +218,7 @@ public class RogueAbilities {
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
                 preparationDuration, speedAmplifier));
 
-        player.world.playSoundFromEntity(
+        player.getWorld().playSoundFromEntity(
                 null, player, SoundRegistry.SOUNDEFFECT39,
                 SoundCategory.PLAYERS, 0.6f, 1.6f);
 

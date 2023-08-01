@@ -171,7 +171,7 @@ public class SignatureAbilities {
 
 
         //Return cooldown to client
-        if (!player.world.isClient) {
+        if (!player.getWorld().isClient) {
             SignatureAbilities.signatureAbilityCooldownManager(ability, ability_success, player);
             //System.out.println("Using ability: " + ability);
         }
@@ -285,7 +285,7 @@ public class SignatureAbilities {
             list.add(target);
 
             SpellHelper.performSpell(
-                    player.world,
+                    player.getWorld(),
                     player,
                     spellID,
                     list,
@@ -308,7 +308,7 @@ public class SignatureAbilities {
             list.add(target);
 
             SpellHelper.performSpell(
-                    player.world,
+                    player.getWorld(),
                     player,
                     spellID,
                     list,
@@ -331,7 +331,7 @@ public class SignatureAbilities {
 
 
         Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
@@ -346,7 +346,7 @@ public class SignatureAbilities {
 
         if (!list.isEmpty()) {
             SpellHelper.performSpell(
-                    player.world,
+                    player.getWorld(),
                     player,
                     spellID,
                     list,

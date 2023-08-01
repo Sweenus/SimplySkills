@@ -23,7 +23,7 @@ public class RangerAbilities {
             int radius = SimplySkills.rangerConfig.passiveRangerRevealRadius;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -48,7 +48,7 @@ public class RangerAbilities {
             int regenerationAmplifier = SimplySkills.rangerConfig.passiveRangerTamerRegenerationAmplifier;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
@@ -71,7 +71,7 @@ public class RangerAbilities {
             int healthTransferAmount = SimplySkills.rangerConfig.passiveRangerBondedHealthTransferAmount;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
@@ -97,7 +97,7 @@ public class RangerAbilities {
             int minimumHealthPercent = SimplySkills.rangerConfig.passiveRangerTrainedMinimumHealthPercent;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
@@ -122,7 +122,7 @@ public class RangerAbilities {
             int radius = SimplySkills.rangerConfig.passiveRangerIncognitoRadius;
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof TameableEntity te)) {
@@ -165,7 +165,7 @@ public class RangerAbilities {
         int slowFallAmplifier = SimplySkills.rangerConfig.signatureRangerDisengageSlowFallAmplifier;
 
         Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
@@ -204,7 +204,7 @@ public class RangerAbilities {
         int radius = SimplySkills.rangerConfig.signatureRangerDisengageRecuperateRadius;
 
         Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
             if (entities != null) {
                 if ((entities instanceof TameableEntity te)) {
@@ -222,7 +222,7 @@ public class RangerAbilities {
         int effectDuration = SimplySkills.rangerConfig.signatureRangerDisengageExploitationDuration;
 
         Box box = HelperMethods.createBox(player, radius);
-        for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
             if (entities != null) {
                 if ((entities instanceof TameableEntity te)) {

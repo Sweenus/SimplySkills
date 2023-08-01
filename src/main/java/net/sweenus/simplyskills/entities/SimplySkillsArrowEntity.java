@@ -34,12 +34,12 @@ public class SimplySkillsArrowEntity extends ArrowEntity {
                     && HelperMethods.isUnlocked("simplyskills_ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainExplosive, serverPlayer)) {
                 Box box = HelperMethods.createBox(this, 1);
-                for (Entity entities : this.world.getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : this.getWorld().getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                     if (entities != null && (this.getOwner() instanceof PlayerEntity player)) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                            Explosion explosion = this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(),
-                                    1.0f, false, Explosion.DestructionType.NONE);
+                            Explosion explosion = this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(),
+                                    1.0f, false, World.ExplosionSourceType.NONE);
                             this.applyDamageEffects(player, le);
 
                             if (HelperMethods.isUnlocked("simplyskills_ranger",

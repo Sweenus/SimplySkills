@@ -26,9 +26,9 @@ public class SkillsModMixin {
             SoundEvent sound = SoundRegistry.SOUNDEFFECT45;
             SoundEvent sound2 = SoundRegistry.SOUNDEFFECT47;
 
-            player.world.playSoundFromEntity(null, player, sound2,
+            player.getWorld().playSoundFromEntity(null, player, sound2,
                     SoundCategory.PLAYERS, 1, 1.5f);
-            player.world.playSoundFromEntity(null, player, sound,
+            player.getWorld().playSoundFromEntity(null, player, sound,
                     SoundCategory.PLAYERS, 1, (float) choose_pitch);
 
             }

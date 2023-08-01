@@ -31,7 +31,7 @@ public abstract class ServerPlayerEntityMixin {
             if (player.hasStatusEffect(EffectRegistry.BARRIER)) {
                 HelperMethods.decrementStatusEffect(player, EffectRegistry.BARRIER);
                 cir.setReturnValue(false);
-                player.world.playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
             }
 

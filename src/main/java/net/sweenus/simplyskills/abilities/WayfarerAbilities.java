@@ -65,7 +65,7 @@ public class WayfarerAbilities {
                 }
             }
             player.removeStatusEffect(EffectRegistry.STEALTH);
-            player.world.playSoundFromEntity(
+            player.getWorld().playSoundFromEntity(
                     null, player, SoundRegistry.SOUNDEFFECT36,
                     SoundCategory.PLAYERS, 0.7f, 1.4f);
             if (player.hasStatusEffect(StatusEffects.INVISIBILITY))

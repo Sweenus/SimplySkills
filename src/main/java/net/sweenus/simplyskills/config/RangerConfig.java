@@ -61,6 +61,6 @@ public class RangerConfig implements ConfigData {
     public int effectRangerArrowRainVolleys = 2;
     public int effectRangerArrowRainVolleyIncreasePerTier = 1;
     public int effectRangerArrowRainRange = 64;
-    public int effectRangerArrowRainCooldown = 35;
+    public int effectRangerArrowRainCooldown = 20;
 
 }

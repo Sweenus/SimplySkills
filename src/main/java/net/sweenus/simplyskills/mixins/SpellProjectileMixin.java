@@ -26,7 +26,7 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     private void simplyskills$performSpell(
             EntityHitResult entityHitResult, CallbackInfo ci) {
 
-        if (!this.world.isClient) {
+        if (!this.getWorld().isClient) {
             Entity target = entityHitResult.getEntity();
             if (target != null && this.getOwner() != null) {
                 Entity ownerEntity = this.getOwner();

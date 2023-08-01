@@ -26,24 +26,24 @@ public class EarthshakerEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
             int radius = 3;
             float damageIncrease = SimplySkills.warriorConfig.passiveWarriorHeavyWeightDamageIncreasePerTick;
             double damage_multiplier = 0.5;
             double damage = 1 + (livingEntity.getArmor() * damage_multiplier);
-            DamageSource damageSource = DamageSource.GENERIC;
+            DamageSource damageSource = livingEntity.getDamageSources().generic();
             fallDistance += damageIncrease;
 
             if (livingEntity.isOnGround()) {
 
                 Box box = HelperMethods.createBox(livingEntity, radius);
-                for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && !livingEntity.hasStatusEffect(StatusEffects.SLOW_FALLING)){
                             if (livingEntity instanceof PlayerEntity player) {
-                                damageSource = DamageSource.player(player);
+                                damageSource = player.getDamageSources().playerAttack(player);
                                 if (HelperMethods.isUnlocked("simplyskills",
                                         SkillReferencePosition.warriorHeavyWeight, player))
                                     damage +=fallDistance;
@@ -56,11 +56,11 @@ public class EarthshakerEffect extends StatusEffect {
                         }
                     }
                 }
-                livingEntity.world.playSoundFromEntity(null, livingEntity, SoundRegistry.SOUNDEFFECT14,
+                livingEntity.getWorld().playSoundFromEntity(null, livingEntity, SoundRegistry.SOUNDEFFECT14,
                         SoundCategory.PLAYERS, 0.3f, 1.1f);
                 fallDistance = 0;
                 HelperMethods.spawnParticlesPlane(
-                        livingEntity.world,
+                        livingEntity.getWorld(),
                         ParticleTypes.CAMPFIRE_COSY_SMOKE,
                         livingEntity.getBlockPos(),
                         radius, 0, 1, 0 );

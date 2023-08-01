@@ -59,12 +59,12 @@ public class WizardAbilities {
             blockpos = HelperMethods.getPositionLookingAt(player, meteorShowerRange);
 
         if (blockpos != null) {
-            double xpos = blockpos.getX();
-            double ypos = blockpos.getY();
-            double zpos = blockpos.getZ();
+            int xpos = (int) blockpos.getX();
+            int ypos = (int) blockpos.getY();
+            int zpos = (int) blockpos.getZ();
             BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
             Box box = HelperMethods.createBoxAtBlock(searchArea, 8);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -109,12 +109,12 @@ public class WizardAbilities {
             blockpos = HelperMethods.getPositionLookingAt(player, iceCometRange);
 
         if (blockpos != null) {
-            double xpos = blockpos.getX();
-            double ypos = blockpos.getY();
-            double zpos = blockpos.getZ();
+            int xpos = (int) blockpos.getX();
+            int ypos = (int) blockpos.getY();
+            int zpos = (int) blockpos.getZ();
             BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
             Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                         success = true;
@@ -191,12 +191,12 @@ public class WizardAbilities {
             blockpos = HelperMethods.getPositionLookingAt(player, staticDischargeRange);
 
         if (blockpos != null) {
-            double xpos = blockpos.getX();
-            double ypos = blockpos.getY();
-            double zpos = blockpos.getZ();
+            int xpos = (int) blockpos.getX();
+            int ypos = (int) blockpos.getY();
+            int zpos = (int) blockpos.getZ();
             BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
             Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -244,12 +244,12 @@ public class WizardAbilities {
             blockpos = HelperMethods.getPositionLookingAt(player, arcaneBoltRange);
 
         if (blockpos != null) {
-            double xpos = blockpos.getX();
-            double ypos = blockpos.getY();
-            double zpos = blockpos.getZ();
+            int xpos = (int) blockpos.getX();
+            int ypos = (int) blockpos.getY();
+            int zpos = (int) blockpos.getZ();
             BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
             Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {

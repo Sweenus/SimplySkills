@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
+import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.SimplySkills;
@@ -20,13 +21,13 @@ public class SpellbreakingEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
             int frequency = SimplySkills.warriorConfig.passiveWarriorSpellbreakerFrequency;
             if (livingEntity.age % frequency == 0) {
                 int radius = SimplySkills.warriorConfig.passiveWarriorSpellbreakerRadius;
 
                 Box box = HelperMethods.createBox(livingEntity, radius);
-                for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_ENTITY)) {
+                for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_ENTITY)) {
 
                     if (entities != null) {
                         if (entities instanceof SpellProjectile pe) {
@@ -36,7 +37,7 @@ public class SpellbreakingEffect extends StatusEffect {
                                         break;
                                 }
                             }
-                            pe.world.createExplosion(pe, pe.getX(), pe.getY(), pe.getZ(), 0.2f, false, Explosion.DestructionType.NONE);
+                            pe.getWorld().createExplosion(pe, pe.getX(), pe.getY(), pe.getZ(), 0.2f, false, World.ExplosionSourceType.NONE);
                             pe.discard();
                         }
                     }

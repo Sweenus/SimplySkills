@@ -26,7 +26,7 @@ public class ElementalImpactEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
                 int velocity = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactVelocity;
@@ -56,7 +56,7 @@ public class ElementalImpactEffect extends StatusEffect {
                 if (HelperMethods.isUnlocked("simplyskills_spellblade",
                         SkillReferencePosition.spellbladeSpecialisationElementalImpactMagnet, player)){
                     Box box = HelperMethods.createBox(player, radius*2);
-                    for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                    for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player) && !le.hasStatusEffect(StatusEffects.SLOWNESS)) {

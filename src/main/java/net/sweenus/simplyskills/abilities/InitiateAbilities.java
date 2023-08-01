@@ -25,7 +25,7 @@ public class InitiateAbilities {
         if (player.age % nullificationFrequency == 0) {
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -96,7 +96,7 @@ public class InitiateAbilities {
         int stacks = SimplySkills.initiateConfig.passiveInitiateLightningRodStacks;
         int maxStacks = SimplySkills.initiateConfig.passiveInitiateLightningRodMaxStacks;
         int frequency = SimplySkills.initiateConfig.passiveInitiateLightningRodFrequency;
-        if (player.age % frequency == 0 && player.world.isThundering()) {
+        if (player.age % frequency == 0 && player.getWorld().isThundering()) {
             HelperMethods.incrementStatusEffect(player, EffectRegistry.LIGHTNINGATTUNEMENT, duration, stacks, maxStacks);
         }
     }

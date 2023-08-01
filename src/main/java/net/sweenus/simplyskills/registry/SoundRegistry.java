@@ -1,8 +1,9 @@
 package net.sweenus.simplyskills.registry;
 
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import net.sweenus.simplyskills.SimplySkills;
 
 public class SoundRegistry {
@@ -101,7 +102,7 @@ public class SoundRegistry {
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);
-        return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(id));
+        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
 

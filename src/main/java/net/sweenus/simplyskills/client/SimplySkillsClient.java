@@ -32,11 +32,11 @@ public class SimplySkillsClient implements ClientModInitializer {
                 if (System.currentTimeMillis() > (lastUseTime + abilityCooldown)) {
 
                     SignatureAbilities.sendKeybindPacket();
-                    client.player.world.playSoundFromEntity(null, client.player, SoundRegistry.FX_UI_UNLOCK3,
+                    client.player.getWorld().playSoundFromEntity(null, client.player, SoundRegistry.FX_UI_UNLOCK3,
                             SoundCategory.PLAYERS, 1, 1);
 
                     lastUseTime = System.currentTimeMillis();
-                    client.player.world.playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
+                    client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
 
                 } else {
                     client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime + abilityCooldown) - System.currentTimeMillis()) / 1000) + "s"), true);

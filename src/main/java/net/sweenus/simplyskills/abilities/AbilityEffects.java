@@ -132,8 +132,8 @@ public class AbilityEffects {
             int disenchantDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDisenchantDuration;
 
             BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), fobRange);
-            BlockState blockstate = player.world.getBlockState(blockPos);
-            BlockState blockstateUp = player.world.getBlockState(blockPos.up(1));
+            BlockState blockstate = player.getWorld().getBlockState(blockPos);
+            BlockState blockstateUp = player.getWorld().getBlockState(blockPos.up(1));
             for (int i = fobRange; i > 0; i--) {
                 if (blockstate.isAir() && blockstateUp.isAir())
                     break;
@@ -141,7 +141,7 @@ public class AbilityEffects {
             }
 
             Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, fobRadius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -223,12 +223,12 @@ public class AbilityEffects {
                 blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
 
             if (blockpos != null) {
-                double xpos = blockpos.getX();
-                double ypos = blockpos.getY();
-                double zpos = blockpos.getZ();
+                int xpos = (int) blockpos.getX();
+                int ypos = (int) blockpos.getY();
+                int zpos = (int) blockpos.getZ();
                 BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
                 Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
-                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         Random rand = new Random();
@@ -265,12 +265,12 @@ public class AbilityEffects {
                 blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
 
             if (blockpos != null) {
-                double xpos = blockpos.getX();
-                double ypos = blockpos.getY();
-                double zpos = blockpos.getZ();
+                int xpos = (int) blockpos.getX();
+                int ypos = (int) blockpos.getY();
+                int zpos = (int) blockpos.getZ();
                 BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
                 Box box = HelperMethods.createBoxAtBlock(searchArea, 1);
-                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         String spell = "simplyskills:physical_bow_snipe";
@@ -325,9 +325,9 @@ public class AbilityEffects {
 
             Vec3d blockpos = HelperMethods.getPositionLookingAt(player, arrowRainRange);
             if (blockpos != null) {
-                double xpos = blockpos.getX() - arrowRainRadius;
-                double ypos = blockpos.getY();
-                double zpos = blockpos.getZ() - arrowRainRadius;
+                int xpos = (int) blockpos.getX() - arrowRainRadius;
+                int ypos = (int) blockpos.getY();
+                int zpos = (int) blockpos.getZ() - arrowRainRadius;
 
 
                 for (int x = arrowRainRadius * 2; x > 0; x--) {
@@ -338,16 +338,16 @@ public class AbilityEffects {
                                     zpos + z);
 
                             if (player.getRandom().nextInt(100) < arrowRainChance
-                                    && player.world.getBlockState(spawnPosition).isAir()) {
+                                    && player.getWorld().getBlockState(spawnPosition).isAir()) {
                                 SimplySkillsArrowEntity arrowEntity = new SimplySkillsArrowEntity(EntityType.ARROW,
-                                        player.world);
+                                        player.getWorld());
                                 arrowEntity.updatePosition(spawnPosition.getX(),
                                         spawnPosition.getY(),
                                         spawnPosition.getZ());
                                 arrowEntity.setOwner(player);
                                 arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
                                 arrowEntity.setVelocity(0, -0.5, 0);
-                                player.world.spawnEntity(arrowEntity);
+                                player.getWorld().spawnEntity(arrowEntity);
 
                                 if (HelperMethods.isUnlocked("simplyskills_ranger",
                                         SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
@@ -394,12 +394,12 @@ public class AbilityEffects {
                 blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
 
             if (blockpos != null) {
-                double xpos = blockpos.getX();
-                double ypos = blockpos.getY();
-                double zpos = blockpos.getZ();
+                int xpos = (int) blockpos.getX();
+                int ypos = (int) blockpos.getY();
+                int zpos = (int) blockpos.getZ();
                 BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
                 Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -431,12 +431,12 @@ public class AbilityEffects {
                 blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
 
             if (blockpos != null) {
-                double xpos = blockpos.getX();
-                double ypos = blockpos.getY();
-                double zpos = blockpos.getZ();
+                int xpos = (int) blockpos.getX();
+                int ypos = (int) blockpos.getY();
+                int zpos = (int) blockpos.getZ();
                 BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
                 Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-                for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {

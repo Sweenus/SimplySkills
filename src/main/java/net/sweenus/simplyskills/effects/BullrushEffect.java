@@ -26,7 +26,7 @@ public class BullrushEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
 
@@ -46,14 +46,14 @@ public class BullrushEffect extends StatusEffect {
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
 
                 Box box = HelperMethods.createBox(player, radius*2);
-                for (Entity entities : livingEntity.world.getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                             le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                             if (player.age % bullrushHitFrequency == 0) {
-                                le.damage(DamageSource.player(player), (float) damage);
-                                player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
+                                le.damage(player.getDamageSources().playerAttack(player), (float) damage);
+                                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
                                         SoundCategory.PLAYERS, 0.6f, 1.0f);
                                 if (HelperMethods.isUnlocked("simplyskills_berserker",
                                         SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
@@ -68,7 +68,7 @@ public class BullrushEffect extends StatusEffect {
                                     player.removeStatusEffect(EffectRegistry.EXHAUSTION);
                                 }
                                 HelperMethods.spawnParticlesPlane(
-                                        player.world,
+                                        player.getWorld(),
                                         ParticleTypes.CLOUD,
                                         player.getBlockPos(),
                                         radius-2, 0, 1, 0 );

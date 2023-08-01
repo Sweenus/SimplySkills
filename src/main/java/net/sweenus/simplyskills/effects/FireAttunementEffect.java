@@ -12,7 +12,7 @@ public class FireAttunementEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
 
         }
         super.applyUpdateEffect(livingEntity, amplifier);

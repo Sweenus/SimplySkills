@@ -110,7 +110,7 @@ public class BerserkerAbilities {
         if (player.age % frequency == 0) {
 
             Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.world.getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
@@ -138,7 +138,7 @@ public class BerserkerAbilities {
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationRampageCharge, player)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration));
-            player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                     SoundCategory.PLAYERS, 0.5f, 1.1f);
         }
         return true;
@@ -162,13 +162,13 @@ public class BerserkerAbilities {
         int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
         int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
         float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
-        player.damage(DamageSource.GENERIC, sacrificeAmount);
+        player.damage(player.getDamageSources().generic(), sacrificeAmount);
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
                 (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationBerserkingLeap, player)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration));
-            player.world.playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                     SoundCategory.PLAYERS, 0.5f, 1.1f);
         }
         return true;

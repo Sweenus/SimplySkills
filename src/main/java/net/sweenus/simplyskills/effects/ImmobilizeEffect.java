@@ -17,12 +17,12 @@ public class ImmobilizeEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.world.isClient()) {
+        if (!livingEntity.getWorld().isClient()) {
             float damage = (float)(livingEntity.getMaxHealth() * 0.1);
             if (!livingEntity.getBlockPos().equals(blockPos)) {
                 if (livingEntity.age % 5 == 0) {
                     blockPos = livingEntity.getBlockPos();
-                    livingEntity.damage(DamageSource.GENERIC, damage);
+                    livingEntity.damage(livingEntity.getDamageSources().generic(), damage);
                     HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.SLOWNESS, 80, 1, 9);
                 }
             }
