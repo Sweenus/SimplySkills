@@ -10,8 +10,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellPower;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;
 

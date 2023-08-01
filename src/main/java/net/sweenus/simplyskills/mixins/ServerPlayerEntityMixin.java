@@ -1,6 +1,5 @@
 package net.sweenus.simplyskills.mixins;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -8,7 +7,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
-import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.*;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -110,12 +108,10 @@ public abstract class ServerPlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "tick")
     public void simplyskills$tick(CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
-        if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
 
-            if((Object) this instanceof PlayerEntity playerEntity && playerEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
-                playerEntity.setInvisible(playerEntity.hasStatusEffect(EffectRegistry.STEALTH));
-                System.out.println("Does the Player have Stealth? " + playerEntity.hasStatusEffect(EffectRegistry.STEALTH));
-                System.out.println("Is the Player invisible? " + playerEntity.isInvisible());
+            if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                player.setInvisible(player.hasStatusEffect(EffectRegistry.STEALTH));
             }
 
             //Passive Rogue Stealth

@@ -11,9 +11,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 public class StaticChargeEffect extends StatusEffect {

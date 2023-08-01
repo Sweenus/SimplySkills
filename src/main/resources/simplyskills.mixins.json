@@ -6,9 +6,9 @@
   "mixins": [
     "BowItemMixin",
     "CrossbowItemMixin",
+    "LivingEntityMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
-    "LivingEntityMixin",
     "SkillsModMixin",
     "SpellHelperMixin",
     "SpellProjectileMixin"

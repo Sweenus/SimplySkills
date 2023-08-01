@@ -11,7 +11,6 @@ import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.InitiateAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;

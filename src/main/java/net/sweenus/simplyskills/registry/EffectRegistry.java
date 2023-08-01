@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.puffish.skillsmod.server.PlayerAttributes;
+import net.spell_engine.api.effect.Synchronized;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
@@ -117,6 +118,9 @@ public class EffectRegistry {
     }
     
     public static void registerEffects() {
+
+        Synchronized.configure(STEALTH, true);
+
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
         RAMPAGE = registerStatusEffect("rampage", RAMPAGE);
