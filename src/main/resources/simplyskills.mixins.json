@@ -14,7 +14,9 @@
     "SpellProjectileMixin"
   ],
   "client": [
-    "client.ArmorFeatureRendererMixin"
+    "client.ArmorFeatureRendererMixin",
+    "client.PlayerEntityRendererMixin",
+    "client.EntityRendererDispatcherMixin"
   ],
   "injectors": {
     "defaultRequire": 1
