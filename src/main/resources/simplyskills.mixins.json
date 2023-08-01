@@ -16,7 +16,7 @@
   "client": [
     "client.ArmorFeatureRendererMixin",
     "client.PlayerEntityRendererMixin",
-    "client.EntityRendererDispatcherMixin"
+    "client.EntityRenderDispatcherMixin"
   ],
   "injectors": {
     "defaultRequire": 1

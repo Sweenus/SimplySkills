@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = EntityRenderDispatcher.class)
-public abstract class EntityRendererDispatcherMixin {
+public abstract class EntityRenderDispatcherMixin {
 
     //Prevents shadow flickering visible when effects are reapplied
 
