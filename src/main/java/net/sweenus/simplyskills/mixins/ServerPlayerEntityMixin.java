@@ -117,7 +117,8 @@ public abstract class ServerPlayerEntityMixin {
             //Passive Rogue Stealth
             if (HelperMethods.isUnlocked("simplyskills",
                     SkillReferencePosition.wayfarerStealth, player)
-                    && player.isSneaking() && player.age % 10 == 0) {
+                    && player.isSneaking() && player.age % 10 == 0
+                    && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 30));
             }
 
