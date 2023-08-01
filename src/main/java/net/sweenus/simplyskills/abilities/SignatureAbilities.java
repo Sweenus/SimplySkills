@@ -173,7 +173,7 @@ public class SignatureAbilities {
         //Return cooldown to client
         if (!player.world.isClient) {
             SignatureAbilities.signatureAbilityCooldownManager(ability, ability_success, player);
-            System.out.println("Using ability: " + ability);
+            //System.out.println("Using ability: " + ability);
         }
 
 
