@@ -32,7 +32,7 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
                 Entity ownerEntity = this.getOwner();
 
                 if (ownerEntity instanceof PlayerEntity player) {
-                    if (HelperMethods.isUnlocked("simplyskills_wizard", SkillReferencePosition.wizardSpellEcho, player)) {
+                    if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player)) {
                         WizardAbilities.passiveWizardSpellEcho(player, target);
                     }
                 }

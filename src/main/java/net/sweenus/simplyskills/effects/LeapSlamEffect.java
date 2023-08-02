@@ -2,7 +2,6 @@ package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -57,7 +56,7 @@ public class LeapSlamEffect extends StatusEffect {
                             if (entities != null) {
                                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapPull, player))
                                         le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                                     else
@@ -66,7 +65,7 @@ public class LeapSlamEffect extends StatusEffect {
                                     le.damage(player.getDamageSources().playerAttack(player), (float) damage);
                                     player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
                                             SoundCategory.PLAYERS, 0.3f, 1.1f);
-                                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob, player))
                                         le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, immobilizeDuration));
                                 }

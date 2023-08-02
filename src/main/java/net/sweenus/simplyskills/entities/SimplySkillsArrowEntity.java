@@ -31,7 +31,7 @@ public class SimplySkillsArrowEntity extends ArrowEntity {
             this.age();
 
             if ((this.getOwner() instanceof ServerPlayerEntity serverPlayer)
-                    && HelperMethods.isUnlocked("simplyskills_ranger",
+                    && HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainExplosive, serverPlayer)) {
                 Box box = HelperMethods.createBox(this, 1);
                 for (Entity entities : this.getWorld().getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -42,7 +42,7 @@ public class SimplySkillsArrowEntity extends ArrowEntity {
                                     1.0f, false, World.ExplosionSourceType.NONE);
                             this.applyDamageEffects(player, le);
 
-                            if (HelperMethods.isUnlocked("simplyskills_ranger",
+                            if (HelperMethods.isUnlocked("simplyskills:ranger",
                                     SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
                                 if (this.random.nextInt(100) < 25)
                                     le.damage(SpellDamageSource.player(MagicSchool.FIRE, player), 5);

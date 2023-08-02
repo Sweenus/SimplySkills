@@ -111,7 +111,7 @@ public class AbilityEffects {
                     }
                 }
 
-                if (HelperMethods.isUnlocked("simplyskills_rogue",
+                if (HelperMethods.isUnlocked("simplyskills:rogue",
                         SkillReferencePosition.rogueSpecialisationSiphoningStrikesVanish, player))
                     AbilityEffects.effectRogueSiphoningStrikesVanish(player);
 
@@ -121,10 +121,10 @@ public class AbilityEffects {
 
     public static void effectRogueFanOfBlades(PlayerEntity player) {
         int fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesBaseFrequency;
-        if (HelperMethods.isUnlocked("simplyskills_rogue",
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
             fobFrequency = SimplySkills.rogueConfig.signatureRogueFanOfBladesEnhancedFrequency;
-        if (HelperMethods.isUnlocked("simplyskills_rogue",
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player) &&
                 player.hasStatusEffect(EffectRegistry.FANOFBLADES) && player.age % fobFrequency == 0) {
             int fobRange = SimplySkills.rogueConfig.signatureRogueFanOfBladesRange;
@@ -146,13 +146,13 @@ public class AbilityEffects {
                 if (entities != null) {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                        if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
                             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", fobRange * 2, le);
                         else
                             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", fobRange * 2, le);
 
-                        if (HelperMethods.isUnlocked("simplyskills_rogue",
+                        if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment, player))
                             le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DISENCHANTMENT, disenchantDuration));
 
@@ -182,13 +182,13 @@ public class AbilityEffects {
             int radius = SimplySkills.rangerConfig.effectRangerElementalArrowsRadius;
             int increase = SimplySkills.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
             int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
-            if (HelperMethods.isUnlocked("simplyskills_ranger",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne, player))
                 radius = radius + increase;
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusTwo, player))
                 radius = radius + (increase * 2);
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusThree, player))
                 radius = radius + (increase * 3);
 
@@ -197,17 +197,17 @@ public class AbilityEffects {
             list.add("simplyskills:fire_arrow_rain");
             list.add("simplyskills:lightning_arrow_rain");
 
-            if (HelperMethods.isUnlocked("simplyskills_ranger",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsFireAttuned, player)) {
                 list.remove("simplyskills:frost_arrow_rain");
                 list.remove("simplyskills:lightning_arrow_rain");
             }
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsFrostAttuned, player)) {
                 list.remove("simplyskills:fire_arrow_rain");
                 list.remove("simplyskills:lightning_arrow_rain");
             }
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsLightningAttuned, player)) {
                 list.remove("simplyskills:fire_arrow_rain");
                 list.remove("simplyskills:frost_arrow_rain");
@@ -302,23 +302,23 @@ public class AbilityEffects {
             int arrowRainVolleyIncrease = SimplySkills.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
             int arrowRainRange = SimplySkills.rangerConfig.effectRangerArrowRainRange;
 
-            if (HelperMethods.isUnlocked("simplyskills_ranger",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne, player))
                 arrowRainRadius = arrowRainRadius + arrowRainRadiusIncrease;
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainRadiusTwo, player))
                 arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 2);
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainRadiusThree, player))
                 arrowRainRadius = arrowRainRadius + (arrowRainRadiusIncrease * 3);
 
-            if (HelperMethods.isUnlocked("simplyskills_ranger",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainVolleyOne, player))
                 arrowRainVolleys = arrowRainVolleys + arrowRainVolleyIncrease;
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainVolleyTwo, player))
                 arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 2);
-            else if (HelperMethods.isUnlocked("simplyskills_ranger",
+            else if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainVolleyThree, player))
                 arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 3);
 
@@ -349,7 +349,7 @@ public class AbilityEffects {
                                 arrowEntity.setVelocity(0, -0.5, 0);
                                 player.getWorld().spawnEntity(arrowEntity);
 
-                                if (HelperMethods.isUnlocked("simplyskills_ranger",
+                                if (HelperMethods.isUnlocked("simplyskills:ranger",
                                         SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
                                     arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
                                     if (player.getRandom().nextInt(100) < 5) {
@@ -380,7 +380,7 @@ public class AbilityEffects {
     public static void effectWizardFrostVolley(PlayerEntity player) {
         int frequency = SimplySkills.wizardConfig.signatureWizardIceCometVolleyFrequency;
 
-        if (HelperMethods.isUnlocked("simplyskills_wizard",
+        if (HelperMethods.isUnlocked("simplyskills:wizard",
                 SkillReferencePosition.wizardSpecialisationIceCometVolley, player) &&
         player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % frequency == 0) {
             Vec3d blockpos = null;
@@ -417,7 +417,7 @@ public class AbilityEffects {
     public static void effectWizardArcaneVolley(PlayerEntity player) {
         int volleyFrequency = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyFrequency;
 
-        if (HelperMethods.isUnlocked("simplyskills_wizard",
+        if (HelperMethods.isUnlocked("simplyskills:wizard",
                 SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player) &&
                 player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % volleyFrequency == 0) {
             Vec3d blockpos = null;
@@ -454,7 +454,7 @@ public class AbilityEffects {
     public static void effectWizardMeteoricWrath(PlayerEntity player) {
         int frequency = SimplySkills.wizardConfig.signatureWizardMeteoricWrathFrequency;
 
-        if (HelperMethods.isUnlocked("simplyskills_wizard",
+        if (HelperMethods.isUnlocked("simplyskills:wizard",
                 SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player) &&
                 player.hasStatusEffect(EffectRegistry.METEORICWRATH) && player.age % frequency == 0) {
             int chance = SimplySkills.wizardConfig.signatureWizardMeteoricWrathChance;
@@ -466,13 +466,13 @@ public class AbilityEffects {
 
             if (SignatureAbilities.castSpellEngineAOE(player, spellIdentifier, radius, chance, true)) {
                 int renewalChance = 0;
-                if (HelperMethods.isUnlocked("simplyskills_wizard",
+                if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrath, player))
                     renewalChance = baseRenewalChance;
-                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                else if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathTwo, player))
                     renewalChance = baseRenewalChance + renewalChancePerTier;
-                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                else if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationMeteorShowerRenewingWrathThree, player))
                     renewalChance = baseRenewalChance + (renewalChancePerTier * 2);
                 if (player.getRandom().nextInt(100) > renewalChance)
@@ -493,7 +493,7 @@ public class AbilityEffects {
         int spellweaverRegenerationChance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverRegenerationChance;
 
         if (player.hasStatusEffect(EffectRegistry.SPELLWEAVER) &&
-                (HelperMethods.isUnlocked("simplyskills_spellblade",
+                (HelperMethods.isUnlocked("simplyskills:spellblade",
                         SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)))
             chance = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverChance;
 
@@ -513,11 +513,11 @@ public class AbilityEffects {
                     list.get(spellChoice),
                     8, livingTarget);
 
-            if (HelperMethods.isUnlocked("simplyskills_spellblade",
+            if (HelperMethods.isUnlocked("simplyskills:spellblade",
                     SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste, player))
                 HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, spellweaverHasteDuration,
                         spellweaverHasteStacks, spellweaverHasteMaxStacks);
-            if (HelperMethods.isUnlocked("simplyskills_spellblade",
+            if (HelperMethods.isUnlocked("simplyskills:spellblade",
                     SkillReferencePosition.spellbladeSpecialisationSpellweaverRegeneration, player) &&
                     player.getRandom().nextInt(100) < spellweaverRegenerationChance)
                 HelperMethods.incrementStatusEffect(player, StatusEffects.REGENERATION, spellweaverRegenerationDuration,

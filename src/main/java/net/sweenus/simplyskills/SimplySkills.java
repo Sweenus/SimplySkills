@@ -31,18 +31,18 @@ public class SimplySkills implements ModInitializer {
     public static RangerConfig rangerConfig;
 
     private static void setSpecialisations() {
-        specialisations.add("simplyskills_rogue");
-        specialisations.add("simplyskills_ranger");
-        specialisations.add("simplyskills_berserker");
-        specialisations.add("simplyskills_wizard");
-        specialisations.add("simplyskills_spellblade");
+        specialisations.add("simplyskills:rogue");
+        specialisations.add("simplyskills:ranger");
+        specialisations.add("simplyskills:berserker");
+        specialisations.add("simplyskills:wizard");
+        specialisations.add("simplyskills:spellblade");
     }
     public static String[] getSpecialisations() {return new String[] {
-            "simplyskills_rogue",
-            "simplyskills_ranger",
-            "simplyskills_berserker",
-            "simplyskills_wizard",
-            "simplyskills_spellblade"};}
+            "simplyskills:rogue",
+            "simplyskills:ranger",
+            "simplyskills:berserker",
+            "simplyskills:wizard",
+            "simplyskills:spellblade"};}
 
     public static List<String> getSpecialisationsAsArray() {
         return specialisations;
@@ -69,7 +69,7 @@ public class SimplySkills implements ModInitializer {
         rogueConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().rogue;
         rangerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().ranger;
 
-        PassiveSkillReward.registerSkillTypes();
+        PassiveSkillReward.register();
         SoundRegistry.init();
         EffectRegistry.registerEffects();
         ItemRegistry.registerItems();

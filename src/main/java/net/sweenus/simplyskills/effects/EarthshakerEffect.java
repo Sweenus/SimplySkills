@@ -44,7 +44,7 @@ public class EarthshakerEffect extends StatusEffect {
                         if ((entities instanceof LivingEntity le) && !livingEntity.hasStatusEffect(StatusEffects.SLOW_FALLING)){
                             if (livingEntity instanceof PlayerEntity player) {
                                 damageSource = player.getDamageSources().playerAttack(player);
-                                if (HelperMethods.isUnlocked("simplyskills",
+                                if (HelperMethods.isUnlocked("simplyskills:tree",
                                         SkillReferencePosition.warriorHeavyWeight, player))
                                     damage +=fallDistance;
                                 if (!HelperMethods.checkFriendlyFire(le, player))

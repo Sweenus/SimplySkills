@@ -23,7 +23,7 @@ public class FileCopier {
 
         //noinspection OptionalGetWithoutIsPresent
         Optional<Path> simplySkills$categoriesPath = FabricLoader.getInstance().getModContainer(SimplySkills.MOD_ID).get().findPath(
-                DATA_PREFIX + SimplySkills.MOD_ID + '/' + "puffish_skills"
+                DATA_PREFIX + SimplySkills.MOD_ID + '/' + "custom_trees" + '/' + "puffish_skills"
         );
 
         if (simplySkills$categoriesPath.isEmpty())

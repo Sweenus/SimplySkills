@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.mixins;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
@@ -16,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SkillsModMixin {
 
     @Inject(at = @At("HEAD"), method = "tryUnlockSkill")
-    public void simplyskills$tryUnlockSkill(ServerPlayerEntity player, String categoryId, String skillId, boolean force, CallbackInfo ci) {
+    public void simplyskills$tryUnlockSkill(ServerPlayerEntity player, Identifier categoryId, String skillId, boolean force, CallbackInfo ci) {
 
         //Sound Event on skill unlock
         if (!SkillsAPI.getUnlockedSkills(player, categoryId).get().contains(skillId)
@@ -35,7 +36,8 @@ public class SkillsModMixin {
         }
 
     @Inject(at = @At("HEAD"), method = "unlockCategory", cancellable = true)
-    public void simplyskills$unlockCategory(ServerPlayerEntity player, String categoryId, CallbackInfo ci) {
+    public void simplyskills$unlockCategory(ServerPlayerEntity player, Identifier categoryIdentifier, CallbackInfo ci) {
+        String categoryId = categoryIdentifier.toString();
         if (AbilityLogic.skillTreeUnlockManager(player, categoryId))
             ci.cancel();
     }

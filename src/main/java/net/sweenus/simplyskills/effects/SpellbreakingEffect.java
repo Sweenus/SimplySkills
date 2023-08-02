@@ -8,7 +8,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.util.HelperMethods;

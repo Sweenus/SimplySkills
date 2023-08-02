@@ -1,9 +1,9 @@
 package net.sweenus.simplyskills.registry;
 
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registry;
 import net.sweenus.simplyskills.SimplySkills;
 
 public class SoundRegistry {

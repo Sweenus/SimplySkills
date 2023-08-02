@@ -8,8 +8,6 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -20,14 +18,12 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
-import net.puffish.skillsmod.SkillsAPI;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.KeybindPacket;
-import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -38,18 +34,18 @@ public class SignatureAbilities {
 
     public static void signatureAbilityManager(PlayerEntity player) {
 
-        String wizardSkillTree = "simplyskills_wizard";
-        String berserkerSkillTree = "simplyskills_berserker";
-        String rogueSkillTree = "simplyskills_rogue";
-        String rangerSkillTree = "simplyskills_ranger";
-        String spellbladeSkillTree = "simplyskills_spellblade";
+        String wizardSkillTree = "simplyskills:wizard";
+        String berserkerSkillTree = "simplyskills:berserker";
+        String rogueSkillTree = "simplyskills:rogue";
+        String rangerSkillTree = "simplyskills:ranger";
+        String spellbladeSkillTree = "simplyskills:spellblade";
         boolean ability_success = false;
-        String ability = "";
+        String ability = "none";
 
 
 
         // - WIZARD -
-        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(wizardSkillTree)) {
+        if (HelperMethods.isUnlocked(wizardSkillTree, null, player)) {
 
             // Meteor Shower
             if (HelperMethods.isUnlocked(wizardSkillTree,
@@ -78,7 +74,7 @@ public class SignatureAbilities {
         }
 
         // - BERSERKER -
-        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(berserkerSkillTree)) {
+        if (HelperMethods.isUnlocked(berserkerSkillTree, null, player)) {
 
             // Rampage
             if (HelperMethods.isUnlocked(berserkerSkillTree,
@@ -101,7 +97,7 @@ public class SignatureAbilities {
         }
 
         // - ROGUE -
-        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rogueSkillTree)) {
+        if (HelperMethods.isUnlocked(rogueSkillTree, null, player)) {
 
             // Evasion
             if (HelperMethods.isUnlocked(rogueSkillTree,
@@ -124,7 +120,7 @@ public class SignatureAbilities {
         }
 
         // - Ranger -
-        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(rangerSkillTree)) {
+        if (HelperMethods.isUnlocked(rangerSkillTree, null, player)) {
 
             // Elemental Arrows
             if (HelperMethods.isUnlocked(rangerSkillTree,
@@ -147,7 +143,7 @@ public class SignatureAbilities {
         }
 
         // - Spellblade -
-        if (SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player).contains(spellbladeSkillTree)) {
+        if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)) {
 
             // Elemental Surge
             if (HelperMethods.isUnlocked(spellbladeSkillTree,

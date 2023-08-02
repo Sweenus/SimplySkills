@@ -8,11 +8,14 @@ public class SimplySkillsPreInit implements PreLaunchEntrypoint {
 
     @Override
     public void onPreLaunch() {
+        /*
         try {
             FileCopier.copyFileToConfigDirectory();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+         */
+
     }
 
 

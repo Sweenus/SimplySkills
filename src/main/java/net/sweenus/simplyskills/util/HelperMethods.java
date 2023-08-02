@@ -60,9 +60,11 @@ public class HelperMethods {
 
     //Checks if skill is unlocked with presence checks.
     //If provided null for the skill argument, it will instead return if the category is unlocked.
-    public static boolean isUnlocked (String tree, String skill, LivingEntity livingEntity) {
+    public static boolean isUnlocked (String skillTree, String skill, LivingEntity livingEntity) {
+        Identifier tree = new Identifier(skillTree);
         if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
             if (SkillsAPI.getUnlockedSkills( serverPlayer, tree ).isPresent()) {
+                //System.out.println("Confirmed that the following category is unlocked: " + tree);
                 if (skill != null)
                     return SkillsAPI.getUnlockedSkills(serverPlayer, tree).get().contains(skill);
                 else return SkillsAPI.getUnlockedCategories(serverPlayer).contains(tree);
@@ -258,9 +260,9 @@ public class HelperMethods {
 
         List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
         for (String specialisation : specialisations) {
-            SkillsAPI.eraseCategory(user, specialisation);
+            SkillsAPI.eraseCategory(user, new Identifier(specialisation));
         }
-        SkillsAPI.resetSkills(user, "simplyskills");
+        SkillsAPI.resetSkills(user, new Identifier("simplyskills:tree"));
         return true;
     }
 
@@ -269,8 +271,8 @@ public class HelperMethods {
 
             List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
             for (String specialisation : specialisations) {
-                SkillsAPI.eraseCategory(user, specialisation);
-                SkillsAPI.eraseCategory(user, "simplyskills");
+                SkillsAPI.eraseCategory(user, new Identifier(specialisation));
+                SkillsAPI.eraseCategory(user, new Identifier("simplyskills:tree"));
             }
         }
     }

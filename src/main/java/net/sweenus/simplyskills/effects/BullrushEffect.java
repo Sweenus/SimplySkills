@@ -2,7 +2,6 @@ package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -55,11 +54,11 @@ public class BullrushEffect extends StatusEffect {
                                 le.damage(player.getDamageSources().playerAttack(player), (float) damage);
                                 player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
                                         SoundCategory.PLAYERS, 0.6f, 1.0f);
-                                if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                if (HelperMethods.isUnlocked("simplyskills:berserker",
                                         SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
                                     le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
 
-                                if (HelperMethods.isUnlocked("simplyskills_berserker",
+                                if (HelperMethods.isUnlocked("simplyskills:berserker",
                                         SkillReferencePosition.berserkerSignatureRampageChargeRelentless, player)
                                         &&player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
                                     int stacks = player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier();

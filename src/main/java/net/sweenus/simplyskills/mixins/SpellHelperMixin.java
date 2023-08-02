@@ -35,7 +35,7 @@ public class SpellHelperMixin {
             int remainingUseTicks,
             CallbackInfo ci) {
 
-        if (HelperMethods.isUnlocked("simplyskills", SkillReferencePosition.initiateEmpower, player))
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
             InitiateAbilities.passiveInitiateEmpower(player, spellId);
         if (player.hasStatusEffect(EffectRegistry.STEALTH))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));

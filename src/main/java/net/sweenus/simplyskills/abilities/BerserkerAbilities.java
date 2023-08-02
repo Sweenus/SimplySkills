@@ -2,7 +2,6 @@ package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,12 +27,12 @@ public class BerserkerAbilities {
                 if (player.getMainHandStack().getItem() instanceof SwordItem) {
                     int mastery = baseSpeedAmplifier;
 
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.berserkerSwordMasterySkilled, player)
                             && player.getOffHandStack().isEmpty())
                         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT,
                                 frequency + 5, 0));
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.berserkerSwordMasteryProficient, player))
                         mastery = mastery + speedAmplifierPerTier;
 
@@ -54,10 +53,10 @@ public class BerserkerAbilities {
 
                     int mastery = baseStrengthAmplifier;
 
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.berserkerAxeMasterySkilled, player))
                         mastery = mastery + (strengthAmplifierPerTier * 2);
-                    else if (HelperMethods.isUnlocked("simplyskills",
+                    else if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.berserkerAxeMasteryProficient, player))
                         mastery = mastery + strengthAmplifierPerTier;
 
@@ -77,10 +76,10 @@ public class BerserkerAbilities {
             int resistanceStacks = baseResistanceAmplifier;
             if (player.getHealth() <= (healthThreshold * player.getMaxHealth())) {
 
-                if (HelperMethods.isUnlocked("simplyskills",
+                if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.berserkerIgnorePainSkilled, player))
                     resistanceStacks = resistanceStacks + (resistanceAmplifierPerTier * 2);
-                else if (HelperMethods.isUnlocked("simplyskills",
+                else if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.berserkerIgnorePainProficient, player))
                     resistanceStacks = resistanceStacks + resistanceAmplifierPerTier;
 

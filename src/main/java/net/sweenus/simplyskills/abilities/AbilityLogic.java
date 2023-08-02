@@ -8,7 +8,6 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
@@ -42,32 +41,32 @@ public class AbilityLogic {
 
 
             //Process unlock
-            if (categoryID.contains("simplyskills_wizard")
-                    && !HelperMethods.isUnlocked("simplyskills_wizard", null, player)) {
+            if (categoryID.contains("simplyskills:wizard")
+                    && !HelperMethods.isUnlocked("simplyskills:wizard", null, player)) {
                 if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
                     playUnlockSound(player);
                     return false;
                 }
-            } else if (categoryID.contains("simplyskills_berserker")
-                    && !HelperMethods.isUnlocked("simplyskills_berserker", null, player)) {
+            } else if (categoryID.contains("simplyskills:berserker")
+                    && !HelperMethods.isUnlocked("simplyskills:berserker", null, player)) {
                 if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
                     playUnlockSound(player);
                     return false;
                 }
-            } else if (categoryID.contains("simplyskills_rogue")
-                    && !HelperMethods.isUnlocked("simplyskills_rogue", null, player)) {
+            } else if (categoryID.contains("simplyskills:rogue")
+                    && !HelperMethods.isUnlocked("simplyskills:rogue", null, player)) {
                 if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
                     playUnlockSound(player);
                     return false;
                 }
-            } else if (categoryID.contains("simplyskills_ranger")
-                    && !HelperMethods.isUnlocked("simplyskills_ranger", null, player)) {
+            } else if (categoryID.contains("simplyskills:ranger")
+                    && !HelperMethods.isUnlocked("simplyskills:ranger", null, player)) {
                 if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
                     playUnlockSound(player);
                     return false;
                 }
-            } else if (categoryID.contains("simplyskills_spellblade")
-                    && !HelperMethods.isUnlocked("simplyskills_spellblade", null, player)) {
+            } else if (categoryID.contains("simplyskills:spellblade")
+                    && !HelperMethods.isUnlocked("simplyskills:spellblade", null, player)) {
                 if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
                     playUnlockSound(player);
                     return false;

@@ -2,11 +2,11 @@
 	"version": 1,
 
 	"categories": [
-		"simplyskills",
-		"simplyskills_wizard",
-		"simplyskills_berserker",
-		"simplyskills_rogue",
-		"simplyskills_ranger",
-		"simplyskills_spellblade"
+		"tree",
+		"wizard",
+		"berserker",
+		"rogue",
+		"ranger",
+		"spellblade"
 	]
 }

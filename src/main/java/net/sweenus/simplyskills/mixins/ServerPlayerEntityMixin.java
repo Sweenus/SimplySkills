@@ -35,43 +35,43 @@ public abstract class ServerPlayerEntityMixin {
                         SoundCategory.PLAYERS, 1, 1);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorHeavyArmorMastery, serverPlayer)
-                    || HelperMethods.isUnlocked("simplyskills",
+                    || HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorMediumArmorMastery, serverPlayer)) {
                 WarriorAbilities.passiveWarriorArmorMastery(player);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorSpellbreaker, player)) {
                 WarriorAbilities.passiveWarriorSpellbreaker(player);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rogueSmokeBomb, serverPlayer)) {
                 RogueAbilities.passiveRogueSmokeBomb(player);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rogueEvasionMastery, serverPlayer)) {
                 if (!RogueAbilities.passiveRogueEvasionMastery(player))
                     cir.setReturnValue(false);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.hardy, serverPlayer)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, (int) amount * 20));
             }
 
             //Passive Initiate Hasty
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateHasty, player)) {
                 InitiateAbilities.passiveInitiateHasty(player);
             }
 
 
             //Effect Rampage
-            if (HelperMethods.isUnlocked("simplyskills_berserker",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerSpecialisationRampage, serverPlayer)) {
                 AbilityEffects.effectBerserkerRampage(player);
             }
@@ -91,13 +91,13 @@ public abstract class ServerPlayerEntityMixin {
         float slowfallActivateDistance = SimplySkills.initiateConfig.passiveInitiateSlowFallDistanceToActivate;
         float goliathActivateDistance = SimplySkills.warriorConfig.passiveWarriorGoliathFallDistance;
 
-        if (HelperMethods.isUnlocked("simplyskills",
+        if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.initiateSlowfall, player)
                 && player.fallDistance > slowfallActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
         }
 
-        if (HelperMethods.isUnlocked("simplyskills",
+        if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.warriorGoliath, player)
                 && player.fallDistance > goliathActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             WarriorAbilities.passiveWarriorGoliath(player);
@@ -115,7 +115,7 @@ public abstract class ServerPlayerEntityMixin {
             }
 
             //Passive Rogue Stealth
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerStealth, player)
                     && player.isSneaking() && player.age % 10 == 0
                     && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
@@ -123,131 +123,131 @@ public abstract class ServerPlayerEntityMixin {
             }
 
             //Passive Warrior Death Defy
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorDeathDefy, player)) {
                 WarriorAbilities.passiveWarriorDeathDefy(player);
             }
 
             //Passive Wayfarer Sneak
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerSneak, player)
                     && player.isSneaking() && player.age % 10 == 0) {
                 int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
             }
             //Passive Wayfarer Guarding
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerGuarding, player)) {
                 WayfarerAbilities.passiveWayfarerGuarding(player);
             }
             //Passive Area Strip
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateNullification, player)) {
                 InitiateAbilities.passiveInitiateNullification(player);
             }
             //Passive Initiate Lightning Rod
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateLightningRod, player)) {
                 InitiateAbilities.passiveInitiateLightningRod(player);
             }
 
             //Passive Area Cleanse
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.cleric, player)) {
                 AbilityLogic.passiveAreaCleanse(player);
             }
 
             //Passive Self Cleanse
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.cleansing, player)) {
                 AbilityLogic.passiveSelfCleanse(player);
             }
 
             //Passive Ranger Reveal
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerReveal, player)) {
                 RangerAbilities.passiveRangerReveal(player);
             }
             //Passive Ranger Tamer
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerTamer, player)) {
                 RangerAbilities.passiveRangerBonded(player);
             }
             //Passive Ranger Bonded
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerBonded, player)) {
                 RangerAbilities.passiveRangerTamer(player);
             }
             //Passive Ranger Trained
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerTrained, player)) {
                 RangerAbilities.passiveRangerTrained(player);
             }
             //Passive Ranger Incognito
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerIncognito, player)) {
                 RangerAbilities.passiveRangerIncognito(player);
             }
 
             //Passive Berserker Sword Mastery
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.berserkerSwordMastery, player)) {
                 BerserkerAbilities.passiveBerserkerSwordMastery(player);
             }
             //Passive Berserker Axe Mastery
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.berserkerAxeMastery, player)) {
                 BerserkerAbilities.passiveBerserkerAxeMastery(player);
             }
             //Passive Berserker Ignore Pain
-            if (HelperMethods.isUnlocked( "simplyskills",
+            if (HelperMethods.isUnlocked( "simplyskills:tree",
                     SkillReferencePosition.berserkerIgnorePain, player)) {
                 BerserkerAbilities.passiveBerserkerIgnorePain(player);
             }
             //Passive Berserker Recklessness
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.berserkerRecklessness, player)) {
                 BerserkerAbilities.passiveBerserkerRecklessness(player);
             }
             //Passive Berserker Challenge
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.berserkerChallenge, player)) {
                 BerserkerAbilities.passiveBerserkerChallenge(player);
             }
             //Passive Bulwark Shield Mastery
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.bulwarkShieldMastery, player)) {
                 WarriorAbilities.passiveWarriorShieldMastery(player);
             }
             //Passive Wayfarer Slender && Initiate Frail
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerSlender, player)
-            || HelperMethods.isUnlocked("simplyskills",
+            || HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateFrail, player)) {
                 WayfarerAbilities.passiveWayfarerSlender(player);
             }
             //Passive Backstab Stealth
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rogueBackstab, player)) {
                 RogueAbilities.passiveRogueBackstabStealth(player);
             }
             //Wizard Frost Volley Effect
-            if (HelperMethods.isUnlocked("simplyskills_wizard",
+            if (HelperMethods.isUnlocked("simplyskills:wizard",
                     SkillReferencePosition.wizardSpecialisationIceCometVolley, player)) {
                 AbilityEffects.effectWizardFrostVolley(player);
             }
             //Wizard Arcane Volley Effect
-            if (HelperMethods.isUnlocked("simplyskills_wizard",
+            if (HelperMethods.isUnlocked("simplyskills:wizard",
             SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player)) {
                 AbilityEffects.effectWizardArcaneVolley(player);
             }
             //Wizard Meteoric Wrath Effect
-            if (HelperMethods.isUnlocked("simplyskills_wizard",
+            if (HelperMethods.isUnlocked("simplyskills:wizard",
                     SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player)) {
                 AbilityEffects.effectWizardMeteoricWrath(player);
             }
             //Rogue Fan of Blades Effect
-            if (HelperMethods.isUnlocked("simplyskills_rogue",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player)) {
                 AbilityEffects.effectRogueFanOfBlades(player);
             }
@@ -259,12 +259,12 @@ public abstract class ServerPlayerEntityMixin {
             //Debug - reset skills & gain exp
             if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
                 //AbilityLogic.debugPrintAttributes(player);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_wizard", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_berserker", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_rogue", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_ranger", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills_spellblade", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:tree", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:wizard", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:berserker", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:rogue", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:ranger", 60000);
+                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:spellblade", 60000);
             }
 
              */
@@ -289,33 +289,33 @@ public abstract class ServerPlayerEntityMixin {
                 if (!target.handleAttack(player)) {
 
                     //Passive Rogue Backstab
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.rogueBackstab, player)) {
                         RogueAbilities.passiveRogueBackstab(target, player);
                     }
 
                     //Passive Rogue Opportunistic Mastery
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.rogueOpportunisticMastery, player)) {
                         RogueAbilities.passiveRogueOpportunisticMastery(target, player);
                     }
 
                     //Effect Warrior Frenzy
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.warriorFrenzy, player)) {
                         WarriorAbilities.passiveWarriorFrenzy(player);
                     }
 
                     //Initiate Frail (weapon element)
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.initiateFrail, player)
-                            && !HelperMethods.isUnlocked("simplyskills_spellblade",
+                            && !HelperMethods.isUnlocked("simplyskills:spellblade",
                             SkillReferencePosition.spellbladeWeaponExpert, player)) {
                         InitiateAbilities.passiveInitiateFrail(player);
                     }
 
                     //Signature Passive Elemental Surge Renewal
-                    if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                    if (HelperMethods.isUnlocked("simplyskills:spellblade",
                             SkillReferencePosition.spellbladeSpecialisationElementalSurgeRenewal, player)) {
                         if (player.hasStatusEffect(EffectRegistry.ELEMENTALSURGE)) {
                             int surgeDuration = player.getStatusEffect(EffectRegistry.ELEMENTALSURGE).getDuration();
@@ -326,37 +326,37 @@ public abstract class ServerPlayerEntityMixin {
 
 
                     //Effect Bloodthirsty Tremor
-                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSpecialisationBloodthirstyTremor, player)) {
                         AbilityEffects.effectBerserkerBloodthirstyTremor(player);
                     }
 
                     //Effect Bloodthirsty Tireless
-                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSpecialisationBloodthirstyTireless, player)) {
                         AbilityEffects.effectBerserkerBloodthirstyTireless(player);
                     }
 
                     //Effect Berserking
-                    if (HelperMethods.isUnlocked("simplyskills_berserker",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
                         AbilityEffects.effectBerserkerBerserking(target, player);
                     }
 
                     //Effect Siphoning Strikes
-                    if (HelperMethods.isUnlocked("simplyskills_rogue",
+                    if (HelperMethods.isUnlocked("simplyskills:rogue",
                             SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
                         AbilityEffects.effectRogueSiphoningStrikes(target, player);
                     }
 
                     //Effect Rogue Vanish
-                    if (HelperMethods.isUnlocked("simplyskills_rogue",
+                    if (HelperMethods.isUnlocked("simplyskills:rogue",
                             SkillReferencePosition.rogueSpecialisationSiphoningStrikesVanish, player)) {
                         AbilityEffects.effectRogueSiphoningStrikesVanish(player);
                     }
 
                     //Effect Spell Weaving
-                    if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                    if (HelperMethods.isUnlocked("simplyskills:spellblade",
                             SkillReferencePosition.spellbladeSpellweaving, player)) {
                         AbilityEffects.effectSpellbladeSpellweaving(target, player);
                     }

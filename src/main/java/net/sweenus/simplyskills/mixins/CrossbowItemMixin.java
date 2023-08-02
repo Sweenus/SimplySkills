@@ -47,7 +47,7 @@ public abstract class CrossbowItemMixin {
             if (user instanceof ServerPlayerEntity serverPlayer) {
 
                 //Gain Stealth
-                if (HelperMethods.isUnlocked("simplyskills",
+                if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.wayfarerUnseen, user)
                         && !user.hasStatusEffect(EffectRegistry.STEALTH)
                         && !this.charged)

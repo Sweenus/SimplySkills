@@ -58,11 +58,11 @@ public class WarriorAbilities {
 
         if (player.getRandom().nextInt(100) < armorMasteryChance) {
             if (player.getArmor() > armorMasteryThreshold
-                    && HelperMethods.isUnlocked("simplyskills",
+                    && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorHeavyArmorMastery, player)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
                         heavyArmorMasteryDuration, heavyArmorMasteryAmplifier));
-            } else if (HelperMethods.isUnlocked("simplyskills",
+            } else if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorMediumArmorMastery, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION,
                         mediumArmorMasteryDuration, mediumArmorMasteryAmplifier));
@@ -90,10 +90,10 @@ public class WarriorAbilities {
 
                     int mastery = shieldMasteryResistanceAmplifier;
 
-                    if (HelperMethods.isUnlocked("simplyskills",
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.bulwarkShieldMasterySkilled, player))
                         mastery = mastery + (shieldMasteryResistanceAmplifierPerTier * 2);
-                    else if (HelperMethods.isUnlocked("simplyskills",
+                    else if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.bulwarkShieldMasteryProficient, player))
                         mastery = mastery + shieldMasteryResistanceAmplifierPerTier;
 

@@ -67,7 +67,7 @@ public class RogueAbilities {
         int evasionArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
         int mastery = 0;
 
-        if (HelperMethods.isUnlocked("simplyskills",
+        if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.rogueDeflection, player)
                 && player.getMainHandStack().getItem() instanceof SwordItem
                 && player.getOffHandStack().getItem() instanceof SwordItem)
@@ -80,10 +80,10 @@ public class RogueAbilities {
         if (player.hasStatusEffect(EffectRegistry.EVASION))
             evasionMultiplier = masteryEvasionMultiplier;
 
-        if (HelperMethods.isUnlocked("simplyskills",
+        if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.rogueEvasionMasterySkilled, player))
             mastery = mastery + (evasionChanceIncreasePerTier * 2);
-        else if (HelperMethods.isUnlocked("simplyskills",
+        else if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.rogueEvasionMasteryProficient, player))
             mastery = mastery + evasionChanceIncreasePerTier;
 
@@ -107,10 +107,10 @@ public class RogueAbilities {
 
         int mastery = basePoisonDuration;
 
-        if (HelperMethods.isUnlocked("simplyskills",
+        if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.rogueOpportunisticMasterySkilled, player))
             mastery = mastery + (poisonDurationIncreasePerTier * 2);
-        else if (HelperMethods.isUnlocked("simplyskills",
+        else if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.rogueOpportunisticMasteryProficient, player))
             mastery = mastery + poisonDurationIncreasePerTier;
 
@@ -144,7 +144,7 @@ public class RogueAbilities {
 
     public static void passiveRoguePreparationShadowstrike(PlayerEntity player) {
         if (player instanceof ServerPlayerEntity) {
-            if (HelperMethods.isUnlocked("simplyskills_rogue",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player)) {
                 int dashRange = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRange;
                 int dashRadius = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
@@ -160,11 +160,11 @@ public class RogueAbilities {
                         if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                             le.damage(dashSource, dashDamage * dashDamageModifier);
 
-                            if (HelperMethods.isUnlocked("simplyskills_rogue",
+                            if (HelperMethods.isUnlocked("simplyskills:rogue",
                                     SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeBolt, player))
                                 SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         "simplyskills:soul_bolt_lesser", 64, le);
-                            if (HelperMethods.isUnlocked("simplyskills_rogue",
+                            if (HelperMethods.isUnlocked("simplyskills:rogue",
                                     SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player))
                                 HelperMethods.buffSteal(player, le, true, true);
 

@@ -69,7 +69,7 @@ public class InitiateAbilities {
             }
 
             if (player.hasStatusEffect(list.get(0))
-                    && HelperMethods.isUnlocked("simplyskills",
+                    && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateAttuned, player)) {
                 int stackThreshold = SimplySkills.initiateConfig.passiveInitiateAttunedStackThreshold -1;
                 StatusEffectInstance statusInstance = player.getStatusEffect(list.get(0));
@@ -114,7 +114,7 @@ public class InitiateAbilities {
 
         if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
                 || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
-                && HelperMethods.isUnlocked("simplyskills",
+                && HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.wayfarerSlender, player)){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
                     25, weaknessAmplifier));

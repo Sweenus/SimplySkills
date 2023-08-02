@@ -39,10 +39,10 @@ public class StaticChargeEffect extends StatusEffect {
 
             if (livingEntity.age % leapFrequency == 0) {
                 int speedChance = speedBaseChance;
-                if (HelperMethods.isUnlocked("simplyskills_wizard",
+                if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo, ownerEntity))
                     speedChance = speedChance + speedChancePerTier;
-                else if (HelperMethods.isUnlocked("simplyskills_wizard",
+                else if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree, ownerEntity))
                     speedChance = speedChance + (speedChancePerTier * 2);
 
@@ -65,7 +65,7 @@ public class StaticChargeEffect extends StatusEffect {
                                 livingEntity.removeStatusEffect(sc);
                             }
 
-                            if (HelperMethods.isUnlocked("simplyskills_wizard",
+                            if (HelperMethods.isUnlocked("simplyskills:wizard",
                                     SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed, ownerEntity)
                                     && ownerEntity.getRandom().nextInt(100) < speedChance)
                                 HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED,
@@ -91,7 +91,7 @@ public class StaticChargeEffect extends StatusEffect {
 
                 if (entities != null) {
                     if (entities instanceof PlayerEntity pe) {
-                        if (HelperMethods.isUnlocked("simplyskills_wizard",
+                        if (HelperMethods.isUnlocked("simplyskills:wizard",
                                 SkillReferencePosition.wizardSpecialisationStaticDischargeLeap, pe)) {
                             ownerEntity = pe;
                             break;

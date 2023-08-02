@@ -27,23 +27,23 @@ public class PlayerEntityMixin {
         if (player instanceof ServerPlayerEntity) {
 
             // fervour
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.fervour, player)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100));
             }
 
             // Effect Bloodthirsty
-            if (HelperMethods.isUnlocked("simplyskills_berserker",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
                 AbilityEffects.effectBerserkerBloodthirsty(player);
             }
             // Effect Elemental Arrows Renewal
-            if (HelperMethods.isUnlocked("simplyskills_ranger",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRenewal, player)) {
                 RangerAbilities.passiveRangerElementalArrowsRenewal(player);
             }
             // Effect Fan of Blades Renewal
-            if (HelperMethods.isUnlocked("simplyskills_rogue",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesRenewal, player)) {
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 1));
             }
@@ -56,7 +56,7 @@ public class PlayerEntityMixin {
     public void simplyskills$takeShieldHit(LivingEntity attacker, CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity) {
-            if (HelperMethods.isUnlocked("simplyskills",
+            if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.bulwarkRebuke, player)) {
                 WarriorAbilities.passiveWarriorRebuke(player, attacker);
             }

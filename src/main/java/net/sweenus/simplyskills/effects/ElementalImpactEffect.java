@@ -53,7 +53,7 @@ public class ElementalImpactEffect extends StatusEffect {
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell, radius, chance, true);
                 SignatureAbilities.castSpellEngineAOE(player, randomSpell2, radius, (int)(chance * 0.35), true);
 
-                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                if (HelperMethods.isUnlocked("simplyskills:spellblade",
                         SkillReferencePosition.spellbladeSpecialisationElementalImpactMagnet, player)){
                     Box box = HelperMethods.createBox(player, radius*2);
                     for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {

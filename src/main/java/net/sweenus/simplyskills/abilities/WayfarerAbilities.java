@@ -31,11 +31,11 @@ public class WayfarerAbilities {
                 int evasionDuration = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveEvasionDuration;
                 int evasionChance = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveChance;
 
-                if (HelperMethods.isUnlocked("simplyskills",
+                if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.rogueFleetfooted, player))
                     HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED,
                             speedDuration, speedStacks, speedMaxStacks);
-                if (HelperMethods.isUnlocked("simplyskills",
+                if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.wayfarerReflexive, player)
                         && player.getRandom().nextInt(100) < evasionChance)
                     HelperMethods.incrementStatusEffect(player, EffectRegistry.EVASION,
@@ -50,7 +50,7 @@ public class WayfarerAbilities {
                     int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
 
                     if (backstabBonus && HelperMethods.isBehindTarget(player, livingTarget)) {
-                        if (HelperMethods.isUnlocked("simplyskills",
+                        if (HelperMethods.isUnlocked("simplyskills:tree",
                                 SkillReferencePosition.rogueExploitation, player))
                             HelperMethods.incrementStatusEffect(
                                     livingTarget,
@@ -58,7 +58,7 @@ public class WayfarerAbilities {
                                     deathmarkDuration,
                                     deathmarkStacks,
                                     3);
-                        if (HelperMethods.isUnlocked("simplyskills",
+                        if (HelperMethods.isUnlocked("simplyskills:tree",
                                 SkillReferencePosition.rogueOpportunisticMastery, player))
                             RogueAbilities.passiveRogueOpportunisticMastery(livingTarget, player);
                     }
@@ -93,12 +93,12 @@ public class WayfarerAbilities {
         int frailSlownessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailSlownessAmplifier;
 
         if (player.age % 20 == 0) {
-            if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills",
+            if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerSlender, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
                         25, slenderSlownessAmplifier));
             }
-            if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills",
+            if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateFrail, player))){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
                         25, frailSlownessAmplifier));

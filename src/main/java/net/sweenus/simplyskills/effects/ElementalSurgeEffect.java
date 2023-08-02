@@ -30,13 +30,13 @@ public class ElementalSurgeEffect extends StatusEffect {
                 list.add("simplyskills:fire_nova");
                 list.add("simplyskills:lightning_nova");
 
-                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                if (HelperMethods.isUnlocked("simplyskills:spellblade",
                         SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFrost, player))
                     list.remove("simplyskills:frost_nova");
-                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                if (HelperMethods.isUnlocked("simplyskills:spellblade",
                         SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoFire, player))
                     list.remove("simplyskills:fire_nova");
-                if (HelperMethods.isUnlocked("simplyskills_spellblade",
+                if (HelperMethods.isUnlocked("simplyskills:spellblade",
                         SkillReferencePosition.spellbladeSpecialisationElementalSurgeNoLightning, player))
                     list.remove("simplyskills:lightning_nova");
                 if (list.isEmpty())
