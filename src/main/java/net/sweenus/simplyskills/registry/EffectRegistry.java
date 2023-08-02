@@ -112,6 +112,40 @@ public class EffectRegistry {
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect REVEALED= new RevealedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect BARRIER= new BarrierEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect SOULSHOCK= new SoulshockEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
+                    "f4f57190-f82f-4283-a4b9-a898382bcea7",
+                    2,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
+                    "f811acad-2542-4e5a-837f-a869251162ee",
+                    2,
+                    EntityAttributeModifier.Operation.ADDITION);
+    public static StatusEffect SPELLFORGED= new SoulshockEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
+                    "5d6e7b01-e11b-46ac-8a97-0ec497616982",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
+                    "dc0cea79-ffa6-4209-b851-952f60147b2c",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
+                    "fa5f66cd-ca9b-4da6-a4a8-3444a77156b7",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute,
+                    "d7b58e45-df85-40d9-a78b-943dc8765f2a",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute,
+                    "3d183b4b-9bfb-4d4e-b7f0-bd8cf65a34fc",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FROST).attribute,
+                    "5951bed4-b058-4320-8512-75c1be44bc33",
+                    1,
+                    EntityAttributeModifier.Operation.ADDITION);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -158,6 +192,8 @@ public class EffectRegistry {
         EXHAUSTION = registerStatusEffect("exhaustion", EXHAUSTION);
         REVEALED = registerStatusEffect("revealed", REVEALED);
         BARRIER = registerStatusEffect("barrier", BARRIER);
+        SOULSHOCK = registerStatusEffect("soul_shock", SOULSHOCK);
+        SPELLFORGED = registerStatusEffect("spell_forged", SPELLFORGED);
     }
 
 

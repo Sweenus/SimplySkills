@@ -11,6 +11,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -37,6 +38,7 @@ public class LeapSlamEffect extends StatusEffect {
                 double descentVelocity = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
                 double damage_multiplier = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
+                int resetChance = 60; //Simply Swords Config
 
                 if (ability_timer >= 60) {
                     player.setVelocity(livingEntity.getRotationVector().multiply(+leapVelocity));
@@ -76,7 +78,13 @@ public class LeapSlamEffect extends StatusEffect {
                                 ParticleTypes.CAMPFIRE_COSY_SMOKE,
                                 player.getBlockPos(),
                                 radius, 0, 1, 0 );
-                        player.removeStatusEffect(EffectRegistry.LEAPSLAM);
+                        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
+                                SoundCategory.PLAYERS, 0.5f, 0.9f);
+                        if (SimplySwordsGemEffects.doSignatureGemEffects(player, "leaping")
+                                && player.getRandom().nextInt(100) < resetChance)
+                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM,
+                                    SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration));
+                        else player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                     }
                 }
             }

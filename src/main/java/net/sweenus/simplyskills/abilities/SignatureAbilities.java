@@ -22,6 +22,7 @@ import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -166,6 +167,11 @@ public class SignatureAbilities {
         }
 
 
+        // Trigger bonus gem effects
+        if (ability_success)
+            SimplySwordsGemEffects.doGenericAbilityGemEffects(player);
+
+
         //Return cooldown to client
         if (!player.getWorld().isClient) {
             SignatureAbilities.signatureAbilityCooldownManager(ability, ability_success, player);
@@ -251,6 +257,9 @@ public class SignatureAbilities {
                 type = "magic";
             }
         }
+
+        // Do Gem Effects
+        cooldown = SimplySwordsGemEffects.renewed(player, cooldown, minimumCD);
 
 
         double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
