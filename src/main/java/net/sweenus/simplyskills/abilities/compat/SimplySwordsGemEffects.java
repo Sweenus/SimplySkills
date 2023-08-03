@@ -1,20 +1,9 @@
 package net.sweenus.simplyskills.abilities.compat;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyswords.entity.BattleStandardEntity;
-import net.sweenus.simplyswords.registry.EntityRegistry;
-import net.sweenus.simplyswords.registry.SoundRegistry;
 
 public class SimplySwordsGemEffects {
 
@@ -30,6 +19,7 @@ public class SimplySwordsGemEffects {
         String allNetherEffects = offHandNetherEffect + mainHandNetherEffect;
 
 
+        // Banner removes exhaustion stacks
         if (allNetherEffects.contains("assault_banner")) {
             //Use SimplySwordsAPI
         }

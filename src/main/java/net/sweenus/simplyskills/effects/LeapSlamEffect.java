@@ -81,9 +81,12 @@ public class LeapSlamEffect extends StatusEffect {
                         player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
                                 SoundCategory.PLAYERS, 0.5f, 0.9f);
                         if (SimplySwordsGemEffects.doSignatureGemEffects(player, "leaping")
-                                && player.getRandom().nextInt(100) < resetChance)
+                                && player.getRandom().nextInt(100) < resetChance) {
+                            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                                    SoundCategory.PLAYERS, 0.5f, 1.1f);
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM,
                                     SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration));
+                        }
                         else player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                     }
                 }
