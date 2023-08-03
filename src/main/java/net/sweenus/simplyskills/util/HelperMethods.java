@@ -63,11 +63,11 @@ public class HelperMethods {
     public static boolean isUnlocked (String skillTree, String skill, LivingEntity livingEntity) {
         Identifier tree = new Identifier(skillTree);
         if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
-            if (SkillsAPI.getUnlockedSkills( serverPlayer, tree ).isPresent()) {
+            if (SkillsAPI.getCategory(tree).isPresent()) {
                 //System.out.println("Confirmed that the following category is unlocked: " + tree);
                 if (skill != null)
-                    return SkillsAPI.getUnlockedSkills(serverPlayer, tree).get().contains(skill);
-                else return SkillsAPI.getUnlockedCategories(serverPlayer).contains(tree);
+                    return SkillsAPI.getCategory(tree).get().getUnlockedSkills(serverPlayer).toString().contains(skill);
+                else return SkillsAPI.getUnlockedCategories(serverPlayer).toString().contains(skillTree);
             }
         }
         return false;
@@ -260,9 +260,9 @@ public class HelperMethods {
 
         List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
         for (String specialisation : specialisations) {
-            SkillsAPI.eraseCategory(user, new Identifier(specialisation));
+            SkillsAPI.getCategory(new Identifier(specialisation)).get().erase(user);
         }
-        SkillsAPI.resetSkills(user, new Identifier("simplyskills:tree"));
+        SkillsAPI.getCategory(new Identifier("simplyskills:tree")).get().resetSkills(user);
         return true;
     }
 
@@ -271,8 +271,8 @@ public class HelperMethods {
 
             List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
             for (String specialisation : specialisations) {
-                SkillsAPI.eraseCategory(user, new Identifier(specialisation));
-                SkillsAPI.eraseCategory(user, new Identifier("simplyskills:tree"));
+                SkillsAPI.getCategory(new Identifier(specialisation)).get().erase(user);
+                SkillsAPI.getCategory(new Identifier("simplyskills:tree")).get().erase(user);
             }
         }
     }

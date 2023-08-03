@@ -6,6 +6,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
+import net.puffish.skillsmod.api.Skill;
+import net.puffish.skillsmod.skill.SkillState;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,8 +22,8 @@ public class SkillsModMixin {
     public void simplyskills$tryUnlockSkill(ServerPlayerEntity player, Identifier categoryId, String skillId, boolean force, CallbackInfo ci) {
 
         //Sound Event on skill unlock
-        if (!SkillsAPI.getUnlockedSkills(player, categoryId).get().contains(skillId)
-        && SkillsAPI.getPointsLeft(player, categoryId).get() > 0) {
+        if (!SkillsAPI.getCategory(categoryId).get().getUnlockedSkills(player).toString().contains(skillId)
+        && SkillsAPI.getCategory(categoryId).get().getPointsLeft(player) > 0) {
 
             double choose_pitch = Math.random() * 1.2;
             SoundEvent sound = SoundRegistry.SOUNDEFFECT45;
