@@ -9,6 +9,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.*;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -251,6 +252,13 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player)) {
                 AbilityEffects.effectRogueFanOfBlades(player);
             }
+
+
+
+
+            // Tick Gem effects
+            SimplySwordsGemEffects.spellforged(player);
+            SimplySwordsGemEffects.soulshock(player);
 
 
 

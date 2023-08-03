@@ -192,8 +192,8 @@ public class EffectRegistry {
         EXHAUSTION = registerStatusEffect("exhaustion", EXHAUSTION);
         REVEALED = registerStatusEffect("revealed", REVEALED);
         BARRIER = registerStatusEffect("barrier", BARRIER);
-        SOULSHOCK = registerStatusEffect("soul_shock", SOULSHOCK);
-        SPELLFORGED = registerStatusEffect("spell_forged", SPELLFORGED);
+        SOULSHOCK = registerStatusEffect("soulshock", SOULSHOCK);
+        SPELLFORGED = registerStatusEffect("spellforged", SPELLFORGED);
     }
 
 

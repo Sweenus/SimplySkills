@@ -39,6 +39,8 @@
   "effect.simplyskills.exhaustion":                     "Exhaustion",
   "effect.simplyskills.revealed":                       "Revealed",
   "effect.simplyskills.barrier":                        "Barrier",
+  "effect.simplyskills.spellshock":                     "Spellshock",
+  "effect.simplyskills.spellforged":                    "Spellforged",
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
 

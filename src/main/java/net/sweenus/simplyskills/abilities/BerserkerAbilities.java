@@ -11,6 +11,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -161,9 +162,11 @@ public class BerserkerAbilities {
         int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
         int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
         float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
-        player.damage(player.getDamageSources().generic(), sacrificeAmount);
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
-                (int)((sacrificeAmount * secondsPerSacrifice) * 20)));
+        if (!SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant")) {
+            player.damage(player.getDamageSources().generic(), sacrificeAmount);
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
+                    (int) ((sacrificeAmount * secondsPerSacrifice) * 20)));
+        }
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationBerserkingLeap, player)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration));

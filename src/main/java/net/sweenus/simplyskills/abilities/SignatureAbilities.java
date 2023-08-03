@@ -260,8 +260,10 @@ public class SignatureAbilities {
 
         // Do Gem Effects
         cooldown = SimplySwordsGemEffects.renewed(player, cooldown, minimumCD);
+        cooldown = SimplySwordsGemEffects.accelerant(player, cooldown, minimumCD);
 
 
+        // Calculations
         double spellHaste = player.getAttributeValue(SpellAttributes.HASTE.attribute);
         sendCooldown = cooldown - (((spellHaste - 100) * spellHasteCDReduce) * 100);
 

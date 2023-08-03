@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.InitiateAbilities;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -39,6 +40,8 @@ public class SpellHelperMixin {
             InitiateAbilities.passiveInitiateEmpower(player, spellId);
         if (player.hasStatusEffect(EffectRegistry.STEALTH))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
+
+        SimplySwordsGemEffects.spellshield(player);
 
         }
     }
