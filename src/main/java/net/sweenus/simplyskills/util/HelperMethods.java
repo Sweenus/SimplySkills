@@ -25,9 +25,16 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.puffish.skillsmod.SkillsAPI;
+import net.puffish.skillsmod.SkillsMod;
+import net.puffish.skillsmod.api.Category;
+import net.puffish.skillsmod.api.Skill;
+import net.puffish.skillsmod.config.skill.SkillConfig;
 import net.sweenus.simplyskills.SimplySkills;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static net.puffish.skillsmod.SkillsAPI.getCategory;
 
 public class HelperMethods {
 
@@ -63,11 +70,31 @@ public class HelperMethods {
     public static boolean isUnlocked (String skillTree, String skill, LivingEntity livingEntity) {
         Identifier tree = new Identifier(skillTree);
         if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
-            if (SkillsAPI.getCategory(tree).isPresent()) {
-                //System.out.println("Confirmed that the following category is unlocked: " + tree);
-                if (skill != null)
-                    return SkillsAPI.getCategory(tree).get().getUnlockedSkills(serverPlayer).toString().contains(skill);
-                else return SkillsAPI.getUnlockedCategories(serverPlayer).toString().contains(skillTree);
+            if (getCategory(tree).isPresent()) {
+                if (skill != null) {
+                    Collection<Skill> skillList = SkillsAPI.getCategory(tree).get().getUnlockedSkills(serverPlayer);
+                    Skill realSkill = new Skill(SkillsAPI.getCategory(tree).get(), skill);
+                    //System.out.println("Checking " + tree + " for skill: " + realSkill.getId());
+
+                    for (Skill value : skillList) {
+                        if (value.getId().equals(realSkill.getId())) {
+                            //System.out.println("Found a match!     " + value.getId() + "  is equal to  " + realSkill.getId());
+                            return value.getId().equals(realSkill.getId());
+                        }
+                    }
+                }
+                else {
+                    //return SkillsAPI.getUnlockedCategories(serverPlayer).equals(SkillsAPI.getCategory(tree));
+
+                    Collection<Category> categories = SkillsAPI.getUnlockedCategories(serverPlayer);
+                    for (Category value : categories) {
+                        if (value.getId().equals(tree)) {
+                            System.out.println("Found a CATEGORY match!     " + value.getId() + "  is equal to  " + tree);
+                            return value.getId().equals(tree);
+                        }
+                    }
+
+                }
             }
         }
         return false;
@@ -260,9 +287,9 @@ public class HelperMethods {
 
         List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
         for (String specialisation : specialisations) {
-            SkillsAPI.getCategory(new Identifier(specialisation)).get().erase(user);
+            getCategory(new Identifier(specialisation)).get().erase(user);
         }
-        SkillsAPI.getCategory(new Identifier("simplyskills:tree")).get().resetSkills(user);
+        getCategory(new Identifier("simplyskills:tree")).get().resetSkills(user);
         return true;
     }
 
@@ -271,8 +298,8 @@ public class HelperMethods {
 
             List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
             for (String specialisation : specialisations) {
-                SkillsAPI.getCategory(new Identifier(specialisation)).get().erase(user);
-                SkillsAPI.getCategory(new Identifier("simplyskills:tree")).get().erase(user);
+                getCategory(new Identifier(specialisation)).get().erase(user);
+                getCategory(new Identifier("simplyskills:tree")).get().erase(user);
             }
         }
     }
