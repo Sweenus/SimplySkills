@@ -89,7 +89,7 @@ public class HelperMethods {
                     Collection<Category> categories = SkillsAPI.getUnlockedCategories(serverPlayer);
                     for (Category value : categories) {
                         if (value.getId().equals(tree)) {
-                            System.out.println("Found a CATEGORY match!     " + value.getId() + "  is equal to  " + tree);
+                            //System.out.println("Found a CATEGORY match!     " + value.getId() + "  is equal to  " + tree);
                             return value.getId().equals(tree);
                         }
                     }
