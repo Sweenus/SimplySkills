@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "simplyskills:item/gracious_manuscript_base",
+    "layer1": "simplyskills:item/gracious_manuscript_eye_strip",
+    "layer2": "simplyskills:item/gracious_manuscript_eyelid_strip"
+  }
+}

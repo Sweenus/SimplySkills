@@ -43,6 +43,7 @@
   "effect.simplyskills.spellforged":                    "Spellforged",
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
+  "item.simplyskills.gracious_manuscript":              "Gracious Manuscript",
 
   "item.simplyskills.malevolent_manuscript.tooltip1":   "Refunds all points invested ",
   "item.simplyskills.malevolent_manuscript.tooltip2":   "in your base skill tree, ",
@@ -52,6 +53,10 @@
   "item.simplyskills.malevolent_manuscript.tooltip6":   "consuming all experience invested.",
   "item.simplyskills.malevolent_manuscript.tooltip7":   "This cannot be undone.",
 
+  "item.simplyskills.gracious_manuscript.tooltip1":   "Unlocks all specialisations ",
+  "item.simplyskills.gracious_manuscript.tooltip2":   "and grants you a large amount ",
+  "item.simplyskills.gracious_manuscript.tooltip3":   "of experience in each.",
+  "item.simplyskills.gracious_manuscript.tooltip4":   "This is only obtainable in creative.",
 
   "text.autoconfig.simplyskills.title" :                "Simply Skills",
   "text.autoconfig.simplyskills.category.general" :     "General",

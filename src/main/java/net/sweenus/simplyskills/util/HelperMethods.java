@@ -296,6 +296,16 @@ public class HelperMethods {
         getCategory(new Identifier("simplyskills:tree")).get().resetSkills(user);
         return true;
     }
+    public static boolean levelAll( ServerPlayerEntity user ) {
+
+        List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
+        for (String specialisation : specialisations) {
+            getCategory(new Identifier(specialisation)).get().unlock(user);
+            getCategory(new Identifier(specialisation)).get().setExperience(user, 50000);
+        }
+        getCategory(new Identifier("simplyskills:tree")).get().setExperience(user, 50000);
+        return true;
+    }
 
     public static void treeResetOnDeath(ServerPlayerEntity user ) {
         if (SimplySkills.generalConfig.treeResetOnDeath) {

@@ -9,12 +9,18 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.items.GraciousManuscript;
 import net.sweenus.simplyskills.items.MalevolentManuscript;
 
 public class ItemRegistry {
 
     public static final Item MALEVOLENTMANUSCRIPT = registerItem( "malevolent_manuscript",
             new MalevolentManuscript( new FabricItemSettings()
+                    .rarity(Rarity.EPIC)
+                    .maxCount(1)
+                    .fireproof()));
+    public static final Item GRACIOUSMANUSCRIPT = registerItem( "gracious_manuscript",
+            new GraciousManuscript( new FabricItemSettings()
                     .rarity(Rarity.EPIC)
                     .maxCount(1)
                     .fireproof()));

@@ -11,6 +11,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 
 import java.util.List;
@@ -77,8 +78,9 @@ public class AbilityLogic {
     }
 
     static void playUnlockSound(PlayerEntity player) {
-        player.getWorld().playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
-                SoundCategory.PLAYERS, 1, 1);
+        if (player.getMainHandStack().getItem() != ItemRegistry.GRACIOUSMANUSCRIPT)
+            player.getWorld().playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
+                    SoundCategory.PLAYERS, 1, 1);
     }
 
 
