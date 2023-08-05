@@ -1273,7 +1273,7 @@
 		]
 	},
 	"rangerIncognito": {
-		"title": "§7§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they also gain Stealth.",
+		"title": "§7§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they gain Invisibility.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1449,7 +1449,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_berserker"
+					"command": "puffish_skills category unlock @s simplyskills:berserker"
 				}
 			}
 		]
@@ -1791,7 +1791,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_rogue"
+					"command": "puffish_skills category unlock @s simplyskills:rogue"
 				}
 			}
 		]
@@ -2025,7 +2025,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_ranger"
+					"command": "puffish_skills category unlock @s simplyskills:ranger"
 				}
 			}
 		]
@@ -2061,7 +2061,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_crusader"
+					"command": "puffish_skills category unlock @s simplyskills:crusader"
 				}
 			}
 		]
@@ -2079,7 +2079,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_frostguard"
+					"command": "puffish_skills category unlock @s simplyskills:frostguard"
 				}
 			}
 		]
@@ -2097,7 +2097,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_spellblade"
+					"command": "puffish_skills category unlock @s simplyskills:spellblade"
 				}
 			}
 		]
@@ -2349,7 +2349,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_wizard"
+					"command": "puffish_skills category unlock @s simplyskills:wizard"
 				}
 			}
 		]
@@ -2367,7 +2367,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_shaman"
+					"command": "puffish_skills category unlock @s simplyskills:shaman"
 				}
 			}
 		]
@@ -2385,7 +2385,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_cleric"
+					"command": "puffish_skills category unlock @s simplyskills:cleric"
 				}
 			}
 		]
@@ -2403,7 +2403,7 @@
 			{
 				"type": "puffish_skills:command",
 				"data": {
-					"command": "puffish_skills category unlock @s simplyskills_necromancer"
+					"command": "puffish_skills category unlock @s simplyskills:necromancer"
 				}
 			}
 		]
@@ -2661,7 +2661,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap": {
-		"title": "§7Your §6[Discharge]§7 can now leap between nearby enemies up to 8 times.",
+		"title": "§7Your §6[Discharge]§7 can now leap between nearby enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2679,7 +2679,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap++": {
-		"title": "§7Your §6[Static Discharge]§7 can now leap between nearby enemies up to 16 times.",
+		"title": "§7Your §6[Static Discharge]§7 gains additional leaps before expiring.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2697,7 +2697,7 @@
 		]
 	},
 	"wizardSignatureStaticDischargeLeap+++": {
-		"title": "§7Your §6[Static Discharge]§7 can now leap between nearby enemies up to 24 times.",
+		"title": "§7Your §6[Static Discharge]§7 gains significantly more leaps before expiring.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

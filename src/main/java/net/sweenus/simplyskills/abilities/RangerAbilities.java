@@ -2,8 +2,10 @@ package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Tameable;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
@@ -50,13 +52,15 @@ public class RangerAbilities {
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                if (entities != null) {
-                    if ((entities instanceof TameableEntity te)) {
-                        if (te.isOwner(player)) {
-                            te.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
-                                    frequency + 5, regenerationAmplifier));
-                            te.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                                    frequency + 5, resistanceAmplifier));
+                if (entities != null && entities instanceof  LivingEntity le) {
+                    if ((entities instanceof Tameable te)) {
+                        if (te.getOwner() != null) {
+                            if (te.getOwnerUuid() == player.getUuid()) {
+                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
+                                        frequency + 5, regenerationAmplifier));
+                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
+                                        frequency + 5, resistanceAmplifier));
+                            }
                         }
                     }
                 }
@@ -73,14 +77,16 @@ public class RangerAbilities {
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                if (entities != null) {
-                    if ((entities instanceof TameableEntity te)) {
-                        if (te.isOwner(player)) {
-                            float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
-                            float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
-                            if (teHealthPercent > playerHealthPercent && teHealthPercent > petMinimumHealthPercent) {
-                                te.setHealth(te.getHealth() - healthTransferAmount);
-                                player.heal(healthTransferAmount);
+                if (entities != null && entities instanceof  LivingEntity le) {
+                    if ((entities instanceof Tameable te)) {
+                        if (te.getOwner() != null) {
+                            if (te.getOwnerUuid() == player.getUuid()) {
+                                float teHealthPercent = ((le.getHealth() / le.getMaxHealth()) * 100);
+                                float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
+                                if (teHealthPercent > playerHealthPercent && teHealthPercent > petMinimumHealthPercent) {
+                                    le.setHealth(le.getHealth() - healthTransferAmount);
+                                    player.heal(healthTransferAmount);
+                                }
                             }
                         }
                     }
@@ -99,15 +105,17 @@ public class RangerAbilities {
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                if (entities != null) {
-                    if ((entities instanceof TameableEntity te)) {
-                        if (te.isOwner(player)) {
-                            float teHealthPercent = ((te.getHealth() / te.getMaxHealth()) * 100);
-                            if (teHealthPercent > minimumHealthPercent) {
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                                        frequency + 5, strengthAmplifier));
-                                te.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                                        frequency + 5, speedAmplifier));
+                if (entities != null && entities instanceof  LivingEntity le) {
+                    if ((entities instanceof Tameable te)) {
+                        if (te.getOwner() != null) {
+                            if (te.getOwnerUuid() == player.getUuid()) {
+                                float teHealthPercent = ((le.getHealth() / le.getMaxHealth()) * 100);
+                                if (teHealthPercent > minimumHealthPercent) {
+                                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
+                                            frequency + 5, strengthAmplifier));
+                                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                                            frequency + 5, speedAmplifier));
+                                }
                             }
                         }
                     }
@@ -124,12 +132,14 @@ public class RangerAbilities {
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                if (entities != null) {
-                    if ((entities instanceof TameableEntity te)) {
-                        if (te.isOwner(player)) {
-                            if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
-                                te.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH,
-                                        frequency + 5));
+                if (entities != null && entities instanceof  LivingEntity le) {
+                    if ((entities instanceof Tameable te)) {
+                        if (te.getOwner() != null) {
+                            if (te.getOwnerUuid() == player.getUuid()) {
+                                if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,
+                                            frequency + 5));
+                                }
                             }
                         }
                     }

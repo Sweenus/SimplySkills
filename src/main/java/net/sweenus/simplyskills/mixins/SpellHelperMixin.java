@@ -42,6 +42,7 @@ public class SpellHelperMixin {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
 
         SimplySwordsGemEffects.spellshield(player);
+        SimplySwordsGemEffects.spellStandard(player);
 
         }
     }

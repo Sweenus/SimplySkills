@@ -43,17 +43,17 @@ public abstract class CrossbowItemMixin {
 
     @Inject(at = @At("HEAD"), method = "use", cancellable = true)
     public void simplyskills$use(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
-        if (user != null) {
-            if (user instanceof ServerPlayerEntity serverPlayer) {
+        if (!world.isClient && user != null) {
+            if (user instanceof ServerPlayerEntity) {
 
                 //Gain Stealth
                 if (HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.wayfarerUnseen, user)
                         && !user.hasStatusEffect(EffectRegistry.STEALTH)
-                        && !this.charged)
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 40));
+                        && !this.charged) {
 
-
+                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 45));
+                }
 
             }
         }

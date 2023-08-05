@@ -16,6 +16,7 @@ import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+import net.sweenus.simplyswords.SimplySwords;
 
 import java.util.Objects;
 
@@ -38,7 +39,7 @@ public class LeapSlamEffect extends StatusEffect {
                 double descentVelocity = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
                 double damage_multiplier = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
-                int resetChance = 60; //Simply Swords Config
+                int resetChance = SimplySwords.gemEffectsConfig.leapingChance;
 
                 if (ability_timer >= 60) {
                     player.setVelocity(livingEntity.getRotationVector().multiply(+leapVelocity));

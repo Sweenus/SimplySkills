@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -12,6 +13,7 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -78,6 +80,14 @@ public class BullrushEffect extends StatusEffect {
             }
         }
         super.applyUpdateEffect(livingEntity, amplifier);
+    }
+
+    @Override
+    public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+        if (entity instanceof PlayerEntity player)
+            SimplySwordsGemEffects.warStandard(player);
+
+        super.onRemoved(entity, attributes, amplifier);
     }
 
 

@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Tameable;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ArmorStandEntity;
@@ -50,9 +51,12 @@ public class HelperMethods {
                 return false;
             return playerEntity.shouldDamagePlayer(player);
         }
-        if (livingEntity instanceof TameableEntity tameableEntity) {
-            if (tameableEntity.getOwner() != null) {
-                return tameableEntity.getOwner() != player;
+        if (livingEntity instanceof Tameable tameable) {
+            if (tameable.getOwner() != null) {
+                if (tameable.getOwner() != player
+                        && (tameable.getOwner() instanceof PlayerEntity ownerPlayer))
+                    return player.shouldDamagePlayer(ownerPlayer);
+                return tameable.getOwner() != player;
             }
             return true;
         }
