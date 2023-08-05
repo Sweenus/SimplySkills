@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Tameable;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -30,7 +31,7 @@ public class ImmobilizingAuraEffect extends StatusEffect {
 
                     if (entities != null) {
                         if ((entities instanceof LivingEntity le)) {
-                            if (livingEntity instanceof TameableEntity te) {
+                            if (livingEntity instanceof Tameable te) {
 
                                 if (te.getOwner() == null)
                                     break;

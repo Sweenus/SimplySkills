@@ -216,10 +216,12 @@ public class RangerAbilities {
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-            if (entities != null) {
-                if ((entities instanceof TameableEntity te)) {
-                    if (te.isOwner(player)) {
-                        te.heal(te.getMaxHealth());
+            if (entities != null && entities instanceof  LivingEntity le) {
+                if ((entities instanceof Tameable te)) {
+                    if (te.getOwner() != null) {
+                        if (te.getOwnerUuid() == player.getUuid()) {
+                            le.heal(le.getMaxHealth());
+                        }
                     }
                 }
             }
@@ -234,10 +236,12 @@ public class RangerAbilities {
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-            if (entities != null) {
-                if ((entities instanceof TameableEntity te)) {
-                    if (te.isOwner(player)) {
-                        te.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, effectDuration));
+            if (entities != null && entities instanceof LivingEntity le) {
+                if ((entities instanceof Tameable te)) {
+                    if (te.getOwner() != null) {
+                        if (te.getOwnerUuid() == player.getUuid()) {
+                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, effectDuration));
+                        }
                     }
                 }
             }

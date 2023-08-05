@@ -169,14 +169,14 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.rangerReveal, player)) {
                 RangerAbilities.passiveRangerReveal(player);
             }
-            //Passive Ranger Tamer
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.rangerTamer, player)) {
-                RangerAbilities.passiveRangerBonded(player);
-            }
             //Passive Ranger Bonded
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerBonded, player)) {
+                RangerAbilities.passiveRangerBonded(player);
+            }
+            //Passive Ranger Tamer
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.rangerTamer, player)) {
                 RangerAbilities.passiveRangerTamer(player);
             }
             //Passive Ranger Trained
