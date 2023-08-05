@@ -5,8 +5,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyswords.SimplySwords;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
@@ -29,22 +31,29 @@ public class SimplySwordsGemEffects {
         // Chance to gain 5 stacks of precision on ability use
         if (allNetherEffects.contains("precise")) {
             int procChance = SimplySwords.gemEffectsConfig.preciseChance;
-            if (user.getRandom().nextInt(100) < procChance)
+            if (user.getRandom().nextInt(100) < procChance) {
                 user.addStatusEffect(new StatusEffectInstance(EffectRegistry.PRECISION, 200, 5));
+                doSound(user);
+            }
         }
 
         // Chance to gain 2 stacks of might on ability use
         if (allNetherEffects.contains("mighty")) {
             int procChance = SimplySwords.gemEffectsConfig.mightyChance;
-            if (user.getRandom().nextInt(100) < procChance)
+            if (user.getRandom().nextInt(100) < procChance) {
                 user.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT, 200, 3));
+                doSound(user);
+            }
+
         }
 
         // Chance to gain stealth on ability use
         if (allNetherEffects.contains("stealthy")) {
             int procChance = SimplySwords.gemEffectsConfig.stealthyChance;
-            if (user.getRandom().nextInt(100) < procChance)
+            if (user.getRandom().nextInt(100) < procChance) {
                 user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 600));
+                doSound(user);
+            }
         }
 
 
@@ -63,6 +72,11 @@ public class SimplySwordsGemEffects {
         return allNetherEffects.contains(nether_power);
     }
 
+    public static void doSound(PlayerEntity user) {
+        user.getWorld().playSoundFromEntity(null, user, SoundRegistry.FX_UI_UNLOCK3,
+                SoundCategory.PLAYERS, 1f, 1.6f);
+    }
+
 
 
     // Specific effects
@@ -71,15 +85,19 @@ public class SimplySwordsGemEffects {
     public static int renewed(PlayerEntity player, int cooldown, int minimumCD) {
         int procChance = SimplySwords.gemEffectsConfig.renewedChance;
         if (SimplySwordsGemEffects.doSignatureGemEffects(player, "renewed")
-                && player.getRandom().nextInt(100) < procChance)
+                && player.getRandom().nextInt(100) < procChance) {
+            doSound(player);
             return minimumCD;
+        }
         return cooldown;
     }
 
     // Accelerant - Berserkers signature ability Berserking, no longer provides stacks of Berserking but has a reduced base cooldown.
     public static int accelerant(PlayerEntity player, int cooldown, int minimumCD) {
-        if (SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant"))
+        if (SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant")) {
+            doSound(player);
             return (cooldown - 12000);
+        }
         return cooldown;
     }
 
@@ -87,8 +105,10 @@ public class SimplySwordsGemEffects {
     public static void spellshield(PlayerEntity player) {
         int procChance = SimplySwords.gemEffectsConfig.spellshieldChance;
         if (SimplySwordsGemEffects.doSignatureGemEffects(player, "spellshield")
-                && player.getRandom().nextInt(100) < procChance)
+                && player.getRandom().nextInt(100) < procChance) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BARRIER, 100, 0));
+            doSound(player);
+        }
     }
 
     // When in mainhand, grants + 1 to all Spell Power
@@ -120,23 +140,38 @@ public class SimplySwordsGemEffects {
                     }
                 }
             }
-            if (user.getRandom().nextInt(100) < chance)
+            if (user.getRandom().nextInt(100) < chance) {
                 SimplySwordsAPI.spawnBattleStandard(user, 3, "api",
                         3, -2, "simplyskills:precision",
                         "simplyskills:spellforged", 0,
                         null, null, 0,
                         false, false);
+                doSound(user);
+            }
         }
     }
 
+    // Drop a banner at the end of your charge, revealing enemies and granting might to allies
     public static void warStandard(PlayerEntity user) {
-        // Banner removes exhaustion stacks
         if (doSignatureGemEffects(user, "war_standard")) {
             SimplySwordsAPI.spawnBattleStandard(user, 3, "api", 3, 3,
                     "simplyskills:might", null, 4,
                     "simplyskills:revealed", null, 0,
                     false, false);
+            doSound(user);
         }
     }
+
+    //Chance to remove Revealed stacks on Evasion proc
+    public static void deception(PlayerEntity user) {
+        if (doSignatureGemEffects(user, "deception")) {
+            int chance = 50; // Simply Swords Config
+            if (user.getRandom().nextInt(100) < chance && user.hasStatusEffect(EffectRegistry.REVEALED)) {
+                user.removeStatusEffect(EffectRegistry.REVEALED);
+                doSound(user);
+            }
+        }
+    }
+
 
 }
