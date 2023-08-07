@@ -13,6 +13,7 @@ import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyswords.SimplySwords;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.entity.BattleStandardEntity;
+import net.sweenus.simplyswords.item.UniqueSwordItem;
 
 public class SimplySwordsGemEffects {
 
@@ -24,8 +25,13 @@ public class SimplySwordsGemEffects {
 
         // Used for non-specialisation specific effects that proc on signature ability use
 
-        String mainHandNetherEffect = user.getMainHandStack().getOrCreateNbt().getString("nether_power");
-        String offHandNetherEffect = user.getMainHandStack().getOrCreateNbt().getString("nether_power");
+        String mainHandNetherEffect = "";
+        String offHandNetherEffect = "";
+
+        if (user.getMainHandStack().getItem() instanceof UniqueSwordItem)
+            mainHandNetherEffect = user.getMainHandStack().getOrCreateNbt().getString("nether_power");
+        if (user.getOffHandStack().getItem() instanceof UniqueSwordItem)
+            offHandNetherEffect = user.getOffHandStack().getOrCreateNbt().getString("nether_power");
         String allNetherEffects = offHandNetherEffect + mainHandNetherEffect;
 
         // Chance to gain 5 stacks of precision on ability use
@@ -65,8 +71,13 @@ public class SimplySwordsGemEffects {
         if (!FabricLoader.getInstance().isModLoaded("simplyswords"))
             return false;
 
-        String mainHandNetherEffect = user.getMainHandStack().getOrCreateNbt().getString("nether_power");
-        String offHandNetherEffect = user.getOffHandStack().getOrCreateNbt().getString("nether_power");
+        String mainHandNetherEffect = "";
+        String offHandNetherEffect = "";
+
+        if (user.getMainHandStack().getItem() instanceof UniqueSwordItem)
+            mainHandNetherEffect = user.getMainHandStack().getOrCreateNbt().getString("nether_power");
+        if (user.getOffHandStack().getItem() instanceof UniqueSwordItem && !nether_power.contains("spellforged"))
+            offHandNetherEffect = user.getOffHandStack().getOrCreateNbt().getString("nether_power");
         String allNetherEffects = offHandNetherEffect + mainHandNetherEffect;
 
         return allNetherEffects.contains(nether_power);
@@ -113,8 +124,7 @@ public class SimplySwordsGemEffects {
 
     // When in mainhand, grants + 1 to all Spell Power
     public static void spellforged(PlayerEntity player) {
-        if (player.age %20 == 0 && player.getMainHandStack().
-                getOrCreateNbt().getString("nether_power").contains("spellforged"))
+        if (player.age %20 == 0 && SimplySwordsGemEffects.doSignatureGemEffects(player, "spellforged"))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLFORGED, 25, 0));
     }
 
