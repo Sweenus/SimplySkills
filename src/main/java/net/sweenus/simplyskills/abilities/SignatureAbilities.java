@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -168,7 +169,7 @@ public class SignatureAbilities {
 
 
         // Trigger bonus gem effects
-        if (ability_success)
+        if (ability_success && FabricLoader.getInstance().isModLoaded("simplyswords"))
             SimplySwordsGemEffects.doGenericAbilityGemEffects(player);
 
 
@@ -259,8 +260,10 @@ public class SignatureAbilities {
         }
 
         // Do Gem Effects
-        cooldown = SimplySwordsGemEffects.renewed(player, cooldown, minimumCD);
-        cooldown = SimplySwordsGemEffects.accelerant(player, cooldown, minimumCD);
+        if (FabricLoader.getInstance().isModLoaded("simplyswords")) {
+            cooldown = SimplySwordsGemEffects.renewed(player, cooldown, minimumCD);
+            cooldown = SimplySwordsGemEffects.accelerant(player, cooldown, minimumCD);
+        }
 
 
         // Calculations

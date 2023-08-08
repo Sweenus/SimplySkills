@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.effects;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
@@ -84,7 +85,7 @@ public class BullrushEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player)
+        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
             SimplySwordsGemEffects.warStandard(player);
 
         super.onRemoved(entity, attributes, amplifier);

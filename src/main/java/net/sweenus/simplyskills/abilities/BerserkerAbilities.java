@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.abilities;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -162,7 +163,7 @@ public class BerserkerAbilities {
         int secondsPerSacrifice = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSecondsPerSacrifice;
         int leapSlamDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration;
         float sacrificeAmount = (float) (player.getHealth() * sacrificeAmountModifier);
-        if (!SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant")) {
+        if (!FabricLoader.getInstance().isModLoaded("simplyswords") || !SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant")) {
             player.damage(player.getDamageSources().generic(), sacrificeAmount);
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
                     (int) ((sacrificeAmount * secondsPerSacrifice) * 20)));

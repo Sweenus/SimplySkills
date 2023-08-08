@@ -8,7 +8,6 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.abilities.WizardAbilities;
-import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.abilities;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -91,7 +92,8 @@ public class RogueAbilities {
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getArmor() < evasionArmorThreshold) {
 
-                SimplySwordsGemEffects.deception(player);
+                if (FabricLoader.getInstance().isModLoaded("simplyswords"))
+                    SimplySwordsGemEffects.deception(player);
                 player.getWorld().playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
                 return false;

@@ -6,8 +6,6 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
-import net.puffish.skillsmod.api.Skill;
-import net.puffish.skillsmod.skill.SkillState;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.spongepowered.asm.mixin.Mixin;

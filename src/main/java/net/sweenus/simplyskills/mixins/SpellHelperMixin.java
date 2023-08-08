@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.mixins;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -41,8 +42,10 @@ public class SpellHelperMixin {
         if (player.hasStatusEffect(EffectRegistry.STEALTH))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
 
-        SimplySwordsGemEffects.spellshield(player);
-        SimplySwordsGemEffects.spellStandard(player);
-
+        if (FabricLoader.getInstance().isModLoaded("simplyswords")) {
+            SimplySwordsGemEffects.spellshield(player);
+            SimplySwordsGemEffects.spellStandard(player);
         }
     }
+
+}

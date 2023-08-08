@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.mixins;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -257,8 +258,10 @@ public abstract class ServerPlayerEntityMixin {
 
 
             // Tick Gem effects
-            SimplySwordsGemEffects.spellforged(player);
-            SimplySwordsGemEffects.soulshock(player);
+            if (FabricLoader.getInstance().isModLoaded("simplyswords")) {
+                SimplySwordsGemEffects.spellforged(player);
+                SimplySwordsGemEffects.soulshock(player);
+            }
 
 
 

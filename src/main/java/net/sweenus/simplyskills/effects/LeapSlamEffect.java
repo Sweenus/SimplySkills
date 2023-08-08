@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.effects;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -12,11 +13,11 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsRequiredMethods;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
-import net.sweenus.simplyswords.SimplySwords;
 
 import java.util.Objects;
 
@@ -39,7 +40,6 @@ public class LeapSlamEffect extends StatusEffect {
                 double descentVelocity = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDescentVelocity;
                 double damage_multiplier = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDamageModifier;
                 double damage = (HelperMethods.getAttackDamage(livingEntity.getMainHandStack()) * damage_multiplier);
-                int resetChance = SimplySwords.gemEffectsConfig.leapingChance;
 
                 if (ability_timer >= 60) {
                     player.setVelocity(livingEntity.getRotationVector().multiply(+leapVelocity));
@@ -53,7 +53,7 @@ public class LeapSlamEffect extends StatusEffect {
 
                     if (player.isOnGround()) {
 
-                        Box box = HelperMethods.createBox(player, radius*2);
+                        Box box = HelperMethods.createBox(player, radius * 2);
                         for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                             if (entities != null) {
@@ -61,9 +61,9 @@ public class LeapSlamEffect extends StatusEffect {
 
                                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapPull, player))
-                                        le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
+                                        le.setVelocity((player.getX() - le.getX()) / 4, (player.getY() - le.getY()) / 4, (player.getZ() - le.getZ()) / 4);
                                     else
-                                        le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
+                                        le.setVelocity((le.getX() - player.getX()) / 4, (le.getY() - player.getY()) / 4, (le.getZ() - player.getZ()) / 4);
 
                                     le.damage(player.getDamageSources().playerAttack(player), (float) damage);
                                     player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
@@ -78,15 +78,20 @@ public class LeapSlamEffect extends StatusEffect {
                                 player.getWorld(),
                                 ParticleTypes.CAMPFIRE_COSY_SMOKE,
                                 player.getBlockPos(),
-                                radius, 0, 1, 0 );
+                                radius, 0, 1, 0);
                         player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT14,
                                 SoundCategory.PLAYERS, 0.5f, 0.9f);
-                        if (SimplySwordsGemEffects.doSignatureGemEffects(player, "leaping")
-                                && player.getRandom().nextInt(100) < resetChance) {
-                            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
-                                    SoundCategory.PLAYERS, 0.5f, 1.1f);
-                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM,
-                                    SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration));
+                        if (FabricLoader.getInstance().isModLoaded("simplyswords")
+                                && SimplySwordsGemEffects.passVersionCheck()) {
+                            int resetChance = SimplySwordsRequiredMethods.leapingChance;
+                            if (SimplySwordsGemEffects.doSignatureGemEffects(player, "leaping")
+                                    && player.getRandom().nextInt(100) < resetChance) {
+                                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                                        SoundCategory.PLAYERS, 0.5f, 1.1f);
+                                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM,
+                                        SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration));
+                            }
+                            else player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                         }
                         else player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                     }
