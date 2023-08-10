@@ -3764,7 +3764,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/crusader_heavensmiths_call.png"
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
 			}
 		},
 		"rewards": [
@@ -3772,6 +3772,24 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "crusaderSignatureHeavensmithsCall"
+				}
+			}
+		]
+	},
+	"crusaderSignatureHeavensmithsCallEffect": {
+		"title": "§6[Heavensmith's Call]§7 Now grants you Divine Adjudication for a duration.§7\n\n§f(Divine Adjudication)§7 periodically cast Judgement on nearby enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureHeavensmithsCallEffect"
 				}
 			}
 		]

@@ -41,6 +41,7 @@ public class SignatureAbilities {
         String rogueSkillTree = "simplyskills:rogue";
         String rangerSkillTree = "simplyskills:ranger";
         String spellbladeSkillTree = "simplyskills:spellblade";
+        String crusaderSkillTree = "simplyskills:crusader";
         boolean ability_success = false;
         String ability = "none";
 
@@ -171,6 +172,13 @@ public class SignatureAbilities {
         if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
 
+            // Heavensmith's Call
+            if (HelperMethods.isUnlocked(crusaderSkillTree,
+                    SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player)) {
+                ability_success = CrusaderAbilities.signatureHeavensmithsCall(crusaderSkillTree, player);
+                ability = "HeavensmithsCall";
+            }
+
         }
 
 
@@ -262,6 +270,10 @@ public class SignatureAbilities {
             case "Spellweaver" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000;
                 type = "magic";
+            }
+            case "HeavensmithsCall" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                type = "physical";
             }
         }
 
