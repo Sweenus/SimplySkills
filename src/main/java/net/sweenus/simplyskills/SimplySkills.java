@@ -36,13 +36,15 @@ public class SimplySkills implements ModInitializer {
         specialisations.add("simplyskills:berserker");
         specialisations.add("simplyskills:wizard");
         specialisations.add("simplyskills:spellblade");
+        specialisations.add("simplyskills:crusader");
     }
     public static String[] getSpecialisations() {return new String[] {
             "simplyskills:rogue",
             "simplyskills:ranger",
             "simplyskills:berserker",
             "simplyskills:wizard",
-            "simplyskills:spellblade"};}
+            "simplyskills:spellblade",
+            "simplyskills:crusader"};}
 
     public static List<String> getSpecialisationsAsArray() {
         return specialisations;
@@ -53,7 +55,7 @@ public class SimplySkills implements ModInitializer {
     public static String[] getSoulSpells() {return new String[] {"soul", "dark"};}
     public static String[] getHealingSpells() {return new String[] {"holy", "healing"};}
     public static String[] getArcaneSpells() {return new String[] {"arcane", "arcanes"};}
-    public static String[] getPhysicalSpells() {return new String[] {"blade", "blades"};}
+    public static String[] getPhysicalSpells() {return new String[] {"blade", "blades", "judgement"};}
 
     @Override
     public void onInitialize() {

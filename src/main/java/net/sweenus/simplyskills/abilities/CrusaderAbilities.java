@@ -53,12 +53,12 @@ public class CrusaderAbilities {
 
     //------- SIGNATURE ABILITIES --------
 
-    // Disengage Recuperate
+    // Heavensmith's Call
     public static void effectDivineAdjudication(PlayerEntity player) {
         int frequency = 20; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathFrequency;
 
         if (HelperMethods.isUnlocked("simplyskills:tree",
-                SkillReferencePosition.bulwarkRebuke, player) &&
+                SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player) &&
                 player.hasStatusEffect(EffectRegistry.DIVINEADJUDICATION) && player.age % frequency == 0) {
             int chance = 15; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathChance;
             int radius = 10; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathRadius;

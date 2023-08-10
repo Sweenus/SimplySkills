@@ -255,14 +255,12 @@ public abstract class ServerPlayerEntityMixin {
             }
             //Crusader Aegis
             if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.bulwarkRebuke, player)
+                    SkillReferencePosition.crusaderAegis, player)
                     && FabricLoader.getInstance().isModLoaded("paladins")) {
                 CrusaderAbilities.passiveCrusaderAegis(player);
             }
-            //Crusader Aegis
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.bulwarkRebuke, player)
-                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+            //Crusader Divine Adjudication
+            if (FabricLoader.getInstance().isModLoaded("paladins")) {
                 CrusaderAbilities.effectDivineAdjudication(player);
             }
 

@@ -65,14 +65,14 @@ public class PlayerEntityMixin {
             }
 
             //Retribution (Crusader)
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.bulwarkRebuke, player)) {
+            if (HelperMethods.isUnlocked("simplyskills:crusader",
+                    SkillReferencePosition.crusaderRetribution, player)) {
                 CrusaderAbilities.passiveCrusaderRetribution(player, attacker);
             }
 
             //Exhaustive Recovery (Crusader)
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.bulwarkRebuke, player)) {
+            if (HelperMethods.isUnlocked("simplyskills:crusader",
+                    SkillReferencePosition.crusaderExhaustiveRecovery, player)) {
                 CrusaderAbilities.passiveCrusaderExhaustiveRecovery(player, attacker);
             }
 

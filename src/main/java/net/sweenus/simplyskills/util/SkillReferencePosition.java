@@ -156,9 +156,12 @@ public class SkillReferencePosition {
     public static String clericSpecialisationDivineAscent = "7dsbtkhvcv332zla";
     public static String clericSpecialisationRestoration = "7dsbtkhvcv332zla";
 
-    public static String crusaderSpecialisationStubborn = "7dsbtkhvcv332zla";
-    public static String crusaderSpecialisationWarbanner = "7dsbtkhvcv332zla";
-    public static String crusaderSpecialisationConsecration = "7dsbtkhvcv332zla";
+    public static String crusaderAegis = "4rmb8nu7b0iogk54";
+    public static String crusaderExhaustiveRecovery = "zv95vb80wc1dysx9";
+    public static String crusaderRetribution = "jx3mz6cj3x6pav5l";
+    public static String crusaderSpecialisationSacredOnslaught = "kp8uei8ppni71b5x";
+    public static String crusaderSpecialisationHeavensmithsCall = "a3ns9xl58ixdg2lo";
+    public static String crusaderSpecialisationConsecration = "is053f9imz801s57";
 
     public static String frostguardSpecialisationConjuringStrikes = "7dsbtkhvcv332zla";
     public static String frostguardSpecialisationIceBlock = "7dsbtkhvcv332zla";

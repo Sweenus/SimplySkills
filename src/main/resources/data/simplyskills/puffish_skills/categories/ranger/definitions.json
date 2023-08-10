@@ -3668,6 +3668,60 @@
 			}
 		]
 	},
+	"crusaderAegis": {
+		"title": "§7§a[Aegis]§7 \nPeriodically consume stacks of exhaustion to gain a stack of Divine Protection.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_aegis.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderAegis"
+				}
+			}
+		]
+	},
+	"crusaderRetribution": {
+		"title": "§7§a[Retribution]§7 \nChance on shield block to cast Judgement on your attacker.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_retribution.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderRetribution"
+				}
+			}
+		]
+	},
+	"crusaderExhaustiveRecovery": {
+		"title": "§7§a[Exhaustive Recovery]§7 \nChance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_exhaustive_recovery.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderExhaustiveRecovery"
+				}
+			}
+		]
+	},
 	"crusaderSignatureConsecration": {
 		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§a30s Cooldown§7",
 		"frame": "goal",
@@ -3686,38 +3740,38 @@
 			}
 		]
 	},
-	"crusaderSignatureStubborn": {
-		"title": "Signature Ability: \n§6[Stubborn]§7 \nHeal yourself to full and gain resistance for 5s.\n\n§a30s Cooldown§7",
+	"crusaderSignatureSacredOnslaught": {
+		"title": "Signature Ability: \n§6[Sacred Onslaught]§7 \nCharge forward. If blocking during the charge, you deal damage based on your armor value and knock back enemies.\n\n§a20s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/crusader_signature_stubborn.png"
+				"texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
 			}
 		},
 		"rewards": [
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "crusaderSignatureStubborn"
+					"passive_skill": "crusaderSignatureSacredOnslaught"
 				}
 			}
 		]
 	},
-	"crusaderSignatureWarbanner": {
-		"title": "Signature Ability: \n§6[Warbanner]§7 \nSummon a Warbanner that periodically damages nearby enemies with fire spells and heals nearby allies.\n\n§a30s Cooldown§7",
+	"crusaderSignatureHeavensmithsCall": {
+		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/crusader_signature_warbanner.png"
+				"texture": "simplyskills:textures/icons/crusader_heavensmiths_call.png"
 			}
 		},
 		"rewards": [
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "crusaderSignatureWarbanner"
+					"passive_skill": "crusaderSignatureHeavensmithsCall"
 				}
 			}
 		]

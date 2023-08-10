@@ -76,7 +76,7 @@ public class AbilityLogic {
             } else if (categoryID.contains("simplyskills:crusader")
                     && !HelperMethods.isUnlocked("simplyskills:crusader", null, player)) {
 
-                if (FabricLoader.getInstance().isModLoaded("paladins"))
+                if (!FabricLoader.getInstance().isModLoaded("paladins"))
                     return true;
 
                 if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
