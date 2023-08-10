@@ -41,6 +41,7 @@ dependencies {
     modImplementation "maven.modrinth:spell-power:${project.spellpower_version}-fabric"
     modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}-fabric")
     modImplementation "curse.maven:simply-swords-659887:${project.simplyswords_version}"
+    modImplementation "curse.maven:paladins-and-priests-856548:${project.paladins_version}"
 
     implementation("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")

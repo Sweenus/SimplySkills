@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.InitiateAbilities;
+import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -46,6 +47,13 @@ public class SpellHelperMixin {
             SimplySwordsGemEffects.spellshield(player);
             SimplySwordsGemEffects.spellStandard(player);
         }
+
+        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player)) {
+            WizardAbilities.passiveWizardSpellEcho(player, targets);
+        }
+
+
+
     }
 
 }

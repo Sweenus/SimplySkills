@@ -19,8 +19,11 @@ import java.util.List;
 
 public class WizardAbilities {
 
-    public static void passiveWizardSpellEcho(PlayerEntity player, Entity target) {
+    public static void passiveWizardSpellEcho(PlayerEntity player, List<Entity> targets) {
         //Can we get Spell Identifier from raw Spell in future? This would be better
+
+        //Choose random target from list
+        Entity target = targets.get(player.getRandom().nextInt(targets.size()));
 
         int chance = SimplySkills.wizardConfig.passiveWizardSpellEchoChance;
         if (player.getRandom().nextInt(100) < chance) {
@@ -29,7 +32,6 @@ public class WizardAbilities {
             list.add("simplyskills:frost_arrow");
             list.add("simplyskills:fire_arrow");
             list.add("simplyskills:lightning_arrow");
-            list.add("simplyskills:arcane_bolt");
             list.add("simplyskills:arcane_bolt_lesser");
             list.add("simplyskills:ice_comet");
             list.add("simplyskills:fire_meteor");

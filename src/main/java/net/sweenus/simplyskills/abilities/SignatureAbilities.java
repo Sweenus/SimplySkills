@@ -167,6 +167,12 @@ public class SignatureAbilities {
             }
         }
 
+        // - Crusader -
+        if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)
+                && FabricLoader.getInstance().isModLoaded("paladins")) {
+
+        }
+
 
         // Trigger bonus gem effects
         if (ability_success && FabricLoader.getInstance().isModLoaded("simplyswords"))

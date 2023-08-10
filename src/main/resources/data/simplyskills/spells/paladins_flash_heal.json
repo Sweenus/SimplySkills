@@ -1,0 +1,63 @@
+{
+  "school": "HEALING",
+  "range": 32,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.5,
+    "animation": "spell_engine:one_handed_healing_charge",
+    "sound": {
+      "id": "spell_engine:generic_healing_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark_mini",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR",
+      "cursor": {
+        "use_caster_as_fallback": true
+      }
+    },
+    "animation": "spell_engine:one_handed_healing_release",
+    "sound": {
+      "id": "spell_engine:generic_healing_release"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 1
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:healing_ascend",
+          "shape": "PILLAR",
+          "origin": "FEET",
+          "count": 30,
+          "min_speed": 0.02,
+          "max_speed": 0.15
+        }
+      ],
+      "sound": {
+        "id": "spell_engine:generic_healing_impact_1"
+      }
+    }
+  ],
+  "cost": {
+    "cooldown_duration": 3
+  }
+}

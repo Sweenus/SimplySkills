@@ -253,6 +253,18 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player)) {
                 AbilityEffects.effectRogueFanOfBlades(player);
             }
+            //Crusader Aegis
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.bulwarkRebuke, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                CrusaderAbilities.passiveCrusaderAegis(player);
+            }
+            //Crusader Aegis
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.bulwarkRebuke, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                CrusaderAbilities.effectDivineAdjudication(player);
+            }
 
 
 

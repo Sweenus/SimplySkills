@@ -41,41 +41,41 @@ public class EffectRegistry {
     public static StatusEffect ARCANEATTUNEMENT= new ArcaneAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute,
                     "8b724548-dbd9-4dbf-8ad5-9c0b7757dec5",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect FIREATTUNEMENT= new FireAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute,
                     "5835e9c2-4182-4098-b9ef-23670c46cb4d",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect FROSTATTUNEMENT= new FrostAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FROST).attribute,
                     "caa82c97-9874-4f5e-84e4-37380bf756ec",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect LIGHTNINGATTUNEMENT= new LightningAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
                     "7edc1ac1-c6c5-4a46-92e1-baf28abea256",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect SOULATTUNEMENT= new SoulAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
                     "45da701e-e40a-4041-bd54-f06e283ad7cb",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect HOLYATTUNEMENT= new HolyAttunementEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
                     "60125c3e-4980-4cc8-b54e-037b47185e2b",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect PRECISION= new PrecisionEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.CRITICAL_DAMAGE.attribute,
                     "32a5a129-51a6-4a38-b78e-e7afb69f9e17",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(SpellAttributes.CRITICAL_CHANCE.attribute,
                     "bb6233b1-4759-47d0-9044-d509b4bc6695",
-                    0.05,
+                    0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect DEATHMARK= new DeathMarkEffect(StatusEffectCategory.HARMFUL, 3124687)
             .addAttributeModifier(PlayerAttributes.RESISTANCE,
@@ -146,6 +146,7 @@ public class EffectRegistry {
                     "5951bed4-b058-4320-8512-75c1be44bc33",
                     1,
                     EntityAttributeModifier.Operation.ADDITION);
+    public static StatusEffect DIVINEADJUDICATION= new DivineAdjudicationEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -194,6 +195,7 @@ public class EffectRegistry {
         BARRIER = registerStatusEffect("barrier", BARRIER);
         SOULSHOCK = registerStatusEffect("soulshock", SOULSHOCK);
         SPELLFORGED = registerStatusEffect("spellforged", SPELLFORGED);
+        DIVINEADJUDICATION = registerStatusEffect("divine_adjudication", DIVINEADJUDICATION);
     }
 
 

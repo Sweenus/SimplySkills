@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.sweenus.simplyskills.abilities.AbilityEffects;
+import net.sweenus.simplyskills.abilities.CrusaderAbilities;
 import net.sweenus.simplyskills.abilities.RangerAbilities;
 import net.sweenus.simplyskills.abilities.WarriorAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -56,10 +57,26 @@ public class PlayerEntityMixin {
     public void simplyskills$takeShieldHit(LivingEntity attacker, CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity) {
+
+            // Rebuke (Warrior)
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.bulwarkRebuke, player)) {
                 WarriorAbilities.passiveWarriorRebuke(player, attacker);
             }
+
+            //Retribution (Crusader)
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.bulwarkRebuke, player)) {
+                CrusaderAbilities.passiveCrusaderRetribution(player, attacker);
+            }
+
+            //Exhaustive Recovery (Crusader)
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.bulwarkRebuke, player)) {
+                CrusaderAbilities.passiveCrusaderExhaustiveRecovery(player, attacker);
+            }
+
+
         }
     }
 

@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.abilities;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -68,6 +69,16 @@ public class AbilityLogic {
                 }
             } else if (categoryID.contains("simplyskills:spellblade")
                     && !HelperMethods.isUnlocked("simplyskills:spellblade", null, player)) {
+                if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
+            } else if (categoryID.contains("simplyskills:crusader")
+                    && !HelperMethods.isUnlocked("simplyskills:crusader", null, player)) {
+
+                if (FabricLoader.getInstance().isModLoaded("paladins"))
+                    return true;
+
                 if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
                     playUnlockSound(player);
                     return false;

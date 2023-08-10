@@ -18,19 +18,19 @@
 		"root": true
 	},
 	"sijjytlw63x30lo1": {
-		"definition": "spell_crit_damage_additive+2%",
+		"definition": "spell_crit_damage_additive+1%",
 		"x": -64,
 		"y": -32,
 		"root": false
 	},
 	"60jlbqy35n3p7hgt": {
-		"definition": "spell_crit_damage_additive+2%",
+		"definition": "spell_crit_damage_additive+1%",
 		"x": -96,
 		"y": -32,
 		"root": false
 	},
 	"zh9z1xgwpbbd6qzh": {
-		"definition": "spell_crit_damage_additive+2%",
+		"definition": "spell_crit_damage_additive+1%",
 		"x": -128,
 		"y": -32,
 		"root": false
@@ -48,19 +48,19 @@
 		"root": false
 	},
 	"yjb60vx88rncxael": {
-		"definition": "spell_crit_chance_additive+2%",
+		"definition": "spell_crit_chance_additive+1%",
 		"x": -64,
 		"y": 32,
 		"root": false
 	},
 	"x2tkbhdlli4196kb": {
-		"definition": "spell_crit_chance_additive+2%",
+		"definition": "spell_crit_chance_additive+1%",
 		"x": -96,
 		"y": 32,
 		"root": false
 	},
 	"0lo9yq32zev3en79": {
-		"definition": "spell_crit_chance_additive+2%",
+		"definition": "spell_crit_chance_additive+1%",
 		"x": -128,
 		"y": 32,
 		"root": false
@@ -126,13 +126,13 @@
 		"root": false
 	},
 	"f1jumlskdfsfhhm0": {
-		"definition": "spell_lightning_damage_multi+5%",
+		"definition": "spell_lightning_damage_multi+1%",
 		"x": -96,
 		"y": 96,
 		"root": false
 	},
 	"thzh6bjmnz81pv7y": {
-		"definition": "spell_crit_chance_multi+5%",
+		"definition": "spell_crit_chance_multi+1%",
 		"x": -160,
 		"y": 0,
 		"root": false
@@ -150,7 +150,7 @@
 		"root": false
 	},
 	"4tl7lknur17awyyw": {
-		"definition": "spell_fire_damage_multi+5%",
+		"definition": "spell_fire_damage_multi+1%",
 		"x": -32,
 		"y": 128,
 		"root": false
@@ -174,7 +174,7 @@
 		"root": false
 	},
 	"sshvzwg4h33g23uk": {
-		"definition": "spell_frost_damage_multi+5%",
+		"definition": "spell_frost_damage_multi+1%",
 		"x": 0,
 		"y": 96,
 		"root": false
@@ -186,7 +186,7 @@
 		"root": false
 	},
 	"og0f28ciyhej401p": {
-		"definition": "spell_crit_chance_multi+5%",
+		"definition": "spell_crit_chance_multi+1%",
 		"x": -160,
 		"y": -64,
 		"root": false
@@ -216,19 +216,19 @@
 		"root": false
 	},
 	"oyrh42zk7yeaeb3e": {
-		"definition": "spell_fire_damage_multi+5%",
+		"definition": "spell_fire_damage_multi+1%",
 		"x": -96,
 		"y": -192,
 		"root": false
 	},
 	"3w41kcokqyb4yqgw": {
-		"definition": "spell_frost_damage_multi+5%",
+		"definition": "spell_frost_damage_multi+1%",
 		"x": -96,
 		"y": -224,
 		"root": false
 	},
 	"ykyt26ab9qhwyv5c": {
-		"definition": "spell_lightning_damage_multi+5%",
+		"definition": "spell_lightning_damage_multi+1%",
 		"x": -96,
 		"y": -256,
 		"root": false
@@ -324,25 +324,25 @@
 		"root": false
 	},
 	"0271bvmaso9zcbri": {
-		"definition": "spell_fire_damage_additive+2%",
+		"definition": "spell_fire_damage_additive+1%",
 		"x": -192,
 		"y": -64,
 		"root": false
 	},
 	"tqfvv5wnu74li9hu": {
-		"definition": "spell_fire_damage_additive+2%",
+		"definition": "spell_fire_damage_additive+1%",
 		"x": -224,
 		"y": -64,
 		"root": false
 	},
 	"zm1z5zfnd8rafzjo": {
-		"definition": "spell_fire_damage_additive+2%",
+		"definition": "spell_fire_damage_additive+1%",
 		"x": -256,
 		"y": -64,
 		"root": false
 	},
 	"ov9mp25y08ouk5jj": {
-		"definition": "spell_fire_damage_multi+5%",
+		"definition": "spell_fire_damage_multi+1%",
 		"x": -288,
 		"y": -64,
 		"root": false
@@ -354,25 +354,25 @@
 		"root": false
 	},
 	"gsvn5i78n8ohwfhg": {
-		"definition": "spell_frost_damage_additive+2%",
+		"definition": "spell_frost_damage_additive+1%",
 		"x": -192,
 		"y": 0,
 		"root": false
 	},
 	"rnq0h8n1ec68asna": {
-		"definition": "spell_frost_damage_additive+2%",
+		"definition": "spell_frost_damage_additive+1%",
 		"x": -224,
 		"y": 0,
 		"root": false
 	},
 	"gx7b4qu4vf2x9471": {
-		"definition": "spell_frost_damage_additive+2%",
+		"definition": "spell_frost_damage_additive+1%",
 		"x": -256,
 		"y": 0,
 		"root": false
 	},
 	"f4xxv7jkv3jznaxd": {
-		"definition": "spell_frost_damage_multi+5%",
+		"definition": "spell_frost_damage_multi+1%",
 		"x": -288,
 		"y": 0,
 		"root": false
@@ -384,25 +384,25 @@
 		"root": false
 	},
 	"mbmmxx4ov73lvo8q": {
-		"definition": "spell_lightning_damage_additive+2%",
+		"definition": "spell_lightning_damage_additive+1%",
 		"x": -128,
 		"y": 96,
 		"root": false
 	},
 	"u4zgec10ufxr65cd": {
-		"definition": "spell_lightning_damage_additive+2%",
+		"definition": "spell_lightning_damage_additive+1%",
 		"x": -160,
 		"y": 96,
 		"root": false
 	},
 	"do8dx80912szeo64": {
-		"definition": "spell_lightning_damage_additive+2%",
+		"definition": "spell_lightning_damage_additive+1%",
 		"x": -192,
 		"y": 96,
 		"root": false
 	},
 	"qsxd036xrayyrfz7": {
-		"definition": "spell_lightning_damage_multi+5%",
+		"definition": "spell_lightning_damage_multi+1%",
 		"x": -224,
 		"y": 96,
 		"root": false
@@ -462,13 +462,13 @@
 		"root": false
 	},
 	"90n8jw04a1fhi9zd": {
-		"definition": "spell_crit_chance_multi+5%",
+		"definition": "spell_crit_chance_multi+1%",
 		"x": -64,
 		"y": 192,
 		"root": false
 	},
 	"0ckfgtnl1vr4hlxu": {
-		"definition": "spell_crit_damage_multi+5%",
+		"definition": "spell_crit_damage_multi+1%",
 		"x": -64,
 		"y": 224,
 		"root": false

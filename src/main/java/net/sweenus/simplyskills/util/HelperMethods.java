@@ -218,6 +218,26 @@ public class HelperMethods {
         }
     }
 
+    public static void decrementStatusEffects(
+            LivingEntity livingEntity,
+            StatusEffect statusEffect,
+            int stacksRemoved) {
+
+        if (livingEntity.hasStatusEffect(statusEffect)) {
+            int currentAmplifier = livingEntity.getStatusEffect(statusEffect).getAmplifier();
+            int currentDuration = livingEntity.getStatusEffect(statusEffect).getDuration();
+
+            if (currentAmplifier < 1 ) {
+                livingEntity.removeStatusEffect(statusEffect);
+                return;
+            }
+
+            livingEntity.removeStatusEffect(statusEffect);
+            livingEntity.addStatusEffect(new StatusEffectInstance(
+                    statusEffect, currentDuration, currentAmplifier - stacksRemoved));
+        }
+    }
+
     public static boolean buffSteal(
             LivingEntity user,
             LivingEntity target,

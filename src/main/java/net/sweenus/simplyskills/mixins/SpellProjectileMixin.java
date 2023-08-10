@@ -25,6 +25,7 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     @Inject(at = @At("HEAD"), method = "onEntityHit")
     private void simplyskills$performSpell(
             EntityHitResult entityHitResult, CallbackInfo ci) {
+        /* MOVED TO SPELLHELPER (on cast)
 
         if (!this.getWorld().isClient) {
             Entity target = entityHitResult.getEntity();
@@ -38,5 +39,7 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
                 }
             }
         }
+
+         */
     }
 }
