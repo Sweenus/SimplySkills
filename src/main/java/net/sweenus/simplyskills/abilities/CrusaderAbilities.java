@@ -82,7 +82,7 @@ public class CrusaderAbilities {
                         success = true;
 
                         if (HelperMethods.isUnlocked(crusaderSkillTree,
-                                SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player))
+                                SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0));
 
 
@@ -94,6 +94,38 @@ public class CrusaderAbilities {
             }
         }
         return success;
+    }
+
+    // Sacred Onslaught
+    public static boolean signatureCrusaderSacredOnslaught(String crusaderSkillTree, PlayerEntity player) {
+
+        int divineProtectionDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
+        int dashDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SACREDONSLAUGHT, dashDuration));
+
+        if (HelperMethods.isUnlocked(crusaderSkillTree,
+                SkillReferencePosition.crusaderSpecialisationSacredOnslaught, player)) {
+            player.addStatusEffect(new StatusEffectInstance(Effects.DIVINE_PROTECTION, divineProtectionDuration));
+            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
+                    SoundCategory.PLAYERS, 0.5f, 1.1f);
+        }
+        return true;
+    }
+
+    // Consecration
+    public static boolean signatureCrusaderConsecration(String crusaderSkillTree, PlayerEntity player) {
+
+        int consecrationExtendDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
+        int consecrationDuration = 250; //SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
+
+        if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderRetribution, player))
+            consecrationDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration +250;
+
+
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.CONSECRATION, consecrationDuration));
+
+        return true;
     }
 
 

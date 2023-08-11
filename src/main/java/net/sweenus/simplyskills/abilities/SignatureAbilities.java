@@ -178,6 +178,18 @@ public class SignatureAbilities {
                 ability_success = CrusaderAbilities.signatureHeavensmithsCall(crusaderSkillTree, player);
                 ability = "HeavensmithsCall";
             }
+            // Sacred Onslaught
+            if (HelperMethods.isUnlocked(crusaderSkillTree,
+                    SkillReferencePosition.crusaderSpecialisationSacredOnslaught, player)) {
+                ability_success = CrusaderAbilities.signatureCrusaderSacredOnslaught(crusaderSkillTree, player);
+                ability = "SacredOnslaught";
+            }
+            // Consecration
+            if (HelperMethods.isUnlocked(crusaderSkillTree,
+                    SkillReferencePosition.crusaderSpecialisationConsecration, player)) {
+                ability_success = CrusaderAbilities.signatureCrusaderConsecration(crusaderSkillTree, player);
+                ability = "Consecration";
+            }
 
         }
 
@@ -274,6 +286,14 @@ public class SignatureAbilities {
             case "HeavensmithsCall" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
                 type = "physical";
+            }
+            case "SacredOnslaught" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                type = "physical";
+            }
+            case "Consecration" -> {
+                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                type = "magic";
             }
         }
 

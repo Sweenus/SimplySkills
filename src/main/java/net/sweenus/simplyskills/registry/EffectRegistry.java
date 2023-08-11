@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.registry;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
@@ -147,6 +148,8 @@ public class EffectRegistry {
                     1,
                     EntityAttributeModifier.Operation.ADDITION);
     public static StatusEffect DIVINEADJUDICATION= new DivineAdjudicationEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect SACREDONSLAUGHT= new SacredOnslaughtEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect CONSECRATION= new ConsecrateEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -196,6 +199,11 @@ public class EffectRegistry {
         SOULSHOCK = registerStatusEffect("soulshock", SOULSHOCK);
         SPELLFORGED = registerStatusEffect("spellforged", SPELLFORGED);
         DIVINEADJUDICATION = registerStatusEffect("divine_adjudication", DIVINEADJUDICATION);
+        SACREDONSLAUGHT = registerStatusEffect("sacred_onslaught", SACREDONSLAUGHT);
+
+        if (FabricLoader.getInstance().isModLoaded("paladins"))
+            CONSECRATION = registerStatusEffect("consecration", CONSECRATION);
+
     }
 
 

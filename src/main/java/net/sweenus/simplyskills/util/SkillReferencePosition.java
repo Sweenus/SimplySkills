@@ -161,6 +161,7 @@ public class SkillReferencePosition {
     public static String crusaderRetribution = "jx3mz6cj3x6pav5l";
     public static String crusaderSpecialisationSacredOnslaught = "kp8uei8ppni71b5x";
     public static String crusaderSpecialisationHeavensmithsCall = "a3ns9xl58ixdg2lo";
+    public static String crusaderSpecialisationDivineAdjudication = "1gd45mne4etmyrl1";
     public static String crusaderSpecialisationConsecration = "is053f9imz801s57";
 
     public static String frostguardSpecialisationConjuringStrikes = "7dsbtkhvcv332zla";

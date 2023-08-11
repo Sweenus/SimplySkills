@@ -240,7 +240,7 @@
 		"root": false
 	},
 	"1gd45mne4etmyrl1": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "crusaderSignatureHeavensmithsCallEffect",
 		"x": 0,
 		"y": -192,
 		"root": false

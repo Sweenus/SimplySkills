@@ -288,7 +288,6 @@ public class HelperMethods {
             double yvelocity,
             double zvelocity) {
 
-        Box box = HelperMethods.createBoxAtBlock(blockpos, radius);
         double xpos = blockpos.getX() - (radius + 1);
         double ypos = blockpos.getY();
         double zpos = blockpos.getZ() - (radius + 1);
