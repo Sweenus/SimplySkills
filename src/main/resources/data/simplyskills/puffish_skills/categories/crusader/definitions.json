@@ -3723,7 +3723,7 @@
 		]
 	},
 	"crusaderSignatureConsecration": {
-		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

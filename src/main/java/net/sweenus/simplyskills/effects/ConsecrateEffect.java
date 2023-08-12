@@ -8,6 +8,8 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
@@ -20,6 +22,8 @@ import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
+import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 
@@ -46,9 +50,29 @@ public class ConsecrateEffect extends StatusEffect {
 
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                                //le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
+
+                                if (le.isUndead())
+                                    le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
+
                                 le.damage(player.getDamageSources().magic(), (float) damage);
                                 le.timeUntilRegen = 1;
+
+                                // Taunt (now taunts)
+                                if (le instanceof MobEntity me) {
+                                    SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
+                                            EffectRegistry.TAUNTED, 200, 0, false,
+                                            false, true);
+                                    tauntEffect.setSourceEntity(livingEntity);
+                                    me.addStatusEffect(tauntEffect);
+                                }
+
+
+
+
+                            }
+                            if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
+                                HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, hitFrequency+1, 0, 5);
+                                HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, hitFrequency+1, 0, 2);
                             }
                         }
                     }

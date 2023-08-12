@@ -150,6 +150,7 @@ public class EffectRegistry {
     public static StatusEffect DIVINEADJUDICATION= new DivineAdjudicationEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SACREDONSLAUGHT= new SacredOnslaughtEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect CONSECRATION= new ConsecrateEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect TAUNTED= new TauntedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -200,6 +201,7 @@ public class EffectRegistry {
         SPELLFORGED = registerStatusEffect("spellforged", SPELLFORGED);
         DIVINEADJUDICATION = registerStatusEffect("divine_adjudication", DIVINEADJUDICATION);
         SACREDONSLAUGHT = registerStatusEffect("sacred_onslaught", SACREDONSLAUGHT);
+        TAUNTED = registerStatusEffect("taunted", TAUNTED);
 
         if (FabricLoader.getInstance().isModLoaded("paladins"))
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);
