@@ -200,11 +200,12 @@ public class EffectRegistry {
         SOULSHOCK = registerStatusEffect("soulshock", SOULSHOCK);
         SPELLFORGED = registerStatusEffect("spellforged", SPELLFORGED);
         DIVINEADJUDICATION = registerStatusEffect("divine_adjudication", DIVINEADJUDICATION);
-        SACREDONSLAUGHT = registerStatusEffect("sacred_onslaught", SACREDONSLAUGHT);
         TAUNTED = registerStatusEffect("taunted", TAUNTED);
 
-        if (FabricLoader.getInstance().isModLoaded("paladins"))
+        if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);
+            SACREDONSLAUGHT = registerStatusEffect("sacred_onslaught", SACREDONSLAUGHT);
+        }
 
     }
 

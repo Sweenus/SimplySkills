@@ -13,7 +13,11 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
+import net.paladins.effect.Effects;
+import net.spell_power.api.MagicSchool;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -32,10 +36,12 @@ public class SacredOnslaughtEffect extends StatusEffect {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
 
-                int velocity = SimplySkills.berserkerConfig.signatureBerserkerBullrushVelocity;
-                int radius = SimplySkills.berserkerConfig.signatureBerserkerBullrushRadius;
-                double damageMultiplier = SimplySkills.berserkerConfig.signatureBerserkerBullrushDamageModifier;
-                int hitFrequency = 10; //SimplySkills.berserkerConfig.signatureBerserkerBullrushHitFrequency;
+                int velocity = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtVelocity;
+                int radius = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtRadius;
+                double damageMultiplier = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtDMGMultiplier;
+                double healing = (player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute) * damageMultiplier);
+                int hitFrequency = 10;
+                int stunDuration = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtStunDuration;
 
                 player.setVelocity(livingEntity.getRotationVector().multiply(+velocity));
                 player.setVelocity(livingEntity.getVelocity().x, 0, livingEntity.getVelocity().z);
@@ -46,12 +52,24 @@ public class SacredOnslaughtEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                            if (player.age % hitFrequency == 0 && player.isBlocking()) {
-                                le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
-                                le.damage(player.getDamageSources().playerAttack(player), (float) damage);
-                                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
-                                        SoundCategory.PLAYERS, 0.6f, 1.0f);
+                        if (entities instanceof LivingEntity le) {
+                            if (player.age % hitFrequency == 0) {
+                                if (HelperMethods.checkFriendlyFire(le, player) && player.isBlocking()) {
+                                    le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
+                                    le.damage(player.getDamageSources().playerAttack(player), (float) damage);
+                                    player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT32,
+                                            SoundCategory.PLAYERS, 0.6f, 1.0f);
+
+                                    if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationSacredOnslaughtStun, player))
+                                        le.addStatusEffect(new StatusEffectInstance(Effects.JUDGEMENT, stunDuration));
+
+                                }
+                                if (!HelperMethods.checkFriendlyFire(le, player)
+                                        && HelperMethods.isUnlocked("simplyskills:crusader",
+                                        SkillReferencePosition.crusaderSpecialisationSacredOnslaughtHeal, player)) {
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:divine_protection", 32, le);
+                                    le.heal((float)healing);
+                                }
 
                                 HelperMethods.spawnParticlesPlane(
                                         player.getWorld(),

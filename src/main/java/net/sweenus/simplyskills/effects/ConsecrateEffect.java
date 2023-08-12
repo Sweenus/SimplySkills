@@ -52,6 +52,7 @@ public class ConsecrateEffect extends StatusEffect {
 
                 Box box = HelperMethods.createBox(player, radius * 2);
                 if (player.age % hitFrequency == 0) {
+                    player.heal((float) damage / 4);
                     for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                         if (entities != null) {
@@ -60,10 +61,11 @@ public class ConsecrateEffect extends StatusEffect {
                                 if (le.isUndead() && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationWard, player))
                                     le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
 
+                                le.timeUntilRegen = 0;
                                 le.damage(player.getDamageSources().magic(), (float) damage);
                                 le.timeUntilRegen = 1;
 
-                                // Taunt (now taunts)
+                                // Taunt
                                 if ((le instanceof MobEntity me) && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationTaunt, player)) {
                                     SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
                                             EffectRegistry.TAUNTED, tauntDuration, 0, false,
@@ -75,6 +77,7 @@ public class ConsecrateEffect extends StatusEffect {
 
                             }
                             if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
+                                le.heal((float) damage / 2);
                                 if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationMighty, player))
                                     HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, hitFrequency+1, mightStacks, mightStacksMax);
                                 if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationSpellforged, player))

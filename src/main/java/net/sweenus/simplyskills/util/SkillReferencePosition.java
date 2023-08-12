@@ -160,6 +160,10 @@ public class SkillReferencePosition {
     public static String crusaderExhaustiveRecovery = "zv95vb80wc1dysx9";
     public static String crusaderRetribution = "jx3mz6cj3x6pav5l";
     public static String crusaderSpecialisationSacredOnslaught = "kp8uei8ppni71b5x";
+    public static String crusaderSpecialisationSacredOnslaughtHeal = "xsak3gay0v3z4inb";
+    public static String crusaderSpecialisationSacredOnslaughtDefend = "ipbguvfzpm9nvg8j";
+    public static String crusaderSpecialisationSacredOnslaughtMighty = "rmjv991vg9onqmrw";
+    public static String crusaderSpecialisationSacredOnslaughtStun = "sp16ctx7bbkpd4bz";
     public static String crusaderSpecialisationHeavensmithsCall = "a3ns9xl58ixdg2lo";
     public static String crusaderSpecialisationDivineAdjudication = "1gd45mne4etmyrl1";
     public static String crusaderSpecialisationConsecration = "is053f9imz801s57";

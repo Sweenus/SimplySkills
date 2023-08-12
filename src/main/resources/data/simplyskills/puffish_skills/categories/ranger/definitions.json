@@ -3848,6 +3848,78 @@
 			}
 		]
 	},
+	"crusaderSignatureSacredOnslaughtHeal": {
+		"title": "Your §6[Sacred Onslaught]§7 heals allies in it passes through, and grants them Divine Protection.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureSacredOnslaughtHeal"
+				}
+			}
+		]
+	},
+	"crusaderSignatureSacredOnslaughtDefend": {
+		"title": "Your §6[Sacred Onslaught]§7 also grants you Divine Protection for a duration.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureSacredOnslaughtDefend"
+				}
+			}
+		]
+	},
+	"crusaderSignatureSacredOnslaughtMighty": {
+		"title": "Your §6[Sacred Onslaught]§7 also grants you Might for a duration.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureSacredOnslaughtMighty"
+				}
+			}
+		]
+	},
+	"crusaderSignatureSacredOnslaughtStun": {
+		"title": "Your §6[Sacred Onslaught]§7 also stuns enemies, so long as you hold block while advancing.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureSacredOnslaughtStun"
+				}
+			}
+		]
+	},
 	"crusaderSignatureHeavensmithsCall": {
 		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a35s Cooldown§7",
 		"frame": "goal",

@@ -210,13 +210,13 @@
 		"root": false
 	},
 	"xsak3gay0v3z4inb": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "crusaderSignatureSacredOnslaughtHeal",
 		"x": -224,
 		"y": -32,
 		"root": false
 	},
 	"ipbguvfzpm9nvg8j": {
-		"definition": "melee_damage_multi+2%",
+		"definition": "crusaderSignatureSacredOnslaughtDefend",
 		"x": -224,
 		"y": 32,
 		"root": false
@@ -291,6 +291,18 @@
 		"definition": "crusaderSignatureConsecrationDuration",
 		"x": 224,
 		"y": 0,
+		"root": false
+	},
+	"rmjv991vg9onqmrw": {
+		"definition": "crusaderSignatureSacredOnslaughtMighty",
+		"x": -64,
+		"y": 160,
+		"root": false
+	},
+	"sp16ctx7bbkpd4bz": {
+		"definition": "crusaderSignatureSacredOnslaughtStun",
+		"x": -128,
+		"y": 128,
 		"root": false
 	}
 }

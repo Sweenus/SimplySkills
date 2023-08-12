@@ -16,14 +16,18 @@ public class CrusaderConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public int passiveCrusaderExhaustiveRecoveryChance = 15;
     public int passiveCrusaderExhaustiveRecoveryExhaustionStacks = 10;
-    public int passiveCrusaderAegisFrequency = 200;
-    public int passiveCrusaderAegisStacksRemoved = 25;
+    public int passiveCrusaderAegisFrequency = 40;
+    public int passiveCrusaderAegisStacksRemoved = 15;
 
     public int signatureCrusaderHeavensmithsCallRange = 20;
     public int signatureCrusaderHeavensmithsCallDADuration = 400;
     public int signatureCrusaderHeavensmithsCallCooldown = 35;
-    public int signatureCrusaderSacredOnslaughtDashDuration = 20;
+    public int signatureCrusaderSacredOnslaughtDashDuration = 40;
     public int signatureCrusaderSacredOnslaughtDPDuration = 200;
+    public int signatureCrusaderSacredOnslaughtVelocity = 1;
+    public int signatureCrusaderSacredOnslaughtRadius = 3;
+    public double signatureCrusaderSacredOnslaughtDMGMultiplier = 0.8;
+    public int signatureCrusaderSacredOnslaughtStunDuration = 50;
     public int signatureCrusaderSacredOnslaughtCooldown = 15;
 
     public int signatureCrusaderConsecrationDuration = 250;

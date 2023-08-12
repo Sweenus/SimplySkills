@@ -79,7 +79,7 @@ public class AbilityLogic {
                 if (!FabricLoader.getInstance().isModLoaded("paladins"))
                     return true;
 
-                if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
+                if (SimplySkills.crusaderConfig.enableCrusaderSpecialisation) {
                     playUnlockSound(player);
                     return false;
                 }
