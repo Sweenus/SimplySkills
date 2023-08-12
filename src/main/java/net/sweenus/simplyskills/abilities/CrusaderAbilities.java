@@ -66,7 +66,7 @@ public class CrusaderAbilities {
         boolean success = false;
         int heavensmithsCallRange = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallRange;
         int duration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDADuration;
-        int tauntDuration = 300;
+        int tauntDuration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallTauntMarkDuration;
 
         if (HelperMethods.getTargetedEntity(player, heavensmithsCallRange) != null)
             blockpos = HelperMethods.getTargetedEntity(player, heavensmithsCallRange).getPos();
@@ -89,10 +89,10 @@ public class CrusaderAbilities {
                                 SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0));
 
-                        if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderRetribution, player))
-                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 200));
+                        if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
+                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, tauntDuration));
 
-                        if ((le instanceof MobEntity me) && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderRetribution, player)) {
+                        if ((le instanceof MobEntity me) && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallTaunt, player)) {
                             SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
                                     EffectRegistry.TAUNTED, tauntDuration, 0, false,
                                     false, true);
@@ -165,23 +165,26 @@ public class CrusaderAbilities {
 
     // ------- EFFECTS --------
 
-    // Heavensmith's Call
+    // Heavensmith's Call - Divine Adjudication
     public static void effectDivineAdjudication(PlayerEntity player) {
-        int frequency = 5; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathFrequency;
+        int frequency = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDAFrequency;
 
         if (HelperMethods.isUnlocked("simplyskills:crusader",
                 SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player) &&
                 player.hasStatusEffect(EffectRegistry.DIVINEADJUDICATION) && player.age % frequency == 0) {
-            int chance = 15; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathChance;
-            int radius = 7; //SimplySkills.wizardConfig.signatureWizardMeteoricWrathRadius;
+            int chance = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDAChance;
+            int radius = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDARadius;
+            int exhaustStacksRemoved = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDAExhaustStacks;
+            int mightDuration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDAMightDuration;
+            int mightStacksMax = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDAMightStacksMax - 1;
             String spellIdentifier = "simplyskills:paladins_judgement";
 
 
             if (SignatureAbilities.castSpellEngineAOE(player, spellIdentifier, radius, chance, true)) {
-                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderRetribution, player))
-                    HelperMethods.decrementStatusEffects(player, EffectRegistry.EXHAUSTION, 5);
-                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderRetribution, player))
-                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 100, 1, 10);
+                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallExhaust, player))
+                    HelperMethods.decrementStatusEffects(player, EffectRegistry.EXHAUSTION, exhaustStacksRemoved);
+                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMighty, player))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, mightDuration, 1, mightStacksMax);
             }
         }
 

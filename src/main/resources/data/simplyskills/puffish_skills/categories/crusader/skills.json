@@ -304,5 +304,47 @@
 		"x": -128,
 		"y": 128,
 		"root": false
+	},
+	"u2ukao7v37zmiyxe": {
+		"definition": "crusaderSignatureHeavensmithsCallTaunt",
+		"x": -224,
+		"y": -160,
+		"root": false
+	},
+	"tc1tmlw0t5e0ieuw": {
+		"definition": "crusaderSignatureHeavensmithsCallMark",
+		"x": 224,
+		"y": -160,
+		"root": false
+	},
+	"pv9qamft1cecuw43": {
+		"definition": "crusaderSignatureHeavensmithsCallEffectExhaust",
+		"x": -32,
+		"y": -224,
+		"root": false
+	},
+	"aqir5hfk5syii7t6": {
+		"definition": "crusaderSignatureHeavensmithsCallEffectMighty",
+		"x": 32,
+		"y": -224,
+		"root": false
+	},
+	"w6bvj6oou8u7o9mn": {
+		"definition": "health+2",
+		"x": -96,
+		"y": 0,
+		"root": false
+	},
+	"x73d7yal5wpzonsb": {
+		"definition": "health+2",
+		"x": 96,
+		"y": 0,
+		"root": false
+	},
+	"5n4w4rnw668o6tip": {
+		"definition": "health+2",
+		"x": 0,
+		"y": -96,
+		"root": false
 	}
 }

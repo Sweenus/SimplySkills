@@ -6,7 +6,6 @@
   },
   "cast": {
     "duration": 0.5,
-    "animation": "spell_engine:one_handed_projectile_charge",
     "sound": {
       "id": "spell_engine:generic_healing_casting",
       "randomness": 0
@@ -92,8 +91,8 @@
         }
       }
     },
-    "animation": "spell_engine:one_handed_area_release",
     "sound": {
+      "animation": "spell_engine:one_handed_area_release",
       "id": "spell_engine:generic_healing_release"
     }
   },

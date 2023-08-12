@@ -402,6 +402,13 @@
 
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallRange" :                     "§6[Signature]§7 Heavensmith's Call range",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDADuration" :                "§6[Signature]§7 Heavensmith's Call DA duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallTauntMarkDuration" :         "§6[Signature]§7 Heavensmith's Call Taunt & Death Mark durations",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDAFrequency" :               "§6[Signature]§7 Heavensmith's Call DA frequency",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDAChance" :                  "§6[Signature]§7 Heavensmith's Call DA chance",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDARadius" :                  "§6[Signature]§7 Heavensmith's Call DA radius",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDAExhaustStacks" :           "§6[Signature]§7 Heavensmith's Call DA exhaust stacks removed",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDAMightDuration" :           "§6[Signature]§7 Heavensmith's Call DA Might duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDAMightStacksMax" :          "§6[Signature]§7 Heavensmith's Call DA Might max stacks",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallCooldown" :                  "§6[Signature]§7 Heavensmith's Call cooldown",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderSacredOnslaughtDashDuration" :               "§6[Signature]§7 Sacred Onslaught dash duration",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderSacredOnslaughtDPDuration" :                 "§6[Signature]§7 Sacred Onslaught DP duration",

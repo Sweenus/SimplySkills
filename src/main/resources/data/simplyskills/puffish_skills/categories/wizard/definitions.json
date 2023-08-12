@@ -1923,7 +1923,7 @@
 		]
 	},
 	"rogueExploitation": {
-		"title": "§7§a[Exploitation]§7 \nWhile under the effects of stealth, your back attacks inflict Death Mark.",
+		"title": "§7§a[Exploitation]§7 \nWhile under the effects of stealth, your back attacks inflict Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3849,7 +3849,7 @@
 		]
 	},
 	"crusaderSignatureSacredOnslaughtHeal": {
-		"title": "Your §6[Sacred Onslaught]§7 heals allies in it passes through, and grants them Divine Protection.",
+		"title": "Your §6[Sacred Onslaught]§7 heals allies it passes through, and grants them Divine Protection.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3938,6 +3938,42 @@
 			}
 		]
 	},
+	"crusaderSignatureHeavensmithsCallTaunt": {
+		"title": "§6[Heavensmith's Call]§7 Now Taunts the primary target.§7\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureHeavensmithsCallTaunt"
+				}
+			}
+		]
+	},
+	"crusaderSignatureHeavensmithsCallMark": {
+		"title": "§6[Heavensmith's Call]§7 Now inflicts the primary target with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureHeavensmithsCallMark"
+				}
+			}
+		]
+	},
 	"crusaderSignatureHeavensmithsCallEffect": {
 		"title": "§6[Heavensmith's Call]§7 Now grants you Divine Adjudication for a duration.§7\n\n§f(Divine Adjudication)§7 periodically cast Judgement on nearby enemies.",
 		"frame": "goal",
@@ -3952,6 +3988,42 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "crusaderSignatureHeavensmithsCallEffect"
+				}
+			}
+		]
+	},
+	"crusaderSignatureHeavensmithsCallEffectExhaust": {
+		"title": "§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now cleanses stacks of Exhaustion from you when it triggers.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureHeavensmithsCallEffectExhaust"
+				}
+			}
+		]
+	},
+	"crusaderSignatureHeavensmithsCallEffectMighty": {
+		"title": "§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now grants you stacks of Might when it triggers.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureHeavensmithsCallEffectMighty"
 				}
 			}
 		]

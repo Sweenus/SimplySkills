@@ -21,7 +21,14 @@ public class CrusaderConfig implements ConfigData {
 
     public int signatureCrusaderHeavensmithsCallRange = 20;
     public int signatureCrusaderHeavensmithsCallDADuration = 400;
-    public int signatureCrusaderHeavensmithsCallCooldown = 35;
+    public int signatureCrusaderHeavensmithsCallTauntMarkDuration = 350;
+    public int signatureCrusaderHeavensmithsCallDAFrequency = 5;
+    public int signatureCrusaderHeavensmithsCallDAChance = 10;
+    public int signatureCrusaderHeavensmithsCallDARadius = 5;
+    public int signatureCrusaderHeavensmithsCallDAExhaustStacks = 5;
+    public int signatureCrusaderHeavensmithsCallDAMightDuration = 115;
+    public int signatureCrusaderHeavensmithsCallDAMightStacksMax = 3;
+    public int signatureCrusaderHeavensmithsCallCooldown = 55;
     public int signatureCrusaderSacredOnslaughtDashDuration = 40;
     public int signatureCrusaderSacredOnslaughtDPDuration = 200;
     public int signatureCrusaderSacredOnslaughtVelocity = 1;
