@@ -26,7 +26,7 @@ public class CrusaderAbilities {
     // Retribution
     public static void passiveCrusaderRetribution(PlayerEntity player, LivingEntity attacker) {
         int random = new Random().nextInt(100);
-        int retributionChance = 15; //SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalChance;
+        int retributionChance = SimplySkills.crusaderConfig.passiveCrusaderRetributionChance;
         if (random < retributionChance)
             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_judgement", 32, attacker);
     }
@@ -35,19 +35,20 @@ public class CrusaderAbilities {
     //Exhaustive Recovery
     public static void passiveCrusaderExhaustiveRecovery(PlayerEntity player, LivingEntity attacker) {
         int random = new Random().nextInt(100);
-        int recoveryChance = 15; //SimplySkills.rangerConfig.passiveRangerElementalArrowsRenewalChance;
+        int recoveryChance = SimplySkills.crusaderConfig.passiveCrusaderExhaustiveRecoveryChance;
+        int exhaustStacks = SimplySkills.crusaderConfig.passiveCrusaderExhaustiveRecoveryExhaustionStacks - 1;
         if (random < recoveryChance) {
             SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_flash_heal", 32, player);
-            HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION, 300, 9, 99);
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION, 300, exhaustStacks, 99);
         }
     }
 
     //Aegis
     public static void passiveCrusaderAegis(PlayerEntity player) {
-        int frequency = 200;
-        int stacksRemoved = 25;
-        if (player.hasStatusEffect(Effects.DIVINE_PROTECTION)) {
-            if (player.age % frequency == 0 && player.getStatusEffect(Effects.DIVINE_PROTECTION).getAmplifier() > stacksRemoved) {
+        int frequency = SimplySkills.crusaderConfig.passiveCrusaderAegisFrequency;
+        int stacksRemoved = SimplySkills.crusaderConfig.passiveCrusaderAegisStacksRemoved;
+        if (player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
+            if (player.age % frequency == 0 && player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier() > stacksRemoved) {
                 SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:divine_protection", 32, player);
                 HelperMethods.decrementStatusEffects(player, EffectRegistry.EXHAUSTION, stacksRemoved);
             }
@@ -61,8 +62,8 @@ public class CrusaderAbilities {
     public static boolean signatureHeavensmithsCall(String crusaderSkillTree, PlayerEntity player) {
         Vec3d blockpos = null;
         boolean success = false;
-        int heavensmithsCallRange = SimplySkills.wizardConfig.signatureWizardIceCometRange;
-        int duration = 400;
+        int heavensmithsCallRange = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallRange;
+        int duration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDADuration;
 
         if (HelperMethods.getTargetedEntity(player, heavensmithsCallRange) != null)
             blockpos = HelperMethods.getTargetedEntity(player, heavensmithsCallRange).getPos();
@@ -99,8 +100,8 @@ public class CrusaderAbilities {
     // Sacred Onslaught
     public static boolean signatureCrusaderSacredOnslaught(String crusaderSkillTree, PlayerEntity player) {
 
-        int divineProtectionDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
-        int dashDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
+        int divineProtectionDuration = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtDPDuration;
+        int dashDuration = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtDashDuration;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SACREDONSLAUGHT, dashDuration));
 
@@ -116,12 +117,11 @@ public class CrusaderAbilities {
     // Consecration
     public static boolean signatureCrusaderConsecration(String crusaderSkillTree, PlayerEntity player) {
 
-        int consecrationExtendDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
-        int consecrationDuration = 250; //SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
+        int consecrationExtendDuration = SimplySkills.crusaderConfig.signatureCrusaderConsecrationExtendDuration;
+        int consecrationDuration = SimplySkills.crusaderConfig.signatureCrusaderConsecrationDuration;
 
-        if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderRetribution, player))
-            consecrationDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration +250;
-
+        if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationConsecrationDuration, player))
+            consecrationDuration = SimplySkills.crusaderConfig.signatureCrusaderConsecrationDuration + consecrationExtendDuration;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.CONSECRATION, consecrationDuration));
 

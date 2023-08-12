@@ -29,6 +29,7 @@ public class SimplySkills implements ModInitializer {
     public static SpellbladeConfig spellbladeConfig;
     public static RogueConfig rogueConfig;
     public static RangerConfig rangerConfig;
+    public static CrusaderConfig crusaderConfig;
 
     private static void setSpecialisations() {
         specialisations.add("simplyskills:rogue");
@@ -70,6 +71,7 @@ public class SimplySkills implements ModInitializer {
         spellbladeConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().spellblade;
         rogueConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().rogue;
         rangerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().ranger;
+        crusaderConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().crusader;
 
         PassiveSkillReward.register();
         SoundRegistry.init();

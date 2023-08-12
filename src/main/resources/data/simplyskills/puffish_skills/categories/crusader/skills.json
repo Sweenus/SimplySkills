@@ -228,13 +228,13 @@
 		"root": false
 	},
 	"cdbv71rvffagxjvo": {
-		"definition": "spell_healing_power_multi+1%",
+		"definition": "crusaderSignatureConsecrationMighty",
 		"x": 224,
 		"y": -32,
 		"root": false
 	},
 	"9d9t6hnhyc248jy0": {
-		"definition": "spell_healing_power_multi+1%",
+		"definition": "crusaderSignatureConsecrationSpellforged",
 		"x": 224,
 		"y": 32,
 		"root": false
@@ -273,6 +273,24 @@
 		"definition": "crusaderExhaustiveRecovery",
 		"x": 96,
 		"y": -96,
+		"root": false
+	},
+	"4p70f1lw2j9ogrvz": {
+		"definition": "crusaderSignatureConsecrationWard",
+		"x": 128,
+		"y": 128,
+		"root": false
+	},
+	"lumiaobsxfeefc2g": {
+		"definition": "crusaderSignatureConsecrationTaunt",
+		"x": 32,
+		"y": 192,
+		"root": false
+	},
+	"vq2yx5g5wqatozfj": {
+		"definition": "crusaderSignatureConsecrationDuration",
+		"x": 224,
+		"y": 0,
 		"root": false
 	}
 }

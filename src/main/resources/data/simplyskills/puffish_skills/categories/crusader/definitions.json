@@ -3723,7 +3723,7 @@
 		]
 	},
 	"crusaderSignatureConsecration": {
-		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Consecration]§7 \nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies. Damage & Healing scales with Healing Spell Power.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3740,8 +3740,98 @@
 			}
 		]
 	},
+	"crusaderSignatureConsecrationDuration": {
+		"title": "Your §6[Consecration]§7 now lasts longer.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecrationDuration"
+				}
+			}
+		]
+	},
+	"crusaderSignatureConsecrationWard": {
+		"title": "Your §6[Consecration]§7 now wards away undead hostiles.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecrationWard"
+				}
+			}
+		]
+	},
+	"crusaderSignatureConsecrationTaunt": {
+		"title": "Your §6[Consecration]§7 now taunts affected hostiles.\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecrationTaunt"
+				}
+			}
+		]
+	},
+	"crusaderSignatureConsecrationMighty": {
+		"title": "Your §6[Consecration]§7 now periodically grants nearby allies Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecrationMighty"
+				}
+			}
+		]
+	},
+	"crusaderSignatureConsecrationSpellforged": {
+		"title": "Your §6[Consecration]§7 now periodically grants nearby allies Spellforged.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "crusaderSignatureConsecrationSpellforged"
+				}
+			}
+		]
+	},
 	"crusaderSignatureSacredOnslaught": {
-		"title": "Signature Ability: \n§6[Sacred Onslaught]§7 \nCharge forward. If blocking during the charge, you deal damage based on your armor value and knock back enemies.\n\n§a20s Cooldown§7",
+		"title": "Signature Ability: \n§6[Sacred Onslaught]§7 \nCharge forward. If blocking during the charge, you deal damage based on your armor value and knock back enemies.\n\n§a15s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3759,7 +3849,7 @@
 		]
 	},
 	"crusaderSignatureHeavensmithsCall": {
-		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

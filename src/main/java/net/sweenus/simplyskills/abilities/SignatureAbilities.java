@@ -284,15 +284,15 @@ public class SignatureAbilities {
                 type = "magic";
             }
             case "HeavensmithsCall" -> {
-                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
                 type = "physical";
             }
             case "SacredOnslaught" -> {
-                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                cooldown = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtCooldown * 1000;
                 type = "physical";
             }
             case "Consecration" -> {
-                cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
+                cooldown = SimplySkills.crusaderConfig.signatureCrusaderConsecrationCooldown * 1000;
                 type = "magic";
             }
         }

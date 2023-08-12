@@ -41,6 +41,12 @@
   "effect.simplyskills.barrier":                        "Barrier",
   "effect.simplyskills.spellshock":                     "Spellshock",
   "effect.simplyskills.spellforged":                    "Spellforged",
+  "effect.simplyskills.divine_adjudication":            "Divine Adjudication",
+  "effect.simplyskills.sacred_onslaught":               "Sacred Onslaught",
+  "effect.simplyskills.consecration":                   "Consecration",
+  "effect.simplyskills.taunted":                        "Taunted",
+
+
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
   "item.simplyskills.gracious_manuscript":              "Gracious Manuscript",
@@ -68,6 +74,7 @@
   "text.autoconfig.simplyskills.category.spellblade" :  "Spellblade",
   "text.autoconfig.simplyskills.category.rogue" :       "Rogue",
   "text.autoconfig.simplyskills.category.ranger" :      "Ranger",
+  "text.autoconfig.simplyskills.category.crusader" :    "Crusader",
 
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" :                                  "Enable PlayerEx Compatibility !NOT YET IMPLEMENTED!",
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" :                         "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
@@ -381,6 +388,33 @@
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerLeapSlamHeight" :                          "§6[Signature]§7 Leap Slam height",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerLeapSlamDescentVelocity" :                 "§6[Signature]§7 Leap Slam descent velocity",
   "text.autoconfig.simplyskills.option.berserker.signatureBerserkerLeapSlamDamageModifier" :                  "§6[Signature]§7 Leap Slam damage modifier",
-  "text.autoconfig.simplyskills.option.berserker.signatureBerserkerLeapSlamImmobilizeDuration" :              "§6[Signature]§7 Leap Slam Immobilise duration"
+  "text.autoconfig.simplyskills.option.berserker.signatureBerserkerLeapSlamImmobilizeDuration" :              "§6[Signature]§7 Leap Slam Immobilise duration",
 
+  "text.autoconfig.simplyskills.option.crusader.enableCrusaderSpecialisation" :                               "Enable Crusader Specialisation",
+  "text.autoconfig.simplyskills.option.crusader.enableCrusaderSpecialisation.@Tooltip" :                      "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",
+  "text.autoconfig.simplyskills.option.crusader.enableCrusaderSpecialisation.@PrefixText" :                   "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+
+  "text.autoconfig.simplyskills.option.crusader.passiveCrusaderRetributionChance" :                           "§a[Passive]§7 Retribution chance",
+  "text.autoconfig.simplyskills.option.crusader.passiveCrusaderExhaustiveRecoveryChance" :                    "§a[Passive]§7 Exhaustive Recovery chance",
+  "text.autoconfig.simplyskills.option.crusader.passiveCrusaderExhaustiveRecoveryExhaustionStacks" :          "§a[Passive]§7 Exhaustive Recovery Exhaustion stacks",
+  "text.autoconfig.simplyskills.option.crusader.passiveCrusaderAegisFrequency" :                              "§a[Passive]§7 Aegis frequency",
+  "text.autoconfig.simplyskills.option.crusader.passiveCrusaderAegisStacksRemoved" :                          "§a[Passive]§7 Aegis stacks removed",
+
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallRange" :                     "§6[Signature]§7 Heavensmith's Call range",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallDADuration" :                "§6[Signature]§7 Heavensmith's Call DA duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderHeavensmithsCallCooldown" :                  "§6[Signature]§7 Heavensmith's Call cooldown",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderSacredOnslaughtDashDuration" :               "§6[Signature]§7 Sacred Onslaught dash duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderSacredOnslaughtDPDuration" :                 "§6[Signature]§7 Sacred Onslaught DP duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderSacredOnslaughtCooldown" :                   "§6[Signature]§7 Sacred Onslaught cooldown",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationDuration" :                      "§6[Signature]§7 Consecration duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationExtendDuration" :                "§6[Signature]§7 Consecration extend duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationRadius" :                        "§6[Signature]§7 Consecration radius",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationDMGMultiplier" :                 "§6[Signature]§7 Consecration DMG multiplier",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationHitFrequency" :                  "§6[Signature]§7 Consecration frequency",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationMightStacks" :                   "§6[Signature]§7 Consecration Might stacks",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationMightStacksMax" :                "§6[Signature]§7 Consecration max Might stacks",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationSpellforgedStacks" :             "§6[Signature]§7 Consecration Spellforged stacks",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationSpellforgedStacksMax" :          "§6[Signature]§7 Consecration max Spellforged stacks",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationTauntDuration" :                 "§6[Signature]§7 Consecration Taunted duration",
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationCooldown" :                      "§6[Signature]§7 Consecration cooldown"
 }

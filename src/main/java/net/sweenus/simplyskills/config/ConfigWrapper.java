@@ -35,4 +35,7 @@ public class ConfigWrapper extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Category("ranger")
     @ConfigEntry.Gui.TransitiveObject
     public RangerConfig ranger = new RangerConfig();
+    @ConfigEntry.Category("crusader")
+    @ConfigEntry.Gui.TransitiveObject
+    public CrusaderConfig crusader = new CrusaderConfig();
 }

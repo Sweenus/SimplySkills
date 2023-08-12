@@ -254,7 +254,7 @@ public abstract class ServerPlayerEntityMixin {
                 AbilityEffects.effectRogueFanOfBlades(player);
             }
             //Crusader Aegis
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:crusader",
                     SkillReferencePosition.crusaderAegis, player)
                     && FabricLoader.getInstance().isModLoaded("paladins")) {
                 CrusaderAbilities.passiveCrusaderAegis(player);

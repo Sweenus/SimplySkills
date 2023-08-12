@@ -26,6 +26,7 @@ import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 public class ConsecrateEffect extends StatusEffect {
     public ConsecrateEffect(StatusEffectCategory statusEffectCategory, int color) {
@@ -39,10 +40,15 @@ public class ConsecrateEffect extends StatusEffect {
 
             if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
 
-                int radius = SimplySkills.berserkerConfig.signatureBerserkerBullrushRadius;
-                double damageMultiplier = SimplySkills.berserkerConfig.signatureBerserkerBullrushDamageModifier;
-                int hitFrequency = 18; //SimplySkills.berserkerConfig.signatureBerserkerBullrushHitFrequency;
+                int radius = SimplySkills.crusaderConfig.signatureCrusaderConsecrationRadius;
+                double damageMultiplier = SimplySkills.crusaderConfig.signatureCrusaderConsecrationDMGMultiplier;
+                int hitFrequency = SimplySkills.crusaderConfig.signatureCrusaderConsecrationHitFrequency;
                 double damage = (player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute) * damageMultiplier);
+                int tauntDuration = SimplySkills.crusaderConfig.signatureCrusaderConsecrationTauntDuration;
+                int mightStacks = SimplySkills.crusaderConfig.signatureCrusaderConsecrationMightStacks - 1;
+                int mightStacksMax = SimplySkills.crusaderConfig.signatureCrusaderConsecrationMightStacksMax - 1;
+                int spellforgedStacks = SimplySkills.crusaderConfig.signatureCrusaderConsecrationSpellforgedStacks - 1;
+                int spellforgedStacksMax = SimplySkills.crusaderConfig.signatureCrusaderConsecrationSpellforgedStacksMax - 1;
 
                 Box box = HelperMethods.createBox(player, radius * 2);
                 if (player.age % hitFrequency == 0) {
@@ -51,28 +57,28 @@ public class ConsecrateEffect extends StatusEffect {
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
-                                if (le.isUndead())
+                                if (le.isUndead() && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationWard, player))
                                     le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);
 
                                 le.damage(player.getDamageSources().magic(), (float) damage);
                                 le.timeUntilRegen = 1;
 
                                 // Taunt (now taunts)
-                                if (le instanceof MobEntity me) {
+                                if ((le instanceof MobEntity me) && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationTaunt, player)) {
                                     SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
-                                            EffectRegistry.TAUNTED, 200, 0, false,
+                                            EffectRegistry.TAUNTED, tauntDuration, 0, false,
                                             false, true);
                                     tauntEffect.setSourceEntity(livingEntity);
                                     me.addStatusEffect(tauntEffect);
                                 }
 
 
-
-
                             }
                             if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
-                                HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, hitFrequency+1, 0, 5);
-                                HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, hitFrequency+1, 0, 2);
+                                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationMighty, player))
+                                    HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, hitFrequency+1, mightStacks, mightStacksMax);
+                                if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationSpellforged, player))
+                                    HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, hitFrequency+1, spellforgedStacks, spellforgedStacksMax);
                             }
                         }
                     }
