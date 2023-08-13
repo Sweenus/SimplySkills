@@ -2049,7 +2049,7 @@
 		]
 	},
 	"crusaderPath": {
-		"title": "Path of the §bCrusader§7\n§eNOT YET IMPLEMENTED§7",
+		"title": "Path of the §bCrusader§7\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3921,7 +3921,7 @@
 		]
 	},
 	"crusaderSignatureHeavensmithsCall": {
-		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a35s Cooldown§7",
+		"title": "Signature Ability: \n§6[Heavensmith's Call]§7 \nCall down an anvil from the heavens to crush your foes.\n\n§a55s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

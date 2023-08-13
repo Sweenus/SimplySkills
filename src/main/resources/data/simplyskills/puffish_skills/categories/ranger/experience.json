@@ -3,7 +3,7 @@
 	"experience_per_level": {
 		"type": "expression",
 		"data": {
-			"expression": "min(level ^ 3.432 + 10, 200)"
+			"expression": "(((level + 1) ^ 3) / ((level + 1) * 1.08)) + 250"
 		}
 	},
 	"sources": [

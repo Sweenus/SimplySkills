@@ -40,7 +40,7 @@ public class CrusaderConfig implements ConfigData {
     public int signatureCrusaderConsecrationDuration = 250;
     public int signatureCrusaderConsecrationExtendDuration = 250;
     public int signatureCrusaderConsecrationRadius = 3;
-    public double signatureCrusaderConsecrationDMGMultiplier = 1.8;
+    public double signatureCrusaderConsecrationDMGMultiplier = 2.1;
     @ConfigEntry.BoundedDiscrete(min = 16, max = 100)
     public int signatureCrusaderConsecrationHitFrequency = 18;
     public int signatureCrusaderConsecrationMightStacks = 1;

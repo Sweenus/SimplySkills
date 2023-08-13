@@ -37,9 +37,10 @@
     "spell_power": ">=0.9.13+1.20.1",
     "spell_engine": ">=0.9.26+1.20.1",
     "cloth-config": ">=11.1.106",
-    "puffish_skills": "=0.7.0"
+    "puffish_skills": ">=0.7.0 <=0.8.0"
   },
   "recommends": {
-    "simplyswords": ">=1.51.0"
+    "simplyswords": ">=1.51.0-1.20.1",
+    "paladins": ">=0.9.8+1.20.1"
   }
 }
