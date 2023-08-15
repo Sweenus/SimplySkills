@@ -153,6 +153,10 @@ public class SkillReferencePosition {
     public static String shamanSpecialisationNovaTotem = "7dsbtkhvcv332zla";
 
     public static String clericSpecialisationDivineIntervention = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationDivineInterventionMighty = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationDivineInterventionSpellforged = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationDivineInterventionCleanse = "7dsbtkhvcv332zla";
+    public static String clericSpecialisationDivineInterventionDuration = "7dsbtkhvcv332zla";
     public static String clericSpecialisationDivineAscent = "7dsbtkhvcv332zla";
     public static String clericSpecialisationRestoration = "7dsbtkhvcv332zla";
 

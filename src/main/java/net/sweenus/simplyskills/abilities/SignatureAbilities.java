@@ -169,7 +169,7 @@ public class SignatureAbilities {
         }
 
         // - Crusader -
-        if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)
+        if (HelperMethods.isUnlocked(crusaderSkillTree, null, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
 
             // Heavensmith's Call

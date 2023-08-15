@@ -4,27 +4,22 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
-import net.paladins.effect.Effects;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.Random;
 
-public class PriestAbilities {
+public class ClericAbilities {
 
     // Retribution
-    public static void passiveCrusaderRetribution(PlayerEntity player, LivingEntity attacker) {
+    public static void passiveClericAbility(PlayerEntity player, LivingEntity attacker) {
         int random = new Random().nextInt(100);
         int retributionChance = SimplySkills.crusaderConfig.passiveCrusaderRetributionChance;
         if (random < retributionChance)
@@ -59,11 +54,11 @@ public class PriestAbilities {
                         success = true;
 
                         if (HelperMethods.isUnlocked(crusaderSkillTree,
-                                SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
+                                SkillReferencePosition.clericSpecialisationDivineInterventionMighty, player))
                             HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, duration, 4, 20);
 
                         if (HelperMethods.isUnlocked("simplyskills:crusader",
-                                SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
+                                SkillReferencePosition.clericSpecialisationDivineInterventionSpellforged, player))
                             HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, duration, 4, 20);
 
                         le.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, duration));
