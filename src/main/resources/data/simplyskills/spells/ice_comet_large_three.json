@@ -26,44 +26,51 @@
     "target": {
       "type": "METEOR",
       "meteor": {
-        "launch_height": 15,
-        "impact_range": 12,
-        "impact_particles": [
-          {
-            "particle_id": "spell_engine:frost_hit",
-            "shape": "CIRCLE",
-            "origin": "CENTER",
-            "count": 90.0,
-            "min_speed": 1.5,
-            "max_speed": 6.0
-          },
-          {
-            "particle_id": "spell_engine:snowflake",
-            "shape": "SPHERE",
-            "origin": "CENTER",
-            "count": 100.0,
-            "min_speed": 0.2,
-            "max_speed": 0.4
-          },
-          {
-            "particle_id": "smoke",
-            "shape": "SPHERE",
-            "origin": "CENTER",
-            "count": 90.0,
-            "min_speed": 0.1,
-            "max_speed": 0.3
-          }
-        ],
-        "impact_sound": {
-          "id": "simplyskills:soundeffect_32",
-          "volume": 1.5
-        }
-      },
-      "area": {
-        "distance_dropoff": "SQUARED"
+        "launch_height": 15
       },
       "projectile": {
-        "velocity": 0.8,
+        "velocity": 1.0,
+        "homing_angle": 1.0,
+
+        "area_impact": {
+          "radius": 11,
+          "area": {
+            "distance_dropoff": "SQUARED"
+          },
+          "particles": [
+            {
+              "particle_id": "spell_engine:frost_hit",
+              "shape": "CIRCLE",
+              "origin": "CENTER",
+              "count": 90.0,
+              "min_speed": 1.5,
+              "max_speed": 6.0
+            },
+            {
+              "particle_id": "spell_engine:snowflake",
+              "shape": "SPHERE",
+              "origin": "CENTER",
+              "count": 100.0,
+              "min_speed": 0.2,
+              "max_speed": 0.4
+            },
+            {
+              "particle_id": "smoke",
+              "shape": "SPHERE",
+              "origin": "CENTER",
+              "count": 90.0,
+              "min_speed": 0.1,
+              "max_speed": 0.3
+            }
+          ],
+          "impact_sound": {
+            "id": "simplyskills:soundeffect_32",
+            "volume": 1.5
+          }
+        },
+        "area": {
+          "distance_dropoff": "SQUARED"
+        },
         "client_data": {
           "travel_particles": [
             {

@@ -26,9 +26,18 @@
     "target": {
       "type": "METEOR",
       "meteor": {
-        "launch_height": 10,
-        "impact_range": 6,
-        "impact_particles": [
+        "launch_height": 10
+      },
+      "projectile": {
+        "velocity": 1.0,
+        "homing_angle": 1.0,
+
+        "area_impact": {
+          "radius": 5,
+          "area": {
+            "distance_dropoff": "SQUARED"
+          },
+          "particles": [
           {
             "particle_id": "lava",
             "shape": "CIRCLE",
@@ -62,8 +71,6 @@
       "area": {
         "distance_dropoff": "SQUARED"
       },
-      "projectile": {
-        "velocity": 0.8,
         "client_data": {
           "travel_particles": [
             {
