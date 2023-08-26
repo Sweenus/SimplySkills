@@ -21,9 +21,10 @@ public class WizardAbilities {
 
     public static void passiveWizardSpellEcho(PlayerEntity player, List<Entity> targets) {
         //Can we get Spell Identifier from raw Spell in future? This would be better
-
+        Entity target = null;
         //Choose random target from list
-        Entity target = targets.get(player.getRandom().nextInt(targets.size()));
+        if (!targets.isEmpty())
+            target = targets.get(player.getRandom().nextInt(targets.size()));
 
         int chance = SimplySkills.wizardConfig.passiveWizardSpellEchoChance;
         if (player.getRandom().nextInt(100) < chance) {
@@ -38,7 +39,8 @@ public class WizardAbilities {
             list.add("simplyskills:static_discharge");
             int spellChoice = player.getRandom().nextInt(list.size());
 
-            SignatureAbilities.castSpellEngineIndirectTarget(player, list.get(spellChoice), 120, target);
+            if (target != null)
+                SignatureAbilities.castSpellEngineIndirectTarget(player, list.get(spellChoice), 120, target);
         }
     }
 
