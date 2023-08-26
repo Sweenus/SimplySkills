@@ -152,6 +152,15 @@ public class EffectRegistry {
     public static StatusEffect CONSECRATION= new ConsecrateEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect TAUNTED= new TauntedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect UNDYING= new UndyingEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect RAGE= new RageEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    "2489075c-b5ce-40b5-8a1d-3787ad4f4d8b",
+                    +0.005,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED,
+                    "29d236f5-e3e1-4612-898b-39b916fd771c",
+                    +0.005,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -203,6 +212,7 @@ public class EffectRegistry {
         DIVINEADJUDICATION = registerStatusEffect("divine_adjudication", DIVINEADJUDICATION);
         TAUNTED = registerStatusEffect("taunted", TAUNTED);
         UNDYING = registerStatusEffect("undying", UNDYING);
+        RAGE = registerStatusEffect("rage", RAGE);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

@@ -13,6 +13,7 @@ import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.items.GraciousManuscript;
 import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 
@@ -27,7 +28,7 @@ public class AbilityLogic {
 
         if (HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
 
-            if (SimplySkills.generalConfig.removeUnlockRestrictions)
+            if (SimplySkills.generalConfig.removeUnlockRestrictions || (player.getMainHandStack().getItem() instanceof GraciousManuscript))
                 return false;
 
             //Prevent unlocking multiple specialisations (kinda cursed ngl)
@@ -35,7 +36,6 @@ public class AbilityLogic {
             for (String s : specialisationList) {
                 //System.out.println("Comparing " + categoryID + " against " + s);
                 if (categoryID.contains(s)) {
-                    //System.out.println( "looking for a match in unlocked categories: " + SkillsAPI.getUnlockedCategories((ServerPlayerEntity)player).toString());
 
                     Collection<Category> categories = SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player);
                     for (Category value : categories) {
@@ -44,6 +44,7 @@ public class AbilityLogic {
                             return true;
                         }
                     }
+
                 }
             }
 

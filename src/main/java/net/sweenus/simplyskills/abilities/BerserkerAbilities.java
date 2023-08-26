@@ -26,7 +26,9 @@ public class BerserkerAbilities {
         int speedAmplifierPerTier = SimplySkills.berserkerConfig.passiveBerserkerSwordMasterySpeedAmplifierPerTier;
         if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
-                if (player.getMainHandStack().getItem() instanceof SwordItem) {
+                if ((player.getMainHandStack().getItem() instanceof SwordItem)
+                        && !HelperMethods.stringContainsAny(player.getMainHandStack().getItem().getName().toString(),
+                        new String[] {"Axe", "axe", "molten_edge", "livyatan", "soulpyre"})) {
                     int mastery = baseSpeedAmplifier;
 
                     if (HelperMethods.isUnlocked("simplyskills:tree",
@@ -51,7 +53,9 @@ public class BerserkerAbilities {
         int strengthAmplifierPerTier = SimplySkills.berserkerConfig.passiveBerserkerAxeMasteryStrengthAmplifierPerTier;
         if (player.age % frequency == 0) {
             if (player.getMainHandStack() != null) {
-                if (player.getMainHandStack().getItem() instanceof AxeItem) {
+                if ((player.getMainHandStack().getItem() instanceof AxeItem)
+                        || HelperMethods.stringContainsAny(player.getMainHandStack().getItem().getName().toString(),
+                        new String[] {"Axe", "axe", "molten_edge", "livyatan", "soulpyre"})) {
 
                     int mastery = baseStrengthAmplifier;
 

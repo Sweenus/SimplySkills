@@ -63,7 +63,7 @@
   "effect.simplyskills.might":                          "Might",
   "effect.simplyskills.might.desc":                     "Grants 25% increased Melee Damage per stack.",
   "effect.simplyskills.exhaustion":                     "Exhaustion",
-  "effect.simplyskills.exhaustion.desc":                "Lose 1% attack and movespeed per stack.",
+  "effect.simplyskills.exhaustion.desc":                "Lose 1% attack damage, attack speed, and move speed per stack.",
   "effect.simplyskills.revealed":                       "Revealed",
   "effect.simplyskills.revealed.desc":                  "You cannot enter Stealth.",
   "effect.simplyskills.barrier":                        "Barrier",
@@ -81,6 +81,8 @@
   "effect.simplyskills.taunted.desc":                   "Only capable of targeting the taunting entity.",
   "effect.simplyskills.undying":                        "Undying",
   "effect.simplyskills.undying.desc":                   "You cannot drop below 1HP. If you are below 65% HP when the effect ends, take fatal damage.",
+  "effect.simplyskills.rage":                           "Rage",
+  "effect.simplyskills.rage.desc":                      "Gain 0.5% attack damage, attack speed, and damage received per stack.",
 
 
 

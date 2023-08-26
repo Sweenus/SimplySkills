@@ -18,6 +18,7 @@ import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -83,8 +84,24 @@ public abstract class ServerPlayerEntityMixin {
                 WayfarerAbilities.passiveWayfarerBreakStealth(null, player, true, false);
             }
 
+            //Passive Rage
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.berserkerRecklessness, serverPlayer)) {
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
+            }
+
 
         }
+    }
+
+    @ModifyVariable(method = "damage", at = @At("HEAD"), argsOnly = true)
+    private float simplyskills$damageResult(float amount){
+        PlayerEntity player = (PlayerEntity) (Object) this;
+        if (player.hasStatusEffect(EffectRegistry.RAGE)) {
+            float damageModifier = (float) 1 + ((float) player.getStatusEffect(EffectRegistry.RAGE).getAmplifier() / 200);
+            return amount * damageModifier;
+        }
+        return amount;
     }
 
     @Inject(at = @At("HEAD"), method = "tickFallStartPos")
@@ -274,23 +291,6 @@ public abstract class ServerPlayerEntityMixin {
             }
 
 
-
-
-            /*
-            //Debug - reset skills & gain exp
-            if (player.isSneaking() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
-                //AbilityLogic.debugPrintAttributes(player);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:tree", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:wizard", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:berserker", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:rogue", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:ranger", 60000);
-                SkillsAPI.addExperience((ServerPlayerEntity) player, "simplyskills:spellblade", 60000);
-            }
-
-             */
-
-
         }
     }
 
@@ -344,7 +344,6 @@ public abstract class ServerPlayerEntityMixin {
                         }
                     }
 
-
                     //Effect Bloodthirsty Tremor
                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSpecialisationBloodthirstyTremor, player)) {
@@ -384,6 +383,12 @@ public abstract class ServerPlayerEntityMixin {
                     //Effect Stealth
                     if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
                         WayfarerAbilities.passiveWayfarerBreakStealth(target, player, false, true);
+                    }
+
+                    //Passive Rage
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                            SkillReferencePosition.berserkerRecklessness, serverPlayer)) {
+                        HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
                     }
 
 

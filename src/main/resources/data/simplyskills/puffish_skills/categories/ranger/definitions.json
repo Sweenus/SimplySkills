@@ -1399,7 +1399,7 @@
 		]
 	},
 	"warriorDeathDefy": {
-		"title": "§7§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n§f(Exhaustion)§7 reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"title": "§7§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1417,7 +1417,7 @@
 		]
 	},
 	"warriorFrenzy": {
-		"title": "§7§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n§f(Exhaustion)§7 reduces your Melee Attack and Attack Speed by 1% per stack.",
+		"title": "§7§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1617,7 +1617,7 @@
 		]
 	},
 	"berserkerRecklessness": {
-		"title": "§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.",
+		"title": "§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3705,7 +3705,7 @@
 		]
 	},
 	"crusaderExhaustiveRecovery": {
-		"title": "§7§a[Exhaustive Recovery]§7 \nChance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.",
+		"title": "§7§a[Exhaustive Recovery]§7 \nChance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
