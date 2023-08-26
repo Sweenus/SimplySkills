@@ -3849,7 +3849,7 @@
 		]
 	},
 	"crusaderSignatureSacredOnslaughtHeal": {
-		"title": "Your §6[Sacred Onslaught]§7 heals allies it passes through, and grants them Divine Protection.",
+		"title": "Your §6[Sacred Onslaught]§7 heals allies it passes through, and grants them Divine Protection.\n\nHealing scales off Healing Spell Power",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

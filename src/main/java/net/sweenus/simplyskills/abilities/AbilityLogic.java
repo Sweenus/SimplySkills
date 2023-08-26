@@ -94,32 +94,22 @@ public class AbilityLogic {
                     SoundCategory.PLAYERS, 1, 1);
     }
 
+    public static void performTagEffects(PlayerEntity player, String tags) {
 
+        if (tags.contains("magic")) {
 
-    // -- DEBUG --
-    /*
-    public static void debugPrintAttributes(PlayerEntity player) {
-        //
-        // For checking Spell Power attribute values
-        //
-        if (player.age % 20 == 0 && player.isSneaking()) {
-            String attributeArcane       = SpellPower.getSpellPower(MagicSchool.ARCANE, player).toString();
-            String attributeFire         = SpellPower.getSpellPower(MagicSchool.FIRE, player).toString();
-            String attributeFrost         = SpellPower.getSpellPower(MagicSchool.FROST, player).toString();
-            String attributeHealing      = SpellPower.getSpellPower(MagicSchool.HEALING, player).toString();
-            String attributeLightning    = SpellPower.getSpellPower(MagicSchool.LIGHTNING, player).toString();
-            String attributeSoul         = SpellPower.getSpellPower(MagicSchool.SOUL, player).toString();
-
-            System.out.println("Arcane: "    + attributeArcane);
-            System.out.println("Fire: "      + attributeFire);
-            System.out.println("Frost: "     + attributeFrost);
-            System.out.println("Healing: "   + attributeHealing);
-            System.out.println("Lightning: " + attributeLightning);
-            System.out.println("Soul: "      + attributeSoul);
         }
-    }
+        if (tags.contains("physical")) {
 
-     */
+        }
+        if (tags.contains("arrow")) {
+
+        }
+        if (tags.contains("arcane")) {
+
+        }
+
+    }
 
 
     //Misc Abilities

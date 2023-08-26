@@ -33,14 +33,14 @@ public class CrusaderConfig implements ConfigData {
     public int signatureCrusaderSacredOnslaughtDPDuration = 200;
     public int signatureCrusaderSacredOnslaughtVelocity = 1;
     public int signatureCrusaderSacredOnslaughtRadius = 3;
-    public double signatureCrusaderSacredOnslaughtDMGMultiplier = 0.8;
+    public double signatureCrusaderSacredOnslaughtDMGMultiplier = 0.60;
     public int signatureCrusaderSacredOnslaughtStunDuration = 50;
     public int signatureCrusaderSacredOnslaughtCooldown = 15;
 
     public int signatureCrusaderConsecrationDuration = 250;
     public int signatureCrusaderConsecrationExtendDuration = 250;
     public int signatureCrusaderConsecrationRadius = 3;
-    public double signatureCrusaderConsecrationDMGMultiplier = 2.1;
+    public double signatureCrusaderConsecrationDMGMultiplier = 1.9;
     @ConfigEntry.BoundedDiscrete(min = 16, max = 100)
     public int signatureCrusaderConsecrationHitFrequency = 18;
     public int signatureCrusaderConsecrationMightStacks = 1;

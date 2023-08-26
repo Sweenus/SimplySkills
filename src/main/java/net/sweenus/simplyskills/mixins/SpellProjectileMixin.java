@@ -1,15 +1,10 @@
 package net.sweenus.simplyskills.mixins;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 import net.spell_engine.entity.SpellProjectile;
-import net.sweenus.simplyskills.abilities.WizardAbilities;
-import net.sweenus.simplyskills.util.HelperMethods;
-import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

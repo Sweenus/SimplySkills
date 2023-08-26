@@ -203,6 +203,10 @@ public class RogueAbilities {
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration));
 
         if (HelperMethods.isUnlocked(rogueSkillTree,
+                SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
+            fanOfBladesStacks = fanOfBladesStacks*2;
+
+        if (HelperMethods.isUnlocked(rogueSkillTree,
                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES,
                     fanOfBladesDuration, fanOfBladesStacks));

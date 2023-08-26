@@ -221,79 +221,79 @@ public class SignatureAbilities {
         switch (ability) {
             case "ArcaneBolt" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardArcaneBoltCooldown * 1000;
-                type = "magic";
+                type = "magic, arcane";
             }
             case "IceComet" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardIceCometCooldown * 1000;
-                type = "magic";
+                type = "magic, elemental, debuff";
             }
             case "MeteorShower" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardMeteorShowerCooldown * 1000;
-                type = "magic";
+                type = "magic, elemental";
             }
             case "StaticDischarge" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardStaticDischargeCooldown * 1000;
-                type = "magic";
+                type = "magic, elemental, debuff";
             }
             case "Berserking" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerBerserkingCooldown * 1000;
-                type = "physical";
+                type = "physical, melee, buff, sacrificial";
             }
             case "Bloodthirsty" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyCooldown * 1000;
-                type = "physical";
+                type = "physical, melee, buff, recovery";
             }
             case "Rampage" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerRampageCooldown * 1000;
-                type = "physical";
+                type = "physical, melee, buff";
             }
             case "SiphoningStrikes" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesCooldown * 1000;
-                type = "physical";
+                type = "physical, melee, buff, debuff, recovery";
             }
             case "Evasion" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRogueEvasionCooldown * 1000;
-                type = "physical";
+                type = "physical, buff";
             }
             case "Preparation" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRoguePreparationCooldown * 1000;
-                type = "physical";
+                type = "physical, buff";
             }
             case "ArrowRain" -> {
                 cooldown = SimplySkills.rangerConfig.effectRangerArrowRainCooldown * 1000;
-                type = "mixed";
+                type = "physical, arrow, buff";
             }
             case "Disengage" -> {
                 cooldown = SimplySkills.rangerConfig.signatureRangerDisengageCooldown * 1000;
-                type = "physical";
+                type = "physical, debuff";
             }
             case "ElementalArrows" -> {
                 cooldown = SimplySkills.rangerConfig.effectRangerElementalArrowsCooldown * 1000;
-                type = "magic";
+                type = "magic, arrow, elemental, buff";
             }
             case "ElementalImpact" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactCooldown * 1000;
-                type = "mixed";
+                type = "magic, melee, charge, elemental";
             }
             case "ElementalSurge" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
-                type = "physical";
+                type = "magic, elemental, buff";
             }
             case "Spellweaver" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000;
-                type = "magic";
+                type = "magic, buff, elemental, melee";
             }
             case "HeavensmithsCall" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
-                type = "physical";
+                type = "physical, debuff";
             }
             case "SacredOnslaught" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtCooldown * 1000;
-                type = "physical";
+                type = "physical, melee, charge, buff, recovery";
             }
             case "Consecration" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderConsecrationCooldown * 1000;
-                type = "magic";
+                type = "magic, buff, recovery";
             }
         }
 

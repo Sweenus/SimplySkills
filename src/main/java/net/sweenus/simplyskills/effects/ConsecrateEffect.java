@@ -1,27 +1,18 @@
 package net.sweenus.simplyskills.effects;
 
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
-import net.spell_engine.api.spell.ParticleBatch;
-import net.spell_engine.client.particle.SpellHitParticle;
 import net.spell_engine.particle.Particles;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -52,7 +43,7 @@ public class ConsecrateEffect extends StatusEffect {
 
                 Box box = HelperMethods.createBox(player, radius * 2);
                 if (player.age % hitFrequency == 0) {
-                    player.heal((float) damage / 4);
+                    player.heal((float) damage / 5);
                     for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                         if (entities != null) {
@@ -77,7 +68,7 @@ public class ConsecrateEffect extends StatusEffect {
 
                             }
                             if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
-                                le.heal((float) damage / 2);
+                                le.heal((float) damage / 4);
                                 if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationMighty, player))
                                     HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, hitFrequency+1, mightStacks, mightStacksMax);
                                 if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationConsecrationSpellforged, player))
