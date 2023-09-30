@@ -3,582 +3,288 @@
 		"definition": "rangerSignatureArrowRain",
 		"x": 0,
 		"y": -32,
-		"root": true
+		"root": false
 	},
 	"is053f9imz801s57": {
 		"definition": "rangerSignatureDisengage",
 		"x": 32,
 		"y": 0,
-		"root": true
+		"root": false
 	},
 	"kp8uei8ppni71b5x": {
 		"definition": "rangerSignatureElementalArrows",
 		"x": -32,
 		"y": 0,
-		"root": true
-	},
-	"sijjytlw63x30lo1": {
-		"definition": "spell_crit_damage_additive+1%",
-		"x": -64,
-		"y": -32,
-		"root": false
-	},
-	"60jlbqy35n3p7hgt": {
-		"definition": "spell_crit_damage_additive+1%",
-		"x": -96,
-		"y": -32,
-		"root": false
-	},
-	"zh9z1xgwpbbd6qzh": {
-		"definition": "spell_crit_damage_additive+1%",
-		"x": -128,
-		"y": -32,
-		"root": false
-	},
-	"1wzxcfo1xu355w0t": {
-		"definition": "movement_speed+1%",
-		"x": 96,
-		"y": -32,
-		"root": false
-	},
-	"jcy8urbofpz8r8l8": {
-		"definition": "movement_speed+1%",
-		"x": 128,
-		"y": -32,
-		"root": false
-	},
-	"yjb60vx88rncxael": {
-		"definition": "spell_crit_chance_additive+1%",
-		"x": -64,
-		"y": 32,
-		"root": false
-	},
-	"x2tkbhdlli4196kb": {
-		"definition": "spell_crit_chance_additive+1%",
-		"x": -96,
-		"y": 32,
-		"root": false
-	},
-	"0lo9yq32zev3en79": {
-		"definition": "spell_crit_chance_additive+1%",
-		"x": -128,
-		"y": 32,
-		"root": false
-	},
-	"esl2ihsekhtvno0m": {
-		"definition": "jump+1%",
-		"x": 64,
-		"y": 32,
-		"root": false
-	},
-	"fi3thxulvxjxnkuk": {
-		"definition": "jump+1%",
-		"x": 96,
-		"y": 32,
-		"root": false
-	},
-	"mou5ko1holell4bk": {
-		"definition": "jump+1%",
-		"x": 128,
-		"y": 32,
-		"root": false
-	},
-	"gut6qwnsv5scxdtc": {
-		"definition": "ranged_damage+1%",
-		"x": -32,
-		"y": -64,
-		"root": false
-	},
-	"wy6lqotfbp45x8mr": {
-		"definition": "ranged_damage+1%",
-		"x": -32,
-		"y": -96,
-		"root": false
-	},
-	"hsn2x8bjrqicrye1": {
-		"definition": "ranged_damage+1%",
-		"x": -32,
-		"y": -128,
-		"root": false
-	},
-	"5ydaz37vtrxsxmzd": {
-		"definition": "movement_speed+1%",
-		"x": 32,
-		"y": -64,
-		"root": false
-	},
-	"9xnb5hf7hmjz0y5q": {
-		"definition": "movement_speed+1%",
-		"x": 32,
-		"y": -96,
-		"root": false
-	},
-	"7sh3662ne05az22w": {
-		"definition": "movement_speed+1%",
-		"x": 32,
-		"y": -128,
-		"root": false
-	},
-	"7pfa8jlp9wbpth56": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 96,
-		"y": 96,
-		"root": false
-	},
-	"f1jumlskdfsfhhm0": {
-		"definition": "spell_lightning_damage_multi+1%",
-		"x": -96,
-		"y": 96,
-		"root": false
-	},
-	"thzh6bjmnz81pv7y": {
-		"definition": "spell_crit_chance_multi+1%",
-		"x": -160,
-		"y": 0,
-		"root": false
-	},
-	"hm0sv1mw897nwyoa": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 160,
-		"y": 0,
-		"root": false
-	},
-	"eh8ga91br57itf5x": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 0,
-		"y": -160,
-		"root": false
-	},
-	"4tl7lknur17awyyw": {
-		"definition": "spell_fire_damage_multi+1%",
-		"x": -32,
-		"y": 128,
-		"root": false
-	},
-	"ergluvupfg6w6jpm": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 32,
-		"y": 128,
-		"root": false
-	},
-	"88icmjo4rld0ho1c": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 96,
-		"y": -160,
-		"root": false
-	},
-	"udktsx2tk7s1fubm": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 0,
-		"y": 160,
-		"root": false
-	},
-	"sshvzwg4h33g23uk": {
-		"definition": "spell_frost_damage_multi+1%",
-		"x": 0,
-		"y": 96,
-		"root": false
-	},
-	"kst2sn4oz9etxp7s": {
-		"definition": "jump_multi+2%",
-		"x": -96,
-		"y": -160,
-		"root": false
-	},
-	"og0f28ciyhej401p": {
-		"definition": "spell_crit_chance_multi+1%",
-		"x": -160,
-		"y": -64,
-		"root": false
-	},
-	"i6j92v84sfyz0n0s": {
-		"definition": "jump_multi+2%",
-		"x": 160,
-		"y": -64,
-		"root": false
-	},
-	"b06su6ljj85im9ly": {
-		"definition": "ranged_damage_multi+2%",
-		"x": -128,
-		"y": -96,
-		"root": false
-	},
-	"m1rajq89mn99ucwl": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 128,
-		"y": -96,
-		"root": false
-	},
-	"bfu48xwc9vb9p36e": {
-		"definition": "movement_speed+1%",
-		"x": 64,
-		"y": -32,
-		"root": false
-	},
-	"oyrh42zk7yeaeb3e": {
-		"definition": "spell_fire_damage_multi+1%",
-		"x": -96,
-		"y": -192,
-		"root": false
-	},
-	"3w41kcokqyb4yqgw": {
-		"definition": "spell_frost_damage_multi+1%",
-		"x": -96,
-		"y": -224,
-		"root": false
-	},
-	"ykyt26ab9qhwyv5c": {
-		"definition": "spell_lightning_damage_multi+1%",
-		"x": -96,
-		"y": -256,
 		"root": false
 	},
 	"yftatjo9vwzf5vpw": {
 		"definition": "rangerSignatureArrowRainElemental",
-		"x": -96,
-		"y": -288,
+		"x": -32,
+		"y": -128,
 		"root": false
 	},
 	"l6feffzr1kt6i2ds": {
 		"definition": "rangerSignatureArrowRainEplosive",
-		"x": 96,
-		"y": -288,
-		"root": false
-	},
-	"gux5icrpl7punkqy": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 96,
-		"y": -192,
-		"root": false
-	},
-	"9wnbqneasza9bfxr": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 96,
-		"y": -224,
-		"root": false
-	},
-	"m4if2h4mh41c1iwa": {
-		"definition": "ranged_damage_multi+2%",
-		"x": 96,
-		"y": -256,
-		"root": false
-	},
-	"p7gfetpab9ud1rfs": {
-		"definition": "ranged_damage+1%",
-		"x": -160,
+		"x": 32,
 		"y": -128,
 		"root": false
 	},
 	"b9sdl3i5pk4c8yor": {
 		"definition": "rangerSignatureArrowRainVolley+",
-		"x": -192,
-		"y": -160,
+		"x": -64,
+		"y": -96,
 		"root": false
 	},
 	"kj4gdess10vmmu1h": {
 		"definition": "rangerSignatureArrowRainVolley++",
-		"x": -224,
-		"y": -192,
+		"x": -96,
+		"y": -128,
 		"root": false
 	},
 	"67krnm60doqj0ukv": {
 		"definition": "rangerSignatureArrowRainVolley+++",
-		"x": -256,
-		"y": -224,
+		"x": -128,
+		"y": -160,
 		"root": false
 	},
 	"idjy8souppms30mf": {
 		"definition": "ranged_damage_multi+2%",
-		"x": -288,
-		"y": -256,
-		"root": false
-	},
-	"vsg2itlqczgjbe50": {
-		"definition": "ranged_damage+1%",
-		"x": 160,
-		"y": -128,
+		"x": -160,
+		"y": -192,
 		"root": false
 	},
 	"7gtk26uaf6fzugyx": {
 		"definition": "rangerSignatureArrowRainRadius+",
-		"x": 192,
-		"y": -160,
+		"x": 64,
+		"y": -96,
 		"root": false
 	},
 	"12p6g36kjjd9cihs": {
 		"definition": "rangerSignatureArrowRainRadius++",
-		"x": 224,
-		"y": -192,
+		"x": 96,
+		"y": -128,
 		"root": false
 	},
 	"b6ys22j75bek89z8": {
 		"definition": "rangerSignatureArrowRainRadius+++",
-		"x": 256,
-		"y": -224,
+		"x": 128,
+		"y": -160,
 		"root": false
 	},
 	"1we55v28z2p5ug9t": {
 		"definition": "ranged_damage_multi+2%",
-		"x": 288,
-		"y": -256,
-		"root": false
-	},
-	"0271bvmaso9zcbri": {
-		"definition": "spell_fire_damage_additive+1%",
-		"x": -192,
-		"y": -64,
-		"root": false
-	},
-	"tqfvv5wnu74li9hu": {
-		"definition": "spell_fire_damage_additive+1%",
-		"x": -224,
-		"y": -64,
-		"root": false
-	},
-	"zm1z5zfnd8rafzjo": {
-		"definition": "spell_fire_damage_additive+1%",
-		"x": -256,
-		"y": -64,
+		"x": 160,
+		"y": -192,
 		"root": false
 	},
 	"ov9mp25y08ouk5jj": {
 		"definition": "spell_fire_damage_multi+1%",
-		"x": -288,
+		"x": -96,
 		"y": -64,
 		"root": false
 	},
 	"6bycgdo9shmo7et7": {
 		"definition": "rangerSignatureElementalArrowsFireAttuned",
-		"x": -320,
+		"x": -128,
 		"y": -64,
-		"root": false
-	},
-	"gsvn5i78n8ohwfhg": {
-		"definition": "spell_frost_damage_additive+1%",
-		"x": -192,
-		"y": 0,
-		"root": false
-	},
-	"rnq0h8n1ec68asna": {
-		"definition": "spell_frost_damage_additive+1%",
-		"x": -224,
-		"y": 0,
-		"root": false
-	},
-	"gx7b4qu4vf2x9471": {
-		"definition": "spell_frost_damage_additive+1%",
-		"x": -256,
-		"y": 0,
 		"root": false
 	},
 	"f4xxv7jkv3jznaxd": {
 		"definition": "spell_frost_damage_multi+1%",
-		"x": -288,
+		"x": -128,
 		"y": 0,
 		"root": false
 	},
 	"ivyp2p1jp6ip5w0q": {
 		"definition": "rangerSignatureElementalArrowsFrostAttuned",
-		"x": -320,
-		"y": 0,
-		"root": false
-	},
-	"mbmmxx4ov73lvo8q": {
-		"definition": "spell_lightning_damage_additive+1%",
-		"x": -128,
-		"y": 96,
-		"root": false
-	},
-	"u4zgec10ufxr65cd": {
-		"definition": "spell_lightning_damage_additive+1%",
 		"x": -160,
-		"y": 96,
-		"root": false
-	},
-	"do8dx80912szeo64": {
-		"definition": "spell_lightning_damage_additive+1%",
-		"x": -192,
-		"y": 96,
+		"y": 0,
 		"root": false
 	},
 	"qsxd036xrayyrfz7": {
 		"definition": "spell_lightning_damage_multi+1%",
-		"x": -224,
-		"y": 96,
+		"x": -96,
+		"y": 64,
 		"root": false
 	},
 	"7747tky4ka5hid0r": {
 		"definition": "rangerSignatureElementalArrowsLightningAttuned",
-		"x": -256,
-		"y": 96,
-		"root": false
-	},
-	"j9k8xe46241x9rv5": {
-		"definition": "ranged_damage+1%",
-		"x": -64,
-		"y": 160,
+		"x": -128,
+		"y": 64,
 		"root": false
 	},
 	"jyjchp0ewoqq2n9w": {
 		"definition": "rangerSignatureElementalArrowsRadius+",
-		"x": -96,
-		"y": 192,
+		"x": -128,
+		"y": 32,
 		"root": false
 	},
 	"c27k3khjocrzi77a": {
 		"definition": "rangerSignatureElementalArrowsRadius++",
-		"x": -128,
-		"y": 224,
+		"x": -160,
+		"y": 32,
 		"root": false
 	},
 	"7fcjbknbz80nqnmc": {
 		"definition": "rangerSignatureElementalArrowsRadius+++",
-		"x": -160,
-		"y": 256,
+		"x": -192,
+		"y": 32,
 		"root": false
 	},
 	"nho6njv0e6ngyea0": {
 		"definition": "rangerSignatureElementalArrowsStacks+",
-		"x": -96,
-		"y": 160,
+		"x": -128,
+		"y": -32,
 		"root": false
 	},
 	"jyzyi0dx8elgb4fl": {
 		"definition": "rangerSignatureElementalArrowsStacks++",
-		"x": -128,
-		"y": 160,
+		"x": -160,
+		"y": -32,
 		"root": false
 	},
 	"14riqlyv2efrldoq": {
 		"definition": "rangerSignatureElementalArrowsStacks+++",
-		"x": -160,
-		"y": 160,
+		"x": -192,
+		"y": -32,
 		"root": false
 	},
 	"aizxxvc9fwqnpq60": {
 		"definition": "rangerSignatureElementalArrowsRenewal",
-		"x": -64,
-		"y": 256,
-		"root": false
-	},
-	"90n8jw04a1fhi9zd": {
-		"definition": "spell_crit_chance_multi+1%",
-		"x": -64,
-		"y": 192,
-		"root": false
-	},
-	"0ckfgtnl1vr4hlxu": {
-		"definition": "spell_crit_damage_multi+1%",
-		"x": -64,
-		"y": 224,
+		"x": -224,
+		"y": 0,
 		"root": false
 	},
 	"t5c5gzcskng8b8cz": {
 		"definition": "rangerSignatureDisengageExploitation",
-		"x": 320,
+		"x": 256,
 		"y": -32,
 		"root": false
 	},
 	"dr852odvrafemtmw": {
 		"definition": "rangerSignatureDisengageRecuperate",
-		"x": 320,
-		"y": 32,
-		"root": false
-	},
-	"kwvdmong467u1ejk": {
-		"definition": "melee_damage+1%",
-		"x": 192,
-		"y": -32,
-		"root": false
-	},
-	"d6qj7452rsikwihz": {
-		"definition": "melee_damage+1%",
-		"x": 224,
-		"y": -32,
-		"root": false
-	},
-	"qho3wv891wbiei80": {
-		"definition": "melee_damage+1%",
-		"x": 256,
-		"y": -32,
-		"root": false
-	},
-	"5iyhh1hnef2ioga1": {
-		"definition": "ranged_damage+1%",
-		"x": 192,
-		"y": 32,
-		"root": false
-	},
-	"lm4jw5lup2nc3lmx": {
-		"definition": "ranged_damage+1%",
-		"x": 224,
-		"y": 32,
-		"root": false
-	},
-	"zux061xyfqp7t93c": {
-		"definition": "ranged_damage+1%",
 		"x": 256,
 		"y": 32,
 		"root": false
 	},
 	"5kcs5b8ne9c30zwn": {
 		"definition": "health+2",
-		"x": 288,
+		"x": 224,
 		"y": 0,
 		"root": false
 	},
 	"ybvq1ijnytlldmmy": {
 		"definition": "melee_damage+1%",
-		"x": 192,
-		"y": -64,
+		"x": 128,
+		"y": -32,
 		"root": false
 	},
 	"inctw0dlvdx7wrf0": {
 		"definition": "melee_damage+1%",
-		"x": 224,
-		"y": -96,
+		"x": 160,
+		"y": -32,
 		"root": false
 	},
 	"xb84xgtz2cynhxe2": {
 		"definition": "melee_damage+1%",
-		"x": 256,
-		"y": -64,
+		"x": 192,
+		"y": -32,
 		"root": false
 	},
 	"4q8hsjuia145trv7": {
 		"definition": "ranged_damage+1%",
-		"x": 192,
-		"y": 64,
+		"x": 128,
+		"y": 32,
 		"root": false
 	},
 	"7i77726t2uhbe1oh": {
 		"definition": "ranged_damage+1%",
-		"x": 256,
-		"y": 64,
+		"x": 192,
+		"y": 32,
 		"root": false
 	},
 	"9hqz9uonnud6t9rw": {
 		"definition": "ranged_damage+1%",
-		"x": 224,
-		"y": 96,
+		"x": 160,
+		"y": 32,
 		"root": false
 	},
 	"1sd5kv4wi1ylacx8": {
 		"definition": "ranged_damage_multi+2%",
-		"x": 224,
+		"x": 192,
 		"y": 64,
 		"root": false
 	},
 	"ydcjvatyvt2o7etu": {
 		"definition": "melee_damage_multi+2%",
-		"x": 224,
+		"x": 192,
 		"y": -64,
 		"root": false
 	},
 	"fau41sxkpniul48c": {
 		"definition": "rangerSignatureDisengageMarksman",
-		"x": 320,
+		"x": 256,
 		"y": 0,
+		"root": false
+	},
+	"p6lop7crezd63qxz": {
+		"definition": "spell_crit_chance_multi+1%",
+		"x": -64,
+		"y": 0,
+		"root": false
+	},
+	"k06w5rl36bw6ltdw": {
+		"definition": "ranged_damage_multi+2%",
+		"x": 0,
+		"y": -64,
+		"root": false
+	},
+	"qerw03l9ypwl67cl": {
+		"definition": "movement_speed_multi+1.5%",
+		"x": 64,
+		"y": 0,
+		"root": false
+	},
+	"ntl6t82dx4trymtz": {
+		"definition": "movement_speed_multi+1.5%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"fv9u51en0gnr42sg": {
+		"definition": "rangerReveal",
+		"x": -64,
+		"y": 128,
+		"root": false
+	},
+	"8qujpjd26hnzorvc": {
+		"definition": "rangerTamer",
+		"x": -32,
+		"y": 128,
+		"root": false
+	},
+	"p3nyz0ovok45zgdd": {
+		"definition": "rangerBonded",
+		"x": 0,
+		"y": 128,
+		"root": false
+	},
+	"kp8fomkuvt4mo5rx": {
+		"definition": "rangerTrained",
+		"x": 32,
+		"y": 128,
+		"root": false
+	},
+	"yx0lq81aedw5u765": {
+		"definition": "rangerIncognito",
+		"x": 64,
+		"y": 128,
+		"root": false
+	},
+	"jj2x90x4mspo7o00": {
+		"definition": "jump_multi+2%",
+		"x": 0,
+		"y": 32,
 		"root": false
 	}
 }

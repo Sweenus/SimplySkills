@@ -1437,7 +1437,7 @@
 		]
 	},
 	"berserkerPath": {
-		"title": "Path of the §bBerserker§7",
+		"title": "Path of the §bBerserker§7 \n\n§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1761,7 +1761,7 @@
 		]
 	},
 	"wayfarerSlender": {
-		"title": "§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness",
+		"title": "§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1779,7 +1779,7 @@
 		]
 	},
 	"roguePath": {
-		"title": "Path of the §bRogue§7",
+		"title": "Path of the §bRogue§7 \n\n§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2013,7 +2013,7 @@
 		]
 	},
 	"rangerPath": {
-		"title": "Path of the §bRanger§7",
+		"title": "Path of the §bRanger§7 \n\n§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2337,7 +2337,7 @@
 		]
 	},
 	"wizardPath": {
-		"title": "Path of the §bWizard§7",
+		"title": "Path of the §bWizard§7 \n\n§7§a[Frail]§7 \nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

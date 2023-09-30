@@ -1,6 +1,6 @@
 {
 	"unlocked_by_default": false,
-	"exclusive_root": true,
+	"exclusive_root": false,
 	"title": "Wizard Specialisation",
 	"icon": {
 		"type": "texture",

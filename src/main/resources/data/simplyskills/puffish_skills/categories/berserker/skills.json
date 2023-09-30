@@ -3,258 +3,162 @@
 		"definition": "berserkerSignatureBloodthirsty",
 		"x": 0,
 		"y": -32,
-		"root": true
+		"root": false
 	},
 	"is053f9imz801s57": {
 		"definition": "berserkerSignatureBerserking",
 		"x": 32,
 		"y": 0,
-		"root": true
+		"root": false
 	},
 	"kp8uei8ppni71b5x": {
 		"definition": "berserkerSignatureRampage",
 		"x": -32,
 		"y": 0,
-		"root": true
-	},
-	"sijjytlw63x30lo1": {
-		"definition": "melee_damage+1%",
-		"x": -64,
-		"y": -32,
-		"root": false
-	},
-	"60jlbqy35n3p7hgt": {
-		"definition": "melee_damage+1%",
-		"x": -96,
-		"y": -32,
-		"root": false
-	},
-	"zh9z1xgwpbbd6qzh": {
-		"definition": "melee_damage+1%",
-		"x": -128,
-		"y": -32,
-		"root": false
-	},
-	"k68fxum061vakhn7": {
-		"definition": "stamina+5%",
-		"x": 64,
-		"y": -32,
-		"root": false
-	},
-	"1wzxcfo1xu355w0t": {
-		"definition": "stamina+5%",
-		"x": 96,
-		"y": -32,
-		"root": false
-	},
-	"jcy8urbofpz8r8l8": {
-		"definition": "stamina+5%",
-		"x": 128,
-		"y": -32,
-		"root": false
-	},
-	"yjb60vx88rncxael": {
-		"definition": "attack_speed+1%",
-		"x": -64,
-		"y": 32,
-		"root": false
-	},
-	"x2tkbhdlli4196kb": {
-		"definition": "attack_speed+1%",
-		"x": -96,
-		"y": 32,
-		"root": false
-	},
-	"0lo9yq32zev3en79": {
-		"definition": "attack_speed+1%",
-		"x": -128,
-		"y": 32,
-		"root": false
-	},
-	"esl2ihsekhtvno0m": {
-		"definition": "attack_speed+1%",
-		"x": 64,
-		"y": 32,
-		"root": false
-	},
-	"fi3thxulvxjxnkuk": {
-		"definition": "attack_speed+1%",
-		"x": 96,
-		"y": 32,
-		"root": false
-	},
-	"mou5ko1holell4bk": {
-		"definition": "attack_speed+1%",
-		"x": 128,
-		"y": 32,
-		"root": false
-	},
-	"gut6qwnsv5scxdtc": {
-		"definition": "resistance+1%",
-		"x": -32,
-		"y": -64,
-		"root": false
-	},
-	"wy6lqotfbp45x8mr": {
-		"definition": "resistance+1%",
-		"x": -32,
-		"y": -96,
-		"root": false
-	},
-	"hsn2x8bjrqicrye1": {
-		"definition": "resistance+1%",
-		"x": -32,
-		"y": -128,
-		"root": false
-	},
-	"5ydaz37vtrxsxmzd": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -64,
-		"root": false
-	},
-	"9xnb5hf7hmjz0y5q": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -96,
-		"root": false
-	},
-	"7sh3662ne05az22w": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -128,
-		"root": false
-	},
-	"7pfa8jlp9wbpth56": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 96,
-		"y": 96,
-		"root": false
-	},
-	"thzh6bjmnz81pv7y": {
-		"definition": "stamina_multi+7%",
-		"x": -160,
-		"y": 0,
-		"root": false
-	},
-	"hm0sv1mw897nwyoa": {
-		"definition": "stamina_multi+7%",
-		"x": 160,
-		"y": 0,
-		"root": false
-	},
-	"eh8ga91br57itf5x": {
-		"definition": "stamina_multi+7%",
-		"x": 0,
-		"y": -160,
-		"root": false
-	},
-	"4tl7lknur17awyyw": {
-		"definition": "attack_speed_multi+2%",
-		"x": -32,
-		"y": 128,
-		"root": false
-	},
-	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+2%",
-		"x": 32,
-		"y": 128,
-		"root": false
-	},
-	"rksb6gd2etml65qv": {
-		"definition": "melee_damage_multi+2%",
-		"x": -96,
-		"y": -160,
 		"root": false
 	},
 	"7ehcxvpa776xcy51": {
 		"definition": "health+2",
-		"x": -160,
-		"y": -96,
+		"x": 32,
+		"y": 96,
 		"root": false
 	},
 	"ftetccexo20abf0m": {
 		"definition": "melee_damage_multi+2%",
-		"x": 96,
-		"y": -160,
-		"root": false
-	},
-	"uj5kjh3rsk0mlv3f": {
-		"definition": "resistance_multi+2%",
-		"x": 160,
-		"y": -96,
-		"root": false
-	},
-	"fl23b1d29d40ps4r": {
-		"definition": "attack_speed+1%",
-		"x": -96,
+		"x": -32,
 		"y": 96,
 		"root": false
 	},
 	"su4sszhl1j15e42a": {
 		"definition": "health+2",
-		"x": 0,
+		"x": 64,
 		"y": 96,
-		"root": false
-	},
-	"vewk0q1b9sb0csdb": {
-		"definition": "health+2",
-		"x": 0,
-		"y": 160,
 		"root": false
 	},
 	"xkwzbexxmoz9tf60": {
 		"definition": "berserkerSignatureRampageCharge",
-		"x": -192,
+		"x": -64,
 		"y": 0,
 		"root": false
 	},
 	"xsak3gay0v3z4inb": {
 		"definition": "berserkerSignatureRampageChargeRelentless",
-		"x": -224,
-		"y": -32,
+		"x": -64,
+		"y": 32,
 		"root": false
 	},
 	"ipbguvfzpm9nvg8j": {
 		"definition": "berserkerSignatureRampageChargeImmob",
-		"x": -224,
-		"y": 32,
+		"x": -64,
+		"y": -32,
 		"root": false
 	},
 	"sistiph4u2wuydzp": {
 		"definition": "berserkerSignatureBerserkingLeap",
-		"x": 192,
+		"x": 64,
 		"y": 0,
 		"root": false
 	},
 	"cdbv71rvffagxjvo": {
 		"definition": "berserkerSignatureBerserkingLeapImmob",
-		"x": 224,
-		"y": -32,
+		"x": 64,
+		"y": 32,
 		"root": false
 	},
 	"9d9t6hnhyc248jy0": {
 		"definition": "berserkerSignatureBerserkingLeapPull",
-		"x": 224,
-		"y": 32,
+		"x": 64,
+		"y": -32,
 		"root": false
 	},
 	"1gd45mne4etmyrl1": {
 		"definition": "berserkerSignatureBloodthirstyMighty",
 		"x": 0,
-		"y": -192,
+		"y": -64,
 		"root": false
 	},
 	"ps3dowdkawsjwezw": {
 		"definition": "berserkerSignatureBloodthirstyTireless",
-		"x": -192,
-		"y": -128,
+		"x": -32,
+		"y": -64,
 		"root": false
 	},
 	"ai60rd7n2gyc6sui": {
 		"definition": "berserkerSignatureBloodthirstyTremor",
-		"x": 192,
-		"y": -128,
+		"x": 32,
+		"y": -64,
 		"root": false
+	},
+	"1jxua1ewarhgwsqc": {
+		"definition": "berserkerSwordMastery",
+		"x": -64,
+		"y": 96,
+		"root": false
+	},
+	"xtg8vi8jq27oldaf": {
+		"definition": "berserkerSwordMasteryProficient",
+		"x": -96,
+		"y": 128,
+		"root": false
+	},
+	"332gej0dze54k9e5": {
+		"definition": "berserkerSwordMasterySkilled",
+		"x": -128,
+		"y": 160,
+		"root": false
+	},
+	"lcu7iijs0154p3kn": {
+		"definition": "berserkerAxeMastery",
+		"x": -32,
+		"y": 128,
+		"root": false
+	},
+	"cebgaybo8l8n5ned": {
+		"definition": "berserkerAxeMasteryProficient",
+		"x": -64,
+		"y": 160,
+		"root": false
+	},
+	"f0ccx88f3n1jia44": {
+		"definition": "berserkerAxeMasterySkilled",
+		"x": -96,
+		"y": 192,
+		"root": false
+	},
+	"3lk07z8aix5nre3m": {
+		"definition": "berserkerIgnorePain",
+		"x": 32,
+		"y": 128,
+		"root": false
+	},
+	"7lz4qiw9gyl6jn9f": {
+		"definition": "berserkerIgnorePainProficient",
+		"x": 64,
+		"y": 160,
+		"root": false
+	},
+	"z36r69d3rz8gp9yr": {
+		"definition": "berserkerIgnorePainSkilled",
+		"x": 96,
+		"y": 192,
+		"root": false
+	},
+	"lt43usrmbd29eumq": {
+		"definition": "berserkerChallenge",
+		"x": 96,
+		"y": 128,
+		"root": false
+	},
+	"umngr6xphan4ab80": {
+		"definition": "berserkerExploit",
+		"x": 128,
+		"y": 160,
+		"root": false
+	},
+	"3vjk31efdt0gdohk": {
+		"definition": "health+2",
+		"x": 0,
+		"y": 0,
+		"root": true
 	}
 }

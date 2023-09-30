@@ -3,348 +3,180 @@
 		"definition": "crusaderSignatureHeavensmithsCall",
 		"x": 0,
 		"y": -32,
-		"root": true
+		"root": false
 	},
 	"is053f9imz801s57": {
 		"definition": "crusaderSignatureConsecration",
 		"x": 32,
 		"y": 0,
-		"root": true
+		"root": false
 	},
 	"kp8uei8ppni71b5x": {
 		"definition": "crusaderSignatureSacredOnslaught",
 		"x": -32,
 		"y": 0,
-		"root": true
-	},
-	"sijjytlw63x30lo1": {
-		"definition": "melee_damage+1%",
-		"x": -64,
-		"y": -32,
-		"root": false
-	},
-	"60jlbqy35n3p7hgt": {
-		"definition": "melee_damage+1%",
-		"x": -96,
-		"y": -32,
-		"root": false
-	},
-	"zh9z1xgwpbbd6qzh": {
-		"definition": "melee_damage+1%",
-		"x": -128,
-		"y": -32,
-		"root": false
-	},
-	"k68fxum061vakhn7": {
-		"definition": "spell_healing_power_additive+1%",
-		"x": 64,
-		"y": -32,
-		"root": false
-	},
-	"1wzxcfo1xu355w0t": {
-		"definition": "spell_healing_power_additive+1%",
-		"x": 96,
-		"y": -32,
-		"root": false
-	},
-	"jcy8urbofpz8r8l8": {
-		"definition": "spell_healing_power_additive+1%",
-		"x": 128,
-		"y": -32,
-		"root": false
-	},
-	"yjb60vx88rncxael": {
-		"definition": "stamina+5%",
-		"x": -64,
-		"y": 32,
-		"root": false
-	},
-	"x2tkbhdlli4196kb": {
-		"definition": "stamina+5%",
-		"x": -96,
-		"y": 32,
-		"root": false
-	},
-	"0lo9yq32zev3en79": {
-		"definition": "stamina+5%",
-		"x": -128,
-		"y": 32,
-		"root": false
-	},
-	"esl2ihsekhtvno0m": {
-		"definition": "melee_damage+1%",
-		"x": 64,
-		"y": 32,
-		"root": false
-	},
-	"fi3thxulvxjxnkuk": {
-		"definition": "melee_damage+1%",
-		"x": 96,
-		"y": 32,
-		"root": false
-	},
-	"mou5ko1holell4bk": {
-		"definition": "melee_damage+1%",
-		"x": 128,
-		"y": 32,
-		"root": false
-	},
-	"gut6qwnsv5scxdtc": {
-		"definition": "melee_damage+1%",
-		"x": -32,
-		"y": -64,
-		"root": false
-	},
-	"wy6lqotfbp45x8mr": {
-		"definition": "melee_damage+1%",
-		"x": -32,
-		"y": -96,
-		"root": false
-	},
-	"hsn2x8bjrqicrye1": {
-		"definition": "melee_damage+1%",
-		"x": -32,
-		"y": -128,
-		"root": false
-	},
-	"5ydaz37vtrxsxmzd": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -64,
-		"root": false
-	},
-	"9xnb5hf7hmjz0y5q": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -96,
-		"root": false
-	},
-	"7sh3662ne05az22w": {
-		"definition": "stamina+5%",
-		"x": 32,
-		"y": -128,
-		"root": false
-	},
-	"7pfa8jlp9wbpth56": {
-		"definition": "melee_damage+1%",
-		"x": 96,
-		"y": 96,
-		"root": false
-	},
-	"thzh6bjmnz81pv7y": {
-		"definition": "melee_damage_multi+2%",
-		"x": -160,
-		"y": 0,
-		"root": false
-	},
-	"hm0sv1mw897nwyoa": {
-		"definition": "spell_healing_power_multi+1%",
-		"x": 160,
-		"y": 0,
-		"root": false
-	},
-	"eh8ga91br57itf5x": {
-		"definition": "melee_damage_multi+2%",
-		"x": 0,
-		"y": -160,
-		"root": false
-	},
-	"4tl7lknur17awyyw": {
-		"definition": "stamina_multi+7%",
-		"x": -32,
-		"y": 128,
-		"root": false
-	},
-	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+2%",
-		"x": 32,
-		"y": 128,
-		"root": false
-	},
-	"rksb6gd2etml65qv": {
-		"definition": "melee_damage+1%",
-		"x": -96,
-		"y": -160,
-		"root": false
-	},
-	"7ehcxvpa776xcy51": {
-		"definition": "health+2",
-		"x": -160,
-		"y": -96,
-		"root": false
-	},
-	"ftetccexo20abf0m": {
-		"definition": "melee_damage+1%",
-		"x": 96,
-		"y": -160,
-		"root": false
-	},
-	"uj5kjh3rsk0mlv3f": {
-		"definition": "resistance_multi+2%",
-		"x": 160,
-		"y": -96,
-		"root": false
-	},
-	"fl23b1d29d40ps4r": {
-		"definition": "stamina+5%",
-		"x": -96,
-		"y": 96,
-		"root": false
-	},
-	"su4sszhl1j15e42a": {
-		"definition": "health+2",
-		"x": 0,
-		"y": 96,
-		"root": false
-	},
-	"vewk0q1b9sb0csdb": {
-		"definition": "health+2",
-		"x": 0,
-		"y": 160,
-		"root": false
-	},
-	"xkwzbexxmoz9tf60": {
-		"definition": "melee_damage_multi+2%",
-		"x": -192,
-		"y": 0,
 		"root": false
 	},
 	"xsak3gay0v3z4inb": {
 		"definition": "crusaderSignatureSacredOnslaughtHeal",
-		"x": -224,
-		"y": -32,
+		"x": -128,
+		"y": -64,
 		"root": false
 	},
 	"ipbguvfzpm9nvg8j": {
 		"definition": "crusaderSignatureSacredOnslaughtDefend",
-		"x": -224,
-		"y": 32,
-		"root": false
-	},
-	"sistiph4u2wuydzp": {
-		"definition": "spell_healing_power_multi+1%",
-		"x": 192,
-		"y": 0,
+		"x": -160,
+		"y": -32,
 		"root": false
 	},
 	"cdbv71rvffagxjvo": {
 		"definition": "crusaderSignatureConsecrationMighty",
-		"x": 224,
-		"y": -32,
+		"x": 128,
+		"y": -64,
 		"root": false
 	},
 	"9d9t6hnhyc248jy0": {
 		"definition": "crusaderSignatureConsecrationSpellforged",
-		"x": 224,
-		"y": 32,
+		"x": 160,
+		"y": 0,
 		"root": false
 	},
 	"1gd45mne4etmyrl1": {
 		"definition": "crusaderSignatureHeavensmithsCallEffect",
 		"x": 0,
-		"y": -192,
-		"root": false
-	},
-	"ps3dowdkawsjwezw": {
-		"definition": "stamina_multi+7%",
-		"x": -192,
-		"y": -128,
-		"root": false
-	},
-	"ai60rd7n2gyc6sui": {
-		"definition": "spell_healing_power_multi+1%",
-		"x": 192,
 		"y": -128,
 		"root": false
 	},
 	"4rmb8nu7b0iogk54": {
 		"definition": "crusaderAegis",
 		"x": 0,
-		"y": 32,
+		"y": 64,
 		"root": false
 	},
 	"jx3mz6cj3x6pav5l": {
 		"definition": "crusaderRetribution",
-		"x": -96,
-		"y": -96,
+		"x": -32,
+		"y": 64,
 		"root": false
 	},
 	"zv95vb80wc1dysx9": {
 		"definition": "crusaderExhaustiveRecovery",
-		"x": 96,
-		"y": -96,
+		"x": 32,
+		"y": 64,
 		"root": false
 	},
 	"4p70f1lw2j9ogrvz": {
 		"definition": "crusaderSignatureConsecrationWard",
-		"x": 128,
-		"y": 128,
+		"x": 160,
+		"y": 32,
 		"root": false
 	},
 	"lumiaobsxfeefc2g": {
 		"definition": "crusaderSignatureConsecrationTaunt",
-		"x": 32,
-		"y": 192,
+		"x": 128,
+		"y": 64,
 		"root": false
 	},
 	"vq2yx5g5wqatozfj": {
 		"definition": "crusaderSignatureConsecrationDuration",
-		"x": 224,
-		"y": 0,
+		"x": 160,
+		"y": -32,
 		"root": false
 	},
 	"rmjv991vg9onqmrw": {
 		"definition": "crusaderSignatureSacredOnslaughtMighty",
-		"x": -64,
-		"y": 160,
+		"x": -128,
+		"y": 64,
 		"root": false
 	},
 	"sp16ctx7bbkpd4bz": {
 		"definition": "crusaderSignatureSacredOnslaughtStun",
-		"x": -128,
-		"y": 128,
+		"x": -160,
+		"y": 32,
 		"root": false
 	},
 	"u2ukao7v37zmiyxe": {
 		"definition": "crusaderSignatureHeavensmithsCallTaunt",
-		"x": -224,
-		"y": -160,
+		"x": -64,
+		"y": -128,
 		"root": false
 	},
 	"tc1tmlw0t5e0ieuw": {
 		"definition": "crusaderSignatureHeavensmithsCallMark",
-		"x": 224,
-		"y": -160,
+		"x": 64,
+		"y": -128,
 		"root": false
 	},
 	"pv9qamft1cecuw43": {
 		"definition": "crusaderSignatureHeavensmithsCallEffectExhaust",
 		"x": -32,
-		"y": -224,
+		"y": -160,
 		"root": false
 	},
 	"aqir5hfk5syii7t6": {
 		"definition": "crusaderSignatureHeavensmithsCallEffectMighty",
 		"x": 32,
-		"y": -224,
+		"y": -160,
 		"root": false
 	},
-	"w6bvj6oou8u7o9mn": {
-		"definition": "health+2",
-		"x": -96,
-		"y": 0,
-		"root": false
-	},
-	"x73d7yal5wpzonsb": {
-		"definition": "health+2",
-		"x": 96,
-		"y": 0,
-		"root": false
-	},
-	"5n4w4rnw668o6tip": {
+	"kzj431vrpy8f109q": {
 		"definition": "health+2",
 		"x": 0,
-		"y": -96,
+		"y": 0,
+		"root": true
+	},
+	"es2agw9qqqv6ayu4": {
+		"definition": "health+2",
+		"x": 64,
+		"y": 0,
+		"root": false
+	},
+	"v84xz68i7bvphs14": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 64,
+		"y": 32,
+		"root": false
+	},
+	"oe71a8ur5veqof1h": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 64,
+		"y": -32,
+		"root": false
+	},
+	"llccr2ypb9jaf1i6": {
+		"definition": "melee_damage_multi+2%",
+		"x": -32,
+		"y": -64,
+		"root": false
+	},
+	"cglzhcyqtmxacfq7": {
+		"definition": "melee_damage_multi+2%",
+		"x": 32,
+		"y": -64,
+		"root": false
+	},
+	"dxm1jy26l20wypsz": {
+		"definition": "stamina_multi+7%",
+		"x": 0,
+		"y": -64,
+		"root": false
+	},
+	"ri5kp04lrc1qxtx9": {
+		"definition": "resistance_multi+2%",
+		"x": -64,
+		"y": 0,
+		"root": false
+	},
+	"uv9k7kv3aqbzfr64": {
+		"definition": "health+2",
+		"x": -64,
+		"y": -32,
+		"root": false
+	},
+	"p68bkrnaaagohu81": {
+		"definition": "stamina_multi+7%",
+		"x": -64,
+		"y": 32,
 		"root": false
 	}
 }

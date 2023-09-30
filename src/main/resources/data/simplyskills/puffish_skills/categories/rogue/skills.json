@@ -3,276 +3,168 @@
 		"definition": "rogueSignatureSiphoningStrikes",
 		"x": 0,
 		"y": -32,
-		"root": true
+		"root": false
 	},
 	"is053f9imz801s57": {
 		"definition": "rogueSignatureEvasion",
 		"x": 32,
 		"y": 0,
-		"root": true
+		"root": false
 	},
 	"kp8uei8ppni71b5x": {
 		"definition": "rogueSignaturePreparation",
 		"x": -32,
 		"y": 0,
-		"root": true
-	},
-	"sijjytlw63x30lo1": {
-		"definition": "melee_damage+1%",
-		"x": -64,
-		"y": -32,
-		"root": false
-	},
-	"60jlbqy35n3p7hgt": {
-		"definition": "melee_damage+1%",
-		"x": -96,
-		"y": -32,
-		"root": false
-	},
-	"zh9z1xgwpbbd6qzh": {
-		"definition": "melee_damage+1%",
-		"x": -128,
-		"y": -32,
-		"root": false
-	},
-	"k68fxum061vakhn7": {
-		"definition": "movement_speed+1%",
-		"x": 64,
-		"y": -32,
-		"root": false
-	},
-	"1wzxcfo1xu355w0t": {
-		"definition": "movement_speed+1%",
-		"x": 96,
-		"y": -32,
-		"root": false
-	},
-	"jcy8urbofpz8r8l8": {
-		"definition": "movement_speed+1%",
-		"x": 128,
-		"y": -32,
-		"root": false
-	},
-	"yjb60vx88rncxael": {
-		"definition": "attack_speed+1%",
-		"x": -64,
-		"y": 32,
-		"root": false
-	},
-	"x2tkbhdlli4196kb": {
-		"definition": "attack_speed+1%",
-		"x": -96,
-		"y": 32,
-		"root": false
-	},
-	"0lo9yq32zev3en79": {
-		"definition": "attack_speed+1%",
-		"x": -128,
-		"y": 32,
-		"root": false
-	},
-	"esl2ihsekhtvno0m": {
-		"definition": "attack_speed+1%",
-		"x": 64,
-		"y": 32,
-		"root": false
-	},
-	"fi3thxulvxjxnkuk": {
-		"definition": "attack_speed+1%",
-		"x": 96,
-		"y": 32,
-		"root": false
-	},
-	"mou5ko1holell4bk": {
-		"definition": "attack_speed+1%",
-		"x": 128,
-		"y": 32,
-		"root": false
-	},
-	"gut6qwnsv5scxdtc": {
-		"definition": "attack_speed+1%",
-		"x": -32,
-		"y": -64,
-		"root": false
-	},
-	"wy6lqotfbp45x8mr": {
-		"definition": "attack_speed+1%",
-		"x": -32,
-		"y": -96,
-		"root": false
-	},
-	"hsn2x8bjrqicrye1": {
-		"definition": "attack_speed+1%",
-		"x": -32,
-		"y": -128,
-		"root": false
-	},
-	"5ydaz37vtrxsxmzd": {
-		"definition": "jump+1%",
-		"x": 32,
-		"y": -64,
-		"root": false
-	},
-	"9xnb5hf7hmjz0y5q": {
-		"definition": "jump+1%",
-		"x": 32,
-		"y": -96,
-		"root": false
-	},
-	"7sh3662ne05az22w": {
-		"definition": "jump+1%",
-		"x": 32,
-		"y": -128,
-		"root": false
-	},
-	"7pfa8jlp9wbpth56": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 96,
-		"y": 96,
-		"root": false
-	},
-	"f1jumlskdfsfhhm0": {
-		"definition": "attack_speed_multi+2%",
-		"x": -96,
-		"y": 96,
-		"root": false
-	},
-	"thzh6bjmnz81pv7y": {
-		"definition": "melee_damage_multi+2%",
-		"x": -160,
-		"y": 0,
-		"root": false
-	},
-	"hm0sv1mw897nwyoa": {
-		"definition": "movement_speed_multi+1.5%",
-		"x": 160,
-		"y": 0,
-		"root": false
-	},
-	"eh8ga91br57itf5x": {
-		"definition": "attack_speed_multi+2%",
-		"x": 0,
-		"y": -160,
-		"root": false
-	},
-	"4tl7lknur17awyyw": {
-		"definition": "attack_speed_multi+2%",
-		"x": -32,
-		"y": 128,
-		"root": false
-	},
-	"ergluvupfg6w6jpm": {
-		"definition": "melee_damage_multi+2%",
-		"x": 32,
-		"y": 128,
-		"root": false
-	},
-	"88icmjo4rld0ho1c": {
-		"definition": "jump_multi+2%",
-		"x": 96,
-		"y": -160,
-		"root": false
-	},
-	"udktsx2tk7s1fubm": {
-		"definition": "attack_speed_multi+2%",
-		"x": 0,
-		"y": 160,
-		"root": false
-	},
-	"sshvzwg4h33g23uk": {
-		"definition": "melee_damage_multi+2%",
-		"x": 0,
-		"y": 96,
-		"root": false
-	},
-	"kst2sn4oz9etxp7s": {
-		"definition": "melee_damage_multi+2%",
-		"x": -96,
-		"y": -160,
-		"root": false
-	},
-	"og0f28ciyhej401p": {
-		"definition": "attack_speed_multi+2%",
-		"x": -160,
-		"y": -64,
-		"root": false
-	},
-	"i6j92v84sfyz0n0s": {
-		"definition": "attack_speed_multi+2%",
-		"x": 160,
-		"y": -64,
-		"root": false
-	},
-	"b06su6ljj85im9ly": {
-		"definition": "attack_speed_multi+2%",
-		"x": -128,
-		"y": -96,
-		"root": false
-	},
-	"m1rajq89mn99ucwl": {
-		"definition": "attack_speed_multi+2%",
-		"x": 128,
-		"y": -96,
 		"root": false
 	},
 	"j18t77qu8eryc741": {
 		"definition": "rogueSignaturePreparationShadowstrikeVampire",
-		"x": -224,
+		"x": -64,
 		"y": -32,
 		"root": false
 	},
 	"z00pa0lut7phuhmg": {
 		"definition": "rogueSignaturePreparationShadowstrikeBolt",
-		"x": -224,
+		"x": -64,
 		"y": 32,
 		"root": false
 	},
 	"m2fqj7bmtsh33fvs": {
 		"definition": "rogueSignaturePreparationShadowstrike",
-		"x": -192,
+		"x": -64,
 		"y": 0,
 		"root": false
 	},
 	"4jwi6zro7iaw9ql7": {
 		"definition": "rogueSignatureEvasionFanOfBlades",
-		"x": 192,
+		"x": 64,
 		"y": 0,
 		"root": false
 	},
 	"rec4jjyl154yctln": {
 		"definition": "rogueSignatureEvasionFanOfBladesDisenchantment",
-		"x": 224,
+		"x": 64,
 		"y": -32,
 		"root": false
 	},
 	"1b9ydjr1at5hhjy7": {
 		"definition": "rogueSignatureEvasionFanOfBladesAssault",
-		"x": 224,
+		"x": 96,
 		"y": 0,
 		"root": false
 	},
 	"l3bhn14oz1ex8opa": {
 		"definition": "rogueSignatureEvasionFanOfBladesRenewal",
-		"x": 224,
+		"x": 64,
 		"y": 32,
 		"root": false
 	},
 	"eeq90ywusncgm78g": {
 		"definition": "rogueSignatureSiphoningStrikesVanish",
 		"x": 0,
-		"y": -192,
+		"y": -64,
 		"root": false
 	},
 	"uhhbbhcdy12yhoz3": {
 		"definition": "rogueSignatureSiphoningStrikesAura",
-		"x": 160,
-		"y": -128,
+		"x": 32,
+		"y": -64,
 		"root": false
 	},
 	"4di5j622zoipfmd3": {
 		"definition": "rogueSignatureSiphoningStrikesMighty",
-		"x": -160,
-		"y": -128,
+		"x": -32,
+		"y": -64,
+		"root": false
+	},
+	"bh5p3wcfyr5j1g0a": {
+		"definition": "movement_speed_multi+1.5%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"rbk8kzre4qe2h1tl": {
+		"definition": "rogueOpportunisticMastery",
+		"x": -64,
+		"y": 96,
+		"root": false
+	},
+	"z0a2luq1lo7ykzw0": {
+		"definition": "rogueOpportunisticMasteryProficient",
+		"x": -96,
+		"y": 128,
+		"root": false
+	},
+	"0v5tta7nkv1kmkkn": {
+		"definition": "rogueOpportunisticMasterySkilled",
+		"x": -128,
+		"y": 160,
+		"root": false
+	},
+	"7aqop6zuwhfdwize": {
+		"definition": "rogueEvasionMastery",
+		"x": -32,
+		"y": 128,
+		"root": false
+	},
+	"85qwv97jzdwgv7pi": {
+		"definition": "rogueEvasionMasteryProficient",
+		"x": -64,
+		"y": 160,
+		"root": false
+	},
+	"h2r3r2nzs1wgwneo": {
+		"definition": "rogueEvasionMasterySkilled",
+		"x": -96,
+		"y": 192,
+		"root": false
+	},
+	"z81tc1o8aj7vkgd3": {
+		"definition": "rogueExploitation",
+		"x": 32,
+		"y": 128,
+		"root": false
+	},
+	"zu3qthjsb2ngrync": {
+		"definition": "rogueRecovery",
+		"x": 64,
+		"y": 160,
+		"root": false
+	},
+	"ol1dv1xkjmroijvf": {
+		"definition": "rogueShadowVeil",
+		"x": 96,
+		"y": 192,
+		"root": false
+	},
+	"eudmwpnv5gv1d21w": {
+		"definition": "rogueDeflection",
+		"x": 64,
+		"y": 96,
+		"root": false
+	},
+	"yij7zyx012k25wj3": {
+		"definition": "rogueFleetfooted",
+		"x": 96,
+		"y": 128,
+		"root": false
+	},
+	"vmq59ny59vg9w0b1": {
+		"definition": "rogueSmokeBomb",
+		"x": 128,
+		"y": 160,
+		"root": false
+	},
+	"q8edb13avq6j8eyc": {
+		"definition": "melee_damage_multi+2%",
+		"x": -32,
+		"y": 96,
+		"root": false
+	},
+	"dem1xtd1cp97mmqu": {
+		"definition": "attack_speed_multi+2%",
+		"x": 32,
+		"y": 96,
 		"root": false
 	}
 }

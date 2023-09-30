@@ -1,6 +1,6 @@
 {
 	"unlocked_by_default": false,
-	"exclusive_root": true,
+	"exclusive_root": false,
 	"title": "Berserker Specialisation",
 	"icon": {
 		"type": "texture",
