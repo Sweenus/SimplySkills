@@ -1,5 +1,6 @@
 {
 	"unlocked_by_default": true,
+	"spent_points_limit": 42,
 	"exclusive_root": true,
 	"title": "Simply Skills",
 	"icon": {

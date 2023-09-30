@@ -9,13 +9,13 @@ public class SkillReferencePosition {
     public static String cleansing = "yj6vt0k4l9cocyfu";
 
     //Warrior
-    public static String warriorHeavyArmorMastery = "33yrf4sanqamynbh";
-    public static String warriorMediumArmorMastery = "yb5s7h7a26iyb6ue";
+    public static String warriorHeavyArmorMastery = "5o6a4ijsol0u1qti";
+    public static String warriorMediumArmorMastery = "odfah5skrjwvwmn3";
     public static String warriorSpellbreaker = "ox9vv82ecpwjbnd4";
-    public static String warriorGoliath = "ku665yrv27jaqb22";
-    public static String warriorHeavyWeight = "4we84brd1sfq0axo";
-    public static String warriorDeathDefy = "aj9mm9g45j47ovky";
-    public static String warriorFrenzy = "8wcgg3b3wjlt0or6";
+    public static String warriorGoliath = "fm976fajc2qb9fs0";
+    public static String warriorHeavyWeight = "hdiq3q8b406mn5wi";
+    public static String warriorDeathDefy = "tig3f7onxxvz33cw";
+    public static String warriorFrenzy = "lzbf1rqhs7c0lwq9";
 
     // - Berserker
     public static String berserkerSwordMastery = "txzx7u6ssecd6kyd";
@@ -43,13 +43,13 @@ public class SkillReferencePosition {
 
     //Wayfarer
     public static String wayfarerSlender = "niwsndfx4z0fws02";
-    public static String wayfarerSneak = "mxfcq0i6qhcl01w4";
-    public static String wayfarerReflexive = "kphiwjls0sczidd4";
-    public static String wayfarerUnseen = "xbda1dlbg6had55q";
-    public static String wayfarerGuarding = "7fh2jhov4lvwtv83";
+    public static String wayfarerSneak = "10v0k6yq1cgim39a";
+    public static String wayfarerReflexive = "bnv46qh3cx1709r0";
+    public static String wayfarerUnseen = "ylr94qqqzkw4hf06";
+    public static String wayfarerGuarding = "apfs7w6sbchad164";
 
     // - Rogue
-    public static String wayfarerStealth = "ctpfiy20l0qyya7c";
+    public static String wayfarerStealth = "j4dlu4n82vj47dbp";
     public static String rogueBackstab = "i6k024rdikn2fxqi";
     public static String rogueExploitation = "t3eeosd4a0b7uzkv";
     public static String rogueRecovery = "s2p5ip72mt1o2oaj";
@@ -76,29 +76,29 @@ public class SkillReferencePosition {
     //Initiate
     public static String initiateFrail = "hikmww97flznt4e2";
     public static String initiateSlowfall = "cya5r7sa7fvpyq52";
-    public static String initiateNullification = "la7znvggcgu5n4c7";
-    public static String initiateEmpower = "1tmijb6kdx07bdxn";
-    public static String initiateAttuned = "go0fb3uqkjh2lo2p";
-    public static String initiateLightningRod = "5mx0f4qucfcpj2ho";
-    public static String initiateHasty = "i0rimp9zkdquevs3";
+    public static String initiateNullification = "f8wi4b3k2um39mq1";
+    public static String initiateEmpower = "dzixyn5tgtifq6rv";
+    public static String initiateAttuned = "6ebh5xoq0dutz8u4";
+    public static String initiateLightningRod = "dikky43lr7h6sn2t";
+    public static String initiateHasty = "pudmdza96cel9knj";
     public static String initiateEldritchEnfeeblement = "mzbt654gttd0tkvs";
-    public static String initiatePerilousPrecision = "nd5nz8mfmqlza859";
+    public static String initiatePerilousPrecision = "bnvgmcy3ruk5h4kx";
 
 
 
 
 
     // -- Paths --
-    public static String wizardPath = "38jnvjl6fov2u9my";
-    public static String spellbladePath = "r593tqjmrg93ffmz";
-    public static String berserkerPath = "a96zrmfir3clfype";
-    public static String roguePath = "axqnj1ey7ime9ds3";
-    public static String crusaderPath = "36h4f7pmpma8ggo0";
+    public static String wizardPath = "amtacp7z2f28pvtl";
+    public static String spellbladePath = "cxtj5vjpi93xqqal";
+    public static String berserkerPath = "fllh5lt74qbdfy90";
+    public static String roguePath = "ib0a72j4dae7m4dx";
+    public static String crusaderPath = "kx8w660c2twzgsj9";
     public static String frostguardPath = "mpy4mucglti3h3s2";
-    public static String rangerPath = "vtrkrrhmthwdpx5j";
-    public static String clericPath = "laujphdiv59vjb8l";
-    public static String necromancerPath = "8k3loavtl1eym5rb";
-    public static String shamanPath = "rexmoh5dv8pom5iu";
+    public static String rangerPath = "rlpa0zbspqxpn4vr";
+    public static String clericPath = "seovhlfjsltfbyp7";
+    public static String necromancerPath = "avppi98lihji7kr3";
+    public static String shamanPath = "ad89uxl6gnwb2xa5";
 
 
 
