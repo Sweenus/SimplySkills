@@ -612,7 +612,7 @@
 		"root": false
 	},
 	"a051uz4mfn1vedxt": {
-		"definition": "jump+1%",
+		"definition": "initiateSpellcloak",
 		"x": -384,
 		"y": -147.8016689125442,
 		"root": false
@@ -1758,9 +1758,81 @@
 		"root": false
 	},
 	"ae6o85ddrwkkzoxt": {
-		"definition": "jump+1%",
+		"definition": "initiateWhisperedWizardry",
 		"x": -192,
 		"y": -36.95041722813605,
+		"root": false
+	},
+	"m8wn2fnb3amuvbw8": {
+		"definition": "jump+1%",
+		"x": -224,
+		"y": -18.47520861406801,
+		"root": false
+	},
+	"c648uo3n5lg6391q": {
+		"definition": "jump+1%",
+		"x": -192,
+		"y": 0,
+		"root": false
+	},
+	"a3u1p5hs0ocz6nra": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -160,
+		"y": -18.475208614068023,
+		"root": false
+	},
+	"q1uaxmrtmk64exww": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -160,
+		"y": -55.42562584220407,
+		"root": false
+	},
+	"z76leqm64x89762p": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -192,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"cihtvwczngnc17rs": {
+		"definition": "jump+1%",
+		"x": -224,
+		"y": -55.425625842204056,
+		"root": false
+	},
+	"k8i3irwg63fw66dl": {
+		"definition": "movement_speed+1%",
+		"x": -416,
+		"y": -166.27687752661222,
+		"root": false
+	},
+	"998hidniyti4ysfo": {
+		"definition": "movement_speed+1%",
+		"x": -384,
+		"y": -184.75208614068023,
+		"root": false
+	},
+	"2dqkxlmm9ojqcysb": {
+		"definition": "movement_speed+1%",
+		"x": -352,
+		"y": -166.2768775266122,
+		"root": false
+	},
+	"xjpm72drgdn0nq7c": {
+		"definition": "jump+1%",
+		"x": -416,
+		"y": -129.32646029847618,
+		"root": false
+	},
+	"4pdntnvoj9mlruii": {
+		"definition": "jump+1%",
+		"x": -384,
+		"y": -110.85125168440814,
+		"root": false
+	},
+	"0lr50um3zug1pmw0": {
+		"definition": "jump+1%",
+		"x": -352,
+		"y": -129.32646029847615,
 		"root": false
 	}
 }

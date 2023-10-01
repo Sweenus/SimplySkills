@@ -83,6 +83,8 @@ public class SkillReferencePosition {
     public static String initiateHasty = "pudmdza96cel9knj";
     public static String initiateEldritchEnfeeblement = "mzbt654gttd0tkvs";
     public static String initiatePerilousPrecision = "bnvgmcy3ruk5h4kx";
+    public static String initiateWhisperedWizardry = "ae6o85ddrwkkzoxt";
+    public static String initiateSpellcloak = "a051uz4mfn1vedxt";
 
 
 

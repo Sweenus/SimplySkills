@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import net.spell_engine.internals.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.InitiateAbilities;
+import net.sweenus.simplyskills.abilities.SpellbladeAbilities;
 import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -40,8 +41,15 @@ public class SpellHelperMixin {
 
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
             InitiateAbilities.passiveInitiateEmpower(player, spellId);
-        if (player.hasStatusEffect(EffectRegistry.STEALTH))
+
+        if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
+            if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateWhisperedWizardry, player))
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 80, 2, 9);
+        } else if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateSpellcloak, player)
+                && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 40));
+        }
 
         if (FabricLoader.getInstance().isModLoaded("simplyswords")) {
             SimplySwordsGemEffects.spellshield(player);
@@ -52,6 +60,9 @@ public class SpellHelperMixin {
             WizardAbilities.passiveWizardSpellEcho(player, targets);
         }
 
+        if (HelperMethods.isUnlocked("simplyskills:spellblade", SkillReferencePosition.spellbladeWeaponExpert, player)) {
+            SpellbladeAbilities.effectSpellbladeWeaponExpert(player);
+        }
 
 
     }

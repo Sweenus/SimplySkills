@@ -2048,6 +2048,42 @@
 			}
 		]
 	},
+	"initiateWhisperedWizardry": {
+		"title": "§7§a[Whispered Wizardry]§7 \nCasting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_frail.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateWhisperedWizardry"
+				}
+			}
+		]
+	},
+	"initiateSpellcloak": {
+		"title": "§7§a[Spellcloak]§7 \nCasting a spell grants you brief Stealth, as long as you aren't currently Revealed.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_frail.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateSpellcloak"
+				}
+			}
+		]
+	},
 	"crusaderPath": {
 		"title": "Path of the §bCrusader§7\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
 		"frame": "goal",
@@ -2103,7 +2139,7 @@
 		]
 	},
 	"spellbladeWeaponExpert": {
-		"title": "§7§a[Weapon Expert]§7 \nYou are no longer penalised for using high damage weapons due to the Initiate Frail passive.",
+		"title": "§7§a[Weapon Expert]§7 \nGain a stack of Might when casting a spell.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

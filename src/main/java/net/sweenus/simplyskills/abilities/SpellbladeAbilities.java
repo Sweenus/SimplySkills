@@ -10,7 +10,12 @@ import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 public class SpellbladeAbilities {
 
-
+    public static void effectSpellbladeWeaponExpert(PlayerEntity player) {
+        if (HelperMethods.isUnlocked("simplyskills:spellblade",
+                SkillReferencePosition.spellbladeWeaponExpert, player)) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 80, 0, 4);
+        }
+    }
 
     //------- SIGNATURE ABILITIES --------
 

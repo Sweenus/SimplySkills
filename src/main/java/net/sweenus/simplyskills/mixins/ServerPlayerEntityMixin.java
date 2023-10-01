@@ -50,12 +50,12 @@ public abstract class ServerPlayerEntityMixin {
                 WarriorAbilities.passiveWarriorSpellbreaker(player);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueSmokeBomb, serverPlayer)) {
                 RogueAbilities.passiveRogueSmokeBomb(player);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueEvasionMastery, serverPlayer)) {
                 if (!RogueAbilities.passiveRogueEvasionMastery(player))
                     cir.setReturnValue(false);
@@ -86,7 +86,7 @@ public abstract class ServerPlayerEntityMixin {
 
             //Passive Rage
             if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.berserkerRecklessness, serverPlayer)) {
+                    SkillReferencePosition.berserkerPath, serverPlayer)) {
                 HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
             }
 
@@ -133,7 +133,7 @@ public abstract class ServerPlayerEntityMixin {
                 player.setInvisible(player.hasStatusEffect(EffectRegistry.STEALTH));
             }
 
-            //Passive Rogue Stealth
+            //Passive Wayfarer Stealth
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerStealth, player)
                     && player.isSneaking() && player.age % 10 == 0
@@ -183,53 +183,53 @@ public abstract class ServerPlayerEntityMixin {
             }
 
             //Passive Ranger Reveal
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerReveal, player)) {
                 RangerAbilities.passiveRangerReveal(player);
             }
             //Passive Ranger Bonded
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerBonded, player)) {
                 RangerAbilities.passiveRangerBonded(player);
             }
             //Passive Ranger Tamer
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerTamer, player)) {
                 RangerAbilities.passiveRangerTamer(player);
             }
             //Passive Ranger Trained
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerTrained, player)) {
                 RangerAbilities.passiveRangerTrained(player);
             }
             //Passive Ranger Incognito
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerIncognito, player)) {
                 RangerAbilities.passiveRangerIncognito(player);
             }
 
             //Passive Berserker Sword Mastery
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerSwordMastery, player)) {
                 BerserkerAbilities.passiveBerserkerSwordMastery(player);
             }
             //Passive Berserker Axe Mastery
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerAxeMastery, player)) {
                 BerserkerAbilities.passiveBerserkerAxeMastery(player);
             }
             //Passive Berserker Ignore Pain
-            if (HelperMethods.isUnlocked( "simplyskills:tree",
+            if (HelperMethods.isUnlocked( "simplyskills:berserker",
                     SkillReferencePosition.berserkerIgnorePain, player)) {
                 BerserkerAbilities.passiveBerserkerIgnorePain(player);
             }
             //Passive Berserker Recklessness
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerPath, player)) {
                 BerserkerAbilities.passiveBerserkerRecklessness(player);
             }
             //Passive Berserker Challenge
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerChallenge, player)) {
                 BerserkerAbilities.passiveBerserkerChallenge(player);
             }
@@ -248,7 +248,7 @@ public abstract class ServerPlayerEntityMixin {
                 WayfarerAbilities.passiveWayfarerSlender(player);
             }
             //Passive Backstab Stealth
-            if (HelperMethods.isUnlocked("simplyskills:tree",
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueBackstab, player)) {
                 RogueAbilities.passiveRogueBackstabStealth(player);
             }
@@ -311,13 +311,13 @@ public abstract class ServerPlayerEntityMixin {
                 if (!target.handleAttack(player)) {
 
                     //Passive Rogue Backstab
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                    if (HelperMethods.isUnlocked("simplyskills:rogue",
                             SkillReferencePosition.rogueBackstab, player)) {
                         RogueAbilities.passiveRogueBackstab(target, player);
                     }
 
                     //Passive Rogue Opportunistic Mastery
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                    if (HelperMethods.isUnlocked("simplyskills:rogue",
                             SkillReferencePosition.rogueOpportunisticMastery, player)) {
                         RogueAbilities.passiveRogueOpportunisticMastery(target, player);
                     }
@@ -389,7 +389,7 @@ public abstract class ServerPlayerEntityMixin {
 
                     //Passive Rage
                     if (HelperMethods.isUnlocked("simplyskills:tree",
-                            SkillReferencePosition.berserkerRecklessness, serverPlayer)) {
+                            SkillReferencePosition.berserkerPath, serverPlayer)) {
                         HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
                     }
 
