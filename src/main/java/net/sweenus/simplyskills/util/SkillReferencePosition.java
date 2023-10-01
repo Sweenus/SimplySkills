@@ -18,21 +18,21 @@ public class SkillReferencePosition {
     public static String warriorFrenzy = "lzbf1rqhs7c0lwq9";
 
     // - Berserker
-    public static String berserkerSwordMastery = "txzx7u6ssecd6kyd";
-    public static String berserkerSwordMasterySkilled = "p9yrgiwj31ppu8xw";
-    public static String berserkerSwordMasteryProficient = "o8xtd9ysf34nft0a";
+    public static String berserkerSwordMastery = "1jxua1ewarhgwsqc";
+    public static String berserkerSwordMasterySkilled = "332gej0dze54k9e5";
+    public static String berserkerSwordMasteryProficient = "xtg8vi8jq27oldaf";
 
-    public static String berserkerAxeMastery = "jpwane4otgc5w0ib";
-    public static String berserkerAxeMasterySkilled = "kv1w4nto45tnv2rt";
-    public static String berserkerAxeMasteryProficient = "378c34a07o78i2g2";
+    public static String berserkerAxeMastery = "lcu7iijs0154p3kn";
+    public static String berserkerAxeMasterySkilled = "f0ccx88f3n1jia44";
+    public static String berserkerAxeMasteryProficient = "cebgaybo8l8n5ned";
 
-    public static String berserkerIgnorePain = "h5wp8l0g16gg1ys1";
-    public static String berserkerIgnorePainSkilled = "97wzozi5mxuzuzsv";
-    public static String berserkerIgnorePainProficient = "fqaqa2epx815hm4k";
+    public static String berserkerIgnorePain = "3lk07z8aix5nre3m";
+    public static String berserkerIgnorePainSkilled = "z36r69d3rz8gp9yr";
+    public static String berserkerIgnorePainProficient = "7lz4qiw9gyl6jn9f";
 
-    public static String berserkerRecklessness = "eluc038mscynyi8l";
-    public static String berserkerChallenge = "uc5fndlzvp9p2xwg";
-    public static String berserkerExploit = "s9vgmd9yzd0n9aef";
+    public static String berserkerRecklessness = "NOTAPPLICABLE";
+    public static String berserkerChallenge = "lt43usrmbd29eumq";
+    public static String berserkerExploit = "umngr6xphan4ab80";
 
     // - Bulwark
     public static String bulwarkShieldMastery = "y0slj7yf7czympf2";
@@ -51,26 +51,26 @@ public class SkillReferencePosition {
     // - Rogue
     public static String wayfarerStealth = "j4dlu4n82vj47dbp";
     public static String rogueBackstab = "i6k024rdikn2fxqi";
-    public static String rogueExploitation = "t3eeosd4a0b7uzkv";
-    public static String rogueRecovery = "s2p5ip72mt1o2oaj";
-    public static String rogueShadowVeil = "wkqgzbfk594yq0g0";
-    public static String rogueDeflection = "xol97naeju19pgk8";
-    public static String rogueFleetfooted = "0zjyoez0cy1xm7ae";
+    public static String rogueExploitation = "z81tc1o8aj7vkgd3";
+    public static String rogueRecovery = "zu3qthjsb2ngrync";
+    public static String rogueShadowVeil = "ol1dv1xkjmroijvf";
+    public static String rogueDeflection = "eudmwpnv5gv1d21w";
+    public static String rogueFleetfooted = "yij7zyx012k25wj3";
 
-    public static String rogueSmokeBomb = "sa985rkw9oz4ocks";
-    public static String rogueOpportunisticMastery = "rnes5wz7ej44ci2a";
-    public static String rogueOpportunisticMasteryProficient = "t0w9jjtiz2olfmp6";
-    public static String rogueOpportunisticMasterySkilled = "arllpup6nt8lkh5l";
-    public static String rogueEvasionMastery = "d1zvex2gbmd8n04g";
-    public static String rogueEvasionMasteryProficient = "aixjezgr276peuiy";
-    public static String rogueEvasionMasterySkilled = "i4ahnejxsoxq771r";
+    public static String rogueSmokeBomb = "vmq59ny59vg9w0b1";
+    public static String rogueOpportunisticMastery = "rbk8kzre4qe2h1tl";
+    public static String rogueOpportunisticMasteryProficient = "z0a2luq1lo7ykzw0";
+    public static String rogueOpportunisticMasterySkilled = "0v5tta7nkv1kmkkn";
+    public static String rogueEvasionMastery = "7aqop6zuwhfdwize";
+    public static String rogueEvasionMasteryProficient = "85qwv97jzdwgv7pi";
+    public static String rogueEvasionMasterySkilled = "h2r3r2nzs1wgwneo";
 
     // - Ranger
-    public static String rangerReveal = "ffqolcglk86iilf9";
-    public static String rangerTamer = "c70fn01naantqcoe";
-    public static String rangerTrained = "qizwank5jhy1oz2i";
-    public static String rangerBonded = "hc7cg8rvq4xjax6w";
-    public static String rangerIncognito = "olr9houxtm9f1chu";
+    public static String rangerReveal = "fv9u51en0gnr42sg";
+    public static String rangerTamer = "8qujpjd26hnzorvc";
+    public static String rangerTrained = "kp8fomkuvt4mo5rx";
+    public static String rangerBonded = "p3nyz0ovok45zgdd";
+    public static String rangerIncognito = "yx0lq81aedw5u765";
 
 
     //Initiate

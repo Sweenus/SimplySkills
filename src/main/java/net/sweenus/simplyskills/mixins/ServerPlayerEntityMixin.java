@@ -225,7 +225,7 @@ public abstract class ServerPlayerEntityMixin {
             }
             //Passive Berserker Recklessness
             if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.berserkerRecklessness, player)) {
+                    SkillReferencePosition.berserkerPath, player)) {
                 BerserkerAbilities.passiveBerserkerRecklessness(player);
             }
             //Passive Berserker Challenge
@@ -240,9 +240,11 @@ public abstract class ServerPlayerEntityMixin {
             }
             //Passive Wayfarer Slender && Initiate Frail
             if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.wayfarerSlender, player)
-            || HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.initiateFrail, player)) {
+                    SkillReferencePosition.roguePath, player)
+                    || HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.rangerPath, player)
+                    || HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.wizardPath, player)) {
                 WayfarerAbilities.passiveWayfarerSlender(player);
             }
             //Passive Backstab Stealth

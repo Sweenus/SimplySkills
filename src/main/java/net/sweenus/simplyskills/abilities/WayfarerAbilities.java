@@ -94,12 +94,13 @@ public class WayfarerAbilities {
 
         if (player.age % 20 == 0) {
             if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.wayfarerSlender, player)){
+                    SkillReferencePosition.roguePath, player) || HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.rangerPath, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
                         25, slenderSlownessAmplifier));
             }
             if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.initiateFrail, player))){
+                    SkillReferencePosition.wizardPath, player))){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
                         25, frailSlownessAmplifier));
             }
