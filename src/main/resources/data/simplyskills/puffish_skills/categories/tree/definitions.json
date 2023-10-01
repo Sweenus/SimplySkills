@@ -1436,6 +1436,24 @@
 			}
 		]
 	},
+	"warriorCarnage": {
+		"title": "§7§a[Carnage]§7 \nWhile at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_carnage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorCarnage"
+				}
+			}
+		]
+	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7 \n\n§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
@@ -2054,7 +2072,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/initiate_frail.png"
+				"texture": "simplyskills:textures/icons/initiate_whispered_wizardry.png"
 			}
 		},
 		"rewards": [
@@ -2072,7 +2090,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/initiate_frail.png"
+				"texture": "simplyskills:textures/icons/initiate_spellcloak.png"
 			}
 		},
 		"rewards": [

@@ -1436,6 +1436,24 @@
 			}
 		]
 	},
+	"warriorCarnage": {
+		"title": "§7§a[Carnage]§7 \nWhile at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_carnage.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorCarnage"
+				}
+			}
+		]
+	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7 \n\n§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
@@ -2048,6 +2066,42 @@
 			}
 		]
 	},
+	"initiateWhisperedWizardry": {
+		"title": "§7§a[Whispered Wizardry]§7 \nCasting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_whispered_wizardry.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateWhisperedWizardry"
+				}
+			}
+		]
+	},
+	"initiateSpellcloak": {
+		"title": "§7§a[Spellcloak]§7 \nCasting a spell grants you brief Stealth, as long as you aren't currently Revealed.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_spellcloak.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateSpellcloak"
+				}
+			}
+		]
+	},
 	"crusaderPath": {
 		"title": "Path of the §bCrusader§7\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
 		"frame": "goal",
@@ -2103,7 +2157,7 @@
 		]
 	},
 	"spellbladeWeaponExpert": {
-		"title": "§7§a[Weapon Expert]§7 \nYou are no longer penalised for using high damage weapons due to the Initiate Frail passive.",
+		"title": "§7§a[Weapon Expert]§7 \nGain a stack of Might when casting a spell.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

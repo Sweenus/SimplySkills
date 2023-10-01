@@ -77,6 +77,27 @@ public class WarriorAbilities {
         HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION, frenzyDuration, frenzyStacks, 99);
     }
 
+    public static void passiveWarriorCarnage(PlayerEntity player) {
+
+        int frequency = 15;
+        int amount = (int) player.getMaxHealth() / 10;
+
+        if (player.age % frequency == 0) {
+            if (player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
+                if (player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier() >= 75) {
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount));
+                }
+            }
+            if (player.hasStatusEffect(EffectRegistry.RAGE)) {
+                if (player.getStatusEffect(EffectRegistry.RAGE).getAmplifier() >= 75) {
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount));
+                }
+            }
+        }
+    }
+
     public static void passiveWarriorShieldMastery(PlayerEntity player) {
         int shieldMasteryFrequency = SimplySkills.warriorConfig.passiveWarriorShieldMasteryFrequency;
         int shieldMasteryWeaknessAmplifier = SimplySkills.warriorConfig.passiveWarriorShieldMasteryWeaknessAmplifier;

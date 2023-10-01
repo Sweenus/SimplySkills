@@ -1446,7 +1446,7 @@
 		"root": false
 	},
 	"flou9skomwl9qvdq": {
-		"definition": "resistance+1%",
+		"definition": "warriorCarnage",
 		"x": 256,
 		"y": -73.9008344562721,
 		"root": false
@@ -1833,6 +1833,42 @@
 		"definition": "jump+1%",
 		"x": -352,
 		"y": -129.32646029847615,
+		"root": false
+	},
+	"cwcn8iu97nvoel71": {
+		"definition": "resistance+1%",
+		"x": 224,
+		"y": -55.425625842204084,
+		"root": false
+	},
+	"cqrbg28o4bi1fsox": {
+		"definition": "resistance+1%",
+		"x": 256,
+		"y": -36.95041722813605,
+		"root": false
+	},
+	"qsfo8nwehs9an7sk": {
+		"definition": "resistance+1%",
+		"x": 288,
+		"y": -55.425625842204056,
+		"root": false
+	},
+	"c6uucyy9rtfhicwb": {
+		"definition": "melee_damage+1%",
+		"x": 288,
+		"y": -92.37604307034007,
+		"root": false
+	},
+	"a1mj7k6t7lcta9l5": {
+		"definition": "melee_damage+1%",
+		"x": 256,
+		"y": -110.85125168440811,
+		"root": false
+	},
+	"18d39xhu1ryv7ied": {
+		"definition": "melee_damage+1%",
+		"x": 224,
+		"y": -92.37604307034013,
 		"root": false
 	}
 }

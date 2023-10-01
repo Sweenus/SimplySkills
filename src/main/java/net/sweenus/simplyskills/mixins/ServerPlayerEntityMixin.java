@@ -147,6 +147,12 @@ public abstract class ServerPlayerEntityMixin {
                 WarriorAbilities.passiveWarriorDeathDefy(player);
             }
 
+            //Passive Warrior Carnage
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.warriorCarnage, player)) {
+                WarriorAbilities.passiveWarriorCarnage(player);
+            }
+
             //Passive Wayfarer Sneak
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wayfarerSneak, player)
