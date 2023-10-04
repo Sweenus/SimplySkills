@@ -60,6 +60,9 @@ public class SpellHelperMixin {
             SpellbladeAbilities.effectSpellbladeWeaponExpert(player);
         }
 
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
+
 
     }
 

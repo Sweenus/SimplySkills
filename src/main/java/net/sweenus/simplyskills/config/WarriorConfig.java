@@ -30,7 +30,7 @@ public class WarriorConfig implements ConfigData {
     public int passiveWarriorSpellbreakerFrequency = 5;
 
     public float passiveWarriorGoliathFallDistance = 3.0f;
-    public float passiveWarriorHeavyWeightDamageIncreasePerTick = 0.1f;
+    public float passiveWarriorHeavyWeightDamageIncreasePerTick = 0.3f;
 
     public int passiveWarriorDeathDefyFrequency = 20;
     public int passiveWarriorDeathDefyHealthThreshold = 30;

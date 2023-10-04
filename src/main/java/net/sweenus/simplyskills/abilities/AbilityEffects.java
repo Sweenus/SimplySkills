@@ -182,6 +182,8 @@ public class AbilityEffects {
             int radius = SimplySkills.rangerConfig.effectRangerElementalArrowsRadius;
             int increase = SimplySkills.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
             int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
+            int arrowCount = 1;
+            int increasedArrowCount = 6;
             if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationElementalArrowsRadiusOne, player))
                 radius = radius + increase;
@@ -213,7 +215,6 @@ public class AbilityEffects {
                 list.remove("simplyskills:frost_arrow_rain");
             }
 
-
             HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
             
             if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
@@ -230,13 +231,18 @@ public class AbilityEffects {
                 Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
                 for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                    if (entities != null) {
-                        Random rand = new Random();
-                        String randomSpell = list.get(rand.nextInt(list.size()));
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                            SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                    randomSpell,
-                                    512, le);
+                    if (player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY).size() <= 1)
+                        arrowCount = increasedArrowCount;
+
+                    for (int i = arrowCount; i > 0; i--) {
+                        if (entities != null) {
+                            Random rand = new Random();
+                            String randomSpell = list.get(rand.nextInt(list.size()));
+                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                        randomSpell,
+                                        512, le);
+                            }
                         }
                     }
                 }

@@ -17,6 +17,7 @@ public class SkillReferencePosition {
     public static String warriorDeathDefy = "tig3f7onxxvz33cw";
     public static String warriorFrenzy = "lzbf1rqhs7c0lwq9";
     public static String warriorCarnage = "flou9skomwl9qvdq";
+    public static String warriorBound = "vt35q1gqa29spnfy";
 
     // - Berserker
     public static String berserkerSwordMastery = "1jxua1ewarhgwsqc";
@@ -86,6 +87,7 @@ public class SkillReferencePosition {
     public static String initiatePerilousPrecision = "bnvgmcy3ruk5h4kx";
     public static String initiateWhisperedWizardry = "ae6o85ddrwkkzoxt";
     public static String initiateSpellcloak = "a051uz4mfn1vedxt";
+    public static String initiateOverload = "l6ijdwtqcxegm1if";
 
 
 

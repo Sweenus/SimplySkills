@@ -521,12 +521,6 @@
 		"y": 369.50417228136047,
 		"root": false
 	},
-	"tj326sluamh9k5pw": {
-		"definition": "jump+1%",
-		"x": -64,
-		"y": 406.4545895094965,
-		"root": false
-	},
 	"wyc41rdvks4opvd0": {
 		"definition": "attack_speed+1%",
 		"x": 128,
@@ -603,12 +597,6 @@
 		"definition": "spell_frost_damage_multi+1%",
 		"x": -256,
 		"y": -295.6033378250884,
-		"root": false
-	},
-	"bl3ji26hfludx7u2": {
-		"definition": "melee_damage+1%",
-		"x": -320,
-		"y": -258.6529205969523,
 		"root": false
 	},
 	"a051uz4mfn1vedxt": {
@@ -702,7 +690,7 @@
 		"root": false
 	},
 	"p98p4p1dqelj658j": {
-		"definition": "jump+1%",
+		"definition": "movement_speed+1%",
 		"x": -64,
 		"y": 480.3554239657685,
 		"root": false
@@ -840,7 +828,7 @@
 		"root": false
 	},
 	"5pyaaj9z6q5oq672": {
-		"definition": "melee_damage+1%",
+		"definition": "spell_crit_chance_additive+1%",
 		"x": -384,
 		"y": -295.6033378250884,
 		"root": false
@@ -1869,6 +1857,90 @@
 		"definition": "melee_damage+1%",
 		"x": 224,
 		"y": -92.37604307034013,
+		"root": false
+	},
+	"vt35q1gqa29spnfy": {
+		"definition": "warriorBound",
+		"x": -64,
+		"y": 406.4545895094965,
+		"root": false
+	},
+	"cz0v59uy0w2smd2u": {
+		"definition": "jump+1%",
+		"x": -64,
+		"y": 369.5041722813604,
+		"root": false
+	},
+	"a53158esyzczakd4": {
+		"definition": "jump+1%",
+		"x": -96,
+		"y": 387.9793808954285,
+		"root": false
+	},
+	"60e1gxdvxa5lig3n": {
+		"definition": "jump+1%",
+		"x": -96,
+		"y": 424.9297981235646,
+		"root": false
+	},
+	"nw7wok9tqzpcb9ag": {
+		"definition": "movement_speed+1%",
+		"x": -64,
+		"y": 443.40500673763256,
+		"root": false
+	},
+	"4k9060vi1frml1du": {
+		"definition": "movement_speed+1%",
+		"x": -32,
+		"y": 424.9297981235645,
+		"root": false
+	},
+	"fzp58k63fyf3n6pg": {
+		"definition": "movement_speed+1%",
+		"x": -32,
+		"y": 387.97938089542845,
+		"root": false
+	},
+	"l6ijdwtqcxegm1if": {
+		"definition": "initiateOverload",
+		"x": -320,
+		"y": -258.6529205969523,
+		"root": false
+	},
+	"pevp851gmjjqcrek": {
+		"definition": "melee_damage+1%",
+		"x": -288,
+		"y": -240.17771198288432,
+		"root": false
+	},
+	"z0qujvl3pux45m3a": {
+		"definition": "melee_damage+1%",
+		"x": -320,
+		"y": -221.70250336881628,
+		"root": false
+	},
+	"jujo2bq9k03fxzvq": {
+		"definition": "melee_damage+1%",
+		"x": -352,
+		"y": -240.1777119828843,
+		"root": false
+	},
+	"p4849ihbuzfp2afg": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -288,
+		"y": -277.12812921102034,
+		"root": false
+	},
+	"cfjmnk6mp3xpu56o": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -320,
+		"y": -295.6033378250884,
+		"root": false
+	},
+	"8ma4crb26q6okj6n": {
+		"definition": "spell_crit_chance_additive+1%",
+		"x": -352,
+		"y": -277.12812921102034,
 		"root": false
 	}
 }

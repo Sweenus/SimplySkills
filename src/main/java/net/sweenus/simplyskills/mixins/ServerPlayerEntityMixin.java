@@ -120,6 +120,9 @@ public abstract class ServerPlayerEntityMixin {
                 SkillReferencePosition.warriorGoliath, player)
                 && player.fallDistance > goliathActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
             WarriorAbilities.passiveWarriorGoliath(player);
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.warriorBound, player))
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 80, 2));
         }
 
     }
@@ -159,6 +162,8 @@ public abstract class ServerPlayerEntityMixin {
                     && player.isSneaking() && player.age % 10 == 0) {
                 int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
+                if (player.hasStatusEffect(EffectRegistry.STEALTH))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 15, 1, 30);
             }
             //Passive Wayfarer Guarding
             if (HelperMethods.isUnlocked("simplyskills:tree",

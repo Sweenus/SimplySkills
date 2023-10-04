@@ -13,7 +13,10 @@ public class SpellbladeAbilities {
     public static void effectSpellbladeWeaponExpert(PlayerEntity player) {
         if (HelperMethods.isUnlocked("simplyskills:spellblade",
                 SkillReferencePosition.spellbladeWeaponExpert, player)) {
+            int chance = 40;
             HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 60, 1, 3);
+            if (player.getRandom().nextInt(100) > chance)
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 220, 1, 25);
         }
     }
 

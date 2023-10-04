@@ -837,7 +837,7 @@
 		]
 	},
 	"wayfarerSneak": {
-		"title": "§7§a[Sneak]§7 \nGain speed when crouching.",
+		"title": "§7§a[Sneak]§7 \nGain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1394,6 +1394,24 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "warriorHeavyWeight"
+				}
+			}
+		]
+	},
+	"warriorBound": {
+		"title": "§7§a[Bound]§7 \nAfter activating Earthshaker, you gain Jump Boost for a short duration.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_bound.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorBound"
 				}
 			}
 		]
@@ -2102,6 +2120,24 @@
 			}
 		]
 	},
+	"initiateOverload": {
+		"title": "§7§a[Overload]§7 \nCasting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 50% increased spell crit damage & 5% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/initiate_overload.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "initiateOverload"
+				}
+			}
+		]
+	},
 	"crusaderPath": {
 		"title": "Path of the §bCrusader§7\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
 		"frame": "goal",
@@ -2157,7 +2193,7 @@
 		]
 	},
 	"spellbladeWeaponExpert": {
-		"title": "§7§a[Weapon Expert]§7 \nGain a stack of Might when casting a spell.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"title": "§7§a[Weapon Expert]§7 \nGain a stack of Might when casting a spell. Occasionally gain a stack of Spellforged as well.\n\n§f(Might)§7 grants 25% increased attack damage per stack.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3417,7 +3453,7 @@
 		]
 	},
 	"rangerSignatureElementalArrows": {
-		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.\n\n§a45s Cooldown§7",
+		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.\n\n§f(Elemental Arrows)§7 Causes your next fully charged ranged attack to fire several elemental arrows at enemies in the targeted area.\n\n§a45s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
