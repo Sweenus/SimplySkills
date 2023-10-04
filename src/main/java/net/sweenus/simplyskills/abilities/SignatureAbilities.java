@@ -19,7 +19,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
-import net.spell_engine.internals.SpellCast;
+import net.spell_engine.internals.casting.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
@@ -337,9 +337,7 @@ public class SignatureAbilities {
                     player,
                     spellID,
                     list,
-                    itemStack,
                     action,
-                    hand,
                     20);
         }
     }
@@ -360,9 +358,7 @@ public class SignatureAbilities {
                     player,
                     spellID,
                     list,
-                    itemStack,
                     action,
-                    hand,
                     20);
         }
     }
@@ -398,9 +394,7 @@ public class SignatureAbilities {
                     player,
                     spellID,
                     list,
-                    itemStack,
                     action,
-                    hand,
                     20);
 
             return true;

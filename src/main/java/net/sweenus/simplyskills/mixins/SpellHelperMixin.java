@@ -4,11 +4,9 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import net.spell_engine.internals.SpellCast;
+import net.spell_engine.internals.casting.SpellCast;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.InitiateAbilities;
 import net.sweenus.simplyskills.abilities.SpellbladeAbilities;
@@ -33,10 +31,8 @@ public class SpellHelperMixin {
             PlayerEntity player,
             Identifier spellId,
             List<Entity> targets,
-            ItemStack itemStack,
             SpellCast.Action action,
-            Hand hand,
-            int remainingUseTicks,
+            float progress,
             CallbackInfo ci) {
 
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
