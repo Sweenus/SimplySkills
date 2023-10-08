@@ -41,7 +41,7 @@ public class SpellHelperMixin {
         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
             if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateWhisperedWizardry, player))
-                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 80, 2, 9);
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 80, 1, 5);
         } else if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateSpellcloak, player)
                 && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 40));

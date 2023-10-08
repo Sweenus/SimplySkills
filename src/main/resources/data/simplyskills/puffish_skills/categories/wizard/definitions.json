@@ -3219,7 +3219,7 @@
 		]
 	},
 	"rangerSignatureArrowRain": {
-		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area.\n\n§a35s Cooldown§7",
+		"title": "Signature Ability: \n§6[Arrow Rain]§7 \nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area.\n\n§a14s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3237,7 +3237,7 @@
 		]
 	},
 	"rangerSignatureArrowRainElemental": {
-		"title": "§7Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.",
+		"title": "§7Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.\nThis effect is reduced when enemies are in close proximity.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3453,7 +3453,7 @@
 		]
 	},
 	"rangerSignatureElementalArrows": {
-		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.\n\n§f(Elemental Arrows)§7 Causes your next fully charged ranged attack to fire several elemental arrows at enemies in the targeted area.\n\n§a45s Cooldown§7",
+		"title": "Signature Ability: \n§6[Elemental Arrows]§7 \nGain 5 stacks of Elemental Arrows.\n\n§f(Elemental Arrows)§7 Causes your next fully charged ranged attack to fire several elemental arrows at enemies in the targeted area.\n\n§a40s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

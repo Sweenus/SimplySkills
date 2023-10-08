@@ -53,7 +53,7 @@ public class RangerConfig implements ConfigData {
     public int effectRangerElementalArrowsRadius = 4;
     public int effectRangerElementalArrowsRadiusIncreasePerTier = 2;
     public int effectRangerElementalArrowsTargetingRange = 120;
-    public int effectRangerElementalArrowsCooldown = 45;
+    public int effectRangerElementalArrowsCooldown = 40;
     public int effectRangerArrowRainDuration = 600;
     public int effectRangerArrowRainRadius = 3;
     public int effectRangerArrowRainRadiusIncreasePerTier = 1;
@@ -61,6 +61,6 @@ public class RangerConfig implements ConfigData {
     public int effectRangerArrowRainVolleys = 2;
     public int effectRangerArrowRainVolleyIncreasePerTier = 1;
     public int effectRangerArrowRainRange = 64;
-    public int effectRangerArrowRainCooldown = 20;
+    public int effectRangerArrowRainCooldown = 14;
 
 }

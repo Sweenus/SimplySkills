@@ -191,6 +191,30 @@ public class HelperMethods {
 
     }
 
+    public static void capStatusEffect (LivingEntity livingEntity) {
+
+        int spellforgedCap = 5;
+        int mightCap = 30;
+
+        List<StatusEffectInstance> list = livingEntity.getStatusEffects().stream().toList();
+        if (!list.isEmpty()) {
+            for (StatusEffectInstance statusEffectInstance : list) {
+                StatusEffect statusEffect = statusEffectInstance.getEffectType();
+
+                switch (statusEffect.getName().getString()) {
+
+                    case "Spellforged":
+                        if (statusEffectInstance.getAmplifier() > spellforgedCap)
+                            HelperMethods.decrementStatusEffects(livingEntity, statusEffect, statusEffectInstance.getAmplifier() - spellforgedCap);
+                    case "Might":
+                        if (statusEffectInstance.getAmplifier() > mightCap)
+                            HelperMethods.decrementStatusEffects(livingEntity, statusEffect, statusEffectInstance.getAmplifier() - mightCap);
+
+                }
+            }
+        }
+    }
+
     public static boolean stringContainsAny (String string, String[] stringList) {
         for (String s : stringList) {
             if (string.contains(s))

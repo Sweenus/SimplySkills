@@ -307,6 +307,9 @@ public class AbilityEffects {
             int arrowRainVolleys = SimplySkills.rangerConfig.effectRangerArrowRainVolleys;
             int arrowRainVolleyIncrease = SimplySkills.rangerConfig.effectRangerArrowRainVolleyIncreasePerTier;
             int arrowRainRange = SimplySkills.rangerConfig.effectRangerArrowRainRange;
+            boolean preventShotgun = false;
+            int projectileLimiter = 0;
+            int projectileLimiterCap = 30;
 
             if (HelperMethods.isUnlocked("simplyskills:ranger",
                     SkillReferencePosition.rangerSpecialisationArrowRainRadiusOne, player))
@@ -357,19 +360,37 @@ public class AbilityEffects {
 
                                 if (HelperMethods.isUnlocked("simplyskills:ranger",
                                         SkillReferencePosition.rangerSpecialisationArrowRainElemental, player)) {
+
+                                    BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), 3);
+                                    Box box = HelperMethods.createBoxBetween(player.getBlockPos(), blockPos, 3);
+                                    for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+
+                                        if (entities != null) {
+                                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                                preventShotgun = true;
+                                                projectileLimiterCap = 4;
+                                            }
+                                        }
+                                    }
+
                                     arrowEntity.addEffect(new StatusEffectInstance((StatusEffects.SLOWNESS)));
-                                    if (player.getRandom().nextInt(100) < 5) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                "simplyskills:fire_arrow_rain", 512, arrowEntity);
-                                        arrowEntity.setInvisible(true);
-                                    } else if (player.getRandom().nextInt(100) < 15) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                "simplyskills:frost_arrow_rain", 512, arrowEntity);
-                                        arrowEntity.setInvisible(true);
-                                    } else if (player.getRandom().nextInt(100) < 25) {
-                                        SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                "simplyskills:lightning_arrow_rain", 512, arrowEntity);
-                                        arrowEntity.setInvisible(true);
+                                    if (!preventShotgun || projectileLimiter < projectileLimiterCap) {
+                                        if (player.getRandom().nextInt(100) < 5) {
+                                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                    "simplyskills:fire_arrow_rain", 512, arrowEntity);
+                                            arrowEntity.setInvisible(true);
+                                            projectileLimiter++;
+                                        } else if (player.getRandom().nextInt(100) < 15) {
+                                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                    "simplyskills:frost_arrow_rain", 512, arrowEntity);
+                                            arrowEntity.setInvisible(true);
+                                            projectileLimiter++;
+                                        } else if (player.getRandom().nextInt(100) < 25) {
+                                            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                                                    "simplyskills:lightning_arrow_rain", 512, arrowEntity);
+                                            arrowEntity.setInvisible(true);
+                                            projectileLimiter++;
+                                        }
                                     }
                                 }
                             }
