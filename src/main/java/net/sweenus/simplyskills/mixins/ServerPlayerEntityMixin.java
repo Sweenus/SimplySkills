@@ -163,7 +163,7 @@ public abstract class ServerPlayerEntityMixin {
                 int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
                 if (player.hasStatusEffect(EffectRegistry.STEALTH))
-                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 15, 1, 30);
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 15, 1, 22);
             }
             //Passive Wayfarer Guarding
             if (HelperMethods.isUnlocked("simplyskills:tree",
@@ -402,6 +402,12 @@ public abstract class ServerPlayerEntityMixin {
                     if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.berserkerPath, serverPlayer)) {
                         HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
+                    }
+
+                    //Passive Berserker Exploit
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
+                            SkillReferencePosition.berserkerExploit, serverPlayer)) {
+                        BerserkerAbilities.passiveBerserkerExploit(target);
                     }
 
 

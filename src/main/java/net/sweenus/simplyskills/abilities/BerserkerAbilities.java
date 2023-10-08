@@ -11,6 +11,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
+import net.spell_engine.api.effect.Synchronized;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -31,12 +32,12 @@ public class BerserkerAbilities {
                         new String[] {"Axe", "axe", "molten_edge", "livyatan", "soulpyre"})) {
                     int mastery = baseSpeedAmplifier;
 
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSwordMasterySkilled, player)
                             && player.getOffHandStack().isEmpty())
                         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT,
                                 frequency + 5, 0));
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSwordMasteryProficient, player))
                         mastery = mastery + speedAmplifierPerTier;
 
@@ -59,10 +60,10 @@ public class BerserkerAbilities {
 
                     int mastery = baseStrengthAmplifier;
 
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                    if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerAxeMasterySkilled, player))
                         mastery = mastery + (strengthAmplifierPerTier * 2);
-                    else if (HelperMethods.isUnlocked("simplyskills:tree",
+                    else if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerAxeMasteryProficient, player))
                         mastery = mastery + strengthAmplifierPerTier;
 
@@ -82,10 +83,10 @@ public class BerserkerAbilities {
             int resistanceStacks = baseResistanceAmplifier;
             if (player.getHealth() <= (healthThreshold * player.getMaxHealth())) {
 
-                if (HelperMethods.isUnlocked("simplyskills:tree",
+                if (HelperMethods.isUnlocked("simplyskills:berserker",
                         SkillReferencePosition.berserkerIgnorePainSkilled, player))
                     resistanceStacks = resistanceStacks + (resistanceAmplifierPerTier * 2);
-                else if (HelperMethods.isUnlocked("simplyskills:tree",
+                else if (HelperMethods.isUnlocked("simplyskills:berserker",
                         SkillReferencePosition.berserkerIgnorePainProficient, player))
                     resistanceStacks = resistanceStacks + resistanceAmplifierPerTier;
 
@@ -127,6 +128,14 @@ public class BerserkerAbilities {
                 count = countMax;
             if (count > 1)
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, count -1));
+        }
+    }
+
+    public static void passiveBerserkerExploit(Entity target) {
+        if (target instanceof LivingEntity livingTarget) {
+            if (livingTarget.hasStatusEffect(EffectRegistry.IMMOBILIZE)) {
+                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 120, 1));
+            }
         }
     }
 
@@ -180,5 +189,7 @@ public class BerserkerAbilities {
         }
         return true;
     }
+
+
 
 }

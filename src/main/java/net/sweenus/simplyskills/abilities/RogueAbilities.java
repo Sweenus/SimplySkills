@@ -4,6 +4,8 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -14,6 +16,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.puffish.skillsmod.rewards.builtin.AttributeReward;
+import net.puffish.skillsmod.server.PlayerAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -69,7 +73,7 @@ public class RogueAbilities {
         int evasionArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
         int mastery = 0;
 
-        if (HelperMethods.isUnlocked("simplyskills:tree",
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueDeflection, player)
                 && player.getMainHandStack().getItem() instanceof SwordItem
                 && player.getOffHandStack().getItem() instanceof SwordItem)
@@ -82,10 +86,10 @@ public class RogueAbilities {
         if (player.hasStatusEffect(EffectRegistry.EVASION))
             evasionMultiplier = masteryEvasionMultiplier;
 
-        if (HelperMethods.isUnlocked("simplyskills:tree",
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueEvasionMasterySkilled, player))
             mastery = mastery + (evasionChanceIncreasePerTier * 2);
-        else if (HelperMethods.isUnlocked("simplyskills:tree",
+        else if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueEvasionMasteryProficient, player))
             mastery = mastery + evasionChanceIncreasePerTier;
 
@@ -109,10 +113,10 @@ public class RogueAbilities {
 
         int mastery = basePoisonDuration;
 
-        if (HelperMethods.isUnlocked("simplyskills:tree",
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueOpportunisticMasterySkilled, player))
             mastery = mastery + (poisonDurationIncreasePerTier * 2);
-        else if (HelperMethods.isUnlocked("simplyskills:tree",
+        else if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueOpportunisticMasteryProficient, player))
             mastery = mastery + poisonDurationIncreasePerTier;
 
@@ -151,7 +155,7 @@ public class RogueAbilities {
                 int dashRange = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRange;
                 int dashRadius = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeRadius;
                 int dashDamageModifier = SimplySkills.rogueConfig.signatureRoguePreparationShadowstrikeDamageModifier;
-                int dashDamage = (int) HelperMethods.getAttackDamage(player.getMainHandStack());
+                int dashDamage = (int) player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
                 DamageSource dashSource = player.getWorld().getDamageSources().playerAttack(player);
                 BlockPos blockPos = player.getBlockPos().offset(player.getMovementDirection(), dashRange);
 
@@ -163,12 +167,10 @@ public class RogueAbilities {
                             le.damage(dashSource, dashDamage * dashDamageModifier);
 
                             if (HelperMethods.isUnlocked("simplyskills:rogue",
-                                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeBolt, player))
-                                SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                        "simplyskills:soul_bolt_lesser", 64, le);
-                            if (HelperMethods.isUnlocked("simplyskills:rogue",
-                                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player))
+                                    SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player)) {
                                 HelperMethods.buffSteal(player, le, true, true);
+                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 120, 0));
+                            }
 
                         }
                     }
@@ -177,7 +179,9 @@ public class RogueAbilities {
                 BlockState blockstate = player.getWorld().getBlockState(blockPos);
                 BlockState blockstateUp = player.getWorld().getBlockState(blockPos.up(1));
                 for (int i = dashRange; i > 0; i--) {
-                    if (blockstate.isAir() && blockstateUp.isAir())
+                    //if (blockstate.isAir() && blockstateUp.isAir())
+                        //break;
+                    if (!blockstate.isSolidBlock(player.getWorld(), blockPos) && !blockstateUp.isSolidBlock(player.getWorld(), blockPos.up(1)))
                         break;
                     blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
                 }
@@ -223,6 +227,13 @@ public class RogueAbilities {
                 preparationDuration));
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
                 preparationDuration, speedAmplifier));
+
+        if (HelperMethods.isUnlocked("simplyskills:rogue",
+                SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeShield, player)) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.BARRIER, 450, 1, 5);
+            if (player.hasStatusEffect(EffectRegistry.REVEALED))
+                player.removeStatusEffect(EffectRegistry.REVEALED);
+        }
 
         player.getWorld().playSoundFromEntity(
                 null, player, SoundRegistry.SOUNDEFFECT39,

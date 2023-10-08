@@ -222,7 +222,7 @@ public class SkillReferencePosition {
     public static String rogueSpecialisationEvasionFanOfBladesRenewal = "l3bhn14oz1ex8opa";
     public static String rogueSpecialisationPreparation = "kp8uei8ppni71b5x";
     public static String rogueSpecialisationPreparationShadowstrike = "kp8uei8ppni71b5x";
-    public static String rogueSpecialisationPreparationShadowstrikeBolt = "z00pa0lut7phuhmg";
+    public static String rogueSpecialisationPreparationShadowstrikeShield = "z00pa0lut7phuhmg";
     public static String rogueSpecialisationPreparationShadowstrikeVampire = "j18t77qu8eryc741";
     public static String rogueSpecialisationSiphoningStrikes = "a3ns9xl58ixdg2lo";
     public static String rogueSpecialisationSiphoningStrikesVanish = "eeq90ywusncgm78g";

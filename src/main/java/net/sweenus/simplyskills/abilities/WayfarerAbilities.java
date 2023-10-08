@@ -31,7 +31,7 @@ public class WayfarerAbilities {
                 int evasionDuration = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveEvasionDuration;
                 int evasionChance = SimplySkills.wayfarerConfig.passiveWayfarerReflexiveChance;
 
-                if (HelperMethods.isUnlocked("simplyskills:tree",
+                if (HelperMethods.isUnlocked("simplyskills:rogue",
                         SkillReferencePosition.rogueFleetfooted, player))
                     HelperMethods.incrementStatusEffect(player, StatusEffects.SPEED,
                             speedDuration, speedStacks, speedMaxStacks);
@@ -50,7 +50,7 @@ public class WayfarerAbilities {
                     int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
 
                     if (backstabBonus && HelperMethods.isBehindTarget(player, livingTarget)) {
-                        if (HelperMethods.isUnlocked("simplyskills:tree",
+                        if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueExploitation, player))
                             HelperMethods.incrementStatusEffect(
                                     livingTarget,
@@ -58,7 +58,7 @@ public class WayfarerAbilities {
                                     deathmarkDuration,
                                     deathmarkStacks,
                                     3);
-                        if (HelperMethods.isUnlocked("simplyskills:tree",
+                        if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueOpportunisticMastery, player))
                             RogueAbilities.passiveRogueOpportunisticMastery(livingTarget, player);
                     }

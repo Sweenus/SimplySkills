@@ -41,13 +41,13 @@ public class StealthEffect extends StatusEffect {
                 }
 
 
-                if (HelperMethods.isUnlocked("simplyskills:tree",
+                if (HelperMethods.isUnlocked("simplyskills:rogue",
                         SkillReferencePosition.rogueRecovery, serverPlayer)
                         && serverPlayer.age % regenerationFrequency == 0)
                     serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
                             regenerationFrequency + 5, regenerationAmplifier));
 
-                if (HelperMethods.isUnlocked("simplyskills:tree",
+                if (HelperMethods.isUnlocked("simplyskills:rogue",
                         SkillReferencePosition.rogueShadowVeil, serverPlayer)
                         && serverPlayer.age % regenerationFrequency == 0)
                     HelperMethods.incrementStatusEffect(serverPlayer, StatusEffects.RESISTANCE,

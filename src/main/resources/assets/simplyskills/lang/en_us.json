@@ -83,6 +83,8 @@
   "effect.simplyskills.undying.desc":                   "You cannot drop below 1HP. If you are below 65% HP when the effect ends, take fatal damage.",
   "effect.simplyskills.rage":                           "Rage",
   "effect.simplyskills.rage.desc":                      "Gain 0.5% attack damage, attack speed, and damage received per stack.",
+  "effect.simplyskills.overload":                       "Overload",
+  "effect.simplyskills.overload.desc":                  "Grants you 75% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
 
 
 

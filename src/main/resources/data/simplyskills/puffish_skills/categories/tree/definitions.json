@@ -2121,7 +2121,7 @@
 		]
 	},
 	"initiateOverload": {
-		"title": "§7§a[Overload]§7 \nCasting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 50% increased spell crit damage & 5% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+		"title": "§7§a[Overload]§7 \nCasting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 75% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2985,7 +2985,7 @@
 		]
 	},
 	"rogueSignatureEvasion": {
-		"title": "Signature Ability: \n§6[Evasion]§7 \nThe effects of your Evasion Mastery passive are doubled for 8s.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Evasion]§7 \nThe effects of your Evasion Mastery passive are doubled for 8s.\n\n§a25s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3075,7 +3075,7 @@
 		]
 	},
 	"rogueSignaturePreparation": {
-		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Stealth and Speed 3 for 8s.\n\n§a15s Cooldown§7",
+		"title": "Signature Ability: \n§6[Preparation]§7 \nGain Stealth and Speed 3 for 8s.\n\n§a10s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3111,7 +3111,7 @@
 		]
 	},
 	"rogueSignaturePreparationShadowstrikeVampire": {
-		"title": "§7You steal buffs from enemies caught within the path of your dash.",
+		"title": "§7You steal buffs from enemies caught within the path of your dash and inflict them with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3128,8 +3128,8 @@
 			}
 		]
 	},
-	"rogueSignaturePreparationShadowstrikeBolt": {
-		"title": "§7When dashing forward you cast Lesser Soul Bolts at enemies in your path.",
+	"rogueSignaturePreparationShadowstrikeShield": {
+		"title": "§7§6[Preparation]§7 now grants you Barrier and cleanses you of any Revealed stacks.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3141,13 +3141,13 @@
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "rogueSignaturePreparationShadowstrikeBolt"
+					"passive_skill": "rogueSignaturePreparationShadowstrikeShield"
 				}
 			}
 		]
 	},
 	"rogueSignatureSiphoningStrikes": {
-		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Siphoning Strikes]§7 \nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.\n\n§a25s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

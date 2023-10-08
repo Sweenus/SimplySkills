@@ -165,11 +165,11 @@ public class EffectRegistry {
     public static StatusEffect OVERLOAD= new OverloadEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.CRITICAL_DAMAGE.attribute,
                     "c937f985-c571-46e5-8339-b4ccf4c15442",
-                    0.50,
+                    0.75,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(SpellAttributes.CRITICAL_CHANCE.attribute,
                     "ad26be8b-db35-4d04-98db-d8943e4ac8be",
-                    0.05,
+                    0.10,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
 
