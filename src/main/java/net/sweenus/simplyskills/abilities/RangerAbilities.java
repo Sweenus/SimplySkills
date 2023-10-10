@@ -6,13 +6,23 @@ import net.minecraft.entity.Tameable;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
+import net.spell_engine.api.spell.Spell;
+import net.spell_engine.entity.SpellProjectile;
+import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.mixins.SpellProjectileMixin;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RangerAbilities {
@@ -275,6 +285,47 @@ public class RangerAbilities {
         int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0));
         return true;
+    }
+
+    // Arrow Rain Elemental Artillery
+    public static void signatureRangerElementalArtillery(ServerPlayerEntity player, SpellProjectile spellProjectile, Identifier spellId, SpellHelper.ImpactContext context, Spell .ProjectileData.Perks perks) {
+        if (player != null && spellProjectile.age % 12 == 0 && spellProjectile.age > 30) {
+            if (HelperMethods.isUnlocked("simplyskills:ranger", SkillReferencePosition.rangerSpecialisationArrowRainElementalArtillery, player)
+                    && spellId.toString().contains("arrow_rain")) {
+
+                Vec3d position = spellProjectile.getPos();
+                List<String> list = new ArrayList<>();
+                list.add("simplyskills:frost_arrow_homing");
+                list.add("simplyskills:fire_arrow_homing");
+                list.add("simplyskills:lightning_arrow_homing");
+
+                Random rand = new Random();
+                Identifier randomSpell = new Identifier(list.get(rand.nextInt(list.size())));
+
+                SpellProjectile projectile = new SpellProjectile(spellProjectile.getWorld(),
+                        (LivingEntity) spellProjectile.getOwner(), position.getX(), position.getY(), position.getZ(),
+                        spellProjectile.behaviour(), randomSpell, (Entity) null,
+                        context, perks.copy());
+
+                projectile.setVelocity(spellProjectile.getVelocity());
+                projectile.range = spellProjectile.range;
+                ProjectileUtil.setRotationFromVelocity(projectile, 0.2F);
+
+                int radius = 20;
+                Box box = new Box(spellProjectile.getX() + radius, spellProjectile.getY() + (float) radius * 3, spellProjectile.getZ() + radius,
+                        spellProjectile.getX() - radius, spellProjectile.getY() - (float) radius * 3, spellProjectile.getZ() - radius);
+                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                    if (entities != null && player.getRandom().nextInt(100) < 35) {
+                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            projectile.setFollowedTarget(le);
+                            break;
+                        }
+                    }
+                }
+
+                spellProjectile.getWorld().spawnEntity(projectile);
+            }
+        }
     }
 
 }

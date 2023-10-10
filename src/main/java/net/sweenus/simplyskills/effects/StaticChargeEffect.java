@@ -27,24 +27,13 @@ public class StaticChargeEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            int dischargeSpeedDuration = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
-            int staticDischargeSpeedStacks = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
-            int staticDischargeSpeedMaxAmplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
-            int speedBaseChance = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
-            int speedChancePerTier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
             int leapFrequency = SimplySkills.wizardConfig.signatureWizardStaticChargeLeapFrequency;
             int leapChance = SimplySkills.wizardConfig.signatureWizardStaticChargeLeapChance;
             int weaknessDuration = SimplySkills.wizardConfig.signatureWizardStaticChargeWeaknessDuration;
             int weaknessAmplifier = SimplySkills.wizardConfig.signatureWizardStaticChargeWeaknessAmplifier;
 
             if (livingEntity.age % leapFrequency == 0) {
-                int speedChance = speedBaseChance;
-                if (HelperMethods.isUnlocked("simplyskills:wizard",
-                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo, ownerEntity))
-                    speedChance = speedChance + speedChancePerTier;
-                else if (HelperMethods.isUnlocked("simplyskills:wizard",
-                        SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree, ownerEntity))
-                    speedChance = speedChance + (speedChancePerTier * 2);
+
 
                 Box box = HelperMethods.createBox(livingEntity, 3);
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
@@ -64,15 +53,7 @@ public class StaticChargeEffect extends StatusEffect {
                                         livingEntity.getStatusEffect(sc).getAmplifier()));
                                 livingEntity.removeStatusEffect(sc);
                             }
-
-                            if (HelperMethods.isUnlocked("simplyskills:wizard",
-                                    SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed, ownerEntity)
-                                    && ownerEntity.getRandom().nextInt(100) < speedChance)
-                                HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED,
-                                        dischargeSpeedDuration,
-                                        staticDischargeSpeedStacks,
-                                        staticDischargeSpeedMaxAmplifier);
-
+                            onHitEffects(ownerEntity, calculateSpeedChance(ownerEntity), le);
 
                             break;
                         }
@@ -81,6 +62,43 @@ public class StaticChargeEffect extends StatusEffect {
             }
         }
         super.applyUpdateEffect(livingEntity, amplifier);
+    }
+
+    public static int calculateSpeedChance(PlayerEntity ownerEntity) {
+
+        int speedBaseChance = SimplySkills.wizardConfig.signatureWizardStaticDischargeBaseSpeedChance;
+        int speedChancePerTier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedChancePerTier;
+
+        int speedChance = speedBaseChance;
+        if (HelperMethods.isUnlocked("simplyskills:wizard",
+                SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedTwo, ownerEntity))
+            speedChance = speedChance + speedChancePerTier;
+        else if (HelperMethods.isUnlocked("simplyskills:wizard",
+                SkillReferencePosition.wizardSpecialisationStaticDischargeSpeedThree, ownerEntity))
+            speedChance = speedChance + (speedChancePerTier * 2);
+
+        return speedChance;
+    }
+
+    public static void onHitEffects(PlayerEntity ownerEntity, int speedChance, LivingEntity le) {
+
+        int dischargeSpeedDuration = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedDuration;
+        int staticDischargeSpeedStacks = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedStacks;
+        int staticDischargeSpeedMaxAmplifier = SimplySkills.wizardConfig.signatureWizardStaticDischargeSpeedMaxAmplifier;
+
+        if (HelperMethods.isUnlocked("simplyskills:wizard",
+                SkillReferencePosition.wizardSpecialisationStaticDischargeSpeed, ownerEntity)
+                && ownerEntity.getRandom().nextInt(100) < speedChance)
+            HelperMethods.incrementStatusEffect(ownerEntity, StatusEffects.SPEED,
+                    dischargeSpeedDuration,
+                    staticDischargeSpeedStacks,
+                    staticDischargeSpeedMaxAmplifier);
+
+        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrb, ownerEntity)
+                && ownerEntity.getRandom().nextInt(100) < speedChance / 2)
+            SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
+                    "simplyskills:lightning_ball_homing",
+                    3, le);
     }
 
     @Override

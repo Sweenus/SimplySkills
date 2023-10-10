@@ -286,5 +286,11 @@
 		"x": 0,
 		"y": 32,
 		"root": false
+	},
+	"sgyyljazgqavx43g": {
+		"definition": "rangerSignatureArrowRainElementalArtillery",
+		"x": -64,
+		"y": -160,
+		"root": false
 	}
 }

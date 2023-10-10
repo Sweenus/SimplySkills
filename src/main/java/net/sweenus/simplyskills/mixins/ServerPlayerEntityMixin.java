@@ -293,6 +293,11 @@ public abstract class ServerPlayerEntityMixin {
             if (FabricLoader.getInstance().isModLoaded("paladins")) {
                 CrusaderAbilities.effectDivineAdjudication(player);
             }
+            //Wizard Lightning Orb (Buff)
+            if (HelperMethods.isUnlocked("simplyskills:wizard",
+                    SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrb, player)) {
+                WizardAbilities.signatureWizardLightningOrbBuff(player);
+            }
 
 
 

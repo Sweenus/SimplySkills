@@ -9,13 +9,17 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.items.GraciousManuscript;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.Collection;
 import java.util.List;
@@ -115,6 +119,38 @@ public class AbilityLogic {
         if (tags.contains("arcane")) {
 
         }
+
+    }
+
+    public static void onSpellCastEffects(PlayerEntity player, List<Entity> targets, Identifier spellId) {
+
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
+            InitiateAbilities.passiveInitiateEmpower(player, spellId);
+
+        if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
+            if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateWhisperedWizardry, player))
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 80, 1, 5);
+        } else if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateSpellcloak, player)
+                && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 40));
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("simplyswords")) {
+            SimplySwordsGemEffects.spellshield(player);
+            SimplySwordsGemEffects.spellStandard(player);
+        }
+
+        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player)) {
+            WizardAbilities.passiveWizardSpellEcho(player, targets);
+        }
+
+        if (HelperMethods.isUnlocked("simplyskills:spellblade", SkillReferencePosition.spellbladeWeaponExpert, player)) {
+            SpellbladeAbilities.effectSpellbladeWeaponExpert(player);
+        }
+
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
 
     }
 

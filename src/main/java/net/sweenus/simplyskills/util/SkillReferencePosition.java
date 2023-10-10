@@ -124,12 +124,14 @@ public class SkillReferencePosition {
     public static String wizardSpecialisationIceCometDamageOne = "l6i62nziygs3ishg";
     public static String wizardSpecialisationIceCometDamageTwo = "7ngfgbcdg33dpadz";
     public static String wizardSpecialisationIceCometDamageThree = "m5h4006g0loxutrg";
+    public static String wizardSpecialisationStaticDischargeLightningBall = "xb9uxi8zv4e1pdzy";
     public static String wizardSpecialisationStaticDischargeLeap = "2o8v7vhfgf8lyzu8";
     public static String wizardSpecialisationStaticDischargeLeapTwo = "09yy7mk9csney6w2";
     public static String wizardSpecialisationStaticDischargeLeapThree = "cefchlgpfk2j5fg4";
     public static String wizardSpecialisationStaticDischargeSpeed = "o078mm4i08rill6x";
     public static String wizardSpecialisationStaticDischargeSpeedTwo = "s18lslxmj1eu3rmt";
     public static String wizardSpecialisationStaticDischargeSpeedThree = "cwae603z395ehxm6";
+    public static String wizardSpecialisationStaticDischargeLightningOrb = "2j006q1mn1lqegtz";
     public static String wizardSpecialisationArcaneBoltLesser = "y54opte3llirc0z2";
     public static String wizardSpecialisationArcaneBoltGreater = "kddxqi4rdizetygz";
     public static String wizardSpecialisationArcaneBoltVolley = "v2w2y0ggvyb6q8x1";
@@ -196,6 +198,7 @@ public class SkillReferencePosition {
     public static String rangerSpecialisationDisengageExploitation = "t5c5gzcskng8b8cz";
     public static String rangerSpecialisationArrowRain = "a3ns9xl58ixdg2lo";
     public static String rangerSpecialisationArrowRainElemental = "yftatjo9vwzf5vpw";
+    public static String rangerSpecialisationArrowRainElementalArtillery = "sgyyljazgqavx43g";
     public static String rangerSpecialisationArrowRainExplosive = "l6feffzr1kt6i2ds";
     public static String rangerSpecialisationArrowRainVolleyOne = "b9sdl3i5pk4c8yor";
     public static String rangerSpecialisationArrowRainVolleyTwo = "kj4gdess10vmmu1h";

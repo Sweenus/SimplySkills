@@ -29,6 +29,7 @@ public class OverloadEffect extends StatusEffect {
             int radius = 3;
             double damage = (livingEntity.getMaxHealth() - 6) * (1 + livingEntity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
             DamageSource damageSource = livingEntity.getDamageSources().generic();
+            DamageSource damageSourceMagic = livingEntity.getDamageSources().magic();
 
             if (livingEntity.getStatusEffect(EffectRegistry.OVERLOAD).getAmplifier() >= 5) {
 
@@ -45,7 +46,7 @@ public class OverloadEffect extends StatusEffect {
 
                             le.setVelocity((le.getX() - livingEntity.getX()) /4,  (le.getY() - livingEntity.getY()) /4, (le.getZ() - livingEntity.getZ()) /4);
                             le.timeUntilRegen = 0;
-                            le.damage(damageSource, (float) damage);
+                            le.damage(damageSourceMagic, (float) damage);
                             le.timeUntilRegen = 0;
                         }
                     }

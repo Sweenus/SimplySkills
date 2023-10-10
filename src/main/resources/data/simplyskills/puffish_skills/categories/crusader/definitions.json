@@ -2750,6 +2750,24 @@
 			}
 		]
 	},
+	"wizardSignatureStaticDischargeLightningBall": {
+		"title": "§6[Static Discharge]§7 no longer leaps, but instead summons a slow-moving ball of lightning that periodically discharges electricity at nearby hostiles.\n\nAll passives that would usually activate from a leap, now activate when the Lightning Ball discharges at enemies.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLightningBall"
+				}
+			}
+		]
+	},
 	"wizardSignatureStaticDischargeLeap": {
 		"title": "§7Your §6[Discharge]§7 can now leap between nearby enemies.",
 		"frame": "goal",
@@ -2854,6 +2872,24 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "wizardSignatureStaticDischargeSpeed+++"
+				}
+			}
+		]
+	},
+	"wizardSignatureStaticDischargeLightningOrb": {
+		"title": "§7In addition to gaining speed, you also have a chance to summon a Lightning Orb that orbits you erratically, dealing damage to enemies it passes through.\n\nFor each Lightning Orb in your vicinity, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you +2 Soul & Lightning spell power per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLightningOrb"
 				}
 			}
 		]
@@ -3250,6 +3286,24 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "rangerSignatureArrowRainElemental"
+				}
+			}
+		]
+	},
+	"rangerSignatureArrowRainElementalArtillery": {
+		"title": "§7Your §6[Arrow Rain]§7 now creates additional elemental arrows that home toward enemies near the impact area.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "rangerSignatureArrowRainElementalArtillery"
 				}
 			}
 		]
