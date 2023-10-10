@@ -1,6 +1,8 @@
 package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -134,6 +136,18 @@ public class WarriorAbilities {
         if (player.getRandom().nextInt(100) < rebukeChance) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
                     rebukeWeaknessDuration, rebukeWeaknessAmplifier));
+        }
+    }
+
+    public static void passiveWarriorTwinstrike(PlayerEntity player, LivingEntity target) {
+        int effectChance = 25;
+        int effectDamage = (int) player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        DamageSource damageSource = player.getDamageSources().playerAttack(player);
+        if (player.hasStatusEffect(StatusEffects.HEALTH_BOOST))
+            effectChance = effectChance * 2;
+        if (player.getRandom().nextInt(100) < effectChance) {
+            target.damage(damageSource, effectDamage);
+            target.timeUntilRegen = 0;
         }
     }
 

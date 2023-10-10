@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.mixins;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -413,6 +414,13 @@ public abstract class ServerPlayerEntityMixin {
                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerExploit, serverPlayer)) {
                         BerserkerAbilities.passiveBerserkerExploit(target);
+                    }
+
+                    //Passive Warrior Twinstrike
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                            SkillReferencePosition.warriorTwinstrike, serverPlayer)
+                            && target instanceof LivingEntity livingTarget) {
+                        WarriorAbilities.passiveWarriorTwinstrike(player, livingTarget);
                     }
 
 

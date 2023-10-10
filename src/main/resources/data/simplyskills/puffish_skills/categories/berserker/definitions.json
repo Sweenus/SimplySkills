@@ -1472,6 +1472,24 @@
 			}
 		]
 	},
+	"warriorTwinstrike": {
+		"title": "§7§a[Twinstrike]§7 \nYour melee hits have a chance to strike twice. This chance is doubled while under the effects of Health Boost.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/warrior_twinstrike.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "warriorTwinstrike"
+				}
+			}
+		]
+	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7 \n\n§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",

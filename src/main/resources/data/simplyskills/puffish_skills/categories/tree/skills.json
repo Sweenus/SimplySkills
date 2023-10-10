@@ -443,12 +443,6 @@
 		"y": 221.70250336881628,
 		"root": false
 	},
-	"ius59hyqbxyuasq1": {
-		"definition": "jump+1%",
-		"x": -64,
-		"y": 258.6529205969523,
-		"root": false
-	},
 	"m7k1epm8jt8u4zdi": {
 		"definition": "ranged_damage+1%",
 		"x": -256,
@@ -1941,6 +1935,48 @@
 		"definition": "spell_crit_chance_additive+1%",
 		"x": -352,
 		"y": -277.12812921102034,
+		"root": false
+	},
+	"4xep9ktz3a23kgmv": {
+		"definition": "warriorTwinstrike",
+		"x": -64,
+		"y": 258.6529205969523,
+		"root": false
+	},
+	"h15sp40tp16k7w5q": {
+		"definition": "jump+1%",
+		"x": -64,
+		"y": 221.70250336881625,
+		"root": false
+	},
+	"eqbl50mzqdyg4bhk": {
+		"definition": "jump+1%",
+		"x": -96,
+		"y": 240.17771198288432,
+		"root": false
+	},
+	"qpdd1u71m43d1qtl": {
+		"definition": "jump+1%",
+		"x": -96,
+		"y": 277.1281292110204,
+		"root": false
+	},
+	"1rjwka8fht2cdise": {
+		"definition": "attack_speed+1%",
+		"x": -64,
+		"y": 295.6033378250884,
+		"root": false
+	},
+	"i1txixitw8nukl73": {
+		"definition": "attack_speed+1%",
+		"x": -32,
+		"y": 277.12812921102034,
+		"root": false
+	},
+	"9c4xwsc0aj17sdfa": {
+		"definition": "attack_speed+1%",
+		"x": -32,
+		"y": 240.17771198288426,
 		"root": false
 	}
 }
