@@ -132,6 +132,7 @@ public class SkillReferencePosition {
     public static String wizardSpecialisationStaticDischargeSpeedTwo = "s18lslxmj1eu3rmt";
     public static String wizardSpecialisationStaticDischargeSpeedThree = "cwae603z395ehxm6";
     public static String wizardSpecialisationStaticDischargeLightningOrb = "2j006q1mn1lqegtz";
+    public static String wizardSpecialisationStaticDischargeLightningOrbOnHit = "c0ghqir9rswndnkv";
     public static String wizardSpecialisationArcaneBoltLesser = "y54opte3llirc0z2";
     public static String wizardSpecialisationArcaneBoltGreater = "kddxqi4rdizetygz";
     public static String wizardSpecialisationArcaneBoltVolley = "v2w2y0ggvyb6q8x1";

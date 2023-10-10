@@ -2894,6 +2894,24 @@
 			}
 		]
 	},
+	"wizardSignatureStaticDischargeLightningOrbOnHit": {
+		"title": "§7Your Lightning Orb hits can now activate on-cast spell effects, such as Spell Echo.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wizard_signature_static_discharge_lightning_orb_on_hit.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wizardSignatureStaticDischargeLightningOrbOnHit"
+				}
+			}
+		]
+	},
 	"wizardSignatureArcaneBolt": {
 		"title": "Signature Ability: \n§6[Arcane Bolt]§7 \nFires a concentrated bolt of arcane energy at your target.\n\n§a35s Cooldown§7",
 		"frame": "goal",

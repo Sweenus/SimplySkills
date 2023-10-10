@@ -178,5 +178,11 @@
 		"x": -64,
 		"y": -160,
 		"root": false
+	},
+	"c0ghqir9rswndnkv": {
+		"definition": "wizardSignatureStaticDischargeLightningOrbOnHit",
+		"x": -96,
+		"y": -160,
+		"root": false
 	}
 }

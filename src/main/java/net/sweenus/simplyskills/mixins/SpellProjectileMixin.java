@@ -17,6 +17,7 @@ import net.spell_engine.api.spell.Spell;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
+import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.abilities.RangerAbilities;
 import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -28,9 +29,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Mixin(SpellProjectile.class)
 public abstract class SpellProjectileMixin extends ProjectileEntity {
@@ -119,6 +118,17 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
             if (this.spellId != null) {
                 if (this.spellId.toString().equals("simplyskills:lightning_ball_homing") && this.getOwner() instanceof LivingEntity livingEntity) {
                     SpellHelper.projectileImpact(livingEntity, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
+                    ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
+
+                    if (HelperMethods.isUnlocked("simplyskills:wizard",
+                            SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrbOnHit, player)) {
+                        List<Entity> targets = new ArrayList<Entity>();
+                        if (entityHitResult.getEntity() != null) {
+                            targets.add(entityHitResult.getEntity());
+                            AbilityLogic.onSpellCastEffects(player, targets, this.spellId);
+                        }
+                    }
+
                     ci.cancel();
                 }
             }
