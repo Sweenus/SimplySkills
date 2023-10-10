@@ -2756,7 +2756,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+				"texture": "simplyskills:textures/icons/wizard_signature_static_discharge_lightning_ball.png"
 			}
 		},
 		"rewards": [
@@ -2882,7 +2882,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/wizard_signature_lightning_beam.png"
+				"texture": "simplyskills:textures/icons/wizard_signature_static_discharge_lightning_orb.png"
 			}
 		},
 		"rewards": [
@@ -3296,7 +3296,7 @@
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain.png"
+				"texture": "simplyskills:textures/icons/ranger_signature_arrow_rain_elemental_artillery.png"
 			}
 		},
 		"rewards": [
