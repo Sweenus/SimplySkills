@@ -8,6 +8,7 @@ import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
+import net.sweenus.simplyskills.registry.ModelRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.rewards.PassiveSkillReward;
 import org.slf4j.Logger;
@@ -77,6 +78,7 @@ public class SimplySkills implements ModInitializer {
         SoundRegistry.init();
         EffectRegistry.registerEffects();
         ItemRegistry.registerItems();
+        ModelRegistry.registerModels();
         KeybindPacket.init();
         setSpecialisations();
     }

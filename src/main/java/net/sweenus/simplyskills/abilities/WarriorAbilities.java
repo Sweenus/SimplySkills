@@ -151,4 +151,13 @@ public class WarriorAbilities {
         }
     }
 
+    public static void passiveWarriorSwordfall(PlayerEntity player, LivingEntity target) {
+        int effectChance = 25;
+        if (player.hasStatusEffect(EffectRegistry.MIGHT))
+            effectChance = effectChance * 2;
+        if (player.getRandom().nextInt(100) < effectChance) {
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:physical_swordfall", 32, target);
+        }
+    }
+
 }

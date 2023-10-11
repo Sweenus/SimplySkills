@@ -423,6 +423,13 @@ public abstract class ServerPlayerEntityMixin {
                         WarriorAbilities.passiveWarriorTwinstrike(player, livingTarget);
                     }
 
+                    //Passive Warrior Swordfall
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                            SkillReferencePosition.warriorSwordfall, serverPlayer)
+                            && target instanceof LivingEntity livingTarget) {
+                        WarriorAbilities.passiveWarriorSwordfall(player, livingTarget);
+                    }
+
 
 
                 }
