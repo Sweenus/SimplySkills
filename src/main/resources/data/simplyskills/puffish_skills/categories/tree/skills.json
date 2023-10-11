@@ -23,12 +23,6 @@
 		"y": 73.9008344562721,
 		"root": false
 	},
-	"8awahchejh1ur0w1": {
-		"definition": "stamina+5%",
-		"x": 128,
-		"y": 73.9008344562721,
-		"root": false
-	},
 	"19cn2x6w7b4dpg9b": {
 		"definition": "spell_crit_damage_additive+1%",
 		"x": 0,
@@ -60,7 +54,7 @@
 		"root": false
 	},
 	"3wlyo7piwp7gedsk": {
-		"definition": "stamina+5%",
+		"definition": "melee_damage+1%",
 		"x": 192,
 		"y": 110.85125168440814,
 		"root": false
@@ -1977,6 +1971,42 @@
 		"definition": "attack_speed+1%",
 		"x": -32,
 		"y": 240.17771198288426,
+		"root": false
+	},
+	"l25y43rzg9mp48ju": {
+		"definition": "warriorSwordfall",
+		"x": 160,
+		"y": 92.37604307034012,
+		"root": false
+	},
+	"d16di14h5fwq8jcw": {
+		"definition": "melee_damage+1%",
+		"x": 192,
+		"y": 73.9008344562721,
+		"root": false
+	},
+	"ybsmw0rd6mk0sjqs": {
+		"definition": "melee_damage+1%",
+		"x": 160,
+		"y": 55.42562584220407,
+		"root": false
+	},
+	"1kjabez7zva9cn2i": {
+		"definition": "stamina+5%",
+		"x": 160,
+		"y": 129.32646029847615,
+		"root": false
+	},
+	"rnmpdwpo3ahv52sd": {
+		"definition": "stamina+5%",
+		"x": 128,
+		"y": 110.85125168440814,
+		"root": false
+	},
+	"0qh8o1inqh522udp": {
+		"definition": "stamina+5%",
+		"x": 128,
+		"y": 73.9008344562721,
 		"root": false
 	}
 }

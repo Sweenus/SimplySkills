@@ -152,7 +152,7 @@ public class WarriorAbilities {
     }
 
     public static void passiveWarriorSwordfall(PlayerEntity player, LivingEntity target) {
-        int effectChance = 25;
+        int effectChance = 15;
         if (player.hasStatusEffect(EffectRegistry.MIGHT))
             effectChance = effectChance * 2;
         if (player.getRandom().nextInt(100) < effectChance) {

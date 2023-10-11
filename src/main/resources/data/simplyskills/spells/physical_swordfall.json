@@ -63,7 +63,7 @@
             "max_speed": 0.3
           }
         ],
-        "sound": {
+        "impact_sound": {
           "id": "simplyskills:soundeffect_32",
           "volume": 1.5
         }
@@ -98,8 +98,8 @@
     },
     "animation": "spell_engine:one_handed_area_release",
     "sound": {
-      "id": "simplyskills:soundeffect_32",
-      "volume": 1.5
+      "id": "simplyskills:soundeffect_15",
+      "volume": 0.3
     }
   },
   "impact": [
@@ -119,7 +119,11 @@
           "min_speed": 0.01,
           "max_speed": 0.3
         }
-      ]
+      ],
+      "sound": {
+        "id": "simplyskills:soundeffect_14",
+        "volume": 0.3
+      }
     }
   ],
   "cost": {
