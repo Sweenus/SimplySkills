@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.abilities;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
@@ -13,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
+import net.puffish.skillsmod.api.Skill;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.items.GraciousManuscript;
@@ -21,6 +23,7 @@ import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -103,6 +106,31 @@ public class AbilityLogic {
         if (player.getMainHandStack().getItem() != ItemRegistry.GRACIOUSMANUSCRIPT)
             player.getWorld().playSoundFromEntity(null, player, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
                     SoundCategory.PLAYERS, 1, 1);
+    }
+
+    // Unlocks junction nodes of the corresponding type
+    public static void performJunctionLogic(ServerPlayerEntity player, String skillId, Identifier categoryId) {
+        List<String> sapphire = new ArrayList<>();
+        sapphire.add(SkillReferencePosition.sapphire_portal_1);
+        sapphire.add(SkillReferencePosition.sapphire_portal_2);
+        List<String> ruby = new ArrayList<>();
+        ruby.add("123");
+        ruby.add("abc");
+
+        for (String s : sapphire) {
+            if (skillId.equals(s) && HelperMethods.isUnlocked(categoryId.toString(), s, player)) {
+                for (String su : sapphire) {
+                    SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
+                }
+            }
+        }
+        for (String s : ruby) {
+            if (skillId.equals(s) && HelperMethods.isUnlocked(categoryId.toString(), s, player)) {
+                for (String su : ruby) {
+                    SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
+                }
+            }
+        }
     }
 
     public static void performTagEffects(PlayerEntity player, String tags) {

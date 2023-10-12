@@ -4495,5 +4495,23 @@
 				}
 			}
 		]
+	},
+	"portalSapphire": {
+		"title": "§7§6[Junction: §7Sapphire§6]§7\n\n Unlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/sapphire_portal.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "portalSapphire"
+				}
+			}
+		]
 	}
 }

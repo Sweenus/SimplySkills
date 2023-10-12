@@ -6,6 +6,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.SkillsMod;
+import net.puffish.skillsmod.server.network.packets.in.SkillClickInPacket;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.spongepowered.asm.mixin.Mixin;
@@ -33,7 +34,12 @@ public class SkillsModMixin {
                     SoundCategory.PLAYERS, 1, (float) choose_pitch);
 
             }
-        }
+    }
+
+    @Inject(at = @At("TAIL"), method = "onSkillClickPacket")
+    public void simplyskills$onSkillClickPacket(ServerPlayerEntity player, SkillClickInPacket packet, CallbackInfo ci) {
+        AbilityLogic.performJunctionLogic(player, packet.getSkillId(), packet.getCategoryId());
+    }
 
     @Inject(at = @At("HEAD"), method = "unlockCategory", cancellable = true)
     public void simplyskills$unlockCategory(ServerPlayerEntity player, Identifier categoryIdentifier, CallbackInfo ci) {

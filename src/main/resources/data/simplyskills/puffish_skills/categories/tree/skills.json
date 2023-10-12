@@ -618,7 +618,7 @@
 		"root": false
 	},
 	"fblggw09uwd4mk3d": {
-		"definition": "movement_speed+1%",
+		"definition": "portalSapphire",
 		"x": 0,
 		"y": 517.3058411939046,
 		"root": false
@@ -636,7 +636,7 @@
 		"root": false
 	},
 	"4jsg72vigi1qyj9j": {
-		"definition": "spell_crit_damage_additive+1%",
+		"definition": "portalSapphire",
 		"x": 0,
 		"y": -517.3058411939046,
 		"root": false

@@ -2,6 +2,12 @@ package net.sweenus.simplyskills.util;
 
 public class SkillReferencePosition {
 
+    //Misc
+    public static String sapphire_portal_1 = "fblggw09uwd4mk3d";
+    public static String sapphire_portal_2 = "4jsg72vigi1qyj9j";
+    public static String ruby_portal_1 = "";
+    public static String ruby_portal_2 = "";
+
     public static String hardy = "ikel6uas72gjxef3";
 
     public static String fervour = "946p8e1tc68qtw4v";
