@@ -40,9 +40,9 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:ice",
+          "model_id": "simplyskills:projectile/ice_projectile",
           "render": "DEEP",
-          "scale": 0.2
+          "scale": 1
         }
       }
     },

@@ -101,9 +101,9 @@
               "max_speed": 0.05
             }
           ],
-          "model_id": "minecraft:magma_block",
+          "model_id": "simplyskills:projectile/meteor_projectile",
           "render": "DEEP",
-          "scale": 2
+          "scale": 2.5
         }
       }
     },

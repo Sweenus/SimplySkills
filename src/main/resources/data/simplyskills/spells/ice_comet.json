@@ -101,7 +101,7 @@
               "max_speed": 0.05
             }
           ],
-          "model_id": "minecraft:ice",
+          "model_id": "simplyskills:projectile/comet_projectile",
           "render": "DEEP",
           "scale": 2
         }

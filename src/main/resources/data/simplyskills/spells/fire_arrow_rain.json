@@ -49,9 +49,9 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:fire_charge",
+          "model_id": "simplyskills:projectile/fire_projectile",
           "render": "DEEP",
-          "scale": 0.1
+          "scale": 1
         }
       }
     },

@@ -40,9 +40,9 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:amethyst_block",
+          "model_id": "simplyskills:projectile/arcane_projectile",
           "render": "DEEP",
-          "scale": 0.3
+          "scale": 1
         }
       }
     },

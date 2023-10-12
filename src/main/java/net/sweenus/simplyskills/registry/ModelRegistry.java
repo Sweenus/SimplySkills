@@ -14,7 +14,13 @@ public class ModelRegistry {
         // For projectiles 'Up' in blockbench is 'forward' in-game with default rotations
         CustomModels.registerModelIds(List.of(
                 new Identifier(MOD_ID, "projectile/swordfall"),
-                new Identifier(MOD_ID, "projectile/sword")
+                new Identifier(MOD_ID, "projectile/sword"),
+                new Identifier(MOD_ID, "projectile/ice_projectile"),
+                new Identifier(MOD_ID, "projectile/fire_projectile"),
+                new Identifier(MOD_ID, "projectile/lightning_projectile"),
+                new Identifier(MOD_ID, "projectile/arcane_projectile"),
+                new Identifier(MOD_ID, "projectile/meteor_projectile"),
+                new Identifier(MOD_ID, "projectile/comet_projectile")
         ));
     }
 

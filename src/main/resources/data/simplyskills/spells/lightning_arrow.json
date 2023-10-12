@@ -40,9 +40,9 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "minecraft:sea_lantern",
+          "model_id": "simplyskills:projectile/lightning_projectile",
           "render": "DEEP",
-          "scale": 0.2
+          "scale": 1
         }
       }
     },
@@ -73,8 +73,8 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:soundeffect_32",
-        "volume": 0.2
+        "id": "simplyskills:soundeffect_35",
+        "volume": 0.4
       }
     }
   ],
