@@ -16,6 +16,7 @@ import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.casting.SpellCast;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
+import net.sweenus.simplyskills.util.HelperMethods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -36,8 +37,9 @@ public class SpellProjectileRendererMixin <T extends Entity & FlyingItemEntity> 
             if (projectile.renderData() != null) {
                 Spell.ProjectileData.Client renderData = projectile.renderData();
                 String modelId = renderData.model_id;
+                String[] modelList =  new String[] {"swordfall", "sword"};
 
-                if (modelId.contains("swordfall")) {
+                if (HelperMethods.stringContainsAny(modelId, modelList)) {
                     renderData.rotate_degrees_per_tick = 0;
                 }
 

@@ -431,7 +431,6 @@ public abstract class ServerPlayerEntityMixin {
                     }
 
 
-
                 }
             }
         }

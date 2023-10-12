@@ -1,22 +1,21 @@
 {
-  "school": "LIGHTNING",
+  "school": "PHYSICAL_MELEE",
   "range": 24,
   "learn": {
     "tier": 1
   },
   "cast": {
-    "duration": 0.75,
-    "animation": "spell_engine:one_handed_projectile_charge",
+    "duration": 0.0,
     "sound": {
       "id": "spell_engine:generic_fire_casting",
       "randomness": 0
     },
     "particles": [
       {
-        "particle_id": "spell_engine:holy_spark",
+        "particle_id": "mycelium",
         "shape": "SPHERE",
         "origin": "CENTER",
-        "count": 45.0,
+        "count": 1.0,
         "min_speed": 0.12,
         "max_speed": 0.15
       }
@@ -31,40 +30,23 @@
         "client_data": {
           "travel_particles": [
             {
-              "particle_id": "spell_engine:holy_spark",
+              "particle_id": "mycelium",
               "shape": "SPHERE",
               "origin": "CENTER",
               "count": 1.0,
               "min_speed": 0.12,
               "max_speed": 0.15
-            },
-            {
-              "particle_id": "cloud",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 3.0,
-              "min_speed": 0.01,
-              "max_speed": 0.05
-            },
-            {
-              "particle_id": "electric_spark",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 1.0,
-              "min_speed": 0.01,
-              "max_speed": 0.02
             }
           ],
-          "model_id": "minecraft:sea_lantern",
+          "model_id": "simplyskills:projectile/sword",
           "render": "DEEP",
-          "light_emission": "RADIATE",
-          "scale": 0.0
+          "light_emission": "NONE",
+          "scale": 0.2
         }
       }
     },
-    "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_35",
+      "id": "simplyskills:soundeffect_7",
       "volume": 0.2,
       "pitch": 1.1
     }
@@ -75,22 +57,22 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0.1,
-          "spell_power_coefficient": 0.1
+          "spell_power_coefficient": 0.2
         }
       },
       "particles": [
         {
-          "particle_id": "spell_engine:holy_spark",
+          "particle_id": "cloud",
           "shape": "SPHERE",
           "origin": "CENTER",
-          "count": 4,
+          "count": 5,
           "min_speed": 0.01,
-          "max_speed": 0.03
+          "max_speed": 0.07
         }
       ],
       "sound": {
-        "id": "simplyskills:soundeffect_35",
-        "volume": 0.1
+        "id": "simplyskills:soundeffect_32",
+        "volume": 0.2
       }
     }
   ],

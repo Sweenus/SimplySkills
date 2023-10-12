@@ -234,14 +234,14 @@ public class WizardAbilities {
                                                           Spell.ProjectileData.Perks perks) {
 
         if (player != null && spellProjectile.age % 5 == 0 && spellProjectile.age > 5) {
-            if (spellId.toString().contains("lightning_ball")) {
+            if (spellId.toString().contains("lightning_ball") || spellId.toString().contains("lightning_lesser")) {
 
                 if (HelperMethods.isUnlocked("simplyskills:wizard",
                         SkillReferencePosition.wizardSpecialisationStaticDischargeLightningBall, player)) {
 
                     Vec3d position = spellProjectile.getPos();
                     if (!spellId.toString().contains("ball_homing")) {
-                        perks.pierce = 32;
+                        perks.pierce = 132;
                         SpellProjectile projectile = new SpellProjectile(spellProjectile.getWorld(),
                                 (LivingEntity) spellProjectile.getOwner(), position.getX(), position.getY(), position.getZ(),
                                 spellProjectile.behaviour(), new Identifier("simplyskills:lightning_lesser"), (Entity) null,
@@ -257,7 +257,7 @@ public class WizardAbilities {
                                 spellProjectile.getX() - radius, spellProjectile.getY() - (float) radius / 2, spellProjectile.getZ() - radius);
 
                         for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                            if (entities != null && player.getRandom().nextInt(100) < 35) {
+                            if (entities != null && player.getRandom().nextInt(100) < 5) {
                                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
                                     projectile.setFollowedTarget(le);
@@ -275,7 +275,8 @@ public class WizardAbilities {
                 }
 
                 if (HelperMethods.isUnlocked("simplyskills:wizard",
-                        SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrb, player)) {
+                        SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrb, player)
+                        && spellId.toString().contains("lightning_ball")) {
 
                     spellProjectile.setFollowedTarget(player);
                     spellProjectile.range = 512;

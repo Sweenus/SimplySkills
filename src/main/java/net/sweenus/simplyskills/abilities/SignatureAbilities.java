@@ -359,7 +359,7 @@ public class SignatureAbilities {
                     spellID,
                     list,
                     action,
-                    20);
+                    1);
         }
     }
 

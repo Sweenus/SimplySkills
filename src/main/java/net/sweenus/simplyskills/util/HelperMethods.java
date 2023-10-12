@@ -66,6 +66,11 @@ public class HelperMethods {
                 && target.getBodyYaw() > (attacker.getBodyYaw() - 32);
     }
 
+    //Check if walking
+    public static boolean isWalking(Entity entity) {
+        return entity instanceof PlayerEntity player && (!player.isDead() && (player.isSwimming() || player.getVelocity().horizontalLength() > 0.1));
+    }
+
     //Checks if skill is unlocked with presence checks.
     //If provided null for the skill argument, it will instead return if the category is unlocked.
     public static boolean isUnlocked (String skillTree, String skill, LivingEntity livingEntity) {

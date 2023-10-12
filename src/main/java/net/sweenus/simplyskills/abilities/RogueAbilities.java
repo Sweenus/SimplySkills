@@ -10,20 +10,31 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.puffish.skillsmod.rewards.builtin.AttributeReward;
 import net.puffish.skillsmod.server.PlayerAttributes;
+import net.spell_engine.api.spell.Spell;
+import net.spell_engine.entity.SpellProjectile;
+import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
+import net.sweenus.simplyskills.effects.StaticChargeEffect;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class RogueAbilities {
 
@@ -240,8 +251,16 @@ public class RogueAbilities {
                 SoundCategory.PLAYERS, 0.6f, 1.6f);
 
         if (HelperMethods.isUnlocked(rogueSkillTree,
-                SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player))
+                SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player)) {
+
+            //Rogue Bladestorm
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
+                    SkillReferencePosition.rogueBladestorm, player)){
+                RogueAbilities.daggerstormSummon(player);
+            }
+
             RogueAbilities.passiveRoguePreparationShadowstrike(player);
+        }
 
         return true;
     }
@@ -267,6 +286,44 @@ public class RogueAbilities {
                     1, 2);
 
         return true;
+    }
+
+    // Rogue Dagger Storm summon
+    public static void daggerstormSummon(PlayerEntity player) {
+        Box box = HelperMethods.createBox(player, 8);
+        int count = 12;
+        int chance = 95;
+        int location = -3;
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_ENTITY)) {
+
+            if (entities != null) {
+                if ((entities instanceof SpellProjectile spe) && spe.getOwner() == player) {
+                    count--;
+                }
+
+                if ((entities instanceof LivingEntity le) && count > 0) {
+                    if (player.getRandom().nextInt(100) < chance && HelperMethods.checkFriendlyFire(le, player)) {
+                        //SignatureAbilities.castSpellEngineIndirectTarget(player,
+                        //"simplyskills:physical_dagger_homing",
+                        //9, player);
+
+                        SpellHelper.ImpactContext context = new SpellHelper.ImpactContext();
+                        SpellProjectile projectile = new SpellProjectile(player.getWorld(),
+                                player, player.getX() + location, player.getY(), player.getZ() + location,
+                                SpellProjectile.Behaviour.FLY, new Identifier("simplyskills:physical_dagger_homing"), (Entity) null,
+                                context, null);
+                        Random random = new Random();
+                        projectile.setVelocity(player.getVelocity().multiply(5).rotateZ(random.nextInt(280)).rotateX(random.nextInt(280)));
+                        projectile.range = 356;
+                        ProjectileUtil.setRotationFromVelocity(projectile, 0.2F);
+                        projectile.setFollowedTarget(le);
+                        player.getWorld().spawnEntity(projectile);
+                        location ++;
+                    }
+                }
+
+            }
+        }
     }
 
 

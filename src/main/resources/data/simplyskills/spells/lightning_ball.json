@@ -64,7 +64,7 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_7",
+      "id": "simplyskills:soundeffect_35",
       "volume": 0.2,
       "pitch": 1.1
     }
@@ -89,7 +89,7 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:soundeffect_32",
+        "id": "simplyskills:soundeffect_35",
         "volume": 0.2
       }
     }

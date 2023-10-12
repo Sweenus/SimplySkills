@@ -19,6 +19,7 @@ import net.spell_engine.internals.SpellHelper;
 import net.spell_power.api.MagicSchool;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.abilities.RangerAbilities;
+import net.sweenus.simplyskills.abilities.RogueAbilities;
 import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -71,27 +72,6 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
             ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
             Object object = this;
 
-            /*
-            if (this.age < 100) {
-                if (player != null) {
-
-                    // Frost Pierce
-                    if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpecialisationIceComet, player)) {
-                        if (this.getSpell().school == MagicSchool.FROST)
-                            this.perks.pierce = 5;
-                    }
-                    // Arcane Ricochet
-                    if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpecialisationArcaneBolt, player)) {
-                        if (this.getSpell().school == MagicSchool.ARCANE) {
-                            this.perks.chain_reaction_triggers = 16;
-                            this.perks.chain_reaction_increment = 5;
-                            this.perks.chain_reaction_size = 10;
-                        }
-                    }
-                }
-            }
-             */
-
             // Ranger Elemental Artillery
             RangerAbilities.signatureRangerElementalArtillery(player, (SpellProjectile) object,this.spellId, this.context, this.perks);
 
@@ -107,7 +87,8 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     protected void simplyskills$onBlockHit(CallbackInfo ci) {
         if (!this.getWorld().isClient) {
             if (this.spellId != null) {
-                if (this.spellId.toString().equals("simplyskills:lightning_ball_homing"))
+                String[] spellList =  new String[] {"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
+                if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList))
                     ci.cancel();
             }
         }
@@ -116,7 +97,9 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     protected void simplyskills$onEntityHit(EntityHitResult entityHitResult, CallbackInfo ci) {
         if (!this.getWorld().isClient) {
             if (this.spellId != null) {
-                if (this.spellId.toString().equals("simplyskills:lightning_ball_homing") && this.getOwner() instanceof LivingEntity livingEntity) {
+                String[] spellList =  new String[] {"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
+                if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof LivingEntity livingEntity) {
+
                     SpellHelper.projectileImpact(livingEntity, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
                     ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
 
