@@ -11,6 +11,7 @@ import net.minecraft.util.Rarity;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.items.GraciousManuscript;
 import net.sweenus.simplyskills.items.MalevolentManuscript;
+import net.sweenus.simplyskills.items.SkillChronicle;
 
 public class ItemRegistry {
 
@@ -22,6 +23,11 @@ public class ItemRegistry {
     public static final Item GRACIOUSMANUSCRIPT = registerItem( "gracious_manuscript",
             new GraciousManuscript( new FabricItemSettings()
                     .rarity(Rarity.EPIC)
+                    .maxCount(1)
+                    .fireproof()));
+    public static final Item SKILLCHRONICLE = registerItem( "skill_chronicle",
+            new SkillChronicle( new FabricItemSettings()
+                    .rarity(Rarity.RARE)
                     .maxCount(1)
                     .fireproof()));
 

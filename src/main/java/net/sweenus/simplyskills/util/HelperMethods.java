@@ -13,6 +13,7 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -31,6 +32,8 @@ import net.sweenus.simplyskills.SimplySkills;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import static net.puffish.skillsmod.SkillsAPI.getCategory;
 
@@ -354,13 +357,96 @@ public class HelperMethods {
 
     public static void treeResetOnDeath(ServerPlayerEntity user ) {
         if (SimplySkills.generalConfig.treeResetOnDeath) {
+            resetAllTrees(user);
+        }
+    }
 
-            List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
-            for (String specialisation : specialisations) {
-                getCategory(new Identifier(specialisation)).get().erase(user);
-                getCategory(new Identifier("simplyskills:tree")).get().erase(user);
+    public static void resetAllTrees (ServerPlayerEntity user) {
+        List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
+        for (String specialisation : specialisations) {
+            getCategory(new Identifier(specialisation)).get().erase(user);
+            getCategory(new Identifier("simplyskills:tree")).get().erase(user);
+        }
+    }
+
+    public static boolean storeBuildTemplate( ServerPlayerEntity user, ItemStack stack ) {
+
+        List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(user);
+        int categoryCount = 0;
+        int skillCount = 0;
+        String uuid = user.getUuidAsString();
+
+        if (!stack.getOrCreateNbt().getString("player_uuid").isEmpty())
+            return false;
+
+        for (Category uc : unlockedCategories) {
+            stack.getOrCreateNbt().putString("category"+categoryCount, uc.getId().toString());
+            List<Skill> unlockedSkills = uc.getUnlockedSkills(user).stream().toList();
+
+            for (Skill s : unlockedSkills) {
+                stack.getOrCreateNbt().putString("skill"+skillCount, s.getId());
+                skillCount++;
+            }
+            categoryCount++;
+        }
+
+        resetAllTrees(user);
+        stack.getOrCreateNbt().putString("player_uuid", uuid);
+
+        return true;
+    }
+
+    public static boolean applyBuildTemplate( ServerPlayerEntity user, ItemStack stack ) {
+
+        NbtCompound nbt = stack.getOrCreateNbt();
+        String uuid = user.getUuidAsString();
+        stack.getOrCreateNbt().putString("player_uuid", uuid);
+
+        System.out.println("comparing item UUID: " + nbt.getString("player_uuid") +" to " + uuid);
+        if (!nbt.getString("player_uuid").equals(uuid)) {
+            System.out.println("FAIL - UUID is not a match.");
+            return false;
+        }
+
+        for (int i = 0; i < (stack.getNbt() != null ? stack.getNbt().getSize() : 0); i ++) {
+
+            if (!nbt.getString("category" + i).isEmpty()) {
+                SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i))).get().unlock(user);
+                for (int s = 0; s < (stack.getNbt() != null ? stack.getNbt().getSize() : 0); s++) {
+
+                    if (!nbt.getString("skill" + s).isEmpty()) {
+                        if (SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i))).isPresent()) {
+
+                            if (SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i)))
+                                    .get().getSkill(nbt.getString("skill" + s)).isPresent()) {
+                                SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i)))
+                                        .get().getSkill(nbt.getString("skill" + s)).get().unlock(user);
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        //Clear NBT
+        if (!stack.getNbt().isEmpty()) {
+            int tempSize = stack.getNbt().getSize();
+            for (int i = 0; i < tempSize; i++) {
+
+                if (!nbt.getString("category" + i).isEmpty()) {
+                    nbt.remove("category" + i);
+
+                    for (int s = 0; s < tempSize; s++) {
+
+                        if (!nbt.getString("skill" + s).isEmpty())
+                            nbt.remove("skill" + s);
+                    }
+                }
+            }
+            nbt.remove("player_uuid");
+        }
+
+        return true;
     }
 
 
