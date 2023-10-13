@@ -107,10 +107,10 @@ public class SkillChronicle extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
 
-        if (!world.isClient) {
+        if (!world.isClient && entity.age %60 == 0) {
             if (entity instanceof PlayerEntity user)
                 unspentPoints = HelperMethods.getUnspentPoints((ServerPlayerEntity) user);
-            System.out.println("Unspent points: " + unspentPoints);
+            //System.out.println("Unspent points: " + unspentPoints);
         }
 
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -124,9 +124,9 @@ public class SkillChronicle extends Item {
         if (nbt != null) {
             if (!nbt.getString("player_uuid").isEmpty()) {
                 tooltip.add(Text.literal(""));
-                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip8"));
-                tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip10"));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip8"));
                 tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip14"));
                 HelperMethods.printNBT(itemStack, tooltip, "category");
@@ -143,9 +143,9 @@ public class SkillChronicle extends Item {
                     tooltip.add(Text.literal(""));
             } else {
                 tooltip.add(Text.literal(""));
-                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip7"));
-                tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip9"));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip7"));
                 if (unspentPoints > 0) {
                     tooltip.add(Text.literal(""));
                     tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", unspentPoints));

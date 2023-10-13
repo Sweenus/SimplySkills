@@ -467,8 +467,8 @@ public class HelperMethods {
             for (int i = 0; i < tempSize; i++) {
 
                 if (!nbt.getString("category" + i).isEmpty()) {
-                    if (type.equals("category"))
-                        tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i)));
+                    if (type.equals("category") && !nbt.getString("category" + i).contains("tree"))
+                        tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i).replace("simplyskills:", "")));
                 }
                 if (!nbt.getString("skill" + i).isEmpty())
                     skillPrintCount++;
@@ -480,7 +480,7 @@ public class HelperMethods {
             if (!nbt.getString("player_name").isEmpty()) {
                 String name = nbt.getString("player_name");
                 if (type.equals("name"))
-                    tooltip.add(Text.literal("§7 Bound to: " + name));
+                    tooltip.add(Text.literal("§7Bound to: " + name));
             }
         }
     }
