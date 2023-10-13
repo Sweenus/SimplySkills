@@ -373,29 +373,35 @@ public class HelperMethods {
     }
 
     public static boolean storeBuildTemplate( ServerPlayerEntity user, ItemStack stack ) {
-
         List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(user);
         int categoryCount = 0;
         int skillCount = 0;
-        String uuid = user.getUuidAsString();
+        String userUUID = user.getUuidAsString();
+
         stack.getOrCreateNbt().putString("player_name", user.getName().getString());
 
-        if (!stack.getOrCreateNbt().getString("player_uuid").isEmpty())
+        if (!stack.getOrCreateNbt().getString("player_uuid").isEmpty()) {
             return false;
+        }
 
-        for (Category uc : unlockedCategories) {
-            stack.getOrCreateNbt().putString("category"+categoryCount, uc.getId().toString());
-            List<Skill> unlockedSkills = uc.getUnlockedSkills(user).stream().toList();
+        NbtCompound nbt = stack.getOrCreateNbt();
 
-            for (Skill s : unlockedSkills) {
-                stack.getOrCreateNbt().putString("skill"+skillCount, s.getId());
+        for (Category category : unlockedCategories) {
+            String categoryKey = "category" + categoryCount;
+            nbt.putString(categoryKey, category.getId().toString());
+
+            Collection<Skill> unlockedSkills = category.getUnlockedSkills(user);
+
+            for (Skill skill : unlockedSkills) {
+                String skillKey = "skill" + skillCount;
+                nbt.putString(skillKey, skill.getId());
                 skillCount++;
             }
             categoryCount++;
         }
 
         resetAllTrees(user);
-        stack.getOrCreateNbt().putString("player_uuid", uuid);
+        nbt.putString("player_uuid", userUUID);
 
         return true;
     }

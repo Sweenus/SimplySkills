@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.items;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
@@ -43,13 +44,14 @@ public class SkillChronicle extends Item {
             return TypedActionResult.fail(itemStack);
         }
 
+        world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT6, SoundCategory.PLAYERS, 0.3f, 0.7f);
         user.setCurrentHand(hand);
         return TypedActionResult.consume(itemStack);
     }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return 80;
+        return 60;
     }
 
     @Override
@@ -73,6 +75,7 @@ public class SkillChronicle extends Item {
                 List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(serverUser);
                 int pointsRemaining = 0;
                 boolean hasSpentPoints = false;
+                boolean success = false;
 
                 for (Category uc : unlockedCategories) {
 
@@ -89,19 +92,28 @@ public class SkillChronicle extends Item {
                 if (hasSpentPoints) {
                     //System.out.println("Found skills. Trying to store build.");
                     if (HelperMethods.storeBuildTemplate(serverUser, stack)) {
-                        world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT12, SoundCategory.PLAYERS, 0.5f, 1.0f);
-                        player.getItemCooldownManager().set(this, 100);
+                        world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT44, SoundCategory.PLAYERS, 0.6f, 1.0f);
+                        player.getItemCooldownManager().set(this, 180);
+                        user.sendMessage(Text.literal("Build Stored Successfully"));
+                        success = true;
                     }
                 }
                 //APPLY
                 else {
                     //System.out.println("Did not find skills. Trying to retrieve build.");
                     if (HelperMethods.applyBuildTemplate(serverUser, stack)) {
-                        world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT11, SoundCategory.PLAYERS, 0.5f, 1.0f);
-                        player.getItemCooldownManager().set(this, 100);
+                        world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT43, SoundCategory.PLAYERS, 0.7f, 1.0f);
+                        player.getItemCooldownManager().set(this, 180);
+                        user.sendMessage(Text.literal("Build Retrieved Successfully"));
+                        success = true;
                     }
                 }
+                if (!success) {
+                    user.sendMessage(Text.literal("You do not meet the requirements"));
+                    player.getItemCooldownManager().set(this, 60);
+                }
             }
+            MinecraftClient.getInstance().getSoundManager().stopSounds(SoundRegistry.SOUNDEFFECT6.getId(), SoundCategory.PLAYERS);
         }
     }
     @Override

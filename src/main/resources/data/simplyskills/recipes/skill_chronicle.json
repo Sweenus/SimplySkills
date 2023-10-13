@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "X": {
+      "item": "minecraft:gold_nugget"
+    },
+    "Y": {
+      "item": "minecraft:ink_sac"
+    },
+    "Z": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "##X",
+    "#Z#",
+    "##Y"
+  ],
+  "result": {
+    "item": "simplyskills:skill_chronicle"
+  }
+}
