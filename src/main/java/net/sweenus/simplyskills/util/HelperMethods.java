@@ -404,48 +404,44 @@ public class HelperMethods {
 
         NbtCompound nbt = stack.getOrCreateNbt();
         String uuid = user.getUuidAsString();
-        stack.getOrCreateNbt().putString("player_uuid", uuid);
-        stack.getOrCreateNbt().putString("player_name", user.getName().getString());
+        nbt.putString("player_uuid", uuid);
+        nbt.putString("player_name", user.getName().getString());
 
-        //System.out.println("comparing item UUID: " + nbt.getString("player_uuid") +" to " + uuid);
         if (!nbt.getString("player_uuid").equals(uuid)) {
-            //System.out.println("FAIL - UUID is not a match.");
             return false;
         }
 
         resetAllTrees(user);
-        for (int i = 0; i < (stack.getNbt() != null ? stack.getNbt().getSize() : 0); i ++) {
+        int size = stack.getNbt() != null ? stack.getNbt().getSize() : 0;
+        for (int i = 0; i < size; i++) {
+            String categoryKey = "category" + i;
+            String category = nbt.getString(categoryKey);
+            if (category.isEmpty()) continue;
 
-            if (!nbt.getString("category" + i).isEmpty()) {
-                SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i))).get().unlock(user);
-                for (int s = 0; s < (stack.getNbt() != null ? stack.getNbt().getSize() : 0); s++) {
+            SkillsAPI.getCategory(new Identifier(category)).ifPresent(categoryObj -> {
+                categoryObj.unlock(user);
+                for (int s = 0; s < size; s++) {
+                    String skillKey = "skill" + s;
+                    String skill = nbt.getString(skillKey);
+                    if (skill.isEmpty()) continue;
 
-                    if (!nbt.getString("skill" + s).isEmpty()) {
-                        if (SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i))).isPresent()) {
-
-                            if (SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i)))
-                                    .get().getSkill(nbt.getString("skill" + s)).isPresent()) {
-                                SkillsAPI.getCategory(new Identifier(nbt.getString("category" + i)))
-                                        .get().getSkill(nbt.getString("skill" + s)).get().unlock(user);
-                            }
-                        }
-                    }
+                    categoryObj.getSkill(skill).ifPresent(skillObj -> skillObj.unlock(user));
                 }
-            }
+            });
         }
 
         //Clear NBT
         if (!stack.getNbt().isEmpty()) {
             int tempSize = stack.getNbt().getSize();
             for (int i = 0; i < tempSize; i++) {
-
-                if (!nbt.getString("category" + i).isEmpty()) {
-                    nbt.remove("category" + i);
+                String categoryKey = "category" + i;
+                if (!nbt.getString(categoryKey).isEmpty()) {
+                    nbt.remove(categoryKey);
 
                     for (int s = 0; s < tempSize; s++) {
-
-                        if (!nbt.getString("skill" + s).isEmpty())
-                            nbt.remove("skill" + s);
+                        String skillKey = "skill" + s;
+                        if (!nbt.getString(skillKey).isEmpty())
+                            nbt.remove(skillKey);
                     }
                 }
             }
@@ -468,7 +464,8 @@ public class HelperMethods {
 
                 if (!nbt.getString("category" + i).isEmpty()) {
                     if (type.equals("category") && !nbt.getString("category" + i).contains("tree"))
-                        tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i).replace("simplyskills:", "")));
+                        tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i).
+                                replace("simplyskills:", "")));
                 }
                 if (!nbt.getString("skill" + i).isEmpty())
                     skillPrintCount++;
