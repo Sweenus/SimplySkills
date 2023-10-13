@@ -50,6 +50,13 @@ public class WizardConfig implements ConfigData {
     public int signatureWizardStaticChargeWeaknessAmplifier = 0;
     public int signatureWizardStaticDischargeRange = 120;
     public int signatureWizardStaticDischargeCooldown = 35;
+    @ConfigEntry.Gui.Tooltip
+    public int signatureWizardLightningOrbBuffRadius = 15;
+    @ConfigEntry.Gui.Tooltip
+    public int signatureWizardLightningOrbBuffFrequency = 40;
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(max = 100)
+    public int signatureWizardLightningOrbBuffChance = 35;
     public int signatureWizardArcaneBoltRange = 120;
     public int signatureWizardLesserArcaneBoltRadius = 12;
     public int signatureWizardArcaneBoltVolleyDuration = 400;

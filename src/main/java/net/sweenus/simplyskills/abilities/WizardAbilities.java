@@ -302,15 +302,14 @@ public class WizardAbilities {
     }
 
     public static void signatureWizardLightningOrbBuff(PlayerEntity player) {
-
-        int radius = 15;
-        int frequency = 40;
+        int radius = SimplySkills.wizardConfig.signatureWizardLightningOrbBuffRadius;
+        int frequency = SimplySkills.wizardConfig.signatureWizardLightningOrbBuffFrequency;
         int count = 0;
         Box box = new Box(player.getX() + radius, player.getY() + (float) radius * 3, player.getZ() + radius,
                 player.getX() - radius, player.getY() - (float) radius * 3, player.getZ() - radius);
         if (player.age % frequency == 0) {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_ENTITY)) {
-                if (entities != null && player.getRandom().nextInt(100) < 35) {
+                if (entities != null && player.getRandom().nextInt(100) < SimplySkills.wizardConfig.signatureWizardLightningOrbBuffChance) {
                     if ((entities instanceof SpellProjectile spe) && spe.getOwner() != null) {
                         if (spe.getOwner() == player)
                             count ++;

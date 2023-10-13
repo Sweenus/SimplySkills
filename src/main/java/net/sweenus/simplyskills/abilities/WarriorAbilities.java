@@ -140,7 +140,7 @@ public class WarriorAbilities {
     }
 
     public static void passiveWarriorTwinstrike(PlayerEntity player, LivingEntity target) {
-        int effectChance = 25;
+        int effectChance = SimplySkills.warriorConfig.passiveWarriorTwinstrikeChance;
         int effectDamage = (int) player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
         DamageSource damageSource = player.getDamageSources().playerAttack(player);
         if (player.hasStatusEffect(StatusEffects.HEALTH_BOOST))
@@ -152,7 +152,7 @@ public class WarriorAbilities {
     }
 
     public static void passiveWarriorSwordfall(PlayerEntity player, LivingEntity target) {
-        int effectChance = 15;
+        int effectChance = SimplySkills.warriorConfig.passiveWarriorSwordfallChance;
         if (player.hasStatusEffect(EffectRegistry.MIGHT))
             effectChance = effectChance * 2;
         if (player.getRandom().nextInt(100) < effectChance) {

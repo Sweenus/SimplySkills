@@ -16,6 +16,7 @@ public class SimplySkillsClient implements ClientModInitializer {
 
     public static int abilityCooldown = 500;
     public long lastUseTime;
+    public static int unspentPoints = 0;
 
     @Override
     public void onInitializeClient() {

@@ -37,5 +37,9 @@ public class WarriorConfig implements ConfigData {
     public int passiveWarriorDeathDefyAmplifierPerTenPercentHealth = 1;
     public int passiveWarriorFrenzyExhaustionDuration = 400;
     public int passiveWarriorFrenzyExhaustionStacks = 1;
+    @ConfigEntry.Gui.Tooltip
+    public int passiveWarriorTwinstrikeChance = 25;
+    @ConfigEntry.Gui.Tooltip
+    public int passiveWarriorSwordfallChance = 15;
 
 }

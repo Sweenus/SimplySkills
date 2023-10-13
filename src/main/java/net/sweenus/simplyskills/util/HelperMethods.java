@@ -170,11 +170,9 @@ public class HelperMethods {
 
     public static Vec3d getPositionLookingAt(PlayerEntity player, int range) {
         HitResult result = player.raycast(range, 0, false);
-        //System.out.println(result.getType());
         if (!(result.getType() == HitResult.Type.BLOCK)) return null;
 
         BlockHitResult blockResult = (BlockHitResult) result;
-        //System.out.println(blockResult.getBlockPos());
         return blockResult.getPos();
     }
 
@@ -216,10 +214,12 @@ public class HelperMethods {
 
                     case "Spellforged":
                         if (statusEffectInstance.getAmplifier() > spellforgedCap)
-                            HelperMethods.decrementStatusEffects(livingEntity, statusEffect, statusEffectInstance.getAmplifier() - spellforgedCap);
+                            decrementStatusEffects(livingEntity, statusEffect,
+                                    statusEffectInstance.getAmplifier() - spellforgedCap);
                     case "Might":
                         if (statusEffectInstance.getAmplifier() > mightCap)
-                            HelperMethods.decrementStatusEffects(livingEntity, statusEffect, statusEffectInstance.getAmplifier() - mightCap);
+                            decrementStatusEffects(livingEntity, statusEffect,
+                                    statusEffectInstance.getAmplifier() - mightCap);
 
                 }
             }

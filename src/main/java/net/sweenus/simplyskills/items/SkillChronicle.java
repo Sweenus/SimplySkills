@@ -22,6 +22,9 @@ import net.minecraft.world.World;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
+import net.sweenus.simplyskills.client.SimplySkillsClient;
+import net.sweenus.simplyskills.network.ModPacketHandler;
+import net.sweenus.simplyskills.network.UpdateUnspentPointsPacket;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
@@ -34,8 +37,6 @@ public class SkillChronicle extends Item {
     public SkillChronicle(Settings settings) {
         super(settings);
     }
-
-    private static int unspentPoints = 0;
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -118,13 +119,12 @@ public class SkillChronicle extends Item {
     }
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-
         if (!world.isClient && entity.age %60 == 0) {
-            if (entity instanceof PlayerEntity user)
-                unspentPoints = HelperMethods.getUnspentPoints((ServerPlayerEntity) user);
-            //System.out.println("Unspent points: " + unspentPoints);
+            if (entity instanceof ServerPlayerEntity user) {
+                int unspentPoints = HelperMethods.getUnspentPoints(user);
+                ModPacketHandler.sendTo(user, new UpdateUnspentPointsPacket(unspentPoints));
+            }
         }
-
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
@@ -147,9 +147,9 @@ public class SkillChronicle extends Item {
                 HelperMethods.printNBT(itemStack, tooltip, "skill");
                 tooltip.add(Text.literal(""));
                 HelperMethods.printNBT(itemStack, tooltip, "name");
-                if (unspentPoints > 0) {
+                if (SimplySkillsClient.unspentPoints > 0) {
                     tooltip.add(Text.literal(""));
-                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", unspentPoints));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", SimplySkillsClient.unspentPoints));
                     tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip12"));
                 }
                     tooltip.add(Text.literal(""));
@@ -158,9 +158,9 @@ public class SkillChronicle extends Item {
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip9"));
                 tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip7"));
-                if (unspentPoints > 0) {
+                if (SimplySkillsClient.unspentPoints > 0) {
                     tooltip.add(Text.literal(""));
-                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", unspentPoints));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", SimplySkillsClient.unspentPoints));
                     tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip13"));
                 }
                 tooltip.add(Text.literal(""));

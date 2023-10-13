@@ -6,6 +6,7 @@ import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.network.KeybindPacket;
+import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.registry.ModelRegistry;
@@ -80,6 +81,7 @@ public class SimplySkills implements ModInitializer {
         ItemRegistry.registerItems();
         ModelRegistry.registerModels();
         KeybindPacket.init();
+        ModPacketHandler.register();
         setSpecialisations();
     }
 }
