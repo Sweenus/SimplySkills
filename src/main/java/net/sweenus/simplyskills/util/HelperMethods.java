@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.util;
 
+import net.minecraft.datafixer.fix.PlayerUuidFix;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +18,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -32,6 +34,7 @@ import net.sweenus.simplyskills.SimplySkills;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -375,6 +378,7 @@ public class HelperMethods {
         int categoryCount = 0;
         int skillCount = 0;
         String uuid = user.getUuidAsString();
+        stack.getOrCreateNbt().putString("player_name", user.getName().getString());
 
         if (!stack.getOrCreateNbt().getString("player_uuid").isEmpty())
             return false;
@@ -401,13 +405,15 @@ public class HelperMethods {
         NbtCompound nbt = stack.getOrCreateNbt();
         String uuid = user.getUuidAsString();
         stack.getOrCreateNbt().putString("player_uuid", uuid);
+        stack.getOrCreateNbt().putString("player_name", user.getName().getString());
 
-        System.out.println("comparing item UUID: " + nbt.getString("player_uuid") +" to " + uuid);
+        //System.out.println("comparing item UUID: " + nbt.getString("player_uuid") +" to " + uuid);
         if (!nbt.getString("player_uuid").equals(uuid)) {
-            System.out.println("FAIL - UUID is not a match.");
+            //System.out.println("FAIL - UUID is not a match.");
             return false;
         }
 
+        resetAllTrees(user);
         for (int i = 0; i < (stack.getNbt() != null ? stack.getNbt().getSize() : 0); i ++) {
 
             if (!nbt.getString("category" + i).isEmpty()) {
@@ -444,9 +450,39 @@ public class HelperMethods {
                 }
             }
             nbt.remove("player_uuid");
+            nbt.remove("player_name");
         }
 
         return true;
+    }
+
+    public static void printNBT(ItemStack stack, List<Text> tooltip, String type) {
+        NbtCompound nbt = stack.getNbt();
+        if (nbt == null)
+            return;
+
+        if (!nbt.isEmpty()) {
+            int tempSize = nbt.getSize();
+            int skillPrintCount = 0;
+            for (int i = 0; i < tempSize; i++) {
+
+                if (!nbt.getString("category" + i).isEmpty()) {
+                    if (type.equals("category"))
+                        tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i)));
+                }
+                if (!nbt.getString("skill" + i).isEmpty())
+                    skillPrintCount++;
+            }
+
+            if (type.equals("skill"))
+                tooltip.add(Text.literal("  §b◇ §f" + skillPrintCount));
+
+            if (!nbt.getString("player_name").isEmpty()) {
+                String name = nbt.getString("player_name");
+                if (type.equals("name"))
+                    tooltip.add(Text.literal("§7 Bound to: " + name));
+            }
+        }
     }
 
 

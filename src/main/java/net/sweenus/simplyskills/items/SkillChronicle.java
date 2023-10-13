@@ -69,10 +69,14 @@ public class SkillChronicle extends Item {
                 boolean hasSpentPoints = false;
 
                 for (Category uc : unlockedCategories) {
-                    pointsRemaining = uc.getPointsLeft(serverUser);
-                    Collection<Skill> unlockedSkills = uc.getUnlockedSkills(serverUser);
-                    hasSpentPoints = !unlockedSkills.isEmpty();
-                    //System.out.println("Checking if we have skills unlocked");
+
+                    //Check for points spent in base tree
+                    if (uc.getId().toString().equals("simplyskills:tree")) {
+                        pointsRemaining = uc.getPointsLeft(serverUser);
+                        Collection<Skill> unlockedSkills = uc.getUnlockedSkills(serverUser);
+                        hasSpentPoints = !unlockedSkills.isEmpty();
+                        //System.out.println("Checking if we have skills unlocked");
+                    }
                 }
 
                 //STORE
@@ -80,7 +84,7 @@ public class SkillChronicle extends Item {
                     //System.out.println("Found skills. Trying to store build.");
                     if (HelperMethods.storeBuildTemplate(serverUser, stack)) {
                         world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT12, SoundCategory.PLAYERS, 0.5f, 1.0f);
-                        player.getItemCooldownManager().set(this, 1200);
+                        player.getItemCooldownManager().set(this, 100);
                     }
                 }
                 //APPLY
@@ -88,7 +92,7 @@ public class SkillChronicle extends Item {
                     //System.out.println("Did not find skills. Trying to retrieve build.");
                     if (HelperMethods.applyBuildTemplate(serverUser, stack)) {
                         world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT11, SoundCategory.PLAYERS, 0.5f, 1.0f);
-                        player.getItemCooldownManager().set(this, 1200);
+                        player.getItemCooldownManager().set(this, 100);
                     }
                 }
             }
@@ -98,7 +102,23 @@ public class SkillChronicle extends Item {
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+
+
+
+
+
+
         tooltip.add(Text.literal(""));
+        tooltip.add(Text.literal("§6Specialisations"));
+        HelperMethods.printNBT(itemStack, tooltip, "category");
+        tooltip.add(Text.literal(""));
+        tooltip.add(Text.literal("§bTotal Skill Points"));
+        HelperMethods.printNBT(itemStack, tooltip, "skill");
+        tooltip.add(Text.literal(""));
+        HelperMethods.printNBT(itemStack, tooltip, "name");
+
+
+
         tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip1"));
         tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip2"));
         tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip3"));
