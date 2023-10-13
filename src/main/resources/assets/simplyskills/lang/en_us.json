@@ -90,6 +90,7 @@
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
   "item.simplyskills.gracious_manuscript":              "Gracious Manuscript",
+  "item.simplyskills.skill_chronicle":                  "Skill Chronicle",
 
   "item.simplyskills.malevolent_manuscript.tooltip1":   "Refunds all points invested ",
   "item.simplyskills.malevolent_manuscript.tooltip2":   "in your base skill tree, ",
@@ -103,6 +104,23 @@
   "item.simplyskills.gracious_manuscript.tooltip2":   "and grants you a large amount ",
   "item.simplyskills.gracious_manuscript.tooltip3":   "of experience in each.",
   "item.simplyskills.gracious_manuscript.tooltip4":   "This is only obtainable in creative.",
+
+  "item.simplyskills.skill_chronicle.tooltip1":       "§7Capable of storing your spent",
+  "item.simplyskills.skill_chronicle.tooltip2":       "§7skill points, and your unlocked",
+  "item.simplyskills.skill_chronicle.tooltip3":       "§7specialisations.",
+  "item.simplyskills.skill_chronicle.tooltip4":       "§7You can retrieve your stored build",
+  "item.simplyskills.skill_chronicle.tooltip5":       "§7freely, as long as you have no",
+  "item.simplyskills.skill_chronicle.tooltip6":       "§7points spent in your skill trees.",
+  "item.simplyskills.skill_chronicle.tooltip7":       "§7No build stored.",
+  "item.simplyskills.skill_chronicle.tooltip8":       "§f∴ Storing 1 build ∴",
+  "item.simplyskills.skill_chronicle.tooltip9":       "§7Hold right click to store build.",
+  "item.simplyskills.skill_chronicle.tooltip10":      "§7Hold right click to restore build.",
+  "item.simplyskills.skill_chronicle.tooltip11":      "§fYou will lose §c◇ %d §f unspent",
+  "item.simplyskills.skill_chronicle.tooltip12":      "§fpoints by restoring this build.",
+  "item.simplyskills.skill_chronicle.tooltip13":      "§fpoints by storing this build.",
+  "item.simplyskills.skill_chronicle.tooltip14":      "§6Specialisations",
+  "item.simplyskills.skill_chronicle.tooltip15":      "§bTotal Skill Points",
+  "item.simplyskills.skill_chronicle.tooltip16":      "§7- Hold §2ALT§7 for more info -",
 
   "text.autoconfig.simplyskills.title" :                "Simply Skills",
   "text.autoconfig.simplyskills.category.general" :     "General",

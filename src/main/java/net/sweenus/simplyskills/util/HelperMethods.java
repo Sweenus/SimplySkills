@@ -484,6 +484,16 @@ public class HelperMethods {
             }
         }
     }
+    public static int getUnspentPoints(ServerPlayerEntity user) {
+
+        List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(user);
+        int unspentSkillPoints = 0;
+
+        for (Category uc : unlockedCategories) {
+            unspentSkillPoints += uc.getPointsLeft(user);
+        }
+        return unspentSkillPoints;
+    }
 
 
 

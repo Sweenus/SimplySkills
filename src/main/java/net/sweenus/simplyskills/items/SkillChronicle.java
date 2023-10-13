@@ -1,12 +1,15 @@
 package net.sweenus.simplyskills.items;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.ItemCooldownManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
@@ -20,6 +23,7 @@ import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.util.AbilityMethods;
 
 import java.util.Collection;
@@ -29,6 +33,8 @@ public class SkillChronicle extends Item {
     public SkillChronicle(Settings settings) {
         super(settings);
     }
+
+    private static int unspentPoints = 0;
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -98,32 +104,67 @@ public class SkillChronicle extends Item {
             }
         }
     }
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+
+        if (!world.isClient) {
+            if (entity instanceof PlayerEntity user)
+                unspentPoints = HelperMethods.getUnspentPoints((ServerPlayerEntity) user);
+            System.out.println("Unspent points: " + unspentPoints);
+        }
+
+        super.inventoryTick(stack, world, entity, slot, selected);
+    }
 
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+        NbtCompound nbt = itemStack.getOrCreateNbt();
 
-
-
-
-
-
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.literal("§6Specialisations"));
-        HelperMethods.printNBT(itemStack, tooltip, "category");
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.literal("§bTotal Skill Points"));
-        HelperMethods.printNBT(itemStack, tooltip, "skill");
-        tooltip.add(Text.literal(""));
-        HelperMethods.printNBT(itemStack, tooltip, "name");
-
-
-
-        tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip1"));
-        tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip2"));
-        tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip3"));
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip4").formatted(Formatting.RED).formatted(Formatting.UNDERLINE));
+        if (nbt != null) {
+            if (!nbt.getString("player_uuid").isEmpty()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip8"));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip10"));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip14"));
+                HelperMethods.printNBT(itemStack, tooltip, "category");
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip15"));
+                HelperMethods.printNBT(itemStack, tooltip, "skill");
+                tooltip.add(Text.literal(""));
+                HelperMethods.printNBT(itemStack, tooltip, "name");
+                if (unspentPoints > 0) {
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", unspentPoints));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip12"));
+                }
+                    tooltip.add(Text.literal(""));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip7"));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip9"));
+                if (unspentPoints > 0) {
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip11", unspentPoints));
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip13"));
+                }
+                tooltip.add(Text.literal(""));
+            }
+        }
+        tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip16"));
+        if (Screen.hasAltDown()) {
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip1"));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip2"));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip3"));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip4"));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip5"));
+            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip6"));
+        }
     }
 
 
