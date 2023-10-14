@@ -15,6 +15,7 @@ import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
@@ -30,6 +31,7 @@ import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.network.ModPacketHandler;
 
 import java.util.Collection;
 import java.util.List;
@@ -368,6 +370,15 @@ public class HelperMethods {
         }
     }
 
+    public static int getSlotWithStack(PlayerEntity player, ItemStack stack) {
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            if (ItemStack.areEqual(player.getInventory().getStack(i), stack)) {
+                return i;
+            }
+        }
+        return -1; // Return -1 if the stack is not found in the inventory
+    }
+
     public static boolean storeBuildTemplate( ServerPlayerEntity user, ItemStack stack ) {
         List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(user);
         int categoryCount = 0;
@@ -398,6 +409,10 @@ public class HelperMethods {
 
         resetAllTrees(user);
         nbt.putString("player_uuid", userUUID);
+        int slot = getSlotWithStack(user, stack);
+        if (slot != -1) {
+            ModPacketHandler.syncItemStackNbt(user, slot, stack);
+        }
 
         return true;
     }
@@ -448,7 +463,10 @@ public class HelperMethods {
             nbt.remove("player_uuid");
             nbt.remove("player_name");
         }
-
+        int slot = getSlotWithStack(user, stack);
+        if (slot != -1) {
+            ModPacketHandler.syncItemStackNbt(user, slot, stack);
+        }
         return true;
     }
 
