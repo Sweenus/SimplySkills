@@ -11,6 +11,8 @@ public class GeneralConfig implements ConfigData {
     public boolean enablePlayerExCompatibility = false;
     @ConfigEntry.Gui.Tooltip
     public boolean treeResetOnDeath = false;
+    @ConfigEntry.Gui.Tooltip
+    public boolean disableDefaultPuffishTrees = true;
 
     @ConfigEntry.Gui.Tooltip
     public boolean removeUnlockRestrictions = false;

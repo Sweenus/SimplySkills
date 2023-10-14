@@ -4,6 +4,16 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerLoginConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
+import net.puffish.skillsmod.SkillsAPI;
+import net.puffish.skillsmod.api.Category;
+import net.puffish.skillsmod.api.Skill;
 import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
@@ -12,6 +22,7 @@ import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.registry.ModelRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.rewards.PassiveSkillReward;
+import net.sweenus.simplyswords.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,5 +94,30 @@ public class SimplySkills implements ModInitializer {
         KeybindPacket.init();
         ModPacketHandler.registerServer();
         setSpecialisations();
+
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            if (generalConfig.disableDefaultPuffishTrees) {
+                processPlayer(handler.player);
+            }
+        });
     }
+
+    private void processPlayer(ServerPlayerEntity player) {
+        List<Category> unlockedCategories = SkillsAPI.getUnlockedCategories(player);
+        if (!unlockedCategories.isEmpty()) {
+            unlockedCategories.forEach(category -> processCategory(player, category));
+        }
+    }
+
+    private void processCategory(ServerPlayerEntity player, Category category) {
+        String categoryId = category.getId().toString();
+        if (categoryId.equals("minecraft:combat") || categoryId.equals("minecraft:mining")) {
+            SkillsAPI.getCategory(new Identifier(categoryId)).ifPresent(categoryObj -> {
+                categoryObj.erase(player);
+                categoryObj.lock(player);
+            });
+        }
+    }
+
 }
