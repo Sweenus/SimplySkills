@@ -9,6 +9,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.network.CooldownPacket;
+import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.lwjgl.glfw.GLFW;
 
@@ -22,6 +23,7 @@ public class SimplySkillsClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         CooldownPacket.init();
+        ModPacketHandler.registerClient();
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

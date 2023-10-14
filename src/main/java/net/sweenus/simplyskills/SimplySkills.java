@@ -81,7 +81,7 @@ public class SimplySkills implements ModInitializer {
         ItemRegistry.registerItems();
         ModelRegistry.registerModels();
         KeybindPacket.init();
-        ModPacketHandler.register();
+        ModPacketHandler.registerServer();
         setSpecialisations();
     }
 }
