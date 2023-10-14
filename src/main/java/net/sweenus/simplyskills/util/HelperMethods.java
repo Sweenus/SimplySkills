@@ -410,10 +410,8 @@ public class HelperMethods {
 
         NbtCompound nbt = stack.getOrCreateNbt();
         String uuid = user.getUuidAsString();
-        nbt.putString("player_uuid", uuid);
-        nbt.putString("player_name", user.getName().getString());
 
-        if (!nbt.getString("player_uuid").equals(uuid)) {
+        if (!nbt.getString("player_uuid").equals(uuid) && !SimplySkills.generalConfig.enableBuildSharing) {
             return false;
         }
 

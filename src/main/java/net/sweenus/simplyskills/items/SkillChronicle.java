@@ -114,7 +114,10 @@ public class SkillChronicle extends Item {
                     player.getItemCooldownManager().set(this, 60);
                 }
             }
-            //MinecraftClient.getInstance().getSoundManager().stopSounds(SoundRegistry.SOUNDEFFECT6.getId(), SoundCategory.PLAYERS);
+            if (player instanceof ServerPlayerEntity serverPlayer)
+                ModPacketHandler.sendStopSoundPacket(serverPlayer, SoundRegistry.SOUNDEFFECT6.getId());
+            if (player.getItemCooldownManager().getCooldownProgress(this, 1) < 60)
+                player.getItemCooldownManager().set(this, 60);
         }
     }
     @Override

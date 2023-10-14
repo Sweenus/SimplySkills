@@ -13,7 +13,8 @@ public class GeneralConfig implements ConfigData {
     public boolean treeResetOnDeath = false;
     @ConfigEntry.Gui.Tooltip
     public boolean disableDefaultPuffishTrees = true;
-
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableBuildSharing = false;
     @ConfigEntry.Gui.Tooltip
     public boolean removeUnlockRestrictions = false;
 

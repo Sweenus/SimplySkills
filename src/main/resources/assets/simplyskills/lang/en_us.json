@@ -140,6 +140,8 @@
   "text.autoconfig.simplyskills.option.client.treeResetOnDeath.@Tooltip" :                                    "Resets all Simply Skills skill trees upon death. \nThis erases all points and experience invested.",
   "text.autoconfig.simplyskills.option.client.disableDefaultPuffishTrees" :                                   "Disable Default Puffish Skill trees",
   "text.autoconfig.simplyskills.option.client.disableDefaultPuffishTrees.@Tooltip" :                          "Disables the default 'Mining' & 'Combat' trees that come\npackaged with Puffish Skills.",
+  "text.autoconfig.simplyskills.option.client.enableBuildSharing" :                                           "Enable build sharing",
+  "text.autoconfig.simplyskills.option.client.enableBuildSharing.@Tooltip" :                                  "Enables players to use Skill Chronicles made\nby other players.",
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions" :                                     "Remove unlock restrictions",
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions.@Tooltip" :                            "Allows Specialisations to be unlocked without \npathing to them in the skill tree.\nAlso allows unlocking more than one specialisation.\n\nNot recommended, except for very particular use-cases.",
   "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier" :                          "Spell Haste Cooldown Reduction Modifier",
