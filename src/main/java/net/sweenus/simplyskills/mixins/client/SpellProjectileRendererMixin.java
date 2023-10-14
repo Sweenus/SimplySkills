@@ -7,22 +7,15 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.FlyingItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 import net.spell_engine.api.spell.Spell;
 import net.spell_engine.client.render.SpellProjectileRenderer;
 import net.spell_engine.entity.SpellProjectile;
-import net.spell_engine.internals.SpellHelper;
-import net.spell_engine.internals.casting.SpellCast;
-import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.util.HelperMethods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.List;
 
 @Mixin(SpellProjectileRenderer.class)
 public class SpellProjectileRendererMixin <T extends Entity & FlyingItemEntity> extends EntityRenderer<T> {

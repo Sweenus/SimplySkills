@@ -1,6 +1,5 @@
 package net.sweenus.simplyskills.util;
 
-import net.minecraft.datafixer.fix.PlayerUuidFix;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -34,9 +33,6 @@ import net.sweenus.simplyskills.SimplySkills;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 import static net.puffish.skillsmod.SkillsAPI.getCategory;
 

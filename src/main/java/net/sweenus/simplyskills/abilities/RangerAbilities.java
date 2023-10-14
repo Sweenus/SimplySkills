@@ -16,7 +16,6 @@ import net.spell_engine.api.spell.Spell;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.mixins.SpellProjectileMixin;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
