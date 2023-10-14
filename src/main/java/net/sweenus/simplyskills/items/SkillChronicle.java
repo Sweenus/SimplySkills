@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.network.UpdateUnspentPointsPacket;
@@ -89,7 +90,7 @@ public class SkillChronicle extends Item {
                     //System.out.println("Found skills. Trying to store build.");
                     if (HelperMethods.storeBuildTemplate(serverUser, stack)) {
                         world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT44, SoundCategory.PLAYERS, 0.6f, 1.0f);
-                        player.getItemCooldownManager().set(this, 180);
+                        player.getItemCooldownManager().set(this, SimplySkills.generalConfig.skillChronicleCooldown);
                         user.sendMessage(Text.literal("Build Stored Successfully"));
                         success = true;
                     }
@@ -99,7 +100,7 @@ public class SkillChronicle extends Item {
                     //System.out.println("Did not find skills. Trying to retrieve build.");
                     if (HelperMethods.applyBuildTemplate(serverUser, stack)) {
                         world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT43, SoundCategory.PLAYERS, 0.7f, 1.0f);
-                        player.getItemCooldownManager().set(this, 180);
+                        player.getItemCooldownManager().set(this, SimplySkills.generalConfig.skillChronicleCooldown);
                         user.sendMessage(Text.literal("Build Retrieved Successfully"));
                         success = true;
                     }
@@ -111,7 +112,7 @@ public class SkillChronicle extends Item {
             }
             if (player instanceof ServerPlayerEntity serverPlayer)
                 ModPacketHandler.sendStopSoundPacket(serverPlayer, SoundRegistry.SOUNDEFFECT6.getId());
-            if (player.getItemCooldownManager().getCooldownProgress(this, 1) < 60)
+            if (!player.getItemCooldownManager().isCoolingDown(this))
                 player.getItemCooldownManager().set(this, 60);
         }
     }

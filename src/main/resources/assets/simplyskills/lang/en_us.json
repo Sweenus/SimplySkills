@@ -142,6 +142,8 @@
   "text.autoconfig.simplyskills.option.client.disableDefaultPuffishTrees.@Tooltip" :                          "Disables the default 'Mining' & 'Combat' trees that come\npackaged with Puffish Skills.",
   "text.autoconfig.simplyskills.option.client.enableBuildSharing" :                                           "Enable build sharing",
   "text.autoconfig.simplyskills.option.client.enableBuildSharing.@Tooltip" :                                  "Enables players to use Skill Chronicles made\nby other players.",
+  "text.autoconfig.simplyskills.option.client.skillChronicleCooldown":                                        "Skill Chronicle Cooldown",
+  "text.autoconfig.simplyskills.option.client.skillChronicleCooldown.@Tooltip":                               "The cooldown time for the Skill Chronicle item, in ticks (20 ticks = 1 second).",
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions" :                                     "Remove unlock restrictions",
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions.@Tooltip" :                            "Allows Specialisations to be unlocked without \npathing to them in the skill tree.\nAlso allows unlocking more than one specialisation.\n\nNot recommended, except for very particular use-cases.",
   "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier" :                          "Spell Haste Cooldown Reduction Modifier",
@@ -150,7 +152,6 @@
   "text.autoconfig.simplyskills.option.client.minimumAchievableCooldown.@Tooltip" :                           "Limits how short a duration can be reduced to via Spell Haste.",
   "text.autoconfig.simplyskills.option.client.minimumTimeBetweenAbilityUse" :                                 "Minimum time between ability use (in seconds)",
   "text.autoconfig.simplyskills.option.client.minimumTimeBetweenAbilityUse.@Tooltip" :                        "Limits how often a client can request an ability use from the server.\n Setting this too low may allow for packet spam and impact server performance.",
-
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold.@PrefixText" :        "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7,",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryArmorThreshold" :                    "§a[Passive]§7 Armor Mastery threshold",
   "text.autoconfig.simplyskills.option.warrior.passiveWarriorArmorMasteryChance" :                            "§a[Passive]§7 Armor Mastery chance",

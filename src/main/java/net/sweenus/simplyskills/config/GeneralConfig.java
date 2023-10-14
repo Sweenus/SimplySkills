@@ -16,14 +16,13 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean enableBuildSharing = false;
     @ConfigEntry.Gui.Tooltip
+    public int skillChronicleCooldown = 12000;
+    @ConfigEntry.Gui.Tooltip
     public boolean removeUnlockRestrictions = false;
-
     @ConfigEntry.Gui.Tooltip
     public float spellHasteCooldownReductionModifier = 0.4f;
-
     @ConfigEntry.Gui.Tooltip
     public int minimumAchievableCooldown = 5;
-
     @ConfigEntry.Gui.Tooltip
     public float minimumTimeBetweenAbilityUse = 0.5f;
 
