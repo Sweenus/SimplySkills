@@ -16,7 +16,7 @@ public class SpellbladeAbilities {
             int chance = 5;
             HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 60, 1, 3);
             if (player.getRandom().nextInt(100) > chance)
-                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 220, 1, 2);
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 220, 1, 6);
         }
     }
 
