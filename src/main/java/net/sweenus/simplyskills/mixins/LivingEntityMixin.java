@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.mixins;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
@@ -67,8 +68,9 @@ public abstract class LivingEntityMixin {
                 if (thresholdCheck > ddrHealthThreshold && maxHp >= minimumHp) {
                     float damageReduction = Math.min((healthPercent * ddrAmount), (damage / 2));
                     float newAmount = Math.max((damage - damageReduction), 1) * Math.max(Math.min(damageFrequency, 1.0f), 0.3f);
-                    if (SimplySkills.generalConfig.enableDDRDebugLog)
-                        System.out.println("Damage reduced from " + damage + " to " + newAmount + " using DR: " + damageReduction + " & SDR: " + damageFrequency);
+                    if (SimplySkills.generalConfig.enableDDRDebugLog && attacker instanceof PlayerEntity)
+                        attacker.sendMessage(Text.literal("§fDamage reduced from §6" + damage + " §fto§a " + newAmount + " §fusing DR: §6" + damageReduction + "§f & SDR: §b" + damageFrequency));
+                        //System.out.println("Damage reduced from " + damage + " to " + newAmount + " using DR: " + damageReduction + " & SDR: " + damageFrequency);
                     cir.setReturnValue(newAmount);
                 }
             }
