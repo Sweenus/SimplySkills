@@ -63,18 +63,17 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     public void simplyskills$tick(CallbackInfo ci) {
 
         if (!this.getWorld().isClient) {
-            ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
-            Object object = this;
+            if (this.getOwner() instanceof ServerPlayerEntity player) {
+                Object object = this;
 
-            // Ranger Elemental Artillery
-            RangerAbilities.signatureRangerElementalArtillery(player, (SpellProjectile) object,this.spellId, this.context, this.perks);
+                // Ranger Elemental Artillery
+                RangerAbilities.signatureRangerElementalArtillery(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
 
-            //Wizard Lightning Ball
-            WizardAbilities.signatureWizardStaticDischargeBall(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
-            //Wizard Lightning Orb
-            WizardAbilities.signatureWizardLightningOrb((SpellProjectile) object, this.followedTarget,this.spellId);
-
-
+                //Wizard Lightning Ball
+                WizardAbilities.signatureWizardStaticDischargeBall(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
+                //Wizard Lightning Orb
+                WizardAbilities.signatureWizardLightningOrb((SpellProjectile) object, this.followedTarget, this.spellId);
+            }
         }
     }
     @Inject(at = @At("HEAD"), method = "onBlockHit", cancellable = true)
@@ -92,10 +91,9 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
         if (!this.getWorld().isClient) {
             if (this.spellId != null) {
                 String[] spellList =  new String[] {"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
-                if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof LivingEntity livingEntity) {
+                if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof ServerPlayerEntity player) {
 
-                    SpellHelper.projectileImpact(livingEntity, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
-                    ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
+                    SpellHelper.projectileImpact(player, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
 
                     if (HelperMethods.isUnlocked("simplyskills:wizard",
                             SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrbOnHit, player)) {
