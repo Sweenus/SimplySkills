@@ -38,8 +38,8 @@ public class WarriorConfig implements ConfigData {
     public int passiveWarriorFrenzyExhaustionDuration = 400;
     public int passiveWarriorFrenzyExhaustionStacks = 1;
     @ConfigEntry.Gui.Tooltip
-    public int passiveWarriorTwinstrikeChance = 25;
+    public int passiveWarriorTwinstrikeChance = 15;
     @ConfigEntry.Gui.Tooltip
-    public int passiveWarriorSwordfallChance = 15;
+    public int passiveWarriorSwordfallChance = 8;
 
 }
