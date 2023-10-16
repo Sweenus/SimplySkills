@@ -166,5 +166,17 @@
 		"x": 32,
 		"y": 96,
 		"root": false
+	},
+	"9ptssa879b8g4b3s": {
+		"definition": "rogueSignatureEvasionFanOfBladesBladestorm",
+		"x": 96,
+		"y": -32,
+		"root": false
+	},
+	"7wmy61zj2eya81pa": {
+		"definition": "rogueSignatureEvasionFanOfBladesBladestormSiphon",
+		"x": 96,
+		"y": 32,
+		"root": false
 	}
 }

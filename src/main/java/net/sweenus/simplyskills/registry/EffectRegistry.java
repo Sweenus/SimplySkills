@@ -171,6 +171,7 @@ public class EffectRegistry {
                     "ad26be8b-db35-4d04-98db-d8943e4ac8be",
                     0.10,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect BLADESTORM= new BladestormEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -180,6 +181,9 @@ public class EffectRegistry {
     public static void registerEffects() {
 
         Synchronized.configure(STEALTH, true);
+        Synchronized.configure(BLADESTORM, true);
+        //Synchronized.configure(ARCANEVOLLEY, true);
+        //Synchronized.configure(FROSTVOLLEY, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -224,6 +228,7 @@ public class EffectRegistry {
         UNDYING = registerStatusEffect("undying", UNDYING);
         RAGE = registerStatusEffect("rage", RAGE);
         OVERLOAD = registerStatusEffect("overload", OVERLOAD);
+        BLADESTORM = registerStatusEffect("bladestorm", BLADESTORM);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

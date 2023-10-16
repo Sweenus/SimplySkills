@@ -15,7 +15,7 @@ import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.screen.slot.Slot;
+import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
@@ -47,6 +47,15 @@ public class HelperMethods {
             return false;
         if (!checkEntityBlacklist(livingEntity, player))
             return false;
+
+        // Check if the player and the living entity are on the same team
+        AbstractTeam playerTeam = player.getScoreboardTeam();
+        AbstractTeam entityTeam = livingEntity.getScoreboardTeam();
+        if (playerTeam != null && entityTeam != null && livingEntity.isTeammate(player)) {
+            // They are on the same team, so friendly fire should not be allowed
+            return false;
+        }
+
         if (livingEntity instanceof PlayerEntity playerEntity) {
             if (playerEntity == player)
                 return false;

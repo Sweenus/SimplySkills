@@ -96,6 +96,11 @@ public class RogueAbilities {
                 SkillReferencePosition.rogueEvasionMasteryProficient, player))
             mastery = mastery + evasionChanceIncreasePerTier;
 
+        StatusEffectInstance statusEffect = player.getStatusEffect(EffectRegistry.BLADESTORM);
+        if (statusEffect != null) {
+            mastery = mastery + (statusEffect.getAmplifier()+1);
+        }
+
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
             if (player.getArmor() < evasionArmorThreshold) {
 
@@ -244,12 +249,6 @@ public class RogueAbilities {
 
         if (HelperMethods.isUnlocked(rogueSkillTree,
                 SkillReferencePosition.rogueSpecialisationPreparationShadowstrike, player)) {
-
-            //Rogue Bladestorm
-            if (HelperMethods.isUnlocked("simplyskills:rogue",
-                    SkillReferencePosition.rogueBladestorm, player)){
-                RogueAbilities.daggerstormSummon(player);
-            }
 
             RogueAbilities.passiveRoguePreparationShadowstrike(player);
         }

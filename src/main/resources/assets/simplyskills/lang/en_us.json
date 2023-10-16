@@ -85,7 +85,8 @@
   "effect.simplyskills.rage.desc":                      "Gain 0.5% attack damage, attack speed, and damage received per stack.",
   "effect.simplyskills.overload":                       "Overload",
   "effect.simplyskills.overload.desc":                  "Grants you 75% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
-
+  "effect.simplyskills.bladestorm":                     "Bladestorm",
+  "effect.simplyskills.bladestorm.desc":                "Causes daggers to rotate around you, dealing damage to nearby enemies. Each stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",

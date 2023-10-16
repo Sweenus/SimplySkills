@@ -159,6 +159,9 @@ public class AbilityEffects {
                     }
                 }
             }
+            if (HelperMethods.isUnlocked("simplyskills:rogue",
+                    SkillReferencePosition.rogueBladestorm, player) && player.getRandom().nextInt(100) < 35 + fobFrequency)
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.BLADESTORM, 400, 1, 20);
             HelperMethods.decrementStatusEffect(player, EffectRegistry.FANOFBLADES);
         }
     }

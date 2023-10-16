@@ -66,7 +66,8 @@ public class SkillReferencePosition {
     public static String rogueShadowVeil = "ol1dv1xkjmroijvf";
     public static String rogueDeflection = "eudmwpnv5gv1d21w";
     public static String rogueFleetfooted = "yij7zyx012k25wj3";
-    public static String rogueBladestorm = "NONE";
+    public static String rogueBladestorm = "9ptssa879b8g4b3s";
+    public static String rogueBladestormSiphon = "7wmy61zj2eya81pa";
 
     public static String rogueSmokeBomb = "vmq59ny59vg9w0b1";
     public static String rogueOpportunisticMastery = "rbk8kzre4qe2h1tl";

@@ -7,11 +7,19 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
+import net.spell_engine.api.effect.CustomModelStatusEffect;
+import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
+import net.sweenus.simplyskills.client.effects.ArcaneVolleyRenderer;
+import net.sweenus.simplyskills.client.effects.FrostVolleyRenderer;
+import net.sweenus.simplyskills.client.effects.BladestormRenderer;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.List;
 
 public class SimplySkillsClient implements ClientModInitializer {
 
@@ -22,8 +30,21 @@ public class SimplySkillsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        CustomModels.registerModelIds(List.of(
+                BladestormRenderer.modelId_base,
+                BladestormRenderer.modelId_overlay,
+                ArcaneVolleyRenderer.modelId_base,
+                ArcaneVolleyRenderer.modelId_overlay,
+                FrostVolleyRenderer.modelId_base,
+                FrostVolleyRenderer.modelId_overlay
+        ));
+
         CooldownPacket.init();
         ModPacketHandler.registerClient();
+
+        CustomModelStatusEffect.register(EffectRegistry.BLADESTORM, new BladestormRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.ARCANEVOLLEY, new ArcaneVolleyRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.FROSTVOLLEY, new FrostVolleyRenderer());
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
