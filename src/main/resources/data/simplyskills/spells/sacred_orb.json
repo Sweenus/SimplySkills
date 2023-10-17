@@ -1,0 +1,99 @@
+{
+  "school": "HEALING",
+  "range": 24,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_healing_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark_mini",
+        "shape": "SPHERE",
+        "origin": "CENTER",
+        "count": 45.0,
+        "min_speed": 0.12,
+        "max_speed": 0.15
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "velocity": 0.6,
+        "homing_angle": 0.1,
+        "client_data": {
+          "travel_particles": [
+            {
+              "particle_id": "spell_engine:holy_spark_mini",
+              "shape": "SPHERE",
+              "origin": "CENTER",
+              "count": 25.0,
+              "min_speed": 0.12,
+              "max_speed": 0.15
+            },
+            {
+              "particle_id": "spell_engine:holy_spark",
+              "shape": "SPHERE",
+              "origin": "CENTER",
+              "count": 15.0,
+              "min_speed": 0.05,
+              "max_speed": 0.2
+            },
+            {
+              "particle_id": "spell_engine:healing_ascend",
+              "shape": "SPHERE",
+              "origin": "CENTER",
+              "count": 5.0,
+              "min_speed": 0.01,
+              "max_speed": 0.1
+            }
+          ],
+          "model_id": "minecraft:sea_lantern",
+          "render": "DEEP",
+          "light_emission": "RADIATE",
+          "scale": 0.0
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_projectile_release",
+    "sound": {
+      "id": "simplyskills:soundeffect_35",
+      "volume": 0.2,
+      "pitch": 1.1
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "HEAL",
+        "damage": {
+          "spell_power_coefficient": 2.8
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:healing_ascend",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 40,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:soundeffect_35",
+        "volume": 0.2
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

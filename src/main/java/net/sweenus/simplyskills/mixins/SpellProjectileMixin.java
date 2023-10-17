@@ -11,6 +11,7 @@ import net.spell_engine.api.spell.Spell;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
+import net.sweenus.simplyskills.abilities.ClericAbilities;
 import net.sweenus.simplyskills.abilities.RangerAbilities;
 import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -72,6 +73,8 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
                 WizardAbilities.signatureWizardStaticDischargeBall(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
                 //Wizard Lightning Orb
                 WizardAbilities.signatureWizardLightningOrb((SpellProjectile) object, this.followedTarget, this.spellId);
+                //Cleric Sacred Orb
+                ClericAbilities.signatureClericSacredOrbHoming((SpellProjectile) object, this.spellId);
             }
         }
     }

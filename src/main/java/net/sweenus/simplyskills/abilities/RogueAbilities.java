@@ -279,7 +279,7 @@ public class RogueAbilities {
         return true;
     }
 
-    // Rogue Dagger Storm summon
+    // Rogue Dagger Storm summon UNUSED
     public static void daggerstormSummon(PlayerEntity player) {
         Box box = HelperMethods.createBox(player, 8);
         int count = 12;

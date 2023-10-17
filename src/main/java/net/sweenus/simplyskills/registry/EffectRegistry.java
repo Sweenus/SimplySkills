@@ -172,6 +172,7 @@ public class EffectRegistry {
                     0.10,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect BLADESTORM= new BladestormEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect VITALITYBOND= new VitalityBondEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -229,6 +230,7 @@ public class EffectRegistry {
         RAGE = registerStatusEffect("rage", RAGE);
         OVERLOAD = registerStatusEffect("overload", OVERLOAD);
         BLADESTORM = registerStatusEffect("bladestorm", BLADESTORM);
+        VITALITYBOND = registerStatusEffect("vitality_bond", VITALITYBOND);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

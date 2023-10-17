@@ -42,6 +42,7 @@ public class SignatureAbilities {
         String rangerSkillTree = "simplyskills:ranger";
         String spellbladeSkillTree = "simplyskills:spellblade";
         String crusaderSkillTree = "simplyskills:crusader";
+        String clericSkillTree = "simplyskills:cleric";
         boolean ability_success = false;
         String ability = "none";
 
@@ -193,6 +194,25 @@ public class SignatureAbilities {
 
         }
 
+        // - Cleric -
+        if (HelperMethods.isUnlocked("simplyskills:tree", null, player)
+                && FabricLoader.getInstance().isModLoaded("paladins")) {
+
+            // Divine Intervention
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.shamanPath, player)) {
+                ability_success = ClericAbilities.signatureClericDivineIntervention(clericSkillTree, player);
+                ability = "DivineIntervention";
+            }
+            // Sacred Orb
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.clericPath, player)) {
+                ability_success = ClericAbilities.signatureClericSacredOrb(clericSkillTree, player);
+                ability = "SacredOrb";
+            }
+
+        }
+
 
         // Trigger bonus gem effects
         if (ability_success && FabricLoader.getInstance().isModLoaded("simplyswords"))
@@ -295,6 +315,14 @@ public class SignatureAbilities {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderConsecrationCooldown * 1000;
                 type = "magic, buff, recovery";
             }
+            case "DivineIntervention" -> {
+                cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
+                type = "magic, healing, buff";
+            }
+            case "SacredOrb" -> {
+                cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
+                type = "magic, healing, buff";
+            }
         }
 
         // Do Gem Effects
@@ -319,27 +347,23 @@ public class SignatureAbilities {
 
     // -- SPELL CASTING --
 
-    public static void castSpellEngineTargeted(PlayerEntity player, String spellIdentifier, int range) {
+    public static void castSpellEngineDumbFire(PlayerEntity player, String spellIdentifier) {
 
         // -- Cast spell at a target we are looking at --
 
-        Entity target = HelperMethods.getTargetedEntity(player, range);
-        if (target != null) {
-            ItemStack itemStack     = player.getMainHandStack();
-            Hand hand               = player.getActiveHand();
-            SpellCast.Action action = SpellCast.Action.RELEASE;
-            Identifier spellID      = new Identifier(spellIdentifier);
-            List<Entity> list       = new ArrayList<Entity>();
-            list.add(target);
+        //Entity target = HelperMethods.getTargetedEntity(player, range);
+        SpellCast.Action action = SpellCast.Action.RELEASE;
+        Identifier spellID      = new Identifier(spellIdentifier);
+        List<Entity> list       = new ArrayList<Entity>();
+        //list.add(target);
 
-            SpellHelper.performSpell(
-                    player.getWorld(),
-                    player,
-                    spellID,
-                    list,
-                    action,
-                    20);
-        }
+        SpellHelper.performSpell(
+                player.getWorld(),
+                player,
+                spellID,
+                list,
+                action,
+                20);
     }
 
     public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range, Entity target) {

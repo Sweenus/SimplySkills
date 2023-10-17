@@ -1,0 +1,152 @@
+{
+  "school": "HEALING",
+  "range": 20,
+  "learn": {
+    "tier": 3
+  },
+  "cast": {
+    "duration": 0.5,
+    "animation": "spell_engine:one_handed_healing_charge",
+    "sound": {
+      "id": "spell_engine:generic_healing_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark_mini",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "METEOR",
+      "meteor": {
+        "launch_height": 15
+      },
+      "projectile": {
+        "velocity": 1.0,
+        "homing_angle": 1.0,
+
+        "area_impact": {
+          "radius": 3,
+          "area": {
+            "distance_dropoff": "SQUARED"
+          },
+        "particles": [
+          {
+            "particle_id": "spell_engine:holy_spark",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 100.0,
+            "min_speed": 0.4,
+            "max_speed": 0.5
+          },
+          {
+            "particle_id": "spell_engine:holy_spark_mini",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 100.0,
+            "min_speed": 0.2,
+            "max_speed": 0.4
+          },
+          {
+            "particle_id": "smoke",
+            "shape": "SPHERE",
+            "origin": "CENTER",
+            "count": 50.0,
+            "min_speed": 0.1,
+            "max_speed": 0.3
+          },
+          {
+            "particle_id": "spell_engine:holy_spark_mini",
+            "shape": "PIPE",
+            "origin": "FEET",
+            "count": 25.0,
+            "min_speed": 0.05,
+            "max_speed": 0.1
+          }
+        ],
+        "sound": {
+          "id": "simplyskills:soundeffect_16",
+          "volume": 1.5
+        }
+      },
+        "client_data": {
+          "travel_particles": [
+            {
+              "particle_id": "spell_engine:holy_spark",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 5.0,
+              "min_speed": 0.0,
+              "max_speed": 0.1
+            },
+            {
+              "particle_id": "spell_engine:holy_spark_mini",
+              "shape": "CIRCLE",
+              "rotation": "LOOK",
+              "origin": "CENTER",
+              "count": 4.0,
+              "min_speed": 0.0,
+              "max_speed": 0.1
+            }
+          ],
+          "model_id": "simplyskills:projectile/meteor_projectile",
+          "render": "DEEP",
+          "scale": 1.2
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_area_release",
+    "sound": {
+      "id": "spell_engine:generic_healing_release"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "HEAL",
+        "damage": {
+          "spell_power_coefficient": 0.5
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:holy_hit",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 25.0,
+          "min_speed": 0.2,
+          "max_speed": 1.0
+        },
+        {
+          "particle_id": "spell_engine:healing_ascend",
+          "shape": "PILLAR",
+          "origin": "FEET",
+          "count": 30,
+          "min_speed": 0.02,
+          "max_speed": 0.15
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "simplyskills:undying",
+          "duration": 12,
+          "apply_mode": "ADD",
+          "show_particles": false
+        }
+      }
+    }
+  ],
+  "cost": {
+  }
+}

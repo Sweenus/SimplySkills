@@ -299,6 +299,12 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrb, player)) {
                 WizardAbilities.signatureWizardLightningOrbBuff(player);
             }
+            //Cleric Altruism
+            if (HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.clericPath, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                ClericAbilities.passiveClericAltruism(player);
+            }
 
 
 

@@ -61,7 +61,7 @@ public abstract class LivingEntityMixin {
                 float ddrHealthThreshold = (float) SimplySkills.generalConfig.DDRHealthThreshold / 100;
                 float damageFrequency = 0.01f + (world.getTime() - lastDamageTime) / (damage * ddrAttackSpeedWeight);
                 float healthPercent = Math.min((damage / maxHp) * damage, 0.9f * damage);
-                float minimumHp = (float) SimplySkills.generalConfig.DDRHealthRequirement / 100;
+                float minimumHp = (float) SimplySkills.generalConfig.DDRHealthRequirement;
 
                 if (thresholdCheck > ddrHealthThreshold && maxHp >= minimumHp) {
                     float damageReduction = Math.min((healthPercent * ddrAmount), (damage / 2));

@@ -16,8 +16,8 @@ public class CrusaderConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public int passiveCrusaderExhaustiveRecoveryChance = 15;
     public int passiveCrusaderExhaustiveRecoveryExhaustionStacks = 10;
-    public int passiveCrusaderAegisFrequency = 40;
-    public int passiveCrusaderAegisStacksRemoved = 15;
+    public int passiveCrusaderAegisFrequency = 25;
+    public int passiveCrusaderAegisStacksRemoved = 5;
 
     public int signatureCrusaderHeavensmithsCallRange = 20;
     public int signatureCrusaderHeavensmithsCallDADuration = 400;

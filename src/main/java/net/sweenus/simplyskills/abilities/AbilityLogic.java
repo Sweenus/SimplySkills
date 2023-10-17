@@ -178,6 +178,15 @@ public class AbilityLogic {
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
             HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
 
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player)
+                && FabricLoader.getInstance().isModLoaded("paladins")) {
+            ClericAbilities.passiveClericMutualMending(player, spellId, targets);
+        }
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player)
+                && FabricLoader.getInstance().isModLoaded("paladins")) {
+            ClericAbilities.passiveClericHealingWard(player, targets);
+        }
+
     }
 
 
