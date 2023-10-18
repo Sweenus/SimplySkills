@@ -15,7 +15,7 @@ public class DisenchantmentEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
             if (livingEntity.age % 20 == 0){
-                HelperMethods.buffSteal(null, livingEntity, true, true);
+                HelperMethods.buffSteal(null, livingEntity, true, true, false);
             }
 
 

@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -63,26 +64,29 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     public void simplyskills$tick(CallbackInfo ci) {
 
         if (!this.getWorld().isClient) {
-            if (this.getOwner() instanceof ServerPlayerEntity player) {
-                Object object = this;
+            if ( this.getSpell() != null && this.getOwner() instanceof ServerPlayerEntity player) {
+                SpellProjectile spellProjectile = (SpellProjectile) (Object)this;
 
                 // Ranger Elemental Artillery
-                RangerAbilities.signatureRangerElementalArtillery(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
+                RangerAbilities.signatureRangerElementalArtillery(player, spellProjectile, this.spellId, this.context, this.perks);
 
                 //Wizard Lightning Ball
-                WizardAbilities.signatureWizardStaticDischargeBall(player, (SpellProjectile) object, this.spellId, this.context, this.perks);
+                WizardAbilities.signatureWizardStaticDischargeBall(player, spellProjectile, this.spellId, this.context, this.perks);
                 //Wizard Lightning Orb
-                WizardAbilities.signatureWizardLightningOrb((SpellProjectile) object, this.followedTarget, this.spellId);
+                WizardAbilities.signatureWizardLightningOrb(spellProjectile, this.followedTarget, this.spellId);
                 //Cleric Sacred Orb
-                ClericAbilities.signatureClericSacredOrbHoming((SpellProjectile) object, this.spellId);
+                ClericAbilities.signatureClericSacredOrbHoming(spellProjectile, this.spellId);
             }
         }
     }
     @Inject(at = @At("HEAD"), method = "onBlockHit", cancellable = true)
     protected void simplyskills$onBlockHit(CallbackInfo ci) {
         if (!this.getWorld().isClient) {
-            if (this.spellId != null) {
-                String[] spellList =  new String[] {"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
+            if (this.spellId != null && this.getSpell() != null) {
+                String[] spellList =  new String[] {
+                        "simplyskills:lightning_ball_homing",
+                        "simplyskills:physical_dagger_homing",
+                        "simplyskills:sacred_orb_lesser"};
                 if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList))
                     ci.cancel();
             }
@@ -91,22 +95,29 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     @Inject(at = @At("HEAD"), method = "onEntityHit", cancellable = true)
     protected void simplyskills$onEntityHit(EntityHitResult entityHitResult, CallbackInfo ci) {
         if (!this.getWorld().isClient) {
-            if (this.spellId != null) {
-                String[] spellList =  new String[] {"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
-                if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof ServerPlayerEntity player) {
+            if (this.spellId != null && this.getSpell() != null) {
+                try {
+                    SpellProjectile spellProjectile = (SpellProjectile) (Object) this;
+                    ClericAbilities.signatureClericSacredOrbImpact(entityHitResult, spellId, getOwner(), spellProjectile);
 
-                    SpellHelper.projectileImpact(player, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
+                    String[] spellList = new String[]{"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
+                    if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof ServerPlayerEntity player) {
 
-                    if (HelperMethods.isUnlocked("simplyskills:wizard",
-                            SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrbOnHit, player)) {
-                        List<Entity> targets = new ArrayList<Entity>();
-                        if (entityHitResult.getEntity() != null) {
-                            targets.add(entityHitResult.getEntity());
-                            AbilityLogic.onSpellCastEffects(player, targets, this.spellId);
+                        SpellHelper.projectileImpact(player, this, entityHitResult.getEntity(), this.getSpell(), context.position(entityHitResult.getPos()));
+
+                        if (HelperMethods.isUnlocked("simplyskills:wizard",
+                                SkillReferencePosition.wizardSpecialisationStaticDischargeLightningOrbOnHit, player)) {
+                            List<Entity> targets = new ArrayList<Entity>();
+                            if (entityHitResult.getEntity() != null) {
+                                targets.add(entityHitResult.getEntity());
+                                AbilityLogic.onSpellCastEffects(player, targets, this.spellId);
+                            }
                         }
-                    }
 
-                    ci.cancel();
+                        ci.cancel();
+                    }
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
                 }
             }
         }

@@ -320,7 +320,7 @@ public class SignatureAbilities {
                 type = "magic, healing, buff";
             }
             case "SacredOrb" -> {
-                cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
+                cooldown = 5 * 1000;
                 type = "magic, healing, buff";
             }
         }

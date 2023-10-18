@@ -16,9 +16,9 @@
         "particle_id": "spell_engine:holy_spark_mini",
         "shape": "SPHERE",
         "origin": "CENTER",
-        "count": 45.0,
-        "min_speed": 0.12,
-        "max_speed": 0.15
+        "count": 5.0,
+        "min_speed": 0.02,
+        "max_speed": 0.05
       }
     ]
   },
@@ -26,33 +26,25 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 0.6,
-        "homing_angle": 26.1,
+        "velocity": 2.6,
+        "homing_angle": 99.1,
         "client_data": {
           "travel_particles": [
             {
               "particle_id": "spell_engine:holy_spark_mini",
               "shape": "SPHERE",
               "origin": "CENTER",
-              "count": 25.0,
-              "min_speed": 0.12,
-              "max_speed": 0.15
-            },
-            {
-              "particle_id": "spell_engine:holy_spark",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 15.0,
-              "min_speed": 0.05,
-              "max_speed": 0.2
+              "count": 3.0,
+              "min_speed": 0.01,
+              "max_speed": 0.03
             },
             {
               "particle_id": "spell_engine:healing_ascend",
               "shape": "SPHERE",
               "origin": "CENTER",
-              "count": 5.0,
+              "count": 2.0,
               "min_speed": 0.01,
-              "max_speed": 0.1
+              "max_speed": 0.02
             }
           ],
           "model_id": "minecraft:sea_lantern",
@@ -74,7 +66,7 @@
       "action": {
         "type": "HEAL",
         "damage": {
-          "spell_power_coefficient": 2.8
+          "spell_power_coefficient": 0.2
         }
       },
       "particles": [
@@ -82,9 +74,9 @@
           "particle_id": "spell_engine:healing_ascend",
           "shape": "SPHERE",
           "origin": "CENTER",
-          "count": 40,
-          "min_speed": 0.2,
-          "max_speed": 0.7
+          "count": 10,
+          "min_speed": 0.02,
+          "max_speed": 0.07
         }
       ],
       "sound": {

@@ -173,6 +173,7 @@ public class EffectRegistry {
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect BLADESTORM= new BladestormEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect VITALITYBOND= new VitalityBondEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ANOINTED= new AnointedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -231,6 +232,7 @@ public class EffectRegistry {
         OVERLOAD = registerStatusEffect("overload", OVERLOAD);
         BLADESTORM = registerStatusEffect("bladestorm", BLADESTORM);
         VITALITYBOND = registerStatusEffect("vitality_bond", VITALITYBOND);
+        ANOINTED = registerStatusEffect("anointed", ANOINTED);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

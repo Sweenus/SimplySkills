@@ -79,11 +79,6 @@ public class HelperMethods {
                 && target.getBodyYaw() > (attacker.getBodyYaw() - 32);
     }
 
-    //Check if walking
-    public static boolean isWalking(Entity entity) {
-        return entity instanceof PlayerEntity player && (!player.isDead() && (player.isSwimming() || player.getVelocity().horizontalLength() > 0.1));
-    }
-
     //Checks if skill is unlocked with presence checks.
     //If provided null for the skill argument, it will instead return if the category is unlocked.
     public static boolean isUnlocked (String skillTree, String skill, LivingEntity livingEntity) {
@@ -284,7 +279,8 @@ public class HelperMethods {
             LivingEntity user,
             LivingEntity target,
             boolean strip,
-            boolean singular) {
+            boolean singular,
+            boolean debuff) {
 
         List<StatusEffectInstance> list = target.getStatusEffects().stream().toList();
         if (list.isEmpty())
@@ -292,7 +288,16 @@ public class HelperMethods {
 
         for (StatusEffectInstance statusEffectInstance : list) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
-            if (statusEffect.isBeneficial()) {
+            if (statusEffect.isBeneficial() && !debuff) {
+                int duration = statusEffectInstance.getDuration();
+                if (user != null)
+                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
+                if (strip)
+                    HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
+                if (singular)
+                    return true;
+            }
+            else if (!statusEffect.isBeneficial() && debuff) {
                 int duration = statusEffectInstance.getDuration();
                 if (user != null)
                     HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);

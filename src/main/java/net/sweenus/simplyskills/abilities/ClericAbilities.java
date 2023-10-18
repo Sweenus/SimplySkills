@@ -3,15 +3,19 @@ package net.sweenus.simplyskills.abilities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.spell_engine.api.spell.Spell;
 import net.spell_engine.api.spell.SpellContainer;
+import net.spell_engine.api.spell.SpellInfo;
 import net.spell_engine.api.spell.SpellPool;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
@@ -27,6 +31,8 @@ import net.sweenus.simplyskills.util.SkillReferencePosition;
 
 import java.util.List;
 import java.util.Random;
+
+import static net.spell_engine.internals.SpellHelper.impactTargetingMode;
 
 public class ClericAbilities {
 
@@ -102,6 +108,18 @@ public class ClericAbilities {
                     if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
                         success = true;
 
+                        // Grants recipient Strength
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                            HelperMethods.incrementStatusEffect(le, StatusEffects.FIRE_RESISTANCE, 240, 1, 5);
+
+                        // Grants recipient Might
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                            HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, 240, 3, 10);
+
+                        // Grants recipient Spellforged
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                            HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, 240, 3, 10);
+
                         SignatureAbilities.castSpellEngineIndirectTarget(player,
                                 "simplyskills:divine_intervention",
                                 15, le);
@@ -118,14 +136,27 @@ public class ClericAbilities {
         return true;
     }
     public static void signatureClericSacredOrbHoming(SpellProjectile spellProjectile, Identifier spellId) {
-        if (spellId != null && spellId.toString().equals("simplyskills:sacred_orb") && spellProjectile.age > 20 && spellProjectile.getFollowedTarget() == null) {
-            Box box = HelperMethods.createBox(spellProjectile, 3);
+        if (spellProjectile.getSpell() != null && spellId != null && spellId.toString().equals("simplyskills:sacred_orb") && spellProjectile.age > 20 && spellProjectile.getFollowedTarget() == null) {
+            Box box = HelperMethods.createBox(spellProjectile, 6);
             for (Entity entities : spellProjectile.getWorld().getOtherEntities(spellProjectile, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities instanceof LivingEntity le && spellProjectile.getOwner() instanceof PlayerEntity playerOwner && !HelperMethods.checkFriendlyFire(le, playerOwner)) {
                     spellProjectile.setFollowedTarget(le);
                     break;
                 }
             }
+        }
+    }
+    public static void signatureClericSacredOrbImpact(EntityHitResult entityHitResult, Identifier spellId, Entity ownerEntity, SpellProjectile spellProjectile) {
+        if (spellProjectile.getSpell() != null && spellId != null && spellId.toString().equals("simplyskills:sacred_orb") && entityHitResult.getEntity() != null
+                && entityHitResult.getEntity() instanceof LivingEntity livingEntity && ownerEntity instanceof LivingEntity livingOwner) {
+
+            SimplyStatusEffectInstance vitalityBond = new SimplyStatusEffectInstance(EffectRegistry.VITALITYBOND, 500, 0, false, false, true);
+            SimplyStatusEffectInstance vitalityBond2 = new SimplyStatusEffectInstance(EffectRegistry.VITALITYBOND, 500, 0, false, false, true);
+            vitalityBond.setSourceEntity(livingOwner);
+            vitalityBond2.setSourceEntity(livingOwner);
+            livingEntity.addStatusEffect(vitalityBond);
+            livingOwner.addStatusEffect(vitalityBond2);
+
         }
     }
 

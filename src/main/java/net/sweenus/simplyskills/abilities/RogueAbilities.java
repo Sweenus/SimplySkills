@@ -176,7 +176,7 @@ public class RogueAbilities {
 
                             if (HelperMethods.isUnlocked("simplyskills:rogue",
                                     SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player)) {
-                                HelperMethods.buffSteal(player, le, true, true);
+                                HelperMethods.buffSteal(player, le, true, true, false);
                                 le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 120, 0));
                             }
 
