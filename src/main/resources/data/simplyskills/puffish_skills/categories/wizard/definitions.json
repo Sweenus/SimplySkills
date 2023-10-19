@@ -4262,26 +4262,134 @@
 			}
 		]
 	},
-	"clericSignatureRestoration": {
-		"title": "Signature Ability: \n§6[Restoration]§7 \nRelease a healing nova, healing you and nearby allies whilst granting absorption.\n\n§a30s Cooldown§7",
+	"clericAltruism": {
+		"title": "§7§a[Altruism]§7 \nWhen wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/cleric_signature_restoration.png"
+				"texture": "simplyskills:textures/icons/cleric_passive_altruism.png"
 			}
 		},
 		"rewards": [
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "clericSignatureRestoration"
+					"passive_skill": "clericAltruism"
+				}
+			}
+		]
+	},
+	"clericMutualMending": {
+		"title": "§7§a[Mutual Mending]§7\nWhen casting a healing spell, you have a chance to also cast that spell on yourself.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_passive_mutual_mending.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericMutualMending"
+				}
+			}
+		]
+	},
+	"clericHealingWard": {
+		"title": "§7§a[Healing Ward]§7\nWhen casting a healing spell to grant your target Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_passive_healing_ward.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericHealingWard"
+				}
+			}
+		]
+	},
+	"clericSignatureSacredOrb": {
+		"title": "Signature Ability: \n§6[Sacred Orb]§7 \nRelease an orb of holy energy that flies forward before seeking out a nearby ally.\nWhen this orb connects with an ally, it heals them and grants you both Vitality Bond.\n\n§f(Vitality Bond)§7 equalises the HP of the affected entities for its duration.\n\n§a30s Cooldown§7",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureSacredOrb"
+				}
+			}
+		]
+	},
+	"clericSignatureSacredOrbSpeed": {
+		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also buffs the recipient with attack & movespeed, but inflicts you with Mining Fatigue.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureSacredOrbSpeed"
+				}
+			}
+		]
+	},
+	"clericSignatureSacredOrbDebuffs": {
+		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also causes debuffs affecting the recipient to periodically transfer to you.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureSacredOrbDebuffs"
+				}
+			}
+		]
+	},
+	"clericSignatureSacredOrbBuffs": {
+		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also periodically grants copies of your buffs to the recipient.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureSacredOrbBuffs"
 				}
 			}
 		]
 	},
 	"clericSignatureDivineIntervention": {
-		"title": "Signature Ability: \n§6[Divine Intervention]§7 \nGain Divine Intervention for 10s.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Divine Intervention]§7 \nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\n However, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4298,20 +4406,128 @@
 			}
 		]
 	},
-	"clericSignatureDivineAscent": {
-		"title": "Signature Ability: \n§6[Divine Ascent]§7 \nRise towards the heavens, gaining resistance, regeneration, and levitation for 8s.\n\n§a30s Cooldown§7",
+	"clericSignatureDivineInterventionFireResistance": {
+		"title": "Your §6[Divine Intervention]§7 also grants the target Fire Resistance for its duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
 			"data": {
-				"texture": "simplyskills:textures/icons/cleric_signature_divine_ascent.png"
+				"texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
 			}
 		},
 		"rewards": [
 			{
 				"type": "puffish_skills:passive_skill",
 				"data": {
-					"passive_skill": "clericSignatureDivineAscent"
+					"passive_skill": "clericSignatureDivineInterventionFireResistance"
+				}
+			}
+		]
+	},
+	"clericSignatureDivineInterventionMight": {
+		"title": "Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureDivineInterventionMight"
+				}
+			}
+		]
+	},
+	"clericSignatureDivineInterventionSpellforged": {
+		"title": "Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureDivineInterventionSpellforged"
+				}
+			}
+		]
+	},
+	"clericSignatureAnointWeapon": {
+		"title": "Signature Ability: \n§6[Anoint Weapon]§7 \nAnoint your weapon with a sacred oil.\n\n§f(Anoint Weapon)§7 causes your attacks to deal AoE holy damage, and periodically heal nearby allies.\nAoE damage scales with Healing Power.\n\n§a35s Cooldown§7",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureAnointWeapon"
+				}
+			}
+		]
+	},
+	"clericSignatureAnointWeaponResistance": {
+		"title": "Your §6[Anoint Weapon]§7 now also grants you Resistance on hits.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureAnointWeaponResistance"
+				}
+			}
+		]
+	},
+	"clericSignatureAnointWeaponUndying": {
+		"title": "While your §6[Anoint Weapon]§7 is active, taking damage while below 30% HP has a chance to grant you Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\n However, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureAnointWeaponUndying"
+				}
+			}
+		]
+	},
+	"clericSignatureAnointWeaponCleanse": {
+		"title": "While your §6[Anoint Weapon]§7 is active, you periodically cleanse yourself of debuffs.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "clericSignatureAnointWeaponCleanse"
 				}
 			}
 		]

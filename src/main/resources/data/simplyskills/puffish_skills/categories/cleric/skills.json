@@ -1,0 +1,152 @@
+{
+	"a3ns9xl58ixdg2lo": {
+		"definition": "clericSignatureDivineIntervention",
+		"x": 0,
+		"y": -32,
+		"root": false
+	},
+	"is053f9imz801s57": {
+		"definition": "clericSignatureSacredOrb",
+		"x": 32,
+		"y": 0,
+		"root": false
+	},
+	"kp8uei8ppni71b5x": {
+		"definition": "clericSignatureAnointWeapon",
+		"x": -32,
+		"y": 0,
+		"root": false
+	},
+	"xsak3gay0v3z4inb": {
+		"definition": "clericSignatureAnointWeaponCleanse",
+		"x": -128,
+		"y": -32,
+		"root": false
+	},
+	"ipbguvfzpm9nvg8j": {
+		"definition": "clericSignatureAnointWeaponUndying",
+		"x": -128,
+		"y": 0,
+		"root": false
+	},
+	"9d9t6hnhyc248jy0": {
+		"definition": "clericSignatureSacredOrbSpeed",
+		"x": 128,
+		"y": 0,
+		"root": false
+	},
+	"1gd45mne4etmyrl1": {
+		"definition": "clericSignatureDivineInterventionFireResistance",
+		"x": 0,
+		"y": -128,
+		"root": false
+	},
+	"4rmb8nu7b0iogk54": {
+		"definition": "clericAltruism",
+		"x": 0,
+		"y": 64,
+		"root": false
+	},
+	"jx3mz6cj3x6pav5l": {
+		"definition": "clericMutualMending",
+		"x": -32,
+		"y": 64,
+		"root": false
+	},
+	"zv95vb80wc1dysx9": {
+		"definition": "clericHealingWard",
+		"x": 32,
+		"y": 64,
+		"root": false
+	},
+	"4p70f1lw2j9ogrvz": {
+		"definition": "clericSignatureSacredOrbBuffs",
+		"x": 128,
+		"y": 32,
+		"root": false
+	},
+	"vq2yx5g5wqatozfj": {
+		"definition": "clericSignatureSacredOrbDebuffs",
+		"x": 128,
+		"y": -32,
+		"root": false
+	},
+	"sp16ctx7bbkpd4bz": {
+		"definition": "clericSignatureAnointWeaponResistance",
+		"x": -128,
+		"y": 32,
+		"root": false
+	},
+	"u2ukao7v37zmiyxe": {
+		"definition": "clericSignatureDivineInterventionMight",
+		"x": -32,
+		"y": -128,
+		"root": false
+	},
+	"tc1tmlw0t5e0ieuw": {
+		"definition": "clericSignatureDivineInterventionSpellforged",
+		"x": 32,
+		"y": -128,
+		"root": false
+	},
+	"kzj431vrpy8f109q": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"es2agw9qqqv6ayu4": {
+		"definition": "health+2",
+		"x": 64,
+		"y": 0,
+		"root": false
+	},
+	"v84xz68i7bvphs14": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 64,
+		"y": 32,
+		"root": false
+	},
+	"oe71a8ur5veqof1h": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 64,
+		"y": -32,
+		"root": false
+	},
+	"llccr2ypb9jaf1i6": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": -32,
+		"y": -64,
+		"root": false
+	},
+	"cglzhcyqtmxacfq7": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 32,
+		"y": -64,
+		"root": false
+	},
+	"dxm1jy26l20wypsz": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": 0,
+		"y": -64,
+		"root": false
+	},
+	"ri5kp04lrc1qxtx9": {
+		"definition": "resistance_multi+2%",
+		"x": -64,
+		"y": 0,
+		"root": false
+	},
+	"uv9k7kv3aqbzfr64": {
+		"definition": "health+2",
+		"x": -64,
+		"y": -32,
+		"root": false
+	},
+	"p68bkrnaaagohu81": {
+		"definition": "spell_healing_power_multi+1%",
+		"x": -64,
+		"y": 32,
+		"root": false
+	}
+}

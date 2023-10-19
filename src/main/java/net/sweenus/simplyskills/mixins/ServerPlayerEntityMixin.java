@@ -439,7 +439,6 @@ public abstract class ServerPlayerEntityMixin {
                     //Signature Cleric Anoint Weapon
                     if (HelperMethods.isUnlocked("simplyskills:tree",
                             SkillReferencePosition.clericPath, serverPlayer)
-                            && target instanceof LivingEntity livingTarget
                             && FabricLoader.getInstance().isModLoaded("paladins")) {
                         ClericAbilities.signatureClericAnointWeapon(player);
                     }

@@ -81,15 +81,6 @@ public class ClericAbilities {
         }
     }
 
-    // Shared Vitality
-    // Fire a bolt of holy energy at your target, healing them and granting both of you Vitality Bond - Meld lifeforce, causing you and your targets healthbars to equalise.
-    public static void passiveClericSharedVitality(PlayerEntity player, LivingEntity target) {
-        int random = new Random().nextInt(100);
-        int chance = 10;
-        if (random < chance)
-            HelperMethods.incrementStatusEffect(target, EffectRegistry.BARRIER, 100, 1, 20);
-    }
-
 
     //------- SIGNATURE ABILITIES --------
 
@@ -116,7 +107,7 @@ public class ClericAbilities {
                     if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
                         success = true;
 
-                        // Grants recipient Strength
+                        // Grants recipient Fire Resistance
                         if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
                             HelperMethods.incrementStatusEffect(le, StatusEffects.FIRE_RESISTANCE, 240, 1, 5);
 
