@@ -95,6 +95,16 @@ public class AbilityLogic {
                     playUnlockSound(player);
                     return false;
                 }
+            } else if (categoryID.contains("simplyskills:cleric")
+                    && !HelperMethods.isUnlocked("simplyskills:cleric", null, player)) {
+
+                if (!FabricLoader.getInstance().isModLoaded("paladins"))
+                    return true;
+
+                if (SimplySkills.clericConfig.enableClericSpecialisation) {
+                    playUnlockSound(player);
+                    return false;
+                }
             }
         }
         return false;

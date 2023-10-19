@@ -37,6 +37,7 @@ public class SimplySkills implements ModInitializer {
     public static RogueConfig rogueConfig;
     public static RangerConfig rangerConfig;
     public static CrusaderConfig crusaderConfig;
+    public static ClericConfig clericConfig;
 
     private static void setSpecialisations() {
         specialisations.add("simplyskills:rogue");
@@ -45,6 +46,7 @@ public class SimplySkills implements ModInitializer {
         specialisations.add("simplyskills:wizard");
         specialisations.add("simplyskills:spellblade");
         specialisations.add("simplyskills:crusader");
+        specialisations.add("simplyskills:cleric");
     }
     public static String[] getSpecialisations() {return new String[] {
             "simplyskills:rogue",
@@ -52,7 +54,9 @@ public class SimplySkills implements ModInitializer {
             "simplyskills:berserker",
             "simplyskills:wizard",
             "simplyskills:spellblade",
-            "simplyskills:crusader"};}
+            "simplyskills:crusader",
+            "simplyskills:cleric",
+    };}
 
     public static List<String> getSpecialisationsAsArray() {
         return specialisations;
@@ -61,7 +65,7 @@ public class SimplySkills implements ModInitializer {
     public static String[] getFireSpells() {return new String[] {"fire", "flame"};}
     public static String[] getLightningSpells() {return new String[] {"static", "lightning"};}
     public static String[] getSoulSpells() {return new String[] {"soul", "dark"};}
-    public static String[] getHealingSpells() {return new String[] {"holy", "healing"};}
+    public static String[] getHealingSpells() {return new String[] {"holy", "healing", "sacred"};}
     public static String[] getArcaneSpells() {return new String[] {"arcane", "arcanes"};}
     public static String[] getPhysicalSpells() {return new String[] {"blade", "blades", "judgement"};}
 
@@ -79,6 +83,7 @@ public class SimplySkills implements ModInitializer {
         rogueConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().rogue;
         rangerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().ranger;
         crusaderConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().crusader;
+        clericConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().cleric;
 
         PassiveSkillReward.register();
         SoundRegistry.init();

@@ -170,13 +170,21 @@ public class SkillReferencePosition {
     public static String shamanSpecialisationAstralTotem = "4mqcsrpcwk4yuci5";
     public static String shamanSpecialisationNovaTotem = "7dsbtkhvcv332zla";
 
-    public static String clericSpecialisationDivineIntervention = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationDivineInterventionMighty = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationDivineInterventionSpellforged = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationDivineInterventionCleanse = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationDivineInterventionDuration = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationDivineAscent = "7dsbtkhvcv332zla";
-    public static String clericSpecialisationRestoration = "7dsbtkhvcv332zla";
+    public static String clericHealingWard = "zv95vb80wc1dysx9";
+    public static String clericAltruism = "4rmb8nu7b0iogk54";
+    public static String clericMutualMending = "jx3mz6cj3x6pav5l";
+    public static String clericSpecialisationDivineIntervention = "a3ns9xl58ixdg2lo";
+    public static String clericSpecialisationDivineInterventionMight = "u2ukao7v37zmiyxe";
+    public static String clericSpecialisationDivineInterventionSpellforged = "tc1tmlw0t5e0ieuw";
+    public static String clericSpecialisationDivineInterventionFireResistance = "1gd45mne4etmyrl1";
+    public static String clericSpecialisationSacredOrb = "is053f9imz801s57";
+    public static String clericSpecialisationSacredOrbSpeed = "9d9t6hnhyc248jy0";
+    public static String clericSpecialisationSacredOrbDebuffs = "vq2yx5g5wqatozfj";
+    public static String clericSpecialisationSacredOrbBuffs = "4p70f1lw2j9ogrvz";
+    public static String clericSpecialisationAnointWeapon = "kp8uei8ppni71b5x";
+    public static String clericSpecialisationAnointWeaponResistance = "sp16ctx7bbkpd4bz";
+    public static String clericSpecialisationAnointWeaponUndying = "ipbguvfzpm9nvg8j";
+    public static String clericSpecialisationAnointWeaponCleanse = "xsak3gay0v3z4inb";
 
     public static String crusaderAegis = "4rmb8nu7b0iogk54";
     public static String crusaderExhaustiveRecovery = "zv95vb80wc1dysx9";
