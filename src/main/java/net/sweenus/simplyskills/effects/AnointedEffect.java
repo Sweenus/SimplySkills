@@ -21,19 +21,6 @@ public class AnointedEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.getWorld().isClient()) {
-
-
-
-                ItemStack stack = livingEntity.getMainHandStack();
-                Vec3d itemPosition = livingEntity.getHandPosOffset(stack.getItem());
-
-                HelperMethods.spawnParticle(livingEntity.getWorld(), Particles.holy_ascend.particleType,
-                        itemPosition.getX(), itemPosition.getY(), itemPosition.getZ(), 0.02, 1.3, 0.03);
-                HelperMethods.spawnParticle(livingEntity.getWorld(), Particles.holy_spark_mini.particleType,
-                        itemPosition.getX(), itemPosition.getY(), itemPosition.getZ(), 0.01, 1.5, 0.02);
-
-        }
         super.applyUpdateEffect(livingEntity, amplifier);
     }
 

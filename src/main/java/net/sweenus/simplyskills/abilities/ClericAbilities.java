@@ -2,12 +2,17 @@ package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -21,14 +26,17 @@ import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.SpellRegistry;
 import net.spell_engine.internals.casting.SpellCast;
+import net.spell_engine.particle.Particles;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -158,6 +166,54 @@ public class ClericAbilities {
             livingOwner.addStatusEffect(vitalityBond2);
 
         }
+    }
+
+    public static void signatureClericAnointWeapon(PlayerEntity player) {
+        int radius = 4;
+        float damageMultiplier = 2.2f;
+
+        Box box = HelperMethods.createBox(player, radius);
+        List<Entity> targets = new ArrayList<>();
+        List<Entity> hostileTargets = new ArrayList<>();
+        for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+            if (entities instanceof LivingEntity le) {
+                if (!HelperMethods.checkFriendlyFire(le, player))
+                    targets.add(le);
+                else if (HelperMethods.checkFriendlyFire(le, player))
+                    hostileTargets.add(le);
+            }
+        }
+        Identifier spellId = new Identifier("simplyskills:paladins_flash_heal");
+        SpellCast.Action action = SpellCast.Action.CHANNEL;
+        DamageSource damageSource = player.getDamageSources().indirectMagic(player, player);
+        SpellHelper.performSpell(player.getWorld(), player, spellId, targets, action, 20);
+        float amount = (float) (player.getAttributeValue(SpellAttributes.
+                POWER.get(MagicSchool.HEALING).attribute) * damageMultiplier) / hostileTargets.size();
+
+
+        hostileTargets.forEach(entity -> {
+            entity.timeUntilRegen = 0;
+            entity.damage(damageSource, amount);
+            entity.timeUntilRegen = 0;
+
+            if (entity instanceof MobEntity mobEntity && mobEntity.isUndead()
+                    && HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player))
+                HelperMethods.incrementStatusEffect(mobEntity, StatusEffects.SLOWNESS, 40, 1, 4);
+
+            for (int i = 6; i > 0; i--) {
+                HelperMethods.spawnParticle(player.getWorld(), Particles.holy_spark_mini.particleType,
+                        entity.getX(), entity.getY(), entity.getZ(), 0.1, 0.1+i, 0.2);
+                HelperMethods.spawnParticle(player.getWorld(), Particles.holy_spark_mini.particleType,
+                        entity.getX(), entity.getY(), entity.getZ(), 0.2, 0.2+i, 0.1);
+                HelperMethods.spawnParticle(player.getWorld(), Particles.holy_hit.particleType,
+                        entity.getX(), entity.getY(), entity.getZ(), 0.1, 0.2*i, 0.2);
+            }
+        });
+
+        // Grants player Resistance
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player))
+            HelperMethods.incrementStatusEffect(player, StatusEffects.RESISTANCE, 40, 1, 2);
+
     }
 
 

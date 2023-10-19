@@ -184,6 +184,7 @@ public class EffectRegistry {
 
         Synchronized.configure(STEALTH, true);
         Synchronized.configure(BLADESTORM, true);
+        Synchronized.configure(ANOINTED, true);
         //Synchronized.configure(ARCANEVOLLEY, true);
         //Synchronized.configure(FROSTVOLLEY, true);
 

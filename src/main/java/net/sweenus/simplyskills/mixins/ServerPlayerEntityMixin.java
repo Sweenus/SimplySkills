@@ -436,6 +436,14 @@ public abstract class ServerPlayerEntityMixin {
                         WarriorAbilities.passiveWarriorSwordfall(player, livingTarget);
                     }
 
+                    //Signature Cleric Anoint Weapon
+                    if (HelperMethods.isUnlocked("simplyskills:tree",
+                            SkillReferencePosition.clericPath, serverPlayer)
+                            && target instanceof LivingEntity livingTarget
+                            && FabricLoader.getInstance().isModLoaded("paladins")) {
+                        ClericAbilities.signatureClericAnointWeapon(player);
+                    }
+
 
                 }
             }
