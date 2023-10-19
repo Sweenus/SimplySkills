@@ -2499,7 +2499,7 @@
 		]
 	},
 	"clericPath": {
-		"title": "Path of the §bCleric§7\n§eNOT YET IMPLEMENTED§7",
+		"title": "Path of the §bCleric§7\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4263,7 +4263,7 @@
 		]
 	},
 	"clericAltruism": {
-		"title": "§7§a[Altruism]§7 \nWhen wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"title": "§7§a[Altruism]§7\nWhen wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4317,7 +4317,7 @@
 		]
 	},
 	"clericSignatureSacredOrb": {
-		"title": "Signature Ability: \n§6[Sacred Orb]§7 \nRelease an orb of holy energy that flies forward before seeking out a nearby ally.\nWhen this orb connects with an ally, it heals them and grants you both Vitality Bond.\n\n§f(Vitality Bond)§7 equalises the HP of the affected entities for its duration.\n\n§a30s Cooldown§7",
+		"title": "Signature Ability: \n§6[Sacred Orb]§7\nRelease an orb of holy energy that flies forward before seeking out a nearby ally.\nWhen this orb connects with an ally, it heals them and grants you both Vitality Bond.\n\n§f(Vitality Bond)§7 equalises the HP of the affected entities for its duration.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4335,7 +4335,7 @@
 		]
 	},
 	"clericSignatureSacredOrbSpeed": {
-		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also buffs the recipient with attack & movespeed, but inflicts you with Mining Fatigue.",
+		"title": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also buffs the recipient with attack & movespeed, but inflicts you with Mining Fatigue.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4353,7 +4353,7 @@
 		]
 	},
 	"clericSignatureSacredOrbDebuffs": {
-		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also causes debuffs affecting the recipient to periodically transfer to you.",
+		"title": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also causes debuffs affecting the recipient to periodically transfer to you.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4371,7 +4371,7 @@
 		]
 	},
 	"clericSignatureSacredOrbBuffs": {
-		"title": "Vitality Bond granted by your §6[Sacred Orb]§7 now also periodically grants copies of your buffs to the recipient.",
+		"title": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also periodically grants copies of your buffs to the recipient.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4389,7 +4389,7 @@
 		]
 	},
 	"clericSignatureDivineIntervention": {
-		"title": "Signature Ability: \n§6[Divine Intervention]§7 \nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\n However, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
+		"title": "Signature Ability: \n§6[Divine Intervention]§7\nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4407,7 +4407,7 @@
 		]
 	},
 	"clericSignatureDivineInterventionFireResistance": {
-		"title": "Your §6[Divine Intervention]§7 also grants the target Fire Resistance for its duration.",
+		"title": "§7Your §6[Divine Intervention]§7 also grants the target Fire Resistance for its duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4425,7 +4425,7 @@
 		]
 	},
 	"clericSignatureDivineInterventionMight": {
-		"title": "Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"title": "§7Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4443,7 +4443,7 @@
 		]
 	},
 	"clericSignatureDivineInterventionSpellforged": {
-		"title": "Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"title": "§7Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4461,7 +4461,7 @@
 		]
 	},
 	"clericSignatureAnointWeapon": {
-		"title": "Signature Ability: \n§6[Anoint Weapon]§7 \nAnoint your weapon with a sacred oil.\n\n§f(Anoint Weapon)§7 causes your attacks to deal AoE holy damage, and periodically heal nearby allies.\nAoE damage scales with Healing Power.\n\n§a35s Cooldown§7",
+		"title": "Signature Ability: \n§6[Anoint Weapon]§7\nAnoint your weapon with a sacred oil.\n\n§f(Anoint Weapon)§7 causes your attacks to deal AoE holy damage, and periodically heal nearby allies.\nAoE damage scales with Healing Power.\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4479,7 +4479,7 @@
 		]
 	},
 	"clericSignatureAnointWeaponResistance": {
-		"title": "Your §6[Anoint Weapon]§7 now also grants you Resistance on hits.",
+		"title": "§7Your §6[Anoint Weapon]§7 now also grants you Resistance on hits.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4497,7 +4497,7 @@
 		]
 	},
 	"clericSignatureAnointWeaponUndying": {
-		"title": "While your §6[Anoint Weapon]§7 is active, taking damage while below 30% HP has a chance to grant you Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\n However, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
+		"title": "§7While your §6[Anoint Weapon]§7 is active, taking damage while below 30% HP has a chance to grant you Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4515,7 +4515,7 @@
 		]
 	},
 	"clericSignatureAnointWeaponCleanse": {
-		"title": "While your §6[Anoint Weapon]§7 is active, you periodically cleanse yourself of debuffs.",
+		"title": "§7While your §6[Anoint Weapon]§7 is active, you periodically cleanse yourself of debuffs.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
