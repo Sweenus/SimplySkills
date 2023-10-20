@@ -7,30 +7,20 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ProjectileUtil;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.SwordItem;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.spell_engine.api.spell.Spell;
-import net.spell_engine.api.spell.SpellContainer;
-import net.spell_engine.api.spell.SpellInfo;
-import net.spell_engine.api.spell.SpellPool;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.SpellRegistry;
 import net.spell_engine.internals.casting.SpellCast;
 import net.spell_engine.particle.Particles;
 import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellPower;
 import net.spell_power.api.attributes.SpellAttributes;
-import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -39,8 +29,6 @@ import net.sweenus.simplyskills.util.SkillReferencePosition;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import static net.spell_engine.internals.SpellHelper.impactTargetingMode;
 
 public class ClericAbilities {
 
@@ -108,15 +96,15 @@ public class ClericAbilities {
                         success = true;
 
                         // Grants recipient Fire Resistance
-                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericSpecialisationDivineInterventionFireResistance, player))
                             HelperMethods.incrementStatusEffect(le, StatusEffects.FIRE_RESISTANCE, 240, 1, 5);
 
                         // Grants recipient Might
-                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericSpecialisationDivineInterventionMight, player))
                             HelperMethods.incrementStatusEffect(le, EffectRegistry.MIGHT, 240, 3, 10);
 
                         // Grants recipient Spellforged
-                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericPath, player))
+                        if (HelperMethods.isUnlocked(clericSkillTree, SkillReferencePosition.clericSpecialisationDivineInterventionSpellforged, player))
                             HelperMethods.incrementStatusEffect(le, EffectRegistry.SPELLFORGED, 240, 3, 10);
 
                         SignatureAbilities.castSpellEngineIndirectTarget(player,
@@ -159,7 +147,30 @@ public class ClericAbilities {
         }
     }
 
-    public static void signatureClericAnointWeapon(PlayerEntity player) {
+    // Anoint Weapon
+    public static boolean signatureClericAnointWeapon(PlayerEntity player) {
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ANOINTED, 400, 0));
+        return true;
+    }
+    // Cleanse tick
+    public static void signatureClericAnointWeaponCleanse(PlayerEntity player) {
+        int frequency = 20;
+        if (player.age %frequency == 0) {
+            HelperMethods.buffSteal(player, player, true, true, true, true);
+        }
+    }
+    // Undying on damaged
+    public static void signatureClericAnointWeaponUndying(PlayerEntity player) {
+        float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
+        int roll = player.getRandom().nextInt(100);
+        int chance = 15;
+
+        if (playerHealthPercent < 30 && roll < chance)
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.UNDYING, 120, 0));
+
+    }
+
+    public static void signatureClericAnointWeaponEffect(PlayerEntity player) {
         int radius = 4;
         float damageMultiplier = 2.2f;
 
@@ -187,8 +198,7 @@ public class ClericAbilities {
             entity.damage(damageSource, amount);
             entity.timeUntilRegen = 0;
 
-            if (entity instanceof MobEntity mobEntity && mobEntity.isUndead()
-                    && HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player))
+            if (entity instanceof MobEntity mobEntity && mobEntity.isUndead())
                 HelperMethods.incrementStatusEffect(mobEntity, StatusEffects.SLOWNESS, 40, 1, 4);
 
             for (int i = 6; i > 0; i--) {
@@ -202,7 +212,7 @@ public class ClericAbilities {
         });
 
         // Grants player Resistance
-        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player))
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericSpecialisationAnointWeaponResistance, player))
             HelperMethods.incrementStatusEffect(player, StatusEffects.RESISTANCE, 40, 1, 2);
 
     }

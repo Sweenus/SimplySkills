@@ -275,12 +275,23 @@ public class HelperMethods {
         }
     }
 
+    public static void cleanseStatusEffects(LivingEntity livingEntity, int stacksRemoved) {
+
+
+    }
+
     public static boolean buffSteal(
             LivingEntity user,
             LivingEntity target,
             boolean strip,
             boolean singular,
-            boolean debuff) {
+            boolean debuff,
+            boolean cleanse) {
+
+        // Strip - removes the status effect
+        // Singular - affects one status effect per method call
+        // Debuff - affects non-beneficial status effects instead of beneficial
+        // Cleanse - does not increment the effect on the user (effectively cleansing when debuff & strip are true)
 
         List<StatusEffectInstance> list = target.getStatusEffects().stream().toList();
         if (list.isEmpty())
@@ -290,7 +301,7 @@ public class HelperMethods {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
             if (statusEffect.isBeneficial() && !debuff) {
                 int duration = statusEffectInstance.getDuration();
-                if (user != null)
+                if (user != null && !cleanse)
                     HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
                 if (strip)
                     HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
@@ -299,7 +310,7 @@ public class HelperMethods {
             }
             else if (!statusEffect.isBeneficial() && debuff) {
                 int duration = statusEffectInstance.getDuration();
-                if (user != null)
+                if (user != null && cleanse)
                     HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
                 if (strip)
                     HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());

@@ -188,50 +188,15 @@ public class AbilityLogic {
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
             HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
 
-        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player)
+        if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericMutualMending, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
             ClericAbilities.passiveClericMutualMending(player, spellId, targets);
         }
-        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericPath, player)
+        if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericHealingWard, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
             ClericAbilities.passiveClericHealingWard(player, targets);
         }
 
     }
-
-
-    //Misc Abilities
-    public static void passiveAreaCleanse(PlayerEntity player) {
-        if (player.age % 80 == 0) {
-            int radius = 12;
-
-            Box box = HelperMethods.createBox(player, radius);
-            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-
-                if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
-                        for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
-                            if (statusEffect != null && !statusEffect.getEffectType().isBeneficial()) {
-                                le.removeStatusEffect(statusEffect.getEffectType());
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void passiveSelfCleanse(PlayerEntity player) {
-        if (player.age % 120 == 0) {
-            for (StatusEffectInstance statusEffect : player.getStatusEffects()) {
-                if (statusEffect != null && !statusEffect.getEffectType().isBeneficial()) {
-                    player.removeStatusEffect(statusEffect.getEffectType());
-                    break;
-                }
-            }
-        }
-    }
-
 
 }

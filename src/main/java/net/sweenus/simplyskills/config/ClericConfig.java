@@ -11,4 +11,8 @@ public class ClericConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
     public boolean enableClericSpecialisation = true;
 
+    public int signatureClericDivineInterventionCooldown = 45;
+    public int signatureClericSacredOrbCooldown = 30;
+    public int signatureClericAnointWeaponCooldown = 35;
+
 }

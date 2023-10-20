@@ -27,12 +27,6 @@ public class PlayerEntityMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
         if (player instanceof ServerPlayerEntity) {
 
-            // fervour
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.fervour, player)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100));
-            }
-
             // Effect Bloodthirsty
             if (HelperMethods.isUnlocked("simplyskills:berserker",
                     SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {

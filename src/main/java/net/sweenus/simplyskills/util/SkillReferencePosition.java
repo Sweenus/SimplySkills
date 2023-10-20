@@ -8,12 +8,6 @@ public class SkillReferencePosition {
     public static String ruby_portal_1 = "";
     public static String ruby_portal_2 = "";
 
-    public static String hardy = "ikel6uas72gjxef3";
-
-    public static String fervour = "946p8e1tc68qtw4v";
-    public static String cleric = "umu4z2zvq9q3kpc9";
-    public static String cleansing = "yj6vt0k4l9cocyfu";
-
     //Warrior
     public static String warriorHeavyArmorMastery = "5o6a4ijsol0u1qti";
     public static String warriorMediumArmorMastery = "odfah5skrjwvwmn3";

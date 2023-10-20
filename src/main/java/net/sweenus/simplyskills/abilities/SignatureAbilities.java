@@ -195,20 +195,26 @@ public class SignatureAbilities {
         }
 
         // - Cleric -
-        if (HelperMethods.isUnlocked("simplyskills:tree", null, player)
+        if (HelperMethods.isUnlocked(clericSkillTree, null, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
 
             // Divine Intervention
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.shamanPath, player)) {
+            if (HelperMethods.isUnlocked(clericSkillTree,
+                    SkillReferencePosition.clericSpecialisationDivineIntervention, player)) {
                 ability_success = ClericAbilities.signatureClericDivineIntervention(clericSkillTree, player);
                 ability = "DivineIntervention";
             }
             // Sacred Orb
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.clericPath, player)) {
+            if (HelperMethods.isUnlocked(clericSkillTree,
+                    SkillReferencePosition.clericSpecialisationSacredOrb, player)) {
                 ability_success = ClericAbilities.signatureClericSacredOrb(clericSkillTree, player);
                 ability = "SacredOrb";
+            }
+            // Anoint Weapon
+            if (HelperMethods.isUnlocked(clericSkillTree,
+                    SkillReferencePosition.clericSpecialisationAnointWeapon, player)) {
+                ability_success = ClericAbilities.signatureClericAnointWeapon(player);
+                ability = "AnointWeapon";
             }
 
         }
@@ -316,11 +322,15 @@ public class SignatureAbilities {
                 type = "magic, buff, recovery";
             }
             case "DivineIntervention" -> {
-                cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
+                cooldown = SimplySkills.clericConfig.signatureClericDivineInterventionCooldown * 1000;
                 type = "magic, healing, buff";
             }
             case "SacredOrb" -> {
-                cooldown = 5 * 1000;
+                cooldown = SimplySkills.clericConfig.signatureClericSacredOrbCooldown * 1000;
+                type = "magic, healing, buff";
+            }
+            case "AnointWeapon" -> {
+                cooldown = SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
                 type = "magic, healing, buff";
             }
         }

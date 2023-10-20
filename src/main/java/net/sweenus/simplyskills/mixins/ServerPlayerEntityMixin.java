@@ -62,11 +62,6 @@ public abstract class ServerPlayerEntityMixin {
                     cir.setReturnValue(false);
             }
 
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.hardy, serverPlayer)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, (int) amount * 20));
-            }
-
             //Passive Initiate Hasty
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateHasty, player)) {
@@ -89,6 +84,13 @@ public abstract class ServerPlayerEntityMixin {
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.berserkerPath, serverPlayer)) {
                 HelperMethods.incrementStatusEffect(player, EffectRegistry.RAGE, 300, 1, 99);
+            }
+
+            //Cleric Signature Anoint Weapon Undying
+            if (HelperMethods.isUnlocked("simplyskills:cleric",
+                    SkillReferencePosition.clericSpecialisationAnointWeaponUndying, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                ClericAbilities.signatureClericAnointWeaponUndying(player);
             }
 
 
@@ -180,18 +182,6 @@ public abstract class ServerPlayerEntityMixin {
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.initiateLightningRod, player)) {
                 InitiateAbilities.passiveInitiateLightningRod(player);
-            }
-
-            //Passive Area Cleanse
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.cleric, player)) {
-                AbilityLogic.passiveAreaCleanse(player);
-            }
-
-            //Passive Self Cleanse
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.cleansing, player)) {
-                AbilityLogic.passiveSelfCleanse(player);
             }
 
             //Passive Ranger Reveal
@@ -300,10 +290,16 @@ public abstract class ServerPlayerEntityMixin {
                 WizardAbilities.signatureWizardLightningOrbBuff(player);
             }
             //Cleric Altruism
-            if (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.clericPath, player)
+            if (HelperMethods.isUnlocked("simplyskills:cleric",
+                    SkillReferencePosition.clericAltruism, player)
                     && FabricLoader.getInstance().isModLoaded("paladins")) {
                 ClericAbilities.passiveClericAltruism(player);
+            }
+            //Cleric Signature Anoint Weapon Cleanse
+            if (HelperMethods.isUnlocked("simplyskills:cleric",
+                    SkillReferencePosition.clericSpecialisationAnointWeaponCleanse, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                ClericAbilities.signatureClericAnointWeaponCleanse(player);
             }
 
 
@@ -437,10 +433,9 @@ public abstract class ServerPlayerEntityMixin {
                     }
 
                     //Signature Cleric Anoint Weapon
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
-                            SkillReferencePosition.clericPath, serverPlayer)
+                    if (player.hasStatusEffect(EffectRegistry.ANOINTED)
                             && FabricLoader.getInstance().isModLoaded("paladins")) {
-                        ClericAbilities.signatureClericAnointWeapon(player);
+                        ClericAbilities.signatureClericAnointWeaponEffect(player);
                     }
 
 
