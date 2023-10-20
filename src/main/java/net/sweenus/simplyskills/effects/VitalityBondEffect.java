@@ -45,6 +45,23 @@ public class VitalityBondEffect extends StatusEffect {
                 float livingEntityHealthPercent = ((livingEntity.getHealth() / livingEntity.getMaxHealth()) * 100);
                 float targetHealthPercent = ((target.getHealth() / target.getMaxHealth()) * 100);
 
+                //Sacrifice attack speed to grant recipient attack & movespeed
+                if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbSpeed, target)) {
+                    HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.HASTE, (int) incrementFrequency+5, 1, 6);
+                    HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.SPEED, (int) incrementFrequency+5, 1, 2);
+                    HelperMethods.incrementStatusEffect(target, StatusEffects.MINING_FATIGUE, (int) incrementFrequency+5, 1, 3);
+                }
+
+                // Take debuffs from recipient
+                if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbDebuffs, target)) {
+                    HelperMethods.buffSteal(target, livingEntity, true, true, true, false);
+                }
+
+                // Copy buffs to recipient
+                if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbBuffs, target)) {
+                    HelperMethods.buffSteal(livingEntity, target, false, false, false, false);
+                }
+
                 if ( Math.abs(livingEntityHealthPercent - targetHealthPercent) > 15 && (livingEntityHealthPercent < 85 || targetHealthPercent < 85)) {
                     if (livingEntityHealthPercent > targetHealthPercent) {
                         healingEntity = target;
@@ -53,24 +70,6 @@ public class VitalityBondEffect extends StatusEffect {
                         healingEntity = livingEntity;
                         sacrificeEntity = target;
                     }
-
-                    //Sacrifice attack speed to grant recipient attack & movespeed
-                    if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbSpeed, target)) {
-                        HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.HASTE, (int) incrementFrequency+5, 1, 6);
-                        HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.SPEED, (int) incrementFrequency+5, 1, 2);
-                        HelperMethods.incrementStatusEffect(target, StatusEffects.MINING_FATIGUE, (int) incrementFrequency+5, 1, 3);
-                    }
-
-                    // Take debuffs from recipient
-                    if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbDebuffs, target)) {
-                        HelperMethods.buffSteal(target, livingEntity, true, true, true, false);
-                    }
-
-                    // Copy buffs to recipient
-                    if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbBuffs, target)) {
-                        HelperMethods.buffSteal(livingEntity, target, false, true, false, false);
-                    }
-
 
                     HelperMethods.spawnParticlesPlane(livingEntity.getWorld(), Particles.healing_ascend.particleType,
                             healingEntity.getBlockPos(), 1, 0.01, 0.9, 0.03);

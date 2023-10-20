@@ -295,12 +295,6 @@ public abstract class ServerPlayerEntityMixin {
                     && FabricLoader.getInstance().isModLoaded("paladins")) {
                 ClericAbilities.passiveClericAltruism(player);
             }
-            //Cleric Signature Anoint Weapon Cleanse
-            if (HelperMethods.isUnlocked("simplyskills:cleric",
-                    SkillReferencePosition.clericSpecialisationAnointWeaponCleanse, player)
-                    && FabricLoader.getInstance().isModLoaded("paladins")) {
-                ClericAbilities.signatureClericAnointWeaponCleanse(player);
-            }
 
 
 

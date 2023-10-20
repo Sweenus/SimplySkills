@@ -87,6 +87,10 @@
   "effect.simplyskills.overload.desc":                  "Grants you 75% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
   "effect.simplyskills.bladestorm":                     "Bladestorm",
   "effect.simplyskills.bladestorm.desc":                "Causes daggers to rotate around you, dealing damage to nearby enemies. Each stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
+  "effect.simplyskills.anointed":                       "Anointed",
+  "effect.simplyskills.anointed.desc":                  "Melee attacks heal nearby allies, and deal AoE damage scaling with your Healing spell power.",
+  "effect.simplyskills.vitality_bond":                  "Vitality Bond",
+  "effect.simplyskills.vitality_bond.desc":             "HP synchronised with the other affected entity.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",

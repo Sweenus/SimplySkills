@@ -212,7 +212,7 @@ public class ClericAbilities {
         });
 
         // Grants player Resistance
-        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.clericSpecialisationAnointWeaponResistance, player))
+        if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationAnointWeaponResistance, player))
             HelperMethods.incrementStatusEffect(player, StatusEffects.RESISTANCE, 40, 1, 2);
 
     }

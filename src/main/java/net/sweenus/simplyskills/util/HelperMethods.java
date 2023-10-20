@@ -299,19 +299,20 @@ public class HelperMethods {
 
         for (StatusEffectInstance statusEffectInstance : list) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
+            int duration = statusEffectInstance.getDuration();
+            int amplifier = statusEffectInstance.getAmplifier();
+
             if (statusEffect.isBeneficial() && !debuff) {
-                int duration = statusEffectInstance.getDuration();
                 if (user != null && !cleanse)
-                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
+                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, amplifier);
                 if (strip)
                     HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
                 if (singular)
                     return true;
             }
             else if (!statusEffect.isBeneficial() && debuff) {
-                int duration = statusEffectInstance.getDuration();
-                if (user != null && cleanse)
-                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, 99);
+                if (user != null && !cleanse)
+                    HelperMethods.incrementStatusEffect(user, statusEffect, duration, 1, amplifier);
                 if (strip)
                     HelperMethods.decrementStatusEffect(target, statusEffectInstance.getEffectType());
                 if (singular)
