@@ -37,7 +37,7 @@ public class StealthEffect extends StatusEffect {
                 if (serverPlayer.hasStatusEffect(EffectRegistry.STEALTH)
                         && serverPlayer.getStatusEffect(EffectRegistry.STEALTH).getDuration() < 10) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED,
-                            180, 2));
+                            180, 2, false, false));
                 }
 
 
@@ -45,7 +45,7 @@ public class StealthEffect extends StatusEffect {
                         SkillReferencePosition.rogueRecovery, serverPlayer)
                         && serverPlayer.age % regenerationFrequency == 0)
                     serverPlayer.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
-                            regenerationFrequency + 5, regenerationAmplifier));
+                            regenerationFrequency + 5, regenerationAmplifier, false, false));
 
                 if (HelperMethods.isUnlocked("simplyskills:rogue",
                         SkillReferencePosition.rogueShadowVeil, serverPlayer)

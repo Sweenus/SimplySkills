@@ -59,14 +59,14 @@ public class BullrushEffect extends StatusEffect {
                                         SoundCategory.PLAYERS, 0.6f, 1.0f);
                                 if (HelperMethods.isUnlocked("simplyskills:berserker",
                                         SkillReferencePosition.berserkerSpecialisationRampageChargeImmob, player))
-                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration));
+                                    le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, bullrushImmobilizeDuration, 0, false, false));
 
                                 if (HelperMethods.isUnlocked("simplyskills:berserker",
                                         SkillReferencePosition.berserkerSignatureRampageChargeRelentless, player)
                                         &&player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
                                     int stacks = player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier();
                                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                                            bullrushStrengthDuration, stacks / bullrushExhaustionPerStrength));
+                                            bullrushStrengthDuration, stacks / bullrushExhaustionPerStrength, false, false));
                                     player.removeStatusEffect(EffectRegistry.EXHAUSTION);
                                 }
                                 HelperMethods.spawnParticlesPlane(

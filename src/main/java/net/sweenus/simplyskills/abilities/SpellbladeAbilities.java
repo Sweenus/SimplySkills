@@ -27,7 +27,7 @@ public class SpellbladeAbilities {
     public static boolean signatureSpellbladeElementalSurge(String spellbladeSkillTree, PlayerEntity player) {
         int elementalSurgeDuration = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeDuration;
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE,
-                elementalSurgeDuration, 0));
+                elementalSurgeDuration, 0, false, false));
         return true;
     }
     // Elemental Impact
@@ -36,12 +36,12 @@ public class SpellbladeAbilities {
         int elementalImpactResistanceAmplifier = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactResistanceAmplifier;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALIMPACT,
-                elementalImpactDuration, 0));
+                elementalImpactDuration, 0, false, false));
 
         if (HelperMethods.isUnlocked(spellbladeSkillTree,
                 SkillReferencePosition.spellbladeSpecialisationElementalImpactResistance, player))
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                    elementalImpactDuration + 15, elementalImpactResistanceAmplifier));
+                    elementalImpactDuration + 15, elementalImpactResistanceAmplifier, false, false));
 
         return true;
     }
@@ -51,7 +51,7 @@ public class SpellbladeAbilities {
         int spellweaverStacks = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverStacks;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLWEAVER,
-                spellweaverDuration, spellweaverStacks - 1));
+                spellweaverDuration, spellweaverStacks - 1, false, false));
 
         return true;
     }

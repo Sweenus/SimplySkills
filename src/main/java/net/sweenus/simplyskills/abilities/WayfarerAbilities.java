@@ -70,7 +70,7 @@ public class WayfarerAbilities {
                     SoundCategory.PLAYERS, 0.7f, 1.4f);
             if (player.hasStatusEffect(StatusEffects.INVISIBILITY))
                 player.removeStatusEffect(StatusEffects.INVISIBILITY);
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5, false, false));
         }
     }
 
@@ -96,17 +96,17 @@ public class WayfarerAbilities {
             if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.roguePath, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, slenderSlownessAmplifier));
+                        25, slenderSlownessAmplifier, false, false));
             }
             if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.rangerPath, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, slenderSlownessAmplifier));
+                        25, slenderSlownessAmplifier, false, false));
             }
             if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.wizardPath, player))){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, frailSlownessAmplifier));
+                        25, frailSlownessAmplifier, false, false));
             }
         }
     }

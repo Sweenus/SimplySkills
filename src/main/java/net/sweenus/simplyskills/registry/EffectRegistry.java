@@ -186,8 +186,8 @@ public class EffectRegistry {
         Synchronized.configure(BLADESTORM, true);
         Synchronized.configure(VITALITYBOND, true);
         Synchronized.configure(UNDYING, true);
-        //Synchronized.configure(ARCANEVOLLEY, true);
-        //Synchronized.configure(FROSTVOLLEY, true);
+        Synchronized.configure(ARCANEVOLLEY, true);
+        Synchronized.configure(FROSTVOLLEY, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);

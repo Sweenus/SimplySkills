@@ -52,7 +52,7 @@ public abstract class CrossbowItemMixin {
                         && !user.hasStatusEffect(EffectRegistry.STEALTH)
                         && !this.charged) {
 
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 45));
+                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 45, 0, false, false));
                 }
 
             }

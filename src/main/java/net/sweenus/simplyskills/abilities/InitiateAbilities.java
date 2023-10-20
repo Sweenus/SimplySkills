@@ -117,9 +117,9 @@ public class InitiateAbilities {
                 && HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.wayfarerSlender, player)){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                    25, weaknessAmplifier));
+                    25, weaknessAmplifier, false, false));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
-                    25, miningFatigueAmplifier));
+                    25, miningFatigueAmplifier, false, false));
         }
     }
 

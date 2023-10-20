@@ -116,7 +116,7 @@ public abstract class ServerPlayerEntityMixin {
         if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.initiateSlowfall, player)
                 && player.fallDistance > slowfallActivateDistance && !player.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0, false, false));
         }
 
         if (HelperMethods.isUnlocked("simplyskills:tree",
@@ -125,7 +125,7 @@ public abstract class ServerPlayerEntityMixin {
             WarriorAbilities.passiveWarriorGoliath(player);
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorBound, player))
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 80, 2));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 80, 2, false, false));
         }
 
     }
@@ -144,7 +144,7 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.wayfarerStealth, player)
                     && player.isSneaking() && player.age % 10 == 0
                     && !player.hasStatusEffect(EffectRegistry.REVEALED)) {
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 30));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 30, 0, false, false));
             }
 
             //Passive Warrior Death Defy
@@ -164,7 +164,7 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.wayfarerSneak, player)
                     && player.isSneaking() && player.age % 10 == 0) {
                 int sneakSpeedAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSneakSpeedAmplifier;
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 15, sneakSpeedAmplifier, false, false));
                 if (player.hasStatusEffect(EffectRegistry.STEALTH))
                     HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 15, 1, 22);
             }
@@ -355,7 +355,7 @@ public abstract class ServerPlayerEntityMixin {
                         if (player.hasStatusEffect(EffectRegistry.ELEMENTALSURGE)) {
                             int surgeDuration = player.getStatusEffect(EffectRegistry.ELEMENTALSURGE).getDuration();
                             player.removeStatusEffect(EffectRegistry.ELEMENTALSURGE);
-                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, surgeDuration+3));
+                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALSURGE, surgeDuration+3, 0, false, false));
                         }
                     }
 

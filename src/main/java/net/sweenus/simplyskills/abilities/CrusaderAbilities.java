@@ -84,7 +84,7 @@ public class CrusaderAbilities {
 
                         if (HelperMethods.isUnlocked(crusaderSkillTree,
                                 SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
-                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0));
+                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0, false, false));
 
                         if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
                             le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, tauntDuration));
@@ -115,11 +115,11 @@ public class CrusaderAbilities {
         int divineProtectionDuration = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtDPDuration;
         int dashDuration = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtDashDuration;
 
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SACREDONSLAUGHT, dashDuration));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SACREDONSLAUGHT, dashDuration, 0, false, false));
 
         if (HelperMethods.isUnlocked(crusaderSkillTree,
                 SkillReferencePosition.crusaderSpecialisationSacredOnslaughtDefend, player)) {
-            player.addStatusEffect(new StatusEffectInstance(Effects.DIVINE_PROTECTION, divineProtectionDuration));
+            player.addStatusEffect(new StatusEffectInstance(Effects.DIVINE_PROTECTION, divineProtectionDuration, 0 , false, false));
             player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                     SoundCategory.PLAYERS, 0.5f, 1.1f);
         }
@@ -139,7 +139,7 @@ public class CrusaderAbilities {
         if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationConsecrationDuration, player))
             consecrationDuration = SimplySkills.crusaderConfig.signatureCrusaderConsecrationDuration + consecrationExtendDuration;
 
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.CONSECRATION, consecrationDuration));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.CONSECRATION, consecrationDuration, 0 , false, false));
 
         return true;
     }

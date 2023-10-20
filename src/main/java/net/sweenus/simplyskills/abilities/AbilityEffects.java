@@ -154,7 +154,7 @@ public class AbilityEffects {
 
                         if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment, player))
-                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DISENCHANTMENT, disenchantDuration));
+                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DISENCHANTMENT, disenchantDuration, 0, false ,false));
 
                     }
                 }

@@ -190,15 +190,15 @@ public class HelperMethods {
 
             if (currentAmplifier >= amplifierMax) {
                 livingEntity.addStatusEffect(new StatusEffectInstance(
-                        statusEffect, duration, currentAmplifier));
+                        statusEffect, duration, currentAmplifier, false, false));
                 return;
             }
 
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, duration, currentAmplifier + amplifier));
+                    statusEffect, duration, currentAmplifier + amplifier, false, false));
         }
         livingEntity.addStatusEffect(new StatusEffectInstance(
-                statusEffect, duration, amplifier));
+                statusEffect, duration, amplifier, false,false ));
 
     }
 
@@ -251,7 +251,7 @@ public class HelperMethods {
 
             livingEntity.removeStatusEffect(statusEffect);
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, currentDuration, currentAmplifier - 1));
+                    statusEffect, currentDuration, currentAmplifier - 1, false, false));
         }
     }
 
@@ -271,7 +271,7 @@ public class HelperMethods {
 
             livingEntity.removeStatusEffect(statusEffect);
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, currentDuration, currentAmplifier - stacksRemoved));
+                    statusEffect, currentDuration, currentAmplifier - stacksRemoved, false, false));
         }
     }
 

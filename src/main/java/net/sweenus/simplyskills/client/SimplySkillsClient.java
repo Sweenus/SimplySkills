@@ -8,6 +8,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.spell_engine.api.effect.CustomModelStatusEffect;
+import net.spell_engine.api.effect.CustomParticleStatusEffect;
 import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
@@ -49,6 +50,7 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.FROSTVOLLEY, new FrostVolleyRenderer());
         CustomModelStatusEffect.register(EffectRegistry.VITALITYBOND, new VitalityBondRenderer());
         CustomModelStatusEffect.register(EffectRegistry.UNDYING, new UndyingRenderer());
+        CustomParticleStatusEffect.register(EffectRegistry.UNDYING, new UndyingParticles(2));
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

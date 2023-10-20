@@ -30,8 +30,8 @@ public class UndyingRenderer implements CustomModelStatusEffect.Renderer {
 
     @Override
     public void renderEffect(int amplifier, LivingEntity livingEntity, float delta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light) {
-        float yOffset = 0.68F; // y + 0.01 to avoid Y fighting
-        float proneOffset = 0.30F; // y + 0.01 to avoid Y fighting
+        float yOffset = 0.68F;
+        float proneOffset = 0.30F; // Things get weird when prone, and render code hurts my head
         boolean prone = livingEntity.isFallFlying() || livingEntity.isCrawling() || livingEntity.isInSwimmingPose();
         matrixStack.push();
 
