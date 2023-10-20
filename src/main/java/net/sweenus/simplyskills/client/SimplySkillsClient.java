@@ -39,7 +39,8 @@ public class SimplySkillsClient implements ClientModInitializer {
                 VitalityBondRenderer.modelId_base,
                 VitalityBondRenderer.modelId_overlay,
                 UndyingRenderer.modelId_base,
-                UndyingRenderer.modelId_overlay
+                UndyingRenderer.modelId_overlay,
+                BarrierRenderer.modelId_base
         ));
 
         CooldownPacket.init();
@@ -51,6 +52,8 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.VITALITYBOND, new VitalityBondRenderer());
         CustomModelStatusEffect.register(EffectRegistry.UNDYING, new UndyingRenderer());
         CustomParticleStatusEffect.register(EffectRegistry.UNDYING, new UndyingParticles(2));
+        CustomModelStatusEffect.register(EffectRegistry.BARRIER, new BarrierRenderer());
+        CustomParticleStatusEffect.register(EffectRegistry.BARRIER, new BarrierParticles(1));
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
