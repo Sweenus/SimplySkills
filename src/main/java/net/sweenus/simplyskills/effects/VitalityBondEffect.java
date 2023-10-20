@@ -45,6 +45,9 @@ public class VitalityBondEffect extends StatusEffect {
                 float livingEntityHealthPercent = ((livingEntity.getHealth() / livingEntity.getMaxHealth()) * 100);
                 float targetHealthPercent = ((target.getHealth() / target.getMaxHealth()) * 100);
 
+                if (amplifier > 0)
+                    amplifier = 0;
+
                 //Sacrifice attack speed to grant recipient attack & movespeed
                 if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericSpecialisationSacredOrbSpeed, target)) {
                     HelperMethods.incrementStatusEffect(livingEntity, StatusEffects.HASTE, (int) incrementFrequency+5, 1, 6);

@@ -10,9 +10,7 @@ import net.minecraft.text.Text;
 import net.spell_engine.api.effect.CustomModelStatusEffect;
 import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
-import net.sweenus.simplyskills.client.effects.ArcaneVolleyRenderer;
-import net.sweenus.simplyskills.client.effects.FrostVolleyRenderer;
-import net.sweenus.simplyskills.client.effects.BladestormRenderer;
+import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -36,7 +34,11 @@ public class SimplySkillsClient implements ClientModInitializer {
                 ArcaneVolleyRenderer.modelId_base,
                 ArcaneVolleyRenderer.modelId_overlay,
                 FrostVolleyRenderer.modelId_base,
-                FrostVolleyRenderer.modelId_overlay
+                FrostVolleyRenderer.modelId_overlay,
+                VitalityBondRenderer.modelId_base,
+                VitalityBondRenderer.modelId_overlay,
+                UndyingRenderer.modelId_base,
+                UndyingRenderer.modelId_overlay
         ));
 
         CooldownPacket.init();
@@ -45,6 +47,8 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.BLADESTORM, new BladestormRenderer());
         CustomModelStatusEffect.register(EffectRegistry.ARCANEVOLLEY, new ArcaneVolleyRenderer());
         CustomModelStatusEffect.register(EffectRegistry.FROSTVOLLEY, new FrostVolleyRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.VITALITYBOND, new VitalityBondRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.UNDYING, new UndyingRenderer());
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
