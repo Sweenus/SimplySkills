@@ -97,7 +97,7 @@
               "max_speed": 0.1
             }
           ],
-          "model_id": "simplyskills:projectile/meteor_projectile",
+          "model_id": "simplyskills:effect/undying",
           "render": "DEEP",
           "scale": 1.2
         }
@@ -140,7 +140,7 @@
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "simplyskills:undying",
-          "duration": 12,
+          "duration": 14,
           "apply_mode": "ADD",
           "show_particles": false
         }
