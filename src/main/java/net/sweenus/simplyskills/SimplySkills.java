@@ -85,9 +85,9 @@ public class SimplySkills implements ModInitializer {
         crusaderConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().crusader;
         clericConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().cleric;
 
+        EffectRegistry.registerEffects();
         PassiveSkillReward.register();
         SoundRegistry.init();
-        EffectRegistry.registerEffects();
         ItemRegistry.registerItems();
         ModelRegistry.registerModels();
         KeybindPacket.init();

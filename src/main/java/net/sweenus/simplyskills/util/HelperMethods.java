@@ -198,7 +198,7 @@ public class HelperMethods {
                     statusEffect, duration, currentAmplifier + amplifier, false, false, true));
         }
         livingEntity.addStatusEffect(new StatusEffectInstance(
-                statusEffect, duration, amplifier, false,false ));
+                statusEffect, duration, amplifier, false,false, true ));
 
     }
 

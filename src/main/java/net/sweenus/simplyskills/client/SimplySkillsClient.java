@@ -46,8 +46,6 @@ public class SimplySkillsClient implements ClientModInitializer {
                 TauntedRenderer.modelId_overlay
         ));
 
-        CooldownPacket.init();
-        ModPacketHandler.registerClient();
 
         CustomModelStatusEffect.register(EffectRegistry.BLADESTORM, new BladestormRenderer());
         CustomModelStatusEffect.register(EffectRegistry.ARCANEVOLLEY, new ArcaneVolleyRenderer());
@@ -62,6 +60,9 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.IMMOBILIZE, new ImmobilizeRenderer());
         CustomModelStatusEffect.register(EffectRegistry.DEATHMARK, new DeathMarkRenderer());
         CustomModelStatusEffect.register(EffectRegistry.TAUNTED, new TauntedRenderer());
+
+        CooldownPacket.init();
+        ModPacketHandler.registerClient();
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

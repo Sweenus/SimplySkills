@@ -94,6 +94,7 @@
           ],
           "model_id": "minecraft:anvil",
           "render": "DEEP",
+          "light_emission": "RADIATE",
           "scale": 1.8
         }
       }
