@@ -36,12 +36,14 @@ public class ClericAbilities {
 
     // Healing Ward
     //Chance when casting a healing spell to grant your target a stack of barrier
-    public static void passiveClericHealingWard(PlayerEntity player, List<Entity> targets) {
+    public static void passiveClericHealingWard(PlayerEntity player, List<Entity> targets, Identifier spellId) {
         int random = new Random().nextInt(100);
         int chance = 10;
+        Spell spell = SpellRegistry.getSpell(spellId);
+        MagicSchool healingSchool = MagicSchool.HEALING;
         if (random < chance) {
             targets.forEach(target -> {
-                if (target instanceof LivingEntity livingTarget) {
+                if (target instanceof LivingEntity livingTarget && spell.school == healingSchool) {
                     HelperMethods.incrementStatusEffect(livingTarget, EffectRegistry.BARRIER, 100, 1, 20);
                 }
             });

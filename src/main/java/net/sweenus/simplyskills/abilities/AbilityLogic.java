@@ -194,7 +194,7 @@ public class AbilityLogic {
         }
         if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericHealingWard, player)
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
-            ClericAbilities.passiveClericHealingWard(player, targets);
+            ClericAbilities.passiveClericHealingWard(player, targets, spellId);
         }
 
     }
