@@ -41,7 +41,9 @@ public class SimplySkillsClient implements ClientModInitializer {
                 UndyingRenderer.modelId_base,
                 UndyingRenderer.modelId_overlay,
                 BarrierRenderer.modelId_base,
-                ImmobilizeRenderer.modelId_base
+                ImmobilizeRenderer.modelId_base,
+                DeathMarkRenderer.modelId_overlay,
+                TauntedRenderer.modelId_overlay
         ));
 
         CooldownPacket.init();
@@ -58,6 +60,8 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomParticleStatusEffect.register(EffectRegistry.RAGE, new RageParticles(1));
         CustomParticleStatusEffect.register(EffectRegistry.EVASION, new EvasionParticles(1));
         CustomModelStatusEffect.register(EffectRegistry.IMMOBILIZE, new ImmobilizeRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.DEATHMARK, new DeathMarkRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.TAUNTED, new TauntedRenderer());
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

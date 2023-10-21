@@ -192,6 +192,8 @@ public class EffectRegistry {
         Synchronized.configure(RAGE, true);
         Synchronized.configure(EVASION, true);
         Synchronized.configure(IMMOBILIZE, true);
+        Synchronized.configure(DEATHMARK, true);
+        Synchronized.configure(TAUNTED, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
