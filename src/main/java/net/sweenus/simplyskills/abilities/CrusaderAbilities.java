@@ -48,7 +48,7 @@ public class CrusaderAbilities {
         int stacksRemoved = SimplySkills.crusaderConfig.passiveCrusaderAegisStacksRemoved;
         if (player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
             if (player.age % frequency == 0 && player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier() > stacksRemoved) {
-                HelperMethods.incrementStatusEffect(player, Effects.DIVINE_PROTECTION, 200, 1, 20);
+                HelperMethods.incrementStatusEffect(player, Effects.DIVINE_PROTECTION, 200, 1, 5);
                 HelperMethods.decrementStatusEffects(player, EffectRegistry.EXHAUSTION, stacksRemoved);
             }
         }

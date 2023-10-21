@@ -17,7 +17,7 @@ public class CrusaderConfig implements ConfigData {
     public int passiveCrusaderExhaustiveRecoveryChance = 15;
     public int passiveCrusaderExhaustiveRecoveryExhaustionStacks = 10;
     public int passiveCrusaderAegisFrequency = 25;
-    public int passiveCrusaderAegisStacksRemoved = 5;
+    public int passiveCrusaderAegisStacksRemoved = 35;
 
     public int signatureCrusaderHeavensmithsCallRange = 20;
     public int signatureCrusaderHeavensmithsCallDADuration = 400;

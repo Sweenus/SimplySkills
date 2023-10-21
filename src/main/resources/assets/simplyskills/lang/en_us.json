@@ -138,6 +138,7 @@
   "text.autoconfig.simplyskills.category.rogue" :       "Rogue",
   "text.autoconfig.simplyskills.category.ranger" :      "Ranger",
   "text.autoconfig.simplyskills.category.crusader" :    "Crusader",
+  "text.autoconfig.simplyskills.category.cleric" :      "Cleric",
 
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" :                                  "Enable PlayerEx Compatibility !NOT YET IMPLEMENTED!",
   "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" :                         "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
@@ -518,5 +519,13 @@
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationSpellforgedStacks" :             "§6[Signature]§7 Consecration Spellforged stacks",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationSpellforgedStacksMax" :          "§6[Signature]§7 Consecration max Spellforged stacks",
   "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationTauntDuration" :                 "§6[Signature]§7 Consecration Taunted duration",
-  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationCooldown" :                      "§6[Signature]§7 Consecration cooldown"
+  "text.autoconfig.simplyskills.option.crusader.signatureCrusaderConsecrationCooldown" :                      "§6[Signature]§7 Consecration cooldown",
+
+  "text.autoconfig.simplyskills.option.cleric.enableClericSpecialisation" :                                   "Enable Cleric Specialisation",
+  "text.autoconfig.simplyskills.option.cleric.enableClericSpecialisation.@Tooltip" :                          "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",
+  "text.autoconfig.simplyskills.option.cleric.enableClericSpecialisation.@PrefixText" :                       "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+
+  "text.autoconfig.simplyskills.option.cleric.signatureClericDivineInterventionCooldown" :                    "§6[Signature]§7 Divine Intervention cooldown (in seconds)",
+  "text.autoconfig.simplyskills.option.cleric.signatureClericSacredOrbCooldown" :                             "§6[Signature]§7 Sacred Orb cooldown (in seconds)",
+  "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)"
 }
