@@ -39,7 +39,7 @@ public class RangerAbilities {
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
                             if (statusEffect != null && statusEffect.getEffectType().equals(EffectRegistry.STEALTH)) {
                                 le.removeStatusEffect(statusEffect.getEffectType());
-                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 1, false, false));
+                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 1, false, false, true));
                                 break;
                             }
                         }
@@ -64,9 +64,9 @@ public class RangerAbilities {
                         if (te.getOwner() != null) {
                             if (te.getOwnerUuid() == player.getUuid()) {
                                 le.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
-                                        frequency + 5, regenerationAmplifier, false, false));
+                                        frequency + 5, regenerationAmplifier, false, false, true));
                                 le.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                                        frequency + 5, resistanceAmplifier, false, false));
+                                        frequency + 5, resistanceAmplifier, false, false, true));
                             }
                         }
                     }
@@ -119,9 +119,9 @@ public class RangerAbilities {
                                 float teHealthPercent = ((le.getHealth() / le.getMaxHealth()) * 100);
                                 if (teHealthPercent > minimumHealthPercent) {
                                     le.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                                            frequency + 5, strengthAmplifier, false, false));
+                                            frequency + 5, strengthAmplifier, false, false, true));
                                     le.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                                            frequency + 5, speedAmplifier, false, false));
+                                            frequency + 5, speedAmplifier, false, false, true));
                                 }
                             }
                         }
@@ -145,7 +145,7 @@ public class RangerAbilities {
                             if (te.getOwnerUuid() == player.getUuid()) {
                                 if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
                                     le.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,
-                                            frequency + 5,0, false, false));
+                                            frequency + 5,0, false, false, true));
                                 }
                             }
                         }
@@ -187,7 +187,7 @@ public class RangerAbilities {
                 if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
                     le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                            slownessDuration, slownessAmplifier, false, false));
+                            slownessDuration, slownessAmplifier, false, false, true));
 
                 }
             }
@@ -196,7 +196,7 @@ public class RangerAbilities {
         player.setVelocity(player.getRotationVector().negate().multiply(+velocity));
         player.setVelocity(player.getVelocity().x, height, player.getVelocity().z);
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING,
-                slowFallDuration, slowFallAmplifier, false, false));
+                slowFallDuration, slowFallAmplifier, false, false, true));
         player.velocityModified = true;
 
         if (HelperMethods.isUnlocked(rangerSkillTree,
@@ -247,7 +247,7 @@ public class RangerAbilities {
                 if ((entities instanceof Tameable te)) {
                     if (te.getOwner() != null) {
                         if (te.getOwnerUuid() == player.getUuid()) {
-                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, effectDuration, 0, false, false));
+                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, effectDuration, 0, false, false, true));
                         }
                     }
                 }
@@ -274,7 +274,7 @@ public class RangerAbilities {
             amplifier = amplifier + (elementalArrowsStacksIncreasePerTier * 3);
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ELEMENTALARROWS,
-                elementalArrowsDuration, amplifier, false, false));
+                elementalArrowsDuration, amplifier, false, false, true));
 
         return true;
     }
@@ -282,7 +282,7 @@ public class RangerAbilities {
     // Elemental Arrows
     public static boolean signatureRangerArrowRain(String rangerSkillTree, PlayerEntity player) {
         int arrowRainDuration = SimplySkills.rangerConfig.effectRangerArrowRainDuration;
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARROWRAIN, arrowRainDuration, 0, false, false, true));
         return true;
     }
 

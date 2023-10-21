@@ -70,7 +70,7 @@ public class LeapSlamEffect extends StatusEffect {
                                             SoundCategory.PLAYERS, 0.3f, 1.1f);
                                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapImmob, player))
-                                        le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, immobilizeDuration, 0, false, false));
+                                        le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, immobilizeDuration, 0, false, false, true));
                                 }
                             }
                         }
@@ -89,7 +89,7 @@ public class LeapSlamEffect extends StatusEffect {
                                 player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                                         SoundCategory.PLAYERS, 0.5f, 1.1f);
                                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM,
-                                        SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration, 0, false, false));
+                                        SimplySkills.berserkerConfig.signatureBerserkerLeapSlamDuration, 0, false, false, true));
                             }
                             else player.removeStatusEffect(EffectRegistry.LEAPSLAM);
                         }

@@ -190,12 +190,12 @@ public class HelperMethods {
 
             if (currentAmplifier >= amplifierMax) {
                 livingEntity.addStatusEffect(new StatusEffectInstance(
-                        statusEffect, duration, currentAmplifier, false, false));
+                        statusEffect, duration, currentAmplifier, false, false, true));
                 return;
             }
 
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, duration, currentAmplifier + amplifier, false, false));
+                    statusEffect, duration, currentAmplifier + amplifier, false, false, true));
         }
         livingEntity.addStatusEffect(new StatusEffectInstance(
                 statusEffect, duration, amplifier, false,false ));
@@ -251,7 +251,7 @@ public class HelperMethods {
 
             livingEntity.removeStatusEffect(statusEffect);
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, currentDuration, currentAmplifier - 1, false, false));
+                    statusEffect, currentDuration, currentAmplifier - 1, false, false, true));
         }
     }
 
@@ -271,7 +271,7 @@ public class HelperMethods {
 
             livingEntity.removeStatusEffect(statusEffect);
             livingEntity.addStatusEffect(new StatusEffectInstance(
-                    statusEffect, currentDuration, currentAmplifier - stacksRemoved, false, false));
+                    statusEffect, currentDuration, currentAmplifier - stacksRemoved, false, false, true));
         }
     }
 
@@ -300,7 +300,7 @@ public class HelperMethods {
         for (StatusEffectInstance statusEffectInstance : list) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
             int duration = statusEffectInstance.getDuration();
-            int amplifier = statusEffectInstance.getAmplifier();
+            int amplifier = statusEffectInstance.getAmplifier()-1;
 
             if (statusEffect.isBeneficial() && !debuff) {
                 if (user != null && !cleanse)

@@ -18,7 +18,7 @@ public class WarriorAbilities {
         int spellbreakingDuration = SimplySkills.warriorConfig.passiveWarriorSpellbreakerDuration;
         int spellbreakingChance = SimplySkills.warriorConfig.passiveWarriorSpellbreakerChance;
         if (player.getRandom().nextInt(100) < spellbreakingChance) {
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLBREAKING, spellbreakingDuration, 0, false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLBREAKING, spellbreakingDuration, 0, false, false, true));
         }
     }
 
@@ -37,7 +37,7 @@ public class WarriorAbilities {
                     regen = regen + (deathDefyAmplifierPerTenPercentHealth * 2);
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
-                        deathDefyFrequency + 5, regen, false, false));
+                        deathDefyFrequency + 5, regen, false, false, true));
                 if (player.hasStatusEffect(StatusEffects.REGENERATION)
                         && player.getStatusEffect(StatusEffects.REGENERATION).getAmplifier() > 0)
                     HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION,
@@ -47,7 +47,7 @@ public class WarriorAbilities {
     }
 
     public static void passiveWarriorGoliath(PlayerEntity player) {
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EARTHSHAKER, 200, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EARTHSHAKER, 200, 0, false, false, true));
     }
 
     public static void passiveWarriorArmorMastery(PlayerEntity player) {
@@ -63,11 +63,11 @@ public class WarriorAbilities {
                     && HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorHeavyArmorMastery, player)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                        heavyArmorMasteryDuration, heavyArmorMasteryAmplifier, false, false));
+                        heavyArmorMasteryDuration, heavyArmorMasteryAmplifier, false, false, true));
             } else if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorMediumArmorMastery, player)){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION,
-                        mediumArmorMasteryDuration, mediumArmorMasteryAmplifier, false, false));
+                        mediumArmorMasteryDuration, mediumArmorMasteryAmplifier, false, false, true));
             }
         }
     }
@@ -87,14 +87,14 @@ public class WarriorAbilities {
         if (player.age % frequency == 0) {
             if (player.hasStatusEffect(EffectRegistry.EXHAUSTION)) {
                 if (player.getStatusEffect(EffectRegistry.EXHAUSTION).getAmplifier() >= 75) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount, false, false));
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount, false, false));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount, false, false, true));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount, false, false, true));
                 }
             }
             if (player.hasStatusEffect(EffectRegistry.RAGE)) {
                 if (player.getStatusEffect(EffectRegistry.RAGE).getAmplifier() >= 75) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount, false, false));
-                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount, false, false));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, frequency + 5, amount, false, false, true));
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, frequency + 5, amount, false, false, true));
                 }
             }
         }
@@ -121,9 +121,9 @@ public class WarriorAbilities {
                         mastery = mastery + shieldMasteryResistanceAmplifierPerTier;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                            shieldMasteryFrequency + 5, mastery, false, false));
+                            shieldMasteryFrequency + 5, mastery, false, false, true));
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                            shieldMasteryFrequency + 5, shieldMasteryWeaknessAmplifier, false, false));
+                            shieldMasteryFrequency + 5, shieldMasteryWeaknessAmplifier, false, false, true));
                 }
             }
         }
@@ -135,7 +135,7 @@ public class WarriorAbilities {
         int rebukeWeaknessAmplifier = SimplySkills.warriorConfig.passiveWarriorRebukeWeaknessAmplifier;
         if (player.getRandom().nextInt(100) < rebukeChance) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                    rebukeWeaknessDuration, rebukeWeaknessAmplifier, false, false));
+                    rebukeWeaknessDuration, rebukeWeaknessAmplifier, false, false, true));
         }
     }
 

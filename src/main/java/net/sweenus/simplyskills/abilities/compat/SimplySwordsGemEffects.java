@@ -47,7 +47,7 @@ public class SimplySwordsGemEffects {
             if (allNetherEffects.contains("precise")) {
                 int procChance = SimplySwordsRequiredMethods.preciseChance;
                 if (user.getRandom().nextInt(100) < procChance) {
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.PRECISION, 200, 5, false, false));
+                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.PRECISION, 200, 5, false, false, true));
                     doSound(user);
                 }
             }
@@ -56,7 +56,7 @@ public class SimplySwordsGemEffects {
             if (allNetherEffects.contains("mighty")) {
                 int procChance = SimplySwordsRequiredMethods.mightyChance;
                 if (user.getRandom().nextInt(100) < procChance) {
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT, 200, 3, false, false));
+                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT, 200, 3, false, false, true));
                     doSound(user);
                 }
             }
@@ -65,7 +65,7 @@ public class SimplySwordsGemEffects {
             if (allNetherEffects.contains("stealthy")) {
                 int procChance = SimplySwordsRequiredMethods.stealthyChance;
                 if (user.getRandom().nextInt(100) < procChance) {
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 600, 0, false, false));
+                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 600, 0, false, false, true));
                     doSound(user);
                 }
             }
@@ -126,7 +126,7 @@ public class SimplySwordsGemEffects {
         if (SimplySwordsGemEffects.doSignatureGemEffects(player, "spellshield")) {
             int procChance = SimplySwordsRequiredMethods.spellshieldChance;
             if (player.getRandom().nextInt(100) < procChance) {
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BARRIER, 100, 0, false, false));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BARRIER, 100, 0, false, false, true));
                 doSound(player);
             }
         }
@@ -135,13 +135,13 @@ public class SimplySwordsGemEffects {
     // When in mainhand, grants + 1 to all Spell Power
     public static void spellforged(PlayerEntity player) {
         if (player.age %20 == 0 && SimplySwordsGemEffects.doSignatureGemEffects(player, "spellforged"))
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLFORGED, 25, 0, false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SPELLFORGED, 25, 0, false, false, true));
     }
 
     // When in main or offhand, grants + 2 to Soul & Lightning Spell Power
     public static void soulshock(PlayerEntity player) {
         if (player.age %20 == 0 && SimplySwordsGemEffects.doSignatureGemEffects(player, "soulshock"))
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SOULSHOCK, 25, 0, false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SOULSHOCK, 25, 0, false, false, true));
     }
 
     // Chance on spell hit to drop a banner that periodically grants precision & spellforged

@@ -149,7 +149,7 @@ public class ClericAbilities {
 
     // Anoint Weapon
     public static boolean signatureClericAnointWeapon(PlayerEntity player) {
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ANOINTED, 400, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ANOINTED, 400, 0, false, false, true));
         return true;
     }
     // Cleanse tick
@@ -166,7 +166,7 @@ public class ClericAbilities {
         int chance = 15;
 
         if (playerHealthPercent < 30 && roll < chance)
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.UNDYING, 120, 0, false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.UNDYING, 120, 0, false, false, true));
 
     }
 

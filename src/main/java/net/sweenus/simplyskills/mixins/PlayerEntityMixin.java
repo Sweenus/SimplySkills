@@ -40,7 +40,7 @@ public class PlayerEntityMixin {
             // Effect Fan of Blades Renewal
             if (HelperMethods.isUnlocked("simplyskills:rogue",
                     SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesRenewal, player)) {
-                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 1, false, false));
+                player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES, 500, 1, false, false, true));
             }
 
 

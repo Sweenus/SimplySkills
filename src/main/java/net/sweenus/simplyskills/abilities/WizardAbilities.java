@@ -84,7 +84,7 @@ public class WizardAbilities {
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationMeteorShowerWrath, player))
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.METEORICWRATH,
-                                    meteoricWrathDuration, meteoricWrathStacks, false, false));
+                                    meteoricWrathDuration, meteoricWrathStacks, false, false, true));
 
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationMeteorShowerGreater, player))
@@ -134,13 +134,13 @@ public class WizardAbilities {
                                 SkillReferencePosition.wizardSpecialisationIceCometLeap, player)) {
                             player.setVelocity(player.getRotationVector().negate().multiply(+leapVelocity));
                             player.setVelocity(player.getVelocity().x, leapHeight, player.getVelocity().z);
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, leapSlowfallDuration, 0, false, false));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, leapSlowfallDuration, 0, false, false, true));
                             player.velocityModified = true;
                         }
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationIceCometVolley, player))
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FROSTVOLLEY,
-                                    volleyDuration, volleyStacks, false, false));
+                                    volleyDuration, volleyStacks, false, false, true));
 
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationIceCometDamageOne, player))
@@ -213,7 +213,7 @@ public class WizardAbilities {
                             if (HelperMethods.isUnlocked(wizardSkillTree,
                                     SkillReferencePosition.wizardSpecialisationStaticDischargeLeap, player)) {
                                 le.addStatusEffect(new StatusEffectInstance(EffectRegistry.STATICCHARGE,
-                                        staticChargeDuration, amplifier, false, false));
+                                        staticChargeDuration, amplifier, false, false, true));
                             }
                             StaticChargeEffect.onHitEffects(player, StaticChargeEffect.calculateSpeedChance(player), le);
                         }
@@ -356,7 +356,7 @@ public class WizardAbilities {
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player))
                             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.ARCANEVOLLEY,
-                                    volleyDuration, volleyStacks, false, false));
+                                    volleyDuration, volleyStacks, false, false, true));
 
                         if (HelperMethods.isUnlocked(wizardSkillTree,
                                 SkillReferencePosition.wizardSpecialisationArcaneBoltLesser, player)) {

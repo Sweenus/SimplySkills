@@ -37,7 +37,7 @@ public class RogueAbilities {
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
                     livingTarget.getBodyYaw() > (player.getBodyYaw() - 32)) {
                 livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                        weaknessDuration, weaknessAmplifier, false, false));
+                        weaknessDuration, weaknessAmplifier, false, false, true));
             }
         }
     }
@@ -55,12 +55,12 @@ public class RogueAbilities {
                     if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
 
                         le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,
-                                blindnessDuration, blindnessAmplifier, false, false));
+                                blindnessDuration, blindnessAmplifier, false, false, true));
 
                     }
                 }
             }
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, auraDuration, 0, false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZINGAURA, auraDuration, 0, false, false, true));
             player.getWorld().playSoundFromEntity(
                     null, player, SoundRegistry.SOUNDEFFECT32,
                     SoundCategory.PLAYERS, 0.4f, 1.2f);
@@ -129,7 +129,7 @@ public class RogueAbilities {
             mastery = mastery + poisonDurationIncreasePerTier;
 
         if (target instanceof LivingEntity livingTarget) {
-            livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery, basePoisonAmplifier, false, false));
+            livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, mastery, basePoisonAmplifier, false, false, true));
         }
 
     }
@@ -145,7 +145,7 @@ public class RogueAbilities {
                             le.hasStatusEffect(StatusEffects.WEAKNESS)
                             && HelperMethods.checkFriendlyFire(le, player)) {
                         if (player.getRandom().nextInt(100) < stealthChance) {
-                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, stealthDuration, 0, false, false));
+                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, stealthDuration, 0, false, false, true));
                             player.getWorld().playSoundFromEntity(
                                     null, player, SoundRegistry.SOUNDEFFECT39,
                                     SoundCategory.PLAYERS, 0.6f, 1.6f);
@@ -177,7 +177,7 @@ public class RogueAbilities {
                             if (HelperMethods.isUnlocked("simplyskills:rogue",
                                     SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeVampire, player)) {
                                 HelperMethods.buffSteal(player, le, true, true, false, false);
-                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 120, 0, false, false));
+                                le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 120, 0, false, false, true));
                             }
 
                         }
@@ -212,7 +212,7 @@ public class RogueAbilities {
         int fanOfBladesDuration = SimplySkills.rogueConfig.signatureRogueFanOfBladesDuration;
         int fanOfBladesStacks = SimplySkills.rogueConfig.signatureRogueFanOfBladesStacks - 1;
 
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.EVASION, evasionDuration, 0, false, false, true));
 
         if (HelperMethods.isUnlocked(rogueSkillTree,
                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
@@ -221,7 +221,7 @@ public class RogueAbilities {
         if (HelperMethods.isUnlocked(rogueSkillTree,
                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBlades, player))
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.FANOFBLADES,
-                    fanOfBladesDuration, fanOfBladesStacks, false, false));
+                    fanOfBladesDuration, fanOfBladesStacks, false, false, true));
 
         return true;
     }
@@ -232,9 +232,9 @@ public class RogueAbilities {
         int speedAmplifier = SimplySkills.rogueConfig.signatureRoguePreparationSpeedAmplifier;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH,
-                preparationDuration, 0, false, false));
+                preparationDuration, 0, false, false, true));
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                preparationDuration, speedAmplifier, false, false));
+                preparationDuration, speedAmplifier, false, false, true));
 
         if (HelperMethods.isUnlocked("simplyskills:rogue",
                 SkillReferencePosition.rogueSpecialisationPreparationShadowstrikeShield, player)) {
@@ -264,7 +264,7 @@ public class RogueAbilities {
         int siphoningStrikesMightyStacks = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesMightyStacks;
 
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SIPHONINGSTRIKES,
-                siphoningStrikesduration, siphoningStrikesStacks, false, false));
+                siphoningStrikesduration, siphoningStrikesStacks, false, false, true));
 
         if (HelperMethods.isUnlocked(rogueSkillTree,
                 SkillReferencePosition.rogueSpecialisationSiphoningStrikesMighty, player))

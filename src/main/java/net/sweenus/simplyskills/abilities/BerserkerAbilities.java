@@ -35,13 +35,13 @@ public class BerserkerAbilities {
                             SkillReferencePosition.berserkerSwordMasterySkilled, player)
                             && player.getOffHandStack().isEmpty())
                         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT,
-                                frequency + 5, 0, false, false));
+                                frequency + 5, 0, false, false, true));
                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                             SkillReferencePosition.berserkerSwordMasteryProficient, player))
                         mastery = mastery + speedAmplifierPerTier;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                            frequency + 5, mastery, false, false));
+                            frequency + 5, mastery, false, false, true));
                 }
             }
         }
@@ -67,7 +67,7 @@ public class BerserkerAbilities {
                         mastery = mastery + strengthAmplifierPerTier;
 
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,
-                            frequency + 5, mastery, false, false));
+                            frequency + 5, mastery, false, false, true));
                 }
             }
         }
@@ -90,7 +90,7 @@ public class BerserkerAbilities {
                     resistanceStacks = resistanceStacks + resistanceAmplifierPerTier;
 
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
-                        frequency + 5, resistanceStacks, false, false));
+                        frequency + 5, resistanceStacks, false, false, true));
             }
         }
     }
@@ -102,7 +102,7 @@ public class BerserkerAbilities {
         if (player.age % frequency == 0) {
             if (player.getHealth() >= (healthThreshold * player.getMaxHealth())) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
-                        frequency + 5, weaknessAmplifier, false, false));
+                        frequency + 5, weaknessAmplifier, false, false, true));
             }
         }
     }
@@ -126,14 +126,14 @@ public class BerserkerAbilities {
             if (count > countMax)
                 count = countMax;
             if (count > 1)
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, count -1, false, false));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, frequency + 5, count -1, false, false, true));
         }
     }
 
     public static void passiveBerserkerExploit(Entity target) {
         if (target instanceof LivingEntity livingTarget) {
             if (livingTarget.hasStatusEffect(EffectRegistry.IMMOBILIZE)) {
-                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 120, 1, false, false));
+                livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 120, 1, false, false, true));
             }
         }
     }
@@ -147,10 +147,10 @@ public class BerserkerAbilities {
 
         int rampageDuration = SimplySkills.berserkerConfig.signatureBerserkerRampageDuration;
         int bullrushDuration = SimplySkills.berserkerConfig.signatureBerserkerBullrushDuration;
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAMPAGE, rampageDuration, 0, false, false, true));
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationRampageCharge, player)) {
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration, 0 , false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BULLRUSH, bullrushDuration, 0 , false, false, true));
             player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                     SoundCategory.PLAYERS, 0.5f, 1.1f);
         }
@@ -161,7 +161,7 @@ public class BerserkerAbilities {
     public static boolean signatureBerserkerBloodthirsty(String berserkerSkillTree, PlayerEntity player) {
         int bloodthirstyDuration = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyDuration;
         int bloodthirstyMightyStacks = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyMightyStacks;
-        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration, 0, false, false));
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BLOODTHIRSTY, bloodthirstyDuration, 0, false, false, true));
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationBloodthirstyMighty, player))
             HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, bloodthirstyDuration,
@@ -178,11 +178,11 @@ public class BerserkerAbilities {
         if (!FabricLoader.getInstance().isModLoaded("simplyswords") || !SimplySwordsGemEffects.doSignatureGemEffects(player, "accelerant")) {
             player.damage(player.getDamageSources().generic(), sacrificeAmount);
             player.addStatusEffect(new StatusEffectInstance(EffectRegistry.BERSERKING,
-                    (int) ((sacrificeAmount * secondsPerSacrifice) * 20), 0, false, false));
+                    (int) ((sacrificeAmount * secondsPerSacrifice) * 20), 0, false, false, true));
         }
         if (HelperMethods.isUnlocked(berserkerSkillTree,
                 SkillReferencePosition.berserkerSpecialisationBerserkingLeap, player)) {
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration, 0 , false, false));
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.LEAPSLAM, leapSlamDuration, 0 , false, false, true));
             player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                     SoundCategory.PLAYERS, 0.5f, 1.1f);
         }

@@ -44,13 +44,13 @@ public class StaticChargeEffect extends StatusEffect {
                             SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
                                     "simplyskills:static_charge",
                                     3, le);
-                            le.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier, false, false));
+                            le.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier, false, false, true));
                             StatusEffect sc = EffectRegistry.STATICCHARGE;
                             HelperMethods.decrementStatusEffect(livingEntity, sc);
                             if (livingEntity.hasStatusEffect(sc)) {
                                 le.addStatusEffect(new StatusEffectInstance(sc,
                                         livingEntity.getStatusEffect(sc).getDuration(),
-                                        livingEntity.getStatusEffect(sc).getAmplifier(), false, false));
+                                        livingEntity.getStatusEffect(sc).getAmplifier(), false, false, true));
                                 livingEntity.removeStatusEffect(sc);
                             }
                             onHitEffects(ownerEntity, calculateSpeedChance(ownerEntity), le);

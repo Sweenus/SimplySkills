@@ -61,7 +61,7 @@ public class ElementalImpactEffect extends StatusEffect {
                         if (entities != null) {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player) && !le.hasStatusEffect(StatusEffects.SLOWNESS)) {
                                 le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
-                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier, false, false));
+                                le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier, false, false, true));
                             }
                         }
                     }
