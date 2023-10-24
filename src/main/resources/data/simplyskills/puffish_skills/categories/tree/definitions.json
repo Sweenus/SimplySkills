@@ -1,6 +1,7 @@
 {
 	"pathWayfarer": {
-		"title": "Path of the §bWayfarer§7 \n+3% Movement Speed",
+		"title": "Path of the §bWayfarer",
+		"description": "§7+3% Movement Speed",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -20,7 +21,8 @@
 		]
 	},
 	"pathInitiate": {
-		"title": "Path of the §bInitiate§7 \n+1 To all schools of magic",
+		"title": "Path of the §bInitiate§7",
+		"description": "§7+1 To all schools of magic",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -422,7 +424,8 @@
 		]
 	},
 	"pathWarrior": {
-		"title": "Path of the §bWarrior§7 \n+3% Melee Damage",
+		"title": "Path of the §bWarrior§7",
+		"description": "§7+3% Melee Damage",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -783,7 +786,8 @@
 		]
 	},
 	"initiateSlowfall": {
-		"title": "§7§a[Innate Slowfall]§7\nWhen falling long distances you gain Slow Falling.",
+		"title": "§7§a[Innate Slowfall]§7",
+		"description": "§7When falling long distances you gain Slow Falling.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -801,7 +805,8 @@
 		]
 	},
 	"fervour": {
-		"title": "§7§a[Fervour]§7\nLanding a killing blow grants you haste for a short duration.",
+		"title": "§7§a[Fervour]§7",
+		"description": "§7Landing a killing blow grants you haste for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -819,7 +824,8 @@
 		]
 	},
 	"wayfarerStealth": {
-		"title": "§7§a[Stealth]§7 \nGain Stealth when crouching. \n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+		"title": "§7§a[Stealth]§7",
+		"description": "§7Gain Stealth when crouching.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -837,7 +843,8 @@
 		]
 	},
 	"wayfarerSneak": {
-		"title": "§7§a[Sneak]§7 \nGain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"title": "§7§a[Sneak]§7",
+		"description": "§7Gain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -855,7 +862,8 @@
 		]
 	},
 	"wayfarerReflexive": {
-		"title": "§7§a[Reflexive]§7 \nWhen your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
+		"title": "§7§a[Reflexive]§7",
+		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -873,7 +881,8 @@
 		]
 	},
 	"wayfarerUnseen": {
-		"title": "§7§a[Unseen]§7 \nWhile loading a Crossbow, gain momentary Stealth.",
+		"title": "§7§a[Unseen]§7",
+		"description": "§7While loading a Crossbow, gain momentary Stealth.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -891,7 +900,8 @@
 		]
 	},
 	"wayfarerGuarding": {
-		"title": "§7§a[Guarding]§7 \nWhile you have a Crossbow in your offhand, you periodically gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+		"title": "§7§a[Guarding]§7",
+		"description": "§7While you have a Crossbow in your offhand, you periodically gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -909,7 +919,8 @@
 		]
 	},
 	"initiateNullification": {
-		"title": "§7§a[Nullification]§7 \nPeriodically strip buffs from nearby hostiles.",
+		"title": "§7§a[Nullification]§7",
+		"description": "§7Periodically strip buffs from nearby hostiles.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -996,7 +1007,8 @@
 		]
 	},
 	"initiateEmpower": {
-		"title": "§7§a[Empower]§7 \nChance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by 2% per stack.",
+		"title": "§7§a[Empower]§7",
+		"description": "§7Chance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by 2% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1014,7 +1026,8 @@
 		]
 	},
 	"initiateAttuned": {
-		"title": "§7§a[Attuned]§7 \nWhen you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by 2% per stack.",
+		"title": "§7§a[Attuned]§7",
+		"description": "§7When you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by 2% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1032,7 +1045,8 @@
 		]
 	},
 	"initiateLightningRod": {
-		"title": "§7§a[Lightning Rod]§7 \nDuring storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by 2% per stack.",
+		"title": "§7§a[Lightning Rod]§7",
+		"description": "§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by 2% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1050,7 +1064,8 @@
 		]
 	},
 	"initiateEldritchEnfeeblement": {
-		"title": "§7§a[Eldritch Enfeeblement]§7 \nYour spell damage is increased by 5%, but your movespeed is decreased by 15%.",
+		"title": "§7§a[Eldritch Enfeeblement]§7",
+		"description": "§7Your spell damage is increased by 5%, but your movespeed is decreased by 15%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1118,7 +1133,8 @@
 		]
 	},
 	"initiateHasty": {
-		"title": "§7§a[Hasty]§7 \nYour movespeed is increased by 20%, but you are inflicted with immobilize when taking damage. \n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+		"title": "§7§a[Hasty]§7",
+		"description": "§7Your movespeed is increased by 20%, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1138,7 +1154,8 @@
 		]
 	},
 	"initiatePerilousPrecision": {
-		"title": "§7§a[Perilous Precision]§7 \nYour spell critical chance is increased by 5%, but your max health is reduced by 15%.",
+		"title": "§7§a[Perilous Precision]§7",
+		"description": "§7Your spell critical chance is increased by 5%, but your max health is reduced by 15%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1166,7 +1183,8 @@
 		]
 	},
 	"cleric": {
-		"title": "§7§a[Cleric]§7 \nPeriodically cleanse debuffs from nearby allies.",
+		"title": "§7§a[Cleric]§7",
+		"description": "§7Periodically cleanse debuffs from nearby allies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1184,7 +1202,8 @@
 		]
 	},
 	"cleansing": {
-		"title": "§7§a[Cleansing]§7 \nPeriodically cleanse debuffs from yourself.",
+		"title": "§7§a[Cleansing]§7",
+		"description": "§7Periodically cleanse debuffs from yourself.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1202,7 +1221,8 @@
 		]
 	},
 	"rangerReveal": {
-		"title": "§7§a[Reveal]§7 \nPeriodically reveal nearby Stealthy enemies.",
+		"title": "§7§a[Reveal]§7",
+		"description": "§7Periodically reveal nearby Stealthy enemies.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1220,7 +1240,8 @@
 		]
 	},
 	"rangerTamer": {
-		"title": "§7§a[Tamer]§7 \nWhen your pets are near to you, they gain Regeneration & Resistance.",
+		"title": "§7§a[Tamer]§7",
+		"description": "§7When your pets are near to you, they gain Regeneration & Resistance.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1238,7 +1259,8 @@
 		]
 	},
 	"rangerBonded": {
-		"title": "§7§a[Bonded]§7 \nWhen your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
+		"title": "§7§a[Bonded]§7",
+		"description": "§7When your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1256,7 +1278,8 @@
 		]
 	},
 	"rangerTrained": {
-		"title": "§7§a[Trained]§7 \nWhen your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
+		"title": "§7§a[Trained]§7",
+		"description": "§7When your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1274,7 +1297,8 @@
 		]
 	},
 	"rangerIncognito": {
-		"title": "§7§a[Incognito]§7 \nWhen your pets are near to you and you gain Stealth, they gain Invisibility.",
+		"title": "§7§a[Incognito]§7",
+		"description": "§7When your pets are near to you and you gain Stealth, they gain Invisibility.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1292,7 +1316,8 @@
 		]
 	},
 	"rogueBackstab": {
-		"title": "§7§a[Backstab]§7 \nAttacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
+		"title": "§7§a[Backstab]§7",
+		"description": "§7Attacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1310,7 +1335,8 @@
 		]
 	},
 	"warriorHeavyArmorMastery": {
-		"title": "§7§a[Heavy Armor Mastery]§7 \nWhile your armor value is above 15, you have a chance to gain Strength when hit.",
+		"title": "§7§a[Heavy Armor Mastery]§7",
+		"description": "§7While your armor value is above 15, you have a chance to gain Strength when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1328,7 +1354,8 @@
 		]
 	},
 	"warriorMediumArmorMastery": {
-		"title": "§7§a[Medium Armor Mastery]§7 \nWhile your armor value is below 15, you have a chance to gain Absorption when hit.",
+		"title": "§7§a[Medium Armor Mastery]§7",
+		"description": "§7While your armor value is below 15, you have a chance to gain Absorption when hit.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1346,7 +1373,8 @@
 		]
 	},
 	"warriorSpellbreaker": {
-		"title": "§7§a[Spellbreaker]§7 \nWhen taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n§f(Spellbreaking)§7 causes hostile spell projectiles to explode when in close proximity to you.",
+		"title": "§7§a[Spellbreaker]§7",
+		"description": "§7When taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n§f(Spellbreaking)§7 causes hostile spell projectiles to explode when in close proximity to you.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1364,7 +1392,8 @@
 		]
 	},
 	"warriorGoliath": {
-		"title": "§7§a[Goliath]§7 \nWhen falling long distances, gain Earthshaker.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+		"title": "§7§a[Goliath]§7",
+		"description": "§7When falling long distances, gain Earthshaker.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1382,7 +1411,8 @@
 		]
 	},
 	"warriorHeavyWeight": {
-		"title": "§7§a[Heavy Weight]§7 \nYour Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
+		"title": "§7§a[Heavy Weight]§7",
+		"description": "§7Your Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1400,7 +1430,8 @@
 		]
 	},
 	"warriorBound": {
-		"title": "§7§a[Bound]§7 \nAfter activating Earthshaker, you gain Jump Boost for a short duration.",
+		"title": "§7§a[Bound]§7",
+		"description": "§7After activating Earthshaker, you gain Jump Boost for a short duration.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1418,7 +1449,9 @@
 		]
 	},
 	"warriorDeathDefy": {
-		"title": "§7§a[Death Defy]§7 \nWhen at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent. \n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"title": "§7§a[Death Defy]§7",
+		"description": "§7When at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1436,7 +1469,8 @@
 		]
 	},
 	"warriorFrenzy": {
-		"title": "§7§a[Frenzy]§7 \nGain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion. \n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"title": "§7§a[Frenzy]§7",
+		"description": "§7Gain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1456,7 +1490,8 @@
 		]
 	},
 	"warriorCarnage": {
-		"title": "§7§a[Carnage]§7 \nWhile at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+		"title": "§7§a[Carnage]§7",
+		"description": "§7While at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1474,7 +1509,8 @@
 		]
 	},
 	"warriorTwinstrike": {
-		"title": "§7§a[Twinstrike]§7 \nYour melee hits have a chance to strike twice.\nThis chance is doubled while under the effects of Health Boost.",
+		"title": "§7§a[Twinstrike]§7",
+		"description": "§7Your melee hits have a chance to strike twice.\nThis chance is doubled while under the effects of Health Boost.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1492,7 +1528,8 @@
 		]
 	},
 	"warriorSwordfall": {
-		"title": "§7§a[Swordfall]§7 \nYour melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\nThis chance is doubled while under the effects of Might.",
+		"title": "§7§a[Swordfall]§7",
+		"description": "§7Your melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\nThis chance is doubled while under the effects of Might.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1510,7 +1547,8 @@
 		]
 	},
 	"berserkerPath": {
-		"title": "Path of the §bBerserker§7 \n\n§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
+		"title": "Path of the §bBerserker§7",
+		"description": "§7§a[Recklessness]§7 \nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1528,7 +1566,8 @@
 		]
 	},
 	"berserkerSwordMastery": {
-		"title": "§7§a[Sword Mastery]§7 \nGain pulsing Speed when wielding a sword in your mainhand.",
+		"title": "§7§a[Sword Mastery]§7",
+		"description": "§7Gain pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1546,7 +1585,8 @@
 		]
 	},
 	"berserkerSwordMasteryProficient": {
-		"title": "§7§a[Sword Mastery +]§7 \nGain increased pulsing Speed when wielding a sword in your mainhand.",
+		"title": "§7§a[Sword Mastery +]§7",
+		"description": "§7Gain increased pulsing Speed when wielding a sword in your mainhand.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1564,7 +1604,8 @@
 		]
 	},
 	"berserkerSwordMasterySkilled": {
-		"title": "§7§a[Sword Mastery ++]§7 \nWhen not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"title": "§7§a[Sword Mastery ++]§7",
+		"description": "§7When not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
