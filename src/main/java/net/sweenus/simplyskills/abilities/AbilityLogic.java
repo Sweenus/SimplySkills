@@ -2,17 +2,14 @@ package net.sweenus.simplyskills.abilities;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Box;
-import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
+import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.items.GraciousManuscript;

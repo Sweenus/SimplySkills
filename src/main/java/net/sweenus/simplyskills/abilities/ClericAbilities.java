@@ -55,10 +55,14 @@ public class ClericAbilities {
     public static void passiveClericMutualMending(PlayerEntity player, Identifier spellId, List<Entity> targets) {
         int random = new Random().nextInt(100);
         int chance = 20;
+        if (spellId.toString().contains("holy_beam"))
+            chance = 10;
         Spell spell = SpellRegistry.getSpell(spellId);
         MagicSchool healingSchool = MagicSchool.HEALING;
         if (random < chance && !targets.contains(player) && spell.school == healingSchool) {
-            SignatureAbilities.castSpellEngineIndirectTarget(player, spellId.toString(), 10, player);
+            if (spellId.toString().contains("holy_beam"))
+                SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:heal", 10, player);
+            else SignatureAbilities.castSpellEngineIndirectTarget(player, spellId.toString(), 10, player);
         }
     }
 

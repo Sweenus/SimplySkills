@@ -27,16 +27,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.puffish.skillsmod.SkillsAPI;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
+import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 
 import java.util.Collection;
 import java.util.List;
 
-import static net.puffish.skillsmod.SkillsAPI.getCategory;
+import static net.puffish.skillsmod.api.SkillsAPI.getCategory;
 
 public class HelperMethods {
 
@@ -86,8 +86,8 @@ public class HelperMethods {
         if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
             if (getCategory(tree).isPresent()) {
                 if (skill != null) {
-                    Collection<Skill> skillList = SkillsAPI.getCategory(tree).get().getUnlockedSkills(serverPlayer);
-                    Skill realSkill = new Skill(SkillsAPI.getCategory(tree).get(), skill);
+                    Collection<Skill> skillList = getCategory(tree).get().getUnlockedSkills(serverPlayer);
+                    Skill realSkill = new Skill(getCategory(tree).get(), skill);
                     //System.out.println("Checking " + tree + " for skill: " + realSkill.getId());
 
                     for (Skill value : skillList) {
@@ -459,7 +459,7 @@ public class HelperMethods {
             String category = nbt.getString(categoryKey);
             if (category.isEmpty()) continue;
 
-            SkillsAPI.getCategory(new Identifier(category)).ifPresent(categoryObj -> {
+            getCategory(new Identifier(category)).ifPresent(categoryObj -> {
                 categoryObj.unlock(user);
                 for (int s = 0; s < size; s++) {
                     String skillKey = "skill" + s;

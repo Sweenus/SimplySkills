@@ -927,7 +927,8 @@
 		]
 	},
 	"initiateGambit": {
-		"title": "§7§a[Gambit]§7 \nYour spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
+		"title": "§7§a[Gambit]",
+		"description": "§7Your spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
