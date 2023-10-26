@@ -1548,7 +1548,8 @@
 	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7",
-		"description": "\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
+		"description": "\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bBerserker§7, is driven by an insatiable thirst for destruction and a complete disregard for their own safety. They are masters of §amelee combat§7 and revel in dealing devastating damage, even if it means §aputting their own life on the line§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1908,7 +1909,8 @@
 	},
 	"roguePath": {
 		"title": "Path of the §bRogue§7",
-		"description": "§7\n§7§a[Slender]§7\nWhen you have 15 or more armor, you are inflicted with Slowness.",
+		"description": "§7\n§7§a[Slender]§7\nWhen you have 15 or more armor, you are inflicted with Slowness.§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bRogue§7 is a master of §astealth§7 and subterfuge. They thrive in the shadows, utilizing their exceptional skills to remain unseen and catch their enemies off guard with §aprecision strikes§7. If caught in the open, they are more than capable of §aevading§7 enemy attacks and escaping back to the safety of the shadows.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2155,7 +2157,8 @@
 	},
 	"rangerPath": {
 		"title": "Path of the §bRanger§7",
-		"description": "\n§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.",
+		"description": "\n§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bRanger§7 is renowned for their unparalleled §aproficiency with bows§7 and their unique ability to infuse §aelemental magic§7 into their ranged attacks. They also share a deep, symbiotic bond with their §aanimal companions§7, making them a formidable force on the battlefield.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2250,7 +2253,8 @@
 	},
 	"crusaderPath": {
 		"title": "Path of the §bCrusader§7",
-		"description": "\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
+		"description": "§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bCrusader§7, is often chosen by those who are not content with merely §adefending their allies§7 but also strive to be a beacon of hope on the battlefield. They combine the fervor of a §ahealer§7 with the might of a §awarrior§7, making them formidable champions in both §aoffense and defense§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2288,6 +2292,8 @@
 	},
 	"spellbladePath": {
 		"title": "Path of the §bSpellblade§7",
+		"description": "\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bSpellblade§7 is a versatile and formidable warrior who seamlessly melds the power of magic with martial combat. Their hallmark is the fusion of §aspellcasting§7 and §amelee attacks§7, making them an exceptional force on the battlefield.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2344,7 +2350,7 @@
 	},
 	"spellbladeSignatureElementalSurge": {
 		"title": "Signature Ability: §6[Elemental Surge]§7",
-		"description": "Grants you Elemental Surge for 15s.\n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.\n\n§a30s Cooldown§7",
+		"description": "\nGrants you Elemental Surge for 15s.\n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.\n\n§a30s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2553,7 +2559,8 @@
 	},
 	"wizardPath": {
 		"title": "Path of the §bWizard§7",
-		"description": "\n§7§a[Frail]§7\nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.",
+		"description": "\n§7§a[Frail]§7\nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7The §bWizard§7 specialization is for those who seek to harness the power of magics. They are relentless and destructive §aspellcasters§7, capable of unleashing cataclysmic magical energy upon their enemies. However, their lust for power over the arcane leads them to §aneglect their physical form§7, weakening their defences and physical offence capabilities.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2591,7 +2598,8 @@
 	},
 	"clericPath": {
 		"title": "Path of the §bCleric§7",
-		"description": "\n§e[Requires §nPaladins & Priests§r§e to be installed]§7",
+		"description": "\n§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
+		"extra_description": "\n§7Those of the §bCleric§7 specialisation are known for their unwavering commitment to safeguarding and nurturing their allies. They possess a unique combination of §ahealing§7, §asupport§7, and the ability to §abear the burdens§7 of those they protect.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4073,7 +4081,7 @@
 	},
 	"crusaderAegis": {
 		"title": "§7§a[Aegis]§7",
-		"description": "§7\nPeriodically consume stacks of exhaustion to gain a stack of Divine Protection.",
+		"description": "§7Periodically consume stacks of exhaustion to gain a stack of Divine Protection.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4092,7 +4100,7 @@
 	},
 	"crusaderRetribution": {
 		"title": "§7§a[Retribution]§7",
-		"description": "§7\nChance on shield block to cast Judgement on your attacker.",
+		"description": "§7Chance on shield block to cast Judgement on your attacker.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4111,7 +4119,7 @@
 	},
 	"crusaderExhaustiveRecovery": {
 		"title": "§7§a[Exhaustive Recovery]§7",
-		"description": "§7\nChance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"description": "§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4453,7 +4461,7 @@
 	},
 	"clericAltruism": {
 		"title": "§7§a[Altruism]§7",
-		"description": "§7\nWhen wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "§7When wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4472,7 +4480,7 @@
 	},
 	"clericMutualMending": {
 		"title": "§7§a[Mutual Mending]§7",
-		"description": "§7\nWhen casting a healing spell, you have a chance to also cast that spell on yourself.",
+		"description": "§7When casting a healing spell, you have a chance to also cast that spell on yourself.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4491,7 +4499,7 @@
 	},
 	"clericHealingWard": {
 		"title": "§7§a[Healing Ward]§7",
-		"description": "§7\nWhen casting a healing spell to grant your target Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+		"description": "§7When casting a healing spell to grant your target Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4966,7 +4974,7 @@
 	},
 	"portalSapphire": {
 		"title": "§7§6[Junction: §fSapphire§6]§7",
-		"description": "§7\n\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
+		"description": "§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
