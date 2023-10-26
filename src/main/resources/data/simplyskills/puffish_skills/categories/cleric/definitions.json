@@ -1,7 +1,7 @@
 {
 	"pathWayfarer": {
 		"title": "Path of the §bWayfarer",
-		"description": "§7+3% Movement Speed",
+		"description": "§a+10% §f[x]§7 Movement Speed",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -14,7 +14,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.movement_speed",
-					"value": 0.03,
+					"value": 0.10,
 					"operation": "multiply_base"
 				}
 			}
@@ -22,7 +22,7 @@
 	},
 	"pathInitiate": {
 		"title": "Path of the §bInitiate§7",
-		"description": "§7+1 To all schools of magic",
+		"description": "§a+1§7 To all schools of magic",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -82,7 +82,7 @@
 		]
 	},
 	"spell_fire_damage_additive+1%": {
-		"title": "+1% [+] §7Fire Spell Damage",
+		"title": "§a+1%§f [+] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -101,7 +101,7 @@
 		]
 	},
 	"spell_fire_damage_multi+1%": {
-		"title": "+1% [x] §7Fire Spell Damage",
+		"title": "§a+1% §f[x] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -120,7 +120,7 @@
 		]
 	},
 	"spell_arcane_damage_additive+1%": {
-		"title": "+1% [+] §7Arcane Spell Damage",
+		"title": "§a+1%§f [+] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -139,7 +139,7 @@
 		]
 	},
 	"spell_arcane_damage_multi+1%": {
-		"title": "+1% [x] §7Arcane Spell Damage",
+		"title": "§a+1% §f[x] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -158,7 +158,7 @@
 		]
 	},
 	"spell_frost_damage_additive+1%": {
-		"title": "+1% [+] §7Frost Spell Damage",
+		"title": "§a+1% §f[+] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -177,7 +177,7 @@
 		]
 	},
 	"spell_frost_damage_multi+1%": {
-		"title": "+1% [x] §7Frost Spell Damage",
+		"title": "§a+1% §f[x] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -196,7 +196,7 @@
 		]
 	},
 	"spell_healing_power_additive+1%": {
-		"title": "+1% [+] §7Healing Power",
+		"title": "§a+1% §f[+] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -215,7 +215,7 @@
 		]
 	},
 	"spell_healing_power_multi+1%": {
-		"title": "+1% [x] §7Healing Power",
+		"title": "§a+1% §f[x] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -234,7 +234,7 @@
 		]
 	},
 	"spell_lightning_damage_additive+1%": {
-		"title": "+1% [+] §7Lightning Spell Damage",
+		"title": "§a+1%§f [+] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -253,7 +253,7 @@
 		]
 	},
 	"spell_lightning_damage_multi+1%": {
-		"title": "+1% [x] §7Lightning Spell Damage",
+		"title": "§a+1% §f[x] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -272,7 +272,7 @@
 		]
 	},
 	"spell_soul_damage_additive+1%": {
-		"title": "+1% [+] §7Soul Spell Damage",
+		"title": "§a+1% §f[+] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -291,7 +291,7 @@
 		]
 	},
 	"spell_soul_damage_multi+1%": {
-		"title": "+1% [x] §7Soul Spell Damage",
+		"title": "§a+1% §f[x] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -310,7 +310,7 @@
 		]
 	},
 	"spell_crit_damage_additive+1%": {
-		"title": "+2% [+] §7Spell Critical Damage",
+		"title": "§a+2% §f[+] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -329,7 +329,7 @@
 		]
 	},
 	"spell_crit_damage_multi+1%": {
-		"title": "+1% [x] §7Spell Critical Damage",
+		"title": "§a+1%§f [x] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -348,7 +348,7 @@
 		]
 	},
 	"spell_crit_chance_additive+1%": {
-		"title": "+1% [+] §7Spell Critical Chance",
+		"title": "§a+1% §f[+] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -367,7 +367,7 @@
 		]
 	},
 	"spell_crit_chance_multi+1%": {
-		"title": "+1% [x] §7Spell Critical Chance",
+		"title": "§a+1% §f[x] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -386,7 +386,7 @@
 		]
 	},
 	"spell_haste_additive+1%": {
-		"title": "+1% [+] §7Spell Haste",
+		"title": "§a+1% §f[+] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -405,7 +405,7 @@
 		]
 	},
 	"spell_haste_multi+1%": {
-		"title": "+1% [x] §7Spell Haste",
+		"title": "§a+1% §f[x] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -425,7 +425,7 @@
 	},
 	"pathWarrior": {
 		"title": "Path of the §bWarrior§7",
-		"description": "§7+3% Melee Damage",
+		"description": "§a+8%§f [x] §7Melee Damage",
 		"frame": "challenge",
 		"icon": {
 			"type": "texture",
@@ -438,14 +438,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.03,
+					"value": 0.08,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"health+2": {
-		"title": "+1 §7Heart",
+		"title": "§a+1 §7Heart",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -464,7 +464,7 @@
 		]
 	},
 	"resistance+1%": {
-		"title": "+1% [+] §7Resistance",
+		"title": "§a+1% §f[+] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -483,7 +483,7 @@
 		]
 	},
 	"resistance_multi+2%": {
-		"title": "+2% [x] §7Resistance",
+		"title": "§a+2% §f[x] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -502,7 +502,7 @@
 		]
 	},
 	"melee_damage+1%": {
-		"title": "+1% [+] §7Melee Damage",
+		"title": "§a+1% §f[+] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -521,7 +521,7 @@
 		]
 	},
 	"melee_damage_multi+2%": {
-		"title": "+2% [x] §7Melee Damage",
+		"title": "§a+2% §f[x] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -540,7 +540,7 @@
 		]
 	},
 	"ranged_damage+1%": {
-		"title": "+1% [+] §7Ranged Damage",
+		"title": "§a+1% §f[+] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -559,7 +559,7 @@
 		]
 	},
 	"ranged_damage_multi+2%": {
-		"title": "+2% [x] §7Ranged Damage",
+		"title": "§a+2% §f[x] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -578,7 +578,7 @@
 		]
 	},
 	"attack_speed+1%": {
-		"title": "+1% [+] §7Attack Speed",
+		"title": "§a+1% §f[+] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -597,7 +597,7 @@
 		]
 	},
 	"attack_speed_multi+2%": {
-		"title": "+2% [x] §7Attack Speed",
+		"title": "§a+2% §f[x] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -616,7 +616,7 @@
 		]
 	},
 	"movement_speed+1%": {
-		"title": "+1% [+] §7Movement Speed",
+		"title": "§a+1% §f[+] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -635,7 +635,7 @@
 		]
 	},
 	"movement_speed_multi+1.5%": {
-		"title": "+1.5% [x] §7Movement Speed",
+		"title": "§a+1.5% §f[x] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -654,7 +654,7 @@
 		]
 	},
 	"luck+0.25": {
-		"title": "+0.25 §7Luck",
+		"title": "§a+0.25 §7Luck",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -673,7 +673,7 @@
 		]
 	},
 	"stamina+5%": {
-		"title": "+5% [+] §7Stamina",
+		"title": "§a+5% §f[+] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -692,7 +692,7 @@
 		]
 	},
 	"stamina_multi+7%": {
-		"title": "+7% [x] §7Stamina",
+		"title": "§a+7% §f[x] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -711,7 +711,7 @@
 		]
 	},
 	"healing+1%": {
-		"title": "+1% §7Healing [DEPRECATED]",
+		"title": "§a+1% §7Healing [DEPRECATED]",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -730,7 +730,7 @@
 		]
 	},
 	"jump+1%": {
-		"title": "+1% [+] §7Jump",
+		"title": "§a+1% §f[+] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -749,7 +749,7 @@
 		]
 	},
 	"jump_multi+2%": {
-		"title": "+2% [x] §7Jump",
+		"title": "§a+2%§f [x] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
