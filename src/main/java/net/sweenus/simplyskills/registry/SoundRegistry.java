@@ -51,6 +51,13 @@ public class SoundRegistry {
         soundEvent = SOUNDEFFECT45;
         soundEvent = SOUNDEFFECT46;
         soundEvent = SOUNDEFFECT47;
+        soundEvent = SOUNDEFFECT48;
+        soundEvent = SPELL_ENERGY;
+        soundEvent = SPELL_EARTH_PUNCH;
+        soundEvent = SPELL_MISC_01;
+        soundEvent = SPELL_FIREBALL;
+        soundEvent = SPELL_SLASH;
+        soundEvent = SPELL_SLASH_02;
     }
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
@@ -99,6 +106,13 @@ public class SoundRegistry {
     public static SoundEvent SOUNDEFFECT45 = register("soundeffect_45");
     public static SoundEvent SOUNDEFFECT46 = register("soundeffect_46");
     public static SoundEvent SOUNDEFFECT47 = register("soundeffect_47");
+    public static SoundEvent SOUNDEFFECT48 = register("soundeffect_48");
+    public static SoundEvent SPELL_ENERGY = register("spell_energy");
+    public static SoundEvent SPELL_EARTH_PUNCH = register("spell_earth_punch");
+    public static SoundEvent SPELL_MISC_01 = register("spell_misc_01");
+    public static SoundEvent SPELL_FIREBALL = register("spell_fireball");
+    public static SoundEvent SPELL_SLASH = register("spell_slash");
+    public static SoundEvent SPELL_SLASH_02 = register("spell_slash_02");
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);

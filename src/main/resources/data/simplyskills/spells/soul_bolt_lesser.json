@@ -26,23 +26,27 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 0.8,
-        "homing_angle": 4,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "soul",
-              "shape": "CIRCLE",
-              "rotation": "LOOK",
-              "origin": "CENTER",
-              "count": 2.0,
-              "min_speed": 0.05,
-              "max_speed": 0.1
+        "projectile": {
+          "velocity": 0.8,
+          "homing_angle": 4,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "soul",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "minecraft:amethyst_block",
+              "render": "DEEP",
+              "scale": 0.2
             }
-          ],
-          "model_id": "minecraft:amethyst_block",
-          "render": "DEEP",
-          "scale": 0.2
+          }
         }
       }
     },

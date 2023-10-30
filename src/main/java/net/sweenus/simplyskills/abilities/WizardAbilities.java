@@ -87,14 +87,17 @@ public class WizardAbilities {
                                     meteoricWrathDuration, meteoricWrathStacks, false, false, true));
 
                         if (HelperMethods.isUnlocked(wizardSkillTree,
-                                SkillReferencePosition.wizardSpecialisationMeteorShowerGreater, player))
+                                SkillReferencePosition.wizardSpecialisationMeteorShowerGreater, player)) {
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     "simplyskills:fire_meteor_large",
                                     8, le);
+                            break;
+                        }
                         else
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     "simplyskills:fire_meteor",
                                     8, le);
+                        break;
                     }
                 }
             }
@@ -161,6 +164,7 @@ public class WizardAbilities {
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     "simplyskills:ice_comet",
                                     3, le);
+                        break;
                     }
                 }
             }
@@ -289,7 +293,7 @@ public class WizardAbilities {
     public static void signatureWizardLightningOrb(SpellProjectile spellProjectile, Entity followedTarget, Identifier spellId) {
 
         if (spellId != null) {
-            if (spellId.toString().equals("simplyskills:lightning_ball_homing") && spellProjectile.age % 20 == 0) {
+            if (spellId.toString().equals("simplyskills:lightning_ball_homing") && spellProjectile.age % 20 == 0 && followedTarget !=null) {
                 if (spellProjectile.distanceTo(followedTarget) > 10) {
                     spellProjectile.teleport(followedTarget.getX(), followedTarget.getY(), followedTarget.getZ());
                     spellProjectile.setPitch(90);

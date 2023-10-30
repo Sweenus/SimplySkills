@@ -228,5 +228,40 @@
     "sounds": [
       "simplyskills:soundeffect_47"
     ]
+  },
+  "soundeffect_48": {
+    "sounds": [
+      "simplyskills:soundeffect_48"
+    ]
+  },
+  "spell_energy": {
+    "sounds": [
+      "simplyskills:spell_energy"
+    ]
+  },
+  "spell_earth_punch": {
+    "sounds": [
+      "simplyskills:spell_earth_punch"
+    ]
+  },
+  "spell_misc_01": {
+    "sounds": [
+      "simplyskills:spell_misc_01"
+    ]
+  },
+  "spell_fireball": {
+    "sounds": [
+      "simplyskills:spell_fireball"
+    ]
+  },
+  "spell_slash": {
+    "sounds": [
+      "simplyskills:spell_slash"
+    ]
+  },
+  "spell_slash_02": {
+    "sounds": [
+      "simplyskills:spell_slash_02"
+    ]
   }
 }

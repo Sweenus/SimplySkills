@@ -26,23 +26,27 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 1.8,
-        "homing_angle": 20,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "mycelium",
-              "shape": "CIRCLE",
-              "rotation": "LOOK",
-              "origin": "CENTER",
-              "count": 2.0,
-              "min_speed": 0.05,
-              "max_speed": 0.1
+        "projectile": {
+          "velocity": 1.8,
+          "homing_angle": 20,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "mycelium",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/sword",
+              "render": "DEEP",
+              "scale": 0.3
             }
-          ],
-          "model_id": "simplyskills:projectile/sword",
-          "render": "DEEP",
-          "scale": 0.3
+          }
         }
       }
     },

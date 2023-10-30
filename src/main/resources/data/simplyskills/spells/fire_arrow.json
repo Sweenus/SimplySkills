@@ -26,32 +26,36 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 1.6,
-        "homing_angle": 1.8,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "spell_engine:flame",
-              "shape": "CIRCLE",
-              "rotation": "LOOK",
-              "origin": "CENTER",
-              "count": 2.0,
-              "min_speed": 0.05,
-              "max_speed": 0.1
-            },
-            {
-              "particle_id": "campfire_cosy_smoke",
-              "shape": "CIRCLE",
-              "rotation": "LOOK",
-              "origin": "CENTER",
-              "count": 2.0,
-              "min_speed": 0.05,
-              "max_speed": 0.1
+        "projectile": {
+          "velocity": 1.6,
+          "homing_angle": 1.8,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:flame",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              },
+              {
+                "particle_id": "campfire_cosy_smoke",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/fire_projectile",
+              "render": "DEEP",
+              "scale": 1
             }
-          ],
-          "model_id": "simplyskills:projectile/fire_projectile",
-          "render": "DEEP",
-          "scale": 1
+          }
         }
       }
     },

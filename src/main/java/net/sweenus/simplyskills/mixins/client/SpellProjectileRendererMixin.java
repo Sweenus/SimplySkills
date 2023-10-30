@@ -28,7 +28,7 @@ public class SpellProjectileRendererMixin <T extends Entity & FlyingItemEntity> 
     private void simplyskills$render(T entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
         if (entity instanceof SpellProjectile projectile) {
             if (projectile.renderData() != null) {
-                Spell.ProjectileData.Client renderData = projectile.renderData();
+                Spell.ProjectileModel renderData = projectile.renderData();
                 String modelId = renderData.model_id;
                 String[] modelList =  new String[] {"swordfall", "sword"};
 

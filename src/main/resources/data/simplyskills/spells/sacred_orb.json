@@ -26,39 +26,43 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 0.6,
-        "homing_angle": 26.1,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "spell_engine:holy_spark_mini",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 25.0,
-              "min_speed": 0.12,
-              "max_speed": 0.15
-            },
-            {
-              "particle_id": "spell_engine:holy_spark",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 15.0,
-              "min_speed": 0.05,
-              "max_speed": 0.2
-            },
-            {
-              "particle_id": "spell_engine:healing_ascend",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 5.0,
-              "min_speed": 0.01,
-              "max_speed": 0.1
+        "projectile": {
+          "velocity": 0.6,
+          "homing_angle": 26.1,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:holy_spark_mini",
+                "shape": "SPHERE",
+                "origin": "CENTER",
+                "count": 25.0,
+                "min_speed": 0.12,
+                "max_speed": 0.15
+              },
+              {
+                "particle_id": "spell_engine:holy_spark",
+                "shape": "SPHERE",
+                "origin": "CENTER",
+                "count": 15.0,
+                "min_speed": 0.05,
+                "max_speed": 0.2
+              },
+              {
+                "particle_id": "spell_engine:healing_ascend",
+                "shape": "SPHERE",
+                "origin": "CENTER",
+                "count": 5.0,
+                "min_speed": 0.01,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "minecraft:sea_lantern",
+              "render": "DEEP",
+              "light_emission": "RADIATE",
+              "scale": 0.0
             }
-          ],
-          "model_id": "minecraft:sea_lantern",
-          "render": "DEEP",
-          "light_emission": "RADIATE",
-          "scale": 0.0
+          }
         }
       }
     },
@@ -73,7 +77,7 @@
     {
       "action": {
         "type": "HEAL",
-        "damage": {
+        "heal": {
           "spell_power_coefficient": 2.8
         }
       },

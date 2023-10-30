@@ -26,23 +26,27 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 1.8,
-        "homing_angle": 0.1,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "campfire_cosy_smoke",
-              "shape": "CIRCLE",
-              "rotation": "LOOK",
-              "origin": "CENTER",
-              "count": 4.0,
-              "min_speed": 0.04,
-              "max_speed": 0.06
+        "projectile": {
+          "velocity": 1.8,
+          "homing_angle": 0.1,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "campfire_cosy_smoke",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 4.0,
+                "min_speed": 0.04,
+                "max_speed": 0.06
+              }
+            ],
+            "model": {
+              "model_id": "minecraft:bedrock",
+              "render": "DEEP",
+              "scale": 0.02
             }
-          ],
-          "model_id": "minecraft:bedrock",
-          "render": "DEEP",
-          "scale": 0.02
+          }
         }
       }
     },

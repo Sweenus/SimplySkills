@@ -26,31 +26,35 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
-        "velocity": 2.6,
-        "homing_angle": 99.1,
-        "client_data": {
-          "travel_particles": [
-            {
-              "particle_id": "spell_engine:holy_spark_mini",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 3.0,
-              "min_speed": 0.01,
-              "max_speed": 0.03
-            },
-            {
-              "particle_id": "spell_engine:healing_ascend",
-              "shape": "SPHERE",
-              "origin": "CENTER",
-              "count": 2.0,
-              "min_speed": 0.01,
-              "max_speed": 0.02
+        "projectile": {
+          "velocity": 2.6,
+          "homing_angle": 99.1,
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:holy_spark_mini",
+                "shape": "SPHERE",
+                "origin": "CENTER",
+                "count": 3.0,
+                "min_speed": 0.01,
+                "max_speed": 0.03
+              },
+              {
+                "particle_id": "spell_engine:healing_ascend",
+                "shape": "SPHERE",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.01,
+                "max_speed": 0.02
+              }
+            ],
+            "model": {
+              "model_id": "minecraft:sea_lantern",
+              "render": "DEEP",
+              "light_emission": "RADIATE",
+              "scale": 0.0
             }
-          ],
-          "model_id": "minecraft:sea_lantern",
-          "render": "DEEP",
-          "light_emission": "RADIATE",
-          "scale": 0.0
+          }
         }
       }
     },
