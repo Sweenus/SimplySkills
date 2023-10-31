@@ -67,7 +67,9 @@
     },
       "animation": "spell_engine:one_handed_area_release",
       "sound": {
-        "id": "spell_engine:generic_healing_release"
+        "id": "simplyskills:spell_celestial_cast",
+        "volume": 0.1,
+        "pitch": 1.2
       }
     },
   "impact": [
@@ -150,7 +152,7 @@
     ],
     "sound": {
       "id": "simplyskills:soundeffect_16",
-      "volume": 1.5
+      "volume": 0.1
     }
   },
   "cost": {

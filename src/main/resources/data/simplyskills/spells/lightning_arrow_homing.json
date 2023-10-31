@@ -52,9 +52,9 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_7",
-      "volume": 0.2,
-      "pitch": 1.1
+      "id": "simplyskills:spell_lightning_cast",
+      "volume": 0.1,
+      "pitch": 2
     }
   },
   "impact": [

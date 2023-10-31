@@ -87,7 +87,7 @@ public class SimplySkills implements ModInitializer {
 
         EffectRegistry.registerEffects();
         PassiveSkillReward.register();
-        SoundRegistry.init();
+        SoundRegistry.registerSounds();
         ItemRegistry.registerItems();
         ModelRegistry.registerModels();
         KeybindPacket.init();

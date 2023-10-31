@@ -6,66 +6,10 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.SimplySkills;
 
-public class SoundRegistry {
+import java.util.Arrays;
+import java.util.List;
 
-    public static void init() {
-        SoundEvent soundEvent = SOUNDEFFECT6;
-        soundEvent = SOUNDEFFECT7;
-        soundEvent = SOUNDEFFECT8;
-        soundEvent = SOUNDEFFECT9;
-        soundEvent = SOUNDEFFECT10;
-        soundEvent = SOUNDEFFECT11;
-        soundEvent = SOUNDEFFECT12;
-        soundEvent = SOUNDEFFECT13;
-        soundEvent = SOUNDEFFECT14;
-        soundEvent = SOUNDEFFECT15;
-        soundEvent = SOUNDEFFECT16;
-        soundEvent = SOUNDEFFECT17;
-        soundEvent = SOUNDEFFECT18;
-        soundEvent = SOUNDEFFECT19;
-        soundEvent = SOUNDEFFECT20;
-        soundEvent = SOUNDEFFECT21;
-        soundEvent = SOUNDEFFECT22;
-        soundEvent = SOUNDEFFECT23;
-        soundEvent = SOUNDEFFECT24;
-        soundEvent = SOUNDEFFECT25;
-        soundEvent = SOUNDEFFECT26;
-        soundEvent = SOUNDEFFECT27;
-        soundEvent = SOUNDEFFECT28;
-        soundEvent = SOUNDEFFECT29;
-        soundEvent = SOUNDEFFECT30;
-        soundEvent = SOUNDEFFECT31;
-        soundEvent = SOUNDEFFECT32;
-        soundEvent = SOUNDEFFECT33;
-        soundEvent = SOUNDEFFECT34;
-        soundEvent = SOUNDEFFECT35;
-        soundEvent = SOUNDEFFECT36;
-        soundEvent = SOUNDEFFECT37;
-        soundEvent = SOUNDEFFECT38;
-        soundEvent = SOUNDEFFECT39;
-        soundEvent = SOUNDEFFECT40;
-        soundEvent = SOUNDEFFECT41;
-        soundEvent = SOUNDEFFECT42;
-        soundEvent = SOUNDEFFECT43;
-        soundEvent = SOUNDEFFECT44;
-        soundEvent = SOUNDEFFECT45;
-        soundEvent = SOUNDEFFECT46;
-        soundEvent = SOUNDEFFECT47;
-        soundEvent = SOUNDEFFECT48;
-        soundEvent = SPELL_ENERGY;
-        soundEvent = SPELL_EARTH_PUNCH;
-        soundEvent = SPELL_MISC_01;
-        soundEvent = SPELL_FIREBALL;
-        soundEvent = SPELL_SLASH;
-        soundEvent = SPELL_SLASH_02;
-        soundEvent = SPELL_ARCANE_HIT;
-        soundEvent = SPELL_ARCANE_CAST;
-        soundEvent = SPELL_GAIN_BARRIER;
-        soundEvent = SPELL_ARCANE_NOVA;
-        soundEvent = SPELL_RADIANT_CAST;
-        soundEvent = SPELL_RADIANT_HIT;
-        soundEvent = SPELL_RADIANT_EXPIRE;
-    }
+public class SoundRegistry {
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
     public static SoundEvent FX_UI_UNLOCK = register("fx_ui_unlock");
@@ -127,6 +71,14 @@ public class SoundRegistry {
     public static SoundEvent SPELL_RADIANT_CAST = register("spell_radiant_cast");
     public static SoundEvent SPELL_RADIANT_HIT = register("spell_radiant_hit");
     public static SoundEvent SPELL_RADIANT_EXPIRE = register("spell_radiant_expire");
+    public static SoundEvent SPELL_CELESTIAL_CAST = register("spell_celestial_cast");
+    public static SoundEvent SPELL_CELESTIAL_HIT = register("spell_celestial_hit");
+    public static SoundEvent SPELL_THUNDER_CAST = register("spell_thunder_cast");
+    public static SoundEvent SPELL_FIRE_CAST = register("spell_fire_cast");
+    public static SoundEvent SPELL_LIGHTNING_CAST = register("spell_lightning_cast");
+
+    public static void registerSounds() {
+    }
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);

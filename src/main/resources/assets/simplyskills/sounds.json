@@ -298,5 +298,30 @@
     "sounds": [
       "simplyskills:spell_radiant_expire"
     ]
+  },
+  "spell_celestial_cast": {
+    "sounds": [
+      "simplyskills:spell_celestial_cast"
+    ]
+  },
+  "spell_celestial_hit": {
+    "sounds": [
+      "simplyskills:spell_celestial_hit"
+    ]
+  },
+  "spell_thunder_cast": {
+    "sounds": [
+      "simplyskills:spell_thunder_cast"
+    ]
+  },
+  "spell_fire_cast": {
+    "sounds": [
+      "simplyskills:spell_fire_cast"
+    ]
+  },
+  "spell_lightning_cast": {
+    "sounds": [
+      "simplyskills:spell_lightning_cast"
+    ]
   }
 }

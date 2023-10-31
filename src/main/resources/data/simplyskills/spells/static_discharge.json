@@ -30,8 +30,9 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_40",
-      "volume": 0.3
+      "id": "simplyskills:spell_thunder_cast",
+      "volume": 0.3,
+      "pitch": 1.7
     }
   },
   "impact": [

@@ -71,9 +71,9 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_35",
-      "volume": 0.2,
-      "pitch": 1.1
+      "id": "simplyskills:spell_thunder_cast",
+      "volume": 0.3,
+      "pitch": 1.6
     }
   },
   "impact": [
