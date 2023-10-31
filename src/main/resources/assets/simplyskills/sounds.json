@@ -263,5 +263,40 @@
     "sounds": [
       "simplyskills:spell_slash_02"
     ]
+  },
+  "spell_arcane_hit": {
+    "sounds": [
+      "simplyskills:spell_arcane_hit"
+    ]
+  },
+  "spell_arcane_cast": {
+    "sounds": [
+      "simplyskills:spell_arcane_cast"
+    ]
+  },
+  "spell_gain_barrier": {
+    "sounds": [
+      "simplyskills:spell_gain_barrier"
+    ]
+  },
+  "spell_arcane_nova": {
+    "sounds": [
+      "simplyskills:spell_arcane_nova"
+    ]
+  },
+  "spell_radiant_cast": {
+    "sounds": [
+      "simplyskills:spell_radiant_cast"
+    ]
+  },
+  "spell_radiant_hit": {
+    "sounds": [
+      "simplyskills:spell_radiant_hit"
+    ]
+  },
+  "spell_radiant_expire": {
+    "sounds": [
+      "simplyskills:spell_radiant_expire"
+    ]
   }
 }

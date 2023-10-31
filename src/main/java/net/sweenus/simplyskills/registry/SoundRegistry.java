@@ -58,6 +58,13 @@ public class SoundRegistry {
         soundEvent = SPELL_FIREBALL;
         soundEvent = SPELL_SLASH;
         soundEvent = SPELL_SLASH_02;
+        soundEvent = SPELL_ARCANE_HIT;
+        soundEvent = SPELL_ARCANE_CAST;
+        soundEvent = SPELL_GAIN_BARRIER;
+        soundEvent = SPELL_ARCANE_NOVA;
+        soundEvent = SPELL_RADIANT_CAST;
+        soundEvent = SPELL_RADIANT_HIT;
+        soundEvent = SPELL_RADIANT_EXPIRE;
     }
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
@@ -113,6 +120,13 @@ public class SoundRegistry {
     public static SoundEvent SPELL_FIREBALL = register("spell_fireball");
     public static SoundEvent SPELL_SLASH = register("spell_slash");
     public static SoundEvent SPELL_SLASH_02 = register("spell_slash_02");
+    public static SoundEvent SPELL_ARCANE_HIT = register("spell_arcane_hit");
+    public static SoundEvent SPELL_ARCANE_CAST = register("spell_arcane_cast");
+    public static SoundEvent SPELL_GAIN_BARRIER = register("spell_gain_barrier");
+    public static SoundEvent SPELL_ARCANE_NOVA = register("spell_arcane_nova");
+    public static SoundEvent SPELL_RADIANT_CAST = register("spell_radiant_cast");
+    public static SoundEvent SPELL_RADIANT_HIT = register("spell_radiant_hit");
+    public static SoundEvent SPELL_RADIANT_EXPIRE = register("spell_radiant_expire");
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(SimplySkills.MOD_ID, name);

@@ -55,8 +55,8 @@
     },
     "animation": "spell_engine:one_handed_projectile_release",
     "sound": {
-      "id": "simplyskills:soundeffect_10",
-      "volume": 0.2,
+      "id": "simplyskills:spell_arcane_cast",
+      "volume": 0.05,
       "pitch": 1.4
     }
   },
@@ -80,8 +80,9 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:soundeffect_32",
-        "volume": 0.2
+        "id": "simplyskills:spell_arcane_hit",
+        "volume": 0.03,
+        "pitch": 1.8
       }
     }
   ],

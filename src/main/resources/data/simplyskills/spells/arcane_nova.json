@@ -30,9 +30,9 @@
       }
     },
     "sound": {
-      "id": "simplyskills:soundeffect_10",
-      "volume": 0.3,
-      "pitch": 1.0
+      "id": "simplyskills:spell_arcane_nova",
+      "volume": 0.1,
+      "pitch": 1.2
     },
     "particles": [
       {
@@ -72,8 +72,9 @@
         }
       ],
       "sound": {
-        "id": "simplyskills:soundeffect_32",
-        "volume": 0.2
+        "id": "simplyskills:spell_arcane_hit",
+        "volume": 0.1,
+        "pitch": 1.4
       }
     }
   ],
