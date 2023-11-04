@@ -12,6 +12,8 @@ import net.spell_engine.api.effect.CustomParticleStatusEffect;
 import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
+import net.sweenus.simplyskills.client.events.ClientEvents;
+import net.sweenus.simplyskills.client.gui.CustomHud;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -63,6 +65,7 @@ public class SimplySkillsClient implements ClientModInitializer {
 
         CooldownPacket.init();
         ModPacketHandler.registerClient();
+        ClientEvents.registerClientEvents();
 
         //Keybindings
         KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));

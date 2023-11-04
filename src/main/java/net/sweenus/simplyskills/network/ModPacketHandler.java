@@ -9,12 +9,20 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Identifier;
+import net.puffish.skillsmod.api.Category;
 import net.sweenus.simplyskills.SimplySkills;
+import net.sweenus.simplyskills.client.gui.CustomHud;
+import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModPacketHandler {
     private static final Identifier UPDATE_UNSPENT_POINTS_ID = new Identifier(SimplySkills.MOD_ID, "update_unspent_points");
     private static final Identifier STOP_SOUND_ID = new Identifier(SimplySkills.MOD_ID, "stop_sound");
     private static final Identifier SYNC_ITEM_STACK_ID = new Identifier(SimplySkills.MOD_ID, "sync_item_stack");
+    private static final Identifier SYNC_SIGNATURE_ABILITY = new Identifier(SimplySkills.MOD_ID, "sync_signature_ability");
 
     public static void registerServer() {
         ServerPlayNetworking.registerGlobalReceiver(UPDATE_UNSPENT_POINTS_ID, (server, player, handler, buf, responseSender) -> {
@@ -52,12 +60,60 @@ public class ModPacketHandler {
                 }
             });
         });
+
+        ClientPlayNetworking.registerGlobalReceiver(SYNC_SIGNATURE_ABILITY, (client, handler, buf, responseSender) -> {
+            Identifier identifierPacket = buf.readIdentifier();
+            String stringPacket = buf.readString().replace("simplyskills:","") + "_signature_";
+            String spritePath = null;
+            if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
+                spritePath = "siphoning_strikes";
+            else if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationEvasion))
+                spritePath = "evasion";
+            else if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationPreparation))
+                spritePath = "preparation";
+
+            Identifier newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/" + stringPacket + spritePath +".png");
+            client.execute(() -> {
+                CustomHud.setSprite(newIdentifierPacket);
+            });
+        });
+
     }
 
     public static void sendTo(ServerPlayerEntity player, UpdateUnspentPointsPacket packet) {
         PacketByteBuf buf = PacketByteBufs.create();
         UpdateUnspentPointsPacket.encode(packet, buf);
         ServerPlayNetworking.send(player, UPDATE_UNSPENT_POINTS_ID, buf);
+    }
+
+    public static void sendSignatureAbility(ServerPlayerEntity player) {
+        PacketByteBuf buf = PacketByteBufs.create();
+        Identifier identifier = null;
+        String stringSend = null;
+        List<String> list = new ArrayList<>();
+        List<String> specialisationList = SimplySkills.getSpecialisationsAsArray();
+        list.add(SkillReferencePosition.rogueSpecialisationPreparation);
+        list.add(SkillReferencePosition.rogueSpecialisationEvasion);
+        list.add(SkillReferencePosition.rogueSpecialisationSiphoningStrikes);
+
+        for (String string : list) {
+            for (String specialisations : specialisationList) {
+                System.out.println("checking: " + string + " " + specialisations);
+                if (HelperMethods.isUnlocked(specialisations, string, player)) {
+                    identifier = new Identifier(SimplySkills.MOD_ID, string);
+                    stringSend = specialisations;
+                    System.out.println("detected class: " + stringSend);
+                    System.out.println("detected ability: " + identifier);
+                    break;
+                }
+            }
+        }
+        if (identifier != null && stringSend != null) {
+            System.out.println("sending to client: " + identifier + stringSend);
+            buf.writeIdentifier(identifier);
+            buf.writeString(stringSend);
+            ServerPlayNetworking.send(player, SYNC_SIGNATURE_ABILITY, buf);
+        }
     }
 
     public static void sendStopSoundPacket(ServerPlayerEntity player, Identifier soundId) {

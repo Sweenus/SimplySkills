@@ -99,6 +99,7 @@ public class SimplySkills implements ModInitializer {
             if (generalConfig.disableDefaultPuffishTrees) {
                 processPlayer(handler.player);
             }
+            ModPacketHandler.sendSignatureAbility(handler.player);
         });
     }
 

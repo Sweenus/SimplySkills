@@ -183,17 +183,11 @@ public class RogueAbilities {
                         }
                     }
                 }
-
-                BlockState blockstate = player.getWorld().getBlockState(blockPos);
-                BlockState blockstateUp = player.getWorld().getBlockState(blockPos.up(1));
-                for (int i = dashRange; i > 0; i--) {
-                    //if (blockstate.isAir() && blockstateUp.isAir())
-                        //break;
-                    if (!blockstate.isSolidBlock(player.getWorld(), blockPos) && !blockstateUp.isSolidBlock(player.getWorld(), blockPos.up(1)))
-                        break;
-                    blockPos = player.getBlockPos().offset(player.getMovementDirection(), i);
-                }
-                player.teleport(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+                if (!player.isOnGround())
+                    dashRange = dashRange /5;
+                player.setVelocity(player.getRotationVector().multiply(+dashRange));
+                player.setVelocity(player.getVelocity().x, 0, player.getVelocity().z);
+                player.velocityModified = true;
 
                 player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SOUNDEFFECT15,
                         SoundCategory.PLAYERS, 0.6f, 1.3f);

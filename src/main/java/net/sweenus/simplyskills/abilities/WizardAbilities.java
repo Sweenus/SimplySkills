@@ -160,10 +160,12 @@ public class WizardAbilities {
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     "simplyskills:ice_comet_large_three",
                                     3, le);
-                        else
-                            SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                    "simplyskills:ice_comet",
-                                    3, le);
+                        else {
+                            //SignatureAbilities.castSpellEngineIndirectTarget(player,
+                            //        "simplyskills:ice_comet",
+                            //        3, le);
+                            SignatureAbilities.castSpellEngine(player, "simplyskills:ice_comet");
+                        }
                         break;
                     }
                 }

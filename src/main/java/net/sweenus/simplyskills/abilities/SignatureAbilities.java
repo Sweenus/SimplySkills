@@ -376,6 +376,14 @@ public class SignatureAbilities {
                 20);
     }
 
+    public static void castSpellEngine(PlayerEntity player, String spellIdentifier) {
+
+        ItemStack itemStack     = player.getMainHandStack();
+        Identifier spellID      = new Identifier(spellIdentifier);
+
+        SpellHelper.attemptCasting(player, itemStack, spellID, false);
+    }
+
     public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range, Entity target) {
 
         // -- Cast spell at specified target --

@@ -29,7 +29,7 @@ public class OverloadEffect extends StatusEffect {
             int radius = 3;
             double damage = (livingEntity.getMaxHealth() - 6) * (1 + livingEntity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
             DamageSource damageSource = livingEntity.getDamageSources().generic();
-            DamageSource damageSourceMagic = livingEntity.getDamageSources().magic();
+            DamageSource damageSourceMagic = livingEntity.getDamageSources().indirectMagic(livingEntity, livingEntity);
 
             if (livingEntity.getStatusEffect(EffectRegistry.OVERLOAD).getAmplifier() >= 5) {
 
@@ -51,7 +51,7 @@ public class OverloadEffect extends StatusEffect {
                         }
                     }
                 }
-                livingEntity.damage(damageSource, (livingEntity.getMaxHealth() - 6));
+                livingEntity.damage(damageSourceMagic, (livingEntity.getMaxHealth() - 2));
                 livingEntity.getWorld().playSoundFromEntity(null, livingEntity, SoundRegistry.SOUNDEFFECT14,
                         SoundCategory.PLAYERS, 0.8f, 0.9f);
                 HelperMethods.spawnParticlesPlane(

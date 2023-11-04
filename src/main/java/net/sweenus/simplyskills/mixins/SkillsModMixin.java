@@ -8,6 +8,7 @@ import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.SkillsAPI;
 import net.puffish.skillsmod.server.network.packets.in.SkillClickInPacket;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
+import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -34,6 +35,11 @@ public class SkillsModMixin {
                     SoundCategory.PLAYERS, 1, (float) choose_pitch);
 
             }
+    }
+
+    @Inject(at = @At("TAIL"), method = "tryUnlockSkill")
+    public void simplyskills$tryUnlockSkillTail(ServerPlayerEntity player, Identifier categoryId, String skillId, boolean force, CallbackInfo ci) {
+        ModPacketHandler.sendSignatureAbility(player);
     }
 
     @Inject(at = @At("TAIL"), method = "onSkillClickPacket")
