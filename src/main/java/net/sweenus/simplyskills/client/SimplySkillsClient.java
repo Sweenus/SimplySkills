@@ -25,8 +25,9 @@ import java.util.List;
 public class SimplySkillsClient implements ClientModInitializer {
 
     public static int abilityCooldown = 500;
-    public long lastUseTime;
+    public static long lastUseTime;
     public static int unspentPoints = 0;
+    public static KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
 
     @Override
     public void onInitializeClient() {
@@ -68,7 +69,6 @@ public class SimplySkillsClient implements ClientModInitializer {
         ClientEvents.registerClientEvents();
 
         //Keybindings
-        KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
         //KeyBinding bindingAbility2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability2", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.category.simplyskills"));
         //KeyBinding bindingAbility3 = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.simplyskills.ability3", GLFW.GLFW_KEY_V, "key.category.simplyskills", () -> true));
 
