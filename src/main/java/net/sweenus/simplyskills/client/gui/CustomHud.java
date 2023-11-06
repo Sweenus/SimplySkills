@@ -16,10 +16,9 @@ import net.sweenus.simplyskills.client.SimplySkillsClient;
 
 public class CustomHud {
 
-    public static Identifier ICON_TEXTURE = new Identifier(SimplySkills.MOD_ID, "textures/icons/wizard_signature_ice_comet.png");
+    public static Identifier ICON_TEXTURE = new Identifier(SimplySkills.MOD_ID, "textures/gui/cooldown_overlay.png");
     public static Identifier FRAME_TEXTURE = new Identifier("minecraft", "textures/gui/widgets.png");
     public static Identifier COOLDOWN_OVERLAY = new Identifier(SimplySkills.MOD_ID, "textures/gui/cooldown_overlay.png");
-    public static Identifier COOLDOWN_OVERLAY_STATIC = new Identifier(SimplySkills.MOD_ID, "textures/gui/cooldown_overlay_static.png");
 
     public static void setSprite(Identifier sprite) {
         ICON_TEXTURE = sprite;
@@ -30,8 +29,9 @@ public class CustomHud {
         int scaledWidth = client.getWindow().getScaledWidth();
         int scaledHeight = client.getWindow().getScaledHeight();
 
-        int guiAnchorX =  scaledWidth / 3;
-        int guiAnchorY =  scaledHeight - 32;
+        // Anchor to the bottom right corner of the screen
+        int guiAnchorX = (scaledWidth / 2) + 86;
+        int guiAnchorY = scaledHeight - 29;
 
         int cooldown = SimplySkillsClient.abilityCooldown;
         long lastUseTime = SimplySkillsClient.lastUseTime;
@@ -54,7 +54,7 @@ public class CustomHud {
         Text keybindText = keybind.getBoundKeyLocalizedText();
 
         // Ensure the game isn't paused and the player exists
-        if (client.player != null && client.currentScreen == null) {
+        if (client.player != null && client.currentScreen == null && !ICON_TEXTURE.toString().contains("cooldown_overlay")) {
 
             RenderSystem.getShaderTexture(0);
 

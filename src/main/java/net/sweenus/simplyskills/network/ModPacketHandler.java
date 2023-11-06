@@ -63,18 +63,77 @@ public class ModPacketHandler {
 
         ClientPlayNetworking.registerGlobalReceiver(SYNC_SIGNATURE_ABILITY, (client, handler, buf, responseSender) -> {
             Identifier identifierPacket = buf.readIdentifier();
+            String identifierString = identifierPacket.toString().replace("simplyskills:","");
             String stringPacket = buf.readString().replace("simplyskills:","") + "_signature_";
             String spritePath = null;
-            if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
-                spritePath = "siphoning_strikes";
-            else if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationEvasion))
-                spritePath = "evasion";
-            else if (identifierPacket.toString().contains(SkillReferencePosition.rogueSpecialisationPreparation))
-                spritePath = "preparation";
+            if (stringPacket.contains("rogue")) {
+                if (identifierString.equals(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
+                    spritePath = "siphoning_strikes";
+                else if (identifierString.equals(SkillReferencePosition.rogueSpecialisationEvasion))
+                    spritePath = "evasion";
+                else if (identifierString.equals(SkillReferencePosition.rogueSpecialisationPreparation))
+                    spritePath = "preparation";
+            }
+            else if (stringPacket.contains("ranger")) {
+                if (identifierString.equals(SkillReferencePosition.rangerSpecialisationElementalArrows))
+                    spritePath = "elemental_arrows";
+                else if (identifierString.equals(SkillReferencePosition.rangerSpecialisationArrowRain))
+                    spritePath = "arrow_rain";
+                else if (identifierString.equals(SkillReferencePosition.rangerSpecialisationDisengage))
+                    spritePath = "disengage";
+            }
+            else if (stringPacket.contains("berserker")) {
+                if (identifierString.equals(SkillReferencePosition.berserkerSpecialisationBloodthirsty))
+                    spritePath = "bloodthirsty";
+                else if (identifierString.equals(SkillReferencePosition.berserkerSpecialisationBerserking))
+                    spritePath = "berserking";
+                else if (identifierString.equals(SkillReferencePosition.berserkerSpecialisationRampage))
+                    spritePath = "rampage";
+            }
+            else if (stringPacket.contains("crusader")) {
+                if (identifierString.equals(SkillReferencePosition.crusaderSpecialisationConsecration))
+                    spritePath = "consecration";
+                else if (identifierString.equals(SkillReferencePosition.crusaderSpecialisationHeavensmithsCall))
+                    spritePath = "heavensmiths_call";
+                else if (identifierString.equals(SkillReferencePosition.crusaderSpecialisationSacredOnslaught))
+                    spritePath = "sacred_onslaught";
+            }
+            else if (stringPacket.contains("cleric")) {
+                if (identifierString.equals(SkillReferencePosition.clericSpecialisationSacredOrb))
+                    spritePath = "sacred_orb";
+                else if (identifierString.equals(SkillReferencePosition.clericSpecialisationAnointWeapon))
+                    spritePath = "anoint_weapon";
+                else if (identifierString.equals(SkillReferencePosition.clericSpecialisationDivineIntervention))
+                    spritePath = "divine_intervention";
+            }
+            else if (stringPacket.contains("wizard")) {
+                if (identifierString.equals(SkillReferencePosition.wizardSpecialisationArcaneBolt))
+                    spritePath = "arcane_bolt";
+                else if (identifierString.equals(SkillReferencePosition.wizardSpecialisationIceComet))
+                    spritePath = "ice_comet";
+                else if (identifierString.equals(SkillReferencePosition.wizardSpecialisationMeteorShower))
+                    spritePath = "meteor_shower";
+                else if (identifierString.equals(SkillReferencePosition.wizardSpecialisationStaticDischarge))
+                    spritePath = "lightning_beam";
+            }
+            else if (stringPacket.contains("spellblade")) {
+                if (identifierString.equals(SkillReferencePosition.spellbladeSpecialisationElementalImpact))
+                    spritePath = "elemental_impact";
+                else if (identifierString.equals(SkillReferencePosition.spellbladeSpecialisationElementalSurge))
+                    spritePath = "elemental_surge";
+                else if (identifierString.equals(SkillReferencePosition.spellbladeSpecialisationSpellweaver))
+                    spritePath = "spellweaver";
+            }
 
-            Identifier newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/" + stringPacket + spritePath +".png");
+            Identifier newIdentifierPacket = null;
+            if (spritePath != null)
+                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/" + stringPacket + spritePath +".png");
+            else
+                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/cooldown_overlay.png");
+
+            Identifier finalNewIdentifierPacket = newIdentifierPacket;
             client.execute(() -> {
-                CustomHud.setSprite(newIdentifierPacket);
+                CustomHud.setSprite(finalNewIdentifierPacket);
             });
         });
 
@@ -88,28 +147,47 @@ public class ModPacketHandler {
 
     public static void sendSignatureAbility(ServerPlayerEntity player) {
         PacketByteBuf buf = PacketByteBufs.create();
-        Identifier identifier = null;
-        String stringSend = null;
+        Identifier identifier = new Identifier("empty");
+        String stringSend = "empty";
         List<String> list = new ArrayList<>();
         List<String> specialisationList = SimplySkills.getSpecialisationsAsArray();
         list.add(SkillReferencePosition.rogueSpecialisationPreparation);
         list.add(SkillReferencePosition.rogueSpecialisationEvasion);
         list.add(SkillReferencePosition.rogueSpecialisationSiphoningStrikes);
+        list.add(SkillReferencePosition.rangerSpecialisationDisengage);
+        list.add(SkillReferencePosition.rangerSpecialisationArrowRain);
+        list.add(SkillReferencePosition.rangerSpecialisationElementalArrows);
+        list.add(SkillReferencePosition.berserkerSpecialisationRampage);
+        list.add(SkillReferencePosition.berserkerSpecialisationBerserking);
+        list.add(SkillReferencePosition.berserkerSpecialisationBloodthirsty);
+        list.add(SkillReferencePosition.crusaderSpecialisationConsecration);
+        list.add(SkillReferencePosition.crusaderSpecialisationHeavensmithsCall);
+        list.add(SkillReferencePosition.crusaderSpecialisationSacredOnslaught);
+        list.add(SkillReferencePosition.clericSpecialisationAnointWeapon);
+        list.add(SkillReferencePosition.clericSpecialisationSacredOrb);
+        list.add(SkillReferencePosition.clericSpecialisationDivineIntervention);
+        list.add(SkillReferencePosition.wizardSpecialisationIceComet);
+        list.add(SkillReferencePosition.wizardSpecialisationMeteorShower);
+        list.add(SkillReferencePosition.wizardSpecialisationArcaneBolt);
+        list.add(SkillReferencePosition.wizardSpecialisationStaticDischarge);
+        list.add(SkillReferencePosition.spellbladeSpecialisationElementalSurge);
+        list.add(SkillReferencePosition.spellbladeSpecialisationElementalImpact);
+        list.add(SkillReferencePosition.spellbladeSpecialisationSpellweaver);
 
-        for (String string : list) {
-            for (String specialisations : specialisationList) {
-                System.out.println("checking: " + string + " " + specialisations);
+        for (String specialisations : specialisationList) {
+            for (String string : list) {
+                //System.out.println("checking: " + string + " " + specialisations);
                 if (HelperMethods.isUnlocked(specialisations, string, player)) {
                     identifier = new Identifier(SimplySkills.MOD_ID, string);
                     stringSend = specialisations;
-                    System.out.println("detected class: " + stringSend);
-                    System.out.println("detected ability: " + identifier);
+                    //System.out.println("detected class: " + stringSend);
+                    //System.out.println("detected ability: " + identifier);
                     break;
                 }
             }
         }
         if (identifier != null && stringSend != null) {
-            System.out.println("sending to client: " + identifier + stringSend);
+            //System.out.println("sending to client: " + identifier + stringSend);
             buf.writeIdentifier(identifier);
             buf.writeString(stringSend);
             ServerPlayNetworking.send(player, SYNC_SIGNATURE_ABILITY, buf);

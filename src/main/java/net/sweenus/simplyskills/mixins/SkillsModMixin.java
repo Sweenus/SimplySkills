@@ -41,6 +41,14 @@ public class SkillsModMixin {
     public void simplyskills$tryUnlockSkillTail(ServerPlayerEntity player, Identifier categoryId, String skillId, boolean force, CallbackInfo ci) {
         ModPacketHandler.sendSignatureAbility(player);
     }
+    @Inject(at = @At("TAIL"), method = "resetSkills")
+    public void simplyskills$resetSkills(ServerPlayerEntity player, Identifier categoryId, CallbackInfo ci) {
+        ModPacketHandler.sendSignatureAbility(player);
+    }
+    @Inject(at = @At("TAIL"), method = "eraseCategory")
+    public void simplyskills$eraseCategory(ServerPlayerEntity player, Identifier categoryId, CallbackInfo ci) {
+        ModPacketHandler.sendSignatureAbility(player);
+    }
 
     @Inject(at = @At("TAIL"), method = "onSkillClickPacket")
     public void simplyskills$onSkillClickPacket(ServerPlayerEntity player, SkillClickInPacket packet, CallbackInfo ci) {
