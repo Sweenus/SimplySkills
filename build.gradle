@@ -39,13 +39,13 @@ dependencies {
 
     modImplementation "curse.maven:puffish-skills-835091:${project.puffish_skills_version}"
     modImplementation "maven.modrinth:spell-power:${project.spellpower_version}-fabric"
-    //modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}-fabric")
-    modImplementation files("build/libs/dependencies/spell_engine-0.12.01.20.1.jar")
+    modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}-fabric")
+    //modImplementation files("build/libs/dependencies/spell_engine-0.12.01.20.1.jar")
 
     modImplementation "curse.maven:simply-swords-659887:${project.simplyswords_version}"
 
-    //modImplementation "curse.maven:paladins-and-priests-856548:${project.paladins_version}"
-    modImplementation files("build/libs/dependencies/paladins-1.0.21.20.1.jar")
+    modImplementation "curse.maven:paladins-and-priests-856548:${project.paladins_version}"
+    //modImplementation files("build/libs/dependencies/paladins-1.0.21.20.1.jar")
 
     implementation("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")

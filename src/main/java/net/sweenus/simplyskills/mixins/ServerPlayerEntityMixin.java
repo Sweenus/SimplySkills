@@ -76,7 +76,7 @@ public abstract class ServerPlayerEntityMixin {
             }
 
             //Effect Stealth
-            if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+            if (player.hasStatusEffect(EffectRegistry.STEALTH) && !player.hasStatusEffect(EffectRegistry.BARRIER)) {
                 WayfarerAbilities.passiveWayfarerBreakStealth(null, player, true, false);
             }
 

@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.spell_engine.api.effect.CustomParticleStatusEffect;
 import net.spell_engine.api.spell.ParticleBatch;
 import net.spell_engine.particle.ParticleHelper;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 
 public class BarrierParticles implements CustomParticleStatusEffect.Spawner {
 
@@ -23,9 +24,11 @@ public class BarrierParticles implements CustomParticleStatusEffect.Spawner {
 
     @Override
     public void spawnParticles(LivingEntity livingEntity, int amplifier) {
-        var scaledParticles = new ParticleBatch(particles);
-        scaledParticles.count *= (amplifier + 1);
-        ParticleHelper.play(livingEntity.getWorld(), livingEntity, scaledParticles);
+        if (livingEntity.getHeight() > 1 && !livingEntity.hasStatusEffect(EffectRegistry.STEALTH)) {
+            var scaledParticles = new ParticleBatch(particles);
+            scaledParticles.count *= (float) ((amplifier * 0.15) + 1);
+            ParticleHelper.play(livingEntity.getWorld(), livingEntity, scaledParticles);
+        }
     }
 
 }
