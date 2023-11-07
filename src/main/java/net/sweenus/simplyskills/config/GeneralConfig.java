@@ -25,6 +25,10 @@ public class GeneralConfig implements ConfigData {
     public int minimumAchievableCooldown = 5;
     @ConfigEntry.Gui.Tooltip
     public float minimumTimeBetweenAbilityUse = 0.5f;
+    @ConfigEntry.Gui.Tooltip
+    public int signatureHudX = 0;
+    @ConfigEntry.Gui.Tooltip
+    public int signatureHudY = 0;
 
     @ConfigEntry.Gui.Tooltip
     public boolean enableDDR = false;

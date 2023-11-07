@@ -30,8 +30,8 @@ public class CustomHud {
         int scaledHeight = client.getWindow().getScaledHeight();
 
         // Anchor to the bottom right corner of the screen
-        int guiAnchorX = (scaledWidth / 2) + 86;
-        int guiAnchorY = scaledHeight - 29;
+        int guiAnchorX = ((scaledWidth / 2) + 86) + SimplySkills.generalConfig.signatureHudX;
+        int guiAnchorY = (scaledHeight - 29) + SimplySkills.generalConfig.signatureHudY;
 
         int cooldown = SimplySkillsClient.abilityCooldown;
         long lastUseTime = SimplySkillsClient.lastUseTime;
