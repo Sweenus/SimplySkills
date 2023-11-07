@@ -2234,7 +2234,7 @@
 	},
 	"initiateOverload": {
 		"title": "§7§a[Overload]§7",
-		"description": "§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 75% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+		"description": "§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 45% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
