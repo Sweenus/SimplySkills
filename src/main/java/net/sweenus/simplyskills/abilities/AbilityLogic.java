@@ -161,7 +161,7 @@ public class AbilityLogic {
             InitiateAbilities.passiveInitiateEmpower(player, spellId);
 
         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
-            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.REVEALED, 180, 5, false, false, true));
+            WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
             if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateWhisperedWizardry, player))
                 HelperMethods.incrementStatusEffect(player, EffectRegistry.SPELLFORGED, 80, 1, 5);
         } else if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateSpellcloak, player)

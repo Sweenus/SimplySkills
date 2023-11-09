@@ -17,12 +17,6 @@
 		"y": 36.95041722813605,
 		"root": true
 	},
-	"m0rktaxblopn7oep": {
-		"definition": "movement_speed+1%",
-		"x": -128,
-		"y": 73.9008344562721,
-		"root": false
-	},
 	"19cn2x6w7b4dpg9b": {
 		"definition": "spell_crit_damage_additive+1%",
 		"x": 0,
@@ -1092,7 +1086,7 @@
 		"root": false
 	},
 	"pwst6yhrd9w37r3t": {
-		"definition": "melee_damage+1%",
+		"definition": "movement_speed+1%",
 		"x": -224,
 		"y": 129.32646029847615,
 		"root": false
@@ -2007,6 +2001,48 @@
 		"definition": "stamina+5%",
 		"x": 128,
 		"y": 73.9008344562721,
+		"root": false
+	},
+	"d9gigvmx9tt0cm92": {
+		"definition": "wayfarerQuickfire",
+		"x": -128,
+		"y": 73.9008344562721,
+		"root": false
+	},
+	"z95aintmspj6edi5": {
+		"definition": "movement_speed+1%",
+		"x": -160,
+		"y": 92.37604307034012,
+		"root": false
+	},
+	"wcu17zzahofhx3ol": {
+		"definition": "ranged_damage+1%",
+		"x": -128,
+		"y": 110.85125168440814,
+		"root": false
+	},
+	"zl22u8nbnfu8976l": {
+		"definition": "ranged_damage+1%",
+		"x": -96,
+		"y": 92.37604307034012,
+		"root": false
+	},
+	"u3eeucmr9wmti4si": {
+		"definition": "movement_speed+1%",
+		"x": -160,
+		"y": 55.42562584220407,
+		"root": false
+	},
+	"ynvn5eqddzvmo9zr": {
+		"definition": "movement_speed+1%",
+		"x": -128,
+		"y": 36.95041722813605,
+		"root": false
+	},
+	"663vv4fru1lit8ub": {
+		"definition": "ranged_damage+1%",
+		"x": -96,
+		"y": 55.42562584220407,
 		"root": false
 	}
 }

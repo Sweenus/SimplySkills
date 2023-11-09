@@ -206,6 +206,7 @@ public class HelperMethods {
 
         int spellforgedCap = 5;
         int mightCap = 30;
+        int marksmanshipCap = 30;
 
         List<StatusEffectInstance> list = livingEntity.getStatusEffects().stream().toList();
         if (!list.isEmpty()) {
@@ -222,6 +223,10 @@ public class HelperMethods {
                         if (statusEffectInstance.getAmplifier() > mightCap)
                             decrementStatusEffects(livingEntity, statusEffect,
                                     statusEffectInstance.getAmplifier() - mightCap);
+                    case "Marksmanship":
+                        if (statusEffectInstance.getAmplifier() > marksmanshipCap)
+                            decrementStatusEffects(livingEntity, statusEffect,
+                                    statusEffectInstance.getAmplifier() - marksmanshipCap);
 
                 }
             }

@@ -1,8 +1,6 @@
 package net.sweenus.simplyskills.client.effects;
 
-import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.spell_engine.api.effect.CustomParticleStatusEffect;
 import net.spell_engine.api.spell.ParticleBatch;
 import net.spell_engine.particle.ParticleHelper;

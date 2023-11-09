@@ -1,16 +1,16 @@
 package net.sweenus.simplyskills.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.render.*;
-import net.minecraft.client.resource.language.I18n;
+import net.minecraft.client.render.BufferBuilder;
+import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.VertexFormat;
+import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.puffish.skillsmod.client.keybinding.KeyBindingHandler;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
 

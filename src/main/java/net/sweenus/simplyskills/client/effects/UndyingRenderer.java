@@ -13,9 +13,6 @@ import net.spell_engine.api.render.CustomLayers;
 import net.spell_engine.api.render.CustomModels;
 import net.spell_engine.api.render.LightEmission;
 import net.sweenus.simplyskills.SimplySkills;
-import org.joml.Vector3f;
-import org.joml.Quaternionf;
-import net.minecraft.util.math.Vec3d;
 
 
 public class UndyingRenderer implements CustomModelStatusEffect.Renderer {

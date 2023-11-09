@@ -91,6 +91,8 @@
   "effect.simplyskills.anointed.desc":                  "Melee attacks heal nearby allies, and deal AoE damage scaling with your Healing spell power.",
   "effect.simplyskills.vitality_bond":                  "Vitality Bond",
   "effect.simplyskills.vitality_bond.desc":             "HP synchronised with the other affected entity.",
+  "effect.simplyskills.marksmanship":                   "Marksmanship",
+  "effect.simplyskills.marksmanship.desc":              "Grants 25% increased Ranged Damage per stack.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",

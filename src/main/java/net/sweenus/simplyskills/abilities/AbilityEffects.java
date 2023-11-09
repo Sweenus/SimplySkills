@@ -259,9 +259,7 @@ public class AbilityEffects {
 
     public static boolean effectRangerMarksman(PlayerEntity player) {
 
-        if (player.hasStatusEffect(EffectRegistry.MARKSMAN)
-                && HelperMethods.getAttackDamage(player.getMainHandStack()) < 1
-                && HelperMethods.getAttackDamage(player.getOffHandStack()) < 1) {
+        if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
 
 
             Vec3d blockpos = null;

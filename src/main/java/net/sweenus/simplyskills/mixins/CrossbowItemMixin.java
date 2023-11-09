@@ -31,7 +31,7 @@ public abstract class CrossbowItemMixin {
             if (player instanceof ServerPlayerEntity serverPlayer) {
 
                 //Break Stealth
-                if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
+                if (player.hasStatusEffect(EffectRegistry.STEALTH) && remainingUseTicks < 3) {
                     WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
                 }
 
@@ -48,11 +48,11 @@ public abstract class CrossbowItemMixin {
 
                 //Gain Stealth
                 if (HelperMethods.isUnlocked("simplyskills:tree",
-                        SkillReferencePosition.wayfarerUnseen, user)
-                        && !user.hasStatusEffect(EffectRegistry.STEALTH)
-                        && !this.charged) {
-
-                    user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 45, 0, false, false, true));
+                        SkillReferencePosition.wayfarerUnseen, user)  && !this.charged) {
+                    if (!user.hasStatusEffect(EffectRegistry.STEALTH))
+                        user.addStatusEffect(new StatusEffectInstance(EffectRegistry.STEALTH, 45, 0, false, false, true));
+                    else
+                        HelperMethods.incrementStatusEffect(user ,EffectRegistry.MARKSMANSHIP, 60, 1, 10);
                 }
 
             }

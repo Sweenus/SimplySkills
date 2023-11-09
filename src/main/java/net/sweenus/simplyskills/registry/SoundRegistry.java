@@ -6,9 +6,6 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.SimplySkills;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class SoundRegistry {
 
     public static SoundEvent FX_SKILL_BACKSTAB = register("fx_skill_backstab");
@@ -76,6 +73,7 @@ public class SoundRegistry {
     public static SoundEvent SPELL_THUNDER_CAST = register("spell_thunder_cast");
     public static SoundEvent SPELL_FIRE_CAST = register("spell_fire_cast");
     public static SoundEvent SPELL_LIGHTNING_CAST = register("spell_lightning_cast");
+    public static SoundEvent ACTIVATE_TOWER_BEACON = register("activate_tower_beacon");
 
     public static void registerSounds() {
     }

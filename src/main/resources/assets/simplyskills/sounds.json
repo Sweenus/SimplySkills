@@ -323,5 +323,10 @@
     "sounds": [
       "simplyskills:spell_lightning_cast"
     ]
+  },
+  "activate_tower_beacon": {
+    "sounds": [
+      "simplyskills:activate_tower_beacon"
+    ]
   }
 }

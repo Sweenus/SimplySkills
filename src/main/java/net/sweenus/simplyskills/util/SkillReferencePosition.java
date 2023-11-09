@@ -50,6 +50,7 @@ public class SkillReferencePosition {
     public static String wayfarerSneak = "10v0k6yq1cgim39a";
     public static String wayfarerReflexive = "bnv46qh3cx1709r0";
     public static String wayfarerUnseen = "ylr94qqqzkw4hf06";
+    public static String wayfarerQuickfire = "d9gigvmx9tt0cm92";
     public static String wayfarerGuarding = "apfs7w6sbchad164";
 
     // - Rogue
@@ -200,11 +201,6 @@ public class SkillReferencePosition {
     public static String crusaderSpecialisationConsecrationSpellforged = "9d9t6hnhyc248jy0";
     public static String crusaderSpecialisationConsecrationTaunt = "lumiaobsxfeefc2g";
     public static String crusaderSpecialisationConsecrationWard = "4p70f1lw2j9ogrvz";
-
-    public static String frostguardSpecialisationConjuringStrikes = "7dsbtkhvcv332zla";
-    public static String frostguardSpecialisationIceBlock = "7dsbtkhvcv332zla";
-    public static String frostguardSpecialisationFrostNova = "7dsbtkhvcv332zla";
-
     public static String rangerSpecialisationDisengage = "is053f9imz801s57";
     public static String rangerSpecialisationDisengageMarksman = "fau41sxkpniul48c";
     public static String rangerSpecialisationDisengageRecuperate = "dr852odvrafemtmw";
@@ -230,7 +226,6 @@ public class SkillReferencePosition {
     public static String rangerSpecialisationElementalArrowsStacksTwo = "jyzyi0dx8elgb4fl";
     public static String rangerSpecialisationElementalArrowsStacksThree = "14riqlyv2efrldoq";
     public static String rangerSpecialisationElementalArrowsRenewal = "aizxxvc9fwqnpq60";
-
     public static String rogueSpecialisationEvasion = "is053f9imz801s57";
     public static String rogueSpecialisationEvasionFanOfBlades = "4jwi6zro7iaw9ql7";
     public static String rogueSpecialisationEvasionFanOfBladesDisenchantment = "rec4jjyl154yctln";
@@ -244,7 +239,6 @@ public class SkillReferencePosition {
     public static String rogueSpecialisationSiphoningStrikesVanish = "eeq90ywusncgm78g";
     public static String rogueSpecialisationSiphoningStrikesMighty = "4di5j622zoipfmd3";
     public static String rogueSpecialisationSiphoningStrikesAura = "uhhbbhcdy12yhoz3";
-
     public static String berserkerSpecialisationRampage = "kp8uei8ppni71b5x";
     public static String berserkerSpecialisationRampageCharge = "xkwzbexxmoz9tf60";
     public static String berserkerSignatureRampageChargeRelentless = "xsak3gay0v3z4inb";

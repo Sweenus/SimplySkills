@@ -863,7 +863,7 @@
 	},
 	"wayfarerReflexive": {
 		"title": "§7§a[Reflexive]§7",
-		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.",
+		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\nWhen your stealth is broken by attacking, gain Might and Marksmanship.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -882,7 +882,7 @@
 	},
 	"wayfarerUnseen": {
 		"title": "§7§a[Unseen]§7",
-		"description": "§7While loading a Crossbow, gain momentary Stealth.",
+		"description": "§7While loading a Crossbow, gain momentary Stealth.\nIf you already have stealth, you instead gain Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -914,6 +914,25 @@
 				"type": "puffish_skills:passive_skill",
 				"data": {
 					"passive_skill": "wayfarerGuarding"
+				}
+			}
+		]
+	},
+	"wayfarerQuickfire": {
+		"title": "§7§a[Quickfire]§7",
+		"description": "§7When using a bow, firing fully charged arrows in quick succession grants you stacking Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.",
+		"frame": "goal",
+		"icon": {
+			"type": "texture",
+			"data": {
+				"texture": "simplyskills:textures/icons/wayfarer_quickfire.png"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:passive_skill",
+				"data": {
+					"passive_skill": "wayfarerQuickfire"
 				}
 			}
 		]

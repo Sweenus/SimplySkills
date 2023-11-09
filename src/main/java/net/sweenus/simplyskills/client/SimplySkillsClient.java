@@ -13,7 +13,6 @@ import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.client.events.ClientEvents;
-import net.sweenus.simplyskills.client.gui.CustomHud;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -63,6 +62,7 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.IMMOBILIZE, new ImmobilizeRenderer());
         CustomModelStatusEffect.register(EffectRegistry.DEATHMARK, new DeathMarkRenderer());
         CustomModelStatusEffect.register(EffectRegistry.TAUNTED, new TauntedRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.MARKSMANSHIP, new MarksmanshipRenderer());
 
         CooldownPacket.init();
         ModPacketHandler.registerClient();

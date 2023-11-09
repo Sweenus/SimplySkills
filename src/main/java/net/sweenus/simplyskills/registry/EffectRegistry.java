@@ -98,6 +98,11 @@ public class EffectRegistry {
                     "4a4233a0-3299-4755-8213-9f10cfb7e795",
                     0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect MARKSMANSHIP= new MarksmanshipEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(PlayerAttributes.RANGED_DAMAGE,
+                    "d6702be1-2e6e-44ba-b325-41a7da2ca6b3",
+                    0.25,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect EXHAUSTION= new ExhaustionEffect(StatusEffectCategory.HARMFUL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
                     "1ce35aec-6a41-44ff-a537-f03b76f01664",
@@ -194,6 +199,7 @@ public class EffectRegistry {
         Synchronized.configure(IMMOBILIZE, true);
         Synchronized.configure(DEATHMARK, true);
         Synchronized.configure(TAUNTED, true);
+        Synchronized.configure(MARKSMANSHIP, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -241,6 +247,7 @@ public class EffectRegistry {
         BLADESTORM = registerStatusEffect("bladestorm", BLADESTORM);
         VITALITYBOND = registerStatusEffect("vitality_bond", VITALITYBOND);
         ANOINTED = registerStatusEffect("anointed", ANOINTED);
+        MARKSMANSHIP = registerStatusEffect("marksmanship", MARKSMANSHIP);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

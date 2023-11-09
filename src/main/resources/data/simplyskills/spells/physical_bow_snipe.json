@@ -1,5 +1,5 @@
 {
-  "school": "PHYSICAL_MELEE",
+  "school": "PHYSICAL_RANGED",
   "range": 120,
   "learn": {
     "tier": 1
@@ -63,7 +63,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 0,
-          "spell_power_coefficient": 30.2
+          "spell_power_coefficient": 2.2
         }
       },
       "particles": [

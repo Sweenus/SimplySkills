@@ -43,24 +43,32 @@ public class WayfarerAbilities {
 
             }
 
-            if (target != null && !brokenByDamage) {
+            if ( !brokenByDamage ) {
 
-                if (target instanceof LivingEntity livingTarget) {
-                    int deathmarkDuration = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkDuration;
-                    int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
+                if (HelperMethods.isUnlocked("simplyskills:tree",
+                        SkillReferencePosition.wayfarerReflexive, player)) {
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 40, 1, 20);
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 20);
+                }
 
-                    if (backstabBonus && HelperMethods.isBehindTarget(player, livingTarget)) {
-                        if (HelperMethods.isUnlocked("simplyskills:rogue",
-                                SkillReferencePosition.rogueExploitation, player))
-                            HelperMethods.incrementStatusEffect(
-                                    livingTarget,
-                                    EffectRegistry.DEATHMARK,
-                                    deathmarkDuration,
-                                    deathmarkStacks,
-                                    3);
-                        if (HelperMethods.isUnlocked("simplyskills:rogue",
-                                SkillReferencePosition.rogueOpportunisticMastery, player))
-                            RogueAbilities.passiveRogueOpportunisticMastery(livingTarget, player);
+                if (target != null) {
+                    if (target instanceof LivingEntity livingTarget) {
+                        int deathmarkDuration = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkDuration;
+                        int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
+
+                        if (backstabBonus && HelperMethods.isBehindTarget(player, livingTarget)) {
+                            if (HelperMethods.isUnlocked("simplyskills:rogue",
+                                    SkillReferencePosition.rogueExploitation, player))
+                                HelperMethods.incrementStatusEffect(
+                                        livingTarget,
+                                        EffectRegistry.DEATHMARK,
+                                        deathmarkDuration,
+                                        deathmarkStacks,
+                                        3);
+                            if (HelperMethods.isUnlocked("simplyskills:rogue",
+                                    SkillReferencePosition.rogueOpportunisticMastery, player))
+                                RogueAbilities.passiveRogueOpportunisticMastery(livingTarget, player);
+                        }
                     }
                 }
             }

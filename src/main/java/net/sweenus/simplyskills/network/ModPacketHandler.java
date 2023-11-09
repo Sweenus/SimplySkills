@@ -9,7 +9,6 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Identifier;
-import net.puffish.skillsmod.api.Category;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.client.gui.CustomHud;
 import net.sweenus.simplyskills.util.HelperMethods;
