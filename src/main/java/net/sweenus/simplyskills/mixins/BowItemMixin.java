@@ -32,13 +32,17 @@ public abstract class BowItemMixin {
     public void simplyskills$onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
         if (user instanceof PlayerEntity player) {
             if (player instanceof ServerPlayerEntity serverPlayer) {
+                float requiredPullProgress = 1.0F;
+                if (stack.getName().toString().contains("Shortbow") || stack.getName().toString().contains("shortbow")
+                        || stack.getName().toString().contains("love"))
+                    requiredPullProgress = 0.5F;
 
                 // Calculate the use ticks
                 int useTicks = this.getMaxUseTime(stack) - remainingUseTicks;
 
                 // Effect - Elemental Arrows
                 if (player.hasStatusEffect(EffectRegistry.ELEMENTALARROWS)) {
-                    if (callGetPullProgress(useTicks) >= 1.0F) {
+                    if (callGetPullProgress(useTicks) >= requiredPullProgress) {
 
                         if (AbilityEffects.effectRangerElementalArrows(player))
                             ci.cancel();
@@ -48,7 +52,7 @@ public abstract class BowItemMixin {
 
                 // Effect - Arrow Rain
                 else if (player.hasStatusEffect(EffectRegistry.ARROWRAIN)) {
-                    if (callGetPullProgress(useTicks) >= 1.0F) {
+                    if (callGetPullProgress(useTicks) >= requiredPullProgress) {
 
                         if (AbilityEffects.effectRangerArrowRain(player))
                             ci.cancel();
@@ -57,7 +61,7 @@ public abstract class BowItemMixin {
 
                 // Effect - Marksman Snipe
                 else if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
-                    if (callGetPullProgress(useTicks) >= 1.0F) {
+                    if (callGetPullProgress(useTicks) >= requiredPullProgress) {
 
                         if (AbilityEffects.effectRangerMarksman(player))
                             ci.cancel();
@@ -71,7 +75,7 @@ public abstract class BowItemMixin {
                 }
 
                 // Use the proxy method to call the actual getPullProgress method
-                if (callGetPullProgress(useTicks) >= 1.0F && HelperMethods.isUnlocked("simplyskills:tree",
+                if (callGetPullProgress(useTicks) >= requiredPullProgress && HelperMethods.isUnlocked("simplyskills:tree",
                         SkillReferencePosition.wayfarerQuickfire, player)) {
                     HelperMethods.incrementStatusEffect(user ,EffectRegistry.MARKSMANSHIP,40, 1, 6);
                 }

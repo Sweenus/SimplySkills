@@ -61,8 +61,8 @@ public class ClericAbilities {
         MagicSchool healingSchool = MagicSchool.HEALING;
         if (random < chance && !targets.contains(player) && spell.school == healingSchool) {
             if (spellId.toString().contains("holy_beam"))
-                SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:heal", 10, player);
-            else SignatureAbilities.castSpellEngineIndirectTarget(player, spellId.toString(), 10, player);
+                SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:heal", 10, player, null);
+            else SignatureAbilities.castSpellEngineIndirectTarget(player, spellId.toString(), 10, player, null);
         }
     }
 
@@ -115,7 +115,7 @@ public class ClericAbilities {
 
                         SignatureAbilities.castSpellEngineIndirectTarget(player,
                                 "simplyskills:divine_intervention",
-                                15, le);
+                                15, le, HelperMethods.getBlockLookingAt(player, 256));
                         break;
                     }
                 }

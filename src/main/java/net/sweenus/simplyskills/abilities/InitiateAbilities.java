@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
+import net.spell_power.api.MagicSchool;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -40,23 +41,23 @@ public class InitiateAbilities {
             }
         }
     }
-    public static void passiveInitiateEmpower(PlayerEntity player, Identifier spellID) {
+    public static void passiveInitiateEmpower(PlayerEntity player, Identifier spellID, MagicSchool school) {
         int chance = SimplySkills.initiateConfig.passiveInitiateEmpowerChance;
         int duration = SimplySkills.initiateConfig.passiveInitiateEmpowerDuration;
         int amplifier = SimplySkills.initiateConfig.passiveInitiateEmpowerStacks;
         int amplifierMax = SimplySkills.initiateConfig.passiveInitiateEmpowerMaxStacks;
         List<StatusEffect> list = new ArrayList<>();
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getArcaneSpells()))
+        if (school == MagicSchool.ARCANE)
             list.add(EffectRegistry.ARCANEATTUNEMENT);
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getSoulSpells()))
+        if (school == MagicSchool.SOUL)
             list.add(EffectRegistry.SOULATTUNEMENT);
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getHealingSpells()))
+        if (school == MagicSchool.HEALING)
             list.add(EffectRegistry.HOLYATTUNEMENT);
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFireSpells()))
+        if (school == MagicSchool.FIRE)
             list.add(EffectRegistry.FIREATTUNEMENT);
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getFrostSpells()))
+        if (school == MagicSchool.FROST)
             list.add(EffectRegistry.FROSTATTUNEMENT);
-        if (HelperMethods.stringContainsAny(spellID.toString(), SimplySkills.getLightningSpells()))
+        if (school == MagicSchool.LIGHTNING)
             list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
 
         if (!list.isEmpty()) {

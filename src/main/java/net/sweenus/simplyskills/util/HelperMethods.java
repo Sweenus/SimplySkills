@@ -23,9 +23,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
@@ -176,6 +174,29 @@ public class HelperMethods {
 
         BlockHitResult blockResult = (BlockHitResult) result;
         return blockResult.getPos();
+    }
+
+    // Checks for the block we are looking at. If there are no blocks, we instead look for the furthest air block relative to the range argument.
+    public static BlockPos getBlockLookingAt(PlayerEntity player, int range) {
+        HitResult result = player.raycast(range, 0, false);
+        if (result.getType() == HitResult.Type.BLOCK) {
+            BlockHitResult blockResult = (BlockHitResult) result;
+            return blockResult.getBlockPos();
+        }
+        return getFirstAirBlockLookingAt(player, range);
+    }
+
+    public static BlockPos getFirstAirBlockLookingAt(PlayerEntity player, int range) {
+        Vec3d start = player.getEyePos();
+        Vec3d look = player.getRotationVec(1.0F);
+        for (int i = range - 4; i < range; i++) {
+            Vec3d step = start.add(look.x * i, look.y * i, look.z * i);
+            BlockPos pos = new BlockPos((int) step.x, (int) step.y, (int) step.z);
+            if (player.getWorld().isAir(pos)) {
+                return pos;
+            }
+        }
+        return null;
     }
 
     public static void incrementStatusEffect(

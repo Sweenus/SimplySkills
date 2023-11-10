@@ -7,10 +7,13 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.paladins.effect.Effects;
+import net.spell_engine.entity.SpellProjectile;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -18,6 +21,7 @@ import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
+import java.util.List;
 import java.util.Random;
 
 public class CrusaderAbilities {
@@ -27,7 +31,7 @@ public class CrusaderAbilities {
         int random = new Random().nextInt(100);
         int retributionChance = SimplySkills.crusaderConfig.passiveCrusaderRetributionChance;
         if (random < retributionChance)
-            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_judgement", 32, attacker);
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_judgement", 32, attacker, null);
     }
 
 
@@ -37,7 +41,7 @@ public class CrusaderAbilities {
         int recoveryChance = SimplySkills.crusaderConfig.passiveCrusaderExhaustiveRecoveryChance;
         int exhaustStacks = SimplySkills.crusaderConfig.passiveCrusaderExhaustiveRecoveryExhaustionStacks - 1;
         if (random < recoveryChance) {
-            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_flash_heal", 32, player);
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:paladins_flash_heal", 32, player, null);
             HelperMethods.incrementStatusEffect(player, EffectRegistry.EXHAUSTION, 300, exhaustStacks, 99);
         }
     }
@@ -59,54 +63,57 @@ public class CrusaderAbilities {
 
     // Heavensmith's Call
     public static boolean signatureHeavensmithsCall(String crusaderSkillTree, PlayerEntity player) {
-        Vec3d blockpos = null;
+        BlockPos blockpos = null;
+        Entity target = null;
         boolean success = false;
         int heavensmithsCallRange = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallRange;
         int duration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallDADuration;
-        int tauntDuration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallTauntMarkDuration;
 
         if (HelperMethods.getTargetedEntity(player, heavensmithsCallRange) != null)
-            blockpos = HelperMethods.getTargetedEntity(player, heavensmithsCallRange).getPos();
+            blockpos = HelperMethods.getTargetedEntity(player, heavensmithsCallRange).getBlockPos();
 
         if (blockpos == null)
-            blockpos = HelperMethods.getPositionLookingAt(player, heavensmithsCallRange);
+            blockpos = HelperMethods.getBlockLookingAt(player, heavensmithsCallRange);
 
         if (blockpos != null) {
-            int xpos = (int) blockpos.getX();
-            int ypos = (int) blockpos.getY();
-            int zpos = (int) blockpos.getZ();
-            BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-            Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-            for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                        success = true;
 
-                        if (HelperMethods.isUnlocked(crusaderSkillTree,
-                                SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
-                            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0, false, false, true));
+            if ((target instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player))
+                target = null;
 
-                        if (HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
-                            le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, tauntDuration));
+            if (HelperMethods.isUnlocked(crusaderSkillTree,
+                        SkillReferencePosition.crusaderSpecialisationDivineAdjudication, player))
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.DIVINEADJUDICATION, duration, 0, false, false, true));
 
-                        if ((le instanceof MobEntity me) && HelperMethods.isUnlocked("simplyskills:crusader", SkillReferencePosition.crusaderSpecialisationHeavensmithsCallTaunt, player)) {
-                            SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
-                                    EffectRegistry.TAUNTED, tauntDuration, 0, false,
-                                    false, true);
-                            tauntEffect.setSourceEntity(player);
-                            me.addStatusEffect(tauntEffect);
-                        }
+            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                    "simplyskills:physical_heavensmiths_call",
+                    heavensmithsCallRange, target, null);
+            success = true;
+        }
+        return success;
+    }
 
+    public static void signatureHeavensmithsCallImpact(String crusaderSkillTree, List<Entity> targets,
+                                                       Identifier spellId, PlayerEntity player) {
+        int tauntDuration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallTauntMarkDuration;
+        Entity target = targets.get(0);
+        Box box = HelperMethods.createBox(target, 3);
+        if (spellId != null && spellId.toString().equals("simplyskills:physical_heavensmiths_call")) {
 
-                        SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                "simplyskills:physical_heavensmiths_call",
-                                3, le);
-                        break;
+            for (Entity entities : target.getWorld().getOtherEntities(target, box, EntityPredicates.VALID_LIVING_ENTITY)) {
+                if (entities instanceof LivingEntity le && HelperMethods.checkFriendlyFire(le, player)) {
+                    if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
+                        le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, tauntDuration));
+
+                    if ((le instanceof MobEntity me) && HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationHeavensmithsCallTaunt, player)) {
+                        SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
+                                EffectRegistry.TAUNTED, tauntDuration, 0, false,
+                                false, true);
+                        tauntEffect.setSourceEntity(player);
+                        me.addStatusEffect(tauntEffect);
                     }
                 }
             }
         }
-        return success;
     }
 
     // Sacred Onslaught

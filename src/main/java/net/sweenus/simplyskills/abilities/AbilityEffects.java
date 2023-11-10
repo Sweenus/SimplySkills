@@ -148,9 +148,9 @@ public class AbilityEffects {
 
                         if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
-                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", fobRange * 2, le);
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades_assault", fobRange * 2, le, HelperMethods.getBlockLookingAt(player, 256));
                         else
-                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", fobRange * 2, le);
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:fan_of_blades", fobRange * 2, le, HelperMethods.getBlockLookingAt(player, 256));
 
                         if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesDisenchantment, player))
@@ -181,7 +181,7 @@ public class AbilityEffects {
         if (player.hasStatusEffect(EffectRegistry.ELEMENTALARROWS)) {
 
 
-            Vec3d blockpos = null;
+            BlockPos blockpos = null;
             int radius = SimplySkills.rangerConfig.effectRangerElementalArrowsRadius;
             int increase = SimplySkills.rangerConfig.effectRangerElementalArrowsRadiusIncreasePerTier;
             int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
@@ -221,10 +221,10 @@ public class AbilityEffects {
             HelperMethods.decrementStatusEffect(player, EffectRegistry.ELEMENTALARROWS);
             
             if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, targetingRange).getPos();
+                blockpos = HelperMethods.getTargetedEntity(player, targetingRange).getBlockPos();
 
             if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
+                blockpos = HelperMethods.getBlockLookingAt(player, targetingRange);
 
             if (blockpos != null) {
                 int xpos = (int) blockpos.getX();
@@ -234,7 +234,7 @@ public class AbilityEffects {
                 Box box = HelperMethods.createBoxAtBlock(searchArea, radius);
                 for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
-                    if (player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY).size() <= 1)
+                    if (player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY).size() == 1)
                         arrowCount = increasedArrowCount;
 
                     for (int i = arrowCount; i > 0; i--) {
@@ -244,14 +244,17 @@ public class AbilityEffects {
                             if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
                                 SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         randomSpell,
-                                        512, le);
+                                        512, le, HelperMethods.getBlockLookingAt(player, 256));
                             }
                         }
                     }
                 }
+                Random rand = new Random();
+                String randomSpell = list.get(rand.nextInt(list.size()));
+                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                        randomSpell,
+                        512, null, HelperMethods.getBlockLookingAt(player, 256));
             }
-
-
             return true;
         }
         return false;
@@ -260,36 +263,19 @@ public class AbilityEffects {
     public static boolean effectRangerMarksman(PlayerEntity player) {
 
         if (player.hasStatusEffect(EffectRegistry.MARKSMAN)) {
-
-
-            Vec3d blockpos = null;
+            Entity target = null;
             int targetingRange = SimplySkills.rangerConfig.effectRangerElementalArrowsTargetingRange;
 
             if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, targetingRange).getPos();
+                target = HelperMethods.getTargetedEntity(player, targetingRange);
+            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+                target = null;
 
-            if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, targetingRange);
-
-            if (blockpos != null) {
-                int xpos = (int) blockpos.getX();
-                int ypos = (int) blockpos.getY();
-                int zpos = (int) blockpos.getZ();
-                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                Box box = HelperMethods.createBoxAtBlock(searchArea, 1);
-                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-
-                    if (entities != null) {
-                        String spell = "simplyskills:physical_bow_snipe";
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                            SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                    spell,
-                                    512, le);
-                            HelperMethods.decrementStatusEffect(player, EffectRegistry.MARKSMAN);
-                        }
-                    }
-                }
-            }
+            String spell = "simplyskills:physical_bow_snipe";
+                SignatureAbilities.castSpellEngineIndirectTarget(player,
+                        spell,
+                        512, target, HelperMethods.getBlockLookingAt(player, 256));
+                HelperMethods.decrementStatusEffect(player, EffectRegistry.MARKSMAN);
 
 
             return true;
@@ -378,17 +364,17 @@ public class AbilityEffects {
                                     if (!preventShotgun || projectileLimiter < projectileLimiterCap) {
                                         if (player.getRandom().nextInt(100) < 5) {
                                             SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                    "simplyskills:fire_arrow_rain", 512, arrowEntity);
+                                                    "simplyskills:fire_arrow_rain", 512, arrowEntity, null);
                                             arrowEntity.setInvisible(true);
                                             projectileLimiter++;
                                         } else if (player.getRandom().nextInt(100) < 15) {
                                             SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                    "simplyskills:frost_arrow_rain", 512, arrowEntity);
+                                                    "simplyskills:frost_arrow_rain", 512, arrowEntity, null);
                                             arrowEntity.setInvisible(true);
                                             projectileLimiter++;
                                         } else if (player.getRandom().nextInt(100) < 25) {
                                             SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                                    "simplyskills:lightning_arrow_rain", 512, arrowEntity);
+                                                    "simplyskills:lightning_arrow_rain", 512, arrowEntity, null);
                                             arrowEntity.setInvisible(true);
                                             projectileLimiter++;
                                         }
@@ -411,35 +397,19 @@ public class AbilityEffects {
         if (HelperMethods.isUnlocked("simplyskills:wizard",
                 SkillReferencePosition.wizardSpecialisationIceCometVolley, player) &&
         player.hasStatusEffect(EffectRegistry.FROSTVOLLEY) && player.age % frequency == 0) {
-            Vec3d blockpos = null;
+            Entity target = null;
             int volleyRange = SimplySkills.wizardConfig.signatureWizardIceCometVolleyRange;
 
-            //Frost Bolt
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, volleyRange).getPos();
+                target = HelperMethods.getTargetedEntity(player, volleyRange);
+            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+                target = null;
 
-            if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
-
-            if (blockpos != null) {
-                int xpos = (int) blockpos.getX();
-                int ypos = (int) blockpos.getY();
-                int zpos = (int) blockpos.getZ();
-                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-
-                    if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                            SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                    "simplyskills:frost_arrow",
-                                    3, le);
-                            HelperMethods.decrementStatusEffect(player, EffectRegistry.FROSTVOLLEY);
-                            break;
-                        }
-                    }
-                }
-            }
+            String spell = "simplyskills:frost_arrow";
+            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                    spell,
+                    volleyRange, target, HelperMethods.getBlockLookingAt(player, volleyRange));
+            HelperMethods.decrementStatusEffect(player, EffectRegistry.FROSTVOLLEY);
         }
     }
     public static void effectWizardArcaneVolley(PlayerEntity player) {
@@ -448,35 +418,19 @@ public class AbilityEffects {
         if (HelperMethods.isUnlocked("simplyskills:wizard",
                 SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player) &&
                 player.hasStatusEffect(EffectRegistry.ARCANEVOLLEY) && player.age % volleyFrequency == 0) {
-            Vec3d blockpos = null;
+            Entity target = null;
             int volleyRange = SimplySkills.wizardConfig.signatureWizardArcaneBoltVolleyRange;
 
-            //Arcane Bolt
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
-                blockpos = HelperMethods.getTargetedEntity(player, volleyRange).getPos();
+                target = HelperMethods.getTargetedEntity(player, volleyRange);
+            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+                target = null;
 
-            if (blockpos == null)
-                blockpos = HelperMethods.getPositionLookingAt(player, volleyRange);
-
-            if (blockpos != null) {
-                int xpos = (int) blockpos.getX();
-                int ypos = (int) blockpos.getY();
-                int zpos = (int) blockpos.getZ();
-                BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
-                Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
-                for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-
-                    if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                            SignatureAbilities.castSpellEngineIndirectTarget(player,
-                                    "simplyskills:arcane_bolt_lesser",
-                                    3, le);
-                            HelperMethods.decrementStatusEffect(player, EffectRegistry.ARCANEVOLLEY);
-                            break;
-                        }
-                    }
-                }
-            }
+            String spell = "simplyskills:arcane_bolt_lesser";
+            SignatureAbilities.castSpellEngineIndirectTarget(player,
+                    spell,
+                    volleyRange, target, HelperMethods.getBlockLookingAt(player, volleyRange));
+            HelperMethods.decrementStatusEffect(player, EffectRegistry.ARCANEVOLLEY);
         }
     }
     public static void effectWizardMeteoricWrath(PlayerEntity player) {
@@ -539,7 +493,7 @@ public class AbilityEffects {
         if ((target instanceof LivingEntity livingTarget) && player.getRandom().nextInt(100) < chance) {
             SignatureAbilities.castSpellEngineIndirectTarget(player,
                     list.get(spellChoice),
-                    8, livingTarget);
+                    8, livingTarget, HelperMethods.getBlockLookingAt(player, 256));
 
             if (HelperMethods.isUnlocked("simplyskills:spellblade",
                     SkillReferencePosition.spellbladeSpecialisationSpellweaverHaste, player))

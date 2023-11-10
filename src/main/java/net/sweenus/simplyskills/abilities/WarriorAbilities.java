@@ -156,7 +156,7 @@ public class WarriorAbilities {
         if (player.hasStatusEffect(EffectRegistry.MIGHT))
             effectChance = effectChance * 2;
         if (player.getRandom().nextInt(100) < effectChance) {
-            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:physical_swordfall", 32, target);
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:physical_swordfall", 32, target, null);
         }
     }
 

@@ -29,8 +29,8 @@ public class WizardConfig implements ConfigData {
     public double signatureWizardIceCometLeapHeight = 1.3;
     public int signatureWizardIceCometLeapSlowfallDuration = 180;
     public int signatureWizardIceCometVolleyDuration = 400;
-    public int signatureWizardIceCometVolleyStacks = 5;
-    public int signatureWizardIceCometVolleyFrequency = 20;
+    public int signatureWizardIceCometVolleyStacks = 6;
+    public int signatureWizardIceCometVolleyFrequency = 8;
     public int signatureWizardIceCometVolleyRange = 120;
     public int signatureWizardIceCometRange = 120;
     public int signatureWizardIceCometCooldown = 30;
@@ -61,7 +61,7 @@ public class WizardConfig implements ConfigData {
     public int signatureWizardLesserArcaneBoltRadius = 12;
     public int signatureWizardArcaneBoltVolleyDuration = 400;
     public int signatureWizardArcaneBoltVolleyStacks = 10;
-    public int signatureWizardArcaneBoltVolleyFrequency = 10;
+    public int signatureWizardArcaneBoltVolleyFrequency = 3;
     public int signatureWizardArcaneBoltVolleyRange = 120;
     public int signatureWizardArcaneBoltCooldown = 35;
 

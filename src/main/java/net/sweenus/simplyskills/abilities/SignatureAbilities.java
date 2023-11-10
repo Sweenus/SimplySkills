@@ -9,6 +9,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -16,8 +17,10 @@ import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
 import net.minecraft.network.packet.s2c.play.CustomPayloadS2CPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.casting.SpellCast;
@@ -26,8 +29,11 @@ import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.KeybindPacket;
+import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+import net.sweenus.simplyswords.entity.BattleStandardEntity;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -384,7 +390,17 @@ public class SignatureAbilities {
         SpellHelper.attemptCasting(player, itemStack, spellID, false);
     }
 
-    public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range, Entity target) {
+    public static void castSpellEngineIndirectTarget(PlayerEntity player, String spellIdentifier, int range,@Nullable Entity target,@Nullable BlockPos blockpos) {
+        if (target == null && blockpos != null) {
+            target = EntityRegistry.SPELL_TARGET_ENTITY.spawn( (ServerWorld) player.getWorld(),
+                    blockpos,
+                    SpawnReason.TRIGGERED);
+        } else if (target == null && blockpos == null) {
+            blockpos = HelperMethods.getBlockLookingAt(player, 256);
+            target = EntityRegistry.SPELL_TARGET_ENTITY.spawn( (ServerWorld) player.getWorld(),
+                    blockpos,
+                    SpawnReason.TRIGGERED);
+        }
 
         // -- Cast spell at specified target --
         if (target != null) {

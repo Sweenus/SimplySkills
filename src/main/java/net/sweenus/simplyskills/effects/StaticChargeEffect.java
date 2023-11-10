@@ -43,7 +43,7 @@ public class StaticChargeEffect extends StatusEffect {
                         && le.getRandom().nextInt(100) < leapChance) {
                             SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
                                     "simplyskills:static_charge",
-                                    3, le);
+                                    3, le, null);
                             le.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, weaknessDuration, weaknessAmplifier, false, false, true));
                             StatusEffect sc = EffectRegistry.STATICCHARGE;
                             HelperMethods.decrementStatusEffect(livingEntity, sc);
@@ -98,7 +98,7 @@ public class StaticChargeEffect extends StatusEffect {
                 && ownerEntity.getRandom().nextInt(100) < speedChance / 2)
             SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
                     "simplyskills:lightning_ball_homing",
-                    3, le);
+                    3, le, HelperMethods.getBlockLookingAt(ownerEntity, 256));
     }
 
     @Override

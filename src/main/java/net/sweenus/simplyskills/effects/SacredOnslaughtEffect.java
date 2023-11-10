@@ -65,7 +65,7 @@ public class SacredOnslaughtEffect extends StatusEffect {
                                 if (!HelperMethods.checkFriendlyFire(le, player)
                                         && HelperMethods.isUnlocked("simplyskills:crusader",
                                         SkillReferencePosition.crusaderSpecialisationSacredOnslaughtHeal, player)) {
-                                    SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:divine_protection", 32, le);
+                                    SignatureAbilities.castSpellEngineIndirectTarget(player, "paladins:divine_protection", 32, le, null);
                                     le.heal((float)healing);
                                 }
 

@@ -12,10 +12,7 @@ import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
-import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.registry.ItemRegistry;
-import net.sweenus.simplyskills.registry.ModelRegistry;
-import net.sweenus.simplyskills.registry.SoundRegistry;
+import net.sweenus.simplyskills.registry.*;
 import net.sweenus.simplyskills.rewards.PassiveSkillReward;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,13 +58,6 @@ public class SimplySkills implements ModInitializer {
     public static List<String> getSpecialisationsAsArray() {
         return specialisations;
     }
-    public static String[] getFrostSpells() {return new String[] {"frost", "ice"};}
-    public static String[] getFireSpells() {return new String[] {"fire", "flame"};}
-    public static String[] getLightningSpells() {return new String[] {"static", "lightning"};}
-    public static String[] getSoulSpells() {return new String[] {"soul", "dark"};}
-    public static String[] getHealingSpells() {return new String[] {"holy", "healing", "sacred"};}
-    public static String[] getArcaneSpells() {return new String[] {"arcane", "arcanes"};}
-    public static String[] getPhysicalSpells() {return new String[] {"blade", "blades", "judgement"};}
 
     @Override
     public void onInitialize() {
@@ -90,6 +80,7 @@ public class SimplySkills implements ModInitializer {
         SoundRegistry.registerSounds();
         ItemRegistry.registerItems();
         ModelRegistry.registerModels();
+        EntityRegistry.registerEntities();
         KeybindPacket.init();
         ModPacketHandler.registerServer();
         setSpecialisations();

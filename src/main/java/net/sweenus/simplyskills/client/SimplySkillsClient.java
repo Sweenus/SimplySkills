@@ -1,22 +1,33 @@
 package net.sweenus.simplyskills.client;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.spell_engine.api.effect.CustomModelStatusEffect;
 import net.spell_engine.api.effect.CustomParticleStatusEffect;
 import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.client.events.ClientEvents;
+import net.sweenus.simplyskills.client.renderer.SpellTargetEntityRenderer;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
+import net.sweenus.simplyswords.client.renderer.BattleStandardDarkRenderer;
+import net.sweenus.simplyswords.client.renderer.BattleStandardRenderer;
+import net.sweenus.simplyswords.client.renderer.model.BattleStandardDarkModel;
+import net.sweenus.simplyswords.client.renderer.model.BattleStandardModel;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
@@ -27,6 +38,8 @@ public class SimplySkillsClient implements ClientModInitializer {
     public static long lastUseTime;
     public static int unspentPoints = 0;
     public static KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
+
+    public static EntityModelLayer SPELLTARGETENTITY_MODEL = new EntityModelLayer(new Identifier("spell_target_entity", "cube"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -65,6 +78,7 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.MARKSMANSHIP, new MarksmanshipRenderer());
 
         CooldownPacket.init();
+        registerEntityModels();
         ModPacketHandler.registerClient();
         ClientEvents.registerClientEvents();
 
@@ -101,4 +115,10 @@ public class SimplySkillsClient implements ClientModInitializer {
 
         });
     }
+
+    public static void registerEntityModels() {
+            EntityRendererRegistry.register(EntityRegistry.SPELL_TARGET_ENTITY, SpellTargetEntityRenderer::new);
+
+    }
+
 }

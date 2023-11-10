@@ -10,6 +10,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.SkillsAPI;
+import net.spell_engine.api.spell.Spell;
+import net.spell_engine.internals.SpellRegistry;
+import net.spell_power.api.MagicSchool;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.items.GraciousManuscript;
@@ -28,7 +31,7 @@ public class AbilityLogic {
 
     public static boolean skillTreeUnlockManager(PlayerEntity player, String categoryID) {
 
-        if (HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
+        if (net.sweenus.simplyskills.util.HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
 
             if (SimplySkills.generalConfig.removeUnlockRestrictions || (player.getMainHandStack().getItem() instanceof GraciousManuscript))
                 return false;
@@ -41,7 +44,7 @@ public class AbilityLogic {
 
                     Collection<Category> categories = SkillsAPI.getUnlockedCategories((ServerPlayerEntity) player);
                     for (Category value : categories) {
-                        if (HelperMethods.stringContainsAny(value.getId().toString(), SimplySkills.getSpecialisations())) {
+                        if (net.sweenus.simplyskills.util.HelperMethods.stringContainsAny(value.getId().toString(), SimplySkills.getSpecialisations())) {
                             //System.out.println(player + " attempted to unlock a second specialisation. Denied.");
                             return true;
                         }
@@ -53,7 +56,7 @@ public class AbilityLogic {
 
             //Process unlock
             if (categoryID.contains("simplyskills:wizard")
-                    && !HelperMethods.isUnlocked("simplyskills:wizard", null, player)) {
+                    && !net.sweenus.simplyskills.util.HelperMethods.isUnlocked("simplyskills:wizard", null, player)) {
                 if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
                     playUnlockSound(player);
                     return false;
@@ -156,9 +159,10 @@ public class AbilityLogic {
     }
 
     public static void onSpellCastEffects(PlayerEntity player, List<Entity> targets, Identifier spellId) {
+        MagicSchool school = SpellRegistry.getSpell(spellId).school;
 
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
-            InitiateAbilities.passiveInitiateEmpower(player, spellId);
+            InitiateAbilities.passiveInitiateEmpower(player, spellId, school);
 
         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
             WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
@@ -193,6 +197,12 @@ public class AbilityLogic {
                 && FabricLoader.getInstance().isModLoaded("paladins")) {
             ClericAbilities.passiveClericHealingWard(player, targets, spellId);
         }
+
+        if (school == MagicSchool.PHYSICAL_RANGED && HelperMethods.isUnlocked("simplyskills:tree",
+                                   SkillReferencePosition.wayfarerQuickfire, player)) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 6);
+        }
+        CrusaderAbilities.signatureHeavensmithsCallImpact( "simplyskills:crusader",targets, spellId, player);
 
     }
 
