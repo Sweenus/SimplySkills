@@ -396,7 +396,7 @@ public class SignatureAbilities {
                     blockpos,
                     SpawnReason.TRIGGERED);
         } else if (target == null && blockpos == null) {
-            blockpos = HelperMethods.getBlockLookingAt(player, 256);
+            blockpos = HelperMethods.getBlockLookingAt(player, range);
             target = EntityRegistry.SPELL_TARGET_ENTITY.spawn( (ServerWorld) player.getWorld(),
                     blockpos,
                     SpawnReason.TRIGGERED);

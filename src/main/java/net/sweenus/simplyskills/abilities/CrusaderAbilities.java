@@ -86,7 +86,7 @@ public class CrusaderAbilities {
 
             SignatureAbilities.castSpellEngineIndirectTarget(player,
                     "simplyskills:physical_heavensmiths_call",
-                    heavensmithsCallRange, target, null);
+                    heavensmithsCallRange, target, blockpos);
             success = true;
         }
         return success;
@@ -95,9 +95,9 @@ public class CrusaderAbilities {
     public static void signatureHeavensmithsCallImpact(String crusaderSkillTree, List<Entity> targets,
                                                        Identifier spellId, PlayerEntity player) {
         int tauntDuration = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallTauntMarkDuration;
+        if (spellId != null && spellId.toString().equals("simplyskills:physical_heavensmiths_call")) {
         Entity target = targets.get(0);
         Box box = HelperMethods.createBox(target, 3);
-        if (spellId != null && spellId.toString().equals("simplyskills:physical_heavensmiths_call")) {
 
             for (Entity entities : target.getWorld().getOtherEntities(target, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities instanceof LivingEntity le && HelperMethods.checkFriendlyFire(le, player)) {

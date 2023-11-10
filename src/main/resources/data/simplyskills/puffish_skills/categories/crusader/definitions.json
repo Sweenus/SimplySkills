@@ -863,7 +863,7 @@
 	},
 	"wayfarerReflexive": {
 		"title": "§7§a[Reflexive]§7",
-		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\nWhen your stealth is broken by attacking, gain Might and Marksmanship.",
+		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\n\nWhen your stealth is broken by attacking, gain Might and Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1548,7 +1548,7 @@
 	},
 	"warriorSwordfall": {
 		"title": "§7§a[Swordfall]§7",
-		"description": "§7Your melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\nThis chance is doubled while under the effects of Might.",
+		"description": "§7Your melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\n\nThis chance is doubled while under the effects of Might.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2675,7 +2675,7 @@
 	},
 	"wizardSignatureMeteorShower": {
 		"title": "Signature Ability: §6[Meteor Shower]§7",
-		"description": "§7\nCalls down meteors on nearby enemies.\n\n§a40s Cooldown§7",
+		"description": "§7\nCalls down meteors on nearby enemies.\n\n§8[Requires Nearby Targets]\n\n§a40s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2694,7 +2694,7 @@
 	},
 	"wizardSignatureMeteorShowerGreater": {
 		"title": "§f[Greater]§7",
-		"description": "§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.",
+		"description": "§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.\n\n§8[Requires Target]",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2903,7 +2903,7 @@
 	},
 	"wizardSignatureStaticDischarge": {
 		"title": "Signature Ability: §6[Static Discharge]§7",
-		"description": "§7\nReleases a high damage electrical discharge at your target, inflicting them with weakness.\n\n§a35s Cooldown§7",
+		"description": "§7\nReleases a high damage electrical discharge at your target, inflicting them with weakness.\n\n§8[Requires Target]\n\n§a35s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3245,7 +3245,7 @@
 	},
 	"rogueSignatureEvasionFanOfBlades": {
 		"title": "§f[Fan of Blades]",
-		"description": "§7§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n§f(Fan of Blades)§7 causes you to throw daggers at enemies in front of you.",
+		"description": "§7§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n§f(Fan of Blades)§7 causes you to throw daggers at enemies in front of you.\n\n§8[Requires Target]",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4613,7 +4613,7 @@
 	},
 	"clericSignatureDivineIntervention": {
 		"title": "Signature Ability: §6[Divine Intervention]§7",
-		"description": "§7\nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
+		"description": "§7\nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§8[Requires Target]\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
