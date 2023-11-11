@@ -1913,7 +1913,7 @@
 	},
 	"wayfarerSlender": {
 		"title": "§7§a[Slender]§7",
-		"description": "§7When you have 15 or more armor, you are inflicted with Slowness.",
+		"description": "§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1932,7 +1932,7 @@
 	},
 	"roguePath": {
 		"title": "Path of the §bRogue§7",
-		"description": "§7\n§7§a[Slender]§7\nWhen you have 15 or more armor, you are inflicted with Slowness.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "§7\n§7§a[Slender]§7\n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bRogue§7 is a master of §astealth§7 and subterfuge. They thrive in the shadows, utilizing their exceptional skills to remain unseen and catch their enemies off guard with §aprecision strikes§7. If caught in the open, they are more than capable of §aevading§7 enemy attacks and escaping back to the safety of the shadows.",
 		"frame": "goal",
 		"size": 1.4,
@@ -2029,7 +2029,7 @@
 	},
 	"rogueEvasionMastery": {
 		"title": "§7§a[Evasion Mastery]§7",
-		"description": "§7When below the armor threshold of the Wayfarer Slender passive, you have a 15% Chance to completely avoid incoming damage.",
+		"description": "§7While you have at least 1 stack of Agile, you have a 15% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2048,7 +2048,7 @@
 	},
 	"rogueEvasionMasteryProficient": {
 		"title": "§7§a[Evasion Mastery +]§7",
-		"description": "§7When below the armor threshold of the Wayfarer Slender passive, you have a 20% Chance to completely avoid incoming damage.",
+		"description": "§7While you have at least 1 stack of Agile, you have a 20% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2067,7 +2067,7 @@
 	},
 	"rogueEvasionMasterySkilled": {
 		"title": "§7§a[Evasion Mastery ++]§7",
-		"description": "§7When below the armor threshold of the Wayfarer Slender passive, you have a 25% Chance to completely avoid incoming damage.",
+		"description": "§7While you have at least 1 stack of Agile, you have a 25% Chance to completely avoid incoming damage.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2181,7 +2181,7 @@
 	},
 	"rangerPath": {
 		"title": "Path of the §bRanger§7",
-		"description": "\n§7§a[Slender]§7 \nWhen you have 15 or more armor, you are inflicted with Slowness.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "\n§7§a[Slender]§7 \n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bRanger§7 is renowned for their unparalleled §aproficiency with bows§7 and their unique ability to infuse §aelemental magic§7 into their ranged attacks. They also share a deep, symbiotic bond with their §aanimal companions§7, making them a formidable force on the battlefield.",
 		"frame": "goal",
 		"size": 1.4,
@@ -2202,7 +2202,7 @@
 	},
 	"initiateFrail": {
 		"title": "§7§a[Frail]§7",
-		"description": "§7When you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.",
+		"description": "§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2587,7 +2587,7 @@
 	},
 	"wizardPath": {
 		"title": "Path of the §bWizard§7",
-		"description": "\n§7§a[Frail]§7\nWhen you have 10 or more armor, you are inflicted with Slowness. Also, you cannot effectively use weapons with more than 6 Attack Power.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "\n§7§a[Frail]§7\n§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bWizard§7 specialization is for those who seek to harness the power of magics. They are relentless and destructive §aspellcasters§7, capable of unleashing cataclysmic magical energy upon their enemies. However, their lust for power over the arcane leads them to §aneglect their physical form§7, weakening their defences and physical offence capabilities.",
 		"frame": "goal",
 		"size": 1.4,
@@ -3771,7 +3771,7 @@
 	},
 	"rangerSignatureDisengageMarksman": {
 		"title": "§f[Marksman]",
-		"description": "§7§6[Disengage]§7 now grants you a stack of Marksman. \n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"description": "§7Activating §6[Disengage]§7 while wielding a bow in your mainhand, now grants you Marksman. Otherwise, gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.\n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

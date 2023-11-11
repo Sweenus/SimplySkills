@@ -94,6 +94,8 @@
   "effect.simplyskills.vitality_bond.desc":             "HP synchronised with the other affected entity.",
   "effect.simplyskills.marksmanship":                   "Marksmanship",
   "effect.simplyskills.marksmanship.desc":              "Grants 25% increased Ranged Damage per stack.",
+  "effect.simplyskills.agile":                          "Agile",
+  "effect.simplyskills.agile.desc":                     "Grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
