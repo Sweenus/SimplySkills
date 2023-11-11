@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.config.*;
+import net.sweenus.simplyskills.events.AmethystImbuementEvent;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.*;
@@ -83,6 +84,7 @@ public class SimplySkills implements ModInitializer {
         EntityRegistry.registerEntities();
         KeybindPacket.init();
         ModPacketHandler.registerServer();
+        AmethystImbuementEvent.registerAIEvents();
         setSpecialisations();
 
 

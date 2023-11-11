@@ -8,8 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class WayfarerConfig implements ConfigData {
 
     @ConfigEntry.Gui.PrefixText
-    public int passiveWayfarerSlenderArmorThreshold = 15;
-    public int passiveWayfarerSlenderSlownessAmplifier = 0;
+    public int passiveWayfarerSlenderArmorThreshold = 35;
     public int passiveWayfarerSneakSpeedAmplifier = 2;
     public int passiveWayfarerReflexiveEvasionDuration = 100;
     public int passiveWayfarerReflexiveChance = 75;

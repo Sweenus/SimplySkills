@@ -179,6 +179,23 @@ public class EffectRegistry {
     public static StatusEffect BLADESTORM= new BladestormEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect VITALITYBOND= new VitalityBondEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect ANOINTED= new AnointedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect AGILE= new AgileEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(PlayerAttributes.RANGED_DAMAGE,
+                    "6fa231ce-882a-4163-b941-452ec1e80f39",
+                    0.05,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED,
+                    "24e81380-108e-488b-9d48-995f852d8fba",
+                    0.05,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.HASTE.attribute,
+                    "812e38a7-9608-4a82-a8d7-6f6c8db2f4d8",
+                    0.05,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    "af3a4ed4-331b-4a51-b9a7-8bad6f6015f0",
+                    0.05,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -248,6 +265,7 @@ public class EffectRegistry {
         VITALITYBOND = registerStatusEffect("vitality_bond", VITALITYBOND);
         ANOINTED = registerStatusEffect("anointed", ANOINTED);
         MARKSMANSHIP = registerStatusEffect("marksmanship", MARKSMANSHIP);
+        AGILE = registerStatusEffect("agile", AGILE);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

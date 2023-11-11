@@ -10,7 +10,10 @@ import net.minecraft.world.World;
 import net.spell_engine.api.spell.Spell;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
-import net.sweenus.simplyskills.abilities.*;
+import net.sweenus.simplyskills.abilities.AbilityLogic;
+import net.sweenus.simplyskills.abilities.ClericAbilities;
+import net.sweenus.simplyskills.abilities.RangerAbilities;
+import net.sweenus.simplyskills.abilities.WizardAbilities;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -106,7 +109,7 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
                             List<Entity> targets = new ArrayList<Entity>();
                             if (entityHitResult.getEntity() != null) {
                                 targets.add(entityHitResult.getEntity());
-                                AbilityLogic.onSpellCastEffects(player, targets, this.spellId);
+                                AbilityLogic.onSpellCastEffects(player, targets, this.spellId, null);
                             }
                         }
 

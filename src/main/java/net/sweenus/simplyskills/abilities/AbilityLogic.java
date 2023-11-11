@@ -7,10 +7,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.SkillsAPI;
-import net.spell_engine.api.spell.Spell;
 import net.spell_engine.internals.SpellRegistry;
 import net.spell_power.api.MagicSchool;
 import net.sweenus.simplyskills.SimplySkills;
@@ -20,10 +20,12 @@ import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.ItemRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class AbilityLogic {
 
@@ -59,30 +61,35 @@ public class AbilityLogic {
                     && !net.sweenus.simplyskills.util.HelperMethods.isUnlocked("simplyskills:wizard", null, player)) {
                 if (SimplySkills.wizardConfig.enableWizardSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:berserker")
                     && !HelperMethods.isUnlocked("simplyskills:berserker", null, player)) {
                 if (SimplySkills.berserkerConfig.enableBerserkerSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:rogue")
                     && !HelperMethods.isUnlocked("simplyskills:rogue", null, player)) {
                 if (SimplySkills.rogueConfig.enableRogueSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:ranger")
                     && !HelperMethods.isUnlocked("simplyskills:ranger", null, player)) {
                 if (SimplySkills.rangerConfig.enableRangerSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:spellblade")
                     && !HelperMethods.isUnlocked("simplyskills:spellblade", null, player)) {
                 if (SimplySkills.spellbladeConfig.enableSpellbladeSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:crusader")
@@ -93,6 +100,7 @@ public class AbilityLogic {
 
                 if (SimplySkills.crusaderConfig.enableCrusaderSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             } else if (categoryID.contains("simplyskills:cleric")
@@ -103,6 +111,7 @@ public class AbilityLogic {
 
                 if (SimplySkills.clericConfig.enableClericSpecialisation) {
                     playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
             }
@@ -158,11 +167,13 @@ public class AbilityLogic {
 
     }
 
-    public static void onSpellCastEffects(PlayerEntity player, List<Entity> targets, Identifier spellId) {
-        MagicSchool school = SpellRegistry.getSpell(spellId).school;
+    public static void onSpellCastEffects(PlayerEntity player, @Nullable List<Entity> targets,@Nullable Identifier spellId, @Nullable Set<? extends MagicSchool> schools) {
+        MagicSchool school = null;
+        if (spellId !=null)
+            school = SpellRegistry.getSpell(spellId).school;
 
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
-            InitiateAbilities.passiveInitiateEmpower(player, spellId, school);
+            InitiateAbilities.passiveInitiateEmpower(player, school, schools);
 
         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
             WayfarerAbilities.passiveWayfarerBreakStealth(null, player, false, false);
@@ -178,7 +189,7 @@ public class AbilityLogic {
             SimplySwordsGemEffects.spellStandard(player);
         }
 
-        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player)) {
+        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player) && targets != null) {
             WizardAbilities.passiveWizardSpellEcho(player, targets);
         }
 
@@ -189,20 +200,24 @@ public class AbilityLogic {
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
             HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
 
-        if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericMutualMending, player)
-                && FabricLoader.getInstance().isModLoaded("paladins")) {
-            ClericAbilities.passiveClericMutualMending(player, spellId, targets);
-        }
-        if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericHealingWard, player)
-                && FabricLoader.getInstance().isModLoaded("paladins")) {
-            ClericAbilities.passiveClericHealingWard(player, targets, spellId);
-        }
+        // Not Amethyst Imbuement safe (Anthing that requires Spell Engine spellId)
+        if (spellId !=null) {
 
-        if (school == MagicSchool.PHYSICAL_RANGED && HelperMethods.isUnlocked("simplyskills:tree",
-                                   SkillReferencePosition.wayfarerQuickfire, player)) {
-            HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 6);
+            if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericMutualMending, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                ClericAbilities.passiveClericMutualMending(player, spellId, targets);
+            }
+            if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericHealingWard, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+                ClericAbilities.passiveClericHealingWard(player, targets, spellId);
+            }
+
+            if (school == MagicSchool.PHYSICAL_RANGED && HelperMethods.isUnlocked("simplyskills:tree",
+                    SkillReferencePosition.wayfarerQuickfire, player)) {
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 6);
+            }
+            CrusaderAbilities.signatureHeavensmithsCallImpact("simplyskills:crusader", targets, spellId, player);
         }
-        CrusaderAbilities.signatureHeavensmithsCallImpact( "simplyskills:crusader",targets, spellId, player);
 
     }
 

@@ -268,7 +268,7 @@ public class WizardAbilities {
                                     projectile.setFollowedTarget(le);
                                     spellProjectile.getWorld().spawnEntity(projectile);
                                     targets.add(le);
-                                    AbilityLogic.onSpellCastEffects(player, targets, spellId);
+                                    AbilityLogic.onSpellCastEffects(player, targets, spellId, null);
                                     StaticChargeEffect.onHitEffects(player, StaticChargeEffect.calculateSpeedChance(player), le);
                                     targets.clear();
                                     break;

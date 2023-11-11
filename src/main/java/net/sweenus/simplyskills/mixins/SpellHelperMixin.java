@@ -27,7 +27,7 @@ public class SpellHelperMixin {
             float progress,
             CallbackInfo ci) {
 
-        AbilityLogic.onSpellCastEffects(player, targets, spellId);
+        AbilityLogic.onSpellCastEffects(player, targets, spellId, null);
 
     }
 

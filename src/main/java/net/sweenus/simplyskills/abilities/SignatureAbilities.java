@@ -32,7 +32,6 @@ import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
-import net.sweenus.simplyswords.entity.BattleStandardEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;

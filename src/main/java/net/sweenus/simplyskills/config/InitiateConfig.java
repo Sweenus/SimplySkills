@@ -8,8 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class InitiateConfig implements ConfigData {
 
     @ConfigEntry.Gui.PrefixText
-    public int passiveInitiateFrailArmorThreshold = 10;
-    public int passiveInitiateFrailSlownessAmplifier = 0;
+    public int passiveInitiateFrailArmorThreshold = 35;
     public int passiveInitiateFrailAttackThreshold = 6;
     public int passiveInitiateFrailWeaknessAmplifier = 0;
     public int passiveInitiateFrailMiningFatigueAmplifier = 3;

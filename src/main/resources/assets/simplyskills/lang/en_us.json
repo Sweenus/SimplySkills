@@ -1,6 +1,7 @@
 {
   "key.category.simplyskills":                          "Simply Skills",
   "key.simplyskills.ability1":                          "Signature Ability",
+  "system.simplyskills.unlock":                         "§6You have unlocked a specialisation. Re-open the skill tree to see your specialisation tab.",
 
 
   "effect.simplyskills.berserking":                     "Berserking",
@@ -209,7 +210,6 @@
 
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold.@PrefixText" :           "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderArmorThreshold" :                       "§a[Passive]§7 Slender armor threshold",
-  "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSlenderSlownessAmplifier" :                    "§a[Passive]§7 Slender Slowness amplifier",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerSneakSpeedAmplifier" :                         "§a[Passive]§7 Sneak Speed amplifier",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerReflexiveEvasionDuration" :                    "§a[Passive]§7 Reflexive Evasion duration",
   "text.autoconfig.simplyskills.option.wayfarer.passiveWayfarerReflexiveChance" :                             "§a[Passive]§7 Reflexive chance",
@@ -220,7 +220,6 @@
 
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold.@PrefixText" :             "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailArmorThreshold" :                         "§a[Passive]§7 Frail armor threshold",
-  "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailSlownessAmplifier" :                      "§a[Passive]§7 Frail Slowness amplifier",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailAttackThreshold" :                        "§a[Passive]§7 Frail attack threshold",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailWeaknessAmplifier" :                      "§a[Passive]§7 Frail Weakness amplifier",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateFrailMiningFatigueAmplifier" :                 "§a[Passive]§7 Frail Mining Fatigue amplifier",

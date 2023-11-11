@@ -7,16 +7,17 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.spell_power.api.MagicSchool;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class InitiateAbilities {
 
@@ -41,23 +42,23 @@ public class InitiateAbilities {
             }
         }
     }
-    public static void passiveInitiateEmpower(PlayerEntity player, Identifier spellID, MagicSchool school) {
+    public static void passiveInitiateEmpower(PlayerEntity player, @Nullable MagicSchool school, @Nullable Set<? extends MagicSchool> schools) {
         int chance = SimplySkills.initiateConfig.passiveInitiateEmpowerChance;
         int duration = SimplySkills.initiateConfig.passiveInitiateEmpowerDuration;
         int amplifier = SimplySkills.initiateConfig.passiveInitiateEmpowerStacks;
         int amplifierMax = SimplySkills.initiateConfig.passiveInitiateEmpowerMaxStacks;
         List<StatusEffect> list = new ArrayList<>();
-        if (school == MagicSchool.ARCANE)
+        if (school == MagicSchool.ARCANE || (schools != null ? schools.contains(MagicSchool.ARCANE) : false))
             list.add(EffectRegistry.ARCANEATTUNEMENT);
-        if (school == MagicSchool.SOUL)
+        if (school == MagicSchool.SOUL || (schools != null ? schools.contains(MagicSchool.SOUL) : false))
             list.add(EffectRegistry.SOULATTUNEMENT);
-        if (school == MagicSchool.HEALING)
+        if (school == MagicSchool.HEALING || (schools != null ? schools.contains(MagicSchool.HEALING) : false))
             list.add(EffectRegistry.HOLYATTUNEMENT);
-        if (school == MagicSchool.FIRE)
+        if (school == MagicSchool.FIRE || (schools != null ? schools.contains(MagicSchool.FIRE) : false))
             list.add(EffectRegistry.FIREATTUNEMENT);
-        if (school == MagicSchool.FROST)
+        if (school == MagicSchool.FROST || (schools != null ? schools.contains(MagicSchool.FROST) : false))
             list.add(EffectRegistry.FROSTATTUNEMENT);
-        if (school == MagicSchool.LIGHTNING)
+        if (school == MagicSchool.LIGHTNING || (schools != null ? schools.contains(MagicSchool.LIGHTNING) : false))
             list.add(EffectRegistry.LIGHTNINGATTUNEMENT);
 
         if (!list.isEmpty()) {

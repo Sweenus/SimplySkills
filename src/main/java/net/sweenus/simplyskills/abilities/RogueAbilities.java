@@ -72,7 +72,6 @@ public class RogueAbilities {
         int extraEvasionChance = SimplySkills.rogueConfig.passiveRogueDeflectionIncreasedChance;
         int evasionChanceIncreasePerTier = SimplySkills.rogueConfig.passiveRogueEvasionMasteryChanceIncreasePerTier;
         int masteryEvasionMultiplier = SimplySkills.rogueConfig.passiveRogueEvasionMasterySignatureMultiplier;
-        int evasionArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
         int mastery = 0;
 
         if (HelperMethods.isUnlocked("simplyskills:rogue",
@@ -101,7 +100,7 @@ public class RogueAbilities {
         }
 
         if (player.getRandom().nextInt(100) < (mastery * evasionMultiplier)) {
-            if (player.getArmor() < evasionArmorThreshold) {
+            if (player.hasStatusEffect(EffectRegistry.AGILE)) {
 
                 if (FabricLoader.getInstance().isModLoaded("simplyswords"))
                     SimplySwordsGemEffects.deception(player);

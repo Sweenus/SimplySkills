@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.item.BowItem;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -211,7 +212,10 @@ public class RangerAbilities {
                 SkillReferencePosition.rangerSpecialisationDisengageMarksman, player)) {
             int marksmanDuration = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanDuration;
             int marksmanStacks = SimplySkills.rangerConfig.signatureRangerDisengageMarksmanStacks;
-            HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMAN, marksmanDuration, marksmanStacks, 99);
+            if (player.getMainHandStack().getItem() instanceof BowItem)
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMAN, marksmanDuration, marksmanStacks, 99);
+            else
+                HelperMethods.incrementStatusEffect(player, EffectRegistry.BARRIER, marksmanDuration, marksmanStacks, 6);
         }
         return true;
     }

@@ -1,8 +1,6 @@
 package net.sweenus.simplyskills.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -24,10 +22,6 @@ import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
-import net.sweenus.simplyswords.client.renderer.BattleStandardDarkRenderer;
-import net.sweenus.simplyswords.client.renderer.BattleStandardRenderer;
-import net.sweenus.simplyswords.client.renderer.model.BattleStandardDarkModel;
-import net.sweenus.simplyswords.client.renderer.model.BattleStandardModel;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.List;

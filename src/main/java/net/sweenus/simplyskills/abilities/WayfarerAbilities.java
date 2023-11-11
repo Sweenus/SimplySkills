@@ -95,26 +95,28 @@ public class WayfarerAbilities {
 
     public static void passiveWayfarerSlender(PlayerEntity player) {
 
-        int slenderArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold - 1;
-        int slenderSlownessAmplifier = SimplySkills.wayfarerConfig.passiveWayfarerSlenderSlownessAmplifier;
-        int frailArmorThreshold = SimplySkills.initiateConfig.passiveInitiateFrailArmorThreshold - 1;
-        int frailSlownessAmplifier = SimplySkills.initiateConfig.passiveInitiateFrailSlownessAmplifier;
+        int slenderArmorThreshold = SimplySkills.wayfarerConfig.passiveWayfarerSlenderArmorThreshold;
+        int frailArmorThreshold = SimplySkills.initiateConfig.passiveInitiateFrailArmorThreshold;
 
         if (player.age % 20 == 0) {
-            if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.roguePath, player)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, slenderSlownessAmplifier, false, false, true));
+
+            int armorValue = player.getArmor();
+
+            if (armorValue < slenderArmorThreshold) {
+                if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.roguePath, player)
+                        || HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.rangerPath, player)) {
+
+                    int buffAmplifier = (slenderArmorThreshold - armorValue) / 5;
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.AGILE,
+                            25, buffAmplifier, false, false, false));
+                }
             }
-            if (player.getArmor() > slenderArmorThreshold && HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.rangerPath, player)){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, slenderSlownessAmplifier, false, false, true));
-            }
-            if (player.getArmor() > frailArmorThreshold && (HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.wizardPath, player))){
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        25, frailSlownessAmplifier, false, false, true));
+            if (armorValue < frailArmorThreshold) {
+                if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.wizardPath, player)) {
+                    int buffAmplifier = (frailArmorThreshold - armorValue) / 5;
+                    player.addStatusEffect(new StatusEffectInstance(EffectRegistry.AGILE,
+                            25, buffAmplifier, false, false, false));
+                }
             }
         }
     }

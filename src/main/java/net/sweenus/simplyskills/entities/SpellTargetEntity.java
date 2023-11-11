@@ -6,7 +6,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
-import net.sweenus.simplyswords.entity.BattleStandardDarkEntity;
 
 import java.util.function.Supplier;
 

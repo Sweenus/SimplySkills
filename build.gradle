@@ -47,6 +47,8 @@ dependencies {
     modImplementation "curse.maven:paladins-and-priests-856548:${project.paladins_version}"
     //modImplementation files("build/libs/dependencies/paladins-1.0.21.20.1.jar")
 
+    modImplementation files("build/libs/dependencies/amethyst_core-1.4.21.20.1.jar")
+
     //modImplementation "curse.maven:archers-932359:${project.archers_version}"
 
     implementation("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")
