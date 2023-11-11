@@ -122,8 +122,8 @@ public class AbilityLogic {
         sapphire.add(SkillReferencePosition.sapphire_portal_1);
         sapphire.add(SkillReferencePosition.sapphire_portal_2);
         List<String> ruby = new ArrayList<>();
-        ruby.add("123");
-        ruby.add("abc");
+        ruby.add(SkillReferencePosition.ruby_portal_1);
+        ruby.add(SkillReferencePosition.ruby_portal_2);
 
         for (String s : sapphire) {
             if (skillId.equals(s) && HelperMethods.isUnlocked(categoryId.toString(), s, player)) {

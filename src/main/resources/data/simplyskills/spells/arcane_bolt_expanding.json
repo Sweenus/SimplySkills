@@ -1,0 +1,95 @@
+{
+  "school": "ARCANE",
+  "range": 256,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_arcane_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:arcane_spell",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "projectile": {
+          "velocity": 0.8,
+          "homing_angle": 4,
+          "perks": {
+            "ricochet": 2,
+            "chain_reaction_size": 4,
+            "chain_reaction_triggers": 2,
+            "chain_reaction_increment": -1
+          },
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:arcane_spell",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/arcane_projectile",
+              "render": "DEEP",
+              "scale": 0.6
+            }
+          }
+        }
+      }
+    },
+    "animation": "spell_engine:one_handed_projectile_release",
+    "sound": {
+      "id": "simplyskills:spell_arcane_cast",
+      "volume": 0.05,
+      "pitch": 1.4
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.6,
+          "spell_power_coefficient": 1.3
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:arcane_hit",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 40,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:spell_arcane_hit",
+        "volume": 0.03,
+        "pitch": 1.8
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

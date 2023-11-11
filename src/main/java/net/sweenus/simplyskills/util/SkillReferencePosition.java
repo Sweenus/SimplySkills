@@ -5,8 +5,8 @@ public class SkillReferencePosition {
     //Misc
     public static String sapphire_portal_1 = "fblggw09uwd4mk3d";
     public static String sapphire_portal_2 = "4jsg72vigi1qyj9j";
-    public static String ruby_portal_1 = "";
-    public static String ruby_portal_2 = "";
+    public static String ruby_portal_1 = "p5czucfm7f3126hu";
+    public static String ruby_portal_2 = "o2is5ive25amfsq8";
 
     //Warrior
     public static String warriorHeavyArmorMastery = "5o6a4ijsol0u1qti";

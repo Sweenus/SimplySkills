@@ -354,7 +354,7 @@ public class WizardAbilities {
             if (HelperMethods.isUnlocked(wizardSkillTree,
                     SkillReferencePosition.wizardSpecialisationArcaneBoltLesser, player)) {
                 SignatureAbilities.castSpellEngineIndirectTarget(player,
-                        "simplyskills:arcane_bolt_lesser",
+                        "simplyskills:arcane_bolt_expanding",
                         radius, target, searchArea);
             } else {
                 if (HelperMethods.isUnlocked(wizardSkillTree,
