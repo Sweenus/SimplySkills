@@ -6,7 +6,7 @@
   },
   "cast": {
     "duration": 0.75,
-    "animation": "spell_engine:one_handed_projectile_charge",
+    "animation": "spell_engine:archery_pull",
     "sound": {
       "id": "spell_engine:generic_arcane_casting",
       "randomness": 0
@@ -44,16 +44,17 @@
             "model": {
               "model_id": "minecraft:bedrock",
               "render": "DEEP",
-              "scale": 0.02
+              "scale": 0.04
             }
           }
         }
       }
     },
-    "animation": "spell_engine:one_handed_area_release",
+    "animation": "spell_engine:archery_release",
     "sound": {
-      "id": "simplyskills:soundeffect_40",
-      "volume": 0.7
+      "id": "simplyskills:magic_shamanic_power_12",
+      "volume": 0.1,
+      "pitch": 1.5
     }
   },
 

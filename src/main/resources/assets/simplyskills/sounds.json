@@ -338,5 +338,35 @@
     "sounds": [
       "simplyskills:gong_warbly"
     ]
+  },
+  "magic_shamanic_power_12": {
+    "sounds": [
+      "simplyskills:magic_shamanic_power_12"
+    ]
+  },
+  "place_stone_06": {
+    "sounds": [
+      "simplyskills:place_stone_06"
+    ]
+  },
+  "place_stone_07": {
+    "sounds": [
+      "simplyskills:place_stone_07"
+    ]
+  },
+  "place_stone_08": {
+    "sounds": [
+      "simplyskills:place_stone_08"
+    ]
+  },
+  "place_stone_09": {
+    "sounds": [
+      "simplyskills:place_stone_09"
+    ]
+  },
+  "place_stone_10": {
+    "sounds": [
+      "simplyskills:place_stone_10"
+    ]
   }
 }

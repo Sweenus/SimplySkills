@@ -15,6 +15,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mixin(SkillsMod.class)
 public class SkillsModMixin {
 
@@ -25,14 +28,17 @@ public class SkillsModMixin {
         if (!SkillsAPI.getCategory(categoryId).get().getUnlockedSkills(player).toString().contains(skillId)
         && SkillsAPI.getCategory(categoryId).get().getPointsLeft(player) > 0) {
 
-            double choose_pitch = Math.random() * 1.2;
-            SoundEvent sound = SoundRegistry.SOUNDEFFECT45;
-            SoundEvent sound2 = SoundRegistry.SOUNDEFFECT47;
+            double choose_pitch = Math.random() * 1.3;
+            List<SoundEvent> sounds = new ArrayList<>();
+            sounds.add(SoundRegistry.PLACE_STONE_06);
+            sounds.add(SoundRegistry.PLACE_STONE_07);
+            sounds.add(SoundRegistry.PLACE_STONE_08);
+            sounds.add(SoundRegistry.PLACE_STONE_09);
+            sounds.add(SoundRegistry.PLACE_STONE_10);
+            SoundEvent sound = sounds.get(player.getRandom().nextInt(sounds.size()));
 
-            player.getWorld().playSoundFromEntity(null, player, sound2,
-                    SoundCategory.PLAYERS, 1, 1.5f);
             player.getWorld().playSoundFromEntity(null, player, sound,
-                    SoundCategory.PLAYERS, 1, (float) choose_pitch);
+                    SoundCategory.PLAYERS, 0.3f, (float) choose_pitch);
 
             }
     }

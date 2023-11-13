@@ -76,6 +76,12 @@ public class SoundRegistry {
     public static SoundEvent ACTIVATE_TOWER_BEACON = register("activate_tower_beacon");
     public static SoundEvent UI_REPLENISH_01 = register("ui_replenish_01");
     public static SoundEvent GONG_WARBLY = register("gong_warbly");
+    public static SoundEvent MAGIC_SHAMANIC_POWER_12 = register("magic_shamanic_power_12");
+    public static SoundEvent PLACE_STONE_06 = register("place_stone_06");
+    public static SoundEvent PLACE_STONE_07 = register("place_stone_07");
+    public static SoundEvent PLACE_STONE_08 = register("place_stone_08");
+    public static SoundEvent PLACE_STONE_09 = register("place_stone_09");
+    public static SoundEvent PLACE_STONE_10 = register("place_stone_10");
 
     public static void registerSounds() {
     }
