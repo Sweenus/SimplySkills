@@ -74,6 +74,8 @@ public class SoundRegistry {
     public static SoundEvent SPELL_FIRE_CAST = register("spell_fire_cast");
     public static SoundEvent SPELL_LIGHTNING_CAST = register("spell_lightning_cast");
     public static SoundEvent ACTIVATE_TOWER_BEACON = register("activate_tower_beacon");
+    public static SoundEvent UI_REPLENISH_01 = register("ui_replenish_01");
+    public static SoundEvent GONG_WARBLY = register("gong_warbly");
 
     public static void registerSounds() {
     }

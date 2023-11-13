@@ -16,6 +16,10 @@ import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.*;
 
 public class EffectRegistry {
+    public static double mightIncrease = 0.10;
+    public static double marksmanshipIncrease = 0.10;
+    public static double spellforgedIncrease = 0.25;
+    public static double soulshockIncrease = 1.0;
 
     public static StatusEffect BERSERKING = new BerserkingEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect BLOODTHIRSTY= new BloodthirstyEffect(StatusEffectCategory.BENEFICIAL, 3124687);
@@ -96,12 +100,12 @@ public class EffectRegistry {
     public static StatusEffect MIGHT= new MightEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
                     "4a4233a0-3299-4755-8213-9f10cfb7e795",
-                    0.25,
+                    mightIncrease,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect MARKSMANSHIP= new MarksmanshipEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(PlayerAttributes.RANGED_DAMAGE,
                     "d6702be1-2e6e-44ba-b325-41a7da2ca6b3",
-                    0.25,
+                    marksmanshipIncrease,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect EXHAUSTION= new ExhaustionEffect(StatusEffectCategory.HARMFUL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
@@ -121,36 +125,36 @@ public class EffectRegistry {
     public static StatusEffect SOULSHOCK= new SoulshockEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
                     "f4f57190-f82f-4283-a4b9-a898382bcea7",
-                    2,
+                    soulshockIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
                     "f811acad-2542-4e5a-837f-a869251162ee",
-                    2,
+                    soulshockIncrease,
                     EntityAttributeModifier.Operation.ADDITION);
     public static StatusEffect SPELLFORGED= new SoulshockEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
                     "5d6e7b01-e11b-46ac-8a97-0ec497616982",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
                     "dc0cea79-ffa6-4209-b851-952f60147b2c",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
                     "fa5f66cd-ca9b-4da6-a4a8-3444a77156b7",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute,
                     "d7b58e45-df85-40d9-a78b-943dc8765f2a",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute,
                     "3d183b4b-9bfb-4d4e-b7f0-bd8cf65a34fc",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FROST).attribute,
                     "5951bed4-b058-4320-8512-75c1be44bc33",
-                    1,
+                    spellforgedIncrease,
                     EntityAttributeModifier.Operation.ADDITION);
     public static StatusEffect DIVINEADJUDICATION= new DivineAdjudicationEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SACREDONSLAUGHT= new SacredOnslaughtEffect(StatusEffectCategory.BENEFICIAL, 3124687);

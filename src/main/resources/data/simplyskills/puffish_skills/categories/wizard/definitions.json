@@ -1,7 +1,7 @@
 {
 	"pathWayfarer": {
 		"title": "Path of the §bWayfarer",
-		"description": "§a+10% §f[x]§7 Movement Speed",
+		"description": "§a+10% §f[+]§7 Movement Speed",
 		"frame": "challenge",
 		"size": 1.1,
 		"icon": {
@@ -84,7 +84,7 @@
 		]
 	},
 	"spell_fire_damage_additive+1%": {
-		"title": "§a+1%§f [+] §7Fire Spell Damage",
+		"title": "§a+3%§f [+] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -96,14 +96,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:fire",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_fire_damage_multi+1%": {
-		"title": "§a+1% §f[x] §7Fire Spell Damage",
+		"title": "§a+5% §f[+] §7Fire Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -115,14 +115,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:fire",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_arcane_damage_additive+1%": {
-		"title": "§a+1%§f [+] §7Arcane Spell Damage",
+		"title": "§a+3%§f [+] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -134,14 +134,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:arcane",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_arcane_damage_multi+1%": {
-		"title": "§a+1% §f[x] §7Arcane Spell Damage",
+		"title": "§a+5% §f[+] §7Arcane Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -153,14 +153,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:arcane",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_frost_damage_additive+1%": {
-		"title": "§a+1% §f[+] §7Frost Spell Damage",
+		"title": "§a+3% §f[+] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -172,14 +172,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:frost",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_frost_damage_multi+1%": {
-		"title": "§a+1% §f[x] §7Frost Spell Damage",
+		"title": "§a+5% §f[+] §7Frost Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -191,14 +191,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:frost",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_healing_power_additive+1%": {
-		"title": "§a+1% §f[+] §7Healing Power",
+		"title": "§a+3% §f[+] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -210,14 +210,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:healing",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_healing_power_multi+1%": {
-		"title": "§a+1% §f[x] §7Healing Power",
+		"title": "§a+5% §f[+] §7Healing Power",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -229,14 +229,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:healing",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_lightning_damage_additive+1%": {
-		"title": "§a+1%§f [+] §7Lightning Spell Damage",
+		"title": "§a+3%§f [+] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -248,14 +248,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:lightning",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_lightning_damage_multi+1%": {
-		"title": "§a+1% §f[x] §7Lightning Spell Damage",
+		"title": "§a+5% §f[+] §7Lightning Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -267,14 +267,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:lightning",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_soul_damage_additive+1%": {
-		"title": "§a+1% §f[+] §7Soul Spell Damage",
+		"title": "§a+3% §f[+] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -286,14 +286,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:soul",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_soul_damage_multi+1%": {
-		"title": "§a+1% §f[x] §7Soul Spell Damage",
+		"title": "§a+5% §f[+] §7Soul Spell Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -305,14 +305,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:soul",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_crit_damage_additive+1%": {
-		"title": "§a+2% §f[+] §7Spell Critical Damage",
+		"title": "§a+3% §f[+] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -324,14 +324,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:critical_damage",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_crit_damage_multi+1%": {
-		"title": "§a+1%§f [x] §7Spell Critical Damage",
+		"title": "§a+5%§f [+] §7Spell Critical Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -343,14 +343,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:critical_damage",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_crit_chance_additive+1%": {
-		"title": "§a+1% §f[+] §7Spell Critical Chance",
+		"title": "§a+3% §f[+] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -362,14 +362,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:critical_chance",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_crit_chance_multi+1%": {
-		"title": "§a+1% §f[x] §7Spell Critical Chance",
+		"title": "§a+5% §f[+] §7Spell Critical Chance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -381,14 +381,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:critical_chance",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_haste_additive+1%": {
-		"title": "§a+1% §f[+] §7Spell Haste",
+		"title": "§a+3% §f[+] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -400,14 +400,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:haste",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"spell_haste_multi+1%": {
-		"title": "§a+1% §f[x] §7Spell Haste",
+		"title": "§a+5% §f[+] §7Spell Haste",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -419,15 +419,15 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "spell_power:haste",
-					"value": 0.01,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"pathWarrior": {
 		"title": "Path of the §bWarrior§7",
-		"description": "§a+8%§f [x] §7Melee Damage",
+		"description": "§a+10%§f [+] §7Melee Damage",
 		"frame": "challenge",
 		"size": 1.1,
 		"icon": {
@@ -441,7 +441,7 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.08,
+					"value": 0.10,
 					"operation": "multiply_base"
 				}
 			}
@@ -467,7 +467,7 @@
 		]
 	},
 	"resistance+1%": {
-		"title": "§a+1% §f[+] §7Resistance",
+		"title": "§a+3% §f[+] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -479,14 +479,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.resistance",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"resistance_multi+2%": {
-		"title": "§a+2% §f[x] §7Resistance",
+		"title": "§a+5% §f[+] §7Resistance",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -498,14 +498,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.resistance",
-					"value": 0.02,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"melee_damage+1%": {
-		"title": "§a+1% §f[+] §7Melee Damage",
+		"title": "§a+3% §f[+] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -517,14 +517,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"melee_damage_multi+2%": {
-		"title": "§a+2% §f[x] §7Melee Damage",
+		"title": "§a+5% §f[+] §7Melee Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -536,14 +536,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.melee_damage",
-					"value": 0.02,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"ranged_damage+1%": {
-		"title": "§a+1% §f[+] §7Ranged Damage",
+		"title": "§a+3% §f[+] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -555,14 +555,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.ranged_damage",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"ranged_damage_multi+2%": {
-		"title": "§a+2% §f[x] §7Ranged Damage",
+		"title": "§a+5% §f[+] §7Ranged Damage",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -574,14 +574,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.ranged_damage",
-					"value": 0.02,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"attack_speed+1%": {
-		"title": "§a+1% §f[+] §7Attack Speed",
+		"title": "§a+3% §f[+] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -593,14 +593,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.attack_speed",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"attack_speed_multi+2%": {
-		"title": "§a+2% §f[x] §7Attack Speed",
+		"title": "§a+5% §f[+] §7Attack Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -612,14 +612,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.attack_speed",
-					"value": 0.02,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"movement_speed+1%": {
-		"title": "§a+1% §f[+] §7Movement Speed",
+		"title": "§a+3% §f[+] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -631,14 +631,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.movement_speed",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"movement_speed_multi+1.5%": {
-		"title": "§a+1.5% §f[x] §7Movement Speed",
+		"title": "§a+5% §f[+] §7Movement Speed",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -650,8 +650,8 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "generic.movement_speed",
-					"value": 0.015,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -676,7 +676,7 @@
 		]
 	},
 	"stamina+5%": {
-		"title": "§a+5% §f[+] §7Stamina",
+		"title": "§a+3% §f[+] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -688,14 +688,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.stamina",
-					"value": 0.05,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"stamina_multi+7%": {
-		"title": "§a+7% §f[x] §7Stamina",
+		"title": "§a+5% §f[+] §7Stamina",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -707,8 +707,8 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.stamina",
-					"value": 0.07,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -733,7 +733,7 @@
 		]
 	},
 	"jump+1%": {
-		"title": "§a+1% §f[+] §7Jump",
+		"title": "§a+3% §f[+] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -745,14 +745,14 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.jump",
-					"value": 0.01,
+					"value": 0.03,
 					"operation": "multiply_base"
 				}
 			}
 		]
 	},
 	"jump_multi+2%": {
-		"title": "§a+2%§f [x] §7Jump",
+		"title": "§a+5%§f [+] §7Jump",
 		"icon": {
 			"type": "texture",
 			"data": {
@@ -764,8 +764,8 @@
 				"type": "puffish_skills:attribute",
 				"data": {
 					"attribute": "puffish_skills:player.jump",
-					"value": 0.02,
-					"operation": "multiply_total"
+					"value": 0.05,
+					"operation": "multiply_base"
 				}
 			}
 		]
@@ -847,7 +847,7 @@
 	},
 	"wayfarerSneak": {
 		"title": "§7§a[Sneak]§7",
-		"description": "§7Gain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7Gain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -866,7 +866,7 @@
 	},
 	"wayfarerReflexive": {
 		"title": "§7§a[Reflexive]§7",
-		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\n\nWhen your stealth is broken by attacking, gain Might and Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\n\nWhen your stealth is broken by attacking, gain Might and Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -885,7 +885,7 @@
 	},
 	"wayfarerUnseen": {
 		"title": "§7§a[Unseen]§7",
-		"description": "§7While loading a Crossbow, gain momentary Stealth.\nIf you already have stealth, you instead gain Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.",
+		"description": "§7While loading a Crossbow, gain momentary Stealth.\nIf you already have stealth, you instead gain Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -923,7 +923,7 @@
 	},
 	"wayfarerQuickfire": {
 		"title": "§7§a[Quickfire]§7",
-		"description": "§7When using a bow, firing fully charged arrows in quick succession grants you stacking Marksmanship.\n\n§f(Marksmanship)§7 grants 25% increased ranged damage per stack.",
+		"description": "§7When using a bow, firing fully charged arrows in quick succession grants you stacking Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -961,7 +961,7 @@
 	},
 	"initiateGambit": {
 		"title": "§7§a[Gambit]",
-		"description": "§7Your spell damage is reduced by 25%, but your spell critical damage is increased by 75%.",
+		"description": "§7Your spell damage is reduced by §c25% §f[x]§7, but your spell critical damage is increased by §a+75% §f[x]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1030,7 +1030,7 @@
 	},
 	"initiateEmpower": {
 		"title": "§7§a[Empower]§7",
-		"description": "§7Chance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by 2% per stack.",
+		"description": "§7Chance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by §a+2% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1049,7 +1049,7 @@
 	},
 	"initiateAttuned": {
 		"title": "§7§a[Attuned]§7",
-		"description": "§7When you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by 2% per stack.",
+		"description": "§7When you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by §a+2% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1068,7 +1068,7 @@
 	},
 	"initiateLightningRod": {
 		"title": "§7§a[Lightning Rod]§7",
-		"description": "§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by 2% per stack.",
+		"description": "§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by §a+2% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1087,7 +1087,7 @@
 	},
 	"initiateEldritchEnfeeblement": {
 		"title": "§7§a[Eldritch Enfeeblement]§7",
-		"description": "§7Your spell damage is increased by 5%, but your movespeed is decreased by 15%.",
+		"description": "§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1156,7 +1156,7 @@
 	},
 	"initiateHasty": {
 		"title": "§7§a[Hasty]§7",
-		"description": "§7Your movespeed is increased by 20%, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+		"description": "§7Your movespeed is increased by §a+15% §f[x]§7, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1177,7 +1177,7 @@
 	},
 	"initiatePerilousPrecision": {
 		"title": "§7§a[Perilous Precision]§7",
-		"description": "§7Your spell critical chance is increased by 5%, but your max health is reduced by 15%.",
+		"description": "§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1472,7 +1472,7 @@
 	},
 	"warriorDeathDefy": {
 		"title": "§7§a[Death Defy]§7",
-		"description": "§7When at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"description": "§7When at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
 
 		"frame": "goal",
 		"icon": {
@@ -1492,7 +1492,7 @@
 	},
 	"warriorFrenzy": {
 		"title": "§7§a[Frenzy]§7",
-		"description": "§7Gain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"description": "§7Gain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1570,7 +1570,7 @@
 	},
 	"berserkerPath": {
 		"title": "Path of the §bBerserker§7",
-		"description": "\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bBerserker§7, is driven by an insatiable thirst for destruction and a complete disregard for their own safety. They are masters of §amelee combat§7 and revel in dealing devastating damage, even if it means §aputting their own life on the line§7.",
 		"frame": "goal",
 		"size": 1.4,
@@ -1629,7 +1629,7 @@
 	},
 	"berserkerSwordMasterySkilled": {
 		"title": "§7§a[Sword Mastery ++]§7",
-		"description": "§7When not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7When not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1762,7 +1762,7 @@
 	},
 	"berserkerRecklessness": {
 		"title": "§7§a[Recklessness]§7",
-		"description": "§7When your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants 0.5% increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
+		"description": "§7When your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1913,7 +1913,7 @@
 	},
 	"wayfarerSlender": {
 		"title": "§7§a[Slender]§7",
-		"description": "§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+		"description": "§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -1932,7 +1932,7 @@
 	},
 	"roguePath": {
 		"title": "Path of the §bRogue§7",
-		"description": "§7\n§7§a[Slender]§7\n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "§7\n§7§a[Slender]§7\n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bRogue§7 is a master of §astealth§7 and subterfuge. They thrive in the shadows, utilizing their exceptional skills to remain unseen and catch their enemies off guard with §aprecision strikes§7. If caught in the open, they are more than capable of §aevading§7 enemy attacks and escaping back to the safety of the shadows.",
 		"frame": "goal",
 		"size": 1.4,
@@ -2086,7 +2086,7 @@
 	},
 	"rogueExploitation": {
 		"title": "§7§a[Exploitation]§7",
-		"description": "§7While under the effects of stealth, your back attacks inflict Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"description": "§7While under the effects of stealth, your back attacks inflict Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2181,7 +2181,7 @@
 	},
 	"rangerPath": {
 		"title": "Path of the §bRanger§7",
-		"description": "\n§7§a[Slender]§7 \n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "\n§7§a[Slender]§7 \n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bRanger§7 is renowned for their unparalleled §aproficiency with bows§7 and their unique ability to infuse §aelemental magic§7 into their ranged attacks. They also share a deep, symbiotic bond with their §aanimal companions§7, making them a formidable force on the battlefield.",
 		"frame": "goal",
 		"size": 1.4,
@@ -2202,7 +2202,7 @@
 	},
 	"initiateFrail": {
 		"title": "§7§a[Frail]§7",
-		"description": "§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+		"description": "§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2221,7 +2221,7 @@
 	},
 	"initiateWhisperedWizardry": {
 		"title": "§7§a[Whispered Wizardry]§7",
-		"description": "§7Casting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "§7Casting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2259,7 +2259,7 @@
 	},
 	"initiateOverload": {
 		"title": "§7§a[Overload]§7",
-		"description": "§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you 45% increased spell crit damage & 10% spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+		"description": "§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you §a+45% §f[x]§7 increased spell crit damage & §a+10% §f[x]§7 spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2340,7 +2340,7 @@
 	},
 	"spellbladeWeaponExpert": {
 		"title": "§7§a[Weapon Expert]§7",
-		"description": "§7Gain a stack of Might when casting a spell. Occasionally gain a stack of Spellforged as well.\n\n§f(Might)§7 grants 25% increased attack damage per stack.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "§7Gain a stack of Might when casting a spell. Occasionally gain a stack of Spellforged as well.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.\n\n§f(Spellforged)§7 grants §a+0.25§7 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -2587,7 +2587,7 @@
 	},
 	"wizardPath": {
 		"title": "Path of the §bWizard§7",
-		"description": "\n§7§a[Frail]§7\n§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+		"description": "\n§7§a[Frail]§7\n§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
 		"extra_description": "\n§7The §bWizard§7 specialization is for those who seek to harness the power of magics. They are relentless and destructive §aspellcasters§7, capable of unleashing cataclysmic magical energy upon their enemies. However, their lust for power over the arcane leads them to §aneglect their physical form§7, weakening their defences and physical offence capabilities.",
 		"frame": "goal",
 		"size": 1.4,
@@ -3068,7 +3068,7 @@
 	},
 	"wizardSignatureStaticDischargeLightningOrb": {
 		"title": "§f[Lightning Orb]",
-		"description": "§7In addition to gaining speed, you also have a chance to summon a Lightning Orb that orbits you erratically, dealing damage to enemies it passes through.\n\nFor each Lightning Orb in your vicinity, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you +2 Soul & Lightning spell power per stack.",
+		"description": "§7In addition to gaining speed, you also have a chance to summon a Lightning Orb that orbits you erratically, dealing damage to enemies it passes through.\n\nFor each Lightning Orb in your vicinity, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you §a+1 §f[x]§7 Soul & Lightning spell power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3410,7 +3410,7 @@
 	},
 	"rogueSignaturePreparationShadowstrikeVampire": {
 		"title": "§f[Vampire]",
-		"description": "§7You steal buffs from enemies caught within the path of your dash and inflict them with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"description": "§7You steal buffs from enemies caught within the path of your dash and inflict them with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3467,7 +3467,7 @@
 	},
 	"rogueSignatureSiphoningStrikesMighty": {
 		"title": "§f[Mighty]",
-		"description": "§7When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -3771,7 +3771,7 @@
 	},
 	"rangerSignatureDisengageMarksman": {
 		"title": "§f[Marksman]",
-		"description": "§7Activating §6[Disengage]§7 while wielding a bow in your mainhand, now grants you Marksman. Otherwise, gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.\n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"description": "§7Activating §6[Disengage]§7 while wielding a bow in your mainhand, now grants you Marksman. Otherwise, gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.\n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4151,7 +4151,7 @@
 	},
 	"crusaderExhaustiveRecovery": {
 		"title": "§7§a[Exhaustive Recovery]§7",
-		"description": "§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by 1% per stack.",
+		"description": "§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4246,7 +4246,7 @@
 	},
 	"crusaderSignatureConsecrationMighty": {
 		"title": "§f[Mighty]",
-		"description": "Your §6[Consecration]§7 now periodically grants nearby allies Might.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "Your §6[Consecration]§7 now periodically grants nearby allies Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4265,7 +4265,7 @@
 	},
 	"crusaderSignatureConsecrationSpellforged": {
 		"title": "§f[Spellforged]",
-		"description": "Your §6[Consecration]§7 now periodically grants nearby allies Spellforged.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "Your §6[Consecration]§7 now periodically grants nearby allies Spellforged.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4417,7 +4417,7 @@
 	},
 	"crusaderSignatureHeavensmithsCallMark": {
 		"title": "§f[Death Mark]",
-		"description": "§6[Heavensmith's Call]§7 Now inflicts the primary target with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by 25% per stack.",
+		"description": "§6[Heavensmith's Call]§7 Now inflicts the primary target with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4493,7 +4493,7 @@
 	},
 	"clericAltruism": {
 		"title": "§7§a[Altruism]§7",
-		"description": "§7When wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "§7When wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4664,7 +4664,7 @@
 	},
 	"clericSignatureDivineInterventionMight": {
 		"title": "§f[Mighty]",
-		"description": "§7Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4683,7 +4683,7 @@
 	},
 	"clericSignatureDivineInterventionSpellforged": {
 		"title": "§f[Spellforged]",
-		"description": "§7Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants 1 Spell Power per stack.",
+		"description": "§7Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",
@@ -4873,7 +4873,7 @@
 	},
 	"berserkerSignatureBloodthirstyMighty": {
 		"title": "§f[Mighty]",
-		"description": "§7§6[Bloodthirsty]§7 Now grants you Might on use.\n\n§f(Might)§7 grants 25% increased attack damage per stack.",
+		"description": "§7§6[Bloodthirsty]§7 Now grants you Might on use.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
 		"frame": "goal",
 		"icon": {
 			"type": "texture",

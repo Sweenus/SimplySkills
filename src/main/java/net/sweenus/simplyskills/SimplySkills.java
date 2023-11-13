@@ -5,6 +5,7 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.Category;
@@ -84,7 +85,8 @@ public class SimplySkills implements ModInitializer {
         EntityRegistry.registerEntities();
         KeybindPacket.init();
         ModPacketHandler.registerServer();
-        AmethystImbuementEvent.registerAIEvents();
+        if (FabricLoader.getInstance().isModLoaded("amethyst_core"))
+            AmethystImbuementEvent.registerAIEvents();
         setSpecialisations();
 
 

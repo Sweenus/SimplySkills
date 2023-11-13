@@ -328,5 +328,15 @@
     "sounds": [
       "simplyskills:activate_tower_beacon"
     ]
+  },
+  "ui_replenish_01": {
+    "sounds": [
+      "simplyskills:ui_replenish_01"
+    ]
+  },
+  "gong_warbly": {
+    "sounds": [
+      "simplyskills:gong_warbly"
+    ]
   }
 }

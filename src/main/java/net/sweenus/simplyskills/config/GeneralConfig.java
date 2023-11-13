@@ -20,7 +20,7 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean removeUnlockRestrictions = false;
     @ConfigEntry.Gui.Tooltip
-    public float spellHasteCooldownReductionModifier = 0.4f;
+    public float spellHasteCooldownReductionModifier = 0.8f;
     @ConfigEntry.Gui.Tooltip
     public int minimumAchievableCooldown = 5;
     @ConfigEntry.Gui.Tooltip
