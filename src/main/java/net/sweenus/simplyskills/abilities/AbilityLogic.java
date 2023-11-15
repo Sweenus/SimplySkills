@@ -137,14 +137,16 @@ public class AbilityLogic {
         for (String s : sapphire) {
             if (skillId.equals(s) && HelperMethods.isUnlocked(categoryId.toString(), s, player)) {
                 for (String su : sapphire) {
-                    SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
+                    if (!HelperMethods.isUnlocked(categoryId.toString(), su, player))
+                        SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
                 }
             }
         }
         for (String s : ruby) {
             if (skillId.equals(s) && HelperMethods.isUnlocked(categoryId.toString(), s, player)) {
                 for (String su : ruby) {
-                    SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
+                    if (!HelperMethods.isUnlocked(categoryId.toString(), su, player))
+                        SkillsAPI.getCategory(categoryId).get().getSkill(su).get().unlock(player);
                 }
             }
         }
