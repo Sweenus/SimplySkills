@@ -857,12 +857,6 @@
 		"y": 147.8016689125442,
 		"root": false
 	},
-	"ad89uxl6gnwb2xa5": {
-		"definition": "shamanPath",
-		"x": 256,
-		"y": -443.40500673763256,
-		"root": false
-	},
 	"amtacp7z2f28pvtl": {
 		"definition": "wizardPath",
 		"x": 128,
@@ -873,12 +867,6 @@
 		"definition": "spellbladePath",
 		"x": -128,
 		"y": -517.3058411939046,
-		"root": false
-	},
-	"avppi98lihji7kr3": {
-		"definition": "necromancerPath",
-		"x": -256,
-		"y": -443.40500673763256,
 		"root": false
 	},
 	"ib0a72j4dae7m4dx": {
