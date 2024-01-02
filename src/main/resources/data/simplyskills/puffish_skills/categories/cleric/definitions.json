@@ -3905,7 +3905,8 @@
         ]
     },
     "rangerSignatureElementalArrowsRadius+++": {
-        
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsRadius+++.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsRadius+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",

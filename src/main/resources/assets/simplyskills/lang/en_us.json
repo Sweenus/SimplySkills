@@ -538,18 +538,18 @@
   
   
   "text.category.tree.title":                                                                                 "simply skills",
-  "text.skills.wayfarer.title":                                                                          "Path of the §bWayfarer",
-  "text.skills.wayfarer.description":                                                                    "§a+10% §f[+]§7 Movement Speed",
+  "text.skills.pathWayfarer.title":                                                                               "Path of the §bWayfarer",
+  "text.skills.pathWayfarer.description":                                                                         "§a+10% §f[+]§7 Movement Speed",
 
-  "text.skills.initiate.title":                                                                          "Path of the §bInitiate§7",
-  "text.skills.initiate.description":                                                                    "§a+1§7 To all schools of magic",
+  "text.skills.initiate.title":                                                                               "Path of the §bInitiate§7",
+  "text.skills.initiate.description":                                                                         "§a+1§7 To all schools of magic",
 
-  "text.skills.warrior.title":                                                                           "Path of the §bWarrior§7",
-  "text.skills.warrior.description":                                                                     "§a+10%§f [+] §7Melee Damage",
+  "text.skills.warrior.title":                                                                                "Path of the §bWarrior§7",
+  "text.skills.warrior.description":                                                                          "§a+10%§f [+] §7Melee Damage",
 
-  "text.skills.spell_fire_damage_additive+1%.title":                                                     "§a+3%§f [+] §7Fire Spell Damage",
-  "text.skills.spell_fire_damage_multi+1%.title":                                                        "§a+5% §f[+] §7Fire Spell Damage",
-  "text.skills.spell_arcane_damage_additive+1%.title":                                                   "§a+3%§f [+] §7Arcane Spell Damage",
+  "text.skills.spell_fire_damage_additive+1%.title":                                                          "§a+3%§f [+] §7Fire Spell Damage",
+  "text.skills.spell_fire_damage_multi+1%.title":                                                             "§a+5% §f[+] §7Fire Spell Damage",
+  "text.skills.spell_arcane_damage_additive+1%.title":                                                        "§a+3%§f [+] §7Arcane Spell Damage",
   "text.skills.spell_arcane_damage_multi+1%.title":"§a+5%§f [+] §7Arcane Spell Damage",
   "text.skills.spell_frost_damage_additive+1%.title":"§a+3% §f[+] §7Frost Spell Damage",
   "text.skills.spell_frost_damage_multi+1%.title":"§a+5% §f[+] §7Frost Spell Damage",
