@@ -537,296 +537,57 @@
   "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)",
   
   
-  "text.category.tree.title":                                                                                 "simply skills",
-  "text.skills.wayfarer.title":                                                                          "Path of the §bWayfarer",
-  "text.skills.wayfarer.description":                                                                    "§a+10% §f[+]§7 Movement Speed",
+  "text.skills.tree.wayfarer.title": "Path of the §bWayfarer BUCETINHA",
+  "text.skills.tree.wayfarer.description": "§a+10% §f[+]§7 Movement Speed",
+  "text.skills.tree.initiate.title": "Path of the §bInitiate§7",
+  "text.skills.tree.initiate.description": "§a+1§7 To all schools of magic",
+  "text.skills.tree.warrior.title": "Path of the §bWarrior§7",
+  "text.skills.tree.warrior.description": "§a+10%§f [+] §7Melee Damage",
+  "text.skills.tree.spell_fire_damage_additive+1%.title": "§a+3%§f [+] §7Fire Spell Damage",
+  "text.skills.tree.spell_fire_damage_multi+1%.title": "§a+5% §f[+] §7Fire Spell Damage",
+  "text.skills.tree.spell_arcane_damage_additive+1%.title":"§a+3%§f [+] §7Arcane Spell Damage",
+  "text.skills.tree.spell_arcane_damage_multi+1%.title":"§a+5%§f [+] §7Arcane Spell Damage",
+  "text.skills.tree.spell_frost_damage_additive+1%.title":"§a+3% §f[+] §7Frost Spell Damage",
+  "text.skills.tree.spell_frost_damage_multi+1%.title":"§a+5% §f[+] §7Frost Spell Damage",
+  "text.skills.tree.spell_healing_power_additive+1%.title":"§a+3% §f[+] §7Healing Power",
+  "text.skills.tree.spell_healing_power_multi+1%.title":"§a+5% §f[+] §7Healing Power",
+  "text.skills.tree.spell_lightning_damage_additive+1%.title":"§a+3%§f [+] §7Lightning Spell Damage",
+  "text.skills.tree.spell_lightning_damage_multi+1%.title":"§a+5% §f[+] §7Lightning Spell Damage",
+  "text.skills.tree.spell_soul_damage_additive+1%.title":"§a+3% §f[+] §7Soul Spell Damage",
+  "text.skills.tree.spell_soul_damage_multi+1%.title":"§a+5% §f[+] §7Soul Spell Damage",
+  "text.skills.tree.spell_crit_damage_additive+1%.title":"§a+3% §f[+] §7Spell Critical Damage",
+  "text.skills.tree.spell_crit_damage_multi+1%.title":"§a+5%§f [+] §7Spell Critical Damage",
+  "text.skills.tree.spell_crit_chance_additive+1%.title":"§a+3% §f[+] §7Spell Critical Chance",
+  "text.skills.tree.spell_crit_chance_multi+1%.title":"§a+5% §f[+] §7Spell Critical Chance",
+  "text.skills.tree.spell_haste_additive+1%.title":"§a+3% §f[+] §7Spell Haste",
+  "text.skills.tree.spell_haste_multi+1%.title":"§a+5% §f[+] §7Spell Haste",
+  "text.skills.tree.health+2.title":"§a+1 §7Heart",
+  "text.skills.tree.resistance+1%.title":"§a+3% §f[+] §7Resistance",
+  "text.skills.tree.resistance_multi+2%.title":"§a+5% §f[+] §7Resistance",
+  "text.skills.tree.melee_damage+1%.title":"§a+3% §f[+] §7Melee Damage",
+  "text.skills.tree.melee_damage_multi+2%.title":"§a+5% §f[+] §7Melee Damage",
+  "text.skills.tree.ranged_damage+1%.title":"§a+3% §f[+] §7Ranged Damage",
+  "text.skills.tree.ranged_damage_multi+2%.title":"§a+5% §f[+] §7Ranged Damage",
+  "text.skills.tree.attack_speed+1%.title":"§a+3% §f[+] §7Attack Speed",
+  "text.skills.tree.attack_speed_multi+2%.title":"§a+5% §f[+] §7Attack Speed",
+  "text.skills.tree.movement_speed+1%.title":"§a+3% §f[+] §7Movement Speed",
+  "text.skills.tree.movement_speed_multi+1.5%.title":"§a+5% §f[+] §7Movement Speed",
+  "text.skills.tree.luck+0.25.title":"§a+0.25 §7Luck",
+  "text.skills.tree.stamina+5%.title":"§a+3% §f[+] §7Stamina",
+  "text.skills.tree.stamina_multi+7%.title":"§a+5% §f[+] §7Stamina",
+  "text.skills.tree.healing+1%.title":"§a+1% §7Healing [DEPRECATED]",
+  "text.skills.tree.jump+1%.title":"§a+3% §f[+] §7Jump",
+  "text.skills.tree.jump_multi+2%.title":"§a+5%§f [+] §7Jump",
+  "text.skills.tree.hardy.title":"§7§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
+  "text.skills.tree..title":"",
+  "text.skills.tree..title":"",
+  "text.skills.tree..title":"",
+  "text.skills.tree..title":"",
+  "text.skills.tree..title":""
 
-  "text.skills.initiate.title":                                                                          "Path of the §bInitiate§7",
-  "text.skills.initiate.description":                                                                    "§a+1§7 To all schools of magic",
-
-  "text.skills.warrior.title":                                                                           "Path of the §bWarrior§7",
-  "text.skills.warrior.description":                                                                     "§a+10%§f [+] §7Melee Damage",
-
-  "text.skills.spell_fire_damage_additive+1%.title":                                                     "§a+3%§f [+] §7Fire Spell Damage",
-  "text.skills.spell_fire_damage_multi+1%.title":                                                        "§a+5% §f[+] §7Fire Spell Damage",
-  "text.skills.spell_arcane_damage_additive+1%.title":                                                   "§a+3%§f [+] §7Arcane Spell Damage",
-  "text.skills.spell_arcane_damage_multi+1%.title":"§a+5%§f [+] §7Arcane Spell Damage",
-  "text.skills.spell_frost_damage_additive+1%.title":"§a+3% §f[+] §7Frost Spell Damage",
-  "text.skills.spell_frost_damage_multi+1%.title":"§a+5% §f[+] §7Frost Spell Damage",
-  "text.skills.spell_healing_power_additive+1%.title":"§a+3% §f[+] §7Healing Power",
-  "text.skills.spell_healing_power_multi+1%.title":"§a+5% §f[+] §7Healing Power",
-  "text.skills.spell_lightning_damage_additive+1%.title":"§a+3%§f [+] §7Lightning Spell Damage",
-  "text.skills.spell_lightning_damage_multi+1%.title":"§a+5% §f[+] §7Lightning Spell Damage",
-  "text.skills.spell_soul_damage_additive+1%.title":"§a+3% §f[+] §7Soul Spell Damage",
-  "text.skills.spell_soul_damage_multi+1%.title":"§a+5% §f[+] §7Soul Spell Damage",
-  "text.skills.spell_crit_damage_additive+1%.title":"§a+3% §f[+] §7Spell Critical Damage",
-  "text.skills.spell_crit_damage_multi+1%.title":"§a+5%§f [+] §7Spell Critical Damage",
-  "text.skills.spell_crit_chance_additive+1%.title":"§a+3% §f[+] §7Spell Critical Chance",
-  "text.skills.spell_crit_chance_multi+1%.title":"§a+5% §f[+] §7Spell Critical Chance",
-  "text.skills.spell_haste_additive+1%.title":"§a+3% §f[+] §7Spell Haste",
-  "text.skills.spell_haste_multi+1%.title":"§a+5% §f[+] §7Spell Haste",
-  "text.skills.health+2.title":"§a+1 §7Heart teste",
-  "text.skills.resistance+1%.title":"§a+3% §f[+] §7Resistance",
-  "text.skills.resistance_multi+2%.title":"§a+5% §f[+] §7Resistance",
-  "text.skills.melee_damage+1%.title":"§a+3% §f[+] §7Melee Damage",
-  "text.skills.melee_damage_multi+2%.title":"§a+5% §f[+] §7Melee Damage",
-  "text.skills.ranged_damage+1%.title":"§a+3% §f[+] §7Ranged Damage",
-  "text.skills.ranged_damage_multi+2%.title":"§a+5% §f[+] §7Ranged Damage",
-  "text.skills.attack_speed+1%.title":"§a+3% §f[+] §7Attack Speed",
-  "text.skills.attack_speed_multi+2%.title":"§a+5% §f[+] §7Attack Speed",
-  "text.skills.movement_speed+1%.title":"§a+3% §f[+] §7Movement Speed",
-  "text.skills.movement_speed_multi+1.5%.title":"§a+5% §f[+] §7Movement Speed",
-  "text.skills.luck+0.25.title":"§a+0.25 §7Luck",
-  "text.skills.stamina+5%.title":"§a+3% §f[+] §7Stamina",
-  "text.skills.stamina_multi+7%.title":"§a+5% §f[+] §7Stamina",
-  "text.skills.healing+1%.title":"§a+1% §7Healing [DEPRECATED]",
-  "text.skills.jump+1%.title":"§a+3% §f[+] §7Jump",
-  "text.skills.jump_multi+2%.title":"§a+5%§f [+] §7Jump",
-
-  "text.skills.hardy.title":"§7§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
-  "text.skills.initiateSlowfall.title":"§7§a[Innate Slowfall]§7",
-  "text.skills.initiateSlowfall.description":"§7When falling long distances you gain Slow Falling.",
-
-  "text.skills.fervour.title":"§7§a[Fervour]§7",
-  "text.skills.fervour.description":"§7Landing a killing blow grants you haste for a short duration.",
-
-  "text.skills.wayfarerStealth.title":"§7§a[Stealth]§7",
-  "text.skills.wayfarerStealth.description":"§7Gain Stealth when crouching.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
   
-  "text.skills.wayfarerSneak.title":"§7§a[Sneak]§7",
-  "text.skills.wayfarerSneak.description":"§7Gain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+
+
   
-  "text.skills.wayfarerReflexive.title":"§7§a[Reflexive]§7",
-  "text.skills.wayfarerReflexive.description":"§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\n\nWhen your stealth is broken by attacking, gain Might and Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
-  
-  "text.skills.wayfarerUnseen.title":"§7§a[Unseen]§7",
-  "text.skills.wayfarerUnseen.description":"§7While loading a Crossbow, gain momentary Stealth.\nIf you already have stealth, you instead gain Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
-  
-  "text.skills.wayfarerGuarding.title":"§7§a[Guarding]§7",
-  "text.skills.wayfarerGuarding.description":"§7While you have a Crossbow in your offhand, you periodically gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
-  
-  "text.skills.wayfarerQuickfire.title":"§7§a[Quickfire]§7",
-  "text.skills.wayfarerQuickfire.description":"§7When using a bow, firing fully charged arrows in quick succession grants you stacking Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
-  
-  "text.skills.initiateNullification.title":"§7§a[Nullification]§7",
-  "text.skills.initiateNullification.description":"§7Periodically strip buffs from nearby hostiles.",
-  
-  "text.skills.initiateGambit.title":"§7§a[Gambit]",
-  "text.skills.initiateGambit.description":"§7Your spell damage is reduced by §c25% §f[x]§7, but your spell critical damage is increased by §a+75% §f[x]§7.",
-  
-  "text.skills.initiateEmpower.title":"§7§a[Empower]§7",
-  "text.skills.initiateEmpower.description":"§7Chance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by §a+2% §f[x]§7 per stack.",
-  
-  "text.skills.initiateAttuned.title":"§7§a[Attuned]§7",
-  "text.skills.initiateAttuned.description":"§7When you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by §a+2% §f[x]§7 per stack.",
-  
-  "text.skills.initiateLightningRod.title":"§7§a[Lightning Rod]§7",
-  "text.skills.initiateLightningRod.description":"§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by §a+2% §f[x]§7 per stack.",
-  
-  "text.skills.initiateEldritchEnfeeblement.title":"§7§a[Eldritch Enfeeblement]§7",
-  "text.skills.initiateEldritchEnfeeblement.description":"§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.",
-  
-  "text.skills.initiateHasty.title":"§7§a[Hasty]§7",
-  "text.skills.initiateHasty.description":"§7Your movespeed is increased by §a+15% §f[x]§7, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
-  
-  "text.skills.initiatePerilousPrecision.title":"§7§a[Perilous Precision]§7",
-  "text.skills.initiatePerilousPrecision.description":"§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.",
-  
-  "text.skills.cleric.title":"§7§a[Cleric]§7",
-  "text.skills.cleric.description":"§7Periodically cleanse debuffs from nearby allies.",
-  
-  "text.skills.cleansing.title":"§7§a[Cleansing]§7",
-  "text.skills.cleansing.description":"§7Periodically cleanse debuffs from yourself.",
-
-  "text.skills.rangerReveal.title":"§7§a[Reveal]§7",
-  "text.skills.rangerReveal.description":"§7Periodically reveal nearby Stealthy enemies.",
-
-  "text.skills.rangerTamer.title":"§7§a[Tamer]§7",
-  "text.skills.rangerTamer.description":"§7When your pets are near to you, they gain Regeneration & Resistance.",
-
-  "text.skills.rangerBonded.title":"§7§a[Bonded]§7",
-  "text.skills.rangerBonded.description":"§7When your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
-
-  "text.skills.rangerTrained.title":"§7§a[Trained]§7",
-  "text.skills.rangerTrained.description":"§7When your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
-
-  "text.skills.rangerIncognito.title":"§7§a[Incognito]§7",
-  "text.skills.rangerIncognito.description":"§7When your pets are near to you and you gain Stealth, they gain Invisibility.",
-
-  "text.skills.rogueBackstab.title":"§7§a[Backstab]§7",
-  "text.skills.rogueBackstab.description":"§7Attacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
-
-  "text.skills.warriorHeavyArmorMastery.title":"§7§a[Heavy Armor Mastery]§7",
-  "text.skills.warriorHeavyArmorMastery.description":"§7While your armor value is above 15, you have a chance to gain Strength when hit.",
-
-  "text.skills.warriorMediumArmorMastery.title":"§7§a[Medium Armor Mastery]§7",
-  "text.skills.warriorMediumArmorMastery.description":"§7While your armor value is below 15, you have a chance to gain Absorption when hit.",
-
-  "text.skills.warriorSpellbreaker.title":"§7§a[Spellbreaker]§7",
-  "text.skills.warriorSpellbreaker.description":"§7When taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n§f(Spellbreaking)§7 causes hostile spell projectiles to explode when in close proximity to you.",
-
-  "text.skills.warriorGoliath.title":"§7§a[Goliath]§7",
-  "text.skills.warriorGoliath.description":"§7When falling long distances, gain Earthshaker.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
-
-  "text.skills.warriorHeavyWeight.title":"§7§a[Heavy Weight]§7",
-  "text.skills.warriorHeavyWeight.description":"§7Your Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
-  
-  "text.skills.warriorBound.title":"§7§a[Bound]§7",
-  "text.skills.warriorBound.description":"§7After activating Earthshaker, you gain Jump Boost for a short duration.",
-
-  "text.skills.warriorDeathDefy.title":"§7§a[Death Defy]§7",
-  "text.skills.warriorDeathDefy.description":"§7When at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
-
-  "text.skills.warriorFrenzy.title":"§7§a[Frenzy]§7",
-  "text.skills.warriorFrenzy.description":"§7Gain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
-
-  "text.skills.warriorCarnage.title":"§7§a[Carnage]§7",
-  "text.skills.warriorCarnage.description":"§7While at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
-
-  "text.skills.warriorTwinstrike.title":"§7§a[Twinstrike]§7",
-  "text.skills.warriorTwinstrike.description":"§7Your melee hits have a chance to strike twice.\nThis chance is doubled while under the effects of Health Boost.",
-
-  "text.skills.warriorSwordfall.title":"§7§a[Swordfall]§7",
-  "text.skills.warriorSwordfall.description":"§7Your melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\n\nThis chance is doubled while under the effects of Might.",
-
-  "text.skills.berserkerpath.title":"Path of the §bBerserker§7",
-  "text.skills.berserkerpath.description":"\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.§7\n\nHold §f[SHIFT] §7for more info:",
-  "text.skills.berserkerpath.extra_description":"\n§7The §bBerserker§7, is driven by an insatiable thirst for destruction and a complete disregard for their own safety. They are masters of §amelee combat§7 and revel in dealing devastating damage, even if it means §aputting their own life on the line§7.",
-
-  "text.skills.berserkerSwordMastery.title":"§7§a[Sword Mastery]§7",
-  "text.skills.berserkerSwordMastery.description":"§7Gain pulsing Speed when wielding a sword in your mainhand.",
-
-  "text.skills.berserkerSwordMasteryProficient.title":"§7§a[Sword Mastery +]§7",
-  "text.skills.berserkerSwordMasteryProficient.description":"§7Gain increased pulsing Speed when wielding a sword in your mainhand.",
-
-  "text.skills.berserkerSwordMasterySkilled.title":"§7§a[Sword Mastery ++]§7",
-  "text.skills.berserkerSwordMasterySkilled.description":"§7When not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
-
-  "text.skills.berserkerAxeMastery.title":"§7§a[Axe Mastery]§7",
-  "text.skills.berserkerAxeMastery.description":"§7Gain pulsing strength when wielding an axe in your mainhand.",
-
-  "text.skills.berserkerAxeMasteryProficient.title":"§7§a[Axe Mastery +]§7",
-  "text.skills.berserkerAxeMasteryProficient.description":"§7Gain increased pulsing strength when wielding an axe in your mainhand.",
-
-  "text.skills.berserkerAxeMasterySkilled.title":"§7§a[Axe Mastery ++]§7",
-  "text.skills.berserkerAxeMasterySkilled.description":"§7Gain increased pulsing strength when wielding an axe in your mainhand.",
-
-  "text.skills.berserkerIgnorePain.title":"§7§a[Ignore Pain]§7",
-  "text.skills.berserkerIgnorePain.description":"§7When your HP drops below 40% you gain pulsing resistance.",
-
-  "text.skills.berserkerIgnorePainProficient.title":"§7§a[Ignore Pain +]§7",
-  "text.skills.berserkerIgnorePainProficient.description":"§7When your HP drops below 40% you gain increased pulsing resistance.",
-
-  "text.skills.berserkerIgnorePainSkilled.title":"§7§a[Ignore Pain ++]§7",
-  "text.skills.berserkerIgnorePainSkilled.description":"§7When your HP drops below 40% you gain increased pulsing resistance.",
-
-  "text.skills.berserkerRecklessness.title":"§7§a[Recklessness]§7",
-  "text.skills.berserkerRecklessness.description":"§7When your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
-
-  "text.skills.berserkerChallenge.title":"§7§a[Challenge]§7",
-  "text.skills.berserkerChallenge.description":"§7Gain a stack of haste for each nearby enemy.",
-
-  "text.skills.berserkerExploit.title":"§7§a[Exploit]§7",
-  "text.skills.berserkerExploit.description":"§7Hitting immobilized enemies inflicts them with weakness.",
-
-  "text.skills.bulwarkPath.title":"Path of the §bBulwark§7",
-
-  "text.skills.bulwarkShieldMastery.title":"§7§a[Shield Mastery]§7",
-  "text.skills.bulwarkShieldMastery.description":"§7Gain weakness & resistance when wielding a shield.",
-
-  "text.skills.bulwarkShieldMasteryProficient.title":"§7§a[Shield Mastery +]§7",
-  "text.skills.bulwarkShieldMasteryProficient.description":"§7Gain weakness & increased resistance when wielding a shield.",
-
-  "text.skills.bulwarkShieldMasterySkilled.title":"§7§a[Shield Mastery ++]§7",
-  "text.skills.bulwarkShieldMasterySkilled.description":"§7Gain weakness & increased resistance when wielding a shield.",
-
-  "text.skills.bulwarkRebuke.title":"§7§a[Rebuke]§7",
-  "text.skills.bulwarkRebuke.description":"§725% Chance on block to inflict your attacker with weakness.",
-
-  "text.skills.wayfarerSlender.title":"§7§a[Slender]§7",
-  "text.skills.wayfarerSlender.description":"§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
-
-  "text.skills.roguePath.title":"Path of the §bRogue§7",
-  "text.skills.roguePath.description":"§7\n§7§a[Slender]§7\n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
-  "text.skills.roguePath.extra_description":"\n§7The §bRogue§7 is a master of §astealth§7 and subterfuge. They thrive in the shadows, utilizing their exceptional skills to remain unseen and catch their enemies off guard with §aprecision strikes§7. If caught in the open, they are more than capable of §aevading§7 enemy attacks and escaping back to the safety of the shadows.",
-
-  "text.skills.rogueSmokeBomb.title":"§7§a[Smoke Bomb]§7",
-  "text.skills.rogueSmokeBomb.description":"§7Chance to blind nearby enemies and gain Immobilizing Aura when hit.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
-
-  "text.skills.rogueOpportunisticMastery.title":"§7§a[Opportunistic Mastery]§7",
-  "text.skills.rogueOpportunisticMastery.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a short duration.",
-
-  "text.skills.rogueOpportunisticMasteryProficient.title":"§7§a[Opportunistic Mastery +]§7",
-  "text.skills.rogueOpportunisticMasteryProficient.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a moderate duration.",
-
-  "text.skills.rogueOpportunisticMasterySkilled.title":"§7§a[Opportunistic Mastery ++]§7",
-  "text.skills.rogueOpportunisticMasterySkilled.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a long duration.",
-
-  "text.skills.rogueEvasionMastery.title":"§7§a[Evasion Mastery]§7",
-  "text.skills.rogueEvasionMastery.description":"§7While you have at least 1 stack of Agile, you have a 15% Chance to completely avoid incoming damage.",
-
-  "text.skills.rogueEvasionMasteryProficient.title":"§7§a[Evasion Mastery +]§7",
-  "text.skills.rogueEvasionMasteryProficient.description":"§7While you have at least 1 stack of Agile, you have a 20% Chance to completely avoid incoming damage.",
-
-  "text.skills.rogueEvasionMasterySkilled.title":"§7§a[Evasion Mastery ++]§7",
-  "text.skills.rogueEvasionMasterySkilled.description":"§7While you have at least 1 stack of Agile, you have a 25% Chance to completely avoid incoming damage.",
-
-  "text.skills.rogueExploitation.title":"§7§a[Exploitation]§7",
-  "text.skills.rogueExploitation.description":"§7While under the effects of stealth, your back attacks inflict Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
-
-  "text.skills.rogueRecovery.title":"§7§a[Recovery]§7",
-  "text.skills.rogueRecovery.description":"§7When you gain Stealth, you also gain Regeneration.",
-
-  "text.skills.rogueShadowVeil.title":"§7§a[Shadow Veil]§7",
-  "text.skills.rogueShadowVeil.description":"§7While under the effects of Stealth, you periodically gain increasing Resistance.",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":"",
-
-  "text.skills..title":"",
-  "text.skills..description":""
-
 
 }
