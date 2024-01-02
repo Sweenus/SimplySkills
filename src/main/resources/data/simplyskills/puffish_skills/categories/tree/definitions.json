@@ -685,11 +685,13 @@
         },
         "rewards": [
             {
-                "type": "puffish_skills:command",
-                "data": {
-                    "command": "paraglider give stamina_vessel @s 5"
-                }
-            }
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.stamina",
+					"value": 0.03,
+					"operation": "multiply_base"
+				}
+			}
         ]
     },
     "stamina_multi+7%": {
@@ -702,11 +704,13 @@
         },
         "rewards": [
             {
-                "type": "puffish_skills:command",
-                "data": {
-                    "command": "paraglider give stamina_vessel @s 10"
-                }
-            }
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "puffish_skills:player.stamina",
+					"value": 0.05,
+					"operation": "multiply_base"
+				}
+			}
         ]
     },
     "healing+1%": {
@@ -2137,8 +2141,8 @@
         ]
     },
     "rogueDeflection": {
-        "title": "§7§a[Deflection]§7",
-        "description": "§7When dual wielding weapons §f(axes do not count)§7, the base evasion chance of your Evasion Mastery passive is increased by 10%.",
+        "title": {"translate":"text.skills.rogueDeflection.title"},
+        "description": {"translate":"text.skills.rogueDeflection.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2156,8 +2160,8 @@
         ]
     },
     "rogueFleetfooted": {
-        "title": "§7§a[Fleetfooted]§7",
-        "description": "§7When you are forcefully removed from Stealth, you gain momentary Speed.",
+        "title": {"translate":"text.skills.rogueFleetfooted.title"},
+        "description": {"translate":"text.skills.rogueFleetfooted.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2175,9 +2179,9 @@
         ]
     },
     "rangerPath": {
-        "title": "Path of the §bRanger§7",
-        "description": "\n§7§a[Slender]§7 \n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
-        "extra_description": "\n§7The §bRanger§7 is renowned for their unparalleled §aproficiency with bows§7 and their unique ability to infuse §aelemental magic§7 into their ranged attacks. They also share a deep, symbiotic bond with their §aanimal companions§7, making them a formidable force on the battlefield.",
+        "title": {"translate":"text.skills.rangerPath.title"},
+        "description": {"translate":"text.skills.rangerPath.description"},
+        "extra_description": {"translate":"text.skills.rangerPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2196,8 +2200,8 @@
         ]
     },
     "initiateFrail": {
-        "title": "§7§a[Frail]§7",
-        "description": "§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+        "title": {"translate":"text.skills.initiateFrail.title"},
+        "description": {"translate":"text.skills.initiateFrail.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2215,8 +2219,8 @@
         ]
     },
     "initiateWhisperedWizardry": {
-        "title": "§7§a[Whispered Wizardry]§7",
-        "description": "§7Casting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+        "title": {"translate":"text.skills.initiateWhisperedWizardry.title"},
+        "description": {"translate":"text.skills.initiateWhisperedWizardry.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2234,8 +2238,8 @@
         ]
     },
     "initiateSpellcloak": {
-        "title": "§7§a[Spellcloak]§7",
-        "description": "§7Casting a spell grants you brief Stealth, as long as you aren't currently Revealed.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+        "title": {"translate":"text.skills.initiateSpellcloak.title"},
+        "description": {"translate":"text.skills.initiateSpellcloak.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2253,8 +2257,8 @@
         ]
     },
     "initiateOverload": {
-        "title": "§7§a[Overload]§7",
-        "description": "§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you §a+45% §f[x]§7 increased spell crit damage & §a+10% §f[x]§7 spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+        "title": {"translate":"text.skills.initiateOverload.title"},
+        "description": {"translate":"text.skills.initiateOverload.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2272,9 +2276,9 @@
         ]
     },
     "crusaderPath": {
-        "title": "Path of the §bCrusader§7",
-        "description": "§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
-        "extra_description": "\n§7The §bCrusader§7, is often chosen by those who are not content with merely §adefending their allies§7 but also strive to be a beacon of hope on the battlefield. They combine the fervor of a §ahealer§7 with the might of a §awarrior§7, making them formidable champions in both §aoffense and defense§7.",
+        "title": {"translate":"text.skills.crusaderPath.title"},
+        "description": {"translate":"text.skills.crusaderPath.description"},
+        "extra_description": {"translate":"text.skills.crusaderPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2293,8 +2297,9 @@
         ]
     },
     "frostguardPath": {
-        "title": "Path of the §bFrostguard§7",
-        "description": "\n§eNOT YET IMPLEMENTED§7",
+        "title": {"translate":"text.skills.frostguardPath.title"},
+        "description": {"translate":"text.skills.frostguardPath.description"},
+        "extra_description": {"translate":"text.skills.frostguardPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2313,9 +2318,9 @@
         ]
     },
     "spellbladePath": {
-        "title": "Path of the §bSpellblade§7",
-        "description": "\nHold §f[SHIFT] §7for more info:",
-        "extra_description": "\n§7The §bSpellblade§7 is a versatile and formidable warrior who seamlessly melds the power of magic with martial combat. Their hallmark is the fusion of §aspellcasting§7 and §amelee attacks§7, making them an exceptional force on the battlefield.",
+        "title": {"translate":"text.skills.spellbladePath.title"},
+        "description": {"translate":"text.skills.spellbladePath.description"},
+        "extra_description": {"translate":"text.skills.spellbladePath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2334,8 +2339,8 @@
         ]
     },
     "spellbladeWeaponExpert": {
-        "title": "§7§a[Weapon Expert]§7",
-        "description": "§7Gain a stack of Might when casting a spell. Occasionally gain a stack of Spellforged as well.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.\n\n§f(Spellforged)§7 grants §a+0.25§7 Spell Power per stack.",
+        "title": {"translate":"text.skills.spellbladeWeaponExpert.title"},
+        "description": {"translate":"text.skills.spellbladeWeaponExpert.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2353,8 +2358,8 @@
         ]
     },
     "spellbladeSpellweaving": {
-        "title": "§7§a[Spellweaving]§7",
-        "description": "§7You now have a 15% chance to summon a random spell when you hit an enemy.",
+        "title": {"translate":"text.skills.spellbladeSpellweaving.title"},
+        "description": {"translate":"text.skills.spellbladeSpellweaving.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2372,8 +2377,8 @@
         ]
     },
     "spellbladeSignatureElementalSurge": {
-        "title": "Signature Ability: §6[Elemental Surge]§7",
-        "description": "\nGrants you Elemental Surge for 15s.\n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalSurge.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalSurge.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2391,8 +2396,8 @@
         ]
     },
     "spellbladeSignatureElementalSurgeNoFrost": {
-        "title": "§f[Remove Frost]",
-        "description": "§7Removes Frost Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoFrost.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoFrost.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2410,8 +2415,8 @@
         ]
     },
     "spellbladeSignatureElementalSurgeNoFire": {
-        "title": "§f[Remove Fire]",
-        "description": "§7Removes Fire Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoFire.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoFire.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2429,8 +2434,8 @@
         ]
     },
     "spellbladeSignatureElementalSurgeRenewal": {
-        "title": "§f[Renewal]",
-        "description": "§7Hitting enemies while you have §6[Elemental Surge]§7 has a 15% chance to extend the its duration by 3 seconds.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalSurgeRenewal.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalSurgeRenewal.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2448,8 +2453,8 @@
         ]
     },
     "spellbladeSignatureElementalSurgeNoLightning": {
-        "title": "§f[Remove Lightning]",
-        "description": "§7Removes Lightning Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoLightning.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalSurgeNoLightning.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2467,8 +2472,8 @@
         ]
     },
     "spellbladeSignatureElementalImpact": {
-        "title": "Signature Ability: §6[Elemental Impact]§7",
-        "description": "\nCauses you to dash forward with extreme power, releasing elemental explosions as you move.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalImpact.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalImpact.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2486,8 +2491,8 @@
         ]
     },
     "spellbladeSignatureElementalImpactMagnet": {
-        "title": "§f[Magnet]",
-        "description": "§7Your §6[Elemental Impact]§7 now pulls nearby enemies into the path of impact.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalImpactMagnet.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalImpactMagnet.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2505,8 +2510,8 @@
         ]
     },
     "spellbladeSignatureElementalImpactResistance": {
-        "title": "§f[Resistance]",
-        "description": "§7Your §6[Elemental Impact]§7 now also grants you brief resistance.",
+        "title": {"translate":"text.skills.spellbladeSignatureElementalImpactResistance.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureElementalImpactResistance.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2524,8 +2529,8 @@
         ]
     },
     "spellbladeSignatureSpellweaver": {
-        "title": "Signature Ability: §6[Spellweaver]§7",
-        "description": "\nDoubles the chance of your Spellweaving passive for 25s.\n\n§a40s Cooldown§7",
+        "title": {"translate":"text.skills.spellbladeSignatureSpellweaver.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureSpellweaver.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2543,8 +2548,8 @@
         ]
     },
     "spellbladeSignatureSpellweaverHaste": {
-        "title": "§f[Haste]",
-        "description": "§7Your Spellweaving procs now grant you 5s of Haste stacking up to 5 times.",
+        "title": {"translate":"text.skills.spellbladeSignatureSpellweaverHaste.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureSpellweaverHaste.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2562,8 +2567,8 @@
         ]
     },
     "spellbladeSignatureSpellweaverRegeneration": {
-        "title": "§f[Regeneration]",
-        "description": "§7Your Spellweaving procs now have a 50% chance to grant you regeneration for 5s.",
+        "title": {"translate":"text.skills.spellbladeSignatureSpellweaverRegeneration.title"},
+        "description": {"translate":"text.skills.spellbladeSignatureSpellweaverRegeneration.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2581,9 +2586,9 @@
         ]
     },
     "wizardPath": {
-        "title": "Path of the §bWizard§7",
-        "description": "\n§7§a[Frail]§7\n§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
-        "extra_description": "\n§7The §bWizard§7 specialization is for those who seek to harness the power of magics. They are relentless and destructive §aspellcasters§7, capable of unleashing cataclysmic magical energy upon their enemies. However, their lust for power over the arcane leads them to §aneglect their physical form§7, weakening their defences and physical offence capabilities.",
+        "title": {"translate":"text.skills.wizardPath.title"},
+        "description": {"translate":"text.skills.wizardPath.description"},
+        "extra_description": {"translate":"text.skills.wizardPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2602,8 +2607,9 @@
         ]
     },
     "shamanPath": {
-        "title": "Path of the §bShaman§7",
-        "description": "\n§eNOT YET IMPLEMENTED§7",
+        "title": {"translate":"text.skills.shamanPath.title"},
+        "description": {"translate":"text.skills.shamanPath.description"},
+        "extra_description": {"translate":"text.skills.shamanPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2622,9 +2628,9 @@
         ]
     },
     "clericPath": {
-        "title": "Path of the §bCleric§7",
-        "description": "\n§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
-        "extra_description": "\n§7Those of the §bCleric§7 specialisation are known for their unwavering commitment to safeguarding and nurturing their allies. They possess a unique combination of §ahealing§7, §asupport§7, and the ability to §abear the burdens§7 of those they protect.",
+        "title": {"translate":"text.skills.clericPath.title"},
+        "description": {"translate":"text.skills.clericPath.description"},
+        "extra_description": {"translate":"text.skills.clericPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2643,8 +2649,9 @@
         ]
     },
     "necromancerPath": {
-        "title": "Path of the §bNecromancer§7",
-        "description": "\n§eNOT YET IMPLEMENTED§7",
+        "title": {"translate":"text.skills.necromancerPath.title"},
+        "description": {"translate":"text.skills.necromancerPath.description"},
+        "extra_description": {"translate":"text.skills.necromancerPath.extra_description"},
         "frame": "goal",
         "size": 1.4,
         "icon": {
@@ -2663,8 +2670,8 @@
         ]
     },
     "wizardPassiveSpellEcho": {
-        "title": "§7§a[Spell Echo]§7",
-        "description": "§7Your spell hits have a chance to echo, casting an additional random spell at the target.",
+        "title": {"translate":"text.skills.wizardPassiveSpellEcho.title"},
+        "description": {"translate":"text.skills.wizardPassiveSpellEcho.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2682,8 +2689,8 @@
         ]
     },
     "wizardSignatureMeteorShower": {
-        "title": "Signature Ability: §6[Meteor Shower]§7",
-        "description": "§7\nCalls down meteors on nearby enemies.\n\n§8[Requires Nearby Targets]\n\n§a40s Cooldown§7",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShower.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShower.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2701,8 +2708,8 @@
         ]
     },
     "wizardSignatureMeteorShowerGreater": {
-        "title": "§f[Greater]§7",
-        "description": "§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.\n\n§8[Requires Target]",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShowerGreater.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShowerGreater.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2720,8 +2727,8 @@
         ]
     },
     "wizardSignatureMeteorShowerWrath": {
-        "title": "§f[Wrath]",
-        "description": "§7Casting §6[Meteor Shower]§7 now grants you 10 stacks of Meteoric Wrath.\n\n§f(Meteoric Wrath)§7 periodically summons meteors above nearby enemies.",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShowerWrath.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShowerWrath.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2739,8 +2746,8 @@
         ]
     },
     "wizardSignatureMeteorShowerRenewingWrath": {
-        "title": "§f[Renewal]",
-        "description": "§7When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2758,8 +2765,8 @@
         ]
     },
     "wizardSignatureMeteorShowerRenewingWrath++": {
-        "title": "§f[Renewal +]",
-        "description": "§7When Meteoric Wrath triggers it has a 30% chance to not consume a stack.",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath++.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2777,8 +2784,8 @@
         ]
     },
     "wizardSignatureMeteorShowerRenewingWrath+++": {
-        "title": "§f[Renewal ++]",
-        "description": "§7When Meteoric Wrath triggers it has a 50% chance to not consume a stack.",
+        "title": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath+++.title"},
+        "description": {"translate":"text.skills.wizardSignatureMeteorShowerRenewingWrath+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2796,8 +2803,8 @@
         ]
     },
     "wizardSignatureIceComet": {
-        "title": "Signature Ability: §6[Ice Comet]§7",
-        "description": "§7\nCalls down an Ice Comet that deals damage to and slows enemies in a large radius.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.wizardSignatureIceComet.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceComet.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2815,8 +2822,8 @@
         ]
     },
     "wizardSignatureIceCometLeap": {
-        "title": "§f[Leap]",
-        "description": "§7Casting §6[Ice Comet]§7 now causes you to leap backwards and gain momentary slow falling.",
+        "title": {"translate":"text.skills.wizardSignatureIceCometLeap.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceCometLeap.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2834,8 +2841,8 @@
         ]
     },
     "wizardSignatureIceCometVolley": {
-        "title": "§f[Volley]",
-        "description": "§7Casting §6[Ice Comet]§7 now grants you 6 stacks of frost volley.\n\n§f(Frost Volley)§7 causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
+        "title": {"translate":"text.skills.wizardSignatureIceCometVolley.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceCometVolley.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2853,8 +2860,8 @@
         ]
     },
     "wizardSignatureIceCometDamage+": {
-        "title": "§f[Greater]",
-        "description": "§7§6[Ice Comet]§7 Is now larger and deals more damage & knockback.",
+        "title": {"translate":"text.skills.wizardSignatureIceCometDamage.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceCometDamage.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2872,8 +2879,8 @@
         ]
     },
     "wizardSignatureIceCometDamage++": {
-        "title": "§f[Greater +]",
-        "description": "§7§6[Ice Comet]§7 Is now larger and deals much more damage & knockback.",
+        "title": {"translate":"text.skills.wizardSignatureIceCometDamage++.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceCometDamage++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2891,8 +2898,8 @@
         ]
     },
     "wizardSignatureIceCometDamage+++": {
-        "title": "§f[Greater ++]",
-        "description": "§7§6[Ice Comet]§7 Is now larger and deals significantly more damage & knockback.",
+        "title": {"translate":"text.skills.wizardSignatureIceCometDamage+++.title"},
+        "description": {"translate":"text.skills.wizardSignatureIceCometDamage+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2910,8 +2917,8 @@
         ]
     },
     "wizardSignatureStaticDischarge": {
-        "title": "Signature Ability: §6[Static Discharge]§7",
-        "description": "§7\nReleases a high damage electrical discharge at your target, inflicting them with weakness.\n\n§8[Requires Target]\n\n§a35s Cooldown§7",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischarge.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischarge.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2929,8 +2936,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLightningBall": {
-        "title": "§f[Ball Lightning]",
-        "description": "§6[Static Discharge]§7 no longer leaps, but instead summons a slow-moving ball of lightning that periodically discharges electricity at nearby hostiles.\n\nAll passives that would usually activate from a leap, now activate when the Lightning Ball discharges at enemies.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLightningBall.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLightningBall.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2948,8 +2955,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLeap": {
-        "title": "§f[Leap]",
-        "description": "§7Your §6[Discharge]§7 can now leap between nearby enemies.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLeap.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLeap.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2967,8 +2974,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLeap++": {
-        "title": "§f[Leap +]",
-        "description": "§7Your §6[Static Discharge]§7 gains additional leaps before expiring.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLeap++.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLeap++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -2986,8 +2993,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLeap+++": {
-        "title": "§f[Leap ++]",
-        "description": "§7Your §6[Static Discharge]§7 gains significantly more leaps before expiring.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLeap+++.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLeap+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3005,8 +3012,8 @@
         ]
     },
     "wizardSignatureStaticDischargeSpeed": {
-        "title": "§f[Speed]",
-        "description": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 5% chance to gain speed.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3024,8 +3031,8 @@
         ]
     },
     "wizardSignatureStaticDischargeSpeed++": {
-        "title": "§f[Speed +]",
-        "description": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 10% chance to gain speed.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed++.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3043,8 +3050,8 @@
         ]
     },
     "wizardSignatureStaticDischargeSpeed+++": {
-        "title": "§f[Speed ++]",
-        "description": "§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 15% chance to gain speed.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed+++.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeSpeed+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3062,8 +3069,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLightningOrb": {
-        "title": "§f[Lightning Orb]",
-        "description": "§7In addition to gaining speed, you also have a chance to summon a Lightning Orb that orbits you erratically, dealing damage to enemies it passes through.\n\nFor each Lightning Orb in your vicinity, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you §a+1 §f[x]§7 Soul & Lightning spell power per stack.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLightningOrb.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLightningOrb.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3081,8 +3088,8 @@
         ]
     },
     "wizardSignatureStaticDischargeLightningOrbOnHit": {
-        "title": "§f[On Hit]",
-        "description": "§7Your Lightning Orb hits can now activate on-cast spell effects, such as Spell Echo.",
+        "title": {"translate":"text.skills.wizardSignatureStaticDischargeLightningOrbOnHit.title"},
+        "description": {"translate":"text.skills.wizardSignatureStaticDischargeLightningOrbOnHit.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3100,8 +3107,8 @@
         ]
     },
     "wizardSignatureArcaneBolt": {
-        "title": "Signature Ability: §6[Arcane Bolt]§7",
-        "description": "§7\nFires a concentrated bolt of arcane energy at your target.\n\n§a35s Cooldown§7",
+        "title": {"translate":"text.skills.wizardSignatureArcaneBolt.title"},
+        "description": {"translate":"text.skills.wizardSignatureArcaneBolt.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3119,8 +3126,8 @@
         ]
     },
     "wizardSignatureArcaneBoltLesser": {
-        "title": "§f[Lesser]",
-        "description": "§7Your §6[Arcane Bolt]§7 now fires a Lesser Arcane Bolt that deals less damage and causes chain reactions.",
+        "title": {"translate":"text.skills.wizardSignatureArcaneBoltLesser.title"},
+        "description": {"translate":"text.skills.wizardSignatureArcaneBoltLesser.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3138,8 +3145,8 @@
         ]
     },
     "wizardSignatureArcaneBoltVolley": {
-        "title": "§f[Volley]",
-        "description": "§7Casting §6[Arcane Bolt]§7 now grants you 10 stacks of Arcane Volley. \n \n§f(Arcane Volley)§7 causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
+        "title": {"translate":"text.skills.wizardSignatureArcaneBoltVolley.title"},
+        "description": {"translate":"text.skills.wizardSignatureArcaneBoltVolley.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3157,8 +3164,8 @@
         ]
     },
     "wizardSignatureArcaneBoltGreater": {
-        "title": "§f[Greater]",
-        "description": "§7You now cast a §6[Greater Arcane Bolt]§7 that deals increased damage and pierces.",
+        "title": {"translate":"text.skills.wizardSignatureArcaneBoltGreater.title"},
+        "description": {"translate":"text.skills.wizardSignatureArcaneBoltGreater.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3176,8 +3183,8 @@
         ]
     },
     "shamanSignatureAstralTotem": {
-        "title": "Signature Ability: §6[Astral Totem]§7",
-        "description": "§7Summon a Totem that periodically casts elemental comets on nearby enemies.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.shamanSignatureAstralTotem.title"},
+        "description": {"translate":"text.skills.shamanSignatureAstralTotem.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3195,8 +3202,8 @@
         ]
     },
     "shamanSignatureNovaTotem": {
-        "title": "Signature Ability: §6[Nova Totem]§7",
-        "description": "§7Summon a Totem that periodically casts elemental novas.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.shamanSignatureNovaTotem.title"},
+        "description": {"translate":"text.skills.shamanSignatureNovaTotem.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3214,8 +3221,8 @@
         ]
     },
     "shamanSignatureBoltTotem": {
-        "title": "Signature Ability: §6[Bolt Totem]§7",
-        "description": "§7Summon a Totem that periodically fires elemental bolts at nearby enemies.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.shamanSignatureBoltTotem.title"},
+        "description": {"translate":"text.skills.shamanSignatureBoltTotem.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3233,8 +3240,8 @@
         ]
     },
     "rogueSignatureEvasion": {
-        "title": "Signature Ability: §6[Evasion]§7",
-        "description": "§7\nThe effects of your Evasion Mastery passive are doubled for 8s.\n\n§a25s Cooldown§7",
+        "title": {"translate":"text.skills.rogueSignatureEvasion.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasion.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3252,8 +3259,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBlades": {
-        "title": "§f[Fan of Blades]",
-        "description": "§7§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n§f(Fan of Blades)§7 causes you to throw daggers at enemies in front of you.\n\n§8[Requires Target]",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBlades.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBlades.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3271,8 +3278,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesDisenchantment": {
-        "title": "§f[Disenchant]",
-        "description": "§7Your Fan of Blades now also inflict enemies with Disenchantment.\n\n§f(Disenchantment)§7 periodically strips buffs from the victim.",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesDisenchantment.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesDisenchantment.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3290,8 +3297,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesAssault": {
-        "title": "§f[Assault]",
-        "description": "§7You now gain 20 stacks of Fan of Blades with increased throw frequency but decreased damage.",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesAssault.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesAssault.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3309,8 +3316,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesRenewal": {
-        "title": "§f[Renewal]",
-        "description": "§7Gain two stacks of Fan of Blades on kill.",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesRenewal.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesRenewal.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3328,8 +3335,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesBladestorm": {
-        "title": "§f[Bladestorm]",
-        "description": "§7For each enemy hit by Fan of Blades, gain a stack of Bladestorm, up to 20 stacks.\n\n§f(Bladestorm)§7 causes daggers to rotate around you, dealing damage to nearby enemies.\nEach stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3347,8 +3354,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesBladestormSiphon": {
-        "title": "§f[Siphon]",
-        "description": "§7Bladestorm now has a chance to siphon health when it hits.\n\n§f(Bladestorm)§7 causes daggers to rotate around you, dealing damage to nearby enemies.\nEach stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3366,8 +3373,8 @@
         ]
     },
     "rogueSignaturePreparation": {
-        "title": "Signature Ability: §6[Preparation]§7",
-        "description": "§7\nGain Stealth and Speed 3 for 8s.\n\n§a10s Cooldown§7",
+        "title": {"translate":"text.skills.rogueSignaturePreparation.title"},
+        "description": {"translate":"text.skills.rogueSignaturePreparation.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3385,8 +3392,8 @@
         ]
     },
     "rogueSignaturePreparationShadowstrike": {
-        "title": "§f[Shadowstrike]",
-        "description": "§7§6[Preparation]§7 now causes you to dash forward at lightning speed, dealing mainhand damage to enemies in your path.",
+        "title": {"translate":"text.skills.rogueSignaturePreparationShadowstrike.title"},
+        "description": {"translate":"text.skills.rogueSignaturePreparationShadowstrike.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3404,8 +3411,8 @@
         ]
     },
     "rogueSignaturePreparationShadowstrikeVampire": {
-        "title": "§f[Vampire]",
-        "description": "§7You steal buffs from enemies caught within the path of your dash and inflict them with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+        "title": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeVampire.title"},
+        "description": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeVampire.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3423,8 +3430,8 @@
         ]
     },
     "rogueSignaturePreparationShadowstrikeShield": {
-        "title": "§f[Shield]",
-        "description": "§7§6[Preparation]§7 now grants you Barrier and cleanses you of any Revealed stacks.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+        "title": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeShield.title"},
+        "description": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeShield.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3442,8 +3449,8 @@
         ]
     },
     "rogueSignatureSiphoningStrikes": {
-        "title": "Signature Ability: §6[Siphoning Strikes]§7",
-        "description": "§7\nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.\n\n§a25s Cooldown§7",
+        "title": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeShield.title"},
+        "description": {"translate":"text.skills.rogueSignaturePreparationShadowstrikeShield.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3461,8 +3468,8 @@
         ]
     },
     "rogueSignatureSiphoningStrikesMighty": {
-        "title": "§f[Mighty]",
-        "description": "§7When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+        "title": {"translate":"text.skills.rogueSignatureSiphoningStrikesMighty.title"},
+        "description": {"translate":"text.skills.rogueSignatureSiphoningStrikesMighty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3480,8 +3487,8 @@
         ]
     },
     "rogueSignatureSiphoningStrikesAura": {
-        "title": "§f[Aura]",
-        "description": "§7When you gain §6[Siphoning Strikes]§7 you also gain Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
+        "title": {"translate":"text.skills.rogueSignatureSiphoningStrikesAura.title"},
+        "description": {"translate":"text.skills.rogueSignatureSiphoningStrikesAura.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3499,8 +3506,8 @@
         ]
     },
     "rogueSignatureSiphoningStrikesVanish": {
-        "title": "§f[Vanish]",
-        "description": "§7Your §6[Siphoning Strikes]§7 also cleanse you of all stacks of Revealed on hit.",
+        "title": {"translate":"text.skills.rogueSignatureSiphoningStrikesVanish.title"},
+        "description": {"translate":"text.skills.rogueSignatureSiphoningStrikesVanish.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3518,8 +3525,8 @@
         ]
     },
     "rangerSignatureArrowRain": {
-        "title": "Signature Ability: §6[Arrow Rain]§7",
-        "description": "§7\nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area.\n\n§a14s Cooldown§7",
+        "title": {"translate":"text.skills.rangerSignatureArrowRain.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRain.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3537,8 +3544,8 @@
         ]
     },
     "rangerSignatureArrowRainElemental": {
-        "title": "§f[Elemental]",
-        "description": "§7Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.\nThis effect is reduced when enemies are in close proximity.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainElemental.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainElemental.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3556,8 +3563,8 @@
         ]
     },
     "rangerSignatureArrowRainElementalArtillery": {
-        "title": "§f[Artillery]",
-        "description": "§7Your §6[Arrow Rain]§7 now creates additional elemental arrows that home toward enemies near the impact area.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainElementalArtillery.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainElementalArtillery.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3575,8 +3582,8 @@
         ]
     },
     "rangerSignatureArrowRainEplosive": {
-        "title": "§f[Minefield]",
-        "description": "§7Your §6[Arrow Rain]§7 now leaves behind proximity explosive arrows.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainEplosive.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainEplosive.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3594,8 +3601,8 @@
         ]
     },
     "rangerSignatureArrowRainVolley+": {
-        "title": "§f[Volley]",
-        "description": "§7Your §6[Arrow Rain]§7 now fires one additional volley.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainVolley+.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainVolley+.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3613,8 +3620,8 @@
         ]
     },
     "rangerSignatureArrowRainVolley++": {
-        "title": "§f[Volley +]",
-        "description": "§7Your §6[Arrow Rain]§7 now fires two additional volleys.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainVolley++.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainVolley++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3632,8 +3639,8 @@
         ]
     },
     "rangerSignatureArrowRainVolley+++": {
-        "title": "§f[Volley ++]",
-        "description": "§7Your §6[Arrow Rain]§7 now fires three additional volleys.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainVolley+++.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainVolley+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3651,8 +3658,8 @@
         ]
     },
     "rangerSignatureArrowRainRadius+": {
-        "title": "§f[Radius]",
-        "description": "§7Your §6[Arrow Rain]§7 now has +1 radius.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainRadius+.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainRadius+.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3670,8 +3677,8 @@
         ]
     },
     "rangerSignatureArrowRainRadius++": {
-        "title": "§f[Radius +]",
-        "description": "§7Your §6[Arrow Rain]§7 now has +2 radius.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainRadius++.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainRadius++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3689,8 +3696,8 @@
         ]
     },
     "rangerSignatureArrowRainRadius+++": {
-        "title": "§f[Radius ++]",
-        "description": "§7Your §6[Arrow Rain]§7 now has +3 radius.",
+        "title": {"translate":"text.skills.rangerSignatureArrowRainRadius+++.title"},
+        "description": {"translate":"text.skills.rangerSignatureArrowRainRadius+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3708,8 +3715,8 @@
         ]
     },
     "rangerSignatureDisengage": {
-        "title": "Signature Ability: §6[Disengage]§7",
-        "description": "§7\nSlow nearby enemies and leap backwards.\n\n§a15s Cooldown§7",
+        "title": {"translate":"text.skills.rangerSignatureDisengage.title"},
+        "description": {"translate":"text.skills.rangerSignatureDisengage.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3727,8 +3734,8 @@
         ]
     },
     "rangerSignatureDisengageRecuperate": {
-        "title": "§f[Recuperate]",
-        "description": "§7§6[Disengage]§7 now heals all nearby pets to full health.",
+        "title": {"translate":"text.skills.rangerSignatureDisengageRecuperate.title"},
+        "description": {"translate":"text.skills.rangerSignatureDisengageRecuperate.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3746,8 +3753,8 @@
         ]
     },
     "rangerSignatureDisengageExploitation": {
-        "title": "§f[Aura]",
-        "description": "§7§6[Disengage]§7 now grants all nearby pets Immobilizing Aura for a short duration. \n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
+        "title": {"translate":"text.skills.rangerSignatureDisengageExploitation.title"},
+        "description": {"translate":"text.skills.rangerSignatureDisengageExploitation.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3765,8 +3772,8 @@
         ]
     },
     "rangerSignatureDisengageMarksman": {
-        "title": "§f[Marksman]",
-        "description": "§7Activating §6[Disengage]§7 while wielding a bow in your mainhand, now grants you Marksman. Otherwise, gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.\n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+        "title": {"translate":"text.skills.rangerSignatureDisengageMarksman.title"},
+        "description": {"translate":"text.skills.rangerSignatureDisengageMarksman.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3784,8 +3791,8 @@
         ]
     },
     "rangerSignatureElementalArrows": {
-        "title": "Signature Ability: §6[Elemental Arrows]§7",
-        "description": "§7\nGain 5 stacks of Elemental Arrows.\n\n§f(Elemental Arrows)§7 Causes your next fully charged ranged attack to fire several elemental arrows at enemies in the targeted area.\n\n§a40s Cooldown§7",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrows.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrows.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3803,8 +3810,8 @@
         ]
     },
     "rangerSignatureElementalArrowsFrostAttuned": {
-        "title": "§f[Frost Attune]",
-        "description": "§7Your §6[Elemental Arrows]§7 will always be frost attuned.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsFrostAttuned.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsFrostAttuned.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3822,8 +3829,8 @@
         ]
     },
     "rangerSignatureElementalArrowsFireAttuned": {
-        "title": "§f[Fire Attune]",
-        "description": "§7Your §6[Elemental Arrows]§7 will always be fire attuned.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsFireAttuned.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsFireAttuned.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3841,8 +3848,8 @@
         ]
     },
     "rangerSignatureElementalArrowsLightningAttuned": {
-        "title": "§f[Lightning Attune]",
-        "description": "§7Your §6[Elemental Arrows]§7 will always be lightning attuned.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsLightningAttuned.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsLightningAttuned.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3860,8 +3867,8 @@
         ]
     },
     "rangerSignatureElementalArrowsRadius+": {
-        "title": "§f[Radius]",
-        "description": "§7The radius of your §6[Elemental Arrows]§7 is increased by 2.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsRadius+.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsRadius+.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3879,8 +3886,8 @@
         ]
     },
     "rangerSignatureElementalArrowsRadius++": {
-        "title": "§f[Radius +]",
-        "description": "§7The radius of your §6[Elemental Arrows]§7 is increased by 4.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsRadius++.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsRadius++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3898,8 +3905,7 @@
         ]
     },
     "rangerSignatureElementalArrowsRadius+++": {
-        "title": "§f[Radius ++]",
-        "description": "§7The radius of your §6[Elemental Arrows]§7 is increased by 6.",
+        
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3917,8 +3923,8 @@
         ]
     },
     "rangerSignatureElementalArrowsStacks+": {
-        "title": "§f[Quantity]",
-        "description": "§7You gain one additional stack of §6[Elemental Arrows]§7.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsStacks+.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsStacks+.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3936,8 +3942,8 @@
         ]
     },
     "rangerSignatureElementalArrowsStacks++": {
-        "title": "§f[Quantity +]",
-        "description": "§7You gain two additional stacks of §6[Elemental Arrows]§7.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsStacks++.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsStacks++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3955,8 +3961,8 @@
         ]
     },
     "rangerSignatureElementalArrowsStacks+++": {
-        "title": "§f[Quantity ++]",
-        "description": "§7You gain three additional stacks of §6[Elemental Arrows]§7.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsStacks+++.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsStacks+++.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3974,8 +3980,8 @@
         ]
     },
     "rangerSignatureElementalArrowsRenewal": {
-        "title": "§f[Renewal]",
-        "description": "§7You have a 35% chance on kill to gain a stack of §6[Elemental Arrows]§7.",
+        "title": {"translate":"text.skills.rangerSignatureElementalArrowsRenewal.title"},
+        "description": {"translate":"text.skills.rangerSignatureElementalArrowsRenewal.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -3993,8 +3999,8 @@
         ]
     },
     "necromancerSignatureEnrage": {
-        "title": "Signature Ability: §6[Enrage]§7",
-        "description": "§7\nSend nearby minions into a frenzy, granting them speed, strength and resistance.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.necromancerSignatureEnrage.title"},
+        "description": {"translate":"text.skills.necromancerSignatureEnrage.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4012,8 +4018,8 @@
         ]
     },
     "necromancerSignatureSacrifice": {
-        "title": "Signature Ability: §6[Sacrifice]§77",
-        "description": "§7\nSacrifice nearby minions, gaining a stack of strength, haste, and resistance for each minion sacrificed.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.necromancerSignatureSacrifice.title"},
+        "description": {"translate":"text.skills.necromancerSignatureSacrifice.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4031,8 +4037,8 @@
         ]
     },
     "necromancerSignatureSpectralGrasp": {
-        "title": "Signature Ability: §6[Spectral Grasp]§7",
-        "description": "§7\nDamage your target and pull them towards you, inflicting them with slowness & mining fatigue.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.necromancerSignatureSpectralGrasp.title"},
+        "description": {"translate":"text.skills.necromancerSignatureSpectralGrasp.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4050,8 +4056,8 @@
         ]
     },
     "frostguardSignatureConjuringStrikes": {
-        "title": "Signature Ability: §6[Conjuring Strikes]§7",
-        "description": "§7\nGain 6 stacks of Conjuring Strikes.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.frostguardSignatureConjuringStrikes.title"},
+        "description": {"translate":"text.skills.frostguardSignatureConjuringStrikes.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4069,8 +4075,8 @@
         ]
     },
     "frostguardSignatureFrostNova": {
-        "title": "Signature Ability: §6[Frost Nova]§7",
-        "description": "§7\nRelease a Frost Nova, damaging and slowing nearby enemies.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.frostguardSignatureFrostNova.title"},
+        "description": {"translate":"text.skills.frostguardSignatureFrostNova.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4088,8 +4094,8 @@
         ]
     },
     "frostguardSignatureIceBlock": {
-        "title": "Signature Ability: §6[Ice Block]§7",
-        "description": "§7\nGain Ice Block for 6s.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.frostguardSignatureIceBlock.title"},
+        "description": {"translate":"text.skills.frostguardSignatureIceBlock.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4107,8 +4113,8 @@
         ]
     },
     "crusaderAegis": {
-        "title": "§7§a[Aegis]§7",
-        "description": "§7Periodically consume stacks of exhaustion to gain a stack of Divine Protection.",
+        "title": {"translate":"text.skills.crusaderAegis.title"},
+        "description": {"translate":"text.skills.crusaderAegis.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4126,8 +4132,8 @@
         ]
     },
     "crusaderRetribution": {
-        "title": "§7§a[Retribution]§7",
-        "description": "§7Chance on shield block to cast Judgement on your attacker.",
+        "title": {"translate":"text.skills.crusaderRetribution.title"},
+        "description": {"translate":"text.skills.crusaderRetribution.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4145,8 +4151,8 @@
         ]
     },
     "crusaderExhaustiveRecovery": {
-        "title": "§7§a[Exhaustive Recovery]§7",
-        "description": "§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
+        "title": {"translate":"text.skills.crusaderExhaustiveRecovery.title"},
+        "description": {"translate":"text.skills.crusaderExhaustiveRecovery.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4164,8 +4170,8 @@
         ]
     },
     "crusaderSignatureConsecration": {
-        "title": "Signature Ability: §6[Consecration]§7",
-        "description": "§7\nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies. Damage & Healing scales with Healing Spell Power.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.crusaderSignatureConsecration.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecration.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4183,8 +4189,8 @@
         ]
     },
     "crusaderSignatureConsecrationDuration": {
-        "title": "§f[Duration]",
-        "description": "Your §6[Consecration]§7 now lasts longer.",
+        "title": {"translate":"text.skills.crusaderSignatureConsecrationDuration.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecrationDuration.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4202,8 +4208,8 @@
         ]
     },
     "crusaderSignatureConsecrationWard": {
-        "title": "§f[Ward]",
-        "description": "Your §6[Consecration]§7 now wards away undead hostiles.",
+        "title": {"translate":"text.skills.crusaderSignatureConsecrationWard.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecrationWard.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4221,8 +4227,8 @@
         ]
     },
     "crusaderSignatureConsecrationTaunt": {
-        "title": "§f[Taunt]",
-        "description": "Your §6[Consecration]§7 now taunts affected hostiles.\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+        "title": {"translate":"text.skills.crusaderSignatureConsecrationTaunt.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecrationTaunt.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4240,8 +4246,8 @@
         ]
     },
     "crusaderSignatureConsecrationMighty": {
-        "title": "§f[Mighty]",
-        "description": "Your §6[Consecration]§7 now periodically grants nearby allies Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+        "title": {"translate":"text.skills.crusaderSignatureConsecrationMighty.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecrationMighty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4259,8 +4265,8 @@
         ]
     },
     "crusaderSignatureConsecrationSpellforged": {
-        "title": "§f[Spellforged]",
-        "description": "Your §6[Consecration]§7 now periodically grants nearby allies Spellforged.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+        "title": {"translate":"text.skills.crusaderSignatureConsecrationSpellforged.title"},
+        "description": {"translate":"text.skills.crusaderSignatureConsecrationSpellforged.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4278,8 +4284,8 @@
         ]
     },
     "crusaderSignatureSacredOnslaught": {
-        "title": "Signature Ability: §6[Sacred Onslaught]§7",
-        "description": "§7\nCharge forward. If blocking during the charge, you deal damage based on your armor value and knock back enemies.\n\n§a15s Cooldown§7",
+        "title": {"translate":"text.skills.crusaderSignatureSacredOnslaught.title"},
+        "description": {"translate":"text.skills.crusaderSignatureSacredOnslaught.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4297,8 +4303,8 @@
         ]
     },
     "crusaderSignatureSacredOnslaughtHeal": {
-        "title": "§f[Heal]",
-        "description": "Your §6[Sacred Onslaught]§7 heals allies it passes through, and grants them Divine Protection.\n\nHealing scales off Healing Spell Power",
+        "title": {"translate":"text.skills.crusaderSignatureSacredOnslaughtHeal.title"},
+        "description": {"translate":"text.skills.crusaderSignatureSacredOnslaughtHeal.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4316,8 +4322,8 @@
         ]
     },
     "crusaderSignatureSacredOnslaughtDefend": {
-        "title": "§f[Defend]",
-        "description": "Your §6[Sacred Onslaught]§7 also grants you Divine Protection for a duration.",
+        "title": {"translate":"text.skills.crusaderSignatureSacredOnslaughtDefend.title"},
+        "description": {"translate":"text.skills.crusaderSignatureSacredOnslaughtDefend.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4335,8 +4341,8 @@
         ]
     },
     "crusaderSignatureSacredOnslaughtMighty": {
-        "title": "§f[Mighty]",
-        "description": "Your §6[Sacred Onslaught]§7 also grants you Might for a duration.",
+        "title": {"translate":"text.skills.crusaderSignatureSacredOnslaughtMighty.title"},
+        "description": {"translate":"text.skills.crusaderSignatureSacredOnslaughtMighty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4354,8 +4360,8 @@
         ]
     },
     "crusaderSignatureSacredOnslaughtStun": {
-        "title": "§f[Stun]",
-        "description": "Your §6[Sacred Onslaught]§7 also stuns enemies, so long as you hold block while advancing.",
+        "title": {"translate":"text.skills.crusaderSignatureSacredOnslaughtStun.title"},
+        "description": {"translate":"text.skills.crusaderSignatureSacredOnslaughtStun.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4373,8 +4379,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCall": {
-        "title": "Signature Ability: §6[Heavensmith's Call]§7",
-        "description": "§7\nCall down an anvil from the heavens to crush your foes.\n\n§a55s Cooldown§7",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCall.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCall.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4392,8 +4398,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCallTaunt": {
-        "title": "§f[Taunt]",
-        "description": "§6[Heavensmith's Call]§7 Now Taunts the primary target.§7\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCallTaunt.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCallTaunt.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4411,8 +4417,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCallMark": {
-        "title": "§f[Death Mark]",
-        "description": "§6[Heavensmith's Call]§7 Now inflicts the primary target with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCallMark.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCallMark.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4430,8 +4436,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCallEffect": {
-        "title": "§f[Divine Adjudication]",
-        "description": "§6[Heavensmith's Call]§7 Now grants you Divine Adjudication for a duration.§7\n\n§f(Divine Adjudication)§7 periodically cast Judgement on nearby enemies.",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffect.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffect.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4449,8 +4455,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCallEffectExhaust": {
-        "title": "§f[Recuperate]",
-        "description": "§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now cleanses stacks of Exhaustion from you when it triggers.",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffectExhaust.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffectExhaust.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4468,8 +4474,8 @@
         ]
     },
     "crusaderSignatureHeavensmithsCallEffectMighty": {
-        "title": "§f[Mighty]",
-        "description": "§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now grants you stacks of Might when it triggers.",
+        "title": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffectMighty.title"},
+        "description": {"translate":"text.skills.crusaderSignatureHeavensmithsCallEffectMighty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4487,8 +4493,8 @@
         ]
     },
     "clericAltruism": {
-        "title": "§7§a[Altruism]§7",
-        "description": "§7When wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+        "title": {"translate":"text.skills.clericAltruism.title"},
+        "description": {"translate":"text.skills.clericAltruism.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4506,8 +4512,8 @@
         ]
     },
     "clericMutualMending": {
-        "title": "§7§a[Mutual Mending]§7",
-        "description": "§7When casting a healing spell, you have a chance to also cast that spell on yourself.",
+        "title": {"translate":"text.skills.clericMutualMending.title"},
+        "description": {"translate":"text.skills.clericMutualMending.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4525,8 +4531,8 @@
         ]
     },
     "clericHealingWard": {
-        "title": "§7§a[Healing Ward]§7",
-        "description": "§7When casting a healing spell to grant your target Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+        "title": {"translate":"text.skills.clericHealingWard.title"},
+        "description": {"translate":"text.skills.clericHealingWard.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4544,8 +4550,8 @@
         ]
     },
     "clericSignatureSacredOrb": {
-        "title": "Signature Ability: §6[Sacred Orb]§7",
-        "description": "§7\nRelease an orb of holy energy that flies forward before seeking out a nearby ally.\nWhen this orb connects with an ally, it heals them and grants you both Vitality Bond.\n\n§f(Vitality Bond)§7 equalises the HP of the affected entities for its duration.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.clericSignatureSacredOrb.title"},
+        "description": {"translate":"text.skills.clericSignatureSacredOrb.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4563,8 +4569,8 @@
         ]
     },
     "clericSignatureSacredOrbSpeed": {
-        "title": "§f[Speed]",
-        "description": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also buffs the recipient with attack & movespeed, but inflicts you with Mining Fatigue.",
+        "title": {"translate":"text.skills.clericSignatureSacredOrbSpeed.title"},
+        "description": {"translate":"text.skills.clericSignatureSacredOrbSpeed.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4582,8 +4588,8 @@
         ]
     },
     "clericSignatureSacredOrbDebuffs": {
-        "title": "§f[Compassion]",
-        "description": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also causes debuffs affecting the recipient to periodically transfer to you.",
+        "title": {"translate":"text.skills.clericSignatureSacredOrbDebuffs.title"},
+        "description": {"translate":"text.skills.clericSignatureSacredOrbDebuffs.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4601,8 +4607,8 @@
         ]
     },
     "clericSignatureSacredOrbBuffs": {
-        "title": "§f[Benevolence]",
-        "description": "§7Vitality Bond granted by your §6[Sacred Orb]§7 now also periodically grants copies of your buffs to the recipient.",
+        "title": {"translate":"text.skills.clericSignatureSacredOrbBuffs.title"},
+        "description": {"translate":"text.skills.clericSignatureSacredOrbBuffs.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4620,8 +4626,8 @@
         ]
     },
     "clericSignatureDivineIntervention": {
-        "title": "Signature Ability: §6[Divine Intervention]§7",
-        "description": "§7\nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§8[Requires Target]\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
+        "title": {"translate":"text.skills.clericSignatureDivineIntervention.title"},
+        "description": {"translate":"text.skills.clericSignatureDivineIntervention.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4639,8 +4645,8 @@
         ]
     },
     "clericSignatureDivineInterventionFireResistance": {
-        "title": "§f[Fire Resistance]",
-        "description": "§7Your §6[Divine Intervention]§7 also grants the target Fire Resistance for its duration.",
+        "title": {"translate":"text.skills.clericSignatureDivineInterventionFireResistance.title"},
+        "description": {"translate":"text.skills.clericSignatureDivineInterventionFireResistance.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4658,8 +4664,8 @@
         ]
     },
     "clericSignatureDivineInterventionMight": {
-        "title": "§f[Mighty]",
-        "description": "§7Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+        "title": {"translate":"text.skills.clericSignatureDivineInterventionMight.title"},
+        "description": {"translate":"text.skills.clericSignatureDivineInterventionMight.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4677,8 +4683,8 @@
         ]
     },
     "clericSignatureDivineInterventionSpellforged": {
-        "title": "§f[Spellforged]",
-        "description": "§7Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+        "title": {"translate":"text.skills.clericSignatureDivineInterventionSpellforged.title"},
+        "description": {"translate":"text.skills.clericSignatureDivineInterventionSpellforged.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4696,8 +4702,8 @@
         ]
     },
     "clericSignatureAnointWeapon": {
-        "title": "Signature Ability: §6[Anoint Weapon]§7",
-        "description": "§7\nAnoint your weapon with a sacred oil.\n\n§f(Anoint Weapon)§7 causes your attacks to deal AoE holy damage, and periodically heal nearby allies.\nAoE damage scales with Healing Power.\n\n§a35s Cooldown§7",
+        "title": {"translate":"text.skills.clericSignatureAnointWeapon.title"},
+        "description": {"translate":"text.skills.clericSignatureAnointWeapon.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4715,8 +4721,8 @@
         ]
     },
     "clericSignatureAnointWeaponResistance": {
-        "title": "§f[Resistance]",
-        "description": "§7Your §6[Anoint Weapon]§7 now also grants you Resistance on hits.",
+        "title": {"translate":"text.skills.clericSignatureAnointWeaponResistance.title"},
+        "description": {"translate":"text.skills.clericSignatureAnointWeaponResistance.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4734,8 +4740,8 @@
         ]
     },
     "clericSignatureAnointWeaponUndying": {
-        "title": "§f[Undying]",
-        "description": "§7While your §6[Anoint Weapon]§7 is active, taking damage while below 30% HP has a chance to grant you Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
+        "title": {"translate":"text.skills.clericSignatureAnointWeaponUndying.title"},
+        "description": {"translate":"text.skills.clericSignatureAnointWeaponUndying.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4753,8 +4759,8 @@
         ]
     },
     "clericSignatureAnointWeaponCleanse": {
-        "title": "§f[Cleanse]",
-        "description": "§7While your §6[Anoint Weapon]§7 is active, you periodically cleanse yourself of debuffs.",
+        "title": {"translate":"text.skills.clericSignatureAnointWeaponCleanse.title"},
+        "description": {"translate":"text.skills.clericSignatureAnointWeaponCleanse.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4772,8 +4778,8 @@
         ]
     },
     "berserkerSignatureRampage": {
-        "title": "Signature Ability: §6[Rampage]§7",
-        "description": "§7\nGain Rampage for 15s.\n\n§f(Rampage)§7 grants you random buffs each time you take damage.\n\n§a30s Cooldown§7",
+        "title": {"translate":"text.skills.berserkerSignatureRampage.title"},
+        "description": {"translate":"text.skills.berserkerSignatureRampage.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4791,8 +4797,8 @@
         ]
     },
     "berserkerSignatureRampageCharge": {
-        "title": "§f[Charge]",
-        "description": "§7§6[Rampage]§7 now immediately grants you regeneration and resistance and causes you to barrel forward, dealing damage and knocking back enemies.",
+        "title": {"translate":"text.skills.berserkerSignatureRampageCharge.title"},
+        "description": {"translate":"text.skills.berserkerSignatureRampageCharge.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4810,8 +4816,8 @@
         ]
     },
     "berserkerSignatureRampageChargeRelentless": {
-        "title": "§f[Relentless]",
-        "description": "§7When your charge deals damage, you convert your stacks of Exhaustion into Strength.",
+        "title": {"translate":"text.skills.berserkerSignatureRampageChargeRelentless.title"},
+        "description": {"translate":"text.skills.berserkerSignatureRampageChargeRelentless.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4829,8 +4835,8 @@
         ]
     },
     "berserkerSignatureRampageChargeImmob": {
-        "title": "§f[Immobilize]",
-        "description": "§7Enemies hit by your charge are also inflicted with Immobilize. \n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+        "title": {"translate":"text.skills.berserkerSignatureRampageChargeImmob.title"},
+        "description": {"translate":"text.skills.berserkerSignatureRampageChargeImmob.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4848,8 +4854,8 @@
         ]
     },
     "berserkerSignatureBloodthirsty": {
-        "title": "Signature Ability: §6[Bloodthirsty]§7",
-        "description": "§7\nGain Bloodthirsty for 20s.\n\n§f(Bloodthirsty)§7 grants you 25% of your max health each time you defeat an enemy.\n\n§a25s Cooldown§7",
+        "title": {"translate":"text.skills.berserkerSignatureBloodthirsty.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBloodthirsty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4867,8 +4873,8 @@
         ]
     },
     "berserkerSignatureBloodthirstyMighty": {
-        "title": "§f[Mighty]",
-        "description": "§7§6[Bloodthirsty]§7 Now grants you Might on use.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+        "title": {"translate":"text.skills.berserkerSignatureBloodthirstyMighty.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBloodthirstyMighty.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4886,8 +4892,8 @@
         ]
     },
     "berserkerSignatureBloodthirstyTireless": {
-        "title": "§f[Tireless]",
-        "description": "§7While §6[Bloodthirsty]§7 is active, you have a chance to remove stacks of Exhaustion on hit.",
+        "title": {"translate":"text.skills.berserkerSignatureBloodthirstyTireless.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBloodthirstyTireless.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4905,8 +4911,8 @@
         ]
     },
     "berserkerSignatureBloodthirstyTremor": {
-        "title": "§f[Tremor]",
-        "description": "§7While §6[Bloodthirsty]§7 is active, you have a chance to gain Earthshaker on hit.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+        "title": {"translate":"text.skills.berserkerSignatureBloodthirstyTremor.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBloodthirstyTremor.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4924,8 +4930,8 @@
         ]
     },
     "berserkerSignatureBerserking": {
-        "title": "Signature Ability: §6[Berserking]§7",
-        "description": "§7\nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n§f(Berserking)§7 grants you stacking offensive buffs each time you hit an enemy.\n\n§a25s Cooldown§7",
+        "title": {"translate":"text.skills.berserkerSignatureBerserking.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBerserking.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4943,8 +4949,8 @@
         ]
     },
     "berserkerSignatureBerserkingLeap": {
-        "title": "§f[Leap Slam]",
-        "description": "§7§6[Berserking]§7 now causes you to perform a forward leap slam, damaging and knocking back enemies at the landing location.",
+        "title": {"translate":"text.skills.berserkerSignatureBerserkingLeap.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBerserkingLeap.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4962,8 +4968,8 @@
         ]
     },
     "berserkerSignatureBerserkingLeapImmob": {
-        "title": "§f[Immobilize]",
-        "description": "§7Leap Slam now also inflicts enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+        "title": {"translate":"text.skills.berserkerSignatureBerserkingLeapImmob.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBerserkingLeapImmob.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -4981,8 +4987,8 @@
         ]
     },
     "berserkerSignatureBerserkingLeapPull": {
-        "title": "§f[Magnet]",
-        "description": "§7Leap Slam now pulls nearby enemies instead of knocking them back.",
+        "title": {"translate":"text.skills.berserkerSignatureBerserkingLeapPull.title"},
+        "description": {"translate":"text.skills.berserkerSignatureBerserkingLeapPull.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -5000,8 +5006,8 @@
         ]
     },
     "portalSapphire": {
-        "title": "§7§6[Junction: §fSapphire§6]§7",
-        "description": "§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
+        "title": {"translate":"text.skills.portalSapphire.title"},
+        "description": {"translate":"text.skills.portalSapphire.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
@@ -5019,8 +5025,8 @@
         ]
     },
     "portalRuby": {
-        "title": "§7§6[Junction: §fRuby§6]§7",
-        "description": "§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
+        "title": {"translate":"text.skills.portalRuby.title"},
+        "description": {"translate":"text.skills.portalRuby.description"},
         "frame": "goal",
         "icon": {
             "type": "texture",
