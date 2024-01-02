@@ -1,13 +1,13 @@
 {
-	"unlocked_by_default": true,
-	"spent_points_limit": 42,
-	"exclusive_root": true,
-	"title": "Simply Skills",
-	"icon": {
-		"type": "texture",
-		"data": {
-			"texture": "simplyskills:textures/icons/berserker_path.png"
-		}
-	},
-	"background": "simplyskills:textures/backgrounds/skillbackground_6.png"
+    "unlocked_by_default": true,
+    "spent_points_limit": 42,
+    "exclusive_root": true,
+    "title": {"translate":"text.category.tree.title"},
+    "icon": {
+        "type": "texture",
+        "data": {
+            "texture": "simplyskills:textures/icons/berserker_path.png"
+        }
+    },
+    "background": "simplyskills:textures/backgrounds/skillbackground_6.png"
 }

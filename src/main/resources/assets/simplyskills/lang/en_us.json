@@ -534,5 +534,715 @@
 
   "text.autoconfig.simplyskills.option.cleric.signatureClericDivineInterventionCooldown" :                    "§6[Signature]§7 Divine Intervention cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.cleric.signatureClericSacredOrbCooldown" :                             "§6[Signature]§7 Sacred Orb cooldown (in seconds)",
-  "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)"
+  "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)",
+  
+  
+  "text.category.tree.title":                                                                                 "simply skills",
+  "text.skills.pathWayfarer.title":                                                                               "Path of the §bWayfarer",
+  "text.skills.pathWayfarer.description":                                                                         "§a+10% §f[+]§7 Movement Speed",
+
+  "text.skills.initiate.title":                                                                               "Path of the §bInitiate§7",
+  "text.skills.initiate.description":                                                                         "§a+1§7 To all schools of magic",
+
+  "text.skills.warrior.title":                                                                                "Path of the §bWarrior§7",
+  "text.skills.warrior.description":                                                                          "§a+10%§f [+] §7Melee Damage",
+
+  "text.skills.spell_fire_damage_additive+1%.title":                                                          "§a+3%§f [+] §7Fire Spell Damage",
+  "text.skills.spell_fire_damage_multi+1%.title":                                                             "§a+5% §f[+] §7Fire Spell Damage",
+  "text.skills.spell_arcane_damage_additive+1%.title":                                                        "§a+3%§f [+] §7Arcane Spell Damage",
+  "text.skills.spell_arcane_damage_multi+1%.title":"§a+5%§f [+] §7Arcane Spell Damage",
+  "text.skills.spell_frost_damage_additive+1%.title":"§a+3% §f[+] §7Frost Spell Damage",
+  "text.skills.spell_frost_damage_multi+1%.title":"§a+5% §f[+] §7Frost Spell Damage",
+  "text.skills.spell_healing_power_additive+1%.title":"§a+3% §f[+] §7Healing Power",
+  "text.skills.spell_healing_power_multi+1%.title":"§a+5% §f[+] §7Healing Power",
+  "text.skills.spell_lightning_damage_additive+1%.title":"§a+3%§f [+] §7Lightning Spell Damage",
+  "text.skills.spell_lightning_damage_multi+1%.title":"§a+5% §f[+] §7Lightning Spell Damage",
+  "text.skills.spell_soul_damage_additive+1%.title":"§a+3% §f[+] §7Soul Spell Damage",
+  "text.skills.spell_soul_damage_multi+1%.title":"§a+5% §f[+] §7Soul Spell Damage",
+  "text.skills.spell_crit_damage_additive+1%.title":"§a+3% §f[+] §7Spell Critical Damage",
+  "text.skills.spell_crit_damage_multi+1%.title":"§a+5%§f [+] §7Spell Critical Damage",
+  "text.skills.spell_crit_chance_additive+1%.title":"§a+3% §f[+] §7Spell Critical Chance",
+  "text.skills.spell_crit_chance_multi+1%.title":"§a+5% §f[+] §7Spell Critical Chance",
+  "text.skills.spell_haste_additive+1%.title":"§a+3% §f[+] §7Spell Haste",
+  "text.skills.spell_haste_multi+1%.title":"§a+5% §f[+] §7Spell Haste",
+  "text.skills.health+2.title":"§a+1 §7Heart teste",
+  "text.skills.resistance+1%.title":"§a+3% §f[+] §7Resistance",
+  "text.skills.resistance_multi+2%.title":"§a+5% §f[+] §7Resistance",
+  "text.skills.melee_damage+1%.title":"§a+3% §f[+] §7Melee Damage",
+  "text.skills.melee_damage_multi+2%.title":"§a+5% §f[+] §7Melee Damage",
+  "text.skills.ranged_damage+1%.title":"§a+3% §f[+] §7Ranged Damage",
+  "text.skills.ranged_damage_multi+2%.title":"§a+5% §f[+] §7Ranged Damage",
+  "text.skills.attack_speed+1%.title":"§a+3% §f[+] §7Attack Speed",
+  "text.skills.attack_speed_multi+2%.title":"§a+5% §f[+] §7Attack Speed",
+  "text.skills.movement_speed+1%.title":"§a+3% §f[+] §7Movement Speed",
+  "text.skills.movement_speed_multi+1.5%.title":"§a+5% §f[+] §7Movement Speed",
+  "text.skills.luck+0.25.title":"§a+0.25 §7Luck",
+  "text.skills.stamina+5%.title":"§a+3% §f[+] §7Stamina",
+  "text.skills.stamina_multi+7%.title":"§a+5% §f[+] §7Stamina",
+  "text.skills.healing+1%.title":"§a+1% §7Healing [DEPRECATED]",
+  "text.skills.jump+1%.title":"§a+3% §f[+] §7Jump",
+  "text.skills.jump_multi+2%.title":"§a+5%§f [+] §7Jump",
+
+  "text.skills.hardy.title":"§7§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
+  "text.skills.initiateSlowfall.title":"§7§a[Innate Slowfall]§7",
+  "text.skills.initiateSlowfall.description":"§7When falling long distances you gain Slow Falling.",
+
+  "text.skills.fervour.title":"§7§a[Fervour]§7",
+  "text.skills.fervour.description":"§7Landing a killing blow grants you haste for a short duration.",
+
+  "text.skills.wayfarerStealth.title":"§7§a[Stealth]§7",
+  "text.skills.wayfarerStealth.description":"§7Gain Stealth when crouching.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+  
+  "text.skills.wayfarerSneak.title":"§7§a[Sneak]§7",
+  "text.skills.wayfarerSneak.description":"§7Gain speed when crouching. Sneaking while you have Stealth grants you increasing stacks of Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.wayfarerReflexive.title":"§7§a[Reflexive]§7",
+  "text.skills.wayfarerReflexive.description":"§7When your Stealth is forcefully broken, you have a chance to trigger the Rogue Evasion Mastery signature ability.\n\nWhen your stealth is broken by attacking, gain Might and Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.wayfarerUnseen.title":"§7§a[Unseen]§7",
+  "text.skills.wayfarerUnseen.description":"§7While loading a Crossbow, gain momentary Stealth.\nIf you already have stealth, you instead gain Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
+  
+  "text.skills.wayfarerGuarding.title":"§7§a[Guarding]§7",
+  "text.skills.wayfarerGuarding.description":"§7While you have a Crossbow in your offhand, you periodically gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+  
+  "text.skills.wayfarerQuickfire.title":"§7§a[Quickfire]§7",
+  "text.skills.wayfarerQuickfire.description":"§7When using a bow, firing fully charged arrows in quick succession grants you stacking Marksmanship.\n\n§f(Marksmanship)§7 grants §a+10% §f[x]§7 increased ranged damage per stack.",
+  
+  "text.skills.initiateNullification.title":"§7§a[Nullification]§7",
+  "text.skills.initiateNullification.description":"§7Periodically strip buffs from nearby hostiles.",
+  
+  "text.skills.initiateGambit.title":"§7§a[Gambit]",
+  "text.skills.initiateGambit.description":"§7Your spell damage is reduced by §c25% §f[x]§7, but your spell critical damage is increased by §a+75% §f[x]§7.",
+  
+  "text.skills.initiateEmpower.title":"§7§a[Empower]§7",
+  "text.skills.initiateEmpower.description":"§7Chance on spell cast to gain a stack of Attunement.\n\n§f(Attunement)§7 Increases spell damage for a specific school of magic by §a+2% §f[x]§7 per stack.",
+  
+  "text.skills.initiateAttuned.title":"§7§a[Attuned]§7",
+  "text.skills.initiateAttuned.description":"§7When you have 5 or more stacks of attunement, periodically convert them into stacks of Precision.\n\n§f(Precision)§7 Increases spell critical damage and critical chance by §a+2% §f[x]§7 per stack.",
+  
+  "text.skills.initiateLightningRod.title":"§7§a[Lightning Rod]§7",
+  "text.skills.initiateLightningRod.description":"§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by §a+2% §f[x]§7 per stack.",
+  
+  "text.skills.initiateEldritchEnfeeblement.title":"§7§a[Eldritch Enfeeblement]§7",
+  "text.skills.initiateEldritchEnfeeblement.description":"§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.",
+  
+  "text.skills.initiateHasty.title":"§7§a[Hasty]§7",
+  "text.skills.initiateHasty.description":"§7Your movespeed is increased by §a+15% §f[x]§7, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+  
+  "text.skills.initiatePerilousPrecision.title":"§7§a[Perilous Precision]§7",
+  "text.skills.initiatePerilousPrecision.description":"§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.",
+  
+  "text.skills.cleric.title":"§7§a[Cleric]§7",
+  "text.skills.cleric.description":"§7Periodically cleanse debuffs from nearby allies.",
+  
+  "text.skills.cleansing.title":"§7§a[Cleansing]§7",
+  "text.skills.cleansing.description":"§7Periodically cleanse debuffs from yourself.",
+
+  "text.skills.rangerReveal.title":"§7§a[Reveal]§7",
+  "text.skills.rangerReveal.description":"§7Periodically reveal nearby Stealthy enemies.",
+
+  "text.skills.rangerTamer.title":"§7§a[Tamer]§7",
+  "text.skills.rangerTamer.description":"§7When your pets are near to you, they gain Regeneration & Resistance.",
+
+  "text.skills.rangerBonded.title":"§7§a[Bonded]§7",
+  "text.skills.rangerBonded.description":"§7When your pets are near to you and are more healthy than you, they exchange their health with you. Can only trigger when your pet is above 30% HP.",
+
+  "text.skills.rangerTrained.title":"§7§a[Trained]§7",
+  "text.skills.rangerTrained.description":"§7When your pets are near to you and have at least 70% HP, they gain Strength & Speed.",
+
+  "text.skills.rangerIncognito.title":"§7§a[Incognito]§7",
+  "text.skills.rangerIncognito.description":"§7When your pets are near to you and you gain Stealth, they gain Invisibility.",
+
+  "text.skills.rogueBackstab.title":"§7§a[Backstab]§7",
+  "text.skills.rogueBackstab.description":"§7Attacking enemies from behind inflicts them with weakness.\nAlso, whilst in proximity to weakened enemies, you have a chance to gain Stealth for a short duration.",
+
+  "text.skills.warriorHeavyArmorMastery.title":"§7§a[Heavy Armor Mastery]§7",
+  "text.skills.warriorHeavyArmorMastery.description":"§7While your armor value is above 15, you have a chance to gain Strength when hit.",
+
+  "text.skills.warriorMediumArmorMastery.title":"§7§a[Medium Armor Mastery]§7",
+  "text.skills.warriorMediumArmorMastery.description":"§7While your armor value is below 15, you have a chance to gain Absorption when hit.",
+
+  "text.skills.warriorSpellbreaker.title":"§7§a[Spellbreaker]§7",
+  "text.skills.warriorSpellbreaker.description":"§7When taking damage, you have a chance to gain Spellbreaking for a short duration.\n\n§f(Spellbreaking)§7 causes hostile spell projectiles to explode when in close proximity to you.",
+
+  "text.skills.warriorGoliath.title":"§7§a[Goliath]§7",
+  "text.skills.warriorGoliath.description":"§7When falling long distances, gain Earthshaker.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+
+  "text.skills.warriorHeavyWeight.title":"§7§a[Heavy Weight]§7",
+  "text.skills.warriorHeavyWeight.description":"§7Your Earthshaker effects are enhanced, causing them to deal additional damage the longer you are in the air.",
+  
+  "text.skills.warriorBound.title":"§7§a[Bound]§7",
+  "text.skills.warriorBound.description":"§7After activating Earthshaker, you gain Jump Boost for a short duration.",
+
+  "text.skills.warriorDeathDefy.title":"§7§a[Death Defy]§7",
+  "text.skills.warriorDeathDefy.description":"§7When at low HP, you gain Regeneration and Exhaustion relative to your remaining health percent.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
+
+  "text.skills.warriorFrenzy.title":"§7§a[Frenzy]§7",
+  "text.skills.warriorFrenzy.description":"§7Gain 75% increased Melee Damage, but each time you hit an enemy you gain a stack of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
+
+  "text.skills.warriorCarnage.title":"§7§a[Carnage]§7",
+  "text.skills.warriorCarnage.description":"§7While at or above 75 stacks of Rage or Exhaustion, gain Health Boost and Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+
+  "text.skills.warriorTwinstrike.title":"§7§a[Twinstrike]§7",
+  "text.skills.warriorTwinstrike.description":"§7Your melee hits have a chance to strike twice.\nThis chance is doubled while under the effects of Health Boost.",
+
+  "text.skills.warriorSwordfall.title":"§7§a[Swordfall]§7",
+  "text.skills.warriorSwordfall.description":"§7Your melee hits have a chance to call down a sword from the sky, dealing damage to your target and all nearby enemies.\n\nThis chance is doubled while under the effects of Might.",
+
+  "text.skills.berserkerpath.title":"Path of the §bBerserker§7",
+  "text.skills.berserkerpath.description":"\n§7§a[Recklessness]§7\nWhen your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.berserkerpath.extra_description":"\n§7The §bBerserker§7, is driven by an insatiable thirst for destruction and a complete disregard for their own safety. They are masters of §amelee combat§7 and revel in dealing devastating damage, even if it means §aputting their own life on the line§7.",
+
+  "text.skills.berserkerSwordMastery.title":"§7§a[Sword Mastery]§7",
+  "text.skills.berserkerSwordMastery.description":"§7Gain pulsing Speed when wielding a sword in your mainhand.",
+
+  "text.skills.berserkerSwordMasteryProficient.title":"§7§a[Sword Mastery +]§7",
+  "text.skills.berserkerSwordMasteryProficient.description":"§7Gain increased pulsing Speed when wielding a sword in your mainhand.",
+
+  "text.skills.berserkerSwordMasterySkilled.title":"§7§a[Sword Mastery ++]§7",
+  "text.skills.berserkerSwordMasterySkilled.description":"§7When not dual wielding, gain pulsing Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+
+  "text.skills.berserkerAxeMastery.title":"§7§a[Axe Mastery]§7",
+  "text.skills.berserkerAxeMastery.description":"§7Gain pulsing strength when wielding an axe in your mainhand.",
+
+  "text.skills.berserkerAxeMasteryProficient.title":"§7§a[Axe Mastery +]§7",
+  "text.skills.berserkerAxeMasteryProficient.description":"§7Gain increased pulsing strength when wielding an axe in your mainhand.",
+
+  "text.skills.berserkerAxeMasterySkilled.title":"§7§a[Axe Mastery ++]§7",
+  "text.skills.berserkerAxeMasterySkilled.description":"§7Gain increased pulsing strength when wielding an axe in your mainhand.",
+
+  "text.skills.berserkerIgnorePain.title":"§7§a[Ignore Pain]§7",
+  "text.skills.berserkerIgnorePain.description":"§7When your HP drops below 40% you gain pulsing resistance.",
+
+  "text.skills.berserkerIgnorePainProficient.title":"§7§a[Ignore Pain +]§7",
+  "text.skills.berserkerIgnorePainProficient.description":"§7When your HP drops below 40% you gain increased pulsing resistance.",
+
+  "text.skills.berserkerIgnorePainSkilled.title":"§7§a[Ignore Pain ++]§7",
+  "text.skills.berserkerIgnorePainSkilled.description":"§7When your HP drops below 40% you gain increased pulsing resistance.",
+
+  "text.skills.berserkerRecklessness.title":"§7§a[Recklessness]§7",
+  "text.skills.berserkerRecklessness.description":"§7When your HP rises above 70% you are inflicted with pulsing weakness.\n\nAlso, when dealing or receiving damage you gain a stack of Rage.\n\n§f(Rage)§7 Grants §a+0.5% §f[x]§7 increased melee damage, attack speed, and damage taken per stack, up to a maximum of 100 stacks.\nWhile above 25 stacks of Rage you rapidly lose stacks of Exhaustion.",
+
+  "text.skills.berserkerChallenge.title":"§7§a[Challenge]§7",
+  "text.skills.berserkerChallenge.description":"§7Gain a stack of haste for each nearby enemy.",
+
+  "text.skills.berserkerExploit.title":"§7§a[Exploit]§7",
+  "text.skills.berserkerExploit.description":"§7Hitting immobilized enemies inflicts them with weakness.",
+
+  "text.skills.bulwarkPath.title":"Path of the §bBulwark§7",
+
+  "text.skills.bulwarkShieldMastery.title":"§7§a[Shield Mastery]§7",
+  "text.skills.bulwarkShieldMastery.description":"§7Gain weakness & resistance when wielding a shield.",
+
+  "text.skills.bulwarkShieldMasteryProficient.title":"§7§a[Shield Mastery +]§7",
+  "text.skills.bulwarkShieldMasteryProficient.description":"§7Gain weakness & increased resistance when wielding a shield.",
+
+  "text.skills.bulwarkShieldMasterySkilled.title":"§7§a[Shield Mastery ++]§7",
+  "text.skills.bulwarkShieldMasterySkilled.description":"§7Gain weakness & increased resistance when wielding a shield.",
+
+  "text.skills.bulwarkRebuke.title":"§7§a[Rebuke]§7",
+  "text.skills.bulwarkRebuke.description":"§725% Chance on block to inflict your attacker with weakness.",
+
+  "text.skills.wayfarerSlender.title":"§7§a[Slender]§7",
+  "text.skills.wayfarerSlender.description":"§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+
+  "text.skills.roguePath.title":"Path of the §bRogue§7",
+  "text.skills.roguePath.description":"§7\n§7§a[Slender]§7\n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.roguePath.extra_description":"\n§7The §bRogue§7 is a master of §astealth§7 and subterfuge. They thrive in the shadows, utilizing their exceptional skills to remain unseen and catch their enemies off guard with §aprecision strikes§7. If caught in the open, they are more than capable of §aevading§7 enemy attacks and escaping back to the safety of the shadows.",
+
+  "text.skills.rogueSmokeBomb.title":"§7§a[Smoke Bomb]§7",
+  "text.skills.rogueSmokeBomb.description":"§7Chance to blind nearby enemies and gain Immobilizing Aura when hit.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
+
+  "text.skills.rogueOpportunisticMastery.title":"§7§a[Opportunistic Mastery]§7",
+  "text.skills.rogueOpportunisticMastery.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a short duration.",
+
+  "text.skills.rogueOpportunisticMasteryProficient.title":"§7§a[Opportunistic Mastery +]§7",
+  "text.skills.rogueOpportunisticMasteryProficient.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a moderate duration.",
+
+  "text.skills.rogueOpportunisticMasterySkilled.title":"§7§a[Opportunistic Mastery ++]§7",
+  "text.skills.rogueOpportunisticMasterySkilled.description":"§7Attacking while under the effects of Stealth causes you to poison your target for a long duration.",
+
+  "text.skills.rogueEvasionMastery.title":"§7§a[Evasion Mastery]§7",
+  "text.skills.rogueEvasionMastery.description":"§7While you have at least 1 stack of Agile, you have a 15% Chance to completely avoid incoming damage.",
+
+  "text.skills.rogueEvasionMasteryProficient.title":"§7§a[Evasion Mastery +]§7",
+  "text.skills.rogueEvasionMasteryProficient.description":"§7While you have at least 1 stack of Agile, you have a 20% Chance to completely avoid incoming damage.",
+
+  "text.skills.rogueEvasionMasterySkilled.title":"§7§a[Evasion Mastery ++]§7",
+  "text.skills.rogueEvasionMasterySkilled.description":"§7While you have at least 1 stack of Agile, you have a 25% Chance to completely avoid incoming damage.",
+
+  "text.skills.rogueExploitation.title":"§7§a[Exploitation]§7",
+  "text.skills.rogueExploitation.description":"§7While under the effects of stealth, your back attacks inflict Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+
+  "text.skills.rogueRecovery.title":"§7§a[Recovery]§7",
+  "text.skills.rogueRecovery.description":"§7When you gain Stealth, you also gain Regeneration.",
+
+  "text.skills.rogueShadowVeil.title":"§7§a[Shadow Veil]§7",
+  "text.skills.rogueShadowVeil.description":"§7While under the effects of Stealth, you periodically gain increasing Resistance.",
+
+  "text.skills.rogueDeflection.title":"§7§a[Deflection]§7",
+  "text.skills.rogueDeflection.description":"§7When dual wielding weapons §f(axes do not count)§7, the base evasion chance of your Evasion Mastery passive is increased by 10%.",
+
+  "text.skills.rogueFleetfooted.title":"§7§a[Fleetfooted]§7",
+  "text.skills.rogueFleetfooted.description":"§7When you are forcefully removed from Stealth, you gain momentary Speed.",
+
+  "text.skills.rangerPath.title":"Path of the §bRanger§7",
+  "text.skills.rangerPath.description":"\n§7§a[Slender]§7 \n§7Gain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.rangerPath.extra_description":"\n§7The §bRanger§7 is renowned for their unparalleled §aproficiency with bows§7 and their unique ability to infuse §aelemental magic§7 into their ranged attacks. They also share a deep, symbiotic bond with their §aanimal companions§7, making them a formidable force on the battlefield.",
+
+  "text.skills.initiateFrail.title":"§7§a[Frail]§7",
+  "text.skills.initiateFrail.description":"§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+
+  "text.skills.initiateWhisperedWizardry.title":"§7§a[Whispered Wizardry]§7",
+  "text.skills.initiateWhisperedWizardry.description":"§7Casting a spell while you have Stealth grants you several stacks of Spellforged for a few seconds.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+
+  "text.skills.initiateSpellcloak.title":"§7§a[Spellcloak]§7",
+  "text.skills.initiateSpellcloak.description":"§7Casting a spell grants you brief Stealth, as long as you aren't currently Revealed.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
+
+  "text.skills.initiateOverload.title":"§7§a[Overload]§7",
+  "text.skills.initiateOverload.description":"§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you §a+45% §f[x]§7 increased spell crit damage & §a+10% §f[x]§7 spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+
+  "text.skills.crusaderPath.title":"Path of the §bCrusader§7",
+  "text.skills.crusaderPath.description":"§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.crusaderPath.extra_description":"\n§7The §bCrusader§7, is often chosen by those who are not content with merely §adefending their allies§7 but also strive to be a beacon of hope on the battlefield. They combine the fervor of a §ahealer§7 with the might of a §awarrior§7, making them formidable champions in both §aoffense and defense§7.",
+
+  "text.skills.frostguardPath.title":"Path of the §bFrostguard§7",
+  "text.skills.frostguardPath.description":"\n§eNOT YET IMPLEMENTED§7",
+  "text.skills.frostguardPath.extra_description":"\n§eNOT YET IMPLEMENTED§7",
+
+  "text.skills.spellbladePath.title":"Path of the §bSpellblade§7",
+  "text.skills.spellbladePath.description":"\nHold §f[SHIFT] §7for more info:",
+  "text.skills.spellbladePath.extra_description":"\n§7The §bSpellblade§7 is a versatile and formidable warrior who seamlessly melds the power of magic with martial combat. Their hallmark is the fusion of §aspellcasting§7 and §amelee attacks§7, making them an exceptional force on the battlefield.",
+
+  "text.skills.spellbladeWeaponExpert.title":"§7§a[Weapon Expert]§7",
+  "text.skills.spellbladeWeaponExpert.description":"§7Gain a stack of Might when casting a spell. Occasionally gain a stack of Spellforged as well.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.\n\n§f(Spellforged)§7 grants §a+0.25§7 Spell Power per stack.",
+
+  "text.skills.spellbladeSpellweaving.title":"§7§a[Spellweaving]§7",
+  "text.skills.spellbladeSpellweaving.description":"§7You now have a 15% chance to summon a random spell when you hit an enemy.",
+
+  "text.skills.spellbladeSignatureElementalSurge.title":"Signature Ability: §6[Elemental Surge]§7",
+  "text.skills.spellbladeSignatureElementalSurge.description":"\nGrants you Elemental Surge for 15s.\n\n§f(Elemental Surge)§7 causes you to periodically release elemental novas.\n\n§a30s Cooldown§7",
+
+  "text.skills.spellbladeSignatureElementalSurgeNoFrost.title":"§f[Remove Frost]",
+  "text.skills.spellbladeSignatureElementalSurgeNoFrost.description":"§7Removes Frost Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+
+  "text.skills.spellbladeSignatureElementalSurgeNoFire.title":"§f[Remove Fire]",
+  "text.skills.spellbladeSignatureElementalSurgeNoFire.description":"§7Removes Fire Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+
+  "text.skills.spellbladeSignatureElementalSurgeRenewal.title":"§f[Renewal]",
+  "text.skills.spellbladeSignatureElementalSurgeRenewal.description":"§7Hitting enemies while you have §6[Elemental Surge]§7 has a 15% chance to extend the its duration by 3 seconds.",
+
+  "text.skills.spellbladeSignatureElementalSurgeNoLightning.title":"§f[Remove Lightning]",
+  "text.skills.spellbladeSignatureElementalSurgeNoLightning.description":"§7Removes Lightning Novas from your §6[Elemental Surge]§7 spell pool.\nIf no elements remain in the spell pool, Elemental Surge will instead release Arcane Novas.",
+
+  "text.skills.spellbladeSignatureElementalImpact.title":"Signature Ability: §6[Elemental Impact]§7",
+  "text.skills.spellbladeSignatureElementalImpact.description":"\nCauses you to dash forward with extreme power, releasing elemental explosions as you move.\n\n§a30s Cooldown§7",
+
+  "text.skills.spellbladeSignatureElementalImpactMagnet.title":"§f[Magnet]",
+  "text.skills.spellbladeSignatureElementalImpactMagnet.description":"§7Your §6[Elemental Impact]§7 now pulls nearby enemies into the path of impact.",
+
+  "text.skills.spellbladeSignatureElementalImpactResistance.title":"§f[Resistance]",
+  "text.skills.spellbladeSignatureElementalImpactResistance.description":"§7Your §6[Elemental Impact]§7 now also grants you brief resistance.",
+
+  "text.skills.spellbladeSignatureSpellweaver.title":"Signature Ability: §6[Spellweaver]§7",
+  "text.skills.spellbladeSignatureSpellweaver.description":"\nDoubles the chance of your Spellweaving passive for 25s.\n\n§a40s Cooldown§7",
+
+  "text.skills.spellbladeSignatureSpellweaverHaste.title":"§f[Haste]",
+  "text.skills.spellbladeSignatureSpellweaverHaste.description":"§7Your Spellweaving procs now grant you 5s of Haste stacking up to 5 times.",
+
+  "text.skills.spellbladeSignatureSpellweaverRegeneration.title":"§f[Regeneration]",
+  "text.skills.spellbladeSignatureSpellweaverRegeneration.description":"§7Your Spellweaving procs now have a 50% chance to grant you regeneration for 5s.",
+  
+  "text.skills.wizardPath.title":"Path of the §bWizard§7",
+  "text.skills.wizardPath.description":"\n§7§a[Frail]§7\n§7You cannot effectively use weapons with more than 6 attack power.\n\nGain Agile. The less armor you have, the greater the stacks of Agile gained.\n\n§f(Agile)§7 grants §a+5% §f[x]§7 increased attack speed, movespeed, spell haste, and ranged damage per stack.§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.wizardPath.extra_description":"\n§7The §bWizard§7 specialization is for those who seek to harness the power of magics. They are relentless and destructive §aspellcasters§7, capable of unleashing cataclysmic magical energy upon their enemies. However, their lust for power over the arcane leads them to §aneglect their physical form§7, weakening their defences and physical offence capabilities.",
+  
+  "text.skills.shamanPath.title":"Path of the §bShaman§7",
+  "text.skills.shamanPath.description":"\n§eNOT YET IMPLEMENTED§7",
+  "text.skills.shamanPath.extra_description":"\n§eNOT YET IMPLEMENTED§7",
+  
+  "text.skills.clericPath.title":"Path of the §bCleric§7",
+  "text.skills.clericPath.description":"\n§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
+  "text.skills.clericPath.extra_description":"\n§7Those of the §bCleric§7 specialisation are known for their unwavering commitment to safeguarding and nurturing their allies. They possess a unique combination of §ahealing§7, §asupport§7, and the ability to §abear the burdens§7 of those they protect.",
+  
+  "text.skills.necromancerPath.title":"Path of the §bNecromancer§7",
+  "text.skills.necromancerPath.description":"\n§eNOT YET IMPLEMENTED§7",
+  "text.skills.necromancerPath.extra_description":"\n§eNOT YET IMPLEMENTED§7",
+
+  "text.skills.wizardPassiveSpellEcho.title":"§7§a[Spell Echo]§7",
+  "text.skills.wizardPassiveSpellEcho.description":"§7Your spell hits have a chance to echo, casting an additional random spell at the target.",
+  
+  "text.skills.wizardSignatureMeteorShower.title":"Signature Ability: §6[Meteor Shower]§7",
+  "text.skills.v.description":"§7\nCalls down meteors on nearby enemies.\n\n§8[Requires Nearby Targets]\n\n§a40s Cooldown§7",
+  
+  "text.skills.wizardSignatureMeteorShowerGreater.title":"§f[Greater]§7",
+  "text.skills.wizardSignatureMeteorShowerGreater.description":"§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.\n\n§8[Requires Target]",
+  
+  "text.skills.wizardSignatureMeteorShowerWrath.title":"§f[Wrath]",
+  "text.skills.wizardSignatureMeteorShowerWrath.description":"§7Casting §6[Meteor Shower]§7 now grants you 10 stacks of Meteoric Wrath.\n\n§f(Meteoric Wrath)§7 periodically summons meteors above nearby enemies.",
+  
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath.title":"§f[Renewal]",
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath.description":"§7When Meteoric Wrath triggers it has a 10% chance to not consume a stack.",
+  
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath++.title":"§f[Renewal +]",
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath++.description":"§7When Meteoric Wrath triggers it has a 30% chance to not consume a stack.",
+  
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath+++.title":"§f[Renewal ++]",
+  "text.skills.wizardSignatureMeteorShowerRenewingWrath+++.description":"§7When Meteoric Wrath triggers it has a 50% chance to not consume a stack.",
+
+  "text.skills.wizardSignatureIceComet.title":"Signature Ability: §6[Ice Comet]§7",
+  "text.skills.wizardSignatureIceComet.description":"§7\nCalls down an Ice Comet that deals damage to and slows enemies in a large radius.\n\n§a30s Cooldown§7",
+  
+  "text.skills.wizardSignatureIceCometLeap.title":"§f[Leap]",
+  "text.skills.wizardSignatureIceCometLeap.description":"§7Casting §6[Ice Comet]§7 now causes you to leap backwards and gain momentary slow falling.",
+  
+  "text.skills.wizardSignatureIceCometVolley.title":"§f[Volley]",
+  "text.skills.wizardSignatureIceCometVolley.description":"§7Casting §6[Ice Comet]§7 now grants you 6 stacks of frost volley.\n\n§f(Frost Volley)§7 causes you to periodically summon Frost Bolts at nearby or targeted enemies.",
+  
+  "text.skills.wizardSignatureIceCometDamage.title":"§f[Greater]",
+  "text.skills.wizardSignatureIceCometDamage.description":"§7§6[Ice Comet]§7 Is now larger and deals more damage & knockback.",
+  
+  "text.skills.wizardSignatureIceCometDamage++.title":"§f[Greater +]",
+  "text.skills.wizardSignatureIceCometDamage++.description":"§7§6[Ice Comet]§7 Is now larger and deals much more damage & knockback.",
+  
+  "text.skills.wizardSignatureIceCometDamage+++.title":"§f[Greater ++]",
+  "text.skills.wizardSignatureIceCometDamage+++.description":"§7§6[Ice Comet]§7 Is now larger and deals significantly more damage & knockback.",
+  
+  "text.skills.wizardSignatureStaticDischarge.title":"Signature Ability: §6[Static Discharge]§7",
+  "text.skills.wizardSignatureStaticDischarge.description":"§7\nReleases a high damage electrical discharge at your target, inflicting them with weakness.\n\n§8[Requires Target]\n\n§a35s Cooldown§7",
+  
+  "text.skills.wizardSignatureStaticDischargeLightningBall.title":"§f[Ball Lightning]",
+  "text.skills.wizardSignatureStaticDischargeLightningBall.description":"§6[Static Discharge]§7 no longer leaps, but instead summons a slow-moving ball of lightning that periodically discharges electricity at nearby hostiles.\n\nAll passives that would usually activate from a leap, now activate when the Lightning Ball discharges at enemies.",
+  
+  "text.skills.wizardSignatureStaticDischargeLeap.title":"§f[Leap]",
+  "text.skills.wizardSignatureStaticDischargeLeap.description":"§7Your §6[Discharge]§7 can now leap between nearby enemies.",
+  
+  "text.skills.wizardSignatureStaticDischargeLeap++.title":"§f[Leap +]",
+  "text.skills.wizardSignatureStaticDischargeLeap++.description":"§7Your §6[Static Discharge]§7 gains additional leaps before expiring.",
+  
+  "text.skills.wizardSignatureStaticDischargeLeap+++.title":"§f[Leap ++]",
+  "text.skills.wizardSignatureStaticDischargeLeap+++.description":"§7Your §6[Static Discharge]§7 gains significantly more leaps before expiring.",
+  
+  "text.skills.wizardSignatureStaticDischargeSpeed.title":"§f[Speed]",
+  "text.skills.wizardSignatureStaticDischargeSpeed.description":"§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 5% chance to gain speed.",
+  
+  "text.skills.wizardSignatureStaticDischargeSpeed++.title":"§f[Speed +]",
+  "text.skills.wizardSignatureStaticDischargeSpeed++.description":"§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 10% chance to gain speed.",
+  
+  "text.skills.wizardSignatureStaticDischargeSpeed+++.title":"§f[Speed ++]",
+  "text.skills.wizardSignatureStaticDischargeSpeed+++.description":"§7Each time §6[Static Discharge]§7 leaps or is cast, you have a 15% chance to gain speed.",
+  
+  "text.skills.wizardSignatureStaticDischargeLightningOrb.title":"§f[Lightning Orb]",
+  "text.skills.wizardSignatureStaticDischargeLightningOrb.description":"§7In addition to gaining speed, you also have a chance to summon a Lightning Orb that orbits you erratically, dealing damage to enemies it passes through.\n\nFor each Lightning Orb in your vicinity, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you §a+1 §f[x]§7 Soul & Lightning spell power per stack.",
+  
+  "text.skills.wizardSignatureStaticDischargeLightningOrbOnHit.title":"§f[On Hit]",
+  "text.skills.wizardSignatureStaticDischargeLightningOrbOnHit.description":"§7Your Lightning Orb hits can now activate on-cast spell effects, such as Spell Echo.",
+  
+  "text.skills.wizardSignatureArcaneBolt.title":"Signature Ability: §6[Arcane Bolt]§7",
+  "text.skills.wizardSignatureArcaneBolt.description":"§7\nFires a concentrated bolt of arcane energy at your target.\n\n§a35s Cooldown§7",
+  
+  "text.skills.wizardSignatureArcaneBoltLesser.title":"§f[Lesser]",
+  "text.skills.wizardSignatureArcaneBoltLesser.description":"§7Your §6[Arcane Bolt]§7 now fires a Lesser Arcane Bolt that deals less damage and causes chain reactions.",
+  
+  "text.skills.wizardSignatureArcaneBoltVolley.title":"§f[Volley]",
+  "text.skills.wizardSignatureArcaneBoltVolley.description":"§7Casting §6[Arcane Bolt]§7 now grants you 10 stacks of Arcane Volley. \n \n§f(Arcane Volley)§7 causes you to rapidly cast Lesser Arcane Bolts at targeted enemies.",
+  
+  "text.skills.wizardSignatureArcaneBoltGreater.title":"§f[Greater]",
+  "text.skills.wizardSignatureArcaneBoltGreater.description":"§7You now cast a §6[Greater Arcane Bolt]§7 that deals increased damage and pierces.",
+  
+  "text.skills.shamanSignatureAstralTotem.title":"Signature Ability: §6[Astral Totem]§7",
+  "text.skills.shamanSignatureAstralTotem.description":"§7Summon a Totem that periodically casts elemental comets on nearby enemies.\n\n§a30s Cooldown§7",
+  
+  "text.skills.shamanSignatureNovaTotem.title":"Signature Ability: §6[Nova Totem]§7",
+  "text.skills.shamanSignatureNovaTotemdescription":"§7Summon a Totem that periodically casts elemental novas.\n\n§a30s Cooldown§7",
+  
+  "text.skills.shamanSignatureBoltTotem.title":"Signature Ability: §6[Bolt Totem]§7",
+  "text.skills.shamanSignatureBoltTotem.description":"§7Summon a Totem that periodically fires elemental bolts at nearby enemies.\n\n§a30s Cooldown§7",
+  
+  "text.skills.rogueSignatureEvasion.title":"Signature Ability: §6[Evasion]§7",
+  "text.skills.rogueSignatureEvasion.description":"§7\nThe effects of your Evasion Mastery passive are doubled for 8s.\n\n§a25s Cooldown§7",
+  
+  "text.skills.rogueSignatureEvasionFanOfBlades.title":"§f[Fan of Blades]",
+  "text.skills.rogueSignatureEvasionFanOfBlades.description":"§7§6[Evasion]§7 Now also grants you 10 stacks of Fan of Blades.\n\n§f(Fan of Blades)§7 causes you to throw daggers at enemies in front of you.\n\n§8[Requires Target]",
+  
+  "text.skills.rogueSignatureEvasionFanOfBladesDisenchantment.title":"§f[Disenchant]",
+  "text.skills.rogueSignatureEvasionFanOfBladesDisenchantment.description":"§7Your Fan of Blades now also inflict enemies with Disenchantment.\n\n§f(Disenchantment)§7 periodically strips buffs from the victim.",
+  
+  "text.skills.rogueSignatureEvasionFanOfBladesAssault.title":"§f[Assault]",
+  "text.skills.rogueSignatureEvasionFanOfBladesAssault.description":"§7You now gain 20 stacks of Fan of Blades with increased throw frequency but decreased damage.",
+  
+  "text.skills.rogueSignatureEvasionFanOfBladesRenewal.title":"§f[Renewal]",
+  "text.skills.rogueSignatureEvasionFanOfBladesRenewal.description":"§7Gain two stacks of Fan of Blades on kill.",
+  
+  "text.skills.rogueSignatureEvasionFanOfBladesBladestorm.title":"§f[Bladestorm]",
+  "text.skills.rogueSignatureEvasionFanOfBladesBladestorm.description":"§7For each enemy hit by Fan of Blades, gain a stack of Bladestorm, up to 20 stacks.\n\n§f(Bladestorm)§7 causes daggers to rotate around you, dealing damage to nearby enemies.\nEach stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
+  
+  "text.skills.rogueSignatureEvasionFanOfBladesBladestormSiphon.title":"§f[Siphon]",
+  "text.skills.rogueSignatureEvasionFanOfBladesBladestormSiphon.description":"§7Bladestorm now has a chance to siphon health when it hits.\n\n§f(Bladestorm)§7 causes daggers to rotate around you, dealing damage to nearby enemies.\nEach stack of Bladestorm increases its attack frequency and grants you 1% additional evasion chance.",
+  
+  "text.skills.rogueSignaturePreparation.title":"Signature Ability: §6[Preparation]§7",
+  "text.skills.rogueSignaturePreparation.description":"§7\nGain Stealth and Speed 3 for 8s.\n\n§a10s Cooldown§7",
+  
+  "text.skills.rogueSignaturePreparationShadowstrike.title":"§f[Shadowstrike]",
+  "text.skills.rogueSignaturePreparationShadowstrike.description":"§7§6[Preparation]§7 now causes you to dash forward at lightning speed, dealing mainhand damage to enemies in your path.",
+  
+  "text.skills.rogueSignaturePreparationShadowstrikeVampire.title":"§f[Vampire]",
+  "text.skills.rogueSignaturePreparationShadowstrikeVampire.description":"§7You steal buffs from enemies caught within the path of your dash and inflict them with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+  
+  "text.skills.rogueSignaturePreparationShadowstrikeShield.title":"§f[Shield]",
+  "text.skills.rogueSignaturePreparationShadowstrikeShield.description":"§7§6[Preparation]§7 now grants you Barrier and cleanses you of any Revealed stacks.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+  
+  "text.skills.rogueSignatureSiphoningStrikes.title":"Signature Ability: §6[Siphoning Strikes]§7",
+  "text.skills.rogueSignatureSiphoningStrikes.description":"§7\nGain 10 stacks of Siphoning Strikes.\n\n§f(Siphoning Strikes)§7 causes you to siphon health health and strip buffs from your enemies on hit.\n\n§a25s Cooldown§7",
+  
+  "text.skills.rogueSignatureSiphoningStrikesMighty.title":"§f[Mighty]",
+  "text.skills.rogueSignatureSiphoningStrikesMighty.description":"§7When you gain §6[Siphoning Strikes]§7 you also gain Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.rogueSignatureSiphoningStrikesAura.title":"§f[Aura]",
+  "text.skills.rogueSignatureSiphoningStrikesAura.description":"§7When you gain §6[Siphoning Strikes]§7 you also gain Immobilizing Aura.\n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
+  
+  "text.skills.rogueSignatureSiphoningStrikesVanish.title":"§f[Vanish]",
+  "text.skills.rogueSignatureSiphoningStrikesVanish.description":"§7Your §6[Siphoning Strikes]§7 also cleanse you of all stacks of Revealed on hit.",
+  
+  "text.skills.rangerSignatureArrowRain.title":"Signature Ability: §6[Arrow Rain]§7",
+  "text.skills.rangerSignatureArrowRain.description":"§7\nGain one stack of Arrow Rain. \n \n§f(Arrow Rain)§7 causes your next fully-charged bow attack will summon a rain of arrows at the targeted area.\n\n§a14s Cooldown§7",
+  
+  "text.skills.rangerSignatureArrowRainElemental.title":"§f[Elemental]",
+  "text.skills.rangerSignatureArrowRainElemental.description":"§7Your §6[Arrow Rain]§7 is now elementally enhanced and deals additional elemental damage.\nThis effect is reduced when enemies are in close proximity.",
+  
+  "text.skills.rangerSignatureArrowRainElementalArtillery.title":"§f[Artillery]",
+  "text.skills.rangerSignatureArrowRainElementalArtillery.description":"§7Your §6[Arrow Rain]§7 now creates additional elemental arrows that home toward enemies near the impact area.",
+  
+  "text.skills.rangerSignatureArrowRainEplosive.title":"§f[Minefield]",
+  "text.skills.rangerSignatureArrowRainEplosive.description":"§7Your §6[Arrow Rain]§7 now leaves behind proximity explosive arrows.",
+  
+  "text.skills.rangerSignatureArrowRainVolley+.title":"§f[Volley]",
+  "text.skills.rangerSignatureArrowRainVolley+.description":"§7Your §6[Arrow Rain]§7 now fires one additional volley.",
+  
+  "text.skills.rangerSignatureArrowRainVolley++.title":"§f[Volley +]",
+  "text.skills.rangerSignatureArrowRainVolley++.description":"§7Your §6[Arrow Rain]§7 now fires two additional volleys.",
+  
+  "text.skills.rangerSignatureArrowRainVolley+++.title":"§f[Volley ++]",
+  "text.skills.rangerSignatureArrowRainVolley+++.description":"§7Your §6[Arrow Rain]§7 now fires three additional volleys.",
+  
+  "text.skills.rangerSignatureArrowRainRadius+.title":"§f[Radius]",
+  "text.skills.rangerSignatureArrowRainRadius+.description":"§7Your §6[Arrow Rain]§7 now has +1 radius.",
+  
+  "text.skills.rangerSignatureArrowRainRadius++.title":"§f[Radius +]",
+  "text.skills.rangerSignatureArrowRainRadius++.description":"§7Your §6[Arrow Rain]§7 now has +2 radius.",
+  
+  "text.skills.rangerSignatureArrowRainRadius+++.title":"§f[Radius ++]",
+  "text.skills.rangerSignatureArrowRainRadius+++.description":"§7Your §6[Arrow Rain]§7 now has +3 radius.",
+  
+  "text.skills.rangerSignatureDisengage.title":"Signature Ability: §6[Disengage]§7",
+  "text.skills.rangerSignatureDisengage.description":"§7\nSlow nearby enemies and leap backwards.\n\n§a15s Cooldown§7",
+  
+  "text.skills.rangerSignatureDisengageRecuperate.title":"§f[Recuperate]",
+  "text.skills.rangerSignatureDisengageRecuperate.description":"§7§6[Disengage]§7 now heals all nearby pets to full health.",
+  
+  "text.skills.rangerSignatureDisengageExploitation.title":"§f[Aura]",
+  "text.skills.rangerSignatureDisengageExploitation.description":"§7§6[Disengage]§7 now grants all nearby pets Immobilizing Aura for a short duration. \n\n§f(Immobilizing Aura)§7 periodically inflicts nearby enemies with Immobilize.",
+  
+  "text.skills.rangerSignatureDisengageMarksman.title":"§f[Marksman]",
+  "text.skills.rangerSignatureDisengageMarksman.description":"§7Activating §6[Disengage]§7 while wielding a bow in your mainhand, now grants you Marksman. Otherwise, gain Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.\n\n§f(Marksman)§7 Causes your next fully charged ranged attack to fire a marksman arrow, dealing high damage and inflicting the target with Death Mark. \n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+  
+  "text.skills.rangerSignatureElementalArrows.title":"Signature Ability: §6[Elemental Arrows]§7",
+  "text.skills.rangerSignatureElementalArrows.description":"§7\nGain 5 stacks of Elemental Arrows.\n\n§f(Elemental Arrows)§7 Causes your next fully charged ranged attack to fire several elemental arrows at enemies in the targeted area.\n\n§a40s Cooldown§7",
+  
+  "text.skills.rangerSignatureElementalArrowsFrostAttuned.title":"§f[Frost Attune]",
+  "text.skills.rangerSignatureElementalArrowsFrostAttuned.description":"§7Your §6[Elemental Arrows]§7 will always be frost attuned.",
+
+  "text.skills.rangerSignatureElementalArrowsFireAttuned.title":"§f[Fire Attune]",
+  "text.skills.rangerSignatureElementalArrowsFireAttuned.description":"§7Your §6[Elemental Arrows]§7 will always be fire attuned.",
+  
+  "text.skills.rangerSignatureElementalArrowsLightningAttuned.title":"§f[Lightning Attune]",
+  "text.skills.rangerSignatureElementalArrowsLightningAttuned.description":"§7Your §6[Elemental Arrows]§7 will always be lightning attuned.",
+  
+  "text.skills.rangerSignatureElementalArrowsRadius+.title":"§f[Radius]",
+  "text.skills.rangerSignatureElementalArrowsRadius+.description":"§7The radius of your §6[Elemental Arrows]§7 is increased by 2.",
+  
+  "text.skills.rangerSignatureElementalArrowsRadius++.title":"§f[Radius +]",
+  "text.skills.rangerSignatureElementalArrowsRadius++.description":"§7The radius of your §6[Elemental Arrows]§7 is increased by 4.",
+  
+  "text.skills.rangerSignatureElementalArrowsRadius+++.title":"§f[Radius ++]",
+  "text.skills.rangerSignatureElementalArrowsRadius+++.description":"§7The radius of your §6[Elemental Arrows]§7 is increased by 6.",
+  
+  "text.skills.rangerSignatureElementalArrowsStacks+.title":"§f[Quantity]",
+  "text.skills.rangerSignatureElementalArrowsStacks+.description":"§7You gain one additional stack of §6[Elemental Arrows]§7.",
+  
+  "text.skills.rangerSignatureElementalArrowsStacks++.title":"§f[Quantity +]",
+  "text.skills.rangerSignatureElementalArrowsStacks++.description":"§7You gain two additional stacks of §6[Elemental Arrows]§7.",
+  
+  "text.skills.rangerSignatureElementalArrowsStacks+++.title":"§f[Quantity ++]",
+  "text.skills.rangerSignatureElementalArrowsStacks+++.description":"§7You gain three additional stacks of §6[Elemental Arrows]§7.",
+  
+  "text.skills.rangerSignatureElementalArrowsRenewal.title":"§f[Renewal]",
+  "text.skills.rangerSignatureElementalArrowsRenewal.description":"§7You have a 35% chance on kill to gain a stack of §6[Elemental Arrows]§7.",
+  
+  "text.skills.necromancerSignatureEnrage.title":"Signature Ability: §6[Enrage]§7",
+  "text.skills.necromancerSignatureEnrage.description":"§7\nSend nearby minions into a frenzy, granting them speed, strength and resistance.\n\n§a30s Cooldown§7",
+  
+  "text.skills.necromancerSignatureSacrifice.title":"Signature Ability: §6[Sacrifice]§77",
+  "text.skills.necromancerSignatureSacrifice.description":"§7\nSacrifice nearby minions, gaining a stack of strength, haste, and resistance for each minion sacrificed.\n\n§a30s Cooldown§7",
+  
+  "text.skills.necromancerSignatureSpectralGrasp.title":"Signature Ability: §6[Spectral Grasp]§7",
+  "text.skills.necromancerSignatureSpectralGrasp.description":"§7\nDamage your target and pull them towards you, inflicting them with slowness & mining fatigue.\n\n§a30s Cooldown§7",
+  
+  "text.skills.frostguardSignatureConjuringStrikes.title":"Signature Ability: §6[Conjuring Strikes]§7",
+  "text.skills.frostguardSignatureConjuringStrikes.description":"§7\nGain 6 stacks of Conjuring Strikes.\n\n§a30s Cooldown§7",
+  
+  "text.skills.frostguardSignatureFrostNova.title":"Signature Ability: §6[Frost Nova]§7",
+  "text.skills.frostguardSignatureFrostNova.description":"§7\nRelease a Frost Nova, damaging and slowing nearby enemies.\n\n§a30s Cooldown§7",
+  
+  "text.skills.frostguardSignatureIceBlock.title":"Signature Ability: §6[Ice Block]§7",
+  "text.skills.frostguardSignatureIceBlock.description":"§7\nGain Ice Block for 6s.\n\n§a30s Cooldown§7",
+  
+  "text.skills.crusaderAegis.title":"§7§a[Aegis]§7",
+  "text.skills.crusaderAegis.description":"§7Periodically consume stacks of exhaustion to gain a stack of Divine Protection.",
+  
+  "text.skills.crusaderRetribution.title":"§7§a[Retribution]§7",
+  "text.skills.crusaderRetribution.description":"§7Chance on shield block to cast Judgement on your attacker.",
+  
+  "text.skills.crusaderExhaustiveRecovery.title":"§7§a[Exhaustive Recovery]§7",
+  "text.skills.crusaderExhaustiveRecovery.description":"§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.",
+  
+  "text.skills.crusaderSignatureConsecration.title":"Signature Ability: §6[Consecration]§7",
+  "text.skills.crusaderSignatureConsecration.description":"§7\nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies. Damage & Healing scales with Healing Spell Power.\n\n§a30s Cooldown§7",
+  
+  "text.skills.crusaderSignatureConsecrationDuration.title":"§f[Duration]",
+  "text.skills.crusaderSignatureConsecrationDuration.description":"Your §6[Consecration]§7 now lasts longer.",
+  
+  "text.skills.crusaderSignatureConsecrationWard.title":"§f[Ward]",
+  "text.skills.crusaderSignatureConsecrationWard.description":"Your §6[Consecration]§7 now wards away undead hostiles.",
+  
+  "text.skills.crusaderSignatureConsecrationTaunt.title":"§f[Taunt]",
+  "text.skills.crusaderSignatureConsecrationTaunt.description":"Your §6[Consecration]§7 now taunts affected hostiles.\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+  
+  "text.skills.crusaderSignatureConsecrationMighty.title":"§f[Mighty]",
+  "text.skills.crusaderSignatureConsecrationMighty.description":"Your §6[Consecration]§7 now periodically grants nearby allies Might.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.crusaderSignatureConsecrationSpellforged.title":"§f[Spellforged]",
+  "text.skills.crusaderSignatureConsecrationSpellforged.description":"Your §6[Consecration]§7 now periodically grants nearby allies Spellforged.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+  
+  "text.skills.crusaderSignatureSacredOnslaught.title":"Signature Ability: §6[Sacred Onslaught]§7",
+  "text.skills.crusaderSignatureSacredOnslaught.description":"§7\nCharge forward. If blocking during the charge, you deal damage based on your armor value and knock back enemies.\n\n§a15s Cooldown§7",
+  
+  "text.skills.crusaderSignatureSacredOnslaughtHeal.title":"§f[Heal]",
+  "text.skills.crusaderSignatureSacredOnslaughtHeal.description":"Your §6[Sacred Onslaught]§7 heals allies it passes through, and grants them Divine Protection.\n\nHealing scales off Healing Spell Power",
+  
+  "text.skills.crusaderSignatureSacredOnslaughtDefend.title":"§f[Defend]",
+  "text.skills.crusaderSignatureSacredOnslaughtDefend.description":"Your §6[Sacred Onslaught]§7 also grants you Divine Protection for a duration.",
+  
+  "text.skills.crusaderSignatureSacredOnslaughtMighty.title":"§f[Mighty]",
+  "text.skills.crusaderSignatureSacredOnslaughtMighty.description":"Your §6[Sacred Onslaught]§7 also grants you Might for a duration.",
+  
+  "text.skills.crusaderSignatureSacredOnslaughtStun.title":"§f[Stun]",
+  "text.skills.crusaderSignatureSacredOnslaughtStun.description":"Your §6[Sacred Onslaught]§7 also stuns enemies, so long as you hold block while advancing.",
+  
+  "text.skills.crusaderSignatureHeavensmithsCall.title":"Signature Ability: §6[Heavensmith's Call]§7",
+  "text.skills.crusaderSignatureHeavensmithsCall.description":"§7\nCall down an anvil from the heavens to crush your foes.\n\n§a55s Cooldown§7",
+  
+  "text.skills.crusaderSignatureHeavensmithsCallTaunt.title":"§f[Taunt]",
+  "text.skills.crusaderSignatureHeavensmithsCallTaunt.description":"§6[Heavensmith's Call]§7 Now Taunts the primary target.§7\n\n§f(Taunted)§7 taunted enemies are forced to attack the taunting entity.",
+  
+  "text.skills.crusaderSignatureHeavensmithsCallMark.title":"§f[Death Mark]",
+  "text.skills.crusaderSignatureHeavensmithsCallMark.description":"§6[Heavensmith's Call]§7 Now inflicts the primary target with Death Mark.\n\n§f(Death Mark)§7 Reduces the victims resistance and healing by §c+25% §f[x]§7 per stack.",
+  
+  "text.skills.crusaderSignatureHeavensmithsCallEffect.title":"§f[Divine Adjudication]",
+  "text.skills.crusaderSignatureHeavensmithsCallEffect.description":"§6[Heavensmith's Call]§7 Now grants you Divine Adjudication for a duration.§7\n\n§f(Divine Adjudication)§7 periodically cast Judgement on nearby enemies.",
+  
+  "text.skills.crusaderSignatureHeavensmithsCallEffectExhaust.title":"§f[Recuperate]",
+  "text.skills.crusaderSignatureHeavensmithsCallEffectExhaust.description":"§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now cleanses stacks of Exhaustion from you when it triggers.",
+  
+  "text.skills.crusaderSignatureHeavensmithsCallEffectMighty.title":"§f[Mighty]",
+  "text.skills.crusaderSignatureHeavensmithsCallEffectMighty.description":"§7Divine Adjudication granted to you by §6[Heavensmith's Call]§7 now grants you stacks of Might when it triggers.",
+  
+  "text.skills.clericAltruism.title":"§7§a[Altruism]§7",
+  "text.skills.clericAltruism.description":"§7When wearing less than 10 points of armor, you periodically generate Spellforged stacks.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+  
+  "text.skills.clericMutualMending.title":"§7§a[Mutual Mending]§7",
+  "text.skills.clericMutualMending.description":"§7When casting a healing spell, you have a chance to also cast that spell on yourself.",
+  
+  "text.skills.clericHealingWard.title":"§7§a[Healing Ward]§7",
+  "text.skills.clericHealingWard.description":"§7When casting a healing spell to grant your target Barrier.\n\n§f(Barrier)§7 The next damage you take is completely negated.",
+  
+  "text.skills.clericSignatureSacredOrb.title":"Signature Ability: §6[Sacred Orb]§7",
+  "text.skills.clericSignatureSacredOrb.description":"§7\nRelease an orb of holy energy that flies forward before seeking out a nearby ally.\nWhen this orb connects with an ally, it heals them and grants you both Vitality Bond.\n\n§f(Vitality Bond)§7 equalises the HP of the affected entities for its duration.\n\n§a30s Cooldown§7",
+  
+  "text.skills.clericSignatureSacredOrbSpeed.title":"§f[Speed]",
+  "text.skills.clericSignatureSacredOrbSpeed.description":"§7Vitality Bond granted by your §6[Sacred Orb]§7 now also buffs the recipient with attack & movespeed, but inflicts you with Mining Fatigue.",
+  
+  "text.skills.clericSignatureSacredOrbDebuffs.title":"§f[Compassion]",
+  "text.skills.clericSignatureSacredOrbDebuffs.description":"§7Vitality Bond granted by your §6[Sacred Orb]§7 now also causes debuffs affecting the recipient to periodically transfer to you.",
+  
+  "text.skills.clericSignatureSacredOrbBuffs.title":"§f[Benevolence]",
+  "text.skills.clericSignatureSacredOrbBuffs.description":"§7Vitality Bond granted by your §6[Sacred Orb]§7 now also periodically grants copies of your buffs to the recipient.",
+  
+  "text.skills.clericSignatureDivineIntervention.title":"Signature Ability: §6[Divine Intervention]§7",
+  "text.skills.clericSignatureDivineIntervention.description":"§7\nCall down a bolt of celestial energy from the heavens, healing your target and granting them Undying.\n\n§8[Requires Target]\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.\n\n§a45s Cooldown§7",
+  
+  "text.skills.clericSignatureDivineInterventionFireResistance.title":"§f[Fire Resistance]",
+  "text.skills.clericSignatureDivineInterventionFireResistance.description":"§7Your §6[Divine Intervention]§7 also grants the target Fire Resistance for its duration.",
+  
+  "text.skills.clericSignatureDivineInterventionMight.title":"§f[Mighty]",
+  "text.skills.clericSignatureDivineInterventionMight.description":"§7Your §6[Divine Intervention]§7 also grants the target Might for its duration.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.clericSignatureDivineInterventionSpellforged.title":"§f[Spellforged]",
+  "text.skills.clericSignatureDivineInterventionSpellforged.description":"§7Your §6[Divine Intervention]§7 also grants the target Spellforged for its duration.\n\n§f(Spellforged)§7 grants §a+0.25 §f[x]§7 Spell Power per stack.",
+  
+  "text.skills.clericSignatureAnointWeapon.title":"Signature Ability: §6[Anoint Weapon]§7",
+  "text.skills.clericSignatureAnointWeapon.description":"§7\nAnoint your weapon with a sacred oil.\n\n§f(Anoint Weapon)§7 causes your attacks to deal AoE holy damage, and periodically heal nearby allies.\nAoE damage scales with Healing Power.\n\n§a35s Cooldown§7",
+  
+  "text.skills.clericSignatureAnointWeaponResistance.title":"§f[Resistance]",
+  "text.skills.clericSignatureAnointWeaponResistance.description":"§7Your §6[Anoint Weapon]§7 now also grants you Resistance on hits.",
+  
+  "text.skills.clericSignatureAnointWeaponUndying.title":"§f[Undying]",
+  "text.skills.clericSignatureAnointWeaponUndying.description":"§7While your §6[Anoint Weapon]§7 is active, taking damage while below 30% HP has a chance to grant you Undying.\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
+  
+  "text.skills.clericSignatureAnointWeaponCleanse.title":"§f[Cleanse]",
+  "text.skills.clericSignatureAnointWeaponCleanse.description":"§7While your §6[Anoint Weapon]§7 is active, you periodically cleanse yourself of debuffs.",
+  
+  "text.skills.berserkerSignatureRampage.title":"Signature Ability: §6[Rampage]§7",
+  "text.skills.berserkerSignatureRampage.description":"§7\nGain Rampage for 15s.\n\n§f(Rampage)§7 grants you random buffs each time you take damage.\n\n§a30s Cooldown§7",
+  
+  "text.skills.berserkerSignatureRampageCharge.title":"§f[Charge]",
+  "text.skills.berserkerSignatureRampageCharge.description":"§7§6[Rampage]§7 now immediately grants you regeneration and resistance and causes you to barrel forward, dealing damage and knocking back enemies.",
+  
+  "text.skills.berserkerSignatureRampageChargeRelentless.title":"§f[Relentless]",
+  "text.skills.berserkerSignatureRampageChargeRelentless.description":"§7When your charge deals damage, you convert your stacks of Exhaustion into Strength.",
+  
+  "text.skills.berserkerSignatureRampageChargeImmob.title":"§f[Immobilize]",
+  "text.skills.berserkerSignatureRampageChargeImmob.description":"§7Enemies hit by your charge are also inflicted with Immobilize. \n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+  
+  "text.skills.berserkerSignatureBloodthirsty.title":"Signature Ability: §6[Bloodthirsty]§7",
+  "text.skills.berserkerSignatureBloodthirsty.description":"§7\nGain Bloodthirsty for 20s.\n\n§f(Bloodthirsty)§7 grants you 25% of your max health each time you defeat an enemy.\n\n§a25s Cooldown§7",
+  
+  "text.skills.berserkerSignatureBloodthirstyMighty.title":"§f[Mighty]",
+  "text.skills.berserkerSignatureBloodthirstyMighty.description":"§7§6[Bloodthirsty]§7 Now grants you Might on use.\n\n§f(Might)§7 grants §a+10% §f[x]§7 increased attack damage per stack.",
+  
+  "text.skills.berserkerSignatureBloodthirstyTireless.title":"§f[Tireless]",
+  "text.skills.berserkerSignatureBloodthirstyTireless.description":"§7While §6[Bloodthirsty]§7 is active, you have a chance to remove stacks of Exhaustion on hit.",
+  
+  "text.skills.berserkerSignatureBloodthirstyTremor.title":"§f[Tremor]",
+  "text.skills.berserkerSignatureBloodthirstyTremor.description":"§7While §6[Bloodthirsty]§7 is active, you have a chance to gain Earthshaker on hit.\n\n§f(Earthshaker)§7 causes you to damage and knockback surrounding enemies when landing on the ground. This damage scales with your armor value.",
+  
+  "text.skills.berserkerSignatureBerserking.title":"Signature Ability: §6[Berserking]§7",
+  "text.skills.berserkerSignatureBerserking.description":"§7\nSacrifice 30% Total HP. Gain Berserking for a duration equal to the amount of hearts lost.\n\n§f(Berserking)§7 grants you stacking offensive buffs each time you hit an enemy.\n\n§a25s Cooldown§7",
+  
+  "text.skills.berserkerSignatureBerserkingLeap.title":"§f[Leap Slam]",
+  "text.skills.berserkerSignatureBerserkingLeap.description":"§7§6[Berserking]§7 now causes you to perform a forward leap slam, damaging and knocking back enemies at the landing location.",
+  
+  "text.skills.berserkerSignatureBerserkingLeapImmob.title":"§f[Immobilize]",
+  "text.skills.berserkerSignatureBerserkingLeapImmob.description":"§7Leap Slam now also inflicts enemies with Immobilize.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+  
+  "text.skills.berserkerSignatureBerserkingLeapPull.title":"§f[Magnet]",
+  "text.skills.berserkerSignatureBerserkingLeapPull.description":"§7Leap Slam now pulls nearby enemies instead of knocking them back.",
+  
+  "text.skills.portalSapphire.title":"§7§6[Junction: §fSapphire§6]§7",
+  "text.skills.portalSapphire.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
+  
+  "text.skills.portalRuby.title":"§7§6[Junction: §fRuby§6]§7",
+  "text.skills.portalRuby.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree."
+
+  
 }
