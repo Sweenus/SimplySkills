@@ -14,8 +14,7 @@ import net.puffish.skillsmod.api.rewards.Reward;
 import net.puffish.skillsmod.api.rewards.RewardContext;
 import net.puffish.skillsmod.api.utils.JsonParseUtils;
 import net.puffish.skillsmod.api.utils.Result;
-import net.puffish.skillsmod.api.utils.failure.Failure;
-import net.puffish.skillsmod.api.utils.failure.ManyFailures;
+import net.puffish.skillsmod.api.utils.Failure;
 
 import java.util.ArrayList;
 
@@ -37,10 +36,10 @@ public class PassiveSkillReward implements Reward {
         ArrayList<Failure> failures = new ArrayList();
         Result var10000 = rootObject.get("passive_skill").andThen((attributeElement) -> {
             return JsonParseUtils.parseAttribute(attributeElement).andThen((attribute) -> {
-                return DefaultAttributeRegistry.get(EntityType.PLAYER).has(attribute) ? Result.success(attribute) : Result.failure(attributeElement.getPath().failureAt("Passive Skill Failure"));
+                return DefaultAttributeRegistry.get(EntityType.PLAYER).has(attribute) ? Result.success(attribute) : Result.failure(attributeElement.getPath().createFailure("Passive Skill Failure"));
             });
         });
-        return failures.isEmpty() ? Result.success(new PassiveSkillReward()) : Result.failure(ManyFailures.ofList(failures));
+        return failures.isEmpty() ? Result.success(new PassiveSkillReward()) : Result.failure(Failure.fromMany(failures));
     }
 
     public void update(ServerPlayerEntity player, RewardContext context) {

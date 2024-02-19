@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.puffish.skillsmod.server.PlayerAttributes;
+import net.puffish.skillsmod.server.setup.SkillsAttributes;
 import net.spell_engine.api.effect.Synchronized;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
@@ -83,11 +83,11 @@ public class EffectRegistry {
                     0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect DEATHMARK= new DeathMarkEffect(StatusEffectCategory.HARMFUL, 3124687)
-            .addAttributeModifier(PlayerAttributes.RESISTANCE,
+            .addAttributeModifier(SkillsAttributes.RESISTANCE,
                     "325dbaa9-84c5-4cea-aca1-88b8dc585c3e",
                     -0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
-            .addAttributeModifier(PlayerAttributes.HEALING,
+            .addAttributeModifier(SkillsAttributes.HEALING,
                     "5e2ff54c-9698-4ba0-8320-9ba6e9f2b394",
                     -0.25,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
@@ -103,7 +103,7 @@ public class EffectRegistry {
                     mightIncrease,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static StatusEffect MARKSMANSHIP= new MarksmanshipEffect(StatusEffectCategory.BENEFICIAL, 3124687)
-            .addAttributeModifier(PlayerAttributes.RANGED_DAMAGE,
+            .addAttributeModifier(SkillsAttributes.RANGED_DAMAGE,
                     "d6702be1-2e6e-44ba-b325-41a7da2ca6b3",
                     marksmanshipIncrease,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
@@ -184,7 +184,7 @@ public class EffectRegistry {
     public static StatusEffect VITALITYBOND= new VitalityBondEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect ANOINTED= new AnointedEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect AGILE= new AgileEffect(StatusEffectCategory.BENEFICIAL, 3124687)
-            .addAttributeModifier(PlayerAttributes.RANGED_DAMAGE,
+            .addAttributeModifier(SkillsAttributes.RANGED_DAMAGE,
                     "6fa231ce-882a-4163-b941-452ec1e80f39",
                     0.05,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
