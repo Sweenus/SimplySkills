@@ -26,6 +26,12 @@ public class CustomHud {
 
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         MinecraftClient client = MinecraftClient.getInstance();
+
+        // Check if the player is in spectator mode or if the game is paused or if the player is viewing a menu
+        if (client.player == null || client.player.isSpectator() || client.isPaused() || client.currentScreen != null) {
+            return; // Do not render the custom HUD elements in these cases
+        }
+
         int scaledWidth = client.getWindow().getScaledWidth();
         int scaledHeight = client.getWindow().getScaledHeight();
 
@@ -54,7 +60,7 @@ public class CustomHud {
         Text keybindText = keybind.getBoundKeyLocalizedText();
 
         // Ensure the game isn't paused and the player exists
-        if (client.player != null && client.currentScreen == null && !ICON_TEXTURE.toString().contains("cooldown_overlay")) {
+        if (client.player != null && !ICON_TEXTURE.toString().contains("cooldown_overlay")) {
 
             RenderSystem.getShaderTexture(0);
 
