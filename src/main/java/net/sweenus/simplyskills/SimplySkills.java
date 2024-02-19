@@ -107,7 +107,7 @@ public class SimplySkills implements ModInitializer {
 
     private void processCategory(ServerPlayerEntity player, Category category) {
         String categoryId = category.getId().toString();
-        if (categoryId.equals("minecraft:combat") || categoryId.equals("minecraft:mining")) {
+        if (categoryId.equals("puffish_skills:combat") || categoryId.equals("puffish_skills:mining")) {
             SkillsAPI.getCategory(new Identifier(categoryId)).ifPresent(categoryObj -> {
                 categoryObj.erase(player);
                 categoryObj.lock(player);
