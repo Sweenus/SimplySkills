@@ -2,6 +2,7 @@ package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -9,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.Box;
 import net.spell_power.api.MagicSchool;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
@@ -122,6 +124,25 @@ public class InitiateAbilities {
                     25, weaknessAmplifier, false, false, true));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
                     25, miningFatigueAmplifier, false, false, true));
+        }
+    }
+
+    public static void passiveInitiateEldritchEnfeeblement(PlayerEntity player, List<Entity> targets) {
+        if (targets.isEmpty())
+            return;
+        int critChance = (int) player.getAttributeValue(SpellAttributes.CRITICAL_CHANCE.attribute) - 100;
+        int critDamage = (int) player.getAttributeValue(SpellAttributes.CRITICAL_DAMAGE.attribute);
+        if (player.getRandom().nextInt(100) < critChance) {
+            player.heal(Math.min(3, critDamage / 100));
+        }
+    }
+
+    public static void passiveInitiatePerilousPrecision(PlayerEntity player, List<Entity> targets) {
+        if (targets.isEmpty())
+            return;
+        int chance = Math.max(1, 50 - (int) player.getAttributeValue(EntityAttributes.GENERIC_MAX_HEALTH));
+        if (player.getRandom().nextInt(100) < chance) {
+            HelperMethods.incrementStatusEffect(player, EffectRegistry.BARRIER, 60, 1, 10);
         }
     }
 

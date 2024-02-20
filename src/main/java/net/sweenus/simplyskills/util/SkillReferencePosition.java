@@ -88,7 +88,7 @@ public class SkillReferencePosition {
     public static String initiateAttuned = "6ebh5xoq0dutz8u4";
     public static String initiateLightningRod = "dikky43lr7h6sn2t";
     public static String initiateHasty = "pudmdza96cel9knj";
-    public static String initiateEldritchEnfeeblement = "mzbt654gttd0tkvs";
+    public static String initiateEldritchEnfeeblement = "x0eke7vbrvrb116p";
     public static String initiatePerilousPrecision = "bnvgmcy3ruk5h4kx";
     public static String initiateWhisperedWizardry = "ae6o85ddrwkkzoxt";
     public static String initiateSpellcloak = "a051uz4mfn1vedxt";

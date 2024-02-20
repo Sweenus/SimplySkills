@@ -202,6 +202,14 @@ public class AbilityLogic {
         if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateOverload, player))
             HelperMethods.incrementStatusEffect(player, EffectRegistry.OVERLOAD, 160, 1, 9);
 
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEldritchEnfeeblement, player) && targets != null) {
+            InitiateAbilities.passiveInitiateEldritchEnfeeblement(player, targets);
+        }
+
+        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiatePerilousPrecision, player) && targets != null) {
+            InitiateAbilities.passiveInitiatePerilousPrecision(player, targets);
+        }
+
         // Not Amethyst Imbuement safe (Anthing that requires Spell Engine spellId)
         if (spellId !=null) {
 

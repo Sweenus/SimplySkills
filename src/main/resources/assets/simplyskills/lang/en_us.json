@@ -624,13 +624,13 @@
   "text.skills.initiateLightningRod.description":"§7During storms, you periodically gain stacks of Lightning Attunement.\n\n§f(Lightning Attunement)§7 Increases spell damage for lightning magic by §a+2% §f[x]§7 per stack.",
   
   "text.skills.initiateEldritchEnfeeblement.title":"§7§a[Eldritch Enfeeblement]§7",
-  "text.skills.initiateEldritchEnfeeblement.description":"§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.",
+  "text.skills.initiateEldritchEnfeeblement.description":"§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.\n\nGain a chance equal to your Spell Critical Chance to restore health on spell cast.\nThe amount restored scales with your Spell Critical Damage.",
   
   "text.skills.initiateHasty.title":"§7§a[Hasty]§7",
   "text.skills.initiateHasty.description":"§7Your movespeed is increased by §a+15% §f[x]§7, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
   
   "text.skills.initiatePerilousPrecision.title":"§7§a[Perilous Precision]§7",
-  "text.skills.initiatePerilousPrecision.description":"§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.",
+  "text.skills.initiatePerilousPrecision.description":"§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.\n\nYou have a 50% chance on spell cast to gain stacking Barrier.\nThis chance is reduced by a percentage equal to your max health.",
   
   "text.skills.cleric.title":"§7§a[Cleric]§7",
   "text.skills.cleric.description":"§7Periodically cleanse debuffs from nearby allies.",
