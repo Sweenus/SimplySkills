@@ -46,5 +46,20 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(max = 50)
     @ConfigEntry.Gui.Tooltip
     public int DDRAttackSpeedWeight = 20;
+    @ConfigEntry.Gui.Tooltip
+    public boolean DDRAffectsPlayers = false;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableDAS = false;
+    @ConfigEntry.Gui.Tooltip
+    public double DASHealth = 1.0;
+    @ConfigEntry.Gui.Tooltip
+    public double DASAttack = 0.2;
+    @ConfigEntry.Gui.Tooltip
+    public double DASArmor = 1.0;
+    @ConfigEntry.Gui.Tooltip
+    public double DASSpeed = 0.3;
+    @ConfigEntry.Gui.Tooltip
+    public double DASKnockbackResist = 0.1;
 
 }

@@ -1,18 +1,24 @@
 package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.util.DynamicDamage;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.UUID;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -50,28 +56,29 @@ public abstract class LivingEntityMixin {
     protected void simplyskills$modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
         LivingEntity attacker = this.getAttacker();
         LivingEntity livingEntity = (LivingEntity) (Object)this;
-        if (attacker != null && lastDamageTaken > 0 && SimplySkills.generalConfig.enableDDR) {
-            if (!(livingEntity instanceof PlayerEntity)) {
-                World world = attacker.getWorld();
-                float maxHp = getMaxHealth();
-                float thresholdCheck = amount / maxHp;
-                float damage = cir.getReturnValue();
-                float ddrAttackSpeedWeight = (float) SimplySkills.generalConfig.DDRAttackSpeedWeight / 100;
-                float ddrAmount = (float) SimplySkills.generalConfig.DDRAmount / 100;
-                float ddrHealthThreshold = (float) SimplySkills.generalConfig.DDRHealthThreshold / 100;
-                float damageFrequency = 0.01f + (world.getTime() - lastDamageTime) / (damage * ddrAttackSpeedWeight);
-                float healthPercent = Math.min((damage / maxHp) * damage, 0.9f * damage);
-                float minimumHp = (float) SimplySkills.generalConfig.DDRHealthRequirement;
 
-                if (thresholdCheck > ddrHealthThreshold && maxHp >= minimumHp) {
-                    float damageReduction = Math.min((healthPercent * ddrAmount), (damage / 2));
-                    float newAmount = Math.max((damage - damageReduction), 1) * Math.max(Math.min(damageFrequency, 1.0f), 0.3f);
-                    if (SimplySkills.generalConfig.enableDDRDebugLog && attacker instanceof PlayerEntity)
-                        attacker.sendMessage(Text.literal("§fDamage reduced from §6" + damage + " §fto§a " + newAmount + " §fusing DR: §6" + damageReduction + "§f & SDR: §b" + damageFrequency));
-                        //System.out.println("Damage reduced from " + damage + " to " + newAmount + " using DR: " + damageReduction + " & SDR: " + damageFrequency);
-                    cir.setReturnValue(newAmount);
-                }
-            }
+        // DAS Dynamic Attribute Scaling (scale attributes depending on skill points spent)
+        if (SimplySkills.generalConfig.enableDAS && !(livingEntity instanceof PlayerEntity)) {
+            if (SimplySkills.generalConfig.DASHealth > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_MAX_HEALTH, "SimplySkills health DAS",
+                        SimplySkills.generalConfig.DASHealth, UUID.fromString("631937f6-bc47-486b-b07a-542823d668a6"));
+            if (SimplySkills.generalConfig.DASAttack > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_ATTACK_DAMAGE, "SimplySkills attack damage DAS",
+                        SimplySkills.generalConfig.DASAttack, UUID.fromString("8097403f-ed25-4534-b7f9-854e16ef2fbb"));
+            if (SimplySkills.generalConfig.DASArmor > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_ARMOR, "SimplySkills armor DAS",
+                        SimplySkills.generalConfig.DASArmor, UUID.fromString("eae99963-45c4-4651-b501-4b2e16879705"));
+            if (SimplySkills.generalConfig.DASSpeed / 100 > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_MOVEMENT_SPEED, "SimplySkills movement speed DAS",
+                        SimplySkills.generalConfig.DASSpeed / 100, UUID.fromString("426d5ed8-020b-484f-93d9-4327a3c05c97"));
+            if (SimplySkills.generalConfig.DASKnockbackResist / 100 > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, "SimplySkills knockback resistance DAS",
+                        SimplySkills.generalConfig.DASKnockbackResist / 100, UUID.fromString("9ffef649-025d-4c30-98ed-d4378cd07d36"));
         }
+
+        float newAmount = DynamicDamage.DynamicDamageReduction(attacker, livingEntity, amount, lastDamageTaken, cir.getReturnValue(), lastDamageTime);
+        if (newAmount != amount)
+            cir.setReturnValue(newAmount);
+
     }
 }
