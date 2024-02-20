@@ -430,7 +430,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/initiate_path.png"
+                "texture": "simplyskills:textures/icons/spell_power_add.png"
             }
         },
         "rewards": [

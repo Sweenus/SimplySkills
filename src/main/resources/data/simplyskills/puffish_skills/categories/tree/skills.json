@@ -204,7 +204,7 @@
 		"root": false
 	},
 	"pfpiay7l8hcxosfi": {
-		"definition": "melee_damage+1%",
+		"definition": "spell_power_additive",
 		"x": -128,
 		"y": -147.8016689125442,
 		"root": false
@@ -216,7 +216,7 @@
 		"root": false
 	},
 	"tt92sgg2w8bonjvg": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 64,
 		"y": -184.75208614068023,
 		"root": false
@@ -306,13 +306,13 @@
 		"root": false
 	},
 	"d22n744bc20awsle": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 64,
 		"y": -258.6529205969523,
 		"root": false
 	},
 	"0pk0prwn17p9st00": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 64,
 		"y": -332.55375505322445,
 		"root": false
@@ -348,7 +348,7 @@
 		"root": false
 	},
 	"291zynonqncldo2z": {
-		"definition": "melee_damage+1%",
+		"definition": "spell_power_additive",
 		"x": -256,
 		"y": -221.70250336881628,
 		"root": false
@@ -1422,19 +1422,19 @@
 		"root": false
 	},
 	"jn70ztv3rqxgakgs": {
-		"definition": "attack_speed+1%",
+		"definition": "spell_crit_damage_additive+1%",
 		"x": 0,
 		"y": -258.6529205969523,
 		"root": false
 	},
 	"qgz5knf8nw5ylp1j": {
-		"definition": "attack_speed+1%",
+		"definition": "spell_power_additive",
 		"x": -32,
 		"y": -277.12812921102034,
 		"root": false
 	},
 	"k36veaawchpzz2kt": {
-		"definition": "attack_speed+1%",
+		"definition": "spell_power_additive",
 		"x": -32,
 		"y": -314.0785464391564,
 		"root": false
@@ -1458,19 +1458,19 @@
 		"root": false
 	},
 	"kimqqva5dptratay": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 64,
 		"y": -369.5041722813604,
 		"root": false
 	},
 	"jwh1qww4eqtp83wb": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 96,
 		"y": -387.9793808954285,
 		"root": false
 	},
 	"sa28mk2abnjicvvm": {
-		"definition": "spell_crit_chance_additive+1%",
+		"definition": "spell_power_additive",
 		"x": 96,
 		"y": -424.9297981235646,
 		"root": false
@@ -1602,7 +1602,7 @@
 		"root": false
 	},
 	"8f9ea15isso6yxrr": {
-		"definition": "melee_damage+1%",
+		"definition": "spell_power_additive",
 		"x": -160,
 		"y": -166.27687752661222,
 		"root": false
@@ -1872,7 +1872,7 @@
 		"root": false
 	},
 	"pevp851gmjjqcrek": {
-		"definition": "melee_damage+1%",
+		"definition": "spell_power_additive",
 		"x": -288,
 		"y": -240.17771198288432,
 		"root": false
