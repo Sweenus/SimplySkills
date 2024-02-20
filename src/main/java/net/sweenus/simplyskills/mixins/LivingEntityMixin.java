@@ -68,6 +68,9 @@ public abstract class LivingEntityMixin {
             if (SimplySkills.generalConfig.DASArmor > 0)
                 DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_ARMOR, "SimplySkills armor DAS",
                         SimplySkills.generalConfig.DASArmor, UUID.fromString("eae99963-45c4-4651-b501-4b2e16879705"));
+            if (SimplySkills.generalConfig.DASArmorToughness > 0)
+                DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_ARMOR_TOUGHNESS, "SimplySkills armor toughness DAS",
+                        SimplySkills.generalConfig.DASArmorToughness, UUID.fromString("0794ab19-7dbd-421f-90c7-6b65e3aee495"));
             if (SimplySkills.generalConfig.DASSpeed / 100 > 0)
                 DynamicDamage.DynamicAttributeScaling(livingEntity, EntityAttributes.GENERIC_MOVEMENT_SPEED, "SimplySkills movement speed DAS",
                         SimplySkills.generalConfig.DASSpeed / 100, UUID.fromString("426d5ed8-020b-484f-93d9-4327a3c05c97"));

@@ -52,11 +52,13 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean enableDAS = false;
     @ConfigEntry.Gui.Tooltip
-    public double DASHealth = 1.0;
+    public double DASHealth = 3.0;
     @ConfigEntry.Gui.Tooltip
     public double DASAttack = 0.2;
     @ConfigEntry.Gui.Tooltip
     public double DASArmor = 1.0;
+    @ConfigEntry.Gui.Tooltip
+    public double DASArmorToughness = 0.5;
     @ConfigEntry.Gui.Tooltip
     public double DASSpeed = 0.3;
     @ConfigEntry.Gui.Tooltip
