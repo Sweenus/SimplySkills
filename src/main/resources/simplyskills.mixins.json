@@ -17,7 +17,8 @@
     "client.ArmorFeatureRendererMixin",
     "client.EntityRenderDispatcherMixin",
     "client.PlayerEntityRendererMixin",
-    "client.SpellProjectileRendererMixin"
+    "client.SpellProjectileRendererMixin",
+    "client.ConnectionBatchedRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
