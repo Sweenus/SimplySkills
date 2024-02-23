@@ -126,7 +126,7 @@ public class ModPacketHandler {
 
             Identifier newIdentifierPacket = null;
             if (spritePath != null)
-                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/" + stringPacket + spritePath +".png");
+                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/alternate_reduced/" + stringPacket + spritePath +".png");
             else
                 newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/cooldown_overlay.png");
 

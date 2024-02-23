@@ -890,7 +890,7 @@
   "text.skills.wizardPassiveSpellEcho.description":"§7Your spell hits have a chance to echo, casting an additional random spell at the target.",
   
   "text.skills.wizardSignatureMeteorShower.title":"Signature Ability: §6[Meteor Shower]§7",
-  "text.skills.v.description":"§7\nCalls down meteors on nearby enemies.\n\n§8[Requires Nearby Targets]\n\n§a40s Cooldown§7",
+  "text.skills.wizardSignatureMeteorShower.description":"§7\nCalls down meteors on nearby enemies.\n\n§8[Requires Nearby Targets]\n\n§a40s Cooldown§7",
   
   "text.skills.wizardSignatureMeteorShowerGreater.title":"§f[Greater]§7",
   "text.skills.wizardSignatureMeteorShowerGreater.description":"§7§6[Meteor Shower]§7 Now summons a single larger meteor that deals significantly more damage in a larger area.\n\n§8[Requires Target]",

@@ -1762,7 +1762,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric.png"
             }
         },
         "rewards": [
@@ -3421,7 +3421,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_weapon_expert.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_weapon_expert.png"
             }
         },
         "rewards": [
@@ -3449,7 +3449,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_spellweaving.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_spellweaving.png"
             }
         },
         "rewards": [
@@ -3477,7 +3477,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_surge.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_surge.png"
             }
         },
         "rewards": [
@@ -3505,7 +3505,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_surge.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_surge.png"
             }
         },
         "rewards": [
@@ -3533,7 +3533,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_surge.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_surge.png"
             }
         },
         "rewards": [
@@ -3561,7 +3561,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_surge.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_surge.png"
             }
         },
         "rewards": [
@@ -3589,7 +3589,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_surge.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_surge.png"
             }
         },
         "rewards": [
@@ -3617,7 +3617,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_impact.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_impact.png"
             }
         },
         "rewards": [
@@ -3645,7 +3645,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_impact.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_impact.png"
             }
         },
         "rewards": [
@@ -3673,7 +3673,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_elemental_impact.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_elemental_impact.png"
             }
         },
         "rewards": [
@@ -3701,7 +3701,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_spellweaver.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_spellweaver.png"
             }
         },
         "rewards": [
@@ -3729,7 +3729,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_spellweaver.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_spellweaver.png"
             }
         },
         "rewards": [
@@ -3757,7 +3757,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/spellblade_signature_spellweaver.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/spellblade_signature_spellweaver.png"
             }
         },
         "rewards": [
@@ -4894,8 +4894,8 @@
         ]
     },
     "rogueSignatureEvasionFanOfBladesBladestormSiphon": {
-        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.title"},
-        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestorm.description"},
+        "title": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestormSiphon.title"},
+        "description": {"translate":"text.skills.rogueSignatureEvasionFanOfBladesBladestormSiphon.description"},
         "size": 1.4,
         "frame": {
             "type": "texture",
@@ -6029,7 +6029,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_aegis.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_aegis.png"
             }
         },
         "rewards": [
@@ -6057,7 +6057,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_retribution.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_retribution.png"
             }
         },
         "rewards": [
@@ -6085,7 +6085,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_exhaustive_recovery.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_exhaustive_recovery.png"
             }
         },
         "rewards": [
@@ -6113,7 +6113,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6141,7 +6141,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6169,7 +6169,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6197,7 +6197,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6225,7 +6225,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6253,7 +6253,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_consecration.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_consecration.png"
             }
         },
         "rewards": [
@@ -6281,7 +6281,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_sacred_onslaught.png"
             }
         },
         "rewards": [
@@ -6309,7 +6309,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_sacred_onslaught.png"
             }
         },
         "rewards": [
@@ -6337,7 +6337,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_sacred_onslaught.png"
             }
         },
         "rewards": [
@@ -6365,7 +6365,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_sacred_onslaught.png"
             }
         },
         "rewards": [
@@ -6393,7 +6393,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_sacred_onslaught.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_sacred_onslaught.png"
             }
         },
         "rewards": [
@@ -6421,7 +6421,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6449,7 +6449,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6477,7 +6477,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6505,7 +6505,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6533,7 +6533,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6561,7 +6561,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/crusader_signature_heavensmiths_call.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/crusader_signature_heavensmiths_call.png"
             }
         },
         "rewards": [
@@ -6589,7 +6589,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_passive_altruism.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_altruism.png"
             }
         },
         "rewards": [
@@ -6617,7 +6617,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_passive_mutual_mending.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_mutual_mending.png"
             }
         },
         "rewards": [
@@ -6645,7 +6645,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_passive_healing_ward.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_healing_ward.png"
             }
         },
         "rewards": [
@@ -6673,7 +6673,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_sacred_orb.png"
             }
         },
         "rewards": [
@@ -6701,7 +6701,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_sacred_orb.png"
             }
         },
         "rewards": [
@@ -6729,7 +6729,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_sacred_orb.png"
             }
         },
         "rewards": [
@@ -6757,7 +6757,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_sacred_orb.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_sacred_orb.png"
             }
         },
         "rewards": [
@@ -6785,7 +6785,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_divine_intervention.png"
             }
         },
         "rewards": [
@@ -6813,7 +6813,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_divine_intervention.png"
             }
         },
         "rewards": [
@@ -6841,7 +6841,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_divine_intervention.png"
             }
         },
         "rewards": [
@@ -6869,7 +6869,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_divine_intervention.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_divine_intervention.png"
             }
         },
         "rewards": [
@@ -6897,7 +6897,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_anoint_weapon.png"
             }
         },
         "rewards": [
@@ -6925,7 +6925,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_anoint_weapon.png"
             }
         },
         "rewards": [
@@ -6953,7 +6953,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_anoint_weapon.png"
             }
         },
         "rewards": [
@@ -6981,7 +6981,7 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/cleric_signature_anoint_weapon.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/cleric_signature_anoint_weapon.png"
             }
         },
         "rewards": [
