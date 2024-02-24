@@ -201,6 +201,12 @@ public class EffectRegistry {
                     0.05,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
+    public static StatusEffect RIGHTEOUSHAMMERS= new RighteousHammersEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    "36c6315a-1c25-48a7-98f6-f1cfc15b9851",
+                    +0.02,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -221,6 +227,7 @@ public class EffectRegistry {
         Synchronized.configure(DEATHMARK, true);
         Synchronized.configure(TAUNTED, true);
         Synchronized.configure(MARKSMANSHIP, true);
+        Synchronized.configure(RIGHTEOUSHAMMERS, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -270,6 +277,7 @@ public class EffectRegistry {
         ANOINTED = registerStatusEffect("anointed", ANOINTED);
         MARKSMANSHIP = registerStatusEffect("marksmanship", MARKSMANSHIP);
         AGILE = registerStatusEffect("agile", AGILE);
+        RIGHTEOUSHAMMERS = registerStatusEffect("righteous_hammers", RIGHTEOUSHAMMERS);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

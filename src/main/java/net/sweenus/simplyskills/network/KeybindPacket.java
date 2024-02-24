@@ -10,9 +10,10 @@ public class KeybindPacket {
 
     public static void init() {
         ServerPlayNetworking.registerGlobalReceiver(ABILITY1_PACKET, (server, player, handler, buffer, sender) -> {
-            server.execute(()->{
+            String type = buffer.readString();
 
-                SignatureAbilities.signatureAbilityManager(player);
+            server.execute(()->{
+                SignatureAbilities.signatureAbilityManager(player, type);
 
             });
         });

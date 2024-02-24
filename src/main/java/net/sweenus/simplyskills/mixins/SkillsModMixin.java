@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.SkillsAPI;
 import net.puffish.skillsmod.server.network.packets.in.SkillClickInPacket;
+import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.abilities.AbilityLogic;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.SoundRegistry;
@@ -39,6 +40,13 @@ public class SkillsModMixin {
 
             player.getWorld().playSoundFromEntity(null, player, sound,
                     SoundCategory.PLAYERS, 0.3f, (float) choose_pitch);
+
+            if (SkillsAPI.getCategory(categoryId).get().getUnlockedSkills(player).size() > 40) {
+                Identifier ascendancy = new Identifier(SimplySkills.MOD_ID, "ascendancy");
+                if (SkillsAPI.getCategory(ascendancy).isPresent())
+                    SkillsAPI.getCategory(ascendancy).get().unlock(player);
+            }
+
 
             }
     }

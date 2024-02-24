@@ -29,9 +29,11 @@ import java.util.List;
 public class SimplySkillsClient implements ClientModInitializer {
 
     public static int abilityCooldown = 500;
+    public static int abilityCooldown2 = 500;
     public static long lastUseTime;
     public static int unspentPoints = 0;
     public static KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
+    public static KeyBinding bindingAbility2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability2", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.category.simplyskills"));
 
     public static EntityModelLayer SPELLTARGETENTITY_MODEL = new EntityModelLayer(new Identifier("spell_target_entity", "cube"), "main");
 
@@ -52,7 +54,8 @@ public class SimplySkillsClient implements ClientModInitializer {
                 BarrierRenderer.modelId_base,
                 ImmobilizeRenderer.modelId_base,
                 DeathMarkRenderer.modelId_overlay,
-                TauntedRenderer.modelId_overlay
+                TauntedRenderer.modelId_overlay,
+                RighteousHammersRenderer.modelId_overlay
         ));
 
 
@@ -70,6 +73,7 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.DEATHMARK, new DeathMarkRenderer());
         CustomModelStatusEffect.register(EffectRegistry.TAUNTED, new TauntedRenderer());
         CustomModelStatusEffect.register(EffectRegistry.MARKSMANSHIP, new MarksmanshipRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.RIGHTEOUSHAMMERS, new RighteousHammersRenderer());
 
         CooldownPacket.init();
         registerEntityModels();
@@ -84,7 +88,7 @@ public class SimplySkillsClient implements ClientModInitializer {
             while (bindingAbility1.wasPressed()) {
                 if (System.currentTimeMillis() > (lastUseTime + abilityCooldown)) {
 
-                    SignatureAbilities.sendKeybindPacket();
+                    SignatureAbilities.sendKeybindPacket("signature");
 
                     lastUseTime = System.currentTimeMillis();
                     client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
@@ -95,11 +99,21 @@ public class SimplySkillsClient implements ClientModInitializer {
                 }
             }
 
-            /* Ability 2 and Toggle abilities disabled for now (To be implemented)
-
             while (bindingAbility2.wasPressed()) {
-                client.player.sendMessage(Text.literal("Ability #2 has been used!"), false);
+                if (System.currentTimeMillis() > (lastUseTime + abilityCooldown2)) {
+
+                    SignatureAbilities.sendKeybindPacket("ascendancy");
+
+                    lastUseTime = System.currentTimeMillis();
+                    client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
+
+                } else {
+                    client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime + abilityCooldown2) - System.currentTimeMillis()) / 1000) + "s"), true);
+                    client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.GONG_WARBLY, SoundCategory.PLAYERS, 0.1f, 1.5f);
+                }
             }
+
+            /* Toggle abilities disabled for now (To be implemented)
 
             if (bindingAbility3.isPressed()) {
                 client.player.sendMessage(Text.literal("Toggle Ability is active"), false);

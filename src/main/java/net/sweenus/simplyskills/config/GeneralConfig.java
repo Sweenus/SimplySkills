@@ -8,7 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class GeneralConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
-    public boolean enablePlayerExCompatibility = false;
+    public boolean enableAscendancy = true;
     @ConfigEntry.Gui.Tooltip
     public boolean treeResetOnDeath = false;
     @ConfigEntry.Gui.Tooltip

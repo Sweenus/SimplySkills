@@ -253,4 +253,9 @@ public class SkillReferencePosition {
     public static String berserkerSpecialisationBerserkingLeapPull = "9d9t6hnhyc248jy0";
 
 
+    // -- Ascendancy --
+
+    public static String ascendancyRighteousHammers = "xpfympjrekzl2xg3";
+
+
 }

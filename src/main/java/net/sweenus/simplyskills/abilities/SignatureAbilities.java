@@ -39,7 +39,7 @@ import java.util.List;
 
 public class SignatureAbilities {
 
-    public static void signatureAbilityManager(PlayerEntity player) {
+    public static void signatureAbilityManager(PlayerEntity player, String abilityType) {
 
         String wizardSkillTree = "simplyskills:wizard";
         String berserkerSkillTree = "simplyskills:berserker";
@@ -48,182 +48,196 @@ public class SignatureAbilities {
         String spellbladeSkillTree = "simplyskills:spellblade";
         String crusaderSkillTree = "simplyskills:crusader";
         String clericSkillTree = "simplyskills:cleric";
+        String baseTree = "simplyskills:tree";
+        String ascendancyTree = "simplyskills:ascendancy";
         boolean ability_success = false;
         String ability = "none";
 
 
 
         // - WIZARD -
-        if (HelperMethods.isUnlocked(wizardSkillTree, null, player)) {
+        if (abilityType.contains("signature")) {
+            if (HelperMethods.isUnlocked(wizardSkillTree, null, player)) {
 
-            // Meteor Shower
-            if (HelperMethods.isUnlocked(wizardSkillTree,
-                    SkillReferencePosition.wizardSpecialisationMeteorShower, player)) {
-                ability_success = WizardAbilities.signatureWizardMeteorShower(wizardSkillTree, player);
-                ability = "MeteorShower";
+                // Meteor Shower
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationMeteorShower, player)) {
+                    ability_success = WizardAbilities.signatureWizardMeteorShower(wizardSkillTree, player);
+                    ability = "MeteorShower";
+                }
+                // Ice Comet
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationIceComet, player)) {
+                    ability_success = WizardAbilities.signatureWizardIceComet(wizardSkillTree, player);
+                    ability = "IceComet";
+                }
+                // Static Discharge
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationStaticDischarge, player)) {
+                    ability_success = WizardAbilities.signatureWizardStaticDischarge(wizardSkillTree, player);
+                    ability = "StaticDischarge";
+                }
+                // Arcane Bolt
+                if (HelperMethods.isUnlocked(wizardSkillTree,
+                        SkillReferencePosition.wizardSpecialisationArcaneBolt, player)) {
+                    ability_success = WizardAbilities.signatureWizardArcaneBolt(wizardSkillTree, player);
+                    ability = "ArcaneBolt";
+                }
             }
-            // Ice Comet
-            if (HelperMethods.isUnlocked(wizardSkillTree,
-                    SkillReferencePosition.wizardSpecialisationIceComet, player)) {
-                ability_success = WizardAbilities.signatureWizardIceComet(wizardSkillTree, player);
-                ability = "IceComet";
+
+            // - BERSERKER -
+            if (HelperMethods.isUnlocked(berserkerSkillTree, null, player)) {
+
+                // Rampage
+                if (HelperMethods.isUnlocked(berserkerSkillTree,
+                        SkillReferencePosition.berserkerSpecialisationRampage, player)) {
+                    ability_success = BerserkerAbilities.signatureBerserkerRampage(berserkerSkillTree, player);
+                    ability = "Rampage";
+                }
+                // Bloodthirsty
+                if (HelperMethods.isUnlocked(berserkerSkillTree,
+                        SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
+                    ability_success = BerserkerAbilities.signatureBerserkerBloodthirsty(berserkerSkillTree, player);
+                    ability = "Bloodthirsty";
+                }
+                //Berserking
+                if (HelperMethods.isUnlocked(berserkerSkillTree,
+                        SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
+                    ability_success = BerserkerAbilities.signatureBerserkerBerserking(berserkerSkillTree, player);
+                    ability = "Berserking";
+                }
             }
-            // Static Discharge
-            if (HelperMethods.isUnlocked(wizardSkillTree,
-                    SkillReferencePosition.wizardSpecialisationStaticDischarge, player)) {
-                ability_success = WizardAbilities.signatureWizardStaticDischarge(wizardSkillTree, player);
-                ability = "StaticDischarge";
+
+            // - ROGUE -
+            if (HelperMethods.isUnlocked(rogueSkillTree, null, player)) {
+
+                // Evasion
+                if (HelperMethods.isUnlocked(rogueSkillTree,
+                        SkillReferencePosition.rogueSpecialisationEvasion, player)) {
+                    ability_success = RogueAbilities.signatureRogueEvasion(rogueSkillTree, player);
+                    ability = "Evasion";
+                }
+                // Preparation
+                if (HelperMethods.isUnlocked(rogueSkillTree,
+                        SkillReferencePosition.rogueSpecialisationPreparation, player)) {
+                    ability_success = RogueAbilities.signatureRoguePreparation(rogueSkillTree, player);
+                    ability = "Preparation";
+                }
+                // Siphoning Strikes
+                if (HelperMethods.isUnlocked(rogueSkillTree,
+                        SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
+                    ability_success = RogueAbilities.signatureRogueSiphoningStrikes(rogueSkillTree, player);
+                    ability = "SiphoningStrikes";
+                }
             }
-            // Arcane Bolt
-            if (HelperMethods.isUnlocked(wizardSkillTree,
-                    SkillReferencePosition.wizardSpecialisationArcaneBolt, player)) {
-                ability_success = WizardAbilities.signatureWizardArcaneBolt(wizardSkillTree, player);
-                ability = "ArcaneBolt";
+
+            // - Ranger -
+            if (HelperMethods.isUnlocked(rangerSkillTree, null, player)) {
+
+                // Elemental Arrows
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
+                    ability_success = RangerAbilities.signatureRangerElementalArrows(rangerSkillTree, player);
+                    ability = "ElementalArrows";
+                }
+                // Disengage
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationDisengage, player)) {
+                    ability_success = RangerAbilities.signatureRangerDisengage(rangerSkillTree, player);
+                    ability = "Disengage";
+                }
+                // Arrow Rain
+                if (HelperMethods.isUnlocked(rangerSkillTree,
+                        SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
+                    ability_success = RangerAbilities.signatureRangerArrowRain(rangerSkillTree, player);
+                    ability = "ArrowRain";
+                }
+            }
+
+            // - Spellblade -
+            if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)) {
+
+                // Elemental Surge
+                if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                        SkillReferencePosition.spellbladeSpecialisationElementalSurge, player)) {
+                    ability_success = SpellbladeAbilities.signatureSpellbladeElementalSurge(spellbladeSkillTree, player);
+                    ability = "ElementalSurge";
+                }
+                // Elemental Impact
+                if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                        SkillReferencePosition.spellbladeSpecialisationElementalImpact, player)) {
+                    ability_success = SpellbladeAbilities.signatureSpellbladeElementalImpact(spellbladeSkillTree, player);
+                    ability = "ElementalImpact";
+                }
+                if (HelperMethods.isUnlocked(spellbladeSkillTree,
+                        SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)) {
+                    //Spell Weaver
+                    ability_success = SpellbladeAbilities.signatureSpellbladeSpellweaver(spellbladeSkillTree, player);
+                    ability = "Spellweaver";
+                }
+            }
+
+            // - Crusader -
+            if (HelperMethods.isUnlocked(crusaderSkillTree, null, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+
+                // Heavensmith's Call
+                if (HelperMethods.isUnlocked(crusaderSkillTree,
+                        SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player)) {
+                    ability_success = CrusaderAbilities.signatureHeavensmithsCall(crusaderSkillTree, player);
+                    ability = "HeavensmithsCall";
+                }
+                // Sacred Onslaught
+                if (HelperMethods.isUnlocked(crusaderSkillTree,
+                        SkillReferencePosition.crusaderSpecialisationSacredOnslaught, player)) {
+                    ability_success = CrusaderAbilities.signatureCrusaderSacredOnslaught(crusaderSkillTree, player);
+                    ability = "SacredOnslaught";
+                }
+                // Consecration
+                if (HelperMethods.isUnlocked(crusaderSkillTree,
+                        SkillReferencePosition.crusaderSpecialisationConsecration, player)) {
+                    ability_success = CrusaderAbilities.signatureCrusaderConsecration(crusaderSkillTree, player);
+                    ability = "Consecration";
+                }
+            }
+
+            // - Cleric -
+            if (HelperMethods.isUnlocked(clericSkillTree, null, player)
+                    && FabricLoader.getInstance().isModLoaded("paladins")) {
+
+                // Divine Intervention
+                if (HelperMethods.isUnlocked(clericSkillTree,
+                        SkillReferencePosition.clericSpecialisationDivineIntervention, player)) {
+                    ability_success = ClericAbilities.signatureClericDivineIntervention(clericSkillTree, player);
+                    ability = "DivineIntervention";
+                }
+                // Sacred Orb
+                if (HelperMethods.isUnlocked(clericSkillTree,
+                        SkillReferencePosition.clericSpecialisationSacredOrb, player)) {
+                    ability_success = ClericAbilities.signatureClericSacredOrb(clericSkillTree, player);
+                    ability = "SacredOrb";
+                }
+                // Anoint Weapon
+                if (HelperMethods.isUnlocked(clericSkillTree,
+                        SkillReferencePosition.clericSpecialisationAnointWeapon, player)) {
+                    ability_success = ClericAbilities.signatureClericAnointWeapon(player);
+                    ability = "AnointWeapon";
+                }
+
             }
         }
+        else if (abilityType.contains("ascendancy")) {
+            // --- ASCENDANCY ---
+            if (HelperMethods.isUnlocked(ascendancyTree, null, player)) {
 
-        // - BERSERKER -
-        if (HelperMethods.isUnlocked(berserkerSkillTree, null, player)) {
-
-            // Rampage
-            if (HelperMethods.isUnlocked(berserkerSkillTree,
-                    SkillReferencePosition.berserkerSpecialisationRampage, player)) {
-                ability_success = BerserkerAbilities.signatureBerserkerRampage(berserkerSkillTree, player);
-                ability = "Rampage";
-            }
-            // Bloodthirsty
-            if (HelperMethods.isUnlocked(berserkerSkillTree,
-                    SkillReferencePosition.berserkerSpecialisationBloodthirsty, player)) {
-                ability_success = BerserkerAbilities.signatureBerserkerBloodthirsty(berserkerSkillTree, player);
-                ability = "Bloodthirsty";
-            }
-            //Berserking
-            if (HelperMethods.isUnlocked(berserkerSkillTree,
-                    SkillReferencePosition.berserkerSpecialisationBerserking, player)) {
-                ability_success = BerserkerAbilities.signatureBerserkerBerserking(berserkerSkillTree, player);
-                ability = "Berserking";
+                // Elemental Surge
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyRighteousHammers, player)) {
+                    ability_success = AscendancyAbilities.righteousHammers(player);
+                    ability = "RighteousHammers";
+                }
             }
         }
-
-        // - ROGUE -
-        if (HelperMethods.isUnlocked(rogueSkillTree, null, player)) {
-
-            // Evasion
-            if (HelperMethods.isUnlocked(rogueSkillTree,
-                    SkillReferencePosition.rogueSpecialisationEvasion, player)) {
-                ability_success = RogueAbilities.signatureRogueEvasion(rogueSkillTree, player);
-                ability = "Evasion";
-            }
-            // Preparation
-            if (HelperMethods.isUnlocked(rogueSkillTree,
-                    SkillReferencePosition.rogueSpecialisationPreparation, player)) {
-                ability_success = RogueAbilities.signatureRoguePreparation(rogueSkillTree, player);
-                ability = "Preparation";
-            }
-            // Siphoning Strikes
-            if (HelperMethods.isUnlocked(rogueSkillTree,
-                    SkillReferencePosition.rogueSpecialisationSiphoningStrikes, player)) {
-                ability_success = RogueAbilities.signatureRogueSiphoningStrikes(rogueSkillTree, player);
-                ability = "SiphoningStrikes";
-            }
-        }
-
-        // - Ranger -
-        if (HelperMethods.isUnlocked(rangerSkillTree, null, player)) {
-
-            // Elemental Arrows
-            if (HelperMethods.isUnlocked(rangerSkillTree,
-                    SkillReferencePosition.rangerSpecialisationElementalArrows, player)) {
-                ability_success = RangerAbilities.signatureRangerElementalArrows(rangerSkillTree, player);
-                ability = "ElementalArrows";
-            }
-            // Disengage
-            if (HelperMethods.isUnlocked(rangerSkillTree,
-                    SkillReferencePosition.rangerSpecialisationDisengage, player)) {
-                ability_success = RangerAbilities.signatureRangerDisengage(rangerSkillTree, player);
-                ability = "Disengage";
-            }
-            // Arrow Rain
-            if (HelperMethods.isUnlocked(rangerSkillTree,
-                    SkillReferencePosition.rangerSpecialisationArrowRain, player)) {
-                ability_success = RangerAbilities.signatureRangerArrowRain(rangerSkillTree, player);
-                ability = "ArrowRain";
-            }
-        }
-
-        // - Spellblade -
-        if (HelperMethods.isUnlocked(spellbladeSkillTree, null, player)) {
-
-            // Elemental Surge
-            if (HelperMethods.isUnlocked(spellbladeSkillTree,
-                    SkillReferencePosition.spellbladeSpecialisationElementalSurge, player)) {
-                ability_success = SpellbladeAbilities.signatureSpellbladeElementalSurge(spellbladeSkillTree, player);
-                ability = "ElementalSurge";
-            }
-            // Elemental Impact
-            if (HelperMethods.isUnlocked(spellbladeSkillTree,
-                    SkillReferencePosition.spellbladeSpecialisationElementalImpact, player)) {
-                ability_success = SpellbladeAbilities.signatureSpellbladeElementalImpact(spellbladeSkillTree, player);
-                ability = "ElementalImpact";
-            }
-            if (HelperMethods.isUnlocked(spellbladeSkillTree,
-                    SkillReferencePosition.spellbladeSpecialisationSpellweaver, player)) {
-                //Spell Weaver
-                ability_success = SpellbladeAbilities.signatureSpellbladeSpellweaver(spellbladeSkillTree, player);
-                ability = "Spellweaver";
-            }
-        }
-
-        // - Crusader -
-        if (HelperMethods.isUnlocked(crusaderSkillTree, null, player)
-                && FabricLoader.getInstance().isModLoaded("paladins")) {
-
-            // Heavensmith's Call
-            if (HelperMethods.isUnlocked(crusaderSkillTree,
-                    SkillReferencePosition.crusaderSpecialisationHeavensmithsCall, player)) {
-                ability_success = CrusaderAbilities.signatureHeavensmithsCall(crusaderSkillTree, player);
-                ability = "HeavensmithsCall";
-            }
-            // Sacred Onslaught
-            if (HelperMethods.isUnlocked(crusaderSkillTree,
-                    SkillReferencePosition.crusaderSpecialisationSacredOnslaught, player)) {
-                ability_success = CrusaderAbilities.signatureCrusaderSacredOnslaught(crusaderSkillTree, player);
-                ability = "SacredOnslaught";
-            }
-            // Consecration
-            if (HelperMethods.isUnlocked(crusaderSkillTree,
-                    SkillReferencePosition.crusaderSpecialisationConsecration, player)) {
-                ability_success = CrusaderAbilities.signatureCrusaderConsecration(crusaderSkillTree, player);
-                ability = "Consecration";
-            }
-
-        }
-
-        // - Cleric -
-        if (HelperMethods.isUnlocked(clericSkillTree, null, player)
-                && FabricLoader.getInstance().isModLoaded("paladins")) {
-
-            // Divine Intervention
-            if (HelperMethods.isUnlocked(clericSkillTree,
-                    SkillReferencePosition.clericSpecialisationDivineIntervention, player)) {
-                ability_success = ClericAbilities.signatureClericDivineIntervention(clericSkillTree, player);
-                ability = "DivineIntervention";
-            }
-            // Sacred Orb
-            if (HelperMethods.isUnlocked(clericSkillTree,
-                    SkillReferencePosition.clericSpecialisationSacredOrb, player)) {
-                ability_success = ClericAbilities.signatureClericSacredOrb(clericSkillTree, player);
-                ability = "SacredOrb";
-            }
-            // Anoint Weapon
-            if (HelperMethods.isUnlocked(clericSkillTree,
-                    SkillReferencePosition.clericSpecialisationAnointWeapon, player)) {
-                ability_success = ClericAbilities.signatureClericAnointWeapon(player);
-                ability = "AnointWeapon";
-            }
-
-        }
-
 
         // Trigger bonus gem effects
         if (ability_success && FabricLoader.getInstance().isModLoaded("simplyswords"))
@@ -248,95 +262,123 @@ public class SignatureAbilities {
         int cooldown = 500;
         double sendCooldown;
         String type = "";
+        String cooldownType = "none";
 
         switch (ability) {
             case "ArcaneBolt" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardArcaneBoltCooldown * 1000;
                 type = "magic, arcane";
+                cooldownType = "signature";
             }
             case "IceComet" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardIceCometCooldown * 1000;
                 type = "magic, elemental, debuff";
+                cooldownType = "signature";
             }
             case "MeteorShower" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardMeteorShowerCooldown * 1000;
                 type = "magic, elemental";
+                cooldownType = "signature";
             }
             case "StaticDischarge" -> {
                 cooldown = SimplySkills.wizardConfig.signatureWizardStaticDischargeCooldown * 1000;
                 type = "magic, elemental, debuff";
+                cooldownType = "signature";
             }
             case "Berserking" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerBerserkingCooldown * 1000;
                 type = "physical, melee, buff, sacrificial";
+                cooldownType = "signature";
             }
             case "Bloodthirsty" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerBloodthirstyCooldown * 1000;
                 type = "physical, melee, buff, recovery";
+                cooldownType = "signature";
             }
             case "Rampage" -> {
                 cooldown = SimplySkills.berserkerConfig.signatureBerserkerRampageCooldown * 1000;
                 type = "physical, melee, buff";
+                cooldownType = "signature";
             }
             case "SiphoningStrikes" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesCooldown * 1000;
                 type = "physical, melee, buff, debuff, recovery";
+                cooldownType = "signature";
             }
             case "Evasion" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRogueEvasionCooldown * 1000;
                 type = "physical, buff";
+                cooldownType = "signature";
             }
             case "Preparation" -> {
                 cooldown = SimplySkills.rogueConfig.signatureRoguePreparationCooldown * 1000;
                 type = "physical, buff";
+                cooldownType = "signature";
             }
             case "ArrowRain" -> {
                 cooldown = SimplySkills.rangerConfig.effectRangerArrowRainCooldown * 1000;
                 type = "physical, arrow, buff";
+                cooldownType = "signature";
             }
             case "Disengage" -> {
                 cooldown = SimplySkills.rangerConfig.signatureRangerDisengageCooldown * 1000;
                 type = "physical, debuff";
+                cooldownType = "signature";
             }
             case "ElementalArrows" -> {
                 cooldown = SimplySkills.rangerConfig.effectRangerElementalArrowsCooldown * 1000;
                 type = "magic, arrow, elemental, buff";
+                cooldownType = "signature";
             }
             case "ElementalImpact" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactCooldown * 1000;
                 type = "magic, melee, charge, elemental";
+                cooldownType = "signature";
             }
             case "ElementalSurge" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeCooldown * 1000;
                 type = "magic, elemental, buff";
+                cooldownType = "signature";
             }
             case "Spellweaver" -> {
                 cooldown = SimplySkills.spellbladeConfig.signatureSpellbladeSpellweaverCooldown * 1000;
                 type = "magic, buff, elemental, melee";
+                cooldownType = "signature";
             }
             case "HeavensmithsCall" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderHeavensmithsCallCooldown * 1000;
                 type = "physical, debuff";
+                cooldownType = "signature";
             }
             case "SacredOnslaught" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtCooldown * 1000;
                 type = "physical, melee, charge, buff, recovery";
+                cooldownType = "signature";
             }
             case "Consecration" -> {
                 cooldown = SimplySkills.crusaderConfig.signatureCrusaderConsecrationCooldown * 1000;
                 type = "magic, buff, recovery";
+                cooldownType = "signature";
             }
             case "DivineIntervention" -> {
                 cooldown = SimplySkills.clericConfig.signatureClericDivineInterventionCooldown * 1000;
                 type = "magic, healing, buff";
+                cooldownType = "signature";
             }
             case "SacredOrb" -> {
                 cooldown = SimplySkills.clericConfig.signatureClericSacredOrbCooldown * 1000;
                 type = "magic, healing, buff";
+                cooldownType = "signature";
             }
             case "AnointWeapon" -> {
                 cooldown = SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
                 type = "magic, healing, buff";
+                cooldownType = "signature";
+            }
+            case "RighteousHammers" -> {
+                cooldown = SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
+                type = "physical, buff";
+                cooldownType = "ascendancy";
             }
         }
 
@@ -355,7 +397,7 @@ public class SignatureAbilities {
         if (!useSuccess) sendCooldown = useDelay;
 
         //System.out.println("Ability type: " + type);
-        sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown);
+        sendCooldownPacket((ServerPlayerEntity) player, (int) sendCooldown, cooldownType);
     }
 
 
@@ -464,18 +506,20 @@ public class SignatureAbilities {
 
 
     @Environment(EnvType.CLIENT)
-    public static void sendKeybindPacket() {
+    public static void sendKeybindPacket(String type) {
 
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+        buf.writeString(type);
         CustomPayloadC2SPacket packet = new CustomPayloadC2SPacket(KeybindPacket.ABILITY1_PACKET, buf);
         MinecraftClient.getInstance().getNetworkHandler().sendPacket(packet);
 
     }
 
-    public static void sendCooldownPacket(ServerPlayerEntity player, int cooldown) {
+    public static void sendCooldownPacket(ServerPlayerEntity player, int cooldown, String cooldownType) {
 
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(cooldown);
+        buf.writeString(cooldownType);
         CustomPayloadS2CPacket packet = new CustomPayloadS2CPacket(CooldownPacket.COOLDOWN_PACKET, buf);
         ServerPlayNetworking.send(player, CooldownPacket.COOLDOWN_PACKET , packet.getData());
 

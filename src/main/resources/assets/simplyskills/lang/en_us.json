@@ -600,6 +600,25 @@
   "text.skills.jump_multi+2%.title":"§a+5%§f [+] §7Jump",
   "text.skills.spell_power_additive.title":"§a+3%§f [+] §7All Spell Damage",
 
+  "text.skills.spell_fire_damage_additive+0.8%.title": "§a+0.8%§f [+] §7Fire Spell Damage",
+  "text.skills.spell_arcane_damage_additive+0.8%.title" : "§a+0.8%§f [+] §7Fire Spell Damage",
+  "text.skills.spell_frost_damage_additive+0.8%.title": "§a+0.8%§f [+] §7Frost Spell Damage",
+  "text.skills.spell_healing_power_additive+0.8%.title": "§a+0.8%§f [+] §7Healing Power",
+  "text.skills.spell_lightning_damage_additive+0.8%.title": "§a+0.8%§f [+] §7Lightning Spell Damage",
+  "text.skills.spell_soul_damage_additive+0.8%.title": "§a+0.8%§f [+] §7Soul Spell Damage",
+  "text.skills.spell_crit_damage_additive+0.5%.title": "§a+0.5%§f [+] §7Spell Critical Damage",
+  "text.skills.spell_crit_chance_additive+0.1%.title": "§a+0.1%§f [+] §7Spell Critical Chance",
+  "text.skills.spell_haste_additive+0.5%.title": "§a+0.5%§f [+] §7Spell Haste",
+  "text.skills.spell_power_additive+0.5%.title": "§a+0.5%§f [+] §7All Spell Damage",
+  "text.skills.health+0.5%.title": "§a+0.5%§f [+] §7Max Health",
+  "text.skills.resistance+0.5%.title": "§a+0.5%§f [+] §7Resistance",
+  "text.skills.melee_damage+0.5%.title": "§a+0.5%§f [+] §7Melee Damage",
+  "text.skills.ranged_damage+0.5%.title": "§a+0.5%§f [+] §7Ranged Damage",
+  "text.skills.attack_speed+0.3%.title": "§a+0.3%§f [+] §7Attack Speed",
+  "text.skills.movement_speed+0.2%.title": "§a+0.2%§f [+] §7Movement Speed",
+  "text.skills.stamina+0.5%.title": "§a+0.5%§f [+] §7Stamina",
+  "text.skills.jump+0.2%.title": "§a+0.2%§f [+] §7Jump",
+
   "text.skills.hardy.title":"§7§a[Hardy]§7\nWhen taking damage, gain regeneration for a duration equal to the damage received.",
   "text.skills.initiateSlowfall.title":"§7§a[Innate Slowfall]§7",
   "text.skills.initiateSlowfall.description":"§7When falling long distances you gain Slow Falling.",
@@ -1259,7 +1278,10 @@
   "text.skills.portalSapphire.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
   
   "text.skills.portalRuby.title":"§7§6[Junction: §fRuby§6]§7",
-  "text.skills.portalRuby.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree."
+  "text.skills.portalRuby.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
 
+
+  "text.skills.ascendancyRighteousHammers.title": "Ascendancy Ability: §6[Righteous Hammers]§7",
+  "text.skills.ascendancyRighteousHammers.description": "§7\nSummon hammers that orbit you for a duration, dealing damage to nearby enemies and granting you 2% increased melee attack per hammer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional hammer.\n\n§a15s Cooldown§7"
   
 }

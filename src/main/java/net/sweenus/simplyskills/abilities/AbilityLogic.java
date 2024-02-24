@@ -114,7 +114,15 @@ public class AbilityLogic {
                     player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
+            } else if (categoryID.contains("simplyskills:ascendancy")
+                    && !HelperMethods.isUnlocked("simplyskills:ascendancy", null, player)) {
+
+                if (SimplySkills.generalConfig.enableAscendancy) {
+                    playUnlockSound(player);
+                    return false;
+                }
             }
+
         }
         return false;
     }

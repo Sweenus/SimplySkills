@@ -13,10 +13,14 @@ public class CooldownPacket {
         ClientPlayNetworking.registerGlobalReceiver(COOLDOWN_PACKET, (client, handler, buffer, sender) -> {
 
             int cooldown = buffer.readInt();
+            String cooldownType = buffer.readString();
 
             client.execute(()->{
 
-                SimplySkillsClient.abilityCooldown = cooldown;
+                if (cooldownType.contains("signature"))
+                    SimplySkillsClient.abilityCooldown = cooldown;
+                else if (cooldownType.contains("ascendancy"))
+                    SimplySkillsClient.abilityCooldown2 = cooldown;
                 //System.out.println("cooldown is: " +cooldown +"ms");
 
 
