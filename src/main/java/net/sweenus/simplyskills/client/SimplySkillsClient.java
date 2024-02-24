@@ -31,6 +31,7 @@ public class SimplySkillsClient implements ClientModInitializer {
     public static int abilityCooldown = 500;
     public static int abilityCooldown2 = 500;
     public static long lastUseTime;
+    public static long lastUseTime2;
     public static int unspentPoints = 0;
     public static KeyBinding bindingAbility1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.category.simplyskills"));
     public static KeyBinding bindingAbility2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability2", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.category.simplyskills"));
@@ -100,15 +101,15 @@ public class SimplySkillsClient implements ClientModInitializer {
             }
 
             while (bindingAbility2.wasPressed()) {
-                if (System.currentTimeMillis() > (lastUseTime + abilityCooldown2)) {
+                if (System.currentTimeMillis() > (lastUseTime2 + abilityCooldown2)) {
 
                     SignatureAbilities.sendKeybindPacket("ascendancy");
 
-                    lastUseTime = System.currentTimeMillis();
+                    lastUseTime2 = System.currentTimeMillis();
                     client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.SOUNDEFFECT7, SoundCategory.PLAYERS, 0.4f, 1.5f);
 
                 } else {
-                    client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime + abilityCooldown2) - System.currentTimeMillis()) / 1000) + "s"), true);
+                    client.player.sendMessage(Text.literal("Ability can be used again in " + (((lastUseTime2 + abilityCooldown2) - System.currentTimeMillis()) / 1000) + "s"), true);
                     client.player.getWorld().playSound(client.player, client.player.getBlockPos(), SoundRegistry.GONG_WARBLY, SoundCategory.PLAYERS, 0.1f, 1.5f);
                 }
             }

@@ -395,6 +395,9 @@ public class HelperMethods {
             getCategory(new Identifier(specialisation)).get().erase(user);
         }
         getCategory(new Identifier("simplyskills:tree")).get().resetSkills(user);
+        Identifier ascendancyTree = new Identifier("simplyskills:ascendancy");
+        if (getCategory(ascendancyTree).isPresent())
+            getCategory(ascendancyTree).get().resetSkills(user);
         return true;
     }
     public static boolean levelAll( ServerPlayerEntity user ) {
@@ -421,6 +424,7 @@ public class HelperMethods {
         for (String specialisation : specialisations) {
             getCategory(new Identifier(specialisation)).get().erase(user);
             getCategory(new Identifier("simplyskills:tree")).get().erase(user);
+            getCategory(new Identifier("simplyskills:ascendancy")).get().erase(user);
         }
     }
 

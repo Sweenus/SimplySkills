@@ -62,9 +62,13 @@ public class ModPacketHandler {
 
         ClientPlayNetworking.registerGlobalReceiver(SYNC_SIGNATURE_ABILITY, (client, handler, buf, responseSender) -> {
             Identifier identifierPacket = buf.readIdentifier();
+            Identifier identifierPacket2 = buf.readIdentifier();
             String identifierString = identifierPacket.toString().replace("simplyskills:","");
+            String identifierString2 = identifierPacket2.toString().replace("simplyskills:","");
             String stringPacket = buf.readString().replace("simplyskills:","") + "_signature_";
+            String stringPacket2 = buf.readString().replace("simplyskills:","ascendancy_");
             String spritePath = null;
+            String spritePath2 = null;
             if (stringPacket.contains("rogue")) {
                 if (identifierString.equals(SkillReferencePosition.rogueSpecialisationSiphoningStrikes))
                     spritePath = "siphoning_strikes";
@@ -124,15 +128,27 @@ public class ModPacketHandler {
                     spritePath = "spellweaver";
             }
 
+            if (identifierString2.equals(SkillReferencePosition.ascendancyRighteousHammers)) {
+                spritePath2 = "righteous_hammers";
+            }
+
             Identifier newIdentifierPacket = null;
+            Identifier newIdentifierPacket2 = null;
             if (spritePath != null)
                 newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/alternate_reduced/" + stringPacket + spritePath +".png");
             else
-                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/icons/cooldown_overlay.png");
+                newIdentifierPacket = new Identifier(SimplySkills.MOD_ID, "textures/gui/cooldown_overlay.png");
+
+            if (spritePath2 != null)
+                newIdentifierPacket2 = new Identifier(SimplySkills.MOD_ID, "textures/icons/alternate_reduced/ascendancy_" + spritePath2 + ".png");
+            else
+                newIdentifierPacket2 = new Identifier(SimplySkills.MOD_ID, "textures/gui/cooldown_overlay.png");
 
             Identifier finalNewIdentifierPacket = newIdentifierPacket;
+            Identifier finalNewIdentifierPacket2 = newIdentifierPacket2;
             client.execute(() -> {
                 CustomHud.setSprite(finalNewIdentifierPacket);
+                CustomHud.setSprite2(finalNewIdentifierPacket2);
             });
         });
 
@@ -147,7 +163,9 @@ public class ModPacketHandler {
     public static void sendSignatureAbility(ServerPlayerEntity player) {
         PacketByteBuf buf = PacketByteBufs.create();
         Identifier identifier = new Identifier("empty");
+        Identifier identifier2 = new Identifier("empty");
         String stringSend = "empty";
+        String stringSend2 = "empty";
         List<String> list = new ArrayList<>();
         List<String> specialisationList = SimplySkills.getSpecialisationsAsArray();
         list.add(SkillReferencePosition.rogueSpecialisationPreparation);
@@ -172,6 +190,7 @@ public class ModPacketHandler {
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalSurge);
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalImpact);
         list.add(SkillReferencePosition.spellbladeSpecialisationSpellweaver);
+        list.add(SkillReferencePosition.ascendancyRighteousHammers);
 
         for (String specialisations : specialisationList) {
             for (String string : list) {
@@ -185,10 +204,24 @@ public class ModPacketHandler {
                 }
             }
         }
-        if (identifier != null && stringSend != null) {
+
+        List<String> list2 = new ArrayList<>();
+        list2.add(SkillReferencePosition.ascendancyRighteousHammers);
+
+        for (String string : list2) {
+            if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {
+                identifier2 = new Identifier(SimplySkills.MOD_ID, string);
+                stringSend2 = string;
+                break;
+            }
+        }
+
+        if ((identifier != null && stringSend != null) || stringSend2 != null) {
             //System.out.println("sending to client: " + identifier + stringSend);
             buf.writeIdentifier(identifier);
+            buf.writeIdentifier(identifier2);
             buf.writeString(stringSend);
+            buf.writeString(stringSend2);
             ServerPlayNetworking.send(player, SYNC_SIGNATURE_ABILITY, buf);
         }
     }

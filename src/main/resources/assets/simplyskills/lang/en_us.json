@@ -1,6 +1,7 @@
 {
   "key.category.simplyskills":                          "Simply Skills",
   "key.simplyskills.ability1":                          "Signature Ability",
+  "key.simplyskills.ability2":                          "Ascendancy Ability",
   "system.simplyskills.unlock":                         "§6You have unlocked a specialisation. Re-open the skill tree to see your specialisation tab.",
 
 
@@ -145,8 +146,8 @@
   "text.autoconfig.simplyskills.category.crusader" :    "Crusader",
   "text.autoconfig.simplyskills.category.cleric" :      "Cleric",
 
-  "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility" :                                  "Enable PlayerEx Compatibility !NOT YET IMPLEMENTED!",
-  "text.autoconfig.simplyskills.option.client.enablePlayerExCompatibility.@Tooltip" :                         "Changes attributes to use PlayerEx attributes. \n\nIMPORTANT: Puffish Skills config folder must be deleted \nand game the restarted for this to take effect.",
+  "text.autoconfig.simplyskills.option.client.enableAscendancy" :                                             "Enable the Ascendancy Skill Tree",
+  "text.autoconfig.simplyskills.option.client.enableAscendancy.@Tooltip" :                                    "Enabled by default, the Ascendancy tree is\nunlocked after spending the maximum points in\nthe base skill tree, and allows long-term progression.",
   "text.autoconfig.simplyskills.option.client.treeResetOnDeath" :                                             "Reset skill trees on death",
   "text.autoconfig.simplyskills.option.client.treeResetOnDeath.@Tooltip" :                                    "Resets all Simply Skills skill trees upon death. \nThis erases all points and experience invested.",
   "text.autoconfig.simplyskills.option.client.disableDefaultPuffishTrees" :                                   "Disable Default Puffish Skill trees",

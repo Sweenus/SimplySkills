@@ -255,7 +255,7 @@ public class SkillReferencePosition {
 
     // -- Ascendancy --
 
-    public static String ascendancyRighteousHammers = "xpfympjrekzl2xg3";
+    public static String ascendancyRighteousHammers = "xpfympjreeee2xg3";
 
 
 }
