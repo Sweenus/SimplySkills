@@ -25,7 +25,7 @@ public class AscendancyAbilities {
 
     public static boolean righteousHammers(PlayerEntity player) {
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RIGHTEOUSHAMMERS,
-                180, 1 + (getAscendancyPoints(player) / 10), false, false, true));
+                300, 1 + (getAscendancyPoints(player) / 10), false, false, true));
         return true;
     }
 

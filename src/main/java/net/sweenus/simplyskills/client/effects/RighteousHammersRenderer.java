@@ -9,7 +9,7 @@ import net.sweenus.simplyskills.SimplySkills;
 
 import java.util.List;
 
-public class RighteousHammersRenderer extends OrbitingEffectRenderer {
+public class RighteousHammersRenderer extends OrbitingRotatingEffectRenderer {
     public static final Identifier modelId_base = new Identifier(SimplySkills.MOD_ID, "projectile/righteous_hammers");
     public static final Identifier modelId_overlay = new Identifier(SimplySkills.MOD_ID, "projectile/righteous_hammers");
 

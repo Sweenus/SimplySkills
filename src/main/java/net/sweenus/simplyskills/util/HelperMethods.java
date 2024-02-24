@@ -405,6 +405,8 @@ public class HelperMethods {
             getCategory(new Identifier(specialisation)).get().addExtraPoints(user, 99);
         }
         getCategory(new Identifier("simplyskills:tree")).get().addExtraPoints(user, 99);
+        getCategory(new Identifier("simplyskills:ascendancy")).get().unlock(user);
+        getCategory(new Identifier("simplyskills:ascendancy")).get().addExtraPoints(user, 99);
         return true;
     }
 
