@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,12 +12,14 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.entities.SimplySkillsArrowEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -319,7 +322,20 @@ public class AbilityEffects {
                 arrowRainVolleys = arrowRainVolleys + (arrowRainVolleyIncrease * 3);
 
 
+            BlockPos blockpos2;
+            Entity target;
             Vec3d blockpos = HelperMethods.getPositionLookingAt(player, arrowRainRange);
+            if (blockpos == null) {
+                blockpos2 = HelperMethods.getBlockLookingAt(player, arrowRainRange);
+                if (blockpos2 != null) {
+                    target = EntityRegistry.SPELL_TARGET_ENTITY.spawn((ServerWorld) player.getWorld(),
+                            blockpos2,
+                            SpawnReason.TRIGGERED);
+                    if (target !=null)
+                        blockpos = target.getPos();
+                }
+            }
+
             if (blockpos != null) {
                 int xpos = (int) blockpos.getX() - arrowRainRadius;
                 int ypos = (int) blockpos.getY();
