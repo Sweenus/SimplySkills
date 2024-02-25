@@ -230,11 +230,15 @@ public class SignatureAbilities {
             // --- ASCENDANCY ---
             if (HelperMethods.isUnlocked(ascendancyTree, null, player)) {
 
-                // Elemental Surge
                 if (HelperMethods.isUnlocked(ascendancyTree,
                         SkillReferencePosition.ascendancyRighteousHammers, player)) {
                     ability_success = AscendancyAbilities.righteousHammers(player);
                     ability = "RighteousHammers";
+                }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyBoneArmor, player)) {
+                    ability_success = AscendancyAbilities.boneArmor(player);
+                    ability = "BoneArmor";
                 }
             }
         }
@@ -376,8 +380,13 @@ public class SignatureAbilities {
                 cooldownType = "signature";
             }
             case "RighteousHammers" -> {
-                cooldown = SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
+                cooldown = 60 * 1000;//SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
                 type = "physical, buff";
+                cooldownType = "ascendancy";
+            }
+            case "BoneArmor" -> {
+                cooldown = 90 * 1000;//SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
+                type = "physical, buff, recovery";
                 cooldownType = "ascendancy";
             }
         }

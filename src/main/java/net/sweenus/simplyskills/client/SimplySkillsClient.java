@@ -56,7 +56,8 @@ public class SimplySkillsClient implements ClientModInitializer {
                 ImmobilizeRenderer.modelId_base,
                 DeathMarkRenderer.modelId_overlay,
                 TauntedRenderer.modelId_overlay,
-                RighteousHammersRenderer.modelId_overlay
+                RighteousHammersRenderer.modelId_overlay,
+                BoneArmorRenderer.modelId_overlay
         ));
 
 
@@ -75,6 +76,7 @@ public class SimplySkillsClient implements ClientModInitializer {
         CustomModelStatusEffect.register(EffectRegistry.TAUNTED, new TauntedRenderer());
         CustomModelStatusEffect.register(EffectRegistry.MARKSMANSHIP, new MarksmanshipRenderer());
         CustomModelStatusEffect.register(EffectRegistry.RIGHTEOUSHAMMERS, new RighteousHammersRenderer());
+        CustomModelStatusEffect.register(EffectRegistry.BONEARMOR, new BoneArmorRenderer());
 
         CooldownPacket.init();
         registerEntityModels();

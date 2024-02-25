@@ -94,6 +94,10 @@ public abstract class ServerPlayerEntityMixin {
             }
 
 
+            //Ascendancy effects
+            AscendancyAbilities.boneArmorEffect(serverPlayer);
+
+
         }
     }
 

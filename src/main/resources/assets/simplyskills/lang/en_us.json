@@ -97,6 +97,10 @@
   "effect.simplyskills.marksmanship.desc":              "Grants 10% increased Ranged Damage per stack.",
   "effect.simplyskills.agile":                          "Agile",
   "effect.simplyskills.agile.desc":                     "Grants 5% increased attack speed, movespeed, spell haste, and ranged damage per stack.",
+  "effect.simplyskills.bone_armor":                     "Bone Armor",
+  "effect.simplyskills.bone_armor.desc":                "Grants 10% increased armor & armor toughness per bone. A bone is lost when hit",
+  "effect.simplyskills.righteous_hammers":              "Righteous Hammers",
+  "effect.simplyskills.righteous_hammers.desc":         "Grants 2% increased melee damage per hammer and damages nearby enemies.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
@@ -1283,6 +1287,9 @@
 
 
   "text.skills.ascendancyRighteousHammers.title": "Ascendancy Ability: §6[Righteous Hammers]§7",
-  "text.skills.ascendancyRighteousHammers.description": "§7\nSummon hammers that orbit you for a duration, dealing damage to nearby enemies and granting you 2% increased melee attack per hammer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional hammer.\n\n§a15s Cooldown§7"
+  "text.skills.ascendancyRighteousHammers.description": "§7\nSummon hammers that orbit you for a duration, dealing damage to nearby enemies and granting you 2% increased melee attack per hammer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional hammer.\n\n§a60s Cooldown§7",
+
+  "text.skills.ascendancyBoneArmor.title": "Ascendancy Ability: §6[Bone Armor]§7",
+  "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7"
   
 }

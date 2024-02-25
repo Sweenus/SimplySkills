@@ -128,9 +128,10 @@ public class ModPacketHandler {
                     spritePath = "spellweaver";
             }
 
-            if (identifierString2.equals(SkillReferencePosition.ascendancyRighteousHammers)) {
+            if (identifierString2.equals(SkillReferencePosition.ascendancyRighteousHammers))
                 spritePath2 = "righteous_hammers";
-            }
+            else if (identifierString2.equals(SkillReferencePosition.ascendancyBoneArmor))
+                spritePath2 = "bone_armor";
 
             Identifier newIdentifierPacket = null;
             Identifier newIdentifierPacket2 = null;
@@ -190,7 +191,6 @@ public class ModPacketHandler {
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalSurge);
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalImpact);
         list.add(SkillReferencePosition.spellbladeSpecialisationSpellweaver);
-        list.add(SkillReferencePosition.ascendancyRighteousHammers);
 
         for (String specialisations : specialisationList) {
             for (String string : list) {
@@ -207,6 +207,7 @@ public class ModPacketHandler {
 
         List<String> list2 = new ArrayList<>();
         list2.add(SkillReferencePosition.ascendancyRighteousHammers);
+        list2.add(SkillReferencePosition.ascendancyBoneArmor);
 
         for (String string : list2) {
             if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {

@@ -207,6 +207,16 @@ public class EffectRegistry {
                     +0.02,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
+    public static StatusEffect BONEARMOR= new BoneArmorEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ARMOR,
+                    "30ac8be8-c2cc-46a5-9311-334b0cd88b7d",
+                    +0.1,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ARMOR_TOUGHNESS,
+                    "a8c16e8b-9d82-4fe5-a0f2-2b9fe688b4da",
+                    +0.1,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -228,6 +238,7 @@ public class EffectRegistry {
         Synchronized.configure(TAUNTED, true);
         Synchronized.configure(MARKSMANSHIP, true);
         Synchronized.configure(RIGHTEOUSHAMMERS, true);
+        Synchronized.configure(BONEARMOR, true);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -278,6 +289,7 @@ public class EffectRegistry {
         MARKSMANSHIP = registerStatusEffect("marksmanship", MARKSMANSHIP);
         AGILE = registerStatusEffect("agile", AGILE);
         RIGHTEOUSHAMMERS = registerStatusEffect("righteous_hammers", RIGHTEOUSHAMMERS);
+        BONEARMOR = registerStatusEffect("bone_armor", BONEARMOR);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

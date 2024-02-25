@@ -3496,5 +3496,11 @@
 		"x": 73.9008344562721,
 		"y": 0,
 		"root": false
+	},
+	"1ftcmq4xhgmz4zmd": {
+		"definition": "ascendancyBoneArmor",
+		"x": 277.12812921102034,
+		"y": -288,
+		"root": true
 	}
 }
