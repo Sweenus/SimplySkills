@@ -1,11 +1,11 @@
 {
 	"unlocked_by_default": false,
 	"exclusive_root": false,
-	"title": "Crusader Specialisation",
+	"title": {"translate": "text.skills.crusader_category.title"},
 	"icon": {
 		"type": "texture",
 		"data": {
-			"texture": "simplyskills:textures/icons/crusader_path.png"
+			"texture": "simplyskills:textures/icons/alternate_reduced/crusader_path.png"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"

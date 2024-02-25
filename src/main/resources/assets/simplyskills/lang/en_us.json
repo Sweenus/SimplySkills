@@ -556,11 +556,20 @@
   "text.autoconfig.simplyskills.option.cleric.signatureClericDivineInterventionCooldown" :                    "§6[Signature]§7 Divine Intervention cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.cleric.signatureClericSacredOrbCooldown" :                             "§6[Signature]§7 Sacred Orb cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)",
-  
+
+  "text.skills.berserker_category.title":                                                                     "§7§bBerserker Specialisation§7",
+  "text.skills.wizard_category.title":                                                                        "§7§bWizard Specialisation§7",
+  "text.skills.spellblade_category.title":                                                                    "§7§bSpellblade Specialisation§7",
+  "text.skills.cleric_category.title":                                                                        "§7§bCleric Specialisation§7",
+  "text.skills.crusader_category.title":                                                                      "§7§bCrusader Specialisation§7",
+  "text.skills.ranger_category.title":                                                                        "§7§bRanger Specialisation§7",
+  "text.skills.rogue_category.title":                                                                         "§7§bRogue Specialisation§7",
+  "text.skills.base_category.title":                                                                          "§7§aSkill Tree§7",
+  "text.skills.ascendancy_category.title":                                                                    "§7§6Ascendancy Tree§7",
   
   "text.category.tree.title":                                                                                 "simply skills",
-  "text.skills.pathWayfarer.title":                                                                               "Path of the §bWayfarer",
-  "text.skills.pathWayfarer.description":                                                                         "§a+10% §f[+]§7 Movement Speed",
+  "text.skills.pathWayfarer.title":                                                                           "Path of the §bWayfarer",
+  "text.skills.pathWayfarer.description":                                                                     "§a+10% §f[+]§7 Movement Speed",
 
   "text.skills.initiate.title":                                                                               "Path of the §bInitiate§7",
   "text.skills.initiate.description":                                                                         "§a+1§7 To all schools of magic",

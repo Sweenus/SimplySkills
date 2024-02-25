@@ -1,11 +1,11 @@
 {
 	"unlocked_by_default": false,
 	"exclusive_root": false,
-	"title": "Cleric Specialisation",
+	"title": {"translate": "text.skills.cleric_category.title"},
 	"icon": {
 		"type": "texture",
 		"data": {
-			"texture": "simplyskills:textures/icons/cleric_path.png"
+			"texture": "simplyskills:textures/icons/alternate_reduced/cleric_path.png"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"

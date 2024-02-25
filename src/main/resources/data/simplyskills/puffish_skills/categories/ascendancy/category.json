@@ -1,11 +1,11 @@
 {
 	"unlocked_by_default": false,
 	"exclusive_root": false,
-	"title": "Ascendancy",
+	"title": {"translate": "text.skills.ascendancy_category.title"},
 	"icon": {
 		"type": "texture",
 		"data": {
-			"texture": "simplyskills:textures/icons/wizard_path.png"
+			"texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_path.png"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"

@@ -1,11 +1,11 @@
 {
 	"unlocked_by_default": false,
 	"exclusive_root": false,
-	"title": "Spellblade Specialisation",
+	"title": {"translate": "text.skills.spellblade_category.title"},
 	"icon": {
 		"type": "texture",
 		"data": {
-			"texture": "simplyskills:textures/icons/spellblade_path.png"
+			"texture": "simplyskills:textures/icons/alternate_reduced/spellblade_path.png"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"

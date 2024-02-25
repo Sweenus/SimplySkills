@@ -2,11 +2,11 @@
     "unlocked_by_default": true,
     "spent_points_limit": 42,
     "exclusive_root": true,
-    "title": {"translate":"text.category.tree.title"},
+    "title": {"translate": "text.skills.base_category.title"},
     "icon": {
         "type": "texture",
         "data": {
-            "texture": "simplyskills:textures/icons/berserker_path.png"
+            "texture": "simplyskills:textures/icons/alternate_reduced/base_path.png"
         }
     },
     "background": "simplyskills:textures/backgrounds/skillbackground_5.png"

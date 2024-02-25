@@ -1,11 +1,11 @@
 {
 	"unlocked_by_default": false,
 	"exclusive_root": false,
-	"title": "Ranger Specialisation",
+	"title": {"translate": "text.skills.ranger_category.title"},
 	"icon": {
 		"type": "texture",
 		"data": {
-			"texture": "simplyskills:textures/icons/ranger_path.png"
+			"texture": "simplyskills:textures/icons/alternate_reduced/ranger_path.png"
 		}
 	},
 	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"
