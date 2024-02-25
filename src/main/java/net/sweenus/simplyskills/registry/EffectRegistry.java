@@ -9,6 +9,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.server.setup.SkillsAttributes;
+import net.spell_engine.api.effect.ActionImpairing;
+import net.spell_engine.api.effect.EntityActionsAllowed;
 import net.spell_engine.api.effect.Synchronized;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
@@ -217,6 +219,8 @@ public class EffectRegistry {
                     +0.1,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
+    public static StatusEffect CYCLONICCLEAVE= new CyclonicCleaveEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -239,6 +243,8 @@ public class EffectRegistry {
         Synchronized.configure(MARKSMANSHIP, true);
         Synchronized.configure(RIGHTEOUSHAMMERS, true);
         Synchronized.configure(BONEARMOR, true);
+
+        ActionImpairing.configure(CYCLONICCLEAVE, EntityActionsAllowed.STUN);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -290,6 +296,7 @@ public class EffectRegistry {
         AGILE = registerStatusEffect("agile", AGILE);
         RIGHTEOUSHAMMERS = registerStatusEffect("righteous_hammers", RIGHTEOUSHAMMERS);
         BONEARMOR = registerStatusEffect("bone_armor", BONEARMOR);
+        CYCLONICCLEAVE = registerStatusEffect("cyclonic_cleave", CYCLONICCLEAVE);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

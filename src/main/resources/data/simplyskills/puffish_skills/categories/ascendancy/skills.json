@@ -3502,5 +3502,11 @@
 		"x": 277.12812921102034,
 		"y": -288,
 		"root": true
+	},
+	"1sc2rrqwl88s7jvp": {
+		"definition": "ascendancyCyclonicCleave",
+		"x": 0,
+		"y": 192,
+		"root": true
 	}
 }

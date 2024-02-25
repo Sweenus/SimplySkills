@@ -240,6 +240,11 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.boneArmor(player);
                     ability = "BoneArmor";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyCyclonicCleave, player)) {
+                    ability_success = AscendancyAbilities.cyclonicCleave(player);
+                    ability = "CyclonicCleave";
+                }
             }
         }
 
@@ -385,8 +390,13 @@ public class SignatureAbilities {
                 cooldownType = "ascendancy";
             }
             case "BoneArmor" -> {
-                cooldown = 90 * 1000;//SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
+                cooldown = 90 * 1000;
                 type = "physical, buff, recovery";
+                cooldownType = "ascendancy";
+            }
+            case "CyclonicCleave" -> {
+                cooldown = 25 * 1000;
+                type = "physical, magic, melee";
                 cooldownType = "ascendancy";
             }
         }

@@ -1299,6 +1299,9 @@
   "text.skills.ascendancyRighteousHammers.description": "§7\nSummon hammers that orbit you for a duration, dealing damage to nearby enemies and granting you 2% increased melee attack per hammer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional hammer.\n\n§a60s Cooldown§7",
 
   "text.skills.ascendancyBoneArmor.title": "Ascendancy Ability: §6[Bone Armor]§7",
-  "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7"
+  "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7",
+
+  "text.skills.ascendancyCyclonicCleave.title": "Ascendancy Ability: §6[Cyclonic Cleave]§7",
+  "text.skills.ascendancyCyclonicCleave.description": "§7\nViolently swing your weapon around yourself while moving forward, dealing damage to nearby enemies.\nThis attack scales with the highest of your attack, ranged, or spell attributes.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nCyclonic Cleave now pulls enemies it hits toward you.\n\n§a25s Cooldown§7"
   
 }

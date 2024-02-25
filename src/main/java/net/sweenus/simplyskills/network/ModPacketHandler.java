@@ -132,6 +132,8 @@ public class ModPacketHandler {
                 spritePath2 = "righteous_hammers";
             else if (identifierString2.equals(SkillReferencePosition.ascendancyBoneArmor))
                 spritePath2 = "bone_armor";
+            else if (identifierString2.equals(SkillReferencePosition.ascendancyCyclonicCleave))
+                spritePath2 = "cyclonic_cleave";
 
             Identifier newIdentifierPacket = null;
             Identifier newIdentifierPacket2 = null;
@@ -208,6 +210,7 @@ public class ModPacketHandler {
         List<String> list2 = new ArrayList<>();
         list2.add(SkillReferencePosition.ascendancyRighteousHammers);
         list2.add(SkillReferencePosition.ascendancyBoneArmor);
+        list2.add(SkillReferencePosition.ascendancyCyclonicCleave);
 
         for (String string : list2) {
             if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {

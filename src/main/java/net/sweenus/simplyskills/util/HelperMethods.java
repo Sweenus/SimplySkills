@@ -30,12 +30,13 @@ import net.minecraft.world.World;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.Skill;
 import net.puffish.skillsmod.api.SkillsAPI;
+import net.puffish.skillsmod.server.setup.SkillsAttributes;
+import net.spell_power.api.MagicSchool;
+import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static net.puffish.skillsmod.api.SkillsAPI.getCategory;
 
@@ -568,6 +569,20 @@ public class HelperMethods {
         return unspentSkillPoints;
     }
 
+    public static double getHighestAttributeValue(PlayerEntity player) {
+        double attackDamage = player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        double toughness = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.FROST).attribute);
+        double fire = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute);
+        double arcane = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute);
+        double soul = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute);
+        double healing = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute);
+        double lightning = player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute);
+        double ranged = player.getAttributeValue(SkillsAttributes.RANGED_DAMAGE);
+
+        Double[] attributeValues = {attackDamage, toughness, fire, arcane, soul, healing, lightning, ranged};
+
+        return Arrays.stream(attributeValues).max(Comparator.naturalOrder()).orElse(Double.MIN_VALUE);
+    }
 
 
 }

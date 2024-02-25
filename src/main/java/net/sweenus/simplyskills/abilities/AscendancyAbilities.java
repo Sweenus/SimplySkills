@@ -42,5 +42,10 @@ public class AscendancyAbilities {
                 HelperMethods.decrementStatusEffect(player, EffectRegistry.BONEARMOR);
     }
 
+    public static boolean cyclonicCleave(PlayerEntity player) {
+        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
+        return true;
+    }
+
 
 }

@@ -7984,5 +7984,33 @@
                 }
             }
         ]
+    },
+    "ascendancyCyclonicCleave": {
+        "title": {"translate":"text.skills.ascendancyCyclonicCleave.title"},
+        "description": {"translate":"text.skills.ascendancyCyclonicCleave.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_cyclonic_cleave.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyCyclonicCleave"
+                }
+            }
+        ]
     }
 }
