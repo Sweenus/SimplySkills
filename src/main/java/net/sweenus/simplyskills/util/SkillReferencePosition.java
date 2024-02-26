@@ -258,6 +258,10 @@ public class SkillReferencePosition {
     public static String ascendancyRighteousHammers = "xpfympjreeee2xg3";
     public static String ascendancyBoneArmor = "1ftcmq4xhgmz4zmd";
     public static String ascendancyCyclonicCleave = "1sc2rrqwl88s7jvp";
+    public static String ascendancyMagicCircle = "w57ptbcf9foj6m24";
+    public static String ascendancyArcaneSlash = "ym0s2o1gn8frrrfm";
+    public static String ascendancyAgony = "ryy2kyag7c7irtmf";
+    public static String ascendancyTorment = "ntkotv5t9pxmo20r";
 
 
 }

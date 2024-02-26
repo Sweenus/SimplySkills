@@ -219,7 +219,36 @@ public class EffectRegistry {
                     +0.1,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
+    public static StatusEffect MAGICCIRCLE= new MagicCircleEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
+                    "962352c0-8bbb-4e09-b9b2-ce2570558368",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.LIGHTNING).attribute,
+                    "c1366245-81fd-4848-988e-83f7903f80aa",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
+                    "c9efc316-50de-470f-8d11-1800066e106e",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute,
+                    "525f0dd6-5d1f-4961-9a82-57ecd7fc4682",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute,
+                    "4de16daa-e56c-4414-83a5-9f957ce0566d",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.FROST).attribute,
+                    "ba74d1cf-3d6f-4904-9d51-5e070ae0bd7c",
+                    0.3,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
     public static StatusEffect CYCLONICCLEAVE= new CyclonicCleaveEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect ARCANESLASH= new ArcaneSlashEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect AGONY= new AgonyEffect(StatusEffectCategory.HARMFUL, 3124687);
+    public static StatusEffect TORMENT= new TormentEffect(StatusEffectCategory.HARMFUL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -243,8 +272,12 @@ public class EffectRegistry {
         Synchronized.configure(MARKSMANSHIP, true);
         Synchronized.configure(RIGHTEOUSHAMMERS, true);
         Synchronized.configure(BONEARMOR, true);
+        Synchronized.configure(MAGICCIRCLE, true);
+        Synchronized.configure(AGONY, true);
+        Synchronized.configure(TORMENT, true);
 
         ActionImpairing.configure(CYCLONICCLEAVE, EntityActionsAllowed.STUN);
+        ActionImpairing.configure(ARCANESLASH, EntityActionsAllowed.INCAPACITATE);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -297,6 +330,10 @@ public class EffectRegistry {
         RIGHTEOUSHAMMERS = registerStatusEffect("righteous_hammers", RIGHTEOUSHAMMERS);
         BONEARMOR = registerStatusEffect("bone_armor", BONEARMOR);
         CYCLONICCLEAVE = registerStatusEffect("cyclonic_cleave", CYCLONICCLEAVE);
+        MAGICCIRCLE = registerStatusEffect("magic_circle", MAGICCIRCLE);
+        ARCANESLASH = registerStatusEffect("arcane_slash", ARCANESLASH);
+        AGONY = registerStatusEffect("agony", AGONY);
+        TORMENT = registerStatusEffect("torment", TORMENT);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

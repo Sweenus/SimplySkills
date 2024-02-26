@@ -1302,6 +1302,18 @@
   "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7",
 
   "text.skills.ascendancyCyclonicCleave.title": "Ascendancy Ability: §6[Cyclonic Cleave]§7",
-  "text.skills.ascendancyCyclonicCleave.description": "§7\nViolently swing your weapon around yourself while moving forward, dealing damage to nearby enemies.\nThis attack scales with the highest of your attack, ranged, or spell attributes.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nCyclonic Cleave now pulls enemies it hits toward you.\n\n§a25s Cooldown§7"
+  "text.skills.ascendancyCyclonicCleave.description": "§7\nViolently swing your weapon around yourself while moving forward, dealing damage to nearby enemies.\nThis attack scales with the highest of your attack, ranged, or spell attributes.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nCyclonic Cleave now pulls enemies it hits toward you.\n\n§a25s Cooldown§7",
+
+  "text.skills.ascendancyMagicCircle.title": "Ascendancy Ability: §6[Magic Circle]§7",
+  "text.skills.ascendancyMagicCircle.description": "§7\nImmobilize yourself in order to summon a magic circle beneath your feet, granting you a 30% increase to all Spell Power for 6s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nMagic Circle now also grants you Wizard's Spell Echo passive.\nIf you already have Spell Echo unlocked, increase its chance to occur by 10%.\n\n§a60s Cooldown§7",
+
+  "text.skills.ascendancyArcaneSlash.title": "Ascendancy Ability: §6[Arcane Slash]§7",
+  "text.skills.ascendancyArcaneSlash.description": "§7\nFocus arcane energy into your blade and perform a forward slash, releasing an arcane projectile that pierces up to 5 targets.\n\n§6[For every 10 Ascendancy]§7\nGain +1 stack of Arcane Attunement on use.\n\n§6[At 30+ Ascendancy]§7\nArcane Slash is now larger, deals more damage, and pierces up to 10 targets.\n\n§a16s Cooldown§7",
+
+  "text.skills.ascendancyAgony.title": "Ascendancy Ability: §6[Agony]§7",
+  "text.skills.ascendancyAgony.description": "§7\nCurse the nearest enemy with Agony, causing them to take additional damage every time they are hit with a spell projectile.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nWhen Agony triggers, it also heals the spell caster that caused the trigger.\nThis healing scales with your Healing Spell Power.\n\n§a60s Cooldown§7",
+
+  "text.skills.ascendancyTorment.title": "Ascendancy Ability: §6[Torment]§7",
+  "text.skills.ascendancyTorment.description": "§7\nCurse the nearest enemy with Torment.\nWhile tormented, all damage the enemy would deal to you is instead redirected to them.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nIn addition to tormenting your enemy, you also taunt them.\n\n§a60s Cooldown§7"
   
 }

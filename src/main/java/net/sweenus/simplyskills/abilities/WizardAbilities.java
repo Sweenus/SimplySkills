@@ -34,6 +34,8 @@ public class WizardAbilities {
             target = targets.get(player.getRandom().nextInt(targets.size()));
 
         int chance = SimplySkills.wizardConfig.passiveWizardSpellEchoChance;
+        if (AscendancyAbilities.magicCircleEffect(player))
+            chance += 10;
         if (player.getRandom().nextInt(100) < chance) {
 
             List<String> list = new ArrayList<>();

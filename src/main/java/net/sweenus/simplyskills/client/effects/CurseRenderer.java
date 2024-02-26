@@ -10,8 +10,8 @@ import net.sweenus.simplyskills.SimplySkills;
 import java.util.List;
 
 public class CurseRenderer extends OrbitingEffectRenderer {
-    public static final Identifier modelId_base = new Identifier("minecraft", "ender_eye");
-    public static final Identifier modelId_overlay = new Identifier("minecraft", "ender_eye");
+    public static final Identifier modelId_base = new Identifier(SimplySkills.MOD_ID, "effect/curse");
+    public static final Identifier modelId_overlay = new Identifier(SimplySkills.MOD_ID, "effect/curse");
 
     private static final RenderLayer BASE_RENDER_LAYER =
             RenderLayer.getEntityTranslucent(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE);
@@ -26,7 +26,7 @@ public class CurseRenderer extends OrbitingEffectRenderer {
 
     public CurseRenderer() {
         super(List.of(
-                        new Model(BASE_RENDER_LAYER, modelId_overlay)),
+                        new Model(GLOWING_RENDER_LAYER, modelId_overlay)),
                 0.9F,
                 1.2F);
         setSpeed(6f);

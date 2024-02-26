@@ -199,7 +199,7 @@ public class AbilityLogic {
             SimplySwordsGemEffects.spellStandard(player);
         }
 
-        if (HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player) && targets != null) {
+        if ((HelperMethods.isUnlocked("simplyskills:wizard", SkillReferencePosition.wizardSpellEcho, player) || AscendancyAbilities.magicCircleEffect(player)) && targets != null) {
             WizardAbilities.passiveWizardSpellEcho(player, targets);
         }
 

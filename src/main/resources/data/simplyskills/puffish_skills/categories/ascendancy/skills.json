@@ -3508,5 +3508,29 @@
 		"x": 0,
 		"y": 192,
 		"root": true
+	},
+	"w57ptbcf9foj6m24": {
+		"definition": "ascendancyMagicCircle",
+		"x": -277.12812921102034,
+		"y": -288,
+		"root": true
+	},
+	"ym0s2o1gn8frrrfm": {
+		"definition": "ascendancyArcaneSlash",
+		"x": 0,
+		"y": -192,
+		"root": true
+	},
+	"ryy2kyag7c7irtmf": {
+		"definition": "ascendancyAgony",
+		"x": -517.3058411939046,
+		"y": -128,
+		"root": true
+	},
+	"ntkotv5t9pxmo20r": {
+		"definition": "ascendancyTorment",
+		"x": 517.3058411939046,
+		"y": -128,
+		"root": true
 	}
 }

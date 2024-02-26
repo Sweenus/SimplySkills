@@ -2,7 +2,13 @@ package net.sweenus.simplyskills.mixins;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageSources;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
@@ -10,10 +16,11 @@ import net.minecraft.world.World;
 import net.spell_engine.api.spell.Spell;
 import net.spell_engine.entity.SpellProjectile;
 import net.spell_engine.internals.SpellHelper;
-import net.sweenus.simplyskills.abilities.AbilityLogic;
-import net.sweenus.simplyskills.abilities.ClericAbilities;
-import net.sweenus.simplyskills.abilities.RangerAbilities;
-import net.sweenus.simplyskills.abilities.WizardAbilities;
+import net.spell_power.api.MagicSchool;
+import net.spell_power.api.attributes.SpellAttributes;
+import net.sweenus.simplyskills.abilities.*;
+import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
+import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -95,6 +102,13 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     protected void simplyskills$onEntityHit(EntityHitResult entityHitResult, CallbackInfo ci) {
         if (!this.getWorld().isClient) {
             if (this.spellId != null && this.getSpell() != null) {
+
+                if (entityHitResult.getEntity() != null && entityHitResult.getEntity() instanceof LivingEntity livingEntity && getOwner() != null) {
+                    if (livingEntity.hasStatusEffect(EffectRegistry.AGONY) && getOwner() instanceof PlayerEntity playerAttacker) {
+                        AscendancyAbilities.agonyEffect(playerAttacker, livingEntity);
+                    }
+                }
+
                 try {
                     SpellProjectile spellProjectile = (SpellProjectile) (Object) this;
                     ClericAbilities.signatureClericSacredOrbImpact(entityHitResult, spellId, getOwner(), spellProjectile);

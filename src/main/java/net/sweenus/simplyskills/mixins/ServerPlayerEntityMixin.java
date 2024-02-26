@@ -39,6 +39,10 @@ public abstract class ServerPlayerEntityMixin {
                         SoundCategory.PLAYERS, 1, 1);
             }
 
+            //Curse Torment
+            if (AscendancyAbilities.tormentEffect(player, source, amount))
+                cir.setReturnValue(false);
+
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorHeavyArmorMastery, serverPlayer)
                     || HelperMethods.isUnlocked("simplyskills:tree",

@@ -8012,5 +8012,117 @@
                 }
             }
         ]
+    },
+    "ascendancyMagicCircle": {
+        "title": {"translate":"text.skills.ascendancyMagicCircle.title"},
+        "description": {"translate":"text.skills.ascendancyMagicCircle.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_magic_circle.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyMagicCircle"
+                }
+            }
+        ]
+    },
+    "ascendancyArcaneSlash": {
+        "title": {"translate":"text.skills.ascendancyArcaneSlash.title"},
+        "description": {"translate":"text.skills.ascendancyArcaneSlash.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_arcane_slash.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyArcaneSlash"
+                }
+            }
+        ]
+    },
+    "ascendancyAgony": {
+        "title": {"translate":"text.skills.ascendancyAgony.title"},
+        "description": {"translate":"text.skills.ascendancyAgony.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_agony.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyAgony"
+                }
+            }
+        ]
+    },
+    "ascendancyTorment": {
+        "title": {"translate":"text.skills.ascendancyTorment.title"},
+        "description": {"translate":"text.skills.ascendancyTorment.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_torment.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyTorment"
+                }
+            }
+        ]
     }
 }

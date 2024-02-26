@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.DynamicDamage;
+import net.sweenus.simplyskills.util.HelperMethods;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

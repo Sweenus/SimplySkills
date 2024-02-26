@@ -245,6 +245,26 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.cyclonicCleave(player);
                     ability = "CyclonicCleave";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyMagicCircle, player)) {
+                    ability_success = AscendancyAbilities.magicCircle(player);
+                    ability = "MagicCircle";
+                }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyArcaneSlash, player)) {
+                    ability_success = AscendancyAbilities.arcaneSlash(player);
+                    ability = "ArcaneSlash";
+                }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyAgony, player)) {
+                    ability_success = AscendancyAbilities.agony(player);
+                    ability = "Agony";
+                }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyTorment, player)) {
+                    ability_success = AscendancyAbilities.torment(player);
+                    ability = "Torment";
+                }
             }
         }
 
@@ -397,6 +417,26 @@ public class SignatureAbilities {
             case "CyclonicCleave" -> {
                 cooldown = 25 * 1000;
                 type = "physical, magic, melee";
+                cooldownType = "ascendancy";
+            }
+            case "MagicCircle" -> {
+                cooldown = 60 * 1000;
+                type = "buff, magic";
+                cooldownType = "ascendancy";
+            }
+            case "ArcaneSlash" -> {
+                cooldown = 16 * 1000;
+                type = "magic, melee,";
+                cooldownType = "ascendancy";
+            }
+            case "Agony" -> {
+                cooldown = 60 * 1000;
+                type = "magic, debuff, healing";
+                cooldownType = "ascendancy";
+            }
+            case "Torment" -> {
+                cooldown = 60 * 1000;
+                type = "magic, debuff";
                 cooldownType = "ascendancy";
             }
         }
