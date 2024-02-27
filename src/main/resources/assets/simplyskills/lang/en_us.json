@@ -1314,6 +1314,9 @@
   "text.skills.ascendancyAgony.description": "§7\nCurse the nearest enemy with Agony, causing them to take additional damage every time they are hit with a spell projectile.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nWhen Agony triggers, it also heals the spell caster that caused the trigger.\nThis healing scales with your Healing Spell Power.\n\n§a60s Cooldown§7",
 
   "text.skills.ascendancyTorment.title": "Ascendancy Ability: §6[Torment]§7",
-  "text.skills.ascendancyTorment.description": "§7\nCurse the nearest enemy with Torment.\nWhile tormented, all damage the enemy would deal to you is instead redirected to them.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nIn addition to tormenting your enemy, you also taunt them.\n\n§a60s Cooldown§7"
+  "text.skills.ascendancyTorment.description": "§7\nCurse the nearest enemy with Torment.\nWhile tormented, all damage the enemy would deal to you is instead redirected to them.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nIn addition to tormenting your enemy, you also taunt them.\n\n§a60s Cooldown§7",
+
+  "text.skills.ascendancyRapidfire.title": "Ascendancy Ability: §6[Rapidfire]§7",
+  "text.skills.ascendancyRapidfire.description": "§7\nEnter a firing stance and let loose a flurry of arrows.\nYou can move freely while in this stance, but you cannot take other actions.\nRequires a Bow or Crossbow in mainhand.\nLasts 6s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nEvery third arrow fired now grants you a stack of Marksmanship.\n\n§a30s Cooldown§7"
   
 }

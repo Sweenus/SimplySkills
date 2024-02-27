@@ -3532,5 +3532,11 @@
 		"x": 517.3058411939046,
 		"y": -128,
 		"root": true
+	},
+	"yra7lkuanbuhho9c": {
+		"definition": "ascendancyRapidfire",
+		"x": -258.6529205969523,
+		"y": 0,
+		"root": true
 	}
 }

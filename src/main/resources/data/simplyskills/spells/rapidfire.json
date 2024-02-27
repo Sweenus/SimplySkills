@@ -1,0 +1,54 @@
+{
+  "school": "PHYSICAL_MELEE",
+  "range": 42,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75
+    },
+  "release": {
+    "target": {
+      "type": "SELF"
+    },
+    "animation": "simplyskills:rapidfire_horizontal",
+    "sound": {
+      "id": "simplyskills:soundeffect_32",
+      "volume": 0.1
+    },
+    "particles": [
+      {
+        "particle_id": "minecraft:poof",
+        "shape": "PILLAR",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.1,
+        "max_speed": 0.35
+      },
+      {
+        "particle_id": "minecraft:poof",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.1,
+        "max_speed": 0.3
+      }
+    ]
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:speed",
+          "duration": 1.0,
+          "apply_mode": "SET",
+          "show_particles": false
+        }
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

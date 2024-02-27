@@ -1,0 +1,92 @@
+{
+  "school": "PHYSICAL_RANGED",
+  "range": 120,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_arcane_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:arcane_spell",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "projectile": {
+          "velocity": 5.9,
+          "homing_angle": 0,
+          "perks": {
+            "pierce": 1
+          },
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "mycelium",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 1.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/arrow",
+              "render": "DEEP",
+              "light_emission": "NONE",
+              "scale": 0.9
+            }
+          }
+        }
+      }
+    },
+    "sound": {
+      "id": "minecraft:entity.arrow.shoot",
+      "volume": 1,
+      "pitch": 1.0
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.1,
+          "spell_power_coefficient": 0.9
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "minecraft:poof",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 1,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:spell_arcane_hit",
+        "volume": 0.05,
+        "pitch": 1.5
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

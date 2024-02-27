@@ -164,5 +164,10 @@ public class AscendancyAbilities {
         return false;
     }
 
+    public static boolean rapidfire(PlayerEntity player) {
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.RAPIDFIRE, 120+getAscendancyPoints(player), 0, false, false, true));
+        return true;
+    }
+
 
 }

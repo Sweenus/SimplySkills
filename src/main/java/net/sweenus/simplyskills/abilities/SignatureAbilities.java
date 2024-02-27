@@ -265,6 +265,11 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.torment(player);
                     ability = "Torment";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyRapidfire, player)) {
+                    ability_success = AscendancyAbilities.rapidfire(player);
+                    ability = "Rapidfire";
+                }
             }
         }
 
@@ -416,7 +421,7 @@ public class SignatureAbilities {
             }
             case "CyclonicCleave" -> {
                 cooldown = 25 * 1000;
-                type = "physical, magic, melee";
+                type = "physical, magic, melee, channel";
                 cooldownType = "ascendancy";
             }
             case "MagicCircle" -> {
@@ -437,6 +442,11 @@ public class SignatureAbilities {
             case "Torment" -> {
                 cooldown = 60 * 1000;
                 type = "magic, debuff";
+                cooldownType = "ascendancy";
+            }
+            case "Rapidfire" -> {
+                cooldown = 30 * 1000;
+                type = "physical, arrow, channel";
                 cooldownType = "ascendancy";
             }
         }

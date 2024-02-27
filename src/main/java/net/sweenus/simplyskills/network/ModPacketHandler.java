@@ -142,6 +142,8 @@ public class ModPacketHandler {
                 spritePath2 = "agony";
             else if (identifierString2.equals(SkillReferencePosition.ascendancyTorment))
                 spritePath2 = "torment";
+            else if (identifierString2.equals(SkillReferencePosition.ascendancyRapidfire))
+                spritePath2 = "rapidfire";
 
             Identifier newIdentifierPacket = null;
             Identifier newIdentifierPacket2 = null;
@@ -223,6 +225,7 @@ public class ModPacketHandler {
         list2.add(SkillReferencePosition.ascendancyArcaneSlash);
         list2.add(SkillReferencePosition.ascendancyAgony);
         list2.add(SkillReferencePosition.ascendancyTorment);
+        list2.add(SkillReferencePosition.ascendancyRapidfire);
 
         for (String string : list2) {
             if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {
