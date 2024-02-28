@@ -1337,6 +1337,9 @@
   "text.skills.ascendancyCataclysm.description": "§7\nLock yourself in place to channel a powerful spell that causes several comets to descend along a line in front of you.\n\nScales with the highest of your Frost or Fire spell power attributes.\nLasts 3.5s.\n\n§6[For every 1 Ascendancy]§7\nIncreases comet frequency, allowing for more comets per cast.\n\n§6[At 30+ Ascendancy]§7\nFor every comet summoned, gain a stack of Spellforged.\n\n§a70s Cooldown§7",
 
   "text.skills.ascendancyGhostwalk.title": "Ascendancy Ability: §6[Ghostwalk]§7",
-  "text.skills.ascendancyGhostwalk.description": "§7\nEnter a spectral form and project yourself forward, becoming invulnerable to damage and sending souls to attack nearby enemies. \n\nDamage scales with Soul spell power.\nLasts 3.0s.\n\n§6[For every 10 Ascendancy]§7\nGain +1 stack of Soulshock on use.\n\n§6[At 30+ Ascendancy]§7\nYou now heal for half of the damage dealt by Ghostwalk.\n\n§a45s Cooldown§7"
+  "text.skills.ascendancyGhostwalk.description": "§7\nEnter a spectral form and project yourself forward, becoming invulnerable to damage and sending souls to attack nearby enemies. \n\nDamage scales with Soul spell power.\nLasts 3.0s.\n\n§6[For every 10 Ascendancy]§7\nGain +1 stack of Soulshock on use.\n\n§6[At 30+ Ascendancy]§7\nYou now heal for half of the damage dealt by Ghostwalk.\n\n§a45s Cooldown§7",
+
+  "text.skills.ascendancySkywardSunder.title": "Ascendancy Ability: §6[Skyward Sunder]§7",
+  "text.skills.ascendancySkywardSunder.description": "§7\nGain a stack of Barrier per stack of Might on you and charge forward, knocking back enemies and performing an upward strike, launching both you and your targets into the air before slamming them back into the ground.\n\nThis attack scales with the highest of your attack, ranged, or spell attributes.\nLasts 3.0s.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nSkyward Sunder now inflicts enemies hit during the charging phase with Deathmark.\n\n§a16s Cooldown§7"
   
 }

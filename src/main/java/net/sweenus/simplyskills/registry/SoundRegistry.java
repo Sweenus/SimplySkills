@@ -82,6 +82,10 @@ public class SoundRegistry {
     public static SoundEvent PLACE_STONE_08 = register("place_stone_08");
     public static SoundEvent PLACE_STONE_09 = register("place_stone_09");
     public static SoundEvent PLACE_STONE_10 = register("place_stone_10");
+    public static SoundEvent SLASH_02 = register("slash_02");
+    public static SoundEvent DAMAGE_03 = register("damage_03");
+    public static SoundEvent OBJECT_IMPACT_THUD = register("object_impact_thud");
+    public static SoundEvent OBJECT_IMPACT_THUD_REPEAT = register("object_impact_thud_repeat");
 
     public static void registerSounds() {
     }

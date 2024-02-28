@@ -251,9 +251,8 @@ public class EffectRegistry {
     public static StatusEffect TORMENT= new TormentEffect(StatusEffectCategory.HARMFUL, 3124687);
     public static StatusEffect RAPIDFIRE= new RapidFireEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect CATACLYSM= new CataclysmEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-
     public static StatusEffect GHOSTWALK= new GhostwalkEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-
+    public static StatusEffect SKYWARDSUNDER= new SkywardSunderEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -285,6 +284,7 @@ public class EffectRegistry {
         ActionImpairing.configure(RAPIDFIRE, EntityActionsAllowed.INCAPACITATE);
         ActionImpairing.configure(CATACLYSM, EntityActionsAllowed.STUN);
         ActionImpairing.configure(GHOSTWALK, EntityActionsAllowed.STUN);
+        ActionImpairing.configure(SKYWARDSUNDER, EntityActionsAllowed.STUN);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -344,6 +344,7 @@ public class EffectRegistry {
         RAPIDFIRE = registerStatusEffect("rapidfire", RAPIDFIRE);
         CATACLYSM = registerStatusEffect("cataclysm", CATACLYSM);
         GHOSTWALK = registerStatusEffect("ghostwalk", GHOSTWALK);
+        SKYWARDSUNDER = registerStatusEffect("skyward_sunder", SKYWARDSUNDER);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

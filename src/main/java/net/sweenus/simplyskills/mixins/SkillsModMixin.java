@@ -41,7 +41,7 @@ public class SkillsModMixin {
             player.getWorld().playSoundFromEntity(null, player, sound,
                     SoundCategory.PLAYERS, 0.3f, (float) choose_pitch);
 
-            if (SkillsAPI.getCategory(categoryId).get().getUnlockedSkills(player).size() > 40) {
+            if (SkillsAPI.getCategory(categoryId).get().getUnlockedSkills(player).size() > 40 && categoryId.equals(new Identifier("simplyskills:tree"))) {
                 Identifier ascendancy = new Identifier(SimplySkills.MOD_ID, "ascendancy");
                 if (SkillsAPI.getCategory(ascendancy).isPresent())
                     SkillsAPI.getCategory(ascendancy).get().unlock(player);

@@ -179,4 +179,11 @@ public class AscendancyAbilities {
         return true;
     }
 
+    public static boolean skywardSunder(PlayerEntity player) {
+        player.addStatusEffect(new StatusEffectInstance(EffectRegistry.SKYWARDSUNDER, 45, 0, false, false, true));
+        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SLASH_02,
+                SoundCategory.PLAYERS, 0.6f, 1.0f);
+        return true;
+    }
+
 }

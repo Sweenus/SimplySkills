@@ -368,5 +368,25 @@
     "sounds": [
       "simplyskills:place_stone_10"
     ]
+  },
+  "slash_02": {
+    "sounds": [
+      "simplyskills:slash_02"
+    ]
+  },
+  "damage_03": {
+    "sounds": [
+      "simplyskills:damage_03"
+    ]
+  },
+  "object_impact_thud_repeat": {
+    "sounds": [
+      "simplyskills:object_impact_thud_repeat"
+    ]
+  },
+  "object_impact_thud": {
+    "sounds": [
+      "simplyskills:object_impact_thud"
+    ]
   }
 }

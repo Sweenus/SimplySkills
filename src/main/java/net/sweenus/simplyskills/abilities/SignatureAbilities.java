@@ -280,6 +280,11 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.ghostwalk(player);
                     ability = "Ghostwalk";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancySkywardSunder, player)) {
+                    ability_success = AscendancyAbilities.skywardSunder(player);
+                    ability = "SkywardSunder";
+                }
             }
         }
 
@@ -467,6 +472,11 @@ public class SignatureAbilities {
             case "Ghostwalk" -> {
                 cooldown = 45 * 1000;
                 type = "magic, channel, soul";
+                cooldownType = "ascendancy";
+            }
+            case "SkywardSunder" -> {
+                cooldown = 16 * 1000;
+                type = "melee, channel, buff, physical, magic";
                 cooldownType = "ascendancy";
             }
         }

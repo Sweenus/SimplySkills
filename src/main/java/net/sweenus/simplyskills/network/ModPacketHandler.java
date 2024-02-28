@@ -148,6 +148,8 @@ public class ModPacketHandler {
                 spritePath2 = "cataclysm";
             else if (identifierString2.equals(SkillReferencePosition.ascendancyGhostwalk))
                 spritePath2 = "ghostwalk";
+            else if (identifierString2.equals(SkillReferencePosition.ascendancySkywardSunder))
+                spritePath2 = "skyward_sunder";
 
             Identifier newIdentifierPacket = null;
             Identifier newIdentifierPacket2 = null;
@@ -232,6 +234,7 @@ public class ModPacketHandler {
         list2.add(SkillReferencePosition.ascendancyRapidfire);
         list2.add(SkillReferencePosition.ascendancyCataclysm);
         list2.add(SkillReferencePosition.ascendancyGhostwalk);
+        list2.add(SkillReferencePosition.ascendancySkywardSunder);
 
         for (String string : list2) {
             if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {
