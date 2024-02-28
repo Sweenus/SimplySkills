@@ -38,6 +38,12 @@ public abstract class ServerPlayerEntityMixin {
                 player.getWorld().playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
                         SoundCategory.PLAYERS, 1, 1);
             }
+            //Effect Ghostwalk
+            if (player.hasStatusEffect(EffectRegistry.GHOSTWALK)) {
+                cir.setReturnValue(false);
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.FX_SKILL_BACKSTAB,
+                        SoundCategory.PLAYERS, 1, 1);
+            }
 
             //Curse Torment
             if (AscendancyAbilities.tormentEffect(player, source, amount))

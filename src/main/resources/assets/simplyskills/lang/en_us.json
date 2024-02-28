@@ -101,6 +101,20 @@
   "effect.simplyskills.bone_armor.desc":                "Grants 10% increased armor & armor toughness per bone. A bone is lost when hit",
   "effect.simplyskills.righteous_hammers":              "Righteous Hammers",
   "effect.simplyskills.righteous_hammers.desc":         "Grants 2% increased melee damage per hammer and damages nearby enemies.",
+  "effect.simplyskills.cyclonic_cleave":                "Cyclonic Cleave",
+  "effect.simplyskills.cyclonic_cleave.desc":           "Performing a Cyclonic Cleave.",
+  "effect.simplyskills.cataclysm":                      "Cataclysm",
+  "effect.simplyskills.cataclysm.desc":                 "Casting a powerful spell.",
+  "effect.simplyskills.rapidfire":                      "Rapidfire",
+  "effect.simplyskills.rapidfire.desc":                 "Performing Rapidfire.",
+  "effect.simplyskills.torment":                        "Torment",
+  "effect.simplyskills.torment.desc":                   "Cursed with Torment.",
+  "effect.simplyskills.agony":                          "Agony",
+  "effect.simplyskills.agony.desc":                     "Cursed with Agony.",
+  "effect.simplyskills.arcane_slash":                   "Arcane Slash",
+  "effect.simplyskills.arcane_slash.desc":              "Performing an Arcane Slash.",
+  "effect.simplyskills.magic_circle":                   "Magic Circle",
+  "effect.simplyskills.magic_circle.desc":              "Empowered by a magic circle.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
@@ -1317,6 +1331,12 @@
   "text.skills.ascendancyTorment.description": "§7\nCurse the nearest enemy with Torment.\nWhile tormented, all damage the enemy would deal to you is instead redirected to them.\nLasts 8s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nIn addition to tormenting your enemy, you also taunt them.\n\n§a60s Cooldown§7",
 
   "text.skills.ascendancyRapidfire.title": "Ascendancy Ability: §6[Rapidfire]§7",
-  "text.skills.ascendancyRapidfire.description": "§7\nEnter a firing stance and let loose a flurry of arrows.\nYou can move freely while in this stance, but you cannot take other actions.\nRequires a Bow or Crossbow in mainhand.\nLasts 6s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nEvery third arrow fired now grants you a stack of Marksmanship.\n\n§a30s Cooldown§7"
+  "text.skills.ascendancyRapidfire.description": "§7\nEnter a firing stance and let loose a flurry of arrows.\nYou can move freely while in this stance, but you cannot take other actions.\nRequires a Bow or Crossbow in mainhand.\nLasts 6s.\n\n§6[For every 1 Ascendancy]§7\nIncreases effect duration.\n\n§6[At 30+ Ascendancy]§7\nEvery third arrow fired now grants you a stack of Marksmanship.\n\n§a30s Cooldown§7",
+
+  "text.skills.ascendancyCataclysm.title": "Ascendancy Ability: §6[Cataclysm]§7",
+  "text.skills.ascendancyCataclysm.description": "§7\nLock yourself in place to channel a powerful spell that causes several comets to descend along a line in front of you.\n\nScales with the highest of your Frost or Fire spell power attributes.\nLasts 3.5s.\n\n§6[For every 1 Ascendancy]§7\nIncreases comet frequency, allowing for more comets per cast.\n\n§6[At 30+ Ascendancy]§7\nFor every comet summoned, gain a stack of Spellforged.\n\n§a70s Cooldown§7",
+
+  "text.skills.ascendancyGhostwalk.title": "Ascendancy Ability: §6[Ghostwalk]§7",
+  "text.skills.ascendancyGhostwalk.description": "§7\nEnter a spectral form and project yourself forward, becoming invulnerable to damage and sending souls to attack nearby enemies. \n\nDamage scales with Soul spell power.\nLasts 3.0s.\n\n§6[For every 10 Ascendancy]§7\nGain +1 stack of Soulshock on use.\n\n§6[At 30+ Ascendancy]§7\nYou now heal for half of the damage dealt by Ghostwalk.\n\n§a45s Cooldown§7"
   
 }

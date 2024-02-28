@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Tameable;
+import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.ArmorStandEntity;
@@ -584,6 +585,19 @@ public class HelperMethods {
         return Arrays.stream(attributeValues).max(Comparator.naturalOrder()).orElse(Double.MIN_VALUE);
     }
 
+    public static double getHighestSpecificAttributeValue(PlayerEntity player, EntityAttribute... attributes) {
+        double highestValue = Double.MIN_VALUE;
+
+        for (EntityAttribute attribute : attributes) {
+            double attributeValue = player.getAttributeValue(attribute);
+            if (attributeValue > highestValue) {
+                highestValue = attributeValue;
+            }
+        }
+
+        return highestValue;
+    }
+
     public static void spawnWaistHeightParticles(ServerWorld world, ParticleEffect particle, Entity entity1, Entity entity2, int count) {
         Vec3d startPos = entity1.getPos().add(0, entity1.getHeight() / 2.0, 0); // Waist height of entity1
         Vec3d endPos = entity2.getPos().add(0, entity2.getHeight() / 2.0, 0); // Waist height of entity2
@@ -603,6 +617,21 @@ public class HelperMethods {
                     1, // The number of particles to spawn
                     0, 0, 0, // The particle's delta (motion) in each direction (set to 0 for no motion)
                     0.0); // The particle's speed (set to 0 for no motion)
+        }
+    }
+
+    public static void spawnOrbitParticles(ServerWorld world, Vec3d center, ParticleEffect particleType, double radius, int particleCount) {
+        for (int i = 0; i < particleCount; i++) {
+            // Calculate the angle for this particle
+            double angle = 2 * Math.PI * i / particleCount;
+
+            // Calculate the x and z coordinates on the orbit
+            double x = center.x + radius * Math.cos(angle);
+            double z = center.z + radius * Math.sin(angle);
+            double y = center.y;
+
+            // Spawn the particle at the calculated position
+            world.spawnParticles(particleType, x, y, z, 1, 0, 0, 0, 0);
         }
     }
 

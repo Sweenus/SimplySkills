@@ -169,5 +169,14 @@ public class AscendancyAbilities {
         return true;
     }
 
+    public static boolean cataclysm(PlayerEntity player) {
+        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cataclysm", 3, player, null);
+        return true;
+    }
+
+    public static boolean ghostwalk(PlayerEntity player) {
+        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:ghostwalk", 3, player, null);
+        return true;
+    }
 
 }

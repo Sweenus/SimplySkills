@@ -3538,5 +3538,17 @@
 		"x": -258.6529205969523,
 		"y": 0,
 		"root": true
+	},
+	"avw95rphcs85w4j9": {
+		"definition": "ascendancyCataclysm",
+		"x": 0,
+		"y": -512,
+		"root": true
+	},
+	"n04zw9wy6wtnbcs6": {
+		"definition": "ascendancyGhostwalk",
+		"x": -277.12812921102034,
+		"y": 288,
+		"root": true
 	}
 }

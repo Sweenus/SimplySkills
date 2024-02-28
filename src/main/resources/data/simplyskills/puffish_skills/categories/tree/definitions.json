@@ -8148,7 +8148,63 @@
             {
                 "type": "puffish_skills:passive_skill",
                 "data": {
-                    "passive_skill": "ascendancyRapidfall"
+                    "passive_skill": "ascendancyRapidire"
+                }
+            }
+        ]
+    },
+    "ascendancyCataclysm": {
+        "title": {"translate":"text.skills.ascendancyCataclysm.title"},
+        "description": {"translate":"text.skills.ascendancyCataclysm.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_cataclysm.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyCataclysm"
+                }
+            }
+        ]
+    },
+    "ascendancyGhostwalk": {
+        "title": {"translate":"text.skills.ascendancyGhostwalk.title"},
+        "description": {"translate":"text.skills.ascendancyGhostwalk.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_ghostwalk.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyGhostwalk"
                 }
             }
         ]

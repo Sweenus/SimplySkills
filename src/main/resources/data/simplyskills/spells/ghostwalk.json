@@ -1,0 +1,54 @@
+{
+  "school": "SOUL",
+  "range": 42,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75
+    },
+  "release": {
+    "target": {
+      "type": "SELF"
+    },
+    "animation": "simplyskills:ghostwalk",
+    "sound": {
+      "id": "simplyskills:soundeffect_32",
+      "volume": 0.2
+    },
+    "particles": [
+      {
+        "particle_id": "minecraft:soul",
+        "shape": "PILLAR",
+        "origin": "FEET",
+        "count": 90.0,
+        "min_speed": 0.1,
+        "max_speed": 0.35
+      },
+      {
+        "particle_id": "minecraft:soul",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 50.0,
+        "min_speed": 0.1,
+        "max_speed": 0.3
+      }
+    ]
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "simplyskills:ghostwalk",
+          "duration": 3.0,
+          "apply_mode": "SET",
+          "show_particles": false
+        }
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

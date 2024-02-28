@@ -270,6 +270,16 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.rapidfire(player);
                     ability = "Rapidfire";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyCataclysm, player)) {
+                    ability_success = AscendancyAbilities.cataclysm(player);
+                    ability = "Cataclysm";
+                }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyGhostwalk, player)) {
+                    ability_success = AscendancyAbilities.ghostwalk(player);
+                    ability = "Ghostwalk";
+                }
             }
         }
 
@@ -447,6 +457,16 @@ public class SignatureAbilities {
             case "Rapidfire" -> {
                 cooldown = 30 * 1000;
                 type = "physical, arrow, channel";
+                cooldownType = "ascendancy";
+            }
+            case "Cataclysm" -> {
+                cooldown = 70 * 1000;
+                type = "magic, channel, elemental";
+                cooldownType = "ascendancy";
+            }
+            case "Ghostwalk" -> {
+                cooldown = 45 * 1000;
+                type = "magic, channel, soul";
                 cooldownType = "ascendancy";
             }
         }

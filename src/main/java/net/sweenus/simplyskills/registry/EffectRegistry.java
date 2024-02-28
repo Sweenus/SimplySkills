@@ -250,6 +250,9 @@ public class EffectRegistry {
     public static StatusEffect AGONY= new AgonyEffect(StatusEffectCategory.HARMFUL, 3124687);
     public static StatusEffect TORMENT= new TormentEffect(StatusEffectCategory.HARMFUL, 3124687);
     public static StatusEffect RAPIDFIRE= new RapidFireEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect CATACLYSM= new CataclysmEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+
+    public static StatusEffect GHOSTWALK= new GhostwalkEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -280,6 +283,8 @@ public class EffectRegistry {
         ActionImpairing.configure(CYCLONICCLEAVE, EntityActionsAllowed.STUN);
         ActionImpairing.configure(ARCANESLASH, EntityActionsAllowed.INCAPACITATE);
         ActionImpairing.configure(RAPIDFIRE, EntityActionsAllowed.INCAPACITATE);
+        ActionImpairing.configure(CATACLYSM, EntityActionsAllowed.STUN);
+        ActionImpairing.configure(GHOSTWALK, EntityActionsAllowed.STUN);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -337,6 +342,8 @@ public class EffectRegistry {
         AGONY = registerStatusEffect("agony", AGONY);
         TORMENT = registerStatusEffect("torment", TORMENT);
         RAPIDFIRE = registerStatusEffect("rapidfire", RAPIDFIRE);
+        CATACLYSM = registerStatusEffect("cataclysm", CATACLYSM);
+        GHOSTWALK = registerStatusEffect("ghostwalk", GHOSTWALK);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);
