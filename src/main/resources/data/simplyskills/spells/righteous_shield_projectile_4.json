@@ -1,0 +1,102 @@
+{
+  "school": "HEALING",
+  "range": 32,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "animation": "spell_engine:one_handed_projectile_charge",
+    "sound": {
+      "id": "spell_engine:generic_arcane_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark_mini",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 3.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "projectile": {
+          "velocity": 2.6,
+          "homing_angle": 0,
+          "perks": {
+            "bounce": 10
+          },
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:holy_spark",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 4.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/righteous_shield",
+              "render": "GLOW",
+              "scale": 2.1
+            }
+          }
+        }
+      }
+    },
+    "sound": {
+      "id": "simplyskills:spell_radiant_cast",
+      "volume": 0.5,
+      "pitch": 1.6
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.8,
+          "spell_power_coefficient": 3.1
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:holy_spark",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 25,
+          "min_speed": 0.01,
+          "max_speed": 0.2
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:hit_03",
+        "volume": 0.6,
+        "pitch": 1.0
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "simplyskills:death_mark",
+          "duration": 8,
+          "apply_mode": "ADD",
+          "show_particles": false
+        }
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

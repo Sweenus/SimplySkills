@@ -310,6 +310,13 @@ public abstract class ServerPlayerEntityMixin {
                 ClericAbilities.passiveClericAltruism(player);
             }
 
+            // Golden Aegis
+            if (HelperMethods.isUnlocked("simplyskills:ascendancy",
+                    SkillReferencePosition.ascendancyRighteousShield, player)
+                    && AscendancyAbilities.getAscendancyPoints(player) > 29 && player.age %400 == 0) {
+                AscendancyAbilities.goldenAegis(player);
+            }
+
 
 
 

@@ -266,6 +266,7 @@ public class SkillReferencePosition {
     public static String ascendancyCataclysm = "avw95rphcs85w4j9";
     public static String ascendancyGhostwalk = "n04zw9wy6wtnbcs6";
     public static String ascendancySkywardSunder = "m9xj5d6nb1bfpou8";
+    public static String ascendancyRighteousShield = "jltm2vtk7wm4krdp";
 
 
 }

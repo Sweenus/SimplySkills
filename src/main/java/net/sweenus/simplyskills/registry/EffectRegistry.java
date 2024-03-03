@@ -253,6 +253,21 @@ public class EffectRegistry {
     public static StatusEffect CATACLYSM= new CataclysmEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect GHOSTWALK= new GhostwalkEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SKYWARDSUNDER= new SkywardSunderEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+    public static StatusEffect RIGHTEOUSSHIELD= new RighteousShieldEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+
+    public static StatusEffect GOLDENAEGIS= new MagicCircleEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ARMOR,
+                    "c3bf99d1-ee9c-4307-92b0-660581bfa28a",
+                    0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ARMOR_TOUGHNESS,
+                    "9836b739-fb7b-404e-9927-9bdf74de1dae",
+                    0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
+                    "1ebefacf-9a1e-4a81-9387-56dd4207a47f",
+                    0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(SimplySkills.MOD_ID, name), statusEffect);
@@ -285,6 +300,7 @@ public class EffectRegistry {
         ActionImpairing.configure(CATACLYSM, EntityActionsAllowed.STUN);
         ActionImpairing.configure(GHOSTWALK, EntityActionsAllowed.STUN);
         ActionImpairing.configure(SKYWARDSUNDER, EntityActionsAllowed.STUN);
+        ActionImpairing.configure(RIGHTEOUSSHIELD, EntityActionsAllowed.INCAPACITATE);
 
         BERSERKING = registerStatusEffect("berserking", BERSERKING);
         BLOODTHIRSTY = registerStatusEffect("bloodthirsty", BLOODTHIRSTY);
@@ -345,6 +361,8 @@ public class EffectRegistry {
         CATACLYSM = registerStatusEffect("cataclysm", CATACLYSM);
         GHOSTWALK = registerStatusEffect("ghostwalk", GHOSTWALK);
         SKYWARDSUNDER = registerStatusEffect("skyward_sunder", SKYWARDSUNDER);
+        RIGHTEOUSSHIELD = registerStatusEffect("righteous_shield", RIGHTEOUSSHIELD);
+        GOLDENAEGIS = registerStatusEffect("golden_aegis", GOLDENAEGIS);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

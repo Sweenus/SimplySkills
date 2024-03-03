@@ -5,10 +5,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.sweenus.simplyskills.abilities.AbilityEffects;
-import net.sweenus.simplyskills.abilities.CrusaderAbilities;
-import net.sweenus.simplyskills.abilities.RangerAbilities;
-import net.sweenus.simplyskills.abilities.WarriorAbilities;
+import net.sweenus.simplyskills.abilities.*;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -68,7 +65,11 @@ public class PlayerEntityMixin {
                     SkillReferencePosition.crusaderExhaustiveRecovery, player)) {
                 CrusaderAbilities.passiveCrusaderExhaustiveRecovery(player, attacker);
             }
-
+            // Golden Aegis
+            if (HelperMethods.isUnlocked("simplyskills:ascendancy",
+                    SkillReferencePosition.ascendancyRighteousShield, player)) {
+                AscendancyAbilities.goldenAegis(player);
+            }
 
         }
     }

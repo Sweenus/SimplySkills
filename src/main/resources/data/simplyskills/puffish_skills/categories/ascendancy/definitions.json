@@ -8236,5 +8236,33 @@
                 }
             }
         ]
+    },
+    "ascendancyRighteousShield": {
+        "title": {"translate":"text.skills.ascendancyRighteousShield.title"},
+        "description": {"translate":"text.skills.ascendancyRighteousShield.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_righteous_shield.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyRighteousShield"
+                }
+            }
+        ]
     }
 }

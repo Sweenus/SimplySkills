@@ -388,5 +388,10 @@
     "sounds": [
       "simplyskills:object_impact_thud"
     ]
+  },
+  "hit_03": {
+    "sounds": [
+      "simplyskills:hit_03"
+    ]
   }
 }

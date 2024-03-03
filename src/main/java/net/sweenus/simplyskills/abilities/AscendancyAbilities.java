@@ -186,4 +186,16 @@ public class AscendancyAbilities {
         return true;
     }
 
+    public static void goldenAegis(PlayerEntity player) {
+        HelperMethods.incrementStatusEffect(player, EffectRegistry.GOLDENAEGIS, 2400, 1, 15 + (getAscendancyPoints(player) / 10));
+    }
+
+    public static boolean righteousShield(PlayerEntity player) {
+        if (player.hasStatusEffect(EffectRegistry.GOLDENAEGIS)) {
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:righteous_shield", 3, player, null);
+            return true;
+        }
+        return false;
+    }
+
 }

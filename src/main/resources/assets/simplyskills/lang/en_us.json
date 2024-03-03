@@ -115,6 +115,10 @@
   "effect.simplyskills.arcane_slash.desc":              "Performing an Arcane Slash.",
   "effect.simplyskills.magic_circle":                   "Magic Circle",
   "effect.simplyskills.magic_circle.desc":              "Empowered by a magic circle.",
+  "effect.simplyskills.golden_aegis":                   "Golden Aegis",
+  "effect.simplyskills.golden_aegis.desc":              "Generating holy power.",
+  "effect.simplyskills.righteous_shield":               "Righteous Shield",
+  "effect.simplyskills.righteous_shield.desc":          "Performing Righteous Shield.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
@@ -1340,6 +1344,8 @@
   "text.skills.ascendancyGhostwalk.description": "§7\nEnter a spectral form and project yourself forward, becoming invulnerable to damage and sending souls to attack nearby enemies. \n\nDamage scales with Soul spell power.\nLasts 3.0s.\n\n§6[For every 10 Ascendancy]§7\nGain +1 stack of Soulshock on use.\n\n§6[At 30+ Ascendancy]§7\nYou now heal for half of the damage dealt by Ghostwalk.\n\n§a45s Cooldown§7",
 
   "text.skills.ascendancySkywardSunder.title": "Ascendancy Ability: §6[Skyward Sunder]§7",
-  "text.skills.ascendancySkywardSunder.description": "§7\nGain a stack of Barrier per stack of Might on you and charge forward, knocking back enemies and performing an upward strike, launching both you and your targets into the air before slamming them back into the ground.\n\nThis attack scales with the highest of your attack, ranged, or spell attributes.\nLasts 3.0s.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nSkyward Sunder now inflicts enemies hit during the charging phase with Deathmark.\n\n§a16s Cooldown§7"
-  
+  "text.skills.ascendancySkywardSunder.description": "§7\nGain a stack of Barrier per stack of Might on you and charge forward, knocking back enemies and performing an upward strike, launching both you and your targets into the air before slamming them back into the ground.\n\nThis attack scales with the highest of your attack, ranged, or spell attributes.\nLasts 3.0s.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nSkyward Sunder now inflicts enemies hit during the charging phase with Deathmark.\n\n§a16s Cooldown§7",
+
+  "text.skills.ascendancyRighteousShield.title": "Ascendancy Ability: §6[Righteous Shield]§7",
+  "text.skills.ascendancyRighteousShield.description": "§7\nWhile this ability is slotted, you generate a stack of §aGolden Aegis§7 whenever you block an attack. §aGolden Aegis§7 increases Healing Spell Power, Armor, and Armor Toughness by 1% per stack. Max 15 stacks.\n\nActivating this ability consumes all stacks of §aGolden Aegis§7 to manifest a shield of holy energy that can be thrown for a variety of effects depending on the stacks consumed.\n\n§7§bLess than 5 stacks:§7 The shield deals damage to enemies and ricochets 2 times.\n§b5 Stacks:§7 The shield deals increased damage to enemies and ricochets 5 times.\n§b10 Stacks:§7 The shield no longer damages enemies or ricochets and instead pierces and heals allies it passes through.\n§b15 Stacks:§7 The shield is larger, deals significantly more damage, and inflicts Death Mark, but it no longer ricochets.§7\n\n§6[For every 10 Ascendancy]§7\nIncreases §aGolden Aegis§7 max stacks by 1.\n\n§6[At 30+ Ascendancy]§7\nWhile slotted, this ability now passively generates stacks of §aGolden Aegis§7.\n\n§a6s Cooldown§7"
 }

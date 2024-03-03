@@ -285,6 +285,11 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.skywardSunder(player);
                     ability = "SkywardSunder";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyRighteousShield, player)) {
+                    ability_success = AscendancyAbilities.righteousShield(player);
+                    ability = "RighteousShield";
+                }
             }
         }
 
@@ -477,6 +482,11 @@ public class SignatureAbilities {
             case "SkywardSunder" -> {
                 cooldown = 16 * 1000;
                 type = "melee, channel, buff, physical, magic";
+                cooldownType = "ascendancy";
+            }
+            case "RighteousShield" -> {
+                cooldown = 6 * 1000;
+                type = "physical, magic, buff";
                 cooldownType = "ascendancy";
             }
         }
