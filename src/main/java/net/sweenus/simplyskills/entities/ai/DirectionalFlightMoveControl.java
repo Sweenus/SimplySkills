@@ -15,6 +15,7 @@ public class DirectionalFlightMoveControl extends MoveControl {
     private final double minAltitudeAboveGround = 4.0; // Minimum altitude above the ground
     private long lastAttackTime = 0; // Timestamp of the last attack
     private static final long ATTACK_COOLDOWN = 5000; // 2 seconds cooldown after attack
+    private double yOffset = 0;
 
     public DirectionalFlightMoveControl(MobEntity entity, int maxPitchChange, boolean noGravity) {
         super(entity);
@@ -29,17 +30,37 @@ public class DirectionalFlightMoveControl extends MoveControl {
             this.entity.setNoGravity(true);
         }
 
+        if (this.entity.getTarget() != null)
+            yOffset = 0;
+        else yOffset = 4;
+
         if (this.state == MoveControl.State.MOVE_TO) {
             this.state = MoveControl.State.WAIT;
 
+            if (this.entity.getTarget() == null) {
+                // Choose a random nearby position to move to
+                this.targetX = this.entity.getX() + this.entity.getRandom().nextGaussian() * 5;
+                this.targetY = this.entity.getY() + this.entity.getRandom().nextGaussian() * 5;
+                this.targetZ = this.entity.getZ() + this.entity.getRandom().nextGaussian() * 5;
+            } else {
+                this.targetX = this.entity.getTarget().getX();
+                this.targetY = this.entity.getTarget().getY();
+                this.targetZ = this.entity.getTarget().getZ();
+            }
+            this.targetY += Math.sin(this.entity.age * 0.3) * 0.5;
+
             double d = this.targetX - this.entity.getX();
-            double e = this.targetY - this.entity.getY();
+            double e = (this.targetY+yOffset) - this.entity.getY();
             double f = this.targetZ - this.entity.getZ();
             double g = d * d + e * e + f * f;
 
             if (g < 2.500000277905201E-7) {
-                this.entity.setUpwardSpeed(0.3f);
-                this.entity.setForwardSpeed(0.3f);
+                this.entity.setUpwardSpeed(0.0f);
+                this.entity.setForwardSpeed(0.0f);
+                // Choose a random nearby position to move to
+                this.targetX = this.entity.getX() + this.entity.getRandom().nextGaussian() * 5;
+                this.targetY = this.entity.getY() + this.entity.getRandom().nextGaussian() * 5;
+                this.targetZ = this.entity.getZ() + this.entity.getRandom().nextGaussian() * 5;
                 return;
             }
 
