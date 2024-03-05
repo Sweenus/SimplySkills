@@ -5,12 +5,14 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.config.*;
+import net.sweenus.simplyskills.entities.DreadglareEntity;
 import net.sweenus.simplyskills.events.AmethystImbuementEvent;
 import net.sweenus.simplyskills.network.KeybindPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
@@ -88,6 +90,7 @@ public class SimplySkills implements ModInitializer {
         if (FabricLoader.getInstance().isModLoaded("amethyst_core"))
             AmethystImbuementEvent.registerAIEvents();
         setSpecialisations();
+        FabricDefaultAttributeRegistry.register(EntityRegistry.DREADGLARE, DreadglareEntity.createDreadglareAttributes());
 
 
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {

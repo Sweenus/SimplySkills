@@ -635,5 +635,13 @@ public class HelperMethods {
         }
     }
 
+    public static double getGroundDistance(Entity entity) {
+        BlockPos pos = entity.getBlockPos();
+        while (pos.getY() > 0 && !entity.getWorld().getBlockState(pos).isSolidBlock(entity.getWorld(), pos)) {
+            pos = pos.down();
+        }
+        return entity.getY() - pos.getY();
+    }
+
 
 }

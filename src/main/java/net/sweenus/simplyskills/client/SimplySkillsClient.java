@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -16,7 +17,9 @@ import net.spell_engine.api.render.CustomModels;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.client.events.ClientEvents;
+import net.sweenus.simplyskills.client.renderer.DreadglareRenderer;
 import net.sweenus.simplyskills.client.renderer.SpellTargetEntityRenderer;
+import net.sweenus.simplyskills.client.renderer.model.DreadglareModel;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -37,6 +40,7 @@ public class SimplySkillsClient implements ClientModInitializer {
     public static KeyBinding bindingAbility2 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.simplyskills.ability2", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.category.simplyskills"));
 
     public static EntityModelLayer SPELLTARGETENTITY_MODEL = new EntityModelLayer(new Identifier("spell_target_entity", "cube"), "main");
+    public static EntityModelLayer DREADGLARE_MODEL = new EntityModelLayer(new Identifier("dreadglare", "cube"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -133,6 +137,8 @@ public class SimplySkillsClient implements ClientModInitializer {
 
     public static void registerEntityModels() {
             EntityRendererRegistry.register(EntityRegistry.SPELL_TARGET_ENTITY, SpellTargetEntityRenderer::new);
+            EntityRendererRegistry.register(EntityRegistry.DREADGLARE, DreadglareRenderer::new);
+            EntityModelLayerRegistry.registerModelLayer(DREADGLARE_MODEL, DreadglareModel::getTexturedModelData);
 
     }
 

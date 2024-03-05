@@ -2,6 +2,9 @@ package net.sweenus.simplyskills.abilities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,10 +21,13 @@ import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
+import net.sweenus.simplyskills.entities.DreadglareEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+import net.sweenus.simplyswords.entity.SimplySwordsBeeEntity;
 
 import java.util.Comparator;
 
@@ -57,7 +63,21 @@ public class AscendancyAbilities {
     }
 
     public static boolean cyclonicCleave(PlayerEntity player) {
-        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
+        //SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
+
+        DreadglareEntity dreadglareEntity = EntityRegistry.DREADGLARE.spawn(
+                (ServerWorld) player.getWorld(),
+                player.getBlockPos().up(4).offset(player.getMovementDirection(), 3),
+                SpawnReason.MOB_SUMMONED);
+        if (dreadglareEntity != null) {
+            dreadglareEntity.setOwner(player);
+            dreadglareEntity.setTamed(true);
+            double attackDamage = (1.2 * player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
+            EntityAttributeInstance attackAttribute = dreadglareEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+            if (attackAttribute != null)
+                attackAttribute.setBaseValue(attackDamage);
+        }
+
         return true;
     }
 
