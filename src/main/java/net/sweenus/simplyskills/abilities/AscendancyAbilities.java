@@ -13,7 +13,6 @@ import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.puffish.skillsmod.api.SkillsAPI;
@@ -22,12 +21,12 @@ import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.entities.DreadglareEntity;
+import net.sweenus.simplyskills.entities.WraithEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
-import net.sweenus.simplyswords.entity.SimplySwordsBeeEntity;
 
 import java.util.Comparator;
 
@@ -65,7 +64,7 @@ public class AscendancyAbilities {
     public static boolean cyclonicCleave(PlayerEntity player) {
         //SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
 
-        for (int i = 0; i < 5; i ++) {
+        for (int i = 0; i < 3; i ++) {
             DreadglareEntity dreadglareEntity = EntityRegistry.DREADGLARE.spawn(
                     (ServerWorld) player.getWorld(),
                     player.getBlockPos().up(4).offset(player.getMovementDirection(), 3),
@@ -76,6 +75,21 @@ public class AscendancyAbilities {
                 dreadglareEntity.setTarget(player);
                 double attackDamage = 3 + (1.2 * player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
                 EntityAttributeInstance attackAttribute = dreadglareEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+                if (attackAttribute != null)
+                    attackAttribute.setBaseValue(attackDamage);
+            }
+        }
+
+        for (int i = 0; i < 2; i ++) {
+            WraithEntity wraithEntity = EntityRegistry.WRAITH.spawn(
+                    (ServerWorld) player.getWorld(),
+                    player.getBlockPos().up(4).offset(player.getMovementDirection(), 3),
+                    SpawnReason.MOB_SUMMONED);
+            if (wraithEntity != null) {
+                wraithEntity.setTarget(player);
+                wraithEntity.setOwner(player);
+                double attackDamage = 3 + (1.2 * player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
+                EntityAttributeInstance attackAttribute = wraithEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
                 if (attackAttribute != null)
                     attackAttribute.setBaseValue(attackDamage);
             }

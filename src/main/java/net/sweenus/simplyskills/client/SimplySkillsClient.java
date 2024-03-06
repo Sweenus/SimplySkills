@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.render.entity.HuskEntityRenderer;
+import net.minecraft.client.render.entity.ZombieEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.sound.SoundCategory;
@@ -19,7 +21,9 @@ import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.client.events.ClientEvents;
 import net.sweenus.simplyskills.client.renderer.DreadglareRenderer;
 import net.sweenus.simplyskills.client.renderer.SpellTargetEntityRenderer;
+import net.sweenus.simplyskills.client.renderer.WraithRenderer;
 import net.sweenus.simplyskills.client.renderer.model.DreadglareModel;
+import net.sweenus.simplyskills.client.renderer.model.WraithModel;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
 import net.sweenus.simplyskills.registry.EffectRegistry;
@@ -41,6 +45,7 @@ public class SimplySkillsClient implements ClientModInitializer {
 
     public static EntityModelLayer SPELLTARGETENTITY_MODEL = new EntityModelLayer(new Identifier("spell_target_entity", "cube"), "main");
     public static EntityModelLayer DREADGLARE_MODEL = new EntityModelLayer(new Identifier("dreadglare", "cube"), "main");
+    public static EntityModelLayer WRAITH_MODEL = new EntityModelLayer(new Identifier("wraith", "cube"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -139,6 +144,8 @@ public class SimplySkillsClient implements ClientModInitializer {
             EntityRendererRegistry.register(EntityRegistry.SPELL_TARGET_ENTITY, SpellTargetEntityRenderer::new);
             EntityRendererRegistry.register(EntityRegistry.DREADGLARE, DreadglareRenderer::new);
             EntityModelLayerRegistry.registerModelLayer(DREADGLARE_MODEL, DreadglareModel::getTexturedModelData);
+            EntityRendererRegistry.register(EntityRegistry.WRAITH, WraithRenderer::new);
+            EntityModelLayerRegistry.registerModelLayer(WRAITH_MODEL, WraithModel::getTexturedModelData);
 
     }
 

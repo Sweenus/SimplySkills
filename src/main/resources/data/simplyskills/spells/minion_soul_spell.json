@@ -1,0 +1,68 @@
+{
+  "school": "SOUL",
+  "range": 16,
+  "learn": {
+    "tier": 2
+  },
+  "cast": {
+    "duration": 1.5,
+    "sound": {
+      "id": "simplyskills:soundeffect_32",
+      "volume": 0.2,
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "sculk_soul",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "CURSOR",
+      "cursor": { }
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.0,
+          "spell_power_coefficient": 0.9
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "sculk_soul",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 15,
+          "min_speed": 0.02,
+          "max_speed": 0.07
+        },
+        {
+          "particle_id": "smoke",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 10,
+          "min_speed": 0.05,
+          "max_speed": 0.02
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:activate_tower_beacon",
+        "volume": 0.3,
+        "pitch": 1.2
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}

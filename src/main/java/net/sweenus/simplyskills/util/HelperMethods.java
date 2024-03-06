@@ -139,6 +139,12 @@ public class HelperMethods {
 
         return box;
     }
+    public static Box createBoxHeight(Entity entity, int radius) {
+        Box box = new Box(entity.getX() + radius, entity.getY() + (float) radius, entity.getZ() + radius,
+                entity.getX() - radius, entity.getY() - (float) radius, entity.getZ() - radius);
+
+        return box;
+    }
     public static Box createBoxAtBlock(BlockPos blockpos, int radius) {
         Box box = new Box(blockpos.getX() + radius, blockpos.getY() + radius, blockpos.getZ() + radius,
                 blockpos.getX() - radius, blockpos.getY() - radius, blockpos.getZ() - radius);

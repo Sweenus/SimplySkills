@@ -1,7 +1,10 @@
 package net.sweenus.simplyskills.entities;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Flutterer;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.BirdNavigation;
@@ -14,26 +17,36 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.SignatureAbilities;
+import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.entities.ai.DirectionalFlightMoveControl;
+import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.util.HelperMethods;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Comparator;
 import java.util.UUID;
 
-public class DreadglareEntity extends TameableEntity implements Angerable, Flutterer {
+public class WraithEntity extends TameableEntity implements Angerable, Flutterer {
     public static int lifespan = 2400;
-    public DreadglareEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public static Entity lookTarget = null;
+    public WraithEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
         this.moveControl = new DirectionalFlightMoveControl(this, 1, true);
         this.setNoGravity(true);
     }
 
-    public static DefaultAttributeContainer.Builder createDreadglareAttributes() {
+    public static DefaultAttributeContainer.Builder createWraithAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 1.6f)
@@ -48,6 +61,7 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
             if (this.age > lifespan || (this.age > 120 && this.getOwner() == null))
                 this.damage(this.getDamageSources().generic(), this.getMaxHealth());
 
+            this.doesNotCollide(0, 0, 0);
 
             if (!this.hasNoGravity()) {
                 this.setNoGravity(true);
@@ -57,9 +71,45 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
             this.prevYaw = this.getYaw();
 
             if (this.getTarget() == null && this.getOwner() != null)
-                this.setTarget(this.getOwner());
-            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 10)
-                this.setTarget(this.getOwner());
+                this.setPositionTarget(this.getOwner().getBlockPos().up(3), 32);
+            else if (this.getTarget() != null && this.getOwner() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getOwner()) > 10)
+                this.setPositionTarget(this.getOwner().getBlockPos().up(3), 32);
+
+            Box box = HelperMethods.createBoxHeight(this, 16);
+            int frequency = (20+ this.getRandom().nextInt(30));
+            if (this.age % frequency == 0 && this.getOwner() != null && this.getOwner().isAlive() && this.getOwner() instanceof PlayerEntity player) {
+                World world = this.getWorld();
+                Entity closestEntity = world.getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY).stream()
+                        .filter(entity -> !(entity instanceof TameableEntity tameableEntity &&
+                                tameableEntity.isTamed() &&
+                                tameableEntity.getOwnerUuid() != null &&
+                                tameableEntity.getOwnerUuid().equals(this.getOwnerUuid())))
+                        .filter(entity -> !(entity instanceof PlayerEntity playerEntity &&
+                                playerEntity.getUuid().equals(this.getOwnerUuid())))
+                        .min(Comparator.comparingDouble(entity -> entity.squaredDistanceTo(this)))
+                        .orElse(null);
+
+                if (closestEntity != null) {
+                    if ((closestEntity instanceof LivingEntity ee)) {
+                        if (HelperMethods.checkFriendlyFire(ee, player)) {
+
+                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:minion_soul_spell", 32, ee, null);
+                            HelperMethods.spawnWaistHeightParticles((ServerWorld) world, ParticleTypes.SMOKE, this, ee, 20);
+                            lookTarget = ee;
+
+                            return;
+                        }
+                    }
+                }
+            }
+            if (lookTarget != null) {
+                this.lookAtEntity(lookTarget, 90f, 10f);
+                Vec3d direction = new Vec3d(lookTarget.getX() - this.getX(), 0, lookTarget.getZ() - this.getZ());
+                // Calculate the yaw angle towards the look target (in degrees)
+                float targetYaw = (float)(MathHelper.atan2(direction.z, direction.x) * (180 / Math.PI)) - 90.0F;
+                this.setBodyYaw(targetYaw);
+                this.headYaw = targetYaw;
+            }
         }
 
         super.tick();
@@ -78,31 +128,18 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     @Override
     protected void initGoals() {
         super.initGoals();
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
-        this.goalSelector.add(2, new AttackWithOwnerGoal(this));
-        this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0, true));
+        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 8.0F, 12.0F, true));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));
-        this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));
-        this.targetSelector.add(2, new AttackWithOwnerGoal(this));
-        this.targetSelector.add(3, new RevengeGoal(this));
-        this.targetSelector.add(4, new ActiveTargetGoal<>(this, HostileEntity.class, false));
+        //this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));
+        //this.targetSelector.add(2, new AttackWithOwnerGoal(this));
+        //this.targetSelector.add(3, new RevengeGoal(this));
+        //this.targetSelector.add(4, new ActiveTargetGoal<>(this, HostileEntity.class, false));
 
     }
 
     @Override
     public void tickMovement() {
         super.tickMovement();
-
-        Vec3d velocity = this.getVelocity();
-        if (!velocity.equals(Vec3d.ZERO)) {
-            float yaw = (float) (MathHelper.atan2(velocity.z, velocity.x) * (180.0 / Math.PI)) - 90.0F;
-            float pitch = (float) (-(MathHelper.atan2(velocity.y, Math.sqrt(velocity.x * velocity.x + velocity.z * velocity.z)) * (180.0 / Math.PI)));
-
-            this.setYaw(yaw);
-            this.bodyYaw = yaw;
-            this.setPitch(pitch);
-
-        }
     }
 
     //I think this is just Entity.getWorld()? What even are mappings
