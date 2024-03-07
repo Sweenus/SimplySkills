@@ -7,16 +7,20 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.entities.DreadglareEntity;
+import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
 import net.sweenus.simplyskills.entities.WraithEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.EntityRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 
@@ -42,6 +46,8 @@ public class NecromancerAbilities {
                     }
                 }
             }
+            player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_VOICE_20,
+                    SoundCategory.PLAYERS, 0.2f, 1.2f);
         }
     }
 
@@ -55,6 +61,7 @@ public class NecromancerAbilities {
     public static void effectDeathWarden(PlayerEntity player) {
         if (HelperMethods.isUnlocked("simplyskills:necromancer",
                 SkillReferencePosition.necromancerSpecialisationDeathWarden, player)) {
+            boolean success = false;
             Box box = HelperMethods.createBoxHeight(player, 15);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
@@ -62,9 +69,14 @@ public class NecromancerAbilities {
                         float healAmount = (float) (player.getMaxHealth() * 0.15);
                         player.heal(healAmount);
                         entities.damage(player.getDamageSources().generic(), healAmount);
+                        HelperMethods.spawnWaistHeightParticles((ServerWorld) player.getWorld(), ParticleTypes.POOF, player, entities, 20);
+                        success = true;
                     }
                 }
             }
+            if (success)
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_VOICE_20,
+                        SoundCategory.PLAYERS, 0.2f, 1.3f);
         }
     }
 
@@ -85,7 +97,7 @@ public class NecromancerAbilities {
         for (int i = 0; i < getMinionLimit(necromancerTree, player); i ++) {
 
             if (HelperMethods.isUnlocked(necromancerTree, SkillReferencePosition.necromancerSpecialisationGreaterDreadglare, player)) {
-                summonMinion(EntityRegistry.DREADGLARE, player); // Replace with greater variant
+                summonMinion(EntityRegistry.GREATER_DREADGLARE, player);
                 break;
             }
             else if (HelperMethods.isUnlocked(necromancerTree, SkillReferencePosition.necromancerSpecialisationSummonWraith, player)) {
@@ -98,6 +110,8 @@ public class NecromancerAbilities {
                 summonMinion(EntityRegistry.DREADGLARE, player);
             }
         }
+        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_VOICE_20,
+                SoundCategory.PLAYERS, 0.3f, 1.0f);
         return true;
     }
 
@@ -114,6 +128,8 @@ public class NecromancerAbilities {
             }
 
             double attackDamageMultiplier = 1.2;
+            if (minion instanceof GreaterDreadglareEntity)
+                attackDamageMultiplier = 3.0;
             double healthMultiplier = getHealthMultiplier(livingEntity);
             setMinionAttributes(player, minion, attackDamageMultiplier, healthMultiplier);
         }
@@ -124,7 +140,9 @@ public class NecromancerAbilities {
             return 1.4;
         } else if (entityType.equals(EntityRegistry.WRAITH)) {
             return 0.8;
-        }
+        } else if (entityType.equals(EntityRegistry.GREATER_DREADGLARE)) {
+            return 3.8;
+    }
         return 1.0;
     }
 
@@ -145,8 +163,11 @@ public class NecromancerAbilities {
         // Necrotic Fortification
         if (HelperMethods.isUnlocked("simplyskills:necromancer",
                 SkillReferencePosition.necromancerSpecialisationNecroticFortification, player)) {
-            double maxArmor = 1 + (0.5 * player.getAttributeValue(EntityAttributes.GENERIC_ARMOR));
-            double maxArmorToughness = 1 + (0.5 * player.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
+            double multiplier = 0.5;
+            if (minion instanceof GreaterDreadglareEntity)
+                multiplier = 1.0;
+            double maxArmor = 1 + (multiplier * player.getAttributeValue(EntityAttributes.GENERIC_ARMOR));
+            double maxArmorToughness = 1 + (multiplier * player.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
             EntityAttributeInstance armorAttribute = minion.getAttributeInstance(EntityAttributes.GENERIC_ARMOR);
             EntityAttributeInstance armorToughnessAttribute = minion.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS);
             if (armorAttribute != null) {

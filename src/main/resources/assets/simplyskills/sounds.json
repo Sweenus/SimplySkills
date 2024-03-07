@@ -393,5 +393,10 @@
     "sounds": [
       "simplyskills:hit_03"
     ]
+  },
+  "magic_shamanic_voice_20": {
+    "sounds": [
+      "simplyskills:magic_shamanic_voice_20"
+    ]
   }
 }

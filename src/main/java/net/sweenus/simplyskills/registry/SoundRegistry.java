@@ -87,6 +87,7 @@ public class SoundRegistry {
     public static SoundEvent OBJECT_IMPACT_THUD = register("object_impact_thud");
     public static SoundEvent OBJECT_IMPACT_THUD_REPEAT = register("object_impact_thud_repeat");
     public static SoundEvent HIT_03 = register("hit_03");
+    public static SoundEvent MAGIC_SHAMANIC_VOICE_20 = register("magic_shamanic_voice_20");
 
     public static void registerSounds() {
     }

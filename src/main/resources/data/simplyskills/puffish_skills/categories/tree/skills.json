@@ -2026,5 +2026,11 @@
 		"x": -128,
 		"y": 73.9008344562721,
 		"root": false
+	},
+	"7ht9g1avasgmwwg3": {
+		"definition": "necromancerPath",
+		"x": 256,
+		"y": -443.40500673763256,
+		"root": false
 	}
 }

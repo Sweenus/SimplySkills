@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.entities.DreadglareEntity;
+import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
 import net.sweenus.simplyskills.entities.SpellTargetEntity;
 import net.sweenus.simplyskills.entities.WraithEntity;
 
@@ -16,6 +17,7 @@ public class EntityRegistry {
 
     public static final EntityType<SpellTargetEntity> SPELL_TARGET_ENTITY;
     public static final EntityType<DreadglareEntity> DREADGLARE;
+    public static final EntityType<GreaterDreadglareEntity> GREATER_DREADGLARE;
     public static final EntityType<WraithEntity> WRAITH;
 
     static {
@@ -30,6 +32,12 @@ public class EntityRegistry {
                 Registries.ENTITY_TYPE,
                 new Identifier(SimplySkills.MOD_ID, "dreadglare"),
                 FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DreadglareEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+        );
+
+        GREATER_DREADGLARE = Registry.register(
+                Registries.ENTITY_TYPE,
+                new Identifier(SimplySkills.MOD_ID, "greater_dreadglare"),
+                FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GreaterDreadglareEntity::new).dimensions(EntityDimensions.fixed(0.85f, 0.85f)).build()
         );
 
         WRAITH = Registry.register(

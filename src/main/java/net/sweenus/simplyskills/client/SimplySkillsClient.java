@@ -20,9 +20,11 @@ import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.client.effects.*;
 import net.sweenus.simplyskills.client.events.ClientEvents;
 import net.sweenus.simplyskills.client.renderer.DreadglareRenderer;
+import net.sweenus.simplyskills.client.renderer.GreaterDreadglareRenderer;
 import net.sweenus.simplyskills.client.renderer.SpellTargetEntityRenderer;
 import net.sweenus.simplyskills.client.renderer.WraithRenderer;
 import net.sweenus.simplyskills.client.renderer.model.DreadglareModel;
+import net.sweenus.simplyskills.client.renderer.model.GreaterDreadglareModel;
 import net.sweenus.simplyskills.client.renderer.model.WraithModel;
 import net.sweenus.simplyskills.network.CooldownPacket;
 import net.sweenus.simplyskills.network.ModPacketHandler;
@@ -45,6 +47,7 @@ public class SimplySkillsClient implements ClientModInitializer {
 
     public static EntityModelLayer SPELLTARGETENTITY_MODEL = new EntityModelLayer(new Identifier("spell_target_entity", "cube"), "main");
     public static EntityModelLayer DREADGLARE_MODEL = new EntityModelLayer(new Identifier("dreadglare", "cube"), "main");
+    public static EntityModelLayer GREATER_DREADGLARE_MODEL = new EntityModelLayer(new Identifier("greater_dreadglare", "cube"), "main");
     public static EntityModelLayer WRAITH_MODEL = new EntityModelLayer(new Identifier("wraith", "cube"), "main");
 
     @Override
@@ -146,6 +149,8 @@ public class SimplySkillsClient implements ClientModInitializer {
             EntityModelLayerRegistry.registerModelLayer(DREADGLARE_MODEL, DreadglareModel::getTexturedModelData);
             EntityRendererRegistry.register(EntityRegistry.WRAITH, WraithRenderer::new);
             EntityModelLayerRegistry.registerModelLayer(WRAITH_MODEL, WraithModel::getTexturedModelData);
+            EntityRendererRegistry.register(EntityRegistry.GREATER_DREADGLARE, GreaterDreadglareRenderer::new);
+            EntityModelLayerRegistry.registerModelLayer(GREATER_DREADGLARE_MODEL, GreaterDreadglareModel::getTexturedModelData);
 
     }
 

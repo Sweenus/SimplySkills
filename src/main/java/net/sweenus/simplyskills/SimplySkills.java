@@ -13,6 +13,7 @@ import net.puffish.skillsmod.api.Category;
 import net.puffish.skillsmod.api.SkillsAPI;
 import net.sweenus.simplyskills.config.*;
 import net.sweenus.simplyskills.entities.DreadglareEntity;
+import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
 import net.sweenus.simplyskills.entities.WraithEntity;
 import net.sweenus.simplyskills.events.AmethystImbuementEvent;
 import net.sweenus.simplyskills.network.KeybindPacket;
@@ -96,6 +97,7 @@ public class SimplySkills implements ModInitializer {
             AmethystImbuementEvent.registerAIEvents();
         setSpecialisations();
         FabricDefaultAttributeRegistry.register(EntityRegistry.DREADGLARE, DreadglareEntity.createDreadglareAttributes());
+        FabricDefaultAttributeRegistry.register(EntityRegistry.GREATER_DREADGLARE, GreaterDreadglareEntity.createGreaterDreadglareAttributes());
         FabricDefaultAttributeRegistry.register(EntityRegistry.WRAITH, WraithEntity.createWraithAttributes());
 
 

@@ -3,7 +3,7 @@
 	"experience_per_level": {
 		"type": "expression",
 		"data": {
-			"expression": "(((level + 1) ^ 4) / ((level + 1) * 1.08)) + 500"
+			"expression": "(level ^ 2.532 + 400) * 1.5"
 		}
 	},
 	"sources": [
@@ -20,7 +20,7 @@
 				},
 				"experience": [
 					{
-						"expression": "dropped_xp + max_health / 120"
+						"expression": "dropped_xp + max_health / 40"
 					}
 				],
 				"anti_farming": {

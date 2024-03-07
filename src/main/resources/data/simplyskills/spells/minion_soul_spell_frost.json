@@ -57,7 +57,7 @@
       ],
       "sound": {
         "id": "simplyskills:activate_tower_beacon",
-        "volume": 0.3,
+        "volume": 0.2,
         "pitch": 1.2
       }
     },
@@ -73,7 +73,7 @@
       },
       "sound": {
         "id": "simplyskills:soundeffect_32",
-        "volume": 0.2
+        "volume": 0.0
       }
     }
   ],
