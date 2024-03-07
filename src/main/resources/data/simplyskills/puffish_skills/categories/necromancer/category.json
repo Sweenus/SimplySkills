@@ -1,0 +1,12 @@
+{
+	"unlocked_by_default": false,
+	"exclusive_root": false,
+	"title": {"translate": "text.skills.necromancer_category.title"},
+	"icon": {
+		"type": "texture",
+		"data": {
+			"texture": "simplyskills:textures/icons/alternate_reduced/necromancer_path.png"
+		}
+	},
+	"background": "simplyskills:textures/backgrounds/skillbackground_5.png"
+}

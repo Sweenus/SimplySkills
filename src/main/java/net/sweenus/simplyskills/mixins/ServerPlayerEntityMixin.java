@@ -103,6 +103,12 @@ public abstract class ServerPlayerEntityMixin {
                 ClericAbilities.signatureClericAnointWeaponUndying(player);
             }
 
+            //Necromancer Death Warden
+            if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                    SkillReferencePosition.necromancerSpecialisationDeathWarden, player) && player.getHealth() < (player.getMaxHealth() / 2)) {
+                NecromancerAbilities.effectDeathWarden(player);
+            }
+
 
             //Ascendancy effects
             AscendancyAbilities.boneArmorEffect(serverPlayer);
@@ -315,6 +321,13 @@ public abstract class ServerPlayerEntityMixin {
                     SkillReferencePosition.ascendancyRighteousShield, player)
                     && AscendancyAbilities.getAscendancyPoints(player) > 29 && player.age %400 == 0) {
                 AscendancyAbilities.goldenAegis(player);
+            }
+
+            // Necromancer Winterborn
+            if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                    SkillReferencePosition.necromancerSpecialisationWinterborn, player)
+                    && player.age %200 == 0) {
+                NecromancerAbilities.effectNecromancerWinterborn(player);
             }
 
 

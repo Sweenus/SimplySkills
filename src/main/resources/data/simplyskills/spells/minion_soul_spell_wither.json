@@ -60,6 +60,21 @@
         "volume": 0.3,
         "pitch": 1.2
       }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:wither",
+          "duration": 5,
+          "apply_mode": "ADD",
+          "show_particles": false
+        }
+      },
+      "sound": {
+        "id": "simplyskills:soundeffect_32",
+        "volume": 0.2
+      }
     }
   ],
   "cost": {

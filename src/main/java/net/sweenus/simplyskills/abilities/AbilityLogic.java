@@ -114,6 +114,13 @@ public class AbilityLogic {
                     player.sendMessage(Text.translatable("system.simplyskills.unlock"));
                     return false;
                 }
+            } else if (categoryID.contains("simplyskills:necromancer")
+                    && !HelperMethods.isUnlocked("simplyskills:necromancer", null, player)) {
+                if (SimplySkills.necromancerConfig.enableNecromancerSpecialisation) {
+                    playUnlockSound(player);
+                    player.sendMessage(Text.translatable("system.simplyskills.unlock"));
+                    return false;
+                }
             } else if (categoryID.contains("simplyskills:ascendancy")
                     && !HelperMethods.isUnlocked("simplyskills:ascendancy", null, player)) {
 

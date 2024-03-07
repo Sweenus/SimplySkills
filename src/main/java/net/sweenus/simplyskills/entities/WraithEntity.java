@@ -27,11 +27,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.NecromancerAbilities;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.entities.ai.DirectionalFlightMoveControl;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
@@ -53,7 +55,7 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.1)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 10.0);
     }
     @Override
     public void tick() {
@@ -71,9 +73,9 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
             this.prevYaw = this.getYaw();
 
             if (this.getTarget() == null && this.getOwner() != null)
-                this.setPositionTarget(this.getOwner().getBlockPos().up(3), 32);
-            else if (this.getTarget() != null && this.getOwner() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getOwner()) > 10)
-                this.setPositionTarget(this.getOwner().getBlockPos().up(3), 32);
+                this.setTarget(this.getOwner());
+            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 10)
+                this.setTarget(this.getOwner());
 
             Box box = HelperMethods.createBoxHeight(this, 16);
             int frequency = (20+ this.getRandom().nextInt(30));
@@ -93,7 +95,13 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
                     if ((closestEntity instanceof LivingEntity ee)) {
                         if (HelperMethods.checkFriendlyFire(ee, player)) {
 
-                            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:minion_soul_spell", 32, ee, null);
+                            if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationWitherWraiths, player))
+                                SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:minion_soul_spell_wither", 32, ee, null);
+                            else if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationFrostWraiths, player))
+                                SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:minion_soul_spell_frost", 32, ee, null);
+                            else
+                                SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:minion_soul_spell", 32, ee, null);
+
                             HelperMethods.spawnWaistHeightParticles((ServerWorld) world, ParticleTypes.SMOKE, this, ee, 20);
                             lookTarget = ee;
 
@@ -123,6 +131,16 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
         }
         target.timeUntilRegen = 0;
         return super.tryAttack(target);
+    }
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        //Necromancer Enrage
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+            NecromancerAbilities.effectNecromancerEnrage(this, player);
+        //Necromancer Death Essence
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+            NecromancerAbilities.effectNecromancerDeathEssence(player);
+        super.onDeath(damageSource);
     }
 
     @Override

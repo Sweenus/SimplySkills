@@ -127,6 +127,10 @@ public class ModPacketHandler {
                 else if (identifierString.equals(SkillReferencePosition.spellbladeSpecialisationSpellweaver))
                     spritePath = "spellweaver";
             }
+            else if (stringPacket.contains("necromancer")) {
+                if (identifierString.equals(SkillReferencePosition.necromancerSpecialisationSummoningRitual))
+                    spritePath = "summoning_ritual";
+            }
 
             if (identifierString2.equals(SkillReferencePosition.ascendancyRighteousHammers))
                 spritePath2 = "righteous_hammers";
@@ -211,6 +215,7 @@ public class ModPacketHandler {
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalSurge);
         list.add(SkillReferencePosition.spellbladeSpecialisationElementalImpact);
         list.add(SkillReferencePosition.spellbladeSpecialisationSpellweaver);
+        list.add(SkillReferencePosition.necromancerSpecialisationSummoningRitual);
 
         for (String specialisations : specialisationList) {
             for (String string : list) {

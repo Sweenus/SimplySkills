@@ -62,38 +62,7 @@ public class AscendancyAbilities {
     }
 
     public static boolean cyclonicCleave(PlayerEntity player) {
-        //SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
-
-        for (int i = 0; i < 3; i ++) {
-            DreadglareEntity dreadglareEntity = EntityRegistry.DREADGLARE.spawn(
-                    (ServerWorld) player.getWorld(),
-                    player.getBlockPos().up(4).offset(player.getMovementDirection(), 3),
-                    SpawnReason.MOB_SUMMONED);
-            if (dreadglareEntity != null) {
-                dreadglareEntity.setOwner(player);
-                dreadglareEntity.setTamed(true);
-                dreadglareEntity.setTarget(player);
-                double attackDamage = 3 + (1.2 * player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
-                EntityAttributeInstance attackAttribute = dreadglareEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
-                if (attackAttribute != null)
-                    attackAttribute.setBaseValue(attackDamage);
-            }
-        }
-
-        for (int i = 0; i < 2; i ++) {
-            WraithEntity wraithEntity = EntityRegistry.WRAITH.spawn(
-                    (ServerWorld) player.getWorld(),
-                    player.getBlockPos().up(4).offset(player.getMovementDirection(), 3),
-                    SpawnReason.MOB_SUMMONED);
-            if (wraithEntity != null) {
-                wraithEntity.setTarget(player);
-                wraithEntity.setOwner(player);
-                double attackDamage = 3 + (1.2 * player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute));
-                EntityAttributeInstance attackAttribute = wraithEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
-                if (attackAttribute != null)
-                    attackAttribute.setBaseValue(attackDamage);
-            }
-        }
+        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
 
         return true;
     }

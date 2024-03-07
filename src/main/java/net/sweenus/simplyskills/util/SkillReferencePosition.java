@@ -157,10 +157,6 @@ public class SkillReferencePosition {
     public static String spellbladeWeaponExpert = "endsaris2tu3h8h2";
     public static String spellbladeSpellweaving = "ldgsqpyo0z0hniqx";
 
-    public static String necromancerSpecialisationSpectralGrasp = "fw2qh5fw4h3ypjs4";
-    public static String necromancerSpecialisationSacrifice = "4mqcsrpcwk4yuci5";
-    public static String necromancerSpecialisationEnrage = "7dsbtkhvcv332zla";
-
     public static String shamanSpecialisationBoltTotem = "fw2qh5fw4h3ypjs4";
     public static String shamanSpecialisationAstralTotem = "4mqcsrpcwk4yuci5";
     public static String shamanSpecialisationNovaTotem = "7dsbtkhvcv332zla";
@@ -251,6 +247,28 @@ public class SkillReferencePosition {
     public static String berserkerSpecialisationBerserkingLeap = "sistiph4u2wuydzp";
     public static String berserkerSpecialisationBerserkingLeapImmob = "cdbv71rvffagxjvo";
     public static String berserkerSpecialisationBerserkingLeapPull = "9d9t6hnhyc248jy0";
+
+    public static String necromancerSpecialisationSummoningRitual = "yl0wtsb5m85wmvfa";
+    public static String necromancerSpecialisationNecroticFortification = "2kqygy3kszdq0vyj";
+    public static String necromancerSpecialisationUndeadLegion1 = "rjtn8vayhhdlded0";
+    public static String necromancerSpecialisationUndeadLegion2 = "580qipg24z65ikgs";
+    public static String necromancerSpecialisationUndeadLegion3 = "iwa4ljmz5unkcjlp";
+    public static String necromancerSpecialisationUndeadLegion4 = "npfsnq81nlafkmi1";
+    public static String necromancerSpecialisationSummonWraith = "w55dk0n5bia01eme";
+    public static String necromancerSpecialisationWitherWraiths = "kycrjv5fokv2i5oq";
+    public static String necromancerSpecialisationFrostWraiths = "i4sou5n3qom4pes5";
+    public static String necromancerSpecialisationBloodHarvest = "uiow69n2ll83ba7c";
+    public static String necromancerSpecialisationGreaterDreadglare = "mdxrtnoe3cpqk2up";
+    public static String necromancerSpecialisationDeathEssence = "kvthappavko2coeu";
+    public static String necromancerSpecialisationDeathWarden = "mx19tvgt8bqtnjpz";
+    public static String necromancerSpecialisationEnrage = "nn9agiepdbhmakb6";
+    public static String necromancerSpecialisationWinterborn = "po1zpua99okzv0iy";
+    public static final String[] undeadLegionSkills = {
+            necromancerSpecialisationUndeadLegion1,
+            necromancerSpecialisationUndeadLegion2,
+            necromancerSpecialisationUndeadLegion3,
+            necromancerSpecialisationUndeadLegion4
+    };
 
 
     // -- Ascendancy --

@@ -14,13 +14,17 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.NecromancerAbilities;
 import net.sweenus.simplyskills.entities.ai.DirectionalFlightMoveControl;
+import net.sweenus.simplyskills.util.HelperMethods;
+import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -71,6 +75,20 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
         if (moveControl instanceof DirectionalFlightMoveControl) {
             ((DirectionalFlightMoveControl) moveControl).onAttack();
         }
+
+        // Necromancer Blood Harvest
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
+
+            if (target.equals(player))
+                return false;
+
+            float siphonAmount = (float) this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE) * 0.3f;
+            if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationBloodHarvest, player)) {
+                this.heal(siphonAmount);
+                player.heal(siphonAmount / 2);
+            }
+        }
+
         target.timeUntilRegen = 0;
         return super.tryAttack(target);
     }
@@ -103,6 +121,17 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
             this.setPitch(pitch);
 
         }
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        //Necromancer Enrage
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+            NecromancerAbilities.effectNecromancerEnrage(this, player);
+        //Necromancer Death Essence
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+            NecromancerAbilities.effectNecromancerDeathEssence(player);
+        super.onDeath(damageSource);
     }
 
     //I think this is just Entity.getWorld()? What even are mappings

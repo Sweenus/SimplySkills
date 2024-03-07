@@ -40,6 +40,7 @@ public class SimplySkills implements ModInitializer {
     public static RangerConfig rangerConfig;
     public static CrusaderConfig crusaderConfig;
     public static ClericConfig clericConfig;
+    public static NecromancerConfig necromancerConfig;
 
     private static void setSpecialisations() {
         specialisations.add("simplyskills:rogue");
@@ -49,6 +50,7 @@ public class SimplySkills implements ModInitializer {
         specialisations.add("simplyskills:spellblade");
         specialisations.add("simplyskills:crusader");
         specialisations.add("simplyskills:cleric");
+        specialisations.add("simplyskills:necromancer");
     }
     public static String[] getSpecialisations() {return new String[] {
             "simplyskills:rogue",
@@ -58,6 +60,7 @@ public class SimplySkills implements ModInitializer {
             "simplyskills:spellblade",
             "simplyskills:crusader",
             "simplyskills:cleric",
+            "simplyskills:necromancer"
     };}
 
     public static List<String> getSpecialisationsAsArray() {
@@ -79,6 +82,7 @@ public class SimplySkills implements ModInitializer {
         rangerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().ranger;
         crusaderConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().crusader;
         clericConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().cleric;
+        necromancerConfig = AutoConfig.getConfigHolder(ConfigWrapper.class).getConfig().necromancer;
 
         EffectRegistry.registerEffects();
         PassiveSkillReward.register();

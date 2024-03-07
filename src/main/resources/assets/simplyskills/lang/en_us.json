@@ -582,6 +582,7 @@
   "text.skills.crusader_category.title":                                                                      "§7§bCrusader Specialisation§7",
   "text.skills.ranger_category.title":                                                                        "§7§bRanger Specialisation§7",
   "text.skills.rogue_category.title":                                                                         "§7§bRogue Specialisation§7",
+  "text.skills.necromancer_category.title":                                                                   "§7§bNecromancer Specialisation§7",
   "text.skills.base_category.title":                                                                          "§7§aSkill Tree§7",
   "text.skills.ascendancy_category.title":                                                                    "§7§6Ascendancy Tree§7",
   
@@ -1305,7 +1306,43 @@
   
   "text.skills.berserkerSignatureBerserkingLeapPull.title":"§f[Magnet]",
   "text.skills.berserkerSignatureBerserkingLeapPull.description":"§7Leap Slam now pulls nearby enemies instead of knocking them back.",
-  
+
+  "text.skills.necromancerSignatureSummoningRitual.title":"Signature Ability: §6[Summoning Ritual]§7",
+  "text.skills.necromancerSignatureSummoningRitual.description":"§7\nPerform a ritual to summon forth an undead minion.\n\nBy default, this ability summons forth a Dreadglare. An airborne minion that swarms its enemies and deals melee physical damage.\n\nMinion damage scales with your Soul Spell Power. Minions inherit a portion of your max health.\n\nMinions expire after 120s and must be re-summoned.\n\n§a120s Cooldown§7",
+
+  "text.skills.necromancerNecroticFortification.title":"§f[Necrotic Fortification]",
+  "text.skills.necromancerNecroticFortification.description":"§7Minions now inherit half of your Armor & Armor Toughness attributes.",
+
+  "text.skills.necromancerUndeadLegion.title":"§f[Undead Legion]",
+  "text.skills.necromancerUndeadLegion.description":"§7Your §6[Summoning Ritual]§7 now summons one additional minion.",
+
+  "text.skills.necromancerSummonWraith.title":"§f[Summon Wraith]",
+  "text.skills.necromancerSummonWraith.description":"§7Your §6[Summoning Ritual]§7 now also summons a Wraith minion. An airborne minion that follows you closely while casting soul spells at nearby enemies.\n\nSpells casted by your Wraith minions count as player spellcasts and benefit from any passives that trigger from such casts.",
+
+  "text.skills.necromancerWitherWraiths.title":"§f[Wither Wraiths]",
+  "text.skills.necromancerWitherWraiths.description":"§7Your Wraith minions now inflict Wither on spell hits.",
+
+  "text.skills.necromancerFrostWraiths.title":"§f[Frost Wraiths]",
+  "text.skills.necromancerFrostWraiths.description":"§7Your Wraith minions now inflict Slowness on spell hits.",
+
+  "text.skills.necromancerBloodHarvest.title":"§f[Blood Harvest]",
+  "text.skills.necromancerBloodHarvest.description":"§7Your Dreadglare minions now lifesteal when attacking enemies. A portion of health stolen is also returned to you.",
+
+  "text.skills.necromancerGreaterDreadglare.title":"§f[Greater Dreadglare]",
+  "text.skills.necromancerGreaterDreadglare.description":"§7Your §6[Summoning Ritual]§7 no longer summons multiple minions and instead summons a single Greater Dreadglare.\nThe Greater Dreadglare gains a bonus to all attribute inheritance and now taunts enemies that it hits.",
+
+  "text.skills.necromancerDeathEssence.title":"§f[Death Essence]",
+  "text.skills.necromancerDeathEssence.description":"§7Whenever a minion dies, you gain a stack of Bone Armor.\n\n§f(Bone Armor)§7 Shield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.",
+
+  "text.skills.necromancerDeathWarden.title":"§f[Death Warden]",
+  "text.skills.necromancerDeathWarden.description":"§7When taking damage while below 50% HP, you siphon health from a nearby minion to recover.",
+
+  "text.skills.necromancerEnrage.title":"§f[Enrage]",
+  "text.skills.necromancerEnrage.description":"§7When one of your minions dies, all other nearby minions gain Strength & Resistance.",
+
+  "text.skills.necromancerWinterborn.title":"§f[Winterborn]",
+  "text.skills.necromancerWinterborn.description":"§7For every 1 Frost Spell Power you have, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you §a+1 §f[x]§7 Soul & Lightning spell power per stack.",
+
   "text.skills.portalSapphire.title":"§7§6[Junction: §fSapphire§6]§7",
   "text.skills.portalSapphire.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",
   

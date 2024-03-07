@@ -1,0 +1,122 @@
+{
+	"kzj431vrpy8f109q": {
+		"definition": "health+2",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"hwna75cnftneiz3s": {
+		"definition": "spell_soul_damage_additive+0.8%",
+		"x": -55.42562584220407,
+		"y": -32,
+		"root": false
+	},
+	"x8gcsokoh83v2rj1": {
+		"definition": "spell_soul_damage_additive+0.8%",
+		"x": 55.42562584220407,
+		"y": -32,
+		"root": false
+	},
+	"zj398t6dbqbb8z8s": {
+		"definition": "health+2",
+		"x": -73.9008344562721,
+		"y": -64,
+		"root": false
+	},
+	"ef09cib99guw75cl": {
+		"definition": "health+2",
+		"x": 73.9008344562721,
+		"y": -64,
+		"root": false
+	},
+	"yl0wtsb5m85wmvfa": {
+		"definition": "necromancerSignatureSummoningRitual",
+		"x": 0,
+		"y": -64,
+		"root": false
+	},
+	"w55dk0n5bia01eme": {
+		"definition": "necromancerSummonWraith",
+		"x": 73.9008344562721,
+		"y": -128,
+		"root": false
+	},
+	"uiow69n2ll83ba7c": {
+		"definition": "necromancerBloodHarvest",
+		"x": -73.9008344562721,
+		"y": -128,
+		"root": false
+	},
+	"i4sou5n3qom4pes5": {
+		"definition": "necromancerFrostWraiths",
+		"x": 55.42562584220407,
+		"y": -160,
+		"root": false
+	},
+	"kycrjv5fokv2i5oq": {
+		"definition": "necromancerWitherWraiths",
+		"x": 92.37604307034012,
+		"y": -160,
+		"root": false
+	},
+	"mdxrtnoe3cpqk2up": {
+		"definition": "necromancerGreaterDreadglare",
+		"x": -92.37604307034012,
+		"y": -160,
+		"root": false
+	},
+	"nn9agiepdbhmakb6": {
+		"definition": "necromancerEnrage",
+		"x": -55.42562584220407,
+		"y": -160,
+		"root": false
+	},
+	"po1zpua99okzv0iy": {
+		"definition": "necromancerWinterborn",
+		"x": 0,
+		"y": 64,
+		"root": false
+	},
+	"mx19tvgt8bqtnjpz": {
+		"definition": "necromancerDeathWarden",
+		"x": -36.95041722813605,
+		"y": 128,
+		"root": false
+	},
+	"kvthappavko2coeu": {
+		"definition": "necromancerDeathEssence",
+		"x": 0,
+		"y": 128,
+		"root": false
+	},
+	"2kqygy3kszdq0vyj": {
+		"definition": "necromancerNecroticFortification",
+		"x": 36.95041722813605,
+		"y": 128,
+		"root": false
+	},
+	"rjtn8vayhhdlded0": {
+		"definition": "necromancerUndeadLegion",
+		"x": 55.42562584220407,
+		"y": 160,
+		"root": false
+	},
+	"580qipg24z65ikgs": {
+		"definition": "necromancerUndeadLegion",
+		"x": -55.42562584220407,
+		"y": 160,
+		"root": false
+	},
+	"iwa4ljmz5unkcjlp": {
+		"definition": "necromancerUndeadLegion",
+		"x": -18.475208614068023,
+		"y": -160,
+		"root": false
+	},
+	"npfsnq81nlafkmi1": {
+		"definition": "necromancerUndeadLegion",
+		"x": 18.475208614068023,
+		"y": -160,
+		"root": false
+	}
+}

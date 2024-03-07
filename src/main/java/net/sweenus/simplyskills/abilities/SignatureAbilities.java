@@ -48,6 +48,7 @@ public class SignatureAbilities {
         String spellbladeSkillTree = "simplyskills:spellblade";
         String crusaderSkillTree = "simplyskills:crusader";
         String clericSkillTree = "simplyskills:cleric";
+        String necromancerSkillTree = "simplyskills:necromancer";
         String baseTree = "simplyskills:tree";
         String ascendancyTree = "simplyskills:ascendancy";
         boolean ability_success = false;
@@ -223,7 +224,16 @@ public class SignatureAbilities {
                     ability_success = ClericAbilities.signatureClericAnointWeapon(player);
                     ability = "AnointWeapon";
                 }
+            }
+            // - Necromancer -
+            if (HelperMethods.isUnlocked(necromancerSkillTree, null, player)) {
 
+                // Divine Intervention
+                if (HelperMethods.isUnlocked(necromancerSkillTree,
+                        SkillReferencePosition.necromancerSpecialisationSummoningRitual, player)) {
+                    ability_success = NecromancerAbilities.signatureNecromancerSummoningRitual(necromancerSkillTree, player);
+                    ability = "SummoningRitual";
+                }
             }
         }
         else if (abilityType.contains("ascendancy")) {
@@ -429,8 +439,13 @@ public class SignatureAbilities {
                 type = "magic, healing, buff";
                 cooldownType = "signature";
             }
+            case "SummoningRitual" -> {
+                cooldown = SimplySkills.necromancerConfig.signatureNecromancerSummoningRitualCooldown * 1000;
+                type = "magic, minion";
+                cooldownType = "signature";
+            }
             case "RighteousHammers" -> {
-                cooldown = 60 * 1000;//SimplySkills.clericConfig.signatureClericAnointWeaponCooldown * 1000;
+                cooldown = 60 * 1000;
                 type = "physical, buff";
                 cooldownType = "ascendancy";
             }
