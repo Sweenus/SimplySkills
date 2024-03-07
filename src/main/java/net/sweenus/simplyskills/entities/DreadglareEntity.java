@@ -70,6 +70,11 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     }
 
     @Override
+    public EntityGroup getGroup() {
+        return EntityGroup.UNDEAD;
+    }
+
+    @Override
     public boolean tryAttack(Entity target) {
         MoveControl moveControl = this.getMoveControl();
         if (moveControl instanceof DirectionalFlightMoveControl) {

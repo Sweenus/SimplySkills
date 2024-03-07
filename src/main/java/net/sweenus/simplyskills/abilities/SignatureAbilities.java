@@ -300,6 +300,11 @@ public class SignatureAbilities {
                     ability_success = AscendancyAbilities.righteousShield(player);
                     ability = "RighteousShield";
                 }
+                if (HelperMethods.isUnlocked(ascendancyTree,
+                        SkillReferencePosition.ascendancyChainbreaker, player)) {
+                    ability_success = AscendancyAbilities.chainbreaker(player);
+                    ability = "Chainbreaker";
+                }
             }
         }
 
@@ -501,6 +506,11 @@ public class SignatureAbilities {
             }
             case "RighteousShield" -> {
                 cooldown = 6 * 1000;
+                type = "physical, magic, buff";
+                cooldownType = "ascendancy";
+            }
+            case "Chainbreaker" -> {
+                cooldown = 45 * 1000;
                 type = "physical, magic, buff";
                 cooldownType = "ascendancy";
             }

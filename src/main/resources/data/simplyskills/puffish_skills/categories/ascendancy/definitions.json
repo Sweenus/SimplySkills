@@ -6389,9 +6389,9 @@
             }
         ]
     },
-    "necromancerSignatureEnrage": {
-        "title": {"translate":"text.skills.necromancerSignatureEnrage.title"},
-        "description": {"translate":"text.skills.necromancerSignatureEnrage.description"},
+    "necromancerSignatureSummoningRitual": {
+        "title": {"translate":"text.skills.necromancerSignatureSummoningRitual.title"},
+        "description": {"translate":"text.skills.necromancerSignatureSummoningRitual.description"},
         "size": 1.4,
         "frame": {
             "type": "texture",
@@ -6405,21 +6405,21 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/necromancer_signature_enrage.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_signature_summoning_ritual.png"
             }
         },
         "rewards": [
             {
                 "type": "puffish_skills:passive_skill",
                 "data": {
-                    "passive_skill": "necromancerSignatureEnrage"
+                    "passive_skill": "necromancerSignatureSummoningRitual"
                 }
             }
         ]
     },
-    "necromancerSignatureSacrifice": {
-        "title": {"translate":"text.skills.necromancerSignatureSacrifice.title"},
-        "description": {"translate":"text.skills.necromancerSignatureSacrifice.description"},
+    "necromancerNecroticFortification": {
+        "title": {"translate":"text.skills.necromancerNecroticFortification.title"},
+        "description": {"translate":"text.skills.necromancerNecroticFortification.description"},
         "size": 1.4,
         "frame": {
             "type": "texture",
@@ -6433,21 +6433,21 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/necromancer_signature_sacrifice.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_necrotic_fortification.png"
             }
         },
         "rewards": [
             {
                 "type": "puffish_skills:passive_skill",
                 "data": {
-                    "passive_skill": "necromancerSignatureSacrifice"
+                    "passive_skill": "necromancerNecroticFortification"
                 }
             }
         ]
     },
-    "necromancerSignatureSpectralGrasp": {
-        "title": {"translate":"text.skills.necromancerSignatureSpectralGrasp.title"},
-        "description": {"translate":"text.skills.necromancerSignatureSpectralGrasp.description"},
+    "necromancerUndeadLegion": {
+        "title": {"translate":"text.skills.necromancerUndeadLegion.title"},
+        "description": {"translate":"text.skills.necromancerUndeadLegion.description"},
         "size": 1.4,
         "frame": {
             "type": "texture",
@@ -6461,14 +6461,266 @@
         "icon": {
             "type": "texture",
             "data": {
-                "texture": "simplyskills:textures/icons/necromancer_signature_spectral_grasp.png"
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_undead_legion.png"
             }
         },
         "rewards": [
             {
                 "type": "puffish_skills:passive_skill",
                 "data": {
-                    "passive_skill": "necromancerSignatureSpectralGrasp"
+                    "passive_skill": "necromancerUndeadLegion"
+                }
+            }
+        ]
+    },
+    "necromancerSummonWraith": {
+        "title": {"translate":"text.skills.necromancerSummonWraith.title"},
+        "description": {"translate":"text.skills.necromancerSummonWraith.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_summon_wraith.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerSummonWraith"
+                }
+            }
+        ]
+    },
+    "necromancerWitherWraiths": {
+        "title": {"translate":"text.skills.necromancerWitherWraiths.title"},
+        "description": {"translate":"text.skills.necromancerWitherWraiths.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_wither_wraiths.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerWitherWraiths"
+                }
+            }
+        ]
+    },
+    "necromancerFrostWraiths": {
+        "title": {"translate":"text.skills.necromancerFrostWraiths.title"},
+        "description": {"translate":"text.skills.necromancerFrostWraiths.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_frost_wraiths.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerFrostWraiths"
+                }
+            }
+        ]
+    },
+    "necromancerBloodHarvest": {
+        "title": {"translate":"text.skills.necromancerBloodHarvest.title"},
+        "description": {"translate":"text.skills.necromancerBloodHarvest.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_blood_harvest.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerBloodHarvest"
+                }
+            }
+        ]
+    },
+    "necromancerGreaterDreadglare": {
+        "title": {"translate":"text.skills.necromancerGreaterDreadglare.title"},
+        "description": {"translate":"text.skills.necromancerGreaterDreadglare.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_greater_dreadglare.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerGreaterDreadglare"
+                }
+            }
+        ]
+    },
+    "necromancerDeathEssence": {
+        "title": {"translate":"text.skills.necromancerDeathEssence.title"},
+        "description": {"translate":"text.skills.necromancerDeathEssence.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_death_essence.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerDeathEssence"
+                }
+            }
+        ]
+    },
+    "necromancerDeathWarden": {
+        "title": {"translate":"text.skills.necromancerDeathWarden.title"},
+        "description": {"translate":"text.skills.necromancerDeathWarden.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_death_warden.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerDeathWarden"
+                }
+            }
+        ]
+    },
+    "necromancerEnrage": {
+        "title": {"translate":"text.skills.necromancerEnrage.title"},
+        "description": {"translate":"text.skills.necromancerEnrage.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_enrage.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerEnrage"
+                }
+            }
+        ]
+    },
+    "necromancerWinterborn": {
+        "title": {"translate":"text.skills.necromancerWinterborn.title"},
+        "description": {"translate":"text.skills.necromancerWinterborn.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/necromancer_winterborn.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "necromancerWinterborn"
                 }
             }
         ]
@@ -8261,6 +8513,34 @@
                 "type": "puffish_skills:passive_skill",
                 "data": {
                     "passive_skill": "ascendancyRighteousShield"
+                }
+            }
+        ]
+    },
+    "ascendancyChainbreaker": {
+        "title": {"translate":"text.skills.ascendancyChainbreaker.title"},
+        "description": {"translate":"text.skills.ascendancyChainbreaker.description"},
+        "size": 1.4,
+        "frame": {
+            "type": "texture",
+            "data": {
+                "unlocked": "simplyskills:textures/frames/unlocked.png",
+                "available": "simplyskills:textures/frames/available.png",
+                "locked": "simplyskills:textures/frames/locked.png",
+                "excluded": "simplyskills:textures/frames/excluded.png"
+            }
+        },
+        "icon": {
+            "type": "texture",
+            "data": {
+                "texture": "simplyskills:textures/icons/alternate_reduced/ascendancy_chainbreaker.png"
+            }
+        },
+        "rewards": [
+            {
+                "type": "puffish_skills:passive_skill",
+                "data": {
+                    "passive_skill": "ascendancyChainbreaker"
                 }
             }
         ]

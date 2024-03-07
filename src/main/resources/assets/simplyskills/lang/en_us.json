@@ -125,6 +125,10 @@
   "item.simplyskills.gracious_manuscript":              "Gracious Manuscript",
   "item.simplyskills.skill_chronicle":                  "Skill Chronicle",
 
+  "entity.simplyskills.dreadglare":                     "Dreadglare",
+  "entity.simplyskills.greater_dreadglare":             "Greater Dreadglare",
+  "entity.simplyskills.wraith":                         "Wraith",
+
   "item.simplyskills.malevolent_manuscript.tooltip1":   "Refunds all points invested ",
   "item.simplyskills.malevolent_manuscript.tooltip2":   "in your base skill tree, ",
   "item.simplyskills.malevolent_manuscript.tooltip3":   "allowing you to re-specialise.",
@@ -1354,7 +1358,7 @@
   "text.skills.ascendancyRighteousHammers.description": "§7\nSummon hammers that orbit you for a duration, dealing damage to nearby enemies and granting you 2% increased melee attack per hammer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional hammer.\n\n§a60s Cooldown§7",
 
   "text.skills.ascendancyBoneArmor.title": "Ascendancy Ability: §6[Bone Armor]§7",
-  "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7",
+  "text.skills.ascendancyBoneArmor.description": "§7\nShield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.\n\n§6[For every 10 Ascendancy]§7\nSummon one additional bone.\n\n§6[At 30+ Ascendancy]§7\nWhen your last layer of Bone Armor is removed, gain Undying and Regeneration for 8s.\n\n§a90s Cooldown§7\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage.",
 
   "text.skills.ascendancyCyclonicCleave.title": "Ascendancy Ability: §6[Cyclonic Cleave]§7",
   "text.skills.ascendancyCyclonicCleave.description": "§7\nViolently swing your weapon around yourself while moving forward, dealing damage to nearby enemies.\nThis attack scales with the highest of your attack, ranged, or spell attributes.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nCyclonic Cleave now pulls enemies it hits toward you.\n\n§a25s Cooldown§7",
@@ -1384,5 +1388,8 @@
   "text.skills.ascendancySkywardSunder.description": "§7\nGain a stack of Barrier per stack of Might on you and charge forward, knocking back enemies and performing an upward strike, launching both you and your targets into the air before slamming them back into the ground.\n\nThis attack scales with the highest of your attack, ranged, or spell attributes.\nLasts 3.0s.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nSkyward Sunder now inflicts enemies hit during the charging phase with Deathmark.\n\n§a16s Cooldown§7",
 
   "text.skills.ascendancyRighteousShield.title": "Ascendancy Ability: §6[Righteous Shield]§7",
-  "text.skills.ascendancyRighteousShield.description": "§7\nWhile this ability is slotted, you generate a stack of §aGolden Aegis§7 whenever you block an attack. §aGolden Aegis§7 increases Healing Spell Power, Armor, and Armor Toughness by 1% per stack. Max 15 stacks.\n\nActivating this ability consumes all stacks of §aGolden Aegis§7 to manifest a shield of holy energy that can be thrown for a variety of effects depending on the stacks consumed.\n\n§7§bLess than 5 stacks:§7 The shield deals damage to enemies and ricochets 2 times.\n§b5 Stacks:§7 The shield deals increased damage to enemies and ricochets 5 times.\n§b10 Stacks:§7 The shield no longer damages enemies or ricochets and instead pierces and heals allies it passes through.\n§b15 Stacks:§7 The shield is larger, deals significantly more damage, and inflicts Death Mark, but it no longer ricochets.§7\n\n§6[For every 10 Ascendancy]§7\nIncreases §aGolden Aegis§7 max stacks by 1.\n\n§6[At 30+ Ascendancy]§7\nWhile slotted, this ability now passively generates stacks of §aGolden Aegis§7.\n\n§a6s Cooldown§7"
+  "text.skills.ascendancyRighteousShield.description": "§7\nWhile this ability is slotted, you generate a stack of §aGolden Aegis§7 whenever you block an attack. §aGolden Aegis§7 increases Healing Spell Power, Armor, and Armor Toughness by 1% per stack. Max 15 stacks.\n\nActivating this ability consumes all stacks of §aGolden Aegis§7 to manifest a shield of holy energy that can be thrown for a variety of effects depending on the stacks consumed.\n\n§7§bLess than 5 stacks:§7 The shield deals damage to enemies and ricochets 2 times.\n§b5 Stacks:§7 The shield deals increased damage to enemies and ricochets 5 times.\n§b10 Stacks:§7 The shield no longer damages enemies or ricochets and instead pierces and heals allies it passes through.\n§b15 Stacks:§7 The shield is larger, deals significantly more damage, and inflicts Death Mark, but it no longer ricochets.§7\n\n§6[For every 10 Ascendancy]§7\nIncreases §aGolden Aegis§7 max stacks by 1.\n\n§6[At 30+ Ascendancy]§7\nWhile slotted, this ability now passively generates stacks of §aGolden Aegis§7.\n\n§a6s Cooldown§7",
+
+  "text.skills.ascendancyChainbreaker.title": "Ascendancy Ability: §6[Chainbreaker]§7",
+  "text.skills.ascendancyChainbreaker.description": "§7\nImmediately cleanse yourself of all negative effects and gain Might and Marksmanship.\n\n§6[For every 10 Ascendancy]§7\n+ 1 stack of Might and Marksmanship.\n\n§6[At 30+ Ascendancy]§7\nNow also grants you Undying.\n\n§a35s Cooldown§7\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage."
 }

@@ -1,10 +1,7 @@
 package net.sweenus.simplyskills.entities;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Flutterer;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.BirdNavigation;
@@ -131,6 +128,10 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
         }
         target.timeUntilRegen = 0;
         return super.tryAttack(target);
+    }
+    @Override
+    public EntityGroup getGroup() {
+        return EntityGroup.UNDEAD;
     }
     @Override
     public void onDeath(DamageSource damageSource) {

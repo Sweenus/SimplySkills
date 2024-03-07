@@ -204,4 +204,16 @@ public class AscendancyAbilities {
         return false;
     }
 
+    public static boolean chainbreaker(PlayerEntity player) {
+        HelperMethods.buffSteal(player, player,true, false,true,true);
+        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SPELL_ARCANE_CAST,
+                SoundCategory.PLAYERS, 0.3f, 1.1f);
+        HelperMethods.incrementStatusEffect(player, EffectRegistry.MIGHT, 120, 1+(getAscendancyPoints(player) / 10), 19);
+        HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 120, 1+(getAscendancyPoints(player) / 10), 19);
+        HelperMethods.spawnParticlesPlane(player.getWorld(), ParticleTypes.POOF, player.getBlockPos(), 1, 0, 0.1, 0);
+        if (getAscendancyPoints(player) > 29)
+            player.addStatusEffect(new StatusEffectInstance(EffectRegistry.UNDYING, 120, 0, false, false, true));
+        return true;
+    }
+
 }

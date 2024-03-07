@@ -309,11 +309,6 @@ public class HelperMethods {
         }
     }
 
-    public static void cleanseStatusEffects(LivingEntity livingEntity, int stacksRemoved) {
-
-
-    }
-
     public static boolean buffSteal(
             LivingEntity user,
             LivingEntity target,
