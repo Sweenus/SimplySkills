@@ -94,7 +94,7 @@
   "effect.simplyskills.vitality_bond":                  "Узы жизненной силы",
   "effect.simplyskills.vitality_bond.desc":             "Очки ОЗ синхронизируются со всеми затронутыми сущностями",
   "effect.simplyskills.marksmanship":                   "Искусство стрельбы",
-  "effect.simplyskills.marksmanship.desc":              "Увеличивает урон Дальних атак на 10% в стак",
+  "effect.simplyskills.marksmanship.desc":              "Увеличивает урон Дальних атак на 10% за стак",
   "effect.simplyskills.agile":                          "Проворность",
   "effect.simplyskills.agile.desc":                     "Урон дальних атак а так же скорость атаки, передвижения и чтения заклинаний увеличивается на 5% за стак",
     "effect.simplyskills.bone_armor":                   "Костяная броня",
