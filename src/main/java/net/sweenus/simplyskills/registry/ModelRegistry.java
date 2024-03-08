@@ -23,7 +23,8 @@ public class ModelRegistry {
                 new Identifier(MOD_ID, "projectile/comet_projectile"),
                 new Identifier(MOD_ID, "projectile/arcane_slash"),
                 new Identifier(MOD_ID, "projectile/arrow"),
-                new Identifier(MOD_ID, "projectile/righteous_shield")
+                new Identifier(MOD_ID, "projectile/righteous_shield"),
+                new Identifier(MOD_ID, "projectile/righteous_hammers")
         ));
     }
 

@@ -1,0 +1,91 @@
+{
+  "school": "PHYSICAL_MELEE",
+  "range": 26,
+  "learn": {
+    "tier": 1
+  },
+  "cast": {
+    "duration": 0.75,
+    "sound": {
+      "id": "spell_engine:generic_healing_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:holy_spark_mini",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "PROJECTILE",
+      "projectile": {
+        "projectile": {
+          "velocity": 0.4,
+          "homing_angle": 46.0,
+          "perks": {
+            "ricochet": 2,
+            "bounce": 2
+          },
+          "client_data": {
+            "travel_particles": [
+              {
+                "particle_id": "spell_engine:holy_spark",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 2.0,
+                "min_speed": 0.05,
+                "max_speed": 0.1
+              }
+            ],
+            "model": {
+              "model_id": "simplyskills:projectile/righteous_hammers",
+              "render": "GLOW",
+              "scale": 1
+            }
+          }
+        }
+      }
+    },
+    "sound": {
+      "id": "simplyskills:spell_radiant_cast",
+      "volume": 0.1,
+      "pitch": 1.2
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 0.6,
+          "spell_power_coefficient": 0.8
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:holy_hit",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 40,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        }
+      ],
+      "sound": {
+        "id": "simplyskills:hit_03",
+        "volume": 0.5,
+        "pitch": 0.9
+      }
+    }
+  ],
+  "cost": {
+    "durability": 0
+  }
+}
