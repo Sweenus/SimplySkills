@@ -398,5 +398,40 @@
     "sounds": [
       "simplyskills:magic_shamanic_voice_20"
     ]
+  },
+  "magic_shamanic_spell_01": {
+    "sounds": [
+      "simplyskills:magic_shamanic_spell_01"
+    ]
+  },
+  "magic_shamanic_spell_02": {
+    "sounds": [
+      "simplyskills:magic_shamanic_spell_02"
+    ]
+  },
+  "magic_shamanic_spell_03": {
+    "sounds": [
+      "simplyskills:magic_shamanic_spell_03"
+    ]
+  },
+  "magic_shamanic_spell_04": {
+    "sounds": [
+      "simplyskills:magic_shamanic_spell_04"
+    ]
+  },
+  "dark_whirlwind_whoosh": {
+    "sounds": [
+      "simplyskills:dark_whirlwind_whoosh"
+    ]
+  },
+  "energy_charge": {
+    "sounds": [
+      "simplyskills:energy_charge"
+    ]
+  },
+  "maw": {
+    "sounds": [
+      "simplyskills:maw"
+    ]
   }
 }

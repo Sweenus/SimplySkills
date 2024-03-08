@@ -88,6 +88,13 @@ public class SoundRegistry {
     public static SoundEvent OBJECT_IMPACT_THUD_REPEAT = register("object_impact_thud_repeat");
     public static SoundEvent HIT_03 = register("hit_03");
     public static SoundEvent MAGIC_SHAMANIC_VOICE_20 = register("magic_shamanic_voice_20");
+    public static SoundEvent MAGIC_SHAMANIC_SPELL_01 = register("magic_shamanic_spell_01");
+    public static SoundEvent MAGIC_SHAMANIC_SPELL_02 = register("magic_shamanic_spell_02");
+    public static SoundEvent MAGIC_SHAMANIC_SPELL_03 = register("magic_shamanic_spell_03");
+    public static SoundEvent MAGIC_SHAMANIC_SPELL_04 = register("magic_shamanic_spell_04");
+    public static SoundEvent DARK_WHIRLWIND_WHOOSH = register("dark_whirlwind_whoosh");
+    public static SoundEvent ENERGY_CHARGE = register("energy_charge");
+    public static SoundEvent MAW = register("maw");
 
     public static void registerSounds() {
     }

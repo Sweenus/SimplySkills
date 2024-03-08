@@ -284,8 +284,8 @@
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodStacks" :                          "§a[Passive]§7 Lightning Rod stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodMaxStacks" :                       "§a[Passive]§7 Lightning Rod maximum stacks",
   "text.autoconfig.simplyskills.option.initiate.passiveInitiateLightningRodFrequency" :                       "§a[Passive]§7 Lightning Rod frequency",
-  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyStacks" :                                 "§a[Passive]§7 Hasty Immobilize stacks",
-  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyDuration" :                               "§a[Passive]§7 Hasty Immobilize duration",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyStacks" :                                 "§a[Passive]§7 Hasty Slowness stacks",
+  "text.autoconfig.simplyskills.option.initiate.passiveInitiateHastyDuration" :                               "§a[Passive]§7 Hasty Slowness duration",
 
 
 
@@ -700,7 +700,7 @@
   "text.skills.initiateEldritchEnfeeblement.description":"§7Your spell damage is increased by §a+5% §f[x]§7, but your movespeed is decreased by §c10% §f[x]§7.\n\nGain a chance equal to your Spell Critical Chance to restore health on spell cast.\nThe amount restored scales with your Spell Critical Damage.",
   
   "text.skills.initiateHasty.title":"§7§a[Hasty]§7",
-  "text.skills.initiateHasty.description":"§7Your movespeed is increased by §a+15% §f[x]§7, but you are inflicted with immobilize when taking damage.\n\n§f(Immobilize)§7 greatly slows and damages the victim when they attempt to move.",
+  "text.skills.initiateHasty.description":"§7Your movespeed is increased by §a+15% §f[x]§7, but you are §cinflicted with Slowness§7 when taking damage.",
   
   "text.skills.initiatePerilousPrecision.title":"§7§a[Perilous Precision]§7",
   "text.skills.initiatePerilousPrecision.description":"§7Your spell critical chance is increased by §a+5% §f[x]§7, but your max health is reduced by §c15% §f[x]§7.\n\nYou have a 50% chance on spell cast to gain stacking Barrier.\nThis chance is reduced by a percentage equal to your max health.",
@@ -873,7 +873,7 @@
   "text.skills.initiateSpellcloak.description":"§7Casting a spell grants you brief Stealth, as long as you aren't currently Revealed.\n\n§f(Stealth)§7 causes you to blend into the shadows, avoiding monster detection completely. Dealing or Receiving damage removes stealth.",
 
   "text.skills.initiateOverload.title":"§7§a[Overload]§7",
-  "text.skills.initiateOverload.description":"§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you §a+45% §f[x]§7 increased spell crit damage & §a+10% §f[x]§7 spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing significant magic damage to yourself and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
+  "text.skills.initiateOverload.description":"§7Casting a spell grants you a stack of Overload for a short duration.\n\n§f(Overload)§7 grants you §a+45% §f[x]§7 increased spell crit damage & §a+10% §f[x]§7 spell crit chance per stack.\nUpon exceeding 5 stacks you overload, dealing §csignificant magic damage to yourself§7 and nearby enemies.\n\nThe damage dealt to enemies is scaled by your max HP and Soul spell power.",
 
   "text.skills.crusaderPath.title":"Path of the §bCrusader§7",
   "text.skills.crusaderPath.description":"§e[Requires §nPaladins & Priests§r§e to be installed]§7\n\nHold §f[SHIFT] §7for more info:",
@@ -939,8 +939,8 @@
   "text.skills.clericPath.extra_description":"\n§7Those of the §bCleric§7 specialisation are known for their unwavering commitment to safeguarding and nurturing their allies. They possess a unique combination of §ahealing§7, §asupport§7, and the ability to §abear the burdens§7 of those they protect.",
   
   "text.skills.necromancerPath.title":"Path of the §bNecromancer§7",
-  "text.skills.necromancerPath.description":"\n§eNOT YET IMPLEMENTED§7",
-  "text.skills.necromancerPath.extra_description":"\n§eNOT YET IMPLEMENTED§7",
+  "text.skills.necromancerPath.description":"\n§7Hold §f[SHIFT] §7for more info:",
+  "text.skills.necromancerPath.extra_description":"\n§7Those of the §bNecromancer§7 specialisation partake in foul necrotic sorcery, conjuring §aundead minions§7 from flesh and bone.\n\nSpecialising in Frost & Soul Spell power, they are capable of dealing significant damage indirectly through their minions, and staving off the grasp of death itself.",
 
   "text.skills.wizardPassiveSpellEcho.title":"§7§a[Spell Echo]§7",
   "text.skills.wizardPassiveSpellEcho.description":"§7Your spell hits have a chance to echo, casting an additional random spell at the target.",
@@ -1388,7 +1388,7 @@
   "text.skills.ascendancySkywardSunder.description": "§7\nGain a stack of Barrier per stack of Might on you and charge forward, knocking back enemies and performing an upward strike, launching both you and your targets into the air before slamming them back into the ground.\n\nThis attack scales with the highest of your attack, ranged, or spell attributes.\nLasts 3.0s.\n\n§6[For every 1 Ascendancy]§7\nIncreases ability damage.\n\n§6[At 30+ Ascendancy]§7\nSkyward Sunder now inflicts enemies hit during the charging phase with Deathmark.\n\n§a16s Cooldown§7",
 
   "text.skills.ascendancyRighteousShield.title": "Ascendancy Ability: §6[Righteous Shield]§7",
-  "text.skills.ascendancyRighteousShield.description": "§7\nWhile this ability is slotted, you generate a stack of §aGolden Aegis§7 whenever you block an attack. §aGolden Aegis§7 increases Healing Spell Power, Armor, and Armor Toughness by 1% per stack. Max 15 stacks.\n\nActivating this ability consumes all stacks of §aGolden Aegis§7 to manifest a shield of holy energy that can be thrown for a variety of effects depending on the stacks consumed.\n\n§7§bLess than 5 stacks:§7 The shield deals damage to enemies and ricochets 2 times.\n§b5 Stacks:§7 The shield deals increased damage to enemies and ricochets 5 times.\n§b10 Stacks:§7 The shield no longer damages enemies or ricochets and instead pierces and heals allies it passes through.\n§b15 Stacks:§7 The shield is larger, deals significantly more damage, and inflicts Death Mark, but it no longer ricochets.§7\n\n§6[For every 10 Ascendancy]§7\nIncreases §aGolden Aegis§7 max stacks by 1.\n\n§6[At 30+ Ascendancy]§7\nWhile slotted, this ability now passively generates stacks of §aGolden Aegis§7.\n\n§a6s Cooldown§7",
+  "text.skills.ascendancyRighteousShield.description": "§7\nWhile this ability is slotted, you generate a stack of §aGolden Aegis§7 whenever you block an attack. §aGolden Aegis§7 increases Healing Spell Power, Armor, and Armor Toughness by 1% per stack. Max 15 stacks.\n\nActivating this ability consumes all stacks of §aGolden Aegis§7 to manifest a shield of holy energy that can be thrown for a variety of effects depending on the stacks consumed.\n\n§7§bLess than 5 stacks:§7 The shield deals damage to enemies and ricochets 2 times.\n§b5 Stacks:§7 The shield deals increased damage to enemies and ricochets 5 times.\n§b10 Stacks:§7 The shield no longer damages enemies or ricochets and instead pierces and heals allies it passes through.\n§b15 Stacks:§7 The shield is larger, deals significantly more damage, and inflicts Death Mark, but it no longer ricochets.§7\n\n§6[For every 10 Ascendancy]§7\nIncreases §aGolden Aegis§7 max stacks by 1.\n\n§6[At 30+ Ascendancy]§7\nWhile slotted, this ability now passively generates stacks of §aGolden Aegis§7.\n\nDamage scales with Healing Spell Power.\n\n§a6s Cooldown§7",
 
   "text.skills.ascendancyChainbreaker.title": "Ascendancy Ability: §6[Chainbreaker]§7",
   "text.skills.ascendancyChainbreaker.description": "§7\nImmediately cleanse yourself of all negative effects and gain Might and Marksmanship.\n\n§6[For every 10 Ascendancy]§7\n+ 1 stack of Might and Marksmanship.\n\n§6[At 30+ Ascendancy]§7\nNow also grants you Undying.\n\n§a35s Cooldown§7\n\n§f(Undying)§7 Infused with celestial energy, the entity cannot be killed.\nHowever, if the entity is below 60% HP when the effect ends, they will take fatal damage."

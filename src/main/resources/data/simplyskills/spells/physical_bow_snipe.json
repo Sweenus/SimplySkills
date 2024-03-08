@@ -42,9 +42,9 @@
               }
             ],
             "model": {
-              "model_id": "minecraft:bedrock",
+              "model_id": "simplyskills:projectile/arrow",
               "render": "DEEP",
-              "scale": 0.04
+              "scale": 0.9
             }
           }
         }

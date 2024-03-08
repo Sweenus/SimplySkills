@@ -237,9 +237,10 @@ public class AbilityLogic {
                 ClericAbilities.passiveClericHealingWard(player, targets, spellId);
             }
 
-            if (school == MagicSchool.PHYSICAL_RANGED && HelperMethods.isUnlocked("simplyskills:tree",
-                    SkillReferencePosition.wayfarerQuickfire, player)) {
-                HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 6);
+            if (school == MagicSchool.PHYSICAL_RANGED) {
+                if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.wayfarerQuickfire, player))
+                    HelperMethods.incrementStatusEffect(player, EffectRegistry.MARKSMANSHIP, 40, 1, 6);
+                AbilityEffects.effectRangerElementalArrows(player);
             }
             CrusaderAbilities.signatureHeavensmithsCallImpact("simplyskills:crusader", targets, spellId, player);
         }

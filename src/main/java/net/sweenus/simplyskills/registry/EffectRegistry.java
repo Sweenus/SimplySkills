@@ -255,7 +255,7 @@ public class EffectRegistry {
     public static StatusEffect SKYWARDSUNDER= new SkywardSunderEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect RIGHTEOUSSHIELD= new RighteousShieldEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
-    public static StatusEffect GOLDENAEGIS= new MagicCircleEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+    public static StatusEffect GOLDENAEGIS= new GoldenAegisEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ARMOR,
                     "c3bf99d1-ee9c-4307-92b0-660581bfa28a",
                     0.01,

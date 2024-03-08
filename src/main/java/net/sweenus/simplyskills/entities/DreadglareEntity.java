@@ -16,6 +16,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -23,10 +24,12 @@ import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
 import net.sweenus.simplyskills.abilities.NecromancerAbilities;
 import net.sweenus.simplyskills.entities.ai.DirectionalFlightMoveControl;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class DreadglareEntity extends TameableEntity implements Angerable, Flutterer {
@@ -75,6 +78,13 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     }
 
     @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (Objects.equals(source.getAttacker(), this.getOwner()))
+            return false;
+        return super.damage(source, amount);
+    }
+
+    @Override
     public boolean tryAttack(Entity target) {
         MoveControl moveControl = this.getMoveControl();
         if (moveControl instanceof DirectionalFlightMoveControl) {
@@ -93,6 +103,9 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
                 player.heal(siphonAmount / 2);
             }
         }
+        float random = (float) ((float) this.random.nextInt(5) * 0.1);
+        this.getWorld().playSoundFromEntity(null, this, SoundRegistry.MAW,
+                SoundCategory.PLAYERS, 0.1f, 1.3f + random);
 
         target.timeUntilRegen = 0;
         return super.tryAttack(target);

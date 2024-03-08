@@ -108,7 +108,7 @@ public class InitiateAbilities {
     public static void passiveInitiateHasty(PlayerEntity player) {
         int duration = SimplySkills.initiateConfig.passiveInitiateHastyDuration;
         int stacks = SimplySkills.initiateConfig.passiveInitiateHastyStacks;
-        HelperMethods.incrementStatusEffect(player, EffectRegistry.IMMOBILIZE, duration, stacks, 1);
+        HelperMethods.incrementStatusEffect(player, StatusEffects.SLOWNESS, duration, stacks, 4);
     }
 
     public static void passiveInitiateFrail(PlayerEntity player) {

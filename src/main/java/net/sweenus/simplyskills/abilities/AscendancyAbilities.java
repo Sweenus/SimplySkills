@@ -72,6 +72,8 @@ public class AscendancyAbilities {
                 120 + (getAscendancyPoints(player)), 0, false, false, true));
         player.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE,
                 25, 0, false, false, true));
+        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.SPELL_RADIANT_HIT,
+                SoundCategory.PLAYERS, 0.2f, 0.9f);
         return true;
     }
     public static boolean magicCircleEffect(PlayerEntity player) {
@@ -104,6 +106,8 @@ public class AscendancyAbilities {
                     agonyEffect.setSourceEntity(player);
                     ee.addStatusEffect(agonyEffect);
                     HelperMethods.spawnWaistHeightParticles(world, ParticleTypes.SMOKE, player, ee, 20);
+                    player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_04,
+                            SoundCategory.PLAYERS, 0.2f, 1.0f);
 
                     return true;
                 }
@@ -139,6 +143,8 @@ public class AscendancyAbilities {
                             false, true);
                     tormentEffect.setSourceEntity(player);
                     ee.addStatusEffect(tormentEffect);
+                    player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_04,
+                            SoundCategory.PLAYERS, 0.2f, 1.0f);
 
                     if (getAscendancyPoints(player) > 29) {
                         SimplyStatusEffectInstance tauntedEffect = new SimplyStatusEffectInstance(
@@ -177,6 +183,8 @@ public class AscendancyAbilities {
 
     public static boolean cataclysm(PlayerEntity player) {
         SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cataclysm", 3, player, null);
+        player.getWorld().playSoundFromEntity(null, player, SoundRegistry.ENERGY_CHARGE,
+                SoundCategory.PLAYERS, 0.3f, 1.0f);
         return true;
     }
 

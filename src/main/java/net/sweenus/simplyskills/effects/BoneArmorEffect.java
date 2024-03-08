@@ -9,9 +9,11 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.abilities.AscendancyAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 
 import java.util.Map;
@@ -45,6 +47,13 @@ public class BoneArmorEffect extends StatusEffect {
         }
 
         super.onRemoved(entity, attributes, amplifier);
+    }
+
+    @Override
+    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+        entity.getWorld().playSoundFromEntity(null, entity, SoundRegistry.MAGIC_SHAMANIC_SPELL_01,
+                SoundCategory.PLAYERS, 0.2f, 1 + ((float) amplifier /10));
+        super.onApplied(entity, attributes, amplifier);
     }
 
 }
