@@ -181,7 +181,7 @@
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions" :                                     "Remove unlock restrictions",
   "text.autoconfig.simplyskills.option.client.removeUnlockRestrictions.@Tooltip" :                            "Allows Specialisations to be unlocked without \npathing to them in the skill tree.\nAlso allows unlocking more than one specialisation.\n\nNot recommended, except for very particular use-cases.",
   "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier" :                          "Spell Haste Cooldown Reduction Modifier",
-  "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier.@Tooltip" :                 "Controls how heavily Spell Haste impacts cooldowns.\nA higher value means Spell Haste will further reduce cooldowns.",
+  "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier.@Tooltip" :                 "Controls how heavily Spell Haste impact секундная перезарядкаs.\nA higher value means Spell Haste will further reduce cooldowns.",
   "text.autoconfig.simplyskills.option.client.minimumAchievableCooldown" :                                    "Minimum achievable cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.client.minimumAchievableCooldown.@Tooltip" :                           "Limits how short a duration can be reduced to via Spell Haste.",
   "text.autoconfig.simplyskills.option.client.minimumTimeBetweenAbilityUse" :                                 "Minimum time between ability use (in seconds)",
@@ -582,6 +582,7 @@
   "text.skills.crusader_category.title":                                                                      "§7§bСпециализация Крестоносца",
   "text.skills.ranger_category.title":                                                                        "§7§bСпециализация Следопыта§7",
   "text.skills.rogue_category.title":                                                                         "§7§bСпециализация Плута§7",
+  "text.skills.necromancer_category.title":                                                                   "§7§bСпециализация Некроманта§7",
   "text.skills.base_category.title":                                                                          "§7§aДрево навыков§7",
   "text.skills.ascendancy_category.title":                                                                    "§7§6Древо восхождения§7",
   
@@ -936,8 +937,8 @@
   "text.skills.clericPath.extra_description":"\n§7Те кто выбрал путь §bЦелителя§7 известны своей непоколебимой приверженностью к защите и уходу за своими союзниками. Они обладают уникальным сочетанием §aлечения§7 с §aподдержкой§7, и способностью §aнести бремя§7 тех, кого они защищают.",
   
   "text.skills.necromancerPath.title":"Путь §bНекроманта§7",
-  "text.skills.necromancerPath.description":"\n§eНе закончен§7",
-  "text.skills.necromancerPath.extra_description":"\n§eНе закончен§7",
+  "text.skills.necromancerPath.description":"\n§7Удерживайте §f[SHIFT] §7для подробной информации:",
+  "text.skills.necromancerPath.extra_description":"\n§7Те кто избрали путь §bНекроманта§7 специализируются на тёмной магии, повеливая смертью они создают из плоти и костей своих миньонов.\n\nСпециализируюясь на заклинаниях Души и Холода, они наносят значительный урон с помощью своих приспешников, а также могут противостоять самой смерти.",
 
   "text.skills.wizardPassiveSpellEcho.title":"§7§a[Эхо заклинания]§7",
   "text.skills.wizardPassiveSpellEcho.description":"§7Ваше попадание заклинанием имеет шанс эха, накладывает на цель дополнительное случайное заклинание.",
@@ -1285,7 +1286,7 @@
   "text.skills.berserkerSignatureRampageChargeImmob.description":"§7Враги, попавшие под ваш рывок, будут Оглушены. \n\n§f(Оглушение)§7 оглушённый получает сильное замедление, а при попытке сдвинуться с места ему наносится урон.",
   
   "text.skills.berserkerSignatureBloodthirsty.title":"Способность специализации: §6[Кровожадность]§7",
-  "text.skills.berserkerSignatureBloodthirsty.description":"§7\nПри использование вы получаете эффект кровожадность на 20 секунд.\n\n§f(Кровожадность)§7 даёт вам 25% от вашего максимальнго количества ОЗ за каждого убитого врага.\n\n§a25 секундная перезарядка§7",
+  "text.skills.berserkerSignatureBloodthirsty.description":"§7\nПри использование вы получаете эффект кровожадность на 20 секунд.\n\n§f(Кровожадность)§7 даёт вам 25% от вашего максимального количества ОЗ за каждого убитого врага.\n\n§a25 секундная перезарядка§7",
   
   "text.skills.berserkerSignatureBloodthirstyMighty.title":"§f[Сильная кровожадность]",
   "text.skills.berserkerSignatureBloodthirstyMighty.description":"§7§6Используя способность [Кровожадность]§7 вы получаете эффект Мощь.\n\n§f(Мощь)§7 увеличивает урон от атаки ближнего боя на §a+10% §f[x]§7 за каждый стак.",
@@ -1307,6 +1308,42 @@
   
   "text.skills.berserkerSignatureBerserkingLeapPull.title":"§f[Магнитический прыжок]",
   "text.skills.berserkerSignatureBerserkingLeapPull.description":"§7Удар в прыжке теперь притягивает ближайших врагов, а не отбрасывает их назад.",
+
+  "text.skills.necromancerSignatureSummoningRitual.title":"Способность специализации: §6[Ритуал призыва]§7",
+  "text.skills.necromancerSignatureSummoningRitual.description":"§7\nВы проводите ритуал и призываете миньона нежеть.\n\nИзначально способность призывает §fБлуждающий глаз§7. Летающий миньон, который набрасывается на ваших врагов и наносит физический урон в ближнем бою.\n\nУрон вашего миньона зависит от вашей Силы заклниний Души. Количество ОЗ ваших миньонов зависит от вашего.\n\nМиньоны могут находится подле вас только 120 секунд, после они исчезают, но могут быть призваны ещё раз.\n\n§a120 секундная перезарядка§7",
+
+  "text.skills.necromancerNecroticFortification.title":"§f[Некротическое укрепление]",
+  "text.skills.necromancerNecroticFortification.description":"§7Теперь призваные вами миньоны наследуют ваши атрибуты Броня и Твёрдость брони.",
+
+  "text.skills.necromancerUndeadLegion.title":"§f[Легион нежети]",
+  "text.skills.necromancerUndeadLegion.description":"§7Ваша способоность §6[Ритуал призыва]§7 теперь призывает дополнительного миньона.",
+
+  "text.skills.necromancerSummonWraith.title":"§f[Призыв Призрака]",
+  "text.skills.necromancerSummonWraith.description":"§7Ваша способоность §6[Ритуал призыва]§7 now also has a chance to summon a §fПризрак§7 minion. Летающий миньон, который неотступно следует за вами, накладывая на ближайших врагов заклинания Души.\n\nЗаклинания вызванные миньоном §fПризрак§7 считаются вашими заклинаниями и получают бонусы от любых пассивных навыков, срабатывающих от таких заклинаний.",
+
+  "text.skills.necromancerWitherWraiths.title":"§f[Иссушающий Призрак]",
+  "text.skills.necromancerWitherWraiths.description":"§7Ваш миньон §fПризрак§7 теперь накладывает иссушение вместе с уроном от заклинаний.",
+
+  "text.skills.necromancerFrostWraiths.title":"§f[Морозный Призрак]",
+  "text.skills.necromancerFrostWraiths.description":"§7Ваш миньон §fПризрак§7 теперь накладывает замедление вместе с уроном от заклинаний.",
+
+  "text.skills.necromancerBloodHarvest.title":"§f[Кровавая жатва]",
+  "text.skills.necromancerBloodHarvest.description":"§7Ваш миньон Блуждающий глаз теперь ворует ОЗ при попадание. Часть украденного также достаётся вам.",
+
+  "text.skills.necromancerGreaterDreadglare.title":"§f[Большой Блуждающий глаз]",
+  "text.skills.necromancerGreaterDreadglare.description":"§7Ваша способоность §6[Ритуал призыва]§7 Больше не призывает нескольких Блуждающих глаз, но призывает §fБольшой Блуждающий глаз§7.\n\n§fБольшой Блуждающий глаз§7 Получает бонус ко всем атрибутам, а также осмеевает врагов, по которым попадает.",
+
+  "text.skills.necromancerDeathEssence.title":"§f[Эссенция смерти]",
+  "text.skills.necromancerDeathEssence.description":"§7Каждый раз, когда умирает миньон, вы получаете стак Костяной брони.\n\n§f(Костяная броня)§7 Покройте себя слоем костей. За одну кость вы получаете увеличение Брони и Твёрдости брони на 10%.\nПри каждом ударе по вам, вы теряете одну кость.",
+
+  "text.skills.necromancerDeathWarden.title":"§f[Смотритель смерти]",
+  "text.skills.necromancerDeathWarden.description":"§7При получаение урона при показателе ОЗ ниже 50%, вы высасываете жизненные силы из ваших миньонов.",
+
+  "text.skills.necromancerEnrage.title":"§f[Ярость некроманта]",
+  "text.skills.necromancerEnrage.description":"§7Когда один из ваших миньонов умирает, все остальные миньоны поблизости получают Силу и Сопротивление.",
+
+  "text.skills.necromancerWinterborn.title":"§f[Дитя зимы]",
+  "text.skills.necromancerWinterborn.description":"§7За каждую 1 силу заклинания Холода, которая у вас есть, вы получаете стак эффекта Шок души.\n\n§f(Шок души)§7 даёт §a+1 §f[x]§7 силы заклинаний Души или Молнии за стак.",
   
   "text.skills.portalSapphire.title":"§7§6[Ветвь: §fСапфир§6]§7",
   "text.skills.portalSapphire.description":"§7\nРазблокирует узлы ветви того же типа, позволяя вам легче перемещаться по дереву навыков",
