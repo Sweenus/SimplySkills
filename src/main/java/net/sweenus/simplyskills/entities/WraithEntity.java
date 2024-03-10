@@ -34,6 +34,7 @@ import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
+import java.util.Objects;
 import java.util.UUID;
 
 public class WraithEntity extends TameableEntity implements Angerable, Flutterer {
@@ -71,7 +72,7 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
 
             if (this.getTarget() == null && this.getOwner() != null)
                 this.setTarget(this.getOwner());
-            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 10)
+            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 20)
                 this.setTarget(this.getOwner());
 
             Box box = HelperMethods.createBoxHeight(this, 16);
@@ -89,7 +90,7 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
                         .orElse(null);
 
                 if (closestEntity != null) {
-                    if ((closestEntity instanceof LivingEntity ee)) {
+                    if ((closestEntity instanceof HostileEntity ee)) {
                         if (HelperMethods.checkFriendlyFire(ee, player)) {
 
                             if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationWitherWraiths, player))
@@ -118,6 +119,13 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
         }
 
         super.tick();
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (Objects.equals(source.getAttacker(), this.getOwner()))
+            return false;
+        return super.damage(source, amount);
     }
 
     @Override

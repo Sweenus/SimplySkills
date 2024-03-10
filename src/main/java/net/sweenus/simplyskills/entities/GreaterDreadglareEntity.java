@@ -31,6 +31,7 @@ import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class GreaterDreadglareEntity extends TameableEntity implements Angerable, Flutterer {
@@ -47,7 +48,7 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 1.6f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.1)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.6)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
     }
     @Override
@@ -66,7 +67,7 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
 
             if (this.getTarget() == null && this.getOwner() != null)
                 this.setTarget(this.getOwner());
-            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 10)
+            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 20)
                 this.setTarget(this.getOwner());
         }
 
@@ -115,7 +116,7 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
     @Override
     protected void initGoals() {
         super.initGoals();
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
+        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 20.0F, 2.0F, true));
         this.goalSelector.add(2, new AttackWithOwnerGoal(this));
         this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0, true));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));
@@ -140,6 +141,13 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
             this.setPitch(pitch);
 
         }
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (Objects.equals(source.getAttacker(), this.getOwner()))
+            return false;
+        return super.damage(source, amount);
     }
 
     @Override

@@ -65,7 +65,7 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
 
             if (this.getTarget() == null && this.getOwner() != null)
                 this.setTarget(this.getOwner());
-            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 10)
+            else if (this.getTarget() != null && !this.getTarget().equals(this.getOwner()) && this.distanceTo(this.getTarget()) > 20)
                 this.setTarget(this.getOwner());
         }
 
@@ -114,7 +114,7 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     @Override
     protected void initGoals() {
         super.initGoals();
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
+        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 20.0F, 2.0F, true));
         this.goalSelector.add(2, new AttackWithOwnerGoal(this));
         this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0, true));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));

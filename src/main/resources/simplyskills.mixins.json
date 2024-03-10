@@ -11,7 +11,8 @@
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
     "SpellHelperMixin",
-    "SpellProjectileMixin"
+    "SpellProjectileMixin",
+    "FollowOwnerGoalMixin"
   ],
   "client": [
     "client.ArmorFeatureRendererMixin",
