@@ -9,6 +9,7 @@ import net.minecraft.entity.ai.pathing.EntityNavigation;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
@@ -54,8 +55,17 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
     @Override
     public void tick() {
         if (!this.getWorld().isClient()) {
-            if (this.age > lifespan || (this.age > 120 && this.getOwner() == null))
+            boolean ownerNotInWorld = true;
+
+            if (this.getOwnerUuid() != null) {
+                PlayerEntity owner = this.getWorld().getPlayerByUuid(this.getOwnerUuid());
+                ownerNotInWorld = (owner == null || !owner.isAlive());
+            }
+
+            if (this.age > lifespan || (this.age > 120 && (this.getOwner() == null || ownerNotInWorld))) {
                 this.damage(this.getDamageSources().generic(), this.getMaxHealth());
+                this.remove(RemovalReason.UNLOADED_WITH_PLAYER);
+            }
 
 
             if (!this.hasNoGravity()) {
@@ -87,11 +97,13 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
             if (target.equals(player))
                 return false;
 
-            float siphonAmount = (float) this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE) * 0.3f;
+            float siphonAmount = (float) this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE) * 0.6f;
             if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationBloodHarvest, player)) {
                 this.heal(siphonAmount);
                 player.heal(siphonAmount / 2);
             }
+            if (target instanceof LivingEntity livingTarget)
+                NecromancerAbilities.effectPestilence(player, this, livingTarget);
         }
 
         if (target instanceof LivingEntity livingTarget) {
@@ -104,6 +116,8 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
         float random = (float) ((float) this.random.nextInt(3) * 0.1);
         this.getWorld().playSoundFromEntity(null, this, SoundRegistry.MAW,
                 SoundCategory.PLAYERS, 0.1f, 0.8f + random);
+        int mightAmp = HelperMethods.countHarmfulStatusEffects(this);
+        this.addStatusEffect(new StatusEffectInstance(EffectRegistry.MIGHT, 220, mightAmp, false, false, false));
 
         target.timeUntilRegen = 0;
         return super.tryAttack(target);
@@ -117,7 +131,7 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
     protected void initGoals() {
         super.initGoals();
         this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 20.0F, 2.0F, true));
-        this.goalSelector.add(2, new AttackWithOwnerGoal(this));
+        //this.goalSelector.add(2, new AttackWithOwnerGoal(this));
         this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0, true));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));
         this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));
@@ -152,12 +166,12 @@ public class GreaterDreadglareEntity extends TameableEntity implements Angerable
 
     @Override
     public void onDeath(DamageSource damageSource) {
-        //Necromancer Enrage
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+        if (!this.getWorld().isClient() && this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
             NecromancerAbilities.effectNecromancerEnrage(this, player);
-        //Necromancer Death Essence
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
             NecromancerAbilities.effectNecromancerDeathEssence(player);
+            NecromancerAbilities.effectShadowCombust(player, this);
+            NecromancerAbilities.effectEndlessServitude(player, this);
+        }
         super.onDeath(damageSource);
     }
 

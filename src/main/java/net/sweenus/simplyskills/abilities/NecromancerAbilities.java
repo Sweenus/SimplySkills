@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.abilities;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.TameableEntity;
@@ -11,18 +12,22 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Box;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
-import net.sweenus.simplyskills.SimplySkills;
-import net.sweenus.simplyskills.entities.DreadglareEntity;
 import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
-import net.sweenus.simplyskills.entities.WraithEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class NecromancerAbilities {
 
@@ -80,6 +85,110 @@ public class NecromancerAbilities {
         }
     }
 
+    public static void effectPlague(PlayerEntity player) {
+        if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                SkillReferencePosition.necromancerSpecialisationPlague, player) && player.age % 20 == 0
+                && player.getStatusEffects() != null && HelperMethods.hasHarmfulStatusEffect(player)) {
+            Box box = HelperMethods.createBoxHeight(player, 15);
+            List<Entity> validEntities = player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)
+                    .stream()
+                    .filter(entities -> entities instanceof TameableEntity)
+                    .filter(entities -> {
+                        TameableEntity te = (TameableEntity) entities;
+                        return te.getOwner() != null && te.getOwner().equals(player);
+                    })
+                    .toList();
+
+            if (!validEntities.isEmpty()) {
+                // Choose a random entity from the list
+                Entity randomEntity = validEntities.get(new Random().nextInt(validEntities.size()));
+                HelperMethods.buffSteal((LivingEntity) randomEntity, player, true, true, true, false);
+                HelperMethods.spawnWaistHeightParticles((ServerWorld) player.getWorld(), ParticleTypes.EFFECT, player, randomEntity, 12);
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_03,
+                        SoundCategory.PLAYERS, 0.1f, 1.5f);
+            }
+        }
+    }
+
+    public static void effectPestilence(PlayerEntity player, LivingEntity minion, LivingEntity target) {
+        if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                SkillReferencePosition.necromancerSpecialisationPestilence, player)) {
+            HelperMethods.buffSteal(target, minion, true, true, true, false);
+        }
+    }
+
+    public static void effectDelightfulSuffering(PlayerEntity player) {
+        if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                SkillReferencePosition.necromancerSpecialisationDelightfulSuffering, player)) {
+
+            int duration = 800;
+            List<StatusEffectInstance> list = new ArrayList<>();
+            list.add(0, new StatusEffectInstance(StatusEffects.HUNGER, duration, 0, false, false, true));
+            list.add(1, new StatusEffectInstance(StatusEffects.SLOWNESS, duration, 0, false, false, true));
+            list.add(2, new StatusEffectInstance(StatusEffects.WITHER, duration, 0, false, false, true));
+            list.add(3, new StatusEffectInstance(StatusEffects.MINING_FATIGUE, duration, 0, false, false, true));
+            list.add(4, new StatusEffectInstance(StatusEffects.MINING_FATIGUE, duration, 0, false, false, true));
+            if (!list.isEmpty()) {
+                StatusEffect chosenEffect = list.get(player.getRandom().nextInt(4)).getEffectType();
+                HelperMethods.incrementStatusEffect(player, chosenEffect, duration, 1, 2);
+            }
+        }
+    }
+
+    public static void effectEndlessServitude(PlayerEntity player, TameableEntity minion) {
+        if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                SkillReferencePosition.necromancerSpecialisationEndlessServitude, player)) {
+            int chanceThreshold = Math.min(21 + HelperMethods.countHarmfulStatusEffects(minion) * 5, 60);
+
+            int chance = minion.getRandom().nextInt(100);
+            if (chance < chanceThreshold) {
+                EntityType<?> entityType = minion.getType();
+                summonMinion((EntityType<? extends LivingEntity>) entityType, player);
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_02,
+                        SoundCategory.PLAYERS, 0.2f, 1.0f);
+            }
+        }
+    }
+
+    public static void effectShadowCombust(PlayerEntity player, TameableEntity minion) {
+        if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                SkillReferencePosition.necromancerSpecialisationShadowCombust, player)) {
+
+            int radius = 4;
+            if (minion instanceof GreaterDreadglareEntity)
+                radius = 7;
+            Box box = HelperMethods.createBox(minion, radius);
+
+            minion.getWorld().getOtherEntities(minion, box, EntityPredicates.VALID_LIVING_ENTITY).stream()
+                    .filter(Objects::nonNull)
+                    .filter(entity -> entity instanceof LivingEntity)
+                    .forEach(entity -> {
+                        LivingEntity le = (LivingEntity) entity;
+                        if (player != null && HelperMethods.checkFriendlyFire(le, player)) {
+                            le.timeUntilRegen = 0;
+                            float damageMulti = 3.2f;
+                            if (minion instanceof GreaterDreadglareEntity)
+                                damageMulti = 6.4f;
+                            le.damage(player.getWorld().getDamageSources().indirectMagic(player, player),
+                                    (float) player.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute) * damageMulti);
+                            HelperMethods.spawnWaistHeightParticles((ServerWorld) minion.getWorld(), ParticleTypes.SMOKE, minion, le, 8);
+                            le.timeUntilRegen = 0;
+                        }
+                    });
+            if (player != null) {
+                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_03,
+                        SoundCategory.PLAYERS, 0.1f, 1.0f);
+                player.getWorld().playSoundFromEntity(null, player, SoundEvents.ENTITY_GENERIC_EXPLODE,
+                        SoundCategory.PLAYERS, 0.1f, 1.0f);
+            }
+            HelperMethods.spawnOrbitParticles((ServerWorld) minion.getWorld(), minion.getPos(), ParticleTypes.EXPLOSION, 1, 2);
+            HelperMethods.spawnOrbitParticles((ServerWorld) minion.getWorld(), minion.getPos(), ParticleTypes.SOUL, 2, 20);
+            HelperMethods.spawnOrbitParticles((ServerWorld) minion.getWorld(), minion.getPos(), ParticleTypes.SMOKE, radius, 20);
+            if (minion.isAlive())
+                minion.damage(minion.getWorld().getDamageSources().indirectMagic(minion, minion), minion.getMaxHealth());
+        }
+    }
+
     //------- SIGNATURE ABILITIES --------
 
     public static int getMinionLimit(String necromancerTree, PlayerEntity player) {
@@ -102,6 +211,11 @@ public class NecromancerAbilities {
             }
             else if (HelperMethods.isUnlocked(necromancerTree, SkillReferencePosition.necromancerSpecialisationSummonWraith, player)) {
                 int chance = player.getRandom().nextInt(100);
+
+                if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                        SkillReferencePosition.necromancerSpecialisationWraithLegion, player))
+                    chance = 5;
+
                 if (chance < 50)
                     summonMinion(EntityRegistry.WRAITH, player);
                 else
@@ -125,6 +239,13 @@ public class NecromancerAbilities {
                 tameableMinion.setOwner(player);
                 tameableMinion.setTamed(true);
                 tameableMinion.setPositionTarget(player.getBlockPos().up(3), 32);
+                if (HelperMethods.isUnlocked("simplyskills:necromancer",
+                        SkillReferencePosition.necromancerSpecialisationShadowAura, player)) {
+                    int amplifier = 0;
+                    if (tameableMinion instanceof GreaterDreadglareEntity)
+                        amplifier = 3;
+                    minion.addStatusEffect(new StatusEffectInstance(EffectRegistry.SHADOWAURA, 2400, amplifier, false, false, false));
+                }
             }
 
             double attackDamageMultiplier = 1.2;
@@ -141,7 +262,7 @@ public class NecromancerAbilities {
         } else if (entityType.equals(EntityRegistry.WRAITH)) {
             return 0.8;
         } else if (entityType.equals(EntityRegistry.GREATER_DREADGLARE)) {
-            return 3.8;
+            return 4.8;
     }
         return 1.0;
     }

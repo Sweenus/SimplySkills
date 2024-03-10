@@ -225,7 +225,9 @@ public class AbilityLogic {
             InitiateAbilities.passiveInitiatePerilousPrecision(player, targets);
         }
 
-        // Not Amethyst Imbuement safe (Anthing that requires Spell Engine spellId)
+        NecromancerAbilities.effectDelightfulSuffering(player);
+
+        // Not Amethyst Imbuement safe (Anything that requires Spell Engine spellId)
         if (spellId !=null) {
 
             if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericMutualMending, player)

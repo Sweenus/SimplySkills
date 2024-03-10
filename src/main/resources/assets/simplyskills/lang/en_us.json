@@ -119,6 +119,8 @@
   "effect.simplyskills.golden_aegis.desc":              "Generating holy power.",
   "effect.simplyskills.righteous_shield":               "Righteous Shield",
   "effect.simplyskills.righteous_shield.desc":          "Performing Righteous Shield.",
+  "effect.simplyskills.shadow_aura":                    "Shadow Aura",
+  "effect.simplyskills.shadow_aura.desc":               "Lashes out at nearby enemies, but drains user HP.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",
@@ -1330,10 +1332,10 @@
   "text.skills.necromancerFrostWraiths.description":"§7Your §fWraith§7 minions now inflict Slowness on spell hits.",
 
   "text.skills.necromancerBloodHarvest.title":"§f[Blood Harvest]",
-  "text.skills.necromancerBloodHarvest.description":"§7Your Dreadglare minions now lifesteal when attacking enemies. A portion of health stolen is also returned to you.",
+  "text.skills.necromancerBloodHarvest.description":"§7Your Dreadglare minions now lifesteal when attacking enemies. A portion of health stolen is also returned to you.\n\nThis effect is doubled for §fGreater Dreadglares§7.",
 
   "text.skills.necromancerGreaterDreadglare.title":"§f[Greater Dreadglare]",
-  "text.skills.necromancerGreaterDreadglare.description":"§7Your §6[Summoning Ritual]§7 no longer summons multiple minions and instead summons a single §fGreater Dreadglare§7.\n\nThe §fGreater Dreadglare§7 gains a bonus to all attribute inheritance and now taunts enemies that it hits.",
+  "text.skills.necromancerGreaterDreadglare.description":"§7Your §6[Summoning Ritual]§7 no longer summons multiple minions and instead summons a single §fGreater Dreadglare§7.\n\nThe §fGreater Dreadglare§7 gains a bonus to all attribute inheritance, taunts enemies that it hits, and gains Might on hit for each harmful effect it has.",
 
   "text.skills.necromancerDeathEssence.title":"§f[Death Essence]",
   "text.skills.necromancerDeathEssence.description":"§7Whenever a minion dies, you gain a stack of Bone Armor.\n\n§f(Bone Armor)§7 Shield yourself in a layer of bones, granting you 10% increased Armor & Armor Toughness per bone.\nTaking damage removes a layer.",
@@ -1346,6 +1348,27 @@
 
   "text.skills.necromancerWinterborn.title":"§f[Winterborn]",
   "text.skills.necromancerWinterborn.description":"§7For every 1 Frost Spell Power you have, gain a stack of Soulshock.\n\n§f(Soulshock)§7 grants you §a+1 §f[x]§7 Soul & Lightning spell power per stack.",
+
+  "text.skills.necromancerPlague.title":"§f[Plague]",
+  "text.skills.necromancerPlague.description":"§7Any harmful effects inflicted upon you are periodically transferred to nearby minions.",
+
+  "text.skills.necromancerPestilence.title":"§f[Pestilence]",
+  "text.skills.necromancerPestilence.description":"§7When your minions perform a melee attack, they transfer one harmful effect from themselves to their target.",
+
+  "text.skills.necromancerDelightfulSuffering.title":"§f[Delightful Suffering]",
+  "text.skills.necromancerDelightfulSuffering.description":"§7When casting spells, §cyou are inflicted with harmful effects§7.\n\nYour summon limit is also increased by 1.",
+
+  "text.skills.necromancerShadowAura.title":"§f[Shadow Aura]",
+  "text.skills.necromancerShadowAura.description":"§7Your minions gain Shadow Aura. An effect that causes shadows to lash out and deal Soul damage to nearby targets, but also §cdrains the minion's health§7.\n\nThis effect is tripled for §fGreater Dreadglares§7.",
+
+  "text.skills.necromancerShadowCombust.title":"§f[Shadow Combust]",
+  "text.skills.necromancerShadowCombust.description":"§7When your minions die they combust in a shadowy explosion, dealing significant Soul damage to nearby targets.\n\nThis effect is doubled for §fGreater Dreadglares§7",
+
+  "text.skills.necromancerEndlessServitude.title":"§f[Endless Servitude]",
+  "text.skills.necromancerEndlessServitude.description":"§7When your minions die they have a 20% chance to re-summon themselves.\n\nThis chance is increased by 5% per harmful status effect on your minion at the time of its demise.\nMaximum 60% chance.",
+
+  "text.skills.necromancerWraithLegion.title":"§f[Wraith Legion]",
+  "text.skills.necromancerWraithLegion.description":"§7Remove Dreadglares from your summoning pool, allowing you to summon only Wraiths.\n\nYour summon limit is also increased by 1.\n\nIn addition, your §fWraith§7 spell casts have a 5% chance per harmful effect on themselves to inflict the target with Agony.\n\n§f(Agony)§7 causes an entity to take additional damage every time they are hit with a spell projectile.",
 
   "text.skills.portalSapphire.title":"§7§6[Junction: §fSapphire§6]§7",
   "text.skills.portalSapphire.description":"§7\nUnlocks Junction nodes of the same type, allowing you to more easily traverse the skill tree.",

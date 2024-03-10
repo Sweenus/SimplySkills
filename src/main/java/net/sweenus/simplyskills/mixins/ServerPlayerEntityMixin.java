@@ -330,6 +330,8 @@ public abstract class ServerPlayerEntityMixin {
                 NecromancerAbilities.effectNecromancerWinterborn(player);
             }
 
+            NecromancerAbilities.effectPlague(player);
+
 
 
 

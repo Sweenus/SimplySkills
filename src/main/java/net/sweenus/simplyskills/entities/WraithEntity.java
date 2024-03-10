@@ -18,17 +18,20 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
+import net.sweenus.simplyskills.abilities.AscendancyAbilities;
 import net.sweenus.simplyskills.abilities.NecromancerAbilities;
 import net.sweenus.simplyskills.abilities.SignatureAbilities;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
 import net.sweenus.simplyskills.entities.ai.DirectionalFlightMoveControl;
 import net.sweenus.simplyskills.registry.EffectRegistry;
+import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
 import org.jetbrains.annotations.Nullable;
@@ -58,8 +61,17 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
     @Override
     public void tick() {
         if (!this.getWorld().isClient()) {
-            if (this.age > lifespan || (this.age > 120 && this.getOwner() == null))
+            boolean ownerNotInWorld = true;
+
+            if (this.getOwnerUuid() != null) {
+                PlayerEntity owner = this.getWorld().getPlayerByUuid(this.getOwnerUuid());
+                ownerNotInWorld = (owner == null || !owner.isAlive());
+            }
+
+            if (this.age > lifespan || (this.age > 120 && (this.getOwner() == null || ownerNotInWorld))) {
                 this.damage(this.getDamageSources().generic(), this.getMaxHealth());
+                this.remove(RemovalReason.UNLOADED_WITH_PLAYER);
+            }
 
             this.doesNotCollide(0, 0, 0);
 
@@ -103,6 +115,19 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
                             HelperMethods.spawnWaistHeightParticles((ServerWorld) world, ParticleTypes.SMOKE, this, ee, 20);
                             lookTarget = ee;
 
+                            int chance = this.getRandom().nextInt(100);
+                            int chanceCheck = HelperMethods.countHarmfulStatusEffects(this) * 5;
+
+                            if (chance < chanceCheck && HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationWraithLegion, player)) {
+                                SimplyStatusEffectInstance agonyEffect = new SimplyStatusEffectInstance(
+                                        EffectRegistry.AGONY, 200 + AscendancyAbilities.getAscendancyPoints(player), 0, false,
+                                        false, true);
+                                agonyEffect.setSourceEntity(player);
+                                ee.addStatusEffect(agonyEffect);
+                                player.getWorld().playSoundFromEntity(null, player, SoundRegistry.MAGIC_SHAMANIC_SPELL_04,
+                                        SoundCategory.PLAYERS, 0.1f, 1.0f);
+                            }
+
                             return;
                         }
                     }
@@ -143,12 +168,12 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
     }
     @Override
     public void onDeath(DamageSource damageSource) {
-        //Necromancer Enrage
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+        if (!this.getWorld().isClient() && this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
             NecromancerAbilities.effectNecromancerEnrage(this, player);
-        //Necromancer Death Essence
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
             NecromancerAbilities.effectNecromancerDeathEssence(player);
+            NecromancerAbilities.effectShadowCombust(player, this);
+            NecromancerAbilities.effectEndlessServitude(player, this);
+        }
         super.onDeath(damageSource);
     }
 

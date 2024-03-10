@@ -263,11 +263,20 @@ public class SkillReferencePosition {
     public static String necromancerSpecialisationDeathWarden = "mx19tvgt8bqtnjpz";
     public static String necromancerSpecialisationEnrage = "nn9agiepdbhmakb6";
     public static String necromancerSpecialisationWinterborn = "po1zpua99okzv0iy";
+    public static String necromancerSpecialisationPlague = "5fceh8hp52p1xqox";
+    public static String necromancerSpecialisationPestilence = "li4d0i1iljuu9weu";
+    public static String necromancerSpecialisationDelightfulSuffering = "15ij8zrlxd00ykqf";
+    public static String necromancerSpecialisationShadowAura = "kf1ehshxw5zi5guz";
+    public static String necromancerSpecialisationShadowCombust = "3c969v5892itlzd3";
+    public static String necromancerSpecialisationEndlessServitude = "dzvnm4h7fscahfi1";
+    public static String necromancerSpecialisationWraithLegion = "i8lggntzzobypihf";
     public static final String[] undeadLegionSkills = {
             necromancerSpecialisationUndeadLegion1,
             necromancerSpecialisationUndeadLegion2,
             necromancerSpecialisationUndeadLegion3,
-            necromancerSpecialisationUndeadLegion4
+            necromancerSpecialisationUndeadLegion4,
+            necromancerSpecialisationWraithLegion,
+            necromancerSpecialisationDelightfulSuffering
     };
 
 

@@ -52,8 +52,17 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     @Override
     public void tick() {
         if (!this.getWorld().isClient()) {
-            if (this.age > lifespan || (this.age > 120 && this.getOwner() == null))
+            boolean ownerNotInWorld = true;
+
+            if (this.getOwnerUuid() != null) {
+                PlayerEntity owner = this.getWorld().getPlayerByUuid(this.getOwnerUuid());
+                ownerNotInWorld = (owner == null || !owner.isAlive());
+            }
+
+            if (this.age > lifespan || (this.age > 120 && (this.getOwner() == null || ownerNotInWorld))) {
                 this.damage(this.getDamageSources().generic(), this.getMaxHealth());
+                this.remove(RemovalReason.UNLOADED_WITH_PLAYER);
+            }
 
 
             if (!this.hasNoGravity()) {
@@ -102,6 +111,8 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
                 this.heal(siphonAmount);
                 player.heal(siphonAmount / 2);
             }
+            if (target instanceof LivingEntity livingTarget)
+                NecromancerAbilities.effectPestilence(player, this, livingTarget);
         }
         float random = (float) ((float) this.random.nextInt(5) * 0.1);
         this.getWorld().playSoundFromEntity(null, this, SoundRegistry.MAW,
@@ -115,7 +126,7 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
     protected void initGoals() {
         super.initGoals();
         this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 20.0F, 2.0F, true));
-        this.goalSelector.add(2, new AttackWithOwnerGoal(this));
+        //this.goalSelector.add(2, new AttackWithOwnerGoal(this));
         this.goalSelector.add(3, new MeleeAttackGoal(this, 1.0, true));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));
         this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));
@@ -143,12 +154,12 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
 
     @Override
     public void onDeath(DamageSource damageSource) {
-        //Necromancer Enrage
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
+        if (!this.getWorld().isClient() && this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
             NecromancerAbilities.effectNecromancerEnrage(this, player);
-        //Necromancer Death Essence
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player)
             NecromancerAbilities.effectNecromancerDeathEssence(player);
+            NecromancerAbilities.effectShadowCombust(player, this);
+            NecromancerAbilities.effectEndlessServitude(player, this);
+        }
         super.onDeath(damageSource);
     }
 

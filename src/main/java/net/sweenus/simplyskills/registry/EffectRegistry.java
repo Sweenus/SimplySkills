@@ -255,6 +255,8 @@ public class EffectRegistry {
     public static StatusEffect SKYWARDSUNDER= new SkywardSunderEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect RIGHTEOUSSHIELD= new RighteousShieldEffect(StatusEffectCategory.BENEFICIAL, 3124687);
 
+    public static StatusEffect SHADOWAURA= new ShadowAuraEffect(StatusEffectCategory.BENEFICIAL, 3124687);
+
     public static StatusEffect GOLDENAEGIS= new GoldenAegisEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ARMOR,
                     "c3bf99d1-ee9c-4307-92b0-660581bfa28a",
@@ -363,6 +365,7 @@ public class EffectRegistry {
         SKYWARDSUNDER = registerStatusEffect("skyward_sunder", SKYWARDSUNDER);
         RIGHTEOUSSHIELD = registerStatusEffect("righteous_shield", RIGHTEOUSSHIELD);
         GOLDENAEGIS = registerStatusEffect("golden_aegis", GOLDENAEGIS);
+        SHADOWAURA = registerStatusEffect("shadow_aura", SHADOWAURA);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

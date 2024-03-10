@@ -118,5 +118,47 @@
 		"x": 18.475208614068023,
 		"y": -160,
 		"root": false
+	},
+	"5fceh8hp52p1xqox": {
+		"definition": "necromancerPlague",
+		"x": 110.85125168440814,
+		"y": -64,
+		"root": false
+	},
+	"li4d0i1iljuu9weu": {
+		"definition": "necromancerPestilence",
+		"x": 92.37604307034012,
+		"y": -32,
+		"root": false
+	},
+	"kf1ehshxw5zi5guz": {
+		"definition": "necromancerShadowAura",
+		"x": -110.85125168440814,
+		"y": -64,
+		"root": false
+	},
+	"3c969v5892itlzd3": {
+		"definition": "necromancerShadowCombust",
+		"x": -92.37604307034012,
+		"y": -32,
+		"root": false
+	},
+	"i8lggntzzobypihf": {
+		"definition": "necromancerWraithLegion",
+		"x": 110.85125168440814,
+		"y": -128,
+		"root": false
+	},
+	"dzvnm4h7fscahfi1": {
+		"definition": "necromancerEndlessServitude",
+		"x": 36.95041722813605,
+		"y": 64,
+		"root": false
+	},
+	"15ij8zrlxd00ykqf": {
+		"definition": "necromancerDelightfulSuffering",
+		"x": -36.95041722813605,
+		"y": 64,
+		"root": false
 	}
 }
