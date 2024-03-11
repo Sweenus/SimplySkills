@@ -119,6 +119,8 @@
   "effect.simplyskills.golden_aegis.desc":              "Производит священную силу.",
   "effect.simplyskills.righteous_shield":               "Праведный щит",
   "effect.simplyskills.righteous_shield.desc":          "Исполнение техники Праведный щит.",
+  "effect.simplyskills.shadow_aura":                    "Аура теней",
+  "effect.simplyskills.shadow_aura.desc":               "Хлестает ближайших врагов нанося им урон, ценою ОЗ пользователя.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Зловещий манускрипт",
@@ -1319,7 +1321,7 @@
   "text.skills.necromancerUndeadLegion.description":"§7Ваша способоность §6[Ритуал призыва]§7 теперь призывает дополнительного миньона.",
 
   "text.skills.necromancerSummonWraith.title":"§f[Призыв Призрака]",
-  "text.skills.necromancerSummonWraith.description":"§7Ваша способоность §6[Ритуал призыва]§7 now also has a chance to summon a §fПризрак§7 minion. Летающий миньон, который неотступно следует за вами, накладывая на ближайших врагов заклинания Души.\n\nЗаклинания вызванные миньоном §fПризрак§7 считаются вашими заклинаниями и получают бонусы от любых пассивных навыков, срабатывающих от таких заклинаний.",
+  "text.skills.necromancerSummonWraith.description":"§7Ваша способоность §6[Ритуал призыва]§7 теперь имеет шанс призвать миньона §fПризрак§7. Летающий миньон, который неотступно следует за вами, накладывая на ближайших врагов заклинания Души.\n\nЗаклинания вызванные миньоном §fПризрак§7 считаются вашими заклинаниями и получают бонусы от любых пассивных навыков, срабатывающих от таких заклинаний.",
 
   "text.skills.necromancerWitherWraiths.title":"§f[Иссушающий Призрак]",
   "text.skills.necromancerWitherWraiths.description":"§7Ваш миньон §fПризрак§7 теперь накладывает иссушение вместе с уроном от заклинаний.",
@@ -1344,6 +1346,18 @@
 
   "text.skills.necromancerWinterborn.title":"§f[Дитя зимы]",
   "text.skills.necromancerWinterborn.description":"§7За каждую 1 силу заклинания Холода, которая у вас есть, вы получаете стак эффекта Шок души.\n\n§f(Шок души)§7 даёт §a+1 §f[x]§7 силы заклинаний Души или Молнии за стак.",
+
+    "text.skills.necromancerShadowAura.title":"§f[Аура теней]",
+  "text.skills.necromancerShadowAura.description":"§7Ваши миньоны получают Ауру теней. Аура теней наносит урон заклинания Души по ближайшим врагам, но также она §cзабирает жизненные силы миньона§7.\n\nЭтот эффект утраивается для §fБольшого Блуждающего глаза§7.",
+
+  "text.skills.necromancerShadowCombust.title":"§f[Теневое возгорание]",
+  "text.skills.necromancerShadowCombust.description":"§7Когда ваши миньоны умирают, они взрываются и наносят урон заклинания Души ближайшим врагам.\n\nЭтот эффект удваивается для §fБольшого Блуждающего глаза§7",
+
+  "text.skills.necromancerEndlessServitude.title":"§f[Нескончаемое рабство]",
+  "text.skills.necromancerEndlessServitude.description":"§7Когда ваши миньоны умирают, они имеют 20% призваться ещё раз.\n\nЭтот шанс увеличивается на 5% за негативный эффект на миньоне в момент его гибели.\nМаксимум 60% шанс.",
+
+  "text.skills.necromancerWraithLegion.title":"§f[Призрачный легион]",
+  "text.skills.necromancerWraithLegion.description":"§7Убирает миньона Блуждающий глаз из набора возможного призыва, оставляя возможным призвать только Призраков.\n\nВаш лимит призыва также увеличивается на 1.\n\nВ дополнение, заклинания вашего §fПризрака§7 имеют 5% шанс за вредный эффект на себе наложить проклятие Агонии на врага.\n\n§f(Agony)§7 При каждом попадание вашего заклинания по противнику, ему наносится дополнительный урон.",
   
   "text.skills.portalSapphire.title":"§7§6[Ветвь: §fСапфир§6]§7",
   "text.skills.portalSapphire.description":"§7\nРазблокирует узлы ветви того же типа, позволяя вам легче перемещаться по дереву навыков",
