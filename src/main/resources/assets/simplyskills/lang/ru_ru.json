@@ -127,6 +127,10 @@
   "item.simplyskills.gracious_manuscript":              "Милостливый манускрипт",
   "item.simplyskills.skill_chronicle":                  "Хроника умений",
 
+  "entity.simplyskills.dreadglare":                     "Блуждающий глаз",
+  "entity.simplyskills.greater_dreadglare":             "Большой Блуждающий глаз",
+  "entity.simplyskills.wraith":                         "Призрак",
+
   "item.simplyskills.malevolent_manuscript.tooltip1":   "Возвращает все вложенные очки умений ",
   "item.simplyskills.malevolent_manuscript.tooltip2":   "в ваше древо навыков. ",
   "item.simplyskills.malevolent_manuscript.tooltip3":   "А также позволяет сменить специализацию.",
@@ -1330,10 +1334,10 @@
   "text.skills.necromancerFrostWraiths.description":"§7Ваш миньон §fПризрак§7 теперь накладывает замедление вместе с уроном от заклинаний.",
 
   "text.skills.necromancerBloodHarvest.title":"§f[Кровавая жатва]",
-  "text.skills.necromancerBloodHarvest.description":"§7Ваш миньон Блуждающий глаз теперь ворует ОЗ при попадание. Часть украденного также достаётся вам.",
+  "text.skills.necromancerBloodHarvest.description":"§7Ваш миньон Блуждающий глаз теперь ворует ОЗ при попадание. Часть украденного также достаётся вам.\n\nЭтот эффект удваивается для §fБольшого блуждающего глаза§7",
 
   "text.skills.necromancerGreaterDreadglare.title":"§f[Большой Блуждающий глаз]",
-  "text.skills.necromancerGreaterDreadglare.description":"§7Ваша способоность §6[Ритуал призыва]§7 Больше не призывает нескольких Блуждающих глаз, но призывает §fБольшой Блуждающий глаз§7.\n\n§fБольшой Блуждающий глаз§7 Получает бонус ко всем атрибутам, а также осмеевает врагов, по которым попадает.",
+  "text.skills.necromancerGreaterDreadglare.description":"§7Ваша способоность §6[Ритуал призыва]§7 Больше не призывает нескольких Блуждающих глаз, но призывает §fБольшой Блуждающий глаз§7.\n\n§fБольшой Блуждающий глаз§7 Получает бонус ко всем атрибутам, осмеевает врагом по которым попадает, и получает Мощь при попаданиях за каждый негативный эффект на нём.",
 
   "text.skills.necromancerDeathEssence.title":"§f[Эссенция смерти]",
   "text.skills.necromancerDeathEssence.description":"§7Каждый раз, когда умирает миньон, вы получаете стак Костяной брони.\n\n§f(Костяная броня)§7 Покройте себя слоем костей. За одну кость вы получаете увеличение Брони и Твёрдости брони на 10%.\nПри каждом ударе по вам, вы теряете одну кость.",
