@@ -173,6 +173,7 @@
   "text.autoconfig.simplyskills.category.ranger" :      "Ranger",
   "text.autoconfig.simplyskills.category.crusader" :    "Crusader",
   "text.autoconfig.simplyskills.category.cleric" :      "Cleric",
+  "text.autoconfig.simplyskills.category.necromancer" : "Necromancer",
 
   "text.autoconfig.simplyskills.option.client.enableAscendancy" :                                             "Enable the Ascendancy Skill Tree",
   "text.autoconfig.simplyskills.option.client.enableAscendancy.@Tooltip" :                                    "Enabled by default, the Ascendancy tree is\nunlocked after spending the maximum points in\nthe base skill tree, and allows long-term progression.",
@@ -580,6 +581,12 @@
   "text.autoconfig.simplyskills.option.cleric.signatureClericDivineInterventionCooldown" :                    "§6[Signature]§7 Divine Intervention cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.cleric.signatureClericSacredOrbCooldown" :                             "§6[Signature]§7 Sacred Orb cooldown (in seconds)",
   "text.autoconfig.simplyskills.option.cleric.signatureClericAnointWeaponCooldown" :                          "§6[Signature]§7 Anoint Weapon cooldown (in seconds)",
+
+  "text.autoconfig.simplyskills.option.necromancer.enableNecromancerSpecialisation" :                         "Enable Necromancer Specialisation",
+  "text.autoconfig.simplyskills.option.necromancer.enableNecromancerSpecialisation.@Tooltip" :                "Enable/Disable the ability to unlock this specialisation.\nDoes not retroactively lock the specialisation if already unlocked.",
+  "text.autoconfig.simplyskills.option.necromancer.enableNecromancerSpecialisation.@PrefixText" :             "§aTweaking these values can lead to game instability/crashes. Use at your own risk.§7",
+
+  "text.autoconfig.simplyskills.option.necromancer.signatureNecromancerSummoningRitualCooldown" :             "§6[Signature]§7 Summoning Pool cooldown (in seconds)",
 
   "text.skills.berserker_category.title":                                                                     "§7§bBerserker Specialisation§7",
   "text.skills.wizard_category.title":                                                                        "§7§bWizard Specialisation§7",
