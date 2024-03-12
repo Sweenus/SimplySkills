@@ -10,7 +10,6 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.Angerable;
-import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -102,7 +101,7 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
                         .orElse(null);
 
                 if (closestEntity != null) {
-                    if ((closestEntity instanceof HostileEntity ee)) {
+                    if ((closestEntity instanceof LivingEntity ee) && !(closestEntity instanceof PassiveEntity)) {
                         if (HelperMethods.checkFriendlyFire(ee, player)) {
 
                             if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationWitherWraiths, player))
