@@ -52,6 +52,16 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean enableDAS = false;
     @ConfigEntry.Gui.Tooltip
+    public boolean enableDASDebugLog = false;
+    @ConfigEntry.Gui.Tooltip
+    public double DASRadius = 64.0;
+    @ConfigEntry.Gui.Tooltip
+    public int DASUpdateFrequency = 30;
+    @ConfigEntry.Gui.Tooltip
+    public int DASPlayerScalingWeight = 10;
+    @ConfigEntry.Gui.Tooltip
+    public float DASPassiveEntityModifier = 0.2f;
+    @ConfigEntry.Gui.Tooltip
     public double DASHealth = 3.0;
     @ConfigEntry.Gui.Tooltip
     public double DASAttack = 0.2;
