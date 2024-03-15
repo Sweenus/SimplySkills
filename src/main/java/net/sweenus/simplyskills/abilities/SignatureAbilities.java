@@ -54,6 +54,9 @@ public class SignatureAbilities {
         boolean ability_success = false;
         String ability = "none";
 
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            ascendancyTree = "puffish_skills:prom";
+
 
 
         // - WIZARD -

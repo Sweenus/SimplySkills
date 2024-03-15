@@ -212,7 +212,7 @@
   "text.autoconfig.simplyskills.option.client.DDRAffectsPlayers" :                                            "DDR Also affects players",
   "text.autoconfig.simplyskills.option.client.DDRAffectsPlayers.@Tooltip" :                                   "Allows DDR to affect players. Useful when needed in PvP.",
   "text.autoconfig.simplyskills.option.client.enableDAS" :                                                    "Enable Dynamic Attribute Scaling (DAS)",
-  "text.autoconfig.simplyskills.option.client.enableDAS.@Tooltip" :                                           "Dynamic Attribute Scaling causes entities attacked by the player to gain increased\nattributes depending on the amount of points invested into the skill tree.\nDAS can be used on its own, or alongside Dynamic Damage Resistance.\n\nVALUES ARE VERY SENSITIVE!",
+  "text.autoconfig.simplyskills.option.client.enableDAS.@Tooltip" :                                           "Dynamic Attribute Scaling causes entities to gain increased\nattributes depending on the number of players in proximity, and their cumulative invested skill points.\nDAS can be used on its own, or alongside Dynamic Damage Resistance.\n\nVALUES ARE VERY SENSITIVE!",
   "text.autoconfig.simplyskills.option.client.enableDASDebugLog" :                                            "Enable DAS Debug Log",
   "text.autoconfig.simplyskills.option.client.enableDASDebugLog.@Tooltip" :                                   "Provides a log output of DAS analytics.",
   "text.autoconfig.simplyskills.option.client.DASHealth" :                                                    "DAS Max Health",

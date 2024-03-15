@@ -19,7 +19,9 @@
     "client.EntityRenderDispatcherMixin",
     "client.PlayerEntityRendererMixin",
     "client.SpellProjectileRendererMixin",
-    "client.ConnectionBatchedRendererMixin"
+    "client.ConnectionBatchedRendererMixin",
+    "client.SkillsScreenMixin",
+    "client.SkillsScreenAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
