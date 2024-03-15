@@ -26,11 +26,6 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public float minimumTimeBetweenAbilityUse = 0.5f;
     @ConfigEntry.Gui.Tooltip
-    public int signatureHudX = 0;
-    @ConfigEntry.Gui.Tooltip
-    public int signatureHudY = 0;
-
-    @ConfigEntry.Gui.Tooltip
     public boolean enableDDR = false;
     @ConfigEntry.Gui.Tooltip
     public boolean enableDDRDebugLog = false;
@@ -73,5 +68,23 @@ public class GeneralConfig implements ConfigData {
     public double DASSpeed = 0.3;
     @ConfigEntry.Gui.Tooltip
     public double DASKnockbackResist = 0.1;
+
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.PrefixText
+    public double innerLineR = 0.137;
+    public double innerLineG = 0.129;
+    public double innerLineB = 0.117;
+    public double innerLineA = 1.0;
+
+    @ConfigEntry.Gui.Tooltip
+    public double outerLineR = 0.156;
+    public double outerLineG = 0.148;
+    public double outerLineB = 0.132;
+    public double outerLineA = 1.0;
+
+    @ConfigEntry.Gui.Tooltip
+    public int signatureHudX = 0;
+    @ConfigEntry.Gui.Tooltip
+    public int signatureHudY = 0;
 
 }

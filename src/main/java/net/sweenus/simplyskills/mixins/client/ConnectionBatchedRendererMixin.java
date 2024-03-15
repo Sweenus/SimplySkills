@@ -5,6 +5,7 @@ import net.minecraft.client.render.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.client.rendering.ConnectionBatchedRenderer;
+import net.sweenus.simplyskills.SimplySkills;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,7 +22,12 @@ public class ConnectionBatchedRendererMixin {
             ordinal = 0, shift = At.Shift.AFTER))
     private void changeOutlineColor(CallbackInfo ci) {
         // Change the color values as needed for the outline
-        RenderSystem.setShaderColor(0.156F, 0.148F, 0.132F, 1.0F);
+        RenderSystem.setShaderColor(
+                (float) SimplySkills.generalConfig.outerLineR,
+                (float) SimplySkills.generalConfig.outerLineG,
+                (float) SimplySkills.generalConfig.outerLineB,
+                (float) SimplySkills.generalConfig.outerLineA
+        );
     }
 
     @Inject(method = "draw", at = @At(value = "INVOKE",
@@ -29,7 +35,12 @@ public class ConnectionBatchedRendererMixin {
             ordinal = 1, shift = At.Shift.AFTER))
     private void changeNormalColor(CallbackInfo ci) {
         // Change the color values as needed for the normal emits
-        RenderSystem.setShaderColor(0.137F, 0.129F, 0.117F, 1.0F);
+        RenderSystem.setShaderColor(
+                (float) SimplySkills.generalConfig.innerLineR,
+                (float) SimplySkills.generalConfig.innerLineG,
+                (float) SimplySkills.generalConfig.innerLineB,
+                (float) SimplySkills.generalConfig.innerLineA
+        );
     }
 
     @Inject(method = "draw", at = @At(value = "INVOKE",
