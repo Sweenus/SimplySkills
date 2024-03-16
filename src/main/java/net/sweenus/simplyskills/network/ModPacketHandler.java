@@ -3,6 +3,7 @@ package net.sweenus.simplyskills.network;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -247,8 +248,12 @@ public class ModPacketHandler {
         list2.add(SkillReferencePosition.ascendancyRighteousShield);
         list2.add(SkillReferencePosition.ascendancyChainbreaker);
 
+        String ascendancyTree = "simplyskills:ascendancy";
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            ascendancyTree = "puffish_skills:prom";
+
         for (String string : list2) {
-            if (HelperMethods.isUnlocked("simplyskills:ascendancy", string, player)) {
+            if (HelperMethods.isUnlocked(ascendancyTree, string, player)) {
                 identifier2 = new Identifier(SimplySkills.MOD_ID, string);
                 stringSend2 = string;
                 break;

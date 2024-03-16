@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.items;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
@@ -77,7 +78,13 @@ public class SkillChronicle extends Item {
                 for (Category uc : unlockedCategories) {
 
                     //Check for points spent in base tree
-                    if (uc.getId().toString().equals("simplyskills:tree")) {
+                    if (FabricLoader.getInstance().isModLoaded("prominent") && uc.getId().toString().equals("puffish_skills:prom")) {
+                        pointsRemaining = uc.getPointsLeft(serverUser);
+                        Collection<Skill> unlockedSkills = uc.getUnlockedSkills(serverUser);
+                        hasSpentPoints = !unlockedSkills.isEmpty();
+                        //System.out.println("Checking if we have skills unlocked");
+                    }
+                    else if (!FabricLoader.getInstance().isModLoaded("prominent") && uc.getId().toString().equals("simplyskills:tree")) {
                         pointsRemaining = uc.getPointsLeft(serverUser);
                         Collection<Skill> unlockedSkills = uc.getUnlockedSkills(serverUser);
                         hasSpentPoints = !unlockedSkills.isEmpty();
@@ -139,7 +146,10 @@ public class SkillChronicle extends Item {
                 tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip8"));
                 tooltip.add(Text.literal(""));
-                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip14"));
+                if (FabricLoader.getInstance().isModLoaded("prominent"))
+                    tooltip.add(Text.literal("§7Stored Skill Trees."));
+                else
+                    tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip14"));
                 HelperMethods.printNBT(itemStack, tooltip, "category");
                 tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip15"));
@@ -170,7 +180,10 @@ public class SkillChronicle extends Item {
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip1"));
             tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip2"));
-            tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip3"));
+            if (FabricLoader.getInstance().isModLoaded("prominent"))
+                tooltip.add(Text.literal("skill trees."));
+            else
+                tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip3"));
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip4"));
             tooltip.add(Text.translatable("item.simplyskills.skill_chronicle.tooltip5"));

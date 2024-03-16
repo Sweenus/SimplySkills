@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.items;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -39,11 +40,15 @@ public class MalevolentManuscript extends Item {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         tooltip.add(Text.literal(""));
         tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip1"));
-        tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip2"));
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            tooltip.add(Text.literal("in your base talent tree,"));
+        else tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip2"));
         tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip3"));
         tooltip.add(Text.literal(""));
         tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip4"));
-        tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip5"));
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            tooltip.add(Text.literal("of any other skill trees."));
+        else tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip5"));
         tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip6"));
         tooltip.add(Text.literal(""));
         tooltip.add(Text.translatable("item.simplyskills.malevolent_manuscript.tooltip7").formatted(Formatting.RED).formatted(Formatting.UNDERLINE));

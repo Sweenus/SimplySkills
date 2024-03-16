@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.util;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -402,18 +403,31 @@ public class HelperMethods {
         Identifier ascendancyTree = new Identifier("simplyskills:ascendancy");
         if (getCategory(ascendancyTree).isPresent())
             getCategory(ascendancyTree).get().resetSkills(user);
+
+        if (FabricLoader.getInstance().isModLoaded("prominent")) {
+            Identifier prom = new Identifier("puffish_skills:prom");
+            if (getCategory(prom).isPresent())
+                getCategory(prom).get().resetSkills(user);
+        }
+
         return true;
     }
     public static boolean levelAll( ServerPlayerEntity user ) {
 
         List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
-        for (String specialisation : specialisations) {
-            getCategory(new Identifier(specialisation)).get().unlock(user);
-            getCategory(new Identifier(specialisation)).get().addExtraPoints(user, 99);
+        if (!FabricLoader.getInstance().isModLoaded("prominent")) {
+            for (String specialisation : specialisations) {
+                getCategory(new Identifier(specialisation)).get().unlock(user);
+                getCategory(new Identifier(specialisation)).get().addExtraPoints(user, 99);
+            }
         }
         getCategory(new Identifier("simplyskills:tree")).get().addExtraPoints(user, 99);
-        getCategory(new Identifier("simplyskills:ascendancy")).get().unlock(user);
-        getCategory(new Identifier("simplyskills:ascendancy")).get().addExtraPoints(user, 99);
+        if (!FabricLoader.getInstance().isModLoaded("prominent")) {
+            getCategory(new Identifier("simplyskills:ascendancy")).get().unlock(user);
+            getCategory(new Identifier("simplyskills:ascendancy")).get().addExtraPoints(user, 99);
+        }
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            getCategory(new Identifier("puffish_skills:prom")).get().addExtraPoints(user, 99);
         return true;
     }
 
@@ -427,8 +441,10 @@ public class HelperMethods {
         List<String> specialisations = SimplySkills.getSpecialisationsAsArray();
         for (String specialisation : specialisations) {
             getCategory(new Identifier(specialisation)).get().erase(user);
-            getCategory(new Identifier("simplyskills:tree")).get().erase(user);
             getCategory(new Identifier("simplyskills:ascendancy")).get().erase(user);
+            if (FabricLoader.getInstance().isModLoaded("prominent"))
+                getCategory(new Identifier("puffish_skills:prom")).get().erase(user);
+            else getCategory(new Identifier("simplyskills:tree")).get().erase(user);
         }
     }
 
@@ -545,7 +561,7 @@ public class HelperMethods {
                 if (!nbt.getString("category" + i).isEmpty()) {
                     if (type.equals("category") && !nbt.getString("category" + i).contains("tree"))
                         tooltip.add(Text.literal("  §6◇ §f" + nbt.getString("category" + i).
-                                replace("simplyskills:", "")));
+                                replace("simplyskills:", "").replace("puffish_skills:prom", "Talent Tree")));
                 }
                 if (!nbt.getString("skill" + i).isEmpty())
                     skillPrintCount++;

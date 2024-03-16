@@ -1,5 +1,6 @@
 package net.sweenus.simplyskills.abilities;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
@@ -10,6 +11,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -34,6 +36,13 @@ public class AscendancyAbilities {
 
     public static int getAscendancyPoints(PlayerEntity player) {
         if (player instanceof  ServerPlayerEntity serverPlayer) {
+
+            if (FabricLoader.getInstance().isModLoaded("prominent")) {
+                if (Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")) != null) {
+                    return (int) player.getAttributeValue(Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")));
+                } // Scale abilities with Corruption in Prominence
+            }
+
             Identifier category = new Identifier(SimplySkills.MOD_ID, "ascendancy");
             if (SkillsAPI.getCategory(category).isPresent() && !SkillsAPI.getCategory(category).get().getUnlockedSkills(serverPlayer).isEmpty()) {
                 return SkillsAPI.getCategory(category).get().getUnlockedSkills(serverPlayer).size();

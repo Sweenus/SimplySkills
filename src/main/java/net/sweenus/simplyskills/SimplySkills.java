@@ -123,6 +123,12 @@ public class SimplySkills implements ModInitializer {
                 categoryObj.erase(player);
                 categoryObj.lock(player);
             });
+        } // Remove Simply Skills tree when Prominent is detected
+        if (FabricLoader.getInstance().isModLoaded("prominent")  && categoryId.equals("simplyskills:tree")) {
+            SkillsAPI.getCategory(new Identifier(categoryId)).ifPresent(categoryObj -> {
+                categoryObj.erase(player);
+                categoryObj.lock(player);
+            });
         }
     }
 

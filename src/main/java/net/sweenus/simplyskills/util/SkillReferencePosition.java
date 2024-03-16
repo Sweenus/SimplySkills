@@ -297,4 +297,11 @@ public class SkillReferencePosition {
     public static String ascendancyChainbreaker = "c97wxgqn3utj7y01";
 
 
+
+
+
+    // -- PROM COMPAT --
+    public static String promTwinstrike = "v7hqganjx5ftv14x";
+
+
 }
