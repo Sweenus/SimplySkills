@@ -302,6 +302,8 @@ public class SkillReferencePosition {
 
     // -- PROM COMPAT --
     public static String promTwinstrike = "v7hqganjx5ftv14x";
+    public static String promFocus = "9909dkhylopdfpk7";
+    public static String promWarriorsDevotion = "bdqexitrgpz9phaw";
 
 
 }

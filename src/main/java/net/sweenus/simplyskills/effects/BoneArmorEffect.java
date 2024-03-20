@@ -1,23 +1,16 @@
 package net.sweenus.simplyskills.effects;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.*;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.math.Box;
 import net.sweenus.simplyskills.abilities.AscendancyAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
-import net.sweenus.simplyskills.util.HelperMethods;
-
-import java.util.Map;
-import java.util.Objects;
 
 public class BoneArmorEffect extends StatusEffect {
     public BoneArmorEffect(StatusEffectCategory statusEffectCategory, int color) {

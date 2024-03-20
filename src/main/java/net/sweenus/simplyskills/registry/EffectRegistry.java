@@ -254,9 +254,7 @@ public class EffectRegistry {
     public static StatusEffect GHOSTWALK= new GhostwalkEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect SKYWARDSUNDER= new SkywardSunderEffect(StatusEffectCategory.BENEFICIAL, 3124687);
     public static StatusEffect RIGHTEOUSSHIELD= new RighteousShieldEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-
     public static StatusEffect SHADOWAURA= new ShadowAuraEffect(StatusEffectCategory.BENEFICIAL, 3124687);
-
     public static StatusEffect GOLDENAEGIS= new GoldenAegisEffect(StatusEffectCategory.BENEFICIAL, 3124687)
             .addAttributeModifier(EntityAttributes.GENERIC_ARMOR,
                     "c3bf99d1-ee9c-4307-92b0-660581bfa28a",
@@ -269,6 +267,20 @@ public class EffectRegistry {
             .addAttributeModifier(SpellAttributes.POWER.get(MagicSchool.HEALING).attribute,
                     "1ebefacf-9a1e-4a81-9387-56dd4207a47f",
                     0.01,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect FOCUS= new FocusEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(SkillsAttributes.RANGED_DAMAGE,
+                    "127a2308-5cd7-4b28-b52d-71cde1d2a9da",
+                    0.2,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+    public static StatusEffect WARRIORSDEVOTION= new WarriorsDevotionEffect(StatusEffectCategory.BENEFICIAL, 3124687)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    "53044215-cfb0-4a01-a33e-3bda11fab913",
+                    0.9,
+                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED,
+                    "10d42842-3eb5-44c7-ba5f-a663ba984e66",
+                    -0.5,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
@@ -366,6 +378,8 @@ public class EffectRegistry {
         RIGHTEOUSSHIELD = registerStatusEffect("righteous_shield", RIGHTEOUSSHIELD);
         GOLDENAEGIS = registerStatusEffect("golden_aegis", GOLDENAEGIS);
         SHADOWAURA = registerStatusEffect("shadow_aura", SHADOWAURA);
+        FOCUS = registerStatusEffect("focus", FOCUS);
+        WARRIORSDEVOTION = registerStatusEffect("warriors_devotion", WARRIORSDEVOTION);
 
         if (FabricLoader.getInstance().isModLoaded("paladins")) {
             CONSECRATION = registerStatusEffect("consecration", CONSECRATION);

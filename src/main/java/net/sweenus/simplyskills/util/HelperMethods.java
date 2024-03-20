@@ -1,6 +1,7 @@
 package net.sweenus.simplyskills.util;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -15,13 +16,16 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -391,6 +395,30 @@ public class HelperMethods {
             }
         }
     }
+    public static void spawnParticlesInFrontOfPlayer(ServerWorld world, LivingEntity livingEntity, ParticleEffect particle, int distance, double speed, int count) {
+        Vec3d lookVec = livingEntity.getRotationVec(1.0F).normalize();
+        Vec3d startPosition = livingEntity.getEyePos().add(lookVec.multiply(distance)); // Starting position in front of the player
+
+        for (int i = 0; i < count; i++) {
+            // Random offset to spread particles around the starting position
+            double offsetX = (world.random.nextDouble() - 0.5) * 2.0; // Spread of 2 blocks around the starting position
+            double offsetY = (world.random.nextDouble() - 0.5) * 2.0;
+            double offsetZ = (world.random.nextDouble() - 0.5) * 2.0;
+
+            // Calculate spawn position with offset
+            double xPos = startPosition.x + offsetX;
+            double yPos = startPosition.y + offsetY;
+            double zPos = startPosition.z + offsetZ;
+
+            // Apply velocity to move particles in the player's look direction
+            double xVelocity = lookVec.x * speed;
+            double yVelocity = lookVec.y * speed;
+            double zVelocity = lookVec.z * speed;
+
+            // Spawn the particle
+            world.spawnParticles(particle, xPos, yPos, zPos, 0, xVelocity, yVelocity, zVelocity, 1.0);
+        }
+    }
 
 
     public static boolean respecialise( ServerPlayerEntity user ) {
@@ -673,6 +701,11 @@ public class HelperMethods {
             }
         }
         return harmfulEffectCount;
+    }
+
+    public static boolean isDualWielding(LivingEntity livingEntity) {
+        return (livingEntity.getMainHandStack().getItem() instanceof SwordItem || livingEntity.getMainHandStack().getItem() instanceof AxeItem)
+                && (livingEntity.getOffHandStack().getItem() instanceof SwordItem || livingEntity.getOffHandStack().getItem() instanceof AxeItem);
     }
 
 }

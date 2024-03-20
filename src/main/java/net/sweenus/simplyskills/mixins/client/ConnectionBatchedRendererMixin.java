@@ -1,18 +1,12 @@
 package net.sweenus.simplyskills.mixins.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.render.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.client.rendering.ConnectionBatchedRenderer;
 import net.sweenus.simplyskills.SimplySkills;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Iterator;
-import java.util.List;
 
 @Mixin(ConnectionBatchedRenderer.class)
 public class ConnectionBatchedRendererMixin {

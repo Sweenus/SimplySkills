@@ -189,7 +189,11 @@ public class AbilityLogic {
         if (spellId !=null)
             school = SpellRegistry.getSpell(spellId).school;
 
-        if (HelperMethods.isUnlocked("simplyskills:tree", SkillReferencePosition.initiateEmpower, player))
+        if (HelperMethods.isUnlocked("simplyskills:tree",
+                SkillReferencePosition.initiateEmpower, player)
+                || (FabricLoader.getInstance().isModLoaded("prominent")
+                && HelperMethods.isUnlocked("puffish_skills:prom",
+                SkillReferencePosition.initiateEmpower, player)))
             InitiateAbilities.passiveInitiateEmpower(player, school, schools);
 
         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
@@ -229,6 +233,9 @@ public class AbilityLogic {
 
         // Not Amethyst Imbuement safe (Anything that requires Spell Engine spellId)
         if (spellId !=null) {
+            if (FabricLoader.getInstance().isModLoaded("prominent")) {
+                ProminenceAbilities.focusEffect(player, spellId);
+            }
 
             if (HelperMethods.isUnlocked("simplyskills:cleric", SkillReferencePosition.clericMutualMending, player)
                     && FabricLoader.getInstance().isModLoaded("paladins")) {

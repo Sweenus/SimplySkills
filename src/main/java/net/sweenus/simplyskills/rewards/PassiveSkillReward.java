@@ -12,9 +12,9 @@ import net.puffish.skillsmod.api.json.JsonElementWrapper;
 import net.puffish.skillsmod.api.json.JsonObjectWrapper;
 import net.puffish.skillsmod.api.rewards.Reward;
 import net.puffish.skillsmod.api.rewards.RewardContext;
+import net.puffish.skillsmod.api.utils.Failure;
 import net.puffish.skillsmod.api.utils.JsonParseUtils;
 import net.puffish.skillsmod.api.utils.Result;
-import net.puffish.skillsmod.api.utils.Failure;
 
 import java.util.ArrayList;
 

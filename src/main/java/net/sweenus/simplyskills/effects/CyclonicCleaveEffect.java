@@ -4,11 +4,11 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -19,9 +19,6 @@ import net.sweenus.simplyskills.abilities.AscendancyAbilities;
 import net.sweenus.simplyskills.abilities.compat.SimplySwordsGemEffects;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class CyclonicCleaveEffect extends StatusEffect {
     public CyclonicCleaveEffect(StatusEffectCategory statusEffectCategory, int color) {
@@ -65,10 +62,13 @@ public class CyclonicCleaveEffect extends StatusEffect {
                                 le.timeUntilRegen = 0;
                                 le.damage(player.getDamageSources().playerAttack(player), (float) damage);
                                 le.timeUntilRegen = 0;
+                                ParticleEffect particleType = ParticleTypes.CLOUD;
+                                if (FabricLoader.getInstance().isModLoaded("prominent"))
+                                    particleType = ParticleTypes.PORTAL;
 
                                 HelperMethods.spawnParticlesPlane(
                                         player.getWorld(),
-                                        ParticleTypes.CLOUD,
+                                        particleType,
                                         player.getBlockPos(),
                                         bullrushRadius -1, 0, 1, 0 );
                             }

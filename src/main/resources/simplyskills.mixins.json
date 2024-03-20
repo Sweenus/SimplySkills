@@ -6,22 +6,22 @@
   "mixins": [
     "BowItemMixin",
     "CrossbowItemMixin",
+    "FollowOwnerGoalMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "SkillsModMixin",
     "SpellHelperMixin",
-    "SpellProjectileMixin",
-    "FollowOwnerGoalMixin"
+    "SpellProjectileMixin"
   ],
   "client": [
     "client.ArmorFeatureRendererMixin",
+    "client.ConnectionBatchedRendererMixin",
     "client.EntityRenderDispatcherMixin",
     "client.PlayerEntityRendererMixin",
-    "client.SpellProjectileRendererMixin",
-    "client.ConnectionBatchedRendererMixin",
+    "client.SkillsScreenAccessor",
     "client.SkillsScreenMixin",
-    "client.SkillsScreenAccessor"
+    "client.SpellProjectileRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

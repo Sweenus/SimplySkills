@@ -114,6 +114,9 @@ public abstract class ServerPlayerEntityMixin {
             AscendancyAbilities.boneArmorEffect(serverPlayer);
 
 
+            //Prom effects
+            ProminenceAbilities.boneArmorEffect(serverPlayer);
+
         }
     }
 
@@ -332,6 +335,8 @@ public abstract class ServerPlayerEntityMixin {
 
             NecromancerAbilities.effectPlague(player);
 
+            if (FabricLoader.getInstance().isModLoaded("prominent"))
+                ProminenceAbilities.warriorsDevotion(player);
 
 
 
@@ -454,12 +459,22 @@ public abstract class ServerPlayerEntityMixin {
                             && target instanceof LivingEntity livingTarget) {
                         WarriorAbilities.passiveWarriorTwinstrike(player, livingTarget);
                     }
+                    //Passive Prom Twinstrike
+                    if (FabricLoader.getInstance().isModLoaded("prominence")
+                            && HelperMethods.isUnlocked("puffish_skills:prom",
+                            SkillReferencePosition.warriorTwinstrike, serverPlayer)
+                            && target instanceof LivingEntity livingTarget) {
+                        ProminenceAbilities.promTwinstrike(player, livingTarget);
+                    }
 
                     //Passive Warrior Swordfall
-                    if (HelperMethods.isUnlocked("simplyskills:tree",
-                            SkillReferencePosition.warriorSwordfall, serverPlayer)
-                            && target instanceof LivingEntity livingTarget) {
-                        WarriorAbilities.passiveWarriorSwordfall(player, livingTarget);
+                    if (target instanceof LivingEntity livingTarget) {
+                        if (HelperMethods.isUnlocked("simplyskills:tree",
+                                SkillReferencePosition.warriorSwordfall, serverPlayer)
+                                || (FabricLoader.getInstance().isModLoaded("prominent")
+                                && HelperMethods.isUnlocked("puffish_skills:prom",
+                                SkillReferencePosition.warriorSwordfall, serverPlayer)))
+                            WarriorAbilities.passiveWarriorSwordfall(player, livingTarget);
                     }
 
                     //Signature Cleric Anoint Weapon

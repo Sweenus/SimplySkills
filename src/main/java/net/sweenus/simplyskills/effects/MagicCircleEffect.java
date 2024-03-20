@@ -5,7 +5,6 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.sweenus.simplyskills.abilities.AscendancyAbilities;
 import net.sweenus.simplyskills.registry.EffectRegistry;
 
 public class MagicCircleEffect extends StatusEffect {

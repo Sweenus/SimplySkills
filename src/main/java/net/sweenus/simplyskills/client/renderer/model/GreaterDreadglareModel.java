@@ -4,7 +4,6 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.sweenus.simplyskills.entities.DreadglareEntity;
 import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
 
 public class GreaterDreadglareModel extends EntityModel<GreaterDreadglareEntity> {

@@ -27,7 +27,7 @@
       "type": "PROJECTILE",
       "projectile": {
         "projectile": {
-          "velocity": 5.9,
+          "velocity": 8.9,
           "homing_angle": 0,
           "perks": {
             "pierce": 1
@@ -35,7 +35,7 @@
           "client_data": {
             "travel_particles": [
               {
-                "particle_id": "mycelium",
+                "particle_id": "crit",
                 "shape": "CIRCLE",
                 "rotation": "LOOK",
                 "origin": "CENTER",
@@ -74,7 +74,7 @@
           "particle_id": "minecraft:poof",
           "shape": "SPHERE",
           "origin": "CENTER",
-          "count": 1,
+          "count": 3,
           "min_speed": 0.2,
           "max_speed": 0.7
         }

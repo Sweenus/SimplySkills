@@ -121,6 +121,10 @@
   "effect.simplyskills.righteous_shield.desc":          "Performing Righteous Shield.",
   "effect.simplyskills.shadow_aura":                    "Shadow Aura",
   "effect.simplyskills.shadow_aura.desc":               "Lashes out at nearby enemies, but drains user HP.",
+  "effect.simplyskills.focus":                          "Focus",
+  "effect.simplyskills.focus.desc":                     "Your next bow attack charges slower and does more damage.",
+  "effect.simplyskills.warriors_devotion":              "Warrior's Devotion",
+  "effect.simplyskills.warriors_devotion.desc":         "Attack slower and deal increased damage when wielding a single weapon.",
 
 
   "item.simplyskills.malevolent_manuscript":            "Malevolent Manuscript",

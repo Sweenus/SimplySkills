@@ -250,7 +250,9 @@ public class SignatureAbilities {
                 }
                 if (HelperMethods.isUnlocked(ascendancyTree,
                         SkillReferencePosition.ascendancyBoneArmor, player)) {
-                    ability_success = AscendancyAbilities.boneArmor(player);
+                    if (FabricLoader.getInstance().isModLoaded("prominent"))
+                        ability_success = ProminenceAbilities.boneArmor(player);
+                    else ability_success = AscendancyAbilities.boneArmor(player);
                     ability = "BoneArmor";
                 }
                 if (HelperMethods.isUnlocked(ascendancyTree,
@@ -458,7 +460,9 @@ public class SignatureAbilities {
                 cooldownType = "ascendancy";
             }
             case "BoneArmor" -> {
-                cooldown = 90 * 1000;
+                if (FabricLoader.getInstance().isModLoaded("prominent"))
+                    cooldown = 40 * 1000;
+                else cooldown = 90 * 1000;
                 type = "physical, buff, recovery";
                 cooldownType = "ascendancy";
             }

@@ -9,9 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
-import net.sweenus.simplyskills.client.renderer.model.DreadglareModel;
 import net.sweenus.simplyskills.client.renderer.model.GreaterDreadglareModel;
-import net.sweenus.simplyskills.entities.DreadglareEntity;
 import net.sweenus.simplyskills.entities.GreaterDreadglareEntity;
 
 

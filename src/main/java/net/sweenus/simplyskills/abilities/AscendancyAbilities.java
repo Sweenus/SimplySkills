@@ -3,9 +3,6 @@ package net.sweenus.simplyskills.abilities;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,10 +19,7 @@ import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyskills.SimplySkills;
 import net.sweenus.simplyskills.effects.instance.SimplyStatusEffectInstance;
-import net.sweenus.simplyskills.entities.DreadglareEntity;
-import net.sweenus.simplyskills.entities.WraithEntity;
 import net.sweenus.simplyskills.registry.EffectRegistry;
-import net.sweenus.simplyskills.registry.EntityRegistry;
 import net.sweenus.simplyskills.registry.SoundRegistry;
 import net.sweenus.simplyskills.util.HelperMethods;
 import net.sweenus.simplyskills.util.SkillReferencePosition;
@@ -71,7 +65,9 @@ public class AscendancyAbilities {
     }
 
     public static boolean cyclonicCleave(PlayerEntity player) {
-        SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
+        if (FabricLoader.getInstance().isModLoaded("prominent"))
+            SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave_prom", 3, player, null);
+        else SignatureAbilities.castSpellEngineIndirectTarget(player, "simplyskills:cyclonic_cleave", 3, player, null);
 
         return true;
     }

@@ -11,7 +11,6 @@ import net.minecraft.util.math.RotationAxis;
 import net.sweenus.simplyskills.client.SimplySkillsClient;
 import net.sweenus.simplyskills.client.renderer.model.DreadglareModel;
 import net.sweenus.simplyskills.entities.DreadglareEntity;
-import org.joml.Vector3f;
 
 
 @Environment(value= EnvType.CLIENT)
