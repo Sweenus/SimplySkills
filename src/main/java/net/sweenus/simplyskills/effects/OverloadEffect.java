@@ -37,8 +37,10 @@ public class OverloadEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if (entities instanceof LivingEntity le){
-                            if (livingEntity instanceof PlayerEntity player) {
+                        if (entities instanceof LivingEntity){
+                            LivingEntity le = (LivingEntity) entities;
+                            if (livingEntity instanceof PlayerEntity) {
+                                PlayerEntity player = (PlayerEntity) livingEntity;
                                 damageSource = player.getDamageSources().playerAttack(player);
                                 if (!HelperMethods.checkFriendlyFire(le, player))
                                     break;

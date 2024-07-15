@@ -32,7 +32,8 @@ public class SacredOnslaughtEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
+            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity)) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
 
                 int velocity = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtVelocity;
                 int radius = SimplySkills.crusaderConfig.signatureCrusaderSacredOnslaughtRadius;
@@ -50,7 +51,8 @@ public class SacredOnslaughtEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if (entities instanceof LivingEntity le) {
+                        if (entities instanceof LivingEntity) {
+                            LivingEntity le = (LivingEntity) entities;
                             if (player.age % hitFrequency == 0) {
                                 if (HelperMethods.checkFriendlyFire(le, player) && player.isBlocking()) {
                                     le.setVelocity((le.getX() - player.getX()) /4,  (le.getY() - player.getY()) /4, (le.getZ() - player.getZ()) /4);

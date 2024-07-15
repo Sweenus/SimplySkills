@@ -356,25 +356,25 @@ public class AbilityLogic {
         //Passive Warrior Twinstrike
         if (HelperMethods.isUnlocked("simplyskills:tree",
                 SkillReferencePosition.warriorTwinstrike, player)
-                && target instanceof LivingEntity livingTarget) {
-            WarriorAbilities.passiveWarriorTwinstrike(player, livingTarget);
+                && target instanceof LivingEntity) {
+            WarriorAbilities.passiveWarriorTwinstrike(player, (LivingEntity)target);
         }
         //Passive Prom Twinstrike
         if (FabricLoader.getInstance().isModLoaded("prominence")
                 && HelperMethods.isUnlocked("puffish_skills:prom",
                 SkillReferencePosition.warriorTwinstrike, player)
-                && target instanceof LivingEntity livingTarget) {
-            ProminenceAbilities.promTwinstrike(player, livingTarget);
+                && target instanceof LivingEntity) {
+            ProminenceAbilities.promTwinstrike(player, (LivingEntity)target);
         }
 
         //Passive Warrior Swordfall
-        if (target instanceof LivingEntity livingTarget) {
+        if (target instanceof LivingEntity) {
             if (HelperMethods.isUnlocked("simplyskills:tree",
                     SkillReferencePosition.warriorSwordfall, player)
                     || (FabricLoader.getInstance().isModLoaded("prominent")
                     && HelperMethods.isUnlocked("puffish_skills:prom",
                     SkillReferencePosition.warriorSwordfall, player)))
-                WarriorAbilities.passiveWarriorSwordfall(player, livingTarget);
+                WarriorAbilities.passiveWarriorSwordfall(player, (LivingEntity)target);
         }
 
         //Signature Cleric Anoint Weapon

@@ -80,7 +80,8 @@ public class WizardAbilities {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                        LivingEntity le = (LivingEntity) entities;
                         success = true;
 
                         if (HelperMethods.isUnlocked(wizardSkillTree,
@@ -132,8 +133,8 @@ public class WizardAbilities {
             BlockPos searchArea = new BlockPos(xpos, ypos, zpos);
             Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-                    target = le;
+                if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                    target = (LivingEntity) entities;
                     break;
                 }
             }
@@ -213,7 +214,8 @@ public class WizardAbilities {
                 Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
                 for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                            LivingEntity le = (LivingEntity) entities;
                             success = true;
                             SignatureAbilities.castSpellEngineIndirectTarget(player,
                                     "simplyskills:static_discharge",
@@ -265,7 +267,8 @@ public class WizardAbilities {
 
                         for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                             if (entities != null && player.getRandom().nextInt(100) < 5) {
-                                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                                    LivingEntity le = (LivingEntity) entities;
 
                                     projectile.setFollowedTarget(le);
                                     spellProjectile.getWorld().spawnEntity(projectile);
@@ -317,8 +320,8 @@ public class WizardAbilities {
         if (player.age % frequency == 0) {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_ENTITY)) {
                 if (entities != null && player.getRandom().nextInt(100) < SimplySkills.wizardConfig.signatureWizardLightningOrbBuffChance) {
-                    if ((entities instanceof SpellProjectile spe) && spe.getOwner() != null) {
-                        if (spe.getOwner() == player)
+                    if ((entities instanceof SpellProjectile) && ((SpellProjectile)entities).getOwner() != null) {
+                        if (((SpellProjectile)entities).getOwner() == player)
                             count ++;
                     }
                 }
@@ -346,7 +349,7 @@ public class WizardAbilities {
         target = HelperMethods.getTargetedEntity(player, arcaneBoltRange);
 
         BlockPos searchArea = HelperMethods.getBlockLookingAt(player, 512);
-        if (((target instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) || target == null) {
+        if (((target instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)target, player)) || target == null) {
 
             if (HelperMethods.isUnlocked(wizardSkillTree,
                     SkillReferencePosition.wizardSpecialisationArcaneBoltVolley, player))

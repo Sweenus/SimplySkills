@@ -39,8 +39,9 @@ public class StaticChargeEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null && ownerEntity != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, ownerEntity)
-                        && le.getRandom().nextInt(100) < leapChance) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, ownerEntity)
+                        && ((LivingEntity) entities).getRandom().nextInt(100) < leapChance) {
+                            LivingEntity le = (LivingEntity) entities;
                             SignatureAbilities.castSpellEngineIndirectTarget(ownerEntity,
                                     "simplyskills:static_charge",
                                     3, le, null);
@@ -108,7 +109,8 @@ public class StaticChargeEffect extends StatusEffect {
             for (Entity entities : entity.getWorld().getOtherEntities(entity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
-                    if (entities instanceof PlayerEntity pe) {
+                    if (entities instanceof PlayerEntity) {
+                        PlayerEntity pe = (PlayerEntity) entities;
                         if (HelperMethods.isUnlocked("simplyskills:wizard",
                                 SkillReferencePosition.wizardSpecialisationStaticDischargeLeap, pe)) {
                             ownerEntity = pe;

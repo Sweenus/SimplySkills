@@ -17,7 +17,8 @@ public class ExhaustionEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
-            if (livingEntity instanceof PlayerEntity player) {
+            if (livingEntity instanceof PlayerEntity) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
                 double exhaustResist = player.getAttributeValue(AttributesMod.STAMINA) * 2;
                 int frequency = 10;
                 if (player.age % frequency == 0) {

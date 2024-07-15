@@ -22,7 +22,8 @@ public class StealthEffect extends StatusEffect {
 
 
         if (!livingEntity.getWorld().isClient()) {
-            if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
+            if (livingEntity instanceof ServerPlayerEntity) {
+                ServerPlayerEntity serverPlayer = (ServerPlayerEntity) livingEntity;
 
                 int regenerationFrequency = SimplySkills.rogueConfig.passiveRogueRecoveryRegenerationFrequency;
                 int regenerationAmplifier = SimplySkills.rogueConfig.passiveRogueRecoveryRegenerationAmplifier;

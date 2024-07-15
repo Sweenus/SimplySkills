@@ -23,8 +23,9 @@ public class AnointedEffect extends StatusEffect {
 
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player) {
+            if (livingEntity instanceof ServerPlayerEntity) {
 
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 //Cleric Signature Anoint Weapon Cleanse
                 if (HelperMethods.isUnlocked("simplyskills:cleric",
                         SkillReferencePosition.clericSpecialisationAnointWeaponCleanse, player)

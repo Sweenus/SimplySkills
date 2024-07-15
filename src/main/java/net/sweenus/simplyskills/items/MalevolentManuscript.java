@@ -25,7 +25,8 @@ public class MalevolentManuscript extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
-        if ((user instanceof ServerPlayerEntity serverUser)) {
+        if ((user instanceof ServerPlayerEntity)) {
+            ServerPlayerEntity serverUser = (ServerPlayerEntity) user;
             if (HelperMethods.respecialise(serverUser)) {
                 user.swingHand(hand);
                 world.playSound(null, user.getBlockPos(), SoundRegistry.SOUNDEFFECT12, SoundCategory.PLAYERS, 0.5f, 1.0f);

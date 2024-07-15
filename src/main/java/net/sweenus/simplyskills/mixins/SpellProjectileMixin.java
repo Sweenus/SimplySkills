@@ -54,7 +54,8 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
     public void simplyskills$tick(CallbackInfo ci) {
 
         if (!this.getWorld().isClient) {
-            if ( this.getSpell() != null && this.getOwner() instanceof ServerPlayerEntity player) {
+            if ( this.getSpell() != null && this.getOwner() instanceof ServerPlayerEntity) {
+                ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
                 SpellProjectile spellProjectile = (SpellProjectile) (Object)this;
 
                 // Ranger Elemental Artillery
@@ -87,8 +88,10 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
         if (!this.getWorld().isClient) {
             if (this.spellId != null && this.getSpell() != null) {
 
-                if (entityHitResult.getEntity() != null && entityHitResult.getEntity() instanceof LivingEntity livingEntity && getOwner() != null) {
-                    if (livingEntity.hasStatusEffect(EffectRegistry.AGONY) && getOwner() instanceof PlayerEntity playerAttacker) {
+                if (entityHitResult.getEntity() != null && entityHitResult.getEntity() instanceof LivingEntity && getOwner() != null) {
+                    LivingEntity livingEntity = (LivingEntity) entityHitResult.getEntity();
+                    if (livingEntity.hasStatusEffect(EffectRegistry.AGONY) && getOwner() instanceof PlayerEntity) {
+                        PlayerEntity playerAttacker = (PlayerEntity) getOwner();
                         AscendancyAbilities.agonyEffect(playerAttacker, livingEntity);
                     }
                 }
@@ -98,7 +101,8 @@ public abstract class SpellProjectileMixin extends ProjectileEntity {
                     ClericAbilities.signatureClericSacredOrbImpact(entityHitResult, spellId, getOwner(), spellProjectile);
 
                     String[] spellList = new String[]{"simplyskills:lightning_ball_homing", "simplyskills:physical_dagger_homing"};
-                    if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof ServerPlayerEntity player) {
+                    if (HelperMethods.stringContainsAny(this.spellId.toString(), spellList) && this.getOwner() instanceof ServerPlayerEntity) {
+                        ServerPlayerEntity player = (ServerPlayerEntity) this.getOwner();
 
                         SpellHelper.projectileImpact(player, this, entityHitResult.getEntity(), this.getSpellInfo(), context.position(entityHitResult.getPos()));
 

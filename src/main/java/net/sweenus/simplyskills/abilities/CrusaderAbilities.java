@@ -74,7 +74,7 @@ public class CrusaderAbilities {
 
         if (blockpos != null) {
 
-            if ((target instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player))
+            if ((target instanceof LivingEntity) && !HelperMethods.checkFriendlyFire((LivingEntity)target, player))
                 target = null;
 
             if (HelperMethods.isUnlocked(crusaderSkillTree,
@@ -97,16 +97,17 @@ public class CrusaderAbilities {
         Box box = HelperMethods.createBox(target, 3);
 
             for (Entity entities : target.getWorld().getOtherEntities(target, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities instanceof LivingEntity le && HelperMethods.checkFriendlyFire(le, player)) {
+                if (entities instanceof LivingEntity && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                    LivingEntity le = (LivingEntity) entities;
                     if (HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationHeavensmithsCallMark, player))
                         le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, tauntDuration));
 
-                    if ((le instanceof MobEntity me) && HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationHeavensmithsCallTaunt, player)) {
+                    if ((le instanceof MobEntity) && HelperMethods.isUnlocked(crusaderSkillTree, SkillReferencePosition.crusaderSpecialisationHeavensmithsCallTaunt, player)) {
                         SimplyStatusEffectInstance tauntEffect = new SimplyStatusEffectInstance(
                                 EffectRegistry.TAUNTED, tauntDuration, 0, false,
                                 false, true);
                         tauntEffect.setSourceEntity(player);
-                        me.addStatusEffect(tauntEffect);
+                        ((MobEntity)le).addStatusEffect(tauntEffect);
                     }
                 }
             }

@@ -67,8 +67,10 @@ public class SkillChronicle extends Item {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (!world.isClient && (user instanceof PlayerEntity player)) {
-            if ((user instanceof ServerPlayerEntity serverUser) && remainingUseTicks < 35) {
+        if (!world.isClient && (user instanceof PlayerEntity)) {
+            PlayerEntity player = (PlayerEntity) user;
+            if ((user instanceof ServerPlayerEntity) && remainingUseTicks < 35) {
+                ServerPlayerEntity serverUser = (ServerPlayerEntity) user;
 
                 int pointsRemaining = 0;
                 boolean hasSpentPoints = false;

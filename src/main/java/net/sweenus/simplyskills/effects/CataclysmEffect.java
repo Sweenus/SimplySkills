@@ -30,7 +30,8 @@ public class CataclysmEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.CATACLYSM)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.CATACLYSM)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance cataclysmEffect = player.getStatusEffect(EffectRegistry.CATACLYSM);
                 if (cataclysmEffect == null)
                     return;
@@ -64,8 +65,8 @@ public class CataclysmEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity) entity);
 
         super.onRemoved(entity, attributes, amplifier);
     }

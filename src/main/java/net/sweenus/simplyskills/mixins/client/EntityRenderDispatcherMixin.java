@@ -19,8 +19,8 @@ public abstract class EntityRenderDispatcherMixin {
 
     @Inject(method = "renderShadow", at = @At("HEAD"), cancellable = true)
     private static void simplyskills$renderShadow(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Entity entity, float opacity, float tickDelta, WorldView world, float radius, CallbackInfo ci) {
-        if (entity instanceof LivingEntity livingEntity) {
-            if (Synchronized.effectsOf(livingEntity).toString().contains("StealthEffect")) {
+        if (entity instanceof LivingEntity) {
+            if (Synchronized.effectsOf((LivingEntity)entity).toString().contains("StealthEffect")) {
                 ci.cancel();
             }
         }

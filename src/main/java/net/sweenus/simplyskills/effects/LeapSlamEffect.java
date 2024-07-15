@@ -31,7 +31,8 @@ public class LeapSlamEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof PlayerEntity player) {
+            if (livingEntity instanceof PlayerEntity) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
                 int ability_timer = Objects.requireNonNull(player.getStatusEffect(EffectRegistry.LEAPSLAM)).getDuration();
                 int radius = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamRadius;
                 int immobilizeDuration = SimplySkills.berserkerConfig.signatureBerserkerLeapSlamImmobilizeDuration;
@@ -57,7 +58,8 @@ public class LeapSlamEffect extends StatusEffect {
                         for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                             if (entities != null) {
-                                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                                    LivingEntity le = (LivingEntity) entities;
 
                                     if (HelperMethods.isUnlocked("simplyskills:berserker",
                                             SkillReferencePosition.berserkerSpecialisationBerserkingLeapPull, player))

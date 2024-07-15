@@ -51,7 +51,8 @@ public class ShadowAuraEffect extends StatusEffect {
                         });
                 if (effectivePlayer != null) {
                     float damage = (1 + (float) SpellPower.getSpellPower(SpellSchools.SOUL, effectivePlayer).randomValue() * ((float) amplifier / 10));
-                    if ((livingEntity.getHealth() - (damage * 2)) < 0 && livingEntity instanceof TameableEntity minion) {
+                    if ((livingEntity.getHealth() - (damage * 2)) < 0 && livingEntity instanceof TameableEntity) {
+                        TameableEntity minion = (TameableEntity) livingEntity;
                         NecromancerAbilities.effectShadowCombust(effectivePlayer, minion);
                         minion.removeStatusEffect(EffectRegistry.SHADOWAURA);
                     } else livingEntity.setHealth((livingEntity.getHealth() - damage));

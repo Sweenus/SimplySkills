@@ -27,8 +27,9 @@ public abstract class CrossbowItemMixin {
 
     @Inject(at = @At("HEAD"), method = "onStoppedUsing", cancellable = true)
     public void simplyskills$onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
-        if (user instanceof PlayerEntity player) {
-            if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (user instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) user;
+            if (player instanceof ServerPlayerEntity) {
 
                 //Break Stealth
                 if (player.hasStatusEffect(EffectRegistry.STEALTH) && remainingUseTicks < 3) {

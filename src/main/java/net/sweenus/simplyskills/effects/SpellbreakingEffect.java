@@ -29,10 +29,12 @@ public class SpellbreakingEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_ENTITY)) {
 
                     if (entities != null) {
-                        if (entities instanceof SpellProjectile pe) {
-                            if (pe.getOwner() instanceof LivingEntity livingOwner) {
-                                if (livingEntity instanceof PlayerEntity player) {
-                                    if (!HelperMethods.checkFriendlyFire(livingOwner, player))
+                        if (entities instanceof SpellProjectile) {
+                            SpellProjectile pe = (SpellProjectile) entities;
+                            if (pe.getOwner() instanceof LivingEntity) {
+                                LivingEntity livingOwner = (LivingEntity) pe.getOwner();
+                                if (livingEntity instanceof PlayerEntity) {
+                                    if (!HelperMethods.checkFriendlyFire(livingOwner, (PlayerEntity)livingEntity))
                                         break;
                                 }
                             }

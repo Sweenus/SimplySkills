@@ -29,18 +29,22 @@ public class ImmobilizingAuraEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le)) {
-                            if (livingEntity instanceof Tameable te) {
+                        if ((entities instanceof LivingEntity)) {
+                            LivingEntity le = (LivingEntity) entities;
+                            if (livingEntity instanceof Tameable) {
+                                Tameable te = (Tameable) livingEntity;
 
                                 if (te.getOwner() == null)
                                     break;
-                                if (te.getOwner() instanceof PlayerEntity pe) {
+                                if (te.getOwner() instanceof PlayerEntity) {
+                                    PlayerEntity pe = (PlayerEntity) te.getOwner();
                                     if (HelperMethods.checkFriendlyFire(le, pe)) {
                                         le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, 25, 0, false, false, true));
                                     }
                                 }
                             }
-                            else if (livingEntity instanceof PlayerEntity playerEntity) {
+                            else if (livingEntity instanceof PlayerEntity) {
+                                PlayerEntity playerEntity = (PlayerEntity) livingEntity;
 
                                 if (HelperMethods.checkFriendlyFire(le, playerEntity)) {
                                     le.addStatusEffect(new StatusEffectInstance(EffectRegistry.IMMOBILIZE, 25, 0, false, false, true));

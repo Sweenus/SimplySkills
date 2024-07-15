@@ -28,7 +28,8 @@ public class ElementalImpactEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
+            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity)) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
                 int velocity = SimplySkills.spellbladeConfig.signatureSpellbladeElementalImpactVelocity;
 
                 player.setVelocity(livingEntity.getRotationVector().multiply(+velocity));
@@ -59,7 +60,8 @@ public class ElementalImpactEffect extends StatusEffect {
                     for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                         if (entities != null) {
-                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player) && !le.hasStatusEffect(StatusEffects.SLOWNESS)) {
+                            if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player) && !((LivingEntity)entities).hasStatusEffect(StatusEffects.SLOWNESS)) {
+                                LivingEntity le = (LivingEntity) entities;
                                 le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                                 le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, slownessDuration, slownessAmplifier, false, false, true));
                             }

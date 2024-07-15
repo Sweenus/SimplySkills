@@ -34,7 +34,8 @@ public class SimplySwordsRequiredMethods {
 
         for (Entity entities : user.getWorld().getOtherEntities(user, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
-                if (entities instanceof BattleStandardEntity bse) {
+                if (entities instanceof BattleStandardEntity) {
+                    BattleStandardEntity bse = (BattleStandardEntity) entities;
 
                     if (bse.ownerEntity == user && bse.positiveEffect.contains("simplyskills:precision")
                             && bse.positiveEffectSecondary.contains("simplyskills:spellforged"))

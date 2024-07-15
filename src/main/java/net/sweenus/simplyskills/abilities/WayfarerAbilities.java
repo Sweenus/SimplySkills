@@ -52,7 +52,8 @@ public class WayfarerAbilities {
                 }
 
                 if (target != null) {
-                    if (target instanceof LivingEntity livingTarget) {
+                    if (target instanceof LivingEntity) {
+                        LivingEntity livingTarget = (LivingEntity) target;
                         int deathmarkDuration = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkDuration;
                         int deathmarkStacks = SimplySkills.rogueConfig.passiveRogueExploitationDeathMarkStacks;
 

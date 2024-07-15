@@ -29,7 +29,8 @@ public class RapidFireEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.RAPIDFIRE)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.RAPIDFIRE)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 if (player.getMainHandStack().getItem() instanceof BowItem || player.getMainHandStack().getItem() instanceof CrossbowItem) {
 
                     StatusEffectInstance rapidFire = player.getStatusEffect(EffectRegistry.RAPIDFIRE);
@@ -60,8 +61,8 @@ public class RapidFireEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity) entity);
 
         super.onRemoved(entity, attributes, amplifier);
     }

@@ -89,20 +89,22 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
 
             Box box = HelperMethods.createBoxHeight(this, 16);
             int frequency = (20+ this.getRandom().nextInt(30));
-            if (this.age % frequency == 0 && this.getOwner() != null && this.getOwner().isAlive() && this.getOwner() instanceof PlayerEntity player) {
+            if (this.age % frequency == 0 && this.getOwner() != null && this.getOwner().isAlive() && this.getOwner() instanceof PlayerEntity) {
+                PlayerEntity player = (PlayerEntity) this.getOwner();
                 World world = this.getWorld();
                 Entity closestEntity = world.getOtherEntities(this, box, EntityPredicates.VALID_LIVING_ENTITY).stream()
-                        .filter(entity -> !(entity instanceof TameableEntity tameableEntity &&
-                                tameableEntity.isTamed() &&
-                                tameableEntity.getOwnerUuid() != null &&
-                                tameableEntity.getOwnerUuid().equals(this.getOwnerUuid())))
-                        .filter(entity -> !(entity instanceof PlayerEntity playerEntity &&
-                                playerEntity.getUuid().equals(this.getOwnerUuid())))
+                        .filter(entity -> !(entity instanceof TameableEntity &&
+                                ((TameableEntity)entity).isTamed() &&
+                                ((TameableEntity)entity).getOwnerUuid() != null &&
+                                ((TameableEntity)entity).getOwnerUuid().equals(this.getOwnerUuid())))
+                        .filter(entity -> !(entity instanceof PlayerEntity &&
+                                ((PlayerEntity)entity).getUuid().equals(this.getOwnerUuid())))
                         .min(Comparator.comparingDouble(entity -> entity.squaredDistanceTo(this)))
                         .orElse(null);
 
                 if (closestEntity != null) {
-                    if ((closestEntity instanceof LivingEntity ee) && !(closestEntity instanceof PassiveEntity)) {
+                    if ((closestEntity instanceof LivingEntity) && !(closestEntity instanceof PassiveEntity)) {
+                        LivingEntity ee = (LivingEntity) closestEntity;
                         if (HelperMethods.checkFriendlyFire(ee, player)) {
 
                             if (HelperMethods.isUnlocked("simplyskills:necromancer", SkillReferencePosition.necromancerSpecialisationWitherWraiths, player))
@@ -168,7 +170,8 @@ public class WraithEntity extends TameableEntity implements Angerable, Flutterer
     }
     @Override
     public void onDeath(DamageSource damageSource) {
-        if (!this.getWorld().isClient() && this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
+        if (!this.getWorld().isClient() && this.getOwner() != null && this.getOwner() instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) this.getOwner();
             NecromancerAbilities.effectNecromancerEnrage(this, player);
             NecromancerAbilities.effectNecromancerDeathEssence(player);
             NecromancerAbilities.effectShadowCombust(player, this);

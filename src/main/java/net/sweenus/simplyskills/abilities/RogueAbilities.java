@@ -30,7 +30,8 @@ import java.util.Random;
 public class RogueAbilities {
 
     public static void passiveRogueBackstab(Entity target, PlayerEntity player) {
-        if (target instanceof LivingEntity livingTarget) {
+        if (target instanceof LivingEntity) {
+            LivingEntity livingTarget = (LivingEntity) target;
             int weaknessDuration = SimplySkills.rogueConfig.passiveRogueBackstabWeaknessDuration;
             int weaknessAmplifier = SimplySkills.rogueConfig.passiveRogueBackstabWeaknessAmplifier;
             if (livingTarget.getBodyYaw() < (player.getBodyYaw() + 32) &&
@@ -51,9 +52,9 @@ public class RogueAbilities {
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
 
-                        le.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,
+                        ((LivingEntity)entities).addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,
                                 blindnessDuration, blindnessAmplifier, false, false, true));
 
                     }

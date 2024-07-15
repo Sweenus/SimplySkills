@@ -30,7 +30,8 @@ public class SkywardSunderEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.SKYWARDSUNDER)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity) livingEntity).hasStatusEffect(EffectRegistry.SKYWARDSUNDER)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance skywardSunder = player.getStatusEffect(EffectRegistry.SKYWARDSUNDER);
                 if (skywardSunder == null)
                     return;
@@ -91,7 +92,8 @@ public class SkywardSunderEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player) && (skywardSunder.getDuration() == 1 || skywardSunder.getDuration() == slash_2 || skywardSunder.getDuration() == slash_1)) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player) && (skywardSunder.getDuration() == 1 || skywardSunder.getDuration() == slash_2 || skywardSunder.getDuration() == slash_1)) {
+                            LivingEntity le = (LivingEntity) entities;
                             le.timeUntilRegen = 0;
                             le.damage(player.getDamageSources().playerAttack(player), (float) damage);
                             le.timeUntilRegen = 0;
@@ -104,8 +106,10 @@ public class SkywardSunderEffect extends StatusEffect {
                                     player.getBlockPos(),
                                     bullrushRadius - 1, 0, 1, 0);
                         }
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)
                                 && skywardSunder.getDuration() > slash_1 && skywardSunder.getDuration() % 2 == 0) {
+
+                            LivingEntity le = (LivingEntity) entities;
 
                             if (AscendancyAbilities.getAscendancyPoints(player) > 30)
                                 le.addStatusEffect(new StatusEffectInstance(EffectRegistry.DEATHMARK, 60, 0));
@@ -125,15 +129,16 @@ public class SkywardSunderEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity)entity);
 
         super.onRemoved(entity, attributes, amplifier);
     }
 
     @Override
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (!entity.getWorld().isClient() && entity instanceof  PlayerEntity player) {
+        if (!entity.getWorld().isClient() && entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
             if (player.hasStatusEffect(EffectRegistry.MIGHT)) {
                 StatusEffectInstance mightEffect = player.getStatusEffect(EffectRegistry.MIGHT);
                 if (mightEffect !=null) {

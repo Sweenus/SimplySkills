@@ -134,7 +134,8 @@ public class DreadglareEntity extends TameableEntity implements Angerable, Flutt
         }
 
         // Necromancer Blood Harvest
-        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity player) {
+        if (this.getOwner() != null && this.getOwner() instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) this.getOwner();
 
             if (target.equals(player))
                 return false;

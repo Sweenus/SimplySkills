@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ProminenceAbilities {
 
     public static int getAscendancyPoints(PlayerEntity player) {
-        if (player instanceof  ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
 
             if (FabricLoader.getInstance().isModLoaded("prominent")) {
                 if (Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")) != null) {
@@ -41,7 +41,7 @@ public class ProminenceAbilities {
                 } // Scale abilities with Corruption in Prominence
             }
 
-            return HelperMethods.countUnlockedSkills("ascendancy", serverPlayer);
+            return HelperMethods.countUnlockedSkills("ascendancy", (ServerPlayerEntity) player);
         }
         return 0;
     }

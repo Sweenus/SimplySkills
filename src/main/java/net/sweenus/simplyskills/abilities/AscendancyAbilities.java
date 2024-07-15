@@ -27,7 +27,7 @@ import java.util.Comparator;
 public class AscendancyAbilities {
 
     public static int getAscendancyPoints(PlayerEntity player) {
-        if (player instanceof  ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
 
             if (FabricLoader.getInstance().isModLoaded("prominent")) {
                 if (Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")) != null) {
@@ -35,7 +35,7 @@ public class AscendancyAbilities {
                 } // Scale abilities with Corruption in Prominence
             }
 
-            return HelperMethods.countUnlockedSkills("ascendancy", serverPlayer);
+            return HelperMethods.countUnlockedSkills("ascendancy", (ServerPlayerEntity)player);
         }
         return 0;
     }
@@ -98,7 +98,8 @@ public class AscendancyAbilities {
                 .orElse(null);
 
         if (closestEntity != null) {
-            if ((closestEntity instanceof LivingEntity ee)) {
+            if ((closestEntity instanceof LivingEntity)) {
+                LivingEntity ee = (LivingEntity) closestEntity;
                 if (HelperMethods.checkFriendlyFire(ee, player)) {
                     SimplyStatusEffectInstance agonyEffect = new SimplyStatusEffectInstance(
                             EffectRegistry.AGONY, 200 + getAscendancyPoints(player), 0, false,

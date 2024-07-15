@@ -27,7 +27,8 @@ public class ProminenceInternalAbilities {
         int frequency = 30;
         int duration = frequency + 10;
 
-        if (item instanceof InstrumentItem instrument) {
+        if (item instanceof InstrumentItem) {
+            InstrumentItem instrument = (InstrumentItem) item;
 
             if (!instrument.isPlaying(stack))
                 return;

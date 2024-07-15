@@ -30,7 +30,8 @@ public class BullrushEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity player)) {
+            if (livingEntity.isOnGround() && (livingEntity instanceof PlayerEntity)) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
 
                 int bullrushVelocity = SimplySkills.berserkerConfig.signatureBerserkerBullrushVelocity;
                 int bullrushRadius = SimplySkills.berserkerConfig.signatureBerserkerBullrushRadius;
@@ -51,7 +52,8 @@ public class BullrushEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                            LivingEntity le = (LivingEntity) entities;
                             le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                             if (player.age % bullrushHitFrequency == 0) {
                                 le.damage(player.getDamageSources().playerAttack(player), (float) damage);
@@ -85,8 +87,8 @@ public class BullrushEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity) entity);
 
         super.onRemoved(entity, attributes, amplifier);
     }

@@ -20,9 +20,9 @@ public class AmethystImbuementEvent {
     // This method will be called when a spell power cast event occurs
     private static void onSpellPowerCast(World world, LivingEntity user, ItemStack stack, ScepterAugment spell, Set<? extends SpellSchool> schools) {
 
-        if (user instanceof  PlayerEntity player) {
+        if (user instanceof PlayerEntity) {
             //System.out.println("ScepterAugment to string is: " + spell.toString());
-            AbilityLogic.onSpellCastEffects(player, null, null, schools);
+            AbilityLogic.onSpellCastEffects((PlayerEntity)user, null, null, schools);
         }
     }
 

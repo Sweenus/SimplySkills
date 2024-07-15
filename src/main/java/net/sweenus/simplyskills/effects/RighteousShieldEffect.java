@@ -21,7 +21,8 @@ public class RighteousShieldEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.RIGHTEOUSSHIELD)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.RIGHTEOUSSHIELD)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance righteousShield = player.getStatusEffect(EffectRegistry.RIGHTEOUSSHIELD);
                 if (righteousShield == null)
                     return;

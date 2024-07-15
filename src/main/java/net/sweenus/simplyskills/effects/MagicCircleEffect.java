@@ -16,7 +16,8 @@ public class MagicCircleEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.MAGICCIRCLE)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.MAGICCIRCLE)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance magicCircle = player.getStatusEffect(EffectRegistry.MAGICCIRCLE);
                 if (magicCircle == null)
                     return;

@@ -33,7 +33,8 @@ public class BoneArmorEffect extends StatusEffect {
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
 
-        if (amplifier < 1 && entity instanceof PlayerEntity player) {
+        if (amplifier < 1 && entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
             if (AscendancyAbilities.getAscendancyPoints(player) > 29 && !FabricLoader.getInstance().isModLoaded("prominent")) {
                 player.addStatusEffect(new StatusEffectInstance(EffectRegistry.UNDYING, 160, 0, false, false, true));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 160, 3, false, false, true));

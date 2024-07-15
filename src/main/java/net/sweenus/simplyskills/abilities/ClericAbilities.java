@@ -44,8 +44,8 @@ public class ClericAbilities {
         SpellSchool healingSchool = SpellSchools.HEALING;
         if (random < chance) {
             targets.forEach(target -> {
-                if (target instanceof LivingEntity livingTarget && spell.school == healingSchool) {
-                    HelperMethods.incrementStatusEffect(livingTarget, EffectRegistry.BARRIER, 100, 1, 20);
+                if (target instanceof LivingEntity && spell.school == healingSchool) {
+                    HelperMethods.incrementStatusEffect((LivingEntity) target, EffectRegistry.BARRIER, 100, 1, 20);
                 }
             });
         }
@@ -99,7 +99,8 @@ public class ClericAbilities {
             Box box = HelperMethods.createBoxAtBlock(searchArea, 3);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && !HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && !HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                        LivingEntity le = (LivingEntity) entities;
                         success = true;
 
                         // Grants recipient Fire Resistance

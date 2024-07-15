@@ -26,7 +26,8 @@ public class SpellProjectileRendererMixin <T extends Entity & FlyingItemEntity> 
 
     @Inject(at = @At("HEAD"), method = "render")
     private void simplyskills$render(T entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-        if (entity instanceof SpellProjectile projectile) {
+        if (entity instanceof SpellProjectile) {
+            SpellProjectile projectile = (SpellProjectile) entity;
             if (projectile.renderData() != null) {
                 Spell.ProjectileModel renderData = projectile.renderData();
                 if (renderData != null) {

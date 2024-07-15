@@ -15,8 +15,9 @@ public class RagingJavelinEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
-            if (livingEntity instanceof PlayerEntity player)
-                AbilityEffects.effectRagingJavelin(player);
+            if (livingEntity instanceof PlayerEntity) {
+                AbilityEffects.effectRagingJavelin((PlayerEntity)livingEntity);
+            }
         }
         super.applyUpdateEffect(livingEntity, amplifier);
     }

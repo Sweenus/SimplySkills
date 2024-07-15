@@ -30,8 +30,9 @@ public abstract class BowItemMixin {
 
     @Inject(at = @At("HEAD"), method = "onStoppedUsing", cancellable = true)
     public void simplyskills$onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci) {
-        if (user instanceof PlayerEntity player) {
-            if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (user instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) user;
+            if (player instanceof ServerPlayerEntity) {
                 float requiredPullProgress = 1.0F;
                 if (stack.getName().toString().contains("Shortbow") || stack.getName().toString().contains("shortbow")
                         || stack.getName().toString().contains("love"))

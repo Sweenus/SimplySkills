@@ -37,7 +37,8 @@ public class RangerAbilities {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                        LivingEntity le = (LivingEntity) entities;
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
                             if (statusEffect != null && statusEffect.getEffectType().equals(EffectRegistry.STEALTH)) {
                                 le.removeStatusEffect(statusEffect.getEffectType());
@@ -69,7 +70,8 @@ public class RangerAbilities {
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities != null && entities instanceof  LivingEntity le) {
+                if (entities != null && entities instanceof  LivingEntity) {
+                    LivingEntity le = (LivingEntity) entities;
                     if (isOwnPet(entities, player)) {
                         le.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,
                                  frequency + 5, regenerationAmplifier, false, false, true));
@@ -89,7 +91,8 @@ public class RangerAbilities {
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities != null && entities instanceof  LivingEntity le) {
+                if (entities != null && entities instanceof  LivingEntity) {
+                    LivingEntity le = (LivingEntity) entities;
                     if (isOwnPet(entities, player)) {
                         float teHealthPercent = ((le.getHealth() / le.getMaxHealth()) * 100);
                         float playerHealthPercent = ((player.getHealth() / player.getMaxHealth()) * 100);
@@ -112,7 +115,8 @@ public class RangerAbilities {
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities != null && entities instanceof  LivingEntity le) {
+                if (entities != null && entities instanceof LivingEntity) {
+                    LivingEntity le = (LivingEntity) entities;
                     if (isOwnPet(entities, player)) {
                         float teHealthPercent = ((le.getHealth() / le.getMaxHealth()) * 100);
                         if (teHealthPercent > minimumHealthPercent) {
@@ -134,7 +138,8 @@ public class RangerAbilities {
 
             Box box = HelperMethods.createBox(player, radius);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
-                if (entities != null && entities instanceof  LivingEntity le) {
+                if (entities != null && entities instanceof LivingEntity) {
+                    LivingEntity le = (LivingEntity) entities;
                     if (isOwnPet(entities, player)) {
                         if (player.hasStatusEffect(EffectRegistry.STEALTH)) {
                             le.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,
@@ -176,9 +181,8 @@ public class RangerAbilities {
         Box box = HelperMethods.createBox(player, radius);
         for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
             if (entities != null) {
-                if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
-
-                    le.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
+                if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                    ((LivingEntity)entities).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
                             slownessDuration, slownessAmplifier, false, false, true));
 
                 }

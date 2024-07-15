@@ -41,8 +41,10 @@ public class EarthshakerEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && !livingEntity.hasStatusEffect(StatusEffects.SLOW_FALLING)){
-                            if (livingEntity instanceof PlayerEntity player) {
+                        if ((entities instanceof LivingEntity) && !livingEntity.hasStatusEffect(StatusEffects.SLOW_FALLING)){
+                            LivingEntity le = (LivingEntity) entities;
+                            if (livingEntity instanceof PlayerEntity) {
+                                PlayerEntity player = (PlayerEntity) livingEntity;
                                 damageSource = player.getDamageSources().playerAttack(player);
                                 if (HelperMethods.isUnlocked("simplyskills:tree",
                                         SkillReferencePosition.warriorHeavyWeight, player))

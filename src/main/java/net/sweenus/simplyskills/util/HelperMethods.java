@@ -65,16 +65,18 @@ public class HelperMethods {
             return false;
         }
 
-        if (livingEntity instanceof PlayerEntity playerEntity) {
+        if (livingEntity instanceof PlayerEntity) {
+            PlayerEntity playerEntity = (PlayerEntity) livingEntity;
             if (playerEntity == player)
                 return false;
             return playerEntity.shouldDamagePlayer(player);
         }
-        if (livingEntity instanceof Tameable tameable) {
+        if (livingEntity instanceof Tameable) {
+            Tameable tameable = (Tameable) livingEntity;
             if (tameable.getOwner() != null) {
                 if (tameable.getOwner() != player
-                        && (tameable.getOwner() instanceof PlayerEntity ownerPlayer))
-                    return player.shouldDamagePlayer(ownerPlayer);
+                        && (tameable.getOwner() instanceof PlayerEntity))
+                    return player.shouldDamagePlayer((PlayerEntity)tameable.getOwner());
                 return tameable.getOwner() != player;
             }
             return true;
@@ -91,7 +93,8 @@ public class HelperMethods {
     //Checks if skill is unlocked with presence checks.
     //If provided null for the skill argument, it will instead return if the category is unlocked.
     public static boolean isUnlocked(String skillTreeId, String skillId, LivingEntity livingEntity) {
-        if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
+        if (livingEntity instanceof ServerPlayerEntity) {
+            ServerPlayerEntity serverPlayer = (ServerPlayerEntity) livingEntity;
             if (skillId == null){
                 // check if category is unlocked
                 return SkillsAPI.getCategory(new Identifier(skillTreeId))
@@ -110,9 +113,9 @@ public class HelperMethods {
     
     //Checks if category has given skill unlocked
     public static boolean hasUnlockedSkill(Category category, String skillId, LivingEntity livingEntity) {
-        if (livingEntity instanceof ServerPlayerEntity serverPlayer) {
+        if (livingEntity instanceof ServerPlayerEntity) {
             return category.getSkill(skillId)
-                    .map(skill -> skill.getState(serverPlayer) == Skill.State.UNLOCKED)
+                    .map(skill -> skill.getState((ServerPlayerEntity)livingEntity) == Skill.State.UNLOCKED)
                     .orElse(false);
         }
         return false;

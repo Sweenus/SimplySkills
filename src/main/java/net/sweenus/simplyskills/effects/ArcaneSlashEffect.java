@@ -25,7 +25,8 @@ public class ArcaneSlashEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.ARCANESLASH)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.ARCANESLASH)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance arcaneSlash = player.getStatusEffect(EffectRegistry.ARCANESLASH);
                 if (arcaneSlash == null)
                     return;
@@ -48,12 +49,13 @@ public class ArcaneSlashEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
-        if (entity instanceof PlayerEntity player) {
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity)entity);
+        if (entity instanceof PlayerEntity) {
             int chance = entity.getRandom().nextInt(100);
-            if (chance < 80)
-                AscendancyAbilities.arcaneSlash(player);
+            if (chance < 80) {
+                AscendancyAbilities.arcaneSlash((PlayerEntity)entity);
+            }
         }
 
         super.onRemoved(entity, attributes, amplifier);

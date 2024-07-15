@@ -50,7 +50,8 @@ public class DynamicDamage {
     }
 
     public static void dynamicAttributeScaling(LivingEntity entity, EntityAttribute attribute, String name, double amount, UUID uuid) {
-        if (entity.getAttacker() != null && (entity.getAttacker() instanceof ServerPlayerEntity player)) {
+        if (entity.getAttacker() != null && (entity.getAttacker() instanceof ServerPlayerEntity)) {
+            ServerPlayerEntity player = (ServerPlayerEntity) entity.getAttacker();
             EntityAttributeInstance attributeInstance = entity.getAttributeInstance(attribute);
             int pointsSpent = getSpentPoints(player);
             double totalAmount = amount * pointsSpent;

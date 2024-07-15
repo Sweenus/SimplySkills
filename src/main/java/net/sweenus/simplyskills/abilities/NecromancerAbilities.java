@@ -44,7 +44,8 @@ public class NecromancerAbilities {
             Box box = HelperMethods.createBoxHeight(livingEntity, 15);
             for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
-                    if ((entities instanceof Tameable te) && !HelperMethods.checkFriendlyFire((LivingEntity) te, player)) {
+                    if ((entities instanceof Tameable) && !HelperMethods.checkFriendlyFire((LivingEntity) ((Tameable)entities), player)) {
+                        Tameable te = (Tameable) entities;
                         HelperMethods.incrementStatusEffect((LivingEntity) te, StatusEffects.STRENGTH, 200, 1, 3);
                         HelperMethods.incrementStatusEffect((LivingEntity) te, StatusEffects.RESISTANCE, 200, 1, 3);
                     }
@@ -69,7 +70,7 @@ public class NecromancerAbilities {
             Box box = HelperMethods.createBoxHeight(player, 15);
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
                 if (entities != null) {
-                    if ((entities instanceof Tameable te) && te.getOwner() != null && te.getOwner().equals(player)) {
+                    if ((entities instanceof Tameable) && ((Tameable)entities).getOwner() != null && ((Tameable)entities).getOwner().equals(player)) {
                         float healAmount = (float) (player.getMaxHealth() * 0.15);
                         player.heal(healAmount);
                         entities.damage(player.getDamageSources().generic(), healAmount);
@@ -234,7 +235,8 @@ public class NecromancerAbilities {
                 SpawnReason.MOB_SUMMONED);
 
         if (minion != null) {
-            if (minion instanceof TameableEntity tameableMinion) {
+            if (minion instanceof TameableEntity) {
+                TameableEntity tameableMinion = (TameableEntity) minion;
                 tameableMinion.setOwner(player);
                 tameableMinion.setTamed(true);
                 tameableMinion.setPositionTarget(player.getBlockPos().up(3), 32);

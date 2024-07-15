@@ -33,7 +33,7 @@ public class AbilityEffects {
 
     public static void effectBerserkerBerserking(Entity target, PlayerEntity player) {
 
-        if ((target instanceof LivingEntity livingTarget) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
+        if ((target instanceof LivingEntity) && player.hasStatusEffect(EffectRegistry.BERSERKING)) {
             int berserkingSubEffectDuration = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectDuration;
             int berserkingSubEffectMaxAmplifier = SimplySkills.berserkerConfig.signatureBerserkerBerserkingSubEffectMaxAmplifier;
             HelperMethods.incrementStatusEffect(player, StatusEffects.HASTE, berserkingSubEffectDuration,
@@ -97,7 +97,8 @@ public class AbilityEffects {
     public static void effectRogueSiphoningStrikes(Entity target, PlayerEntity player) {
 
         if (player.hasStatusEffect(EffectRegistry.SIPHONINGSTRIKES)) {
-            if (target instanceof LivingEntity livingTarget) {
+            if (target instanceof LivingEntity) {
+                LivingEntity livingTarget = (LivingEntity) target;
                 double leechMultiplier = SimplySkills.rogueConfig.signatureRogueSiphoningStrikesLeechMultiplier;
 
                 double attackValue = Objects.requireNonNull(
@@ -147,7 +148,8 @@ public class AbilityEffects {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                        LivingEntity le = (LivingEntity) entities;
 
                         if (HelperMethods.isUnlocked("simplyskills:rogue",
                                 SkillReferencePosition.rogueSpecialisationEvasionFanOfBladesAssault, player))
@@ -244,10 +246,10 @@ public class AbilityEffects {
                         if (entities != null) {
                             Random rand = new Random();
                             String randomSpell = list.get(rand.nextInt(list.size()));
-                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                            if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
                                 SignatureAbilities.castSpellEngineIndirectTarget(player,
                                         randomSpell,
-                                        512, le, HelperMethods.getBlockLookingAt(player, 256));
+                                        512, (LivingEntity)entities, HelperMethods.getBlockLookingAt(player, 256));
                             }
                         }
                     }
@@ -271,7 +273,7 @@ public class AbilityEffects {
 
             if (HelperMethods.getTargetedEntity(player, targetingRange) !=null)
                 target = HelperMethods.getTargetedEntity(player, targetingRange);
-            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+            if ((target instanceof LivingEntity) && !HelperMethods.checkFriendlyFire((LivingEntity)target, player))
                 target = null;
 
             String spell = "simplyskills:physical_bow_snipe";
@@ -369,7 +371,7 @@ public class AbilityEffects {
                                     for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                                         if (entities != null) {
-                                            if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                                            if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
                                                 preventShotgun = true;
                                                 projectileLimiterCap = 4;
                                             }
@@ -418,7 +420,7 @@ public class AbilityEffects {
 
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
                 target = HelperMethods.getTargetedEntity(player, volleyRange);
-            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+            if ((target instanceof LivingEntity) && !HelperMethods.checkFriendlyFire((LivingEntity)target, player))
                 target = null;
 
             String spell = "simplyskills:frost_arrow";
@@ -439,7 +441,7 @@ public class AbilityEffects {
 
             if (HelperMethods.getTargetedEntity(player, volleyRange) !=null)
                 target = HelperMethods.getTargetedEntity(player, volleyRange);
-            if ((target instanceof LivingEntity livingTarget) && !HelperMethods.checkFriendlyFire(livingTarget, player))
+            if ((target instanceof LivingEntity) && !HelperMethods.checkFriendlyFire((LivingEntity)target, player))
                 target = null;
 
             String spell = "simplyskills:arcane_bolt_lesser";

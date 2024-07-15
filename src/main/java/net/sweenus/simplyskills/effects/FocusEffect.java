@@ -63,7 +63,7 @@ public class FocusEffect extends StatusEffect {
 
     @Override
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (FabricLoader.getInstance().isModLoaded("prominent") && entity instanceof PlayerEntity player) {
+        if (FabricLoader.getInstance().isModLoaded("prominent") && entity instanceof PlayerEntity) {
             if (Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:draw_speed")) != null && Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:arrow_velocity")) != null) {
                 EntityAttributeInstance attributeInstance = entity.getAttributeInstance(Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:draw_speed")));
                 EntityAttributeInstance attributeInstance2 = entity.getAttributeInstance(Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:arrow_velocity")));
@@ -80,7 +80,7 @@ public class FocusEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (FabricLoader.getInstance().isModLoaded("prominent") && entity instanceof PlayerEntity player) {
+        if (FabricLoader.getInstance().isModLoaded("prominent") && entity instanceof PlayerEntity) {
             if (Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:draw_speed")) != null && Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:arrow_velocity")) != null) {
                 EntityAttributeInstance attributeInstance = entity.getAttributeInstance(Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:draw_speed")));
                 EntityAttributeInstance attributeInstance2 = entity.getAttributeInstance(Registries.ATTRIBUTE.get(new Identifier("zenith_attributes:arrow_velocity")));

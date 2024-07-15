@@ -30,7 +30,8 @@ public class VitalityBondEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity.getStatusEffect(EffectRegistry.VITALITYBOND) instanceof SimplyStatusEffectInstance statusEffect) {
+            if (livingEntity.getStatusEffect(EffectRegistry.VITALITYBOND) instanceof SimplyStatusEffectInstance) {
+                SimplyStatusEffectInstance statusEffect = (SimplyStatusEffectInstance) livingEntity.getStatusEffect(EffectRegistry.VITALITYBOND);
                 target = statusEffect.getSourceEntity();
             }
 

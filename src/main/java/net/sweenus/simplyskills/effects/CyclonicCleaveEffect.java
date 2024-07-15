@@ -31,7 +31,8 @@ public class CyclonicCleaveEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.CYCLONICCLEAVE)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.CYCLONICCLEAVE)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance cyclonicCleave = player.getStatusEffect(EffectRegistry.CYCLONICCLEAVE);
                 if (cyclonicCleave == null)
                     return;
@@ -62,7 +63,8 @@ public class CyclonicCleaveEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null && cyclonicCleave.getDuration() < 30) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                            LivingEntity le = (LivingEntity) entities;
                             if (AscendancyAbilities.getAscendancyPoints(player) > 29)
                                 le.setVelocity((player.getX() - le.getX()) /4,  (player.getY() - le.getY()) /4, (player.getZ() - le.getZ()) /4);
                             if (cyclonicCleave.getDuration() % bullrushHitFrequency == 0) {
@@ -89,8 +91,8 @@ public class CyclonicCleaveEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-            SimplySwordsGemEffects.warStandard(player);
+        if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+            SimplySwordsGemEffects.warStandard((PlayerEntity)entity);
 
         super.onRemoved(entity, attributes, amplifier);
     }

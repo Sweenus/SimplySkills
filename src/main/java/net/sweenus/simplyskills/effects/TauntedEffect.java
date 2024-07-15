@@ -24,14 +24,17 @@ public class TauntedEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity.getStatusEffect(EffectRegistry.TAUNTED) instanceof SimplyStatusEffectInstance statusEffect) {
+            if (livingEntity.getStatusEffect(EffectRegistry.TAUNTED) instanceof SimplyStatusEffectInstance) {
+                SimplyStatusEffectInstance statusEffect = (SimplyStatusEffectInstance) livingEntity.getStatusEffect(EffectRegistry.TAUNTED);
                 target = statusEffect.getSourceEntity();
             }
 
 
-            if (target != null && (livingEntity instanceof MobEntity mobEntity)) {
-                if (mobEntity.getTarget() != target)
+            if (target != null && (livingEntity instanceof MobEntity)) {
+                MobEntity mobEntity = (MobEntity) livingEntity;
+                if (mobEntity.getTarget() != target) {
                     mobEntity.setTarget(target);
+                }
             }
 
         }

@@ -24,7 +24,8 @@ public class ElementalSurgeEffect extends StatusEffect {
         if (!livingEntity.getWorld().isClient()) {
             int frequency = SimplySkills.spellbladeConfig.signatureSpellbladeElementalSurgeFrequency;
 
-            if (livingEntity.age % frequency == 0 && (livingEntity instanceof PlayerEntity player)) {
+            if (livingEntity.age % frequency == 0 && (livingEntity instanceof PlayerEntity)) {
+                PlayerEntity player = (PlayerEntity) livingEntity;
                 List<String> list = new ArrayList<>();
                 list.add("simplyskills:frost_nova");
                 list.add("simplyskills:fire_nova");

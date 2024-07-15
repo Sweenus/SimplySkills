@@ -30,7 +30,8 @@ public class GhostwalkEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getWorld().isClient()) {
 
-            if (livingEntity instanceof ServerPlayerEntity player && player.hasStatusEffect(EffectRegistry.GHOSTWALK)) {
+            if (livingEntity instanceof ServerPlayerEntity && ((ServerPlayerEntity)livingEntity).hasStatusEffect(EffectRegistry.GHOSTWALK)) {
+                ServerPlayerEntity player = (ServerPlayerEntity) livingEntity;
                 StatusEffectInstance ghostwalk = player.getStatusEffect(EffectRegistry.GHOSTWALK);
                 if (ghostwalk == null)
                     return;
@@ -63,7 +64,8 @@ public class GhostwalkEffect extends StatusEffect {
                 for (Entity entities : livingEntity.getWorld().getOtherEntities(livingEntity, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                     if (entities != null) {
-                        if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                        if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                            LivingEntity le = (LivingEntity) entities;
                             if (ghostwalk.getDuration() % bullrushHitFrequency == 0 && ((LivingEntity) entities).getRandom().nextInt(100) < chance) {
                                 le.timeUntilRegen = 0;
                                 le.damage(player.getDamageSources().playerAttack(player), (float) damage);
@@ -84,8 +86,8 @@ public class GhostwalkEffect extends StatusEffect {
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
         if (!entity.getWorld().isClient()) {
-            if (entity instanceof PlayerEntity player && FabricLoader.getInstance().isModLoaded("simplyswords"))
-                SimplySwordsGemEffects.warStandard(player);
+            if (entity instanceof PlayerEntity && FabricLoader.getInstance().isModLoaded("simplyswords"))
+                SimplySwordsGemEffects.warStandard((PlayerEntity)entity);
             entity.setNoGravity(false);
         }
 
@@ -94,7 +96,8 @@ public class GhostwalkEffect extends StatusEffect {
 
     @Override
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        if (!entity.getWorld().isClient() && entity instanceof  PlayerEntity player) {
+        if (!entity.getWorld().isClient() && entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
             HelperMethods.incrementStatusEffect(player, EffectRegistry.SOULSHOCK, 60, 1 + (AscendancyAbilities.getAscendancyPoints(player) / 10), 9);
         }
         super.onApplied(entity, attributes, amplifier);

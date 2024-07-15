@@ -29,7 +29,8 @@ public abstract class ServerPlayerEntityMixin {
     @Inject(at = @At("HEAD"), method = "damage", cancellable = true)
     public void simplyskills$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity)(Object)this;
-        if (player instanceof ServerPlayerEntity serverPlayer) {
+        if (player instanceof ServerPlayerEntity) {
+            ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
 
             //Effect Barrier
             if (player.hasStatusEffect(EffectRegistry.BARRIER)) {

@@ -34,7 +34,8 @@ public class InitiateAbilities {
             for (Entity entities : player.getWorld().getOtherEntities(player, box, EntityPredicates.VALID_LIVING_ENTITY)) {
 
                 if (entities != null) {
-                    if ((entities instanceof LivingEntity le) && HelperMethods.checkFriendlyFire(le, player)) {
+                    if ((entities instanceof LivingEntity) && HelperMethods.checkFriendlyFire((LivingEntity)entities, player)) {
+                        LivingEntity le = (LivingEntity) entities;
                         for (StatusEffectInstance statusEffect : le.getStatusEffects()) {
                             if (statusEffect != null && statusEffect.getEffectType().isBeneficial()) {
                                 HelperMethods.decrementStatusEffect(le, statusEffect.getEffectType());
