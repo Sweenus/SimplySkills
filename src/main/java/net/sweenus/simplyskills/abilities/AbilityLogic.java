@@ -303,7 +303,7 @@ public class AbilityLogic {
 
         //Initiate Frail (weapon element)
         if (HelperMethods.isUnlocked("simplyskills:tree",
-                SkillReferencePosition.initiateFrail, player)
+                SkillReferencePosition.wizardPath, player)
                 && !HelperMethods.isUnlocked("simplyskills:spellblade",
                 SkillReferencePosition.spellbladeWeaponExpert, player)) {
             InitiateAbilities.passiveInitiateFrail(player);

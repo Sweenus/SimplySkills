@@ -85,6 +85,10 @@ public class DynamicDamage {
         // Iterate through each player and accumulate the total points spent
         for (ServerPlayerEntity player : nearbyPlayers) {
             int pointsSpent = getSpentPoints(player);
+            if (!SimplySkills.generalConfig.DASScaleWithPointsSpent) {
+                pointsSpent = getUnspentPoints(player) + getSpentPoints(player);
+            }
+
             totalPlayerCount++;
             //The lower the Player Scaling Weight number, the less impact each successive player has on scaling
             double playerCountDampener = totalPointsSpent * ((double) totalPlayerCount / SimplySkills.generalConfig.DASPlayerScalingWeight);
@@ -95,6 +99,12 @@ public class DynamicDamage {
                         " §fusing§a " + player.getName().getString() +
                         " §fspent skill points of§6 " + getSpentPoints(player) +
                         "§f. Total scale factor: §b" + totalPointsSpent;
+                if (!SimplySkills.generalConfig.DASScaleWithPointsSpent) {
+                    message = "§fScaling §6" + livingEntity.getName().getString() +
+                            " §fusing§a " + player.getName().getString() +
+                            " §ftotal skill points of§6 " + (getSpentPoints(player) + getUnspentPoints(player)) +
+                            "§f. Total scale factor: §b" + totalPointsSpent;
+                }
                 player.sendMessage(Text.literal(message));
             }
 
@@ -192,6 +202,12 @@ public class DynamicDamage {
     public static int getSpentPoints(ServerPlayerEntity player) {
         return SkillsAPI.streamUnlockedCategories(player)
                 .mapToInt(category -> (int) category.streamUnlockedSkills(player).count())
+                .sum();
+    }
+
+    public static int getUnspentPoints(ServerPlayerEntity player) {
+        return SkillsAPI.streamUnlockedCategories(player)
+                .mapToInt(category -> category.getPointsLeft(player))
                 .sum();
     }
 

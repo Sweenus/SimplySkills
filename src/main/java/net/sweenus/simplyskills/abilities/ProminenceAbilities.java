@@ -37,7 +37,9 @@ public class ProminenceAbilities {
 
             if (FabricLoader.getInstance().isModLoaded("prominent")) {
                 if (Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")) != null) {
-                    return (int) player.getAttributeValue(Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption")));
+                    int corruptionMaximum = SimplySkills.miscConfig.promCorruptionMax;
+                    double corruptionMultiplier = SimplySkills.miscConfig.promCorruptionMulti;
+                    return (int) Math.min(((int) player.getAttributeValue(Registries.ATTRIBUTE.get(new Identifier("eldritch_end:corruption"))) * corruptionMultiplier), corruptionMaximum);
                 } // Scale abilities with Corruption in Prominence
             }
 

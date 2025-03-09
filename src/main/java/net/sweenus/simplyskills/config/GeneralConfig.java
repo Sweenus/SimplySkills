@@ -57,6 +57,8 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public int DASPlayerScalingWeight = 10;
     @ConfigEntry.Gui.Tooltip
+    public boolean DASScaleWithPointsSpent = true;
+    @ConfigEntry.Gui.Tooltip
     public float DASPassiveEntityModifier = 0.2f;
     @ConfigEntry.Gui.Tooltip
     public float addMultiHealthRequirement = 500f;

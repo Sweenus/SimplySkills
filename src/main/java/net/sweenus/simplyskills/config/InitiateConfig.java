@@ -9,7 +9,7 @@ public class InitiateConfig implements ConfigData {
 
     @ConfigEntry.Gui.PrefixText
     public int passiveInitiateFrailArmorThreshold = 35;
-    public int passiveInitiateFrailAttackThreshold = 6;
+    public int passiveInitiateFrailAttackThreshold = 5;
     public int passiveInitiateFrailWeaknessAmplifier = 0;
     public int passiveInitiateFrailMiningFatigueAmplifier = 3;
     public int passiveInitiateNullificationFrequency = 80;

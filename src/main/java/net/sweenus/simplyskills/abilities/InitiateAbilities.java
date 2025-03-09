@@ -121,7 +121,7 @@ public class InitiateAbilities {
         if (HelperMethods.getAttackDamage(player.getMainHandStack()) > attackThreshold
                 || HelperMethods.getAttackDamage(player.getOffHandStack()) > attackThreshold
                 && HelperMethods.isUnlocked("simplyskills:tree",
-                SkillReferencePosition.wayfarerSlender, player)){
+                SkillReferencePosition.wizardPath, player)){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS,
                     25, weaknessAmplifier, false, false, true));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE,
