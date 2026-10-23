@@ -1163,7 +1163,7 @@
 "text.skills.crusaderExhaustiveRecovery.description": "§7Chance sur bloc de bouclier de lancer un Flash Heal instantané sur vous-même et gagner plusieurs piles de fatigue.\n\n§f(Fatigue)§7 réduit votre Attaque en Melee, Vitesse de Déplacement et Vitesse d'Attaque de §c1% §f[x]§7 par pile.",
 
 "text.skills.crusaderSignatureConsecration.title": "Abilité Signature: §6[Consecration]§7",
-"text.skills.crusaderSignatureConsecration.description": "§7\nGagnez une Consécration pendant 15s.\n\n§f(Consécration)§7 consacre le sol sous vos pieds, infligeant des dégats aux ennemis tandis qu'elle guérit les alliés. Dégats & Guérison échelonnés avec le Pouvoir de Guérison des Sorts.\n\n§a60s Cooldown§7",
+"text.skills.crusaderSignatureConsecration.description": "§7\nGagnez une Consécration pendant 15s.\n\n§f(Consécration)§7 consacre le sol sous vos pieds, infligeant des dégats aux ennemis tandis qu'elle guérit les alliés. Dégats & Guérison échelonnés avec le Pouvoir de Guérison des Sorts.\n\n§a30s Cooldown§7",
 
 "text.skills.crusaderSignatureConsecrationDuration.title": "§f[Duration]",
 "text.skills.crusaderSignatureConsecrationDuration.description": "Votre §6[Consécration]§7 maintenant dure plus longtemps.",

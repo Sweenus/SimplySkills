@@ -48,7 +48,7 @@ public class CrusaderConfig implements ConfigData {
     public int signatureCrusaderConsecrationSpellforgedStacks = 1;
     public int signatureCrusaderConsecrationSpellforgedStacksMax = 3;
     public int signatureCrusaderConsecrationTauntDuration = 200;
-    public int signatureCrusaderConsecrationCooldown = 60;
+    public int signatureCrusaderConsecrationCooldown = 30;
 
 
 

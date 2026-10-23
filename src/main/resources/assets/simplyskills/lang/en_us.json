@@ -1362,7 +1362,7 @@
   "text.skills.crusaderExhaustiveRecovery.description":"§7Chance on shield block to instant-cast Flash Heal on yourself and gain several stacks of exhaustion.\n\n§f(Exhaustion)§7 reduces your Melee Attack, Movement Speed, and Attack Speed by §c1% §f[x]§7 per stack.\n\nYou lose several stacks of Exhaustion per second, relative to your Stamina attribute.",
   
   "text.skills.crusaderSignatureConsecration.title":"Signature Ability: §6[Consecration]§7",
-  "text.skills.crusaderSignatureConsecration.description":"§7\nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies. Damage & Healing scales with Healing Spell Power.\n\n§a60s Cooldown§7",
+  "text.skills.crusaderSignatureConsecration.description":"§7\nGain Consecration for 15s.\n\n§f(Consecration)§7 consecrate the ground beneath your feet, dealing damage to enemies while healing allies. Damage & Healing scales with Healing Spell Power.\n\n§a30s Cooldown§7",
   
   "text.skills.crusaderSignatureConsecrationDuration.title":"§f[Duration]",
   "text.skills.crusaderSignatureConsecrationDuration.description":"Your §6[Consecration]§7 now lasts longer.",
