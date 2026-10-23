@@ -10,7 +10,7 @@
   },
   "release": {
     "animation": {
-      "id": "simplyskills:shield_throw"
+      "id": "simplyskills:one_handed_slash_horizontal_left"
     },
     "sound": {
       "id": "simplyskills:soundeffect_32",
