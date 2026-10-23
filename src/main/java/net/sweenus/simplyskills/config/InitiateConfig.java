@@ -17,7 +17,7 @@ public class InitiateConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 1, max = 100)
     public float passiveInitiateSlowFallDistanceToActivate = 3.0F;
     public int passiveInitiateEmpowerChance = 15;
-    public int passiveInitiateEmpowerDuration = 600;
+    public int passiveInitiateEmpowerDuration = 300;
     public int passiveInitiateEmpowerStacks = 1;
     public int passiveInitiateEmpowerMaxStacks = 15;
     public int passiveInitiateAttunedDuration = 150;
