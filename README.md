@@ -5,7 +5,6 @@ A NeoForge port of [Simply Skills 1.7.2](https://github.com/Sweenus/SimplySkills
 ## Changes from the original
 
 - **Platform:** Fabric 1.20.1 → NeoForge 1.21.1, with updated dependencies, rendering and animations.
-- **Consecration:** default base cooldown increased from 30 to 60 seconds.
 - **Raging Javelin:** default throw interval increased from 8 to 20 ticks; configurable.
 - **Righteous Hammers:** duration reduced from 40 to 20 seconds; added first-person visibility and a custom seeking-hammer spin.
 - **Agony and Torment:** base duration is 8 seconds, plus 0.05 seconds per Ascendancy point.
