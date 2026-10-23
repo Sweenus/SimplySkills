@@ -1142,6 +1142,8 @@
 "text.autoconfig.simplyskills.option.client.enableBuildSharing.@Tooltip": "Позволяет игрокам использовать Летопись умений, созданную\nдругими игроками.",
 "text.autoconfig.simplyskills.option.client.skillChronicleCooldown": "Перезарядка Летописи умений",
 "text.autoconfig.simplyskills.option.client.skillChronicleCooldown.@Tooltip": "Время перезарядки для Летописи умений (в тактах), (20 тактов = 1 секунда.).",
+"text.autoconfig.simplyskills.option.client.removeUnlockRestrictions": "Убрать ограничения для разблокировки",
+"text.autoconfig.simplyskills.option.client.removeUnlockRestrictions.@Tooltip": "Позволяет разблокировать Специализации без необходимости\nследовать по ним в древе навыков.\nКроме того, позволяет разблокировать несколько специализаций.\n\nНе рекомендуется, за исключением самых особых сценариев использования.",
 "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier": "Модификатор снижения перезарядки к Скорости заклинания",
 "text.autoconfig.simplyskills.option.client.spellHasteCooldownReductionModifier.@Tooltip": "Управляет, как сильно отразится перезарядка на «Скорости заклинания».\nВысокие значение означает, что у «Скорости заклинания» будет ещё больше снижена перезарядка.",
 "text.autoconfig.simplyskills.option.client.minimumAchievableCooldown": "Минимальная доступная перезарядка (в секундах)",

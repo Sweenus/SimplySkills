@@ -35,7 +35,7 @@ public class AbilityLogic {
 
         if (net.sweenus.simplyskills.util.HelperMethods.stringContainsAny(categoryID, SimplySkills.getSpecialisations())) {
 
-            if (player.getMainHandItem().getItem() instanceof GraciousManuscript)
+            if (SimplySkills.generalConfig.removeUnlockRestrictions || (player.getMainHandItem().getItem() instanceof GraciousManuscript))
                 return false;
 
             //Prevent unlocking multiple specialisations (kinda cursed ngl)

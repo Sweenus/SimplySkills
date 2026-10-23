@@ -20,6 +20,8 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public int skillChronicleCooldown = 12000;
     @ConfigEntry.Gui.Tooltip
+    public boolean removeUnlockRestrictions = false;
+    @ConfigEntry.Gui.Tooltip
     public float spellHasteCooldownReductionModifier = 1.6f;
     @ConfigEntry.Gui.Tooltip
     public int minimumAchievableCooldown = 5;
