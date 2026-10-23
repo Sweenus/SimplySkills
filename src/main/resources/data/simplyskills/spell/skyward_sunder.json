@@ -10,7 +10,7 @@
   },
   "release": {
     "animation": {
-      "id": "simplyskills:upward_slash"
+      "id": "simplyskills:dragable_slash_upward"
     },
     "sound": {
       "id": "simplyskills:soundeffect_32",
